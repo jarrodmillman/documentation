@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>Introduction &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../index.html"/>
         <link rel="up" title="Reference" href="index.html"/>
         <link rel="next" title="Graph types" href="classes/index.html"/>
         <link rel="prev" title="Reference" href="index.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -211,38 +211,38 @@ this Python code is actually a good way to learn more about network algorithms,
 but we have put a lot of effort into making the documentation sufficient and friendly.
 If you have suggestions or questions please contact us by joining the
 <a class="reference external" href="http://groups.google.com/group/networkx-discuss">NetworkX Google group</a>.</p>
-<p>Classes are named using <code class="docutils literal"><span class="pre">CamelCase</span></code> (capital letters at the start of each word).
-functions, methods and variable names are <code class="docutils literal"><span class="pre">lower_case_underscore</span></code> (lowercase with
+<p>Classes are named using <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> (capital letters at the start of each word).
+functions, methods and variable names are <code class="docutils literal notranslate"><span class="pre">lower_case_underscore</span></code> (lowercase with
 an underscore representing a space between words).</p>
 <div class="section" id="networkx-basics">
 <h2>NetworkX Basics<a class="headerlink" href="#networkx-basics" title="Permalink to this headline">¶</a></h2>
 <p>After starting Python, import the networkx module with (the recommended way)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 </pre></div>
 </div>
 <p>To save repetition, in the documentation we assume that
 NetworkX has been imported this way.</p>
 <p>If importing networkx fails, it means that Python cannot find the installed
-module. Check your installation and your <code class="docutils literal"><span class="pre">PYTHONPATH</span></code>.</p>
+module. Check your installation and your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.</p>
 <p>The following basic graph types are provided as Python classes:</p>
 <dl class="docutils">
-<dt><a class="reference internal" href="classes/graph.html#networkx.Graph" title="networkx.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></dt>
+<dt><a class="reference internal" href="classes/graph.html#networkx.Graph" title="networkx.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></dt>
 <dd>This class implements an undirected graph. It ignores
 multiple edges between two nodes.  It does allow self-loop
 edges between a node and itself.</dd>
-<dt><a class="reference internal" href="classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph"><code class="xref py py-class docutils literal"><span class="pre">DiGraph</span></code></a></dt>
+<dt><a class="reference internal" href="classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiGraph</span></code></a></dt>
 <dd>Directed graphs, that is, graphs with directed edges.
 Provides operations common to directed graphs,
 (a subclass of Graph).</dd>
-<dt><a class="reference internal" href="classes/multigraph.html#networkx.MultiGraph" title="networkx.MultiGraph"><code class="xref py py-class docutils literal"><span class="pre">MultiGraph</span></code></a></dt>
+<dt><a class="reference internal" href="classes/multigraph.html#networkx.MultiGraph" title="networkx.MultiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiGraph</span></code></a></dt>
 <dd>A flexible graph class that allows multiple undirected edges between
 pairs of nodes.  The additional flexibility leads to some degradation
 in performance, though usually not significant.</dd>
-<dt><a class="reference internal" href="classes/multidigraph.html#networkx.MultiDiGraph" title="networkx.MultiDiGraph"><code class="xref py py-class docutils literal"><span class="pre">MultiDiGraph</span></code></a></dt>
+<dt><a class="reference internal" href="classes/multidigraph.html#networkx.MultiDiGraph" title="networkx.MultiDiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDiGraph</span></code></a></dt>
 <dd>A directed version of a MultiGraph.</dd>
 </dl>
 <p>Empty graph-like objects are created with</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
@@ -279,8 +279,8 @@ different flavors depending on two main properties of the network:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Directed: Are the edges <strong>directed</strong>?  Does the order of the edge
-pairs <span class="math">\((u, v)\)</span> matter?  A directed graph is specified by the “Di”
-prefix in the class name, e.g. <a class="reference internal" href="classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph"><code class="xref py py-obj docutils literal"><span class="pre">DiGraph()</span></code></a>.  We make this distinction
+pairs <span class="math notranslate">\((u, v)\)</span> matter?  A directed graph is specified by the “Di”
+prefix in the class name, e.g. <a class="reference internal" href="classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraph()</span></code></a>.  We make this distinction
 because many classical graph properties are defined differently for
 directed graphs.</li>
 <li>Multi-edges: Are multiple edges allowed between each pair of nodes?
@@ -288,7 +288,7 @@ As you might imagine, multiple edges requires a different data
 structure, though clever users could design edge data attributes to
 support this functionality.  We provide a standard data structure
 and interface for this type of graph using the prefix “Multi”,
-e.g., <a class="reference internal" href="classes/multigraph.html#networkx.MultiGraph" title="networkx.MultiGraph"><code class="xref py py-obj docutils literal"><span class="pre">MultiGraph()</span></code></a>.</li>
+e.g., <a class="reference internal" href="classes/multigraph.html#networkx.MultiGraph" title="networkx.MultiGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiGraph()</span></code></a>.</li>
 </ul>
 </div></blockquote>
 <p>The basic graph classes are named:
@@ -333,20 +333,20 @@ your network.</p>
 </ul>
 <p>Explicit addition and removal of nodes/edges is the easiest to describe.
 Each graph object supplies methods to manipulate the graph.  For example,</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># default edge data=1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>  <span class="c1"># specify edge data</span>
 </pre></div>
 </div>
 <p>Edge attributes can be anything:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">)</span>  <span class="c1"># any hashable can be a node</span>
 </pre></div>
 </div>
 <p>You can add many edges at one time:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">elist</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">elist</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">elist</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elist</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mf">7.3</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">(</span><span class="n">elist</span><span class="p">)</span>
@@ -355,8 +355,8 @@ Each graph object supplies methods to manipulate the graph.  For example,</p>
 <p>See the <a class="reference internal" href="../tutorial.html"><span class="doc">Tutorial</span></a> for more examples.</p>
 <p>Some basic graph operations such as union and intersection
 are described in the <a class="reference internal" href="algorithms/operators.html#operators"><span class="std std-ref">operators module</span></a> documentation.</p>
-<p>Graph generators such as <a class="reference internal" href="generated/networkx.generators.random_graphs.binomial_graph.html#networkx.generators.random_graphs.binomial_graph" title="networkx.generators.random_graphs.binomial_graph"><code class="xref py py-func docutils literal"><span class="pre">binomial_graph()</span></code></a>
-and <a class="reference internal" href="generated/networkx.generators.random_graphs.erdos_renyi_graph.html#networkx.generators.random_graphs.erdos_renyi_graph" title="networkx.generators.random_graphs.erdos_renyi_graph"><code class="xref py py-func docutils literal"><span class="pre">erdos_renyi_graph()</span></code></a> are
+<p>Graph generators such as <a class="reference internal" href="generated/networkx.generators.random_graphs.binomial_graph.html#networkx.generators.random_graphs.binomial_graph" title="networkx.generators.random_graphs.binomial_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">binomial_graph()</span></code></a>
+and <a class="reference internal" href="generated/networkx.generators.random_graphs.erdos_renyi_graph.html#networkx.generators.random_graphs.erdos_renyi_graph" title="networkx.generators.random_graphs.erdos_renyi_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">erdos_renyi_graph()</span></code></a> are
 provided in the <a class="reference internal" href="generators.html#generators"><span class="std std-ref">graph generators</span></a> subpackage.</p>
 <p>For importing network data from formats such as GML, GraphML, edge list text files
 see the <a class="reference internal" href="readwrite/index.html#readwrite"><span class="std std-ref">reading and writing graphs</span></a> subpackage.</p>
@@ -368,25 +368,25 @@ These views provide iteration over the properties as well as membership
 queries and data attribute lookup. The views refer to the graph data structure
 so changes to the graph are reflected in the views. This is analogous to
 dictionary views in Python 3. If you want to change the graph while iterating
-you will need to use e.g. <code class="docutils literal"><span class="pre">for</span> <span class="pre">e</span> <span class="pre">in</span> <span class="pre">list(G.edges):</span></code>. The views provide
+you will need to use e.g. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">e</span> <span class="pre">in</span> <span class="pre">list(G.edges):</span></code>. The views provide
 set-like operations, e.g. union and intersection, as well as dict-like
-lookup and iteration of the data attributes using <code class="docutils literal"><span class="pre">G.edges[u,</span> <span class="pre">v]['color']</span></code>
-and <code class="docutils literal"><span class="pre">for</span> <span class="pre">e,</span> <span class="pre">datadict</span> <span class="pre">in</span> <span class="pre">G.edges.items():</span></code>. Methods <code class="docutils literal"><span class="pre">G.edges.items()</span></code> and
-<code class="docutils literal"><span class="pre">G.edges.values()</span></code> are familiar from python dicts. In addition <code class="docutils literal"><span class="pre">G.edges.data()</span></code>
-provides specific attribute iteration e.g. <code class="docutils literal"><span class="pre">for</span> <span class="pre">e,</span> <span class="pre">e_color</span> <span class="pre">in</span> <span class="pre">G.edges.data('color'):</span></code>.</p>
+lookup and iteration of the data attributes using <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v]['color']</span></code>
+and <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">e,</span> <span class="pre">datadict</span> <span class="pre">in</span> <span class="pre">G.edges.items():</span></code>. Methods <code class="docutils literal notranslate"><span class="pre">G.edges.items()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">G.edges.values()</span></code> are familiar from python dicts. In addition <code class="docutils literal notranslate"><span class="pre">G.edges.data()</span></code>
+provides specific attribute iteration e.g. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">e,</span> <span class="pre">e_color</span> <span class="pre">in</span> <span class="pre">G.edges.data('color'):</span></code>.</p>
 <p>The basic graph relationship of an edge can be obtained in two ways.
 One can look for neighbors of a node or one can look for edges.
 We jokingly refer to people who focus on nodes/neighbors as node-centric
 and people who focus on edges as edge-centric.  The designers of NetworkX
 tend to be node-centric and view edges as a relationship between nodes.
-You can see this by our choice of lookup notation like <code class="docutils literal"><span class="pre">G[u]</span></code> providing neighbors
-(adjacency) while edge lookup is <code class="docutils literal"><span class="pre">G.edges[u,</span> <span class="pre">v]</span></code>.
+You can see this by our choice of lookup notation like <code class="docutils literal notranslate"><span class="pre">G[u]</span></code> providing neighbors
+(adjacency) while edge lookup is <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v]</span></code>.
 Most data structures for sparse graphs are essentially adjacency lists and so
 fit this perspective. In the end, of course, it doesn’t really matter which way
-you examine the graph. <code class="docutils literal"><span class="pre">G.edges</span></code> removes duplicate representations of undirected
+you examine the graph. <code class="docutils literal notranslate"><span class="pre">G.edges</span></code> removes duplicate representations of undirected
 edges while neighbor reporting across all nodes will naturally report both directions.</p>
 <p>Any properties that are more complicated than edges, neighbors and degree are
-provided by functions.  For example <code class="docutils literal"><span class="pre">nx.triangles(G,</span> <span class="pre">n)</span></code> gives the number of triangles
+provided by functions.  For example <code class="docutils literal notranslate"><span class="pre">nx.triangles(G,</span> <span class="pre">n)</span></code> gives the number of triangles
 which include node n as a vertex.  These functions are grouped in the code and
 documentation under the term <a class="reference internal" href="algorithms/index.html#algorithms"><span class="std std-ref">algorithms</span></a>.</p>
 </div>
@@ -403,7 +403,7 @@ us know through the
 or the Github <a class="reference external" href="https://github.com/networkx/networkx">Developer Zone</a>.</p>
 <p>As an example here is code to use Dijkstra’s algorithm to
 find the shortest weighted path:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">dijkstra_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">))</span>
@@ -423,7 +423,7 @@ The drawing tools are provided in the module <a class="reference internal" href=
 <p>The basic drawing functions essentially place the nodes on a scatterplot
 using the positions you provide via a dictionary or the positions are
 computed with a layout function. The edges are lines between those dots.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cubical_graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 <span class="go">&lt;matplotlib.axes._subplots.AxesSubplot object at ...&gt;</span>
@@ -443,11 +443,11 @@ computed with a layout function. The edges are lines between those dots.</p>
 <h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
 <p>NetworkX uses a “dictionary of dictionaries of dictionaries” as the
 basic network data structure.  This allows fast lookup with reasonable
-storage for large sparse networks.  The keys are nodes so <code class="docutils literal"><span class="pre">G[u]</span></code> returns
+storage for large sparse networks.  The keys are nodes so <code class="docutils literal notranslate"><span class="pre">G[u]</span></code> returns
 an adjacency dictionary keyed by neighbor to the edge attribute
 dictionary. A view of the adjacency data structure is provided
-by the dict-like object <code class="docutils literal"><span class="pre">G.adj</span></code> as e.g. <code class="docutils literal"><span class="pre">for</span> <span class="pre">node,</span> <span class="pre">nbrsdict</span> <span class="pre">in</span> <span class="pre">G.adj.items():</span></code>.
-The expression <code class="docutils literal"><span class="pre">G[u][v]</span></code> returns the edge attribute dictionary itself.
+by the dict-like object <code class="docutils literal notranslate"><span class="pre">G.adj</span></code> as e.g. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">node,</span> <span class="pre">nbrsdict</span> <span class="pre">in</span> <span class="pre">G.adj.items():</span></code>.
+The expression <code class="docutils literal notranslate"><span class="pre">G[u][v]</span></code> returns the edge attribute dictionary itself.
 A dictionary of lists would have also been possible, but not allow
 fast edge detection nor convenient storage of edge data.</p>
 <p>Advantages of dict-of-dicts-of-dicts data structure:</p>
@@ -456,15 +456,15 @@ fast edge detection nor convenient storage of edge data.</p>
 <li>Find edges and remove edges with two dictionary look-ups.</li>
 <li>Prefer to “lists” because of fast lookup with sparse storage.</li>
 <li>Prefer to “sets” since data can be attached to edge.</li>
-<li><code class="docutils literal"><span class="pre">G[u][v]</span></code> returns the edge attribute dictionary.</li>
-<li><code class="docutils literal"><span class="pre">n</span> <span class="pre">in</span> <span class="pre">G</span></code> tests if node <code class="docutils literal"><span class="pre">n</span></code> is in graph <code class="docutils literal"><span class="pre">G</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">G:</span></code> iterates through the graph.</li>
-<li><code class="docutils literal"><span class="pre">for</span> <span class="pre">nbr</span> <span class="pre">in</span> <span class="pre">G[n]:</span></code> iterates through neighbors.</li>
+<li><code class="docutils literal notranslate"><span class="pre">G[u][v]</span></code> returns the edge attribute dictionary.</li>
+<li><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">in</span> <span class="pre">G</span></code> tests if node <code class="docutils literal notranslate"><span class="pre">n</span></code> is in graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">G:</span></code> iterates through the graph.</li>
+<li><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">nbr</span> <span class="pre">in</span> <span class="pre">G[n]:</span></code> iterates through neighbors.</li>
 </ul>
 </div></blockquote>
 <p>As an example, here is a representation of an undirected graph with the
-edges <span class="math">\((A, B)\)</span> and <span class="math">\((B, C)\)</span>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+edges <span class="math notranslate">\((A, B)\)</span> and <span class="math notranslate">\((B, C)\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="p">)</span>
@@ -473,14 +473,14 @@ edges <span class="math">\((A, B)\)</span> and <span class="math">\((B, C)\)</sp
 </div>
 <p>The data structure gets morphed slightly for each base graph class.
 For DiGraph two dict-of-dicts-of-dicts structures are provided, one
-for successors (<code class="docutils literal"><span class="pre">G.succ</span></code>) and one for predecessors (<code class="docutils literal"><span class="pre">G.pred</span></code>).
+for successors (<code class="docutils literal notranslate"><span class="pre">G.succ</span></code>) and one for predecessors (<code class="docutils literal notranslate"><span class="pre">G.pred</span></code>).
 For MultiGraph/MultiDiGraph we use a dict-of-dicts-of-dicts-of-dicts <a class="footnote-reference" href="#turtles" id="id2">[1]</a>
 where the third dictionary is keyed by an edge key identifier to the fourth
 dictionary which contains the edge attributes for that edge between
 the two nodes.</p>
 <p>Graphs provide two interfaces to the edge data attributes: adjacency
-and edges. So <code class="docutils literal"><span class="pre">G[u][v]['width']</span></code> is the same as <code class="docutils literal"><span class="pre">G.edges[u,</span> <span class="pre">v]['width']</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+and edges. So <code class="docutils literal notranslate"><span class="pre">G[u][v]['width']</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v]['width']</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.84</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
 <span class="go">300</span>
@@ -526,7 +526,7 @@ and edges. So <code class="docutils literal"><span class="pre">G[u][v]['width']<
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -548,7 +548,7 @@ and edges. So <code class="docutils literal"><span class="pre">G[u][v]['width']<
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

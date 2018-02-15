@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.vitality.closeness_vitality &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.vitality.closeness_vitality &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Vitality" href="../vitality.html"/>
         <link rel="next" title="Voronoi cells" href="../voronoi.html"/>
         <link rel="prev" title="Vitality" href="../vitality.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -261,23 +261,23 @@ excluding that node.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>G</strong> (<em>NetworkX graph</em>) – A strongly-connected graph.</li>
 <li><strong>weight</strong> (<em>string</em>) – The name of the edge attribute used as weight. This is passed
-directly to the <code class="xref py py-func docutils literal"><span class="pre">wiener_index()</span></code> function.</li>
+directly to the <code class="xref py py-func docutils literal notranslate"><span class="pre">wiener_index()</span></code> function.</li>
 <li><strong>node</strong> (<em>object</em>) – If specified, only the closeness vitality for this node will be
-returned. Otherwise, a dictionary mappping each node to its
+returned. Otherwise, a dictionary mapping each node to its
 closeness vitality will be returned.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><strong>wiener_index</strong> (<em>number</em>) – If you have already computed the Wiener index of the graph
-<code class="xref py py-obj docutils literal"><span class="pre">G</span></code>, you can provide that value here. Otherwise, it will be
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, you can provide that value here. Otherwise, it will be
 computed for you.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>If <code class="xref py py-obj docutils literal"><span class="pre">node</span></code> is None, this function returnes a dictionary
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span></code> is None, this function returns a dictionary
 with nodes as keys and closeness vitality as the
 value. Otherwise, it returns only the closeness vitality for the
-specified <code class="xref py py-obj docutils literal"><span class="pre">node</span></code>.</p>
+specified <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span></code>.</p>
 <p>The closeness vitality of a node may be negative infinity if
 removing that node would disconnect the graph.</p>
 </p>
@@ -289,14 +289,14 @@ removing that node would disconnect the graph.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_vitality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="go">{0: 2.0, 1: 2.0, 2: 2.0}</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal"><span class="pre">closeness_centrality()</span></code></p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">closeness_centrality()</span></code></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id1" rules="none">
@@ -335,7 +335,7 @@ Springer, 2005.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -357,7 +357,7 @@ Springer, 2005.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

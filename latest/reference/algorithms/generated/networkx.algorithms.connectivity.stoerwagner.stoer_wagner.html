@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.connectivity.stoerwagner.stoer_wagner &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.connectivity.stoerwagner.stoer_wagner &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Connectivity" href="../connectivity.html"/>
         <link rel="next" title="networkx.algorithms.connectivity.utils.build_auxiliary_edge_connectivity" href="networkx.algorithms.connectivity.utils.build_auxiliary_edge_connectivity.html"/>
         <link rel="prev" title="networkx.algorithms.connectivity.cuts.minimum_st_node_cut" href="networkx.algorithms.connectivity.cuts.minimum_st_node_cut.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -275,13 +275,13 @@ nonnegative.</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Binary heap</td>
-<td><span class="math">\(O(n (m + n) \log n)\)</span></td>
+<td><span class="math notranslate">\(O(n (m + n) \log n)\)</span></td>
 </tr>
 <tr class="row-odd"><td>Fibonacci heap</td>
-<td><span class="math">\(O(nm + n^2 \log n)\)</span></td>
+<td><span class="math notranslate">\(O(nm + n^2 \log n)\)</span></td>
 </tr>
 <tr class="row-even"><td>Pairing heap</td>
-<td><span class="math">\(O(2^{2 \sqrt{\log \log n}} nm + n^2 \log n)\)</span></td>
+<td><span class="math notranslate">\(O(2^{2 \sqrt{\log \log n}} nm + n^2 \log n)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -298,13 +298,13 @@ considered to have unit weight.</p>
 present, unit weight is assumed. Default value: ‘weight’.</p>
 </li>
 <li><p class="first"><strong>heap</strong> (<em>class</em>) – Type of heap to be used in the algorithm. It should be a subclass of
-<code class="xref py py-class docutils literal"><span class="pre">MinHeap</span></code> or implement a compatible interface.</p>
-<p>If a stock heap implementation is to be used, <code class="xref py py-class docutils literal"><span class="pre">BinaryHeap</span></code> is
-recommeded over <code class="xref py py-class docutils literal"><span class="pre">PairingHeap</span></code> for Python implementations without
+<code class="xref py py-class docutils literal notranslate"><span class="pre">MinHeap</span></code> or implement a compatible interface.</p>
+<p>If a stock heap implementation is to be used, <code class="xref py py-class docutils literal notranslate"><span class="pre">BinaryHeap</span></code> is
+recommended over <code class="xref py py-class docutils literal notranslate"><span class="pre">PairingHeap</span></code> for Python implementations without
 optimized attribute accesses (e.g., CPython) despite a slower
 asymptotic running time. For Python implementations with optimized
-attribute accesses (e.g., PyPy), <code class="xref py py-class docutils literal"><span class="pre">PairingHeap</span></code> provides better
-performance. Default value: <code class="xref py py-class docutils literal"><span class="pre">BinaryHeap</span></code>.</p>
+attribute accesses (e.g., PyPy), <code class="xref py py-class docutils literal notranslate"><span class="pre">PairingHeap</span></code> provides better
+performance. Default value: <code class="xref py py-class docutils literal notranslate"><span class="pre">BinaryHeap</span></code>.</p>
 </li>
 </ul>
 </td>
@@ -317,8 +317,8 @@ performance. Default value: <code class="xref py py-class docutils literal"><spa
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXNotImplemented</span></code> – If the graph is directed or a multigraph.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If the graph has less than two nodes, is not connected or has a
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If the graph is directed or a multigraph.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the graph has less than two nodes, is not connected or has a
 negative-weighted edge.</li>
 </ul>
 </td>
@@ -326,7 +326,7 @@ negative-weighted edge.</li>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -367,7 +367,7 @@ negative-weighted edge.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -389,7 +389,7 @@ negative-weighted edge.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

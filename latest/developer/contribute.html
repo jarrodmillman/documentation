@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Developer overview &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>Developer overview &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../index.html"/>
         <link rel="up" title="Developer Guide" href="index.html"/>
         <link rel="next" title="Working with networkx source code" href="gitwash/index.html"/>
         <link rel="prev" title="Developer Guide" href="index.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -101,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Developer overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#divergence-between-upstream-master-and-your-feature-branch">Divergence between <code class="docutils literal"><span class="pre">upstream</span> <span class="pre">master</span></code> and your feature branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#divergence-between-upstream-master-and-your-feature-branch">Divergence between <code class="docutils literal notranslate"><span class="pre">upstream</span> <span class="pre">master</span></code> and your feature branch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#guidelines">Guidelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#stylistic-guidelines">Stylistic Guidelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pull-request-codes">Pull request codes</a></li>
@@ -190,20 +190,20 @@
 “fork” button to create your own copy of the project.</p>
 </li>
 <li><p class="first">Clone the project to your local computer:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">your</span><span class="o">-</span><span class="n">username</span><span class="o">/</span><span class="n">networkx</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">your</span><span class="o">-</span><span class="n">username</span><span class="o">/</span><span class="n">networkx</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Add the upstream repository:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">networkx</span><span class="o">/</span><span class="n">networkx</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">networkx</span><span class="o">/</span><span class="n">networkx</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Now, you have remote repositories named:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">upstream</span></code>, which refers to the <code class="docutils literal"><span class="pre">networkx</span></code> repository</li>
-<li><code class="docutils literal"><span class="pre">origin</span></code>, which refers to your personal fork</li>
+<li><code class="docutils literal notranslate"><span class="pre">upstream</span></code>, which refers to the <code class="docutils literal notranslate"><span class="pre">networkx</span></code> repository</li>
+<li><code class="docutils literal notranslate"><span class="pre">origin</span></code>, which refers to your personal fork</li>
 </ul>
 </div></blockquote>
 </li>
@@ -212,7 +212,7 @@
 <li><p class="first">Develop your contribution:</p>
 <ul>
 <li><p class="first">Pull the latest changes from upstream:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
 <span class="n">git</span> <span class="n">pull</span> <span class="n">upstream</span> <span class="n">master</span>
 </pre></div>
 </div>
@@ -220,18 +220,18 @@
 <li><p class="first">Create a branch for the feature you want to work on. Since the
 branch name will appear in the merge message, use a sensible name
 such as ‘bugfix-for-issue-1480’:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">bugfix</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">issue</span><span class="o">-</span><span class="mi">1480</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">bugfix</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">issue</span><span class="o">-</span><span class="mi">1480</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Commit locally as you progress (<code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code>)</p>
+<li><p class="first">Commit locally as you progress (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>)</p>
 </li>
 </ul>
 </li>
 <li><p class="first">To submit your contribution:</p>
 <ul>
 <li><p class="first">Push your changes back to your fork on GitHub:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">bugfix</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">issue</span><span class="o">-</span><span class="mi">1480</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">bugfix</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">issue</span><span class="o">-</span><span class="mi">1480</span>
 </pre></div>
 </div>
 </li>
@@ -244,7 +244,7 @@ to ask for review.</p>
 </ul>
 </li>
 </ol>
-<p>For a more detailed discussion, read these <a class="reference internal" href="gitwash/index.html"><span class="doc">detailed documents</span></a> on how to use Git with <code class="docutils literal"><span class="pre">networkx</span></code>
+<p>For a more detailed discussion, read these <a class="reference internal" href="gitwash/index.html"><span class="doc">detailed documents</span></a> on how to use Git with <code class="docutils literal notranslate"><span class="pre">networkx</span></code>
 (<a class="reference external" href="https://networkx.github.io/documentation/latest/developer/gitwash/index.html">https://networkx.github.io/documentation/latest/developer/gitwash/index.html</a>).</p>
 <ol class="arabic" start="4">
 <li><p class="first">Review process:</p>
@@ -279,25 +279,25 @@ tests pass.</li>
 <p class="last">If closing a bug, also add “Fixes #1480” where 1480 is the issue number.</p>
 </div>
 <div class="section" id="divergence-between-upstream-master-and-your-feature-branch">
-<h2>Divergence between <code class="docutils literal"><span class="pre">upstream</span> <span class="pre">master</span></code> and your feature branch<a class="headerlink" href="#divergence-between-upstream-master-and-your-feature-branch" title="Permalink to this headline">¶</a></h2>
+<h2>Divergence between <code class="docutils literal notranslate"><span class="pre">upstream</span> <span class="pre">master</span></code> and your feature branch<a class="headerlink" href="#divergence-between-upstream-master-and-your-feature-branch" title="Permalink to this headline">¶</a></h2>
 <p>Never merge the main branch into yours. If GitHub indicates that the
 branch of your Pull Request can no longer be merged automatically, rebase
 onto master:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
 <span class="n">git</span> <span class="n">pull</span> <span class="n">upstream</span> <span class="n">master</span>
 <span class="n">git</span> <span class="n">checkout</span> <span class="n">bugfix</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">issue</span><span class="o">-</span><span class="mi">1480</span>
 <span class="n">git</span> <span class="n">rebase</span> <span class="n">master</span>
 </pre></div>
 </div>
 <p>If any conflicts occur, fix the according files and continue:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">conflict</span><span class="o">-</span><span class="n">file1</span> <span class="n">conflict</span><span class="o">-</span><span class="n">file2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">conflict</span><span class="o">-</span><span class="n">file1</span> <span class="n">conflict</span><span class="o">-</span><span class="n">file2</span>
 <span class="n">git</span> <span class="n">rebase</span> <span class="o">--</span><span class="k">continue</span>
 </pre></div>
 </div>
 <p>However, you should only rebase your own branches and must generally not
 rebase any branch which you collaborate on with someone else.</p>
 <p>Finally, you must push your rebased branch:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">force</span> <span class="n">origin</span> <span class="n">bugfix</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">issue</span><span class="o">-</span><span class="mi">1480</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">force</span> <span class="n">origin</span> <span class="n">bugfix</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">issue</span><span class="o">-</span><span class="mi">1480</span>
 </pre></div>
 </div>
 <p>(If you are curious, here’s a further discussion on the
@@ -321,10 +321,10 @@ you get no response to your pull request.</li>
 <ul>
 <li><p class="first">Set up your editor to remove trailing whitespace.
 Follow <a class="reference external" href="www.python.org/dev/peps/pep-0008/">PEP08</a>.
-Check code with <code class="xref py py-obj docutils literal"><span class="pre">pyflakes</span></code> / <code class="xref py py-obj docutils literal"><span class="pre">flake8</span></code>.</p>
+Check code with <code class="xref py py-obj docutils literal notranslate"><span class="pre">pyflakes</span></code> / <code class="xref py py-obj docutils literal notranslate"><span class="pre">flake8</span></code>.</p>
 </li>
 <li><p class="first">Use the following import conventions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -340,11 +340,11 @@ Check code with <code class="xref py py-obj docutils literal"><span class="pre">
 <h2>Pull request codes<a class="headerlink" href="#pull-request-codes" title="Permalink to this headline">¶</a></h2>
 <p>When you submit a pull request to GitHub, GitHub will ask you for a summary.  If
 your code is not ready to merge, but you want to get feedback, please consider
-using <code class="docutils literal"><span class="pre">WIP:</span> <span class="pre">experimental</span> <span class="pre">optimization</span></code> or similar for the title of your pull
+using <code class="docutils literal notranslate"><span class="pre">WIP:</span> <span class="pre">experimental</span> <span class="pre">optimization</span></code> or similar for the title of your pull
 request. That way we will all know that it’s not yet ready to merge and that
 you may be interested in more fundamental comments about design.</p>
 <p>When you think the pull request is ready to merge, change the title (using the
-<em>Edit</em> button) to remove the <code class="docutils literal"><span class="pre">WIP:</span></code>.</p>
+<em>Edit</em> button) to remove the <code class="docutils literal notranslate"><span class="pre">WIP:</span></code>.</p>
 </div>
 <div class="section" id="developer-notes">
 <h2>Developer Notes<a class="headerlink" href="#developer-notes" title="Permalink to this headline">¶</a></h2>
@@ -380,7 +380,7 @@ the <a class="reference external" href="https://github.com/networkx/networkx/wik
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -402,7 +402,7 @@ the <a class="reference external" href="https://github.com/networkx/networkx/wik
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Connectivity" href="../connectivity.html"/>
         <link rel="next" title="networkx.algorithms.connectivity.kcomponents.k_components" href="networkx.algorithms.connectivity.kcomponents.k_components.html"/>
         <link rel="prev" title="networkx.algorithms.connectivity.edge_kcomponents.bridge_components" href="networkx.algorithms.connectivity.edge_kcomponents.bridge_components.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -262,10 +262,10 @@
 <p>Constructing the AuxillaryGraph (which may take some time) allows for the
 k-edge-ccs to be found in linear time for arbitrary k.</p>
 <p class="rubric">Notes</p>
-<p>This implementation is based on <a class="footnote-reference" href="#id2" id="id1">[1]</a>. The idea is to construct an auxillary
+<p>This implementation is based on <a class="footnote-reference" href="#id2" id="id1">[1]</a>. The idea is to construct an auxiliary
 graph from which the k-edge-ccs can be extracted in linear time. The
-auxillary graph is constructed in <span class="math">\(O(|V|\cdot F)\)</span> operations, where F is the
-complexity of max flow. Querying the components takes an additional <span class="math">\(O(|V|)\)</span>
+auxiliary graph is constructed in <span class="math notranslate">\(O(|V|\cdot F)\)</span> operations, where F is the
+complexity of max flow. Querying the components takes an additional <span class="math notranslate">\(O(|V|)\)</span>
 operations. This algorithm can be slow for large graphs, but it handles an
 arbitrary k and works for both directed and undirected inputs.</p>
 <p>The undirected case for k=1 is exactly connected components.
@@ -281,7 +281,7 @@ k-edge-connected components.
 </tbody>
 </table>
 <p class="rubric">Example</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">itertools</span> <span class="k">as</span> <span class="nn">it</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">itertools</span> <span class="k">as</span> <span class="nn">it</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">pairwise</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms.connectivity</span> <span class="k">import</span> <span class="n">EdgeComponentAuxGraph</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Build an interesting graph with multiple levels of k-edge-ccs</span>
@@ -308,7 +308,7 @@ k-edge-connected components.
 </pre></div>
 </div>
 <p class="rubric">Example</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># The auxillary graph is primarilly used for k-edge-ccs but it</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># The auxiliary graph is primarilly used for k-edge-ccs but it</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># can also speed up the queries of k-edge-subgraphs by refining the</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># search space.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">itertools</span> <span class="k">as</span> <span class="nn">it</span>
@@ -340,14 +340,14 @@ k-edge-connected components.
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">construct</span></code>(EdgeComponentAuxGraph,&nbsp;G)</td>
-<td>Builds an auxillary graph encoding edge-connectivity between nodes.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct</span></code>(G)</td>
+<td>Builds an auxiliary graph encoding edge-connectivity between nodes.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">k_edge_components</span></code>(k)</td>
-<td>Queries the auxillary graph for k-edge-connected components.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_components</span></code>(k)</td>
+<td>Queries the auxiliary graph for k-edge-connected components.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">k_edge_subgraphs</span></code>(k)</td>
-<td>Queries the auxillary graph for k-edge-connected subgraphs.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_subgraphs</span></code>(k)</td>
+<td>Queries the auxiliary graph for k-edge-connected subgraphs.</td>
 </tr>
 </tbody>
 </table>
@@ -378,7 +378,7 @@ k-edge-connected components.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -400,7 +400,7 @@ k-edge-connected components.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.degree_seq.random_degree_sequence_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.degree_seq.random_degree_sequence_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.random_clustered.random_clustered_graph" href="networkx.generators.random_clustered.random_clustered_graph.html"/>
         <link rel="prev" title="networkx.generators.degree_seq.degree_sequence_tree" href="networkx.generators.degree_seq.degree_sequence_tree.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -225,9 +225,9 @@
 <dt id="networkx.generators.degree_seq.random_degree_sequence_graph">
 <code class="descname">random_degree_sequence_graph</code><span class="sig-paren">(</span><em>sequence</em>, <em>seed=None</em>, <em>tries=10</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/degree_seq.html#random_degree_sequence_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.degree_seq.random_degree_sequence_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a simple random graph with the given degree sequence.</p>
-<p>If the maximum degree <span class="math">\(d_m\)</span> in the sequence is <span class="math">\(O(m^{1/4})\)</span> then the
-algorithm produces almost uniform random graphs in <span class="math">\(O(m d_m)\)</span> time
-where <span class="math">\(m\)</span> is the number of edges.</p>
+<p>If the maximum degree <span class="math notranslate">\(d_m\)</span> in the sequence is <span class="math notranslate">\(O(m^{1/4})\)</span> then the
+algorithm produces almost uniform random graphs in <span class="math notranslate">\(O(m d_m)\)</span> time
+where <span class="math notranslate">\(m\)</span> is the number of edges.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -248,8 +248,8 @@ corresponding to the position in the sequence.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXUnfeasible</span></code> – If the degree sequence is not graphical.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If a graph is not produced in specified number of tries</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnfeasible</span></code> – If the degree sequence is not graphical.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If a graph is not produced in specified number of tries</li>
 </ul>
 </td>
 </tr>
@@ -257,7 +257,7 @@ corresponding to the position in the sequence.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal"><span class="pre">is_graphical()</span></code>, <a class="reference internal" href="networkx.generators.degree_seq.configuration_model.html#networkx.generators.degree_seq.configuration_model" title="networkx.generators.degree_seq.configuration_model"><code class="xref py py-func docutils literal"><span class="pre">configuration_model()</span></code></a></p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_graphical()</span></code>, <a class="reference internal" href="networkx.generators.degree_seq.configuration_model.html#networkx.generators.degree_seq.configuration_model" title="networkx.generators.degree_seq.configuration_model"><code class="xref py py-func docutils literal notranslate"><span class="pre">configuration_model()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The generator algorithm <a class="footnote-reference" href="#id2" id="id1">[1]</a> is not guaranteed to produce a graph.</p>
@@ -272,7 +272,7 @@ DOI: 10.1007/s00453-009-9340-1</td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_degree_sequence_graph</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>
 <span class="go">[1, 2, 2, 3]</span>
@@ -305,7 +305,7 @@ DOI: 10.1007/s00453-009-9340-1</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -327,7 +327,7 @@ DOI: 10.1007/s00453-009-9340-1</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

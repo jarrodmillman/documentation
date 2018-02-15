@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.dinitz &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.flow.dinitz &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Flows" href="../flow.html"/>
         <link rel="next" title="networkx.algorithms.flow.boykov_kolmogorov" href="networkx.algorithms.flow.boykov_kolmogorov.html"/>
         <link rel="prev" title="networkx.algorithms.flow.preflow_push" href="networkx.algorithms.flow.preflow_push.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -263,7 +263,7 @@
 <p>This function returns the residual network resulting after computing
 the maximum flow. See below for details about the conventions
 NetworkX uses for defining residual networks.</p>
-<p>This algorithm has a running time of <span class="math">\(O(n^2 m)\)</span> for <span class="math">\(n\)</span> nodes and <span class="math">\(m\)</span>
+<p>This algorithm has a running time of <span class="math notranslate">\(O(n^2 m)\)</span> for <span class="math notranslate">\(n\)</span> nodes and <span class="math notranslate">\(m\)</span>
 edges <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -296,10 +296,10 @@ determine a minimum cut. Default value: None.</li>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – The algorithm does not support MultiGraph and MultiDiGraph. If
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – The algorithm does not support MultiGraph and MultiDiGraph. If
 the input graph is an instance of one of these two classes, a
 NetworkXError is raised.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXUnbounded</span></code> – If the graph has a path of infinite capacity, the value of a
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnbounded</span></code> – If the graph has a path of infinite capacity, the value of a
 feasible flow on the graph is unbounded above and the function
 raises a NetworkXUnbounded.</li>
 </ul>
@@ -309,36 +309,36 @@ raises a NetworkXUnbounded.</li>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.flow.maximum_flow.html#networkx.algorithms.flow.maximum_flow" title="networkx.algorithms.flow.maximum_flow"><code class="xref py py-meth docutils literal"><span class="pre">maximum_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.minimum_cut.html#networkx.algorithms.flow.minimum_cut" title="networkx.algorithms.flow.minimum_cut"><code class="xref py py-meth docutils literal"><span class="pre">minimum_cut()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.preflow_push.html#networkx.algorithms.flow.preflow_push" title="networkx.algorithms.flow.preflow_push"><code class="xref py py-meth docutils literal"><span class="pre">preflow_push()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.shortest_augmenting_path.html#networkx.algorithms.flow.shortest_augmenting_path" title="networkx.algorithms.flow.shortest_augmenting_path"><code class="xref py py-meth docutils literal"><span class="pre">shortest_augmenting_path()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.flow.maximum_flow.html#networkx.algorithms.flow.maximum_flow" title="networkx.algorithms.flow.maximum_flow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">maximum_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.minimum_cut.html#networkx.algorithms.flow.minimum_cut" title="networkx.algorithms.flow.minimum_cut"><code class="xref py py-meth docutils literal notranslate"><span class="pre">minimum_cut()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.preflow_push.html#networkx.algorithms.flow.preflow_push" title="networkx.algorithms.flow.preflow_push"><code class="xref py py-meth docutils literal notranslate"><span class="pre">preflow_push()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.shortest_augmenting_path.html#networkx.algorithms.flow.shortest_augmenting_path" title="networkx.algorithms.flow.shortest_augmenting_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shortest_augmenting_path()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The residual network <code class="samp docutils literal"><span class="pre">R</span></code> from an input graph <code class="samp docutils literal"><span class="pre">G</span></code> has the
-same nodes as <code class="samp docutils literal"><span class="pre">G</span></code>. <code class="samp docutils literal"><span class="pre">R</span></code> is a DiGraph that contains a pair
-of edges <code class="samp docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> and <code class="samp docutils literal"><span class="pre">(v,</span> <span class="pre">u)</span></code> iff <code class="samp docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> is not a
-self-loop, and at least one of <code class="samp docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> and <code class="samp docutils literal"><span class="pre">(v,</span> <span class="pre">u)</span></code> exists
-in <code class="samp docutils literal"><span class="pre">G</span></code>.</p>
-<p>For each edge <code class="samp docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> in <code class="samp docutils literal"><span class="pre">R</span></code>, <code class="samp docutils literal"><span class="pre">R[u][v]['capacity']</span></code>
-is equal to the capacity of <code class="samp docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> in <code class="samp docutils literal"><span class="pre">G</span></code> if it exists
-in <code class="samp docutils literal"><span class="pre">G</span></code> or zero otherwise. If the capacity is infinite,
-<code class="samp docutils literal"><span class="pre">R[u][v]['capacity']</span></code> will have a high arbitrary finite value
+<p>The residual network <code class="samp docutils literal notranslate"><span class="pre">R</span></code> from an input graph <code class="samp docutils literal notranslate"><span class="pre">G</span></code> has the
+same nodes as <code class="samp docutils literal notranslate"><span class="pre">G</span></code>. <code class="samp docutils literal notranslate"><span class="pre">R</span></code> is a DiGraph that contains a pair
+of edges <code class="samp docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> and <code class="samp docutils literal notranslate"><span class="pre">(v,</span> <span class="pre">u)</span></code> iff <code class="samp docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> is not a
+self-loop, and at least one of <code class="samp docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> and <code class="samp docutils literal notranslate"><span class="pre">(v,</span> <span class="pre">u)</span></code> exists
+in <code class="samp docutils literal notranslate"><span class="pre">G</span></code>.</p>
+<p>For each edge <code class="samp docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> in <code class="samp docutils literal notranslate"><span class="pre">R</span></code>, <code class="samp docutils literal notranslate"><span class="pre">R[u][v]['capacity']</span></code>
+is equal to the capacity of <code class="samp docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> in <code class="samp docutils literal notranslate"><span class="pre">G</span></code> if it exists
+in <code class="samp docutils literal notranslate"><span class="pre">G</span></code> or zero otherwise. If the capacity is infinite,
+<code class="samp docutils literal notranslate"><span class="pre">R[u][v]['capacity']</span></code> will have a high arbitrary finite value
 that does not affect the solution of the problem. This value is stored in
-<code class="samp docutils literal"><span class="pre">R.graph['inf']</span></code>. For each edge <code class="samp docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> in <code class="samp docutils literal"><span class="pre">R</span></code>,
-<code class="samp docutils literal"><span class="pre">R[u][v]['flow']</span></code> represents the flow function of <code class="samp docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> and
-satisfies <code class="samp docutils literal"><span class="pre">R[u][v]['flow']</span> <span class="pre">==</span> <span class="pre">-R[v][u]['flow']</span></code>.</p>
-<p>The flow value, defined as the total flow into <code class="samp docutils literal"><span class="pre">t</span></code>, the sink, is
-stored in <code class="samp docutils literal"><span class="pre">R.graph['flow_value']</span></code>. If <code class="samp docutils literal"><span class="pre">cutoff</span></code> is not
-specified, reachability to <code class="samp docutils literal"><span class="pre">t</span></code> using only edges <code class="samp docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> such
-that <code class="samp docutils literal"><span class="pre">R[u][v]['flow']</span> <span class="pre">&lt;</span> <span class="pre">R[u][v]['capacity']</span></code> induces a minimum
-<code class="samp docutils literal"><span class="pre">s</span></code>-<code class="samp docutils literal"><span class="pre">t</span></code> cut.</p>
+<code class="samp docutils literal notranslate"><span class="pre">R.graph['inf']</span></code>. For each edge <code class="samp docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> in <code class="samp docutils literal notranslate"><span class="pre">R</span></code>,
+<code class="samp docutils literal notranslate"><span class="pre">R[u][v]['flow']</span></code> represents the flow function of <code class="samp docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> and
+satisfies <code class="samp docutils literal notranslate"><span class="pre">R[u][v]['flow']</span> <span class="pre">==</span> <span class="pre">-R[v][u]['flow']</span></code>.</p>
+<p>The flow value, defined as the total flow into <code class="samp docutils literal notranslate"><span class="pre">t</span></code>, the sink, is
+stored in <code class="samp docutils literal notranslate"><span class="pre">R.graph['flow_value']</span></code>. If <code class="samp docutils literal notranslate"><span class="pre">cutoff</span></code> is not
+specified, reachability to <code class="samp docutils literal notranslate"><span class="pre">t</span></code> using only edges <code class="samp docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> such
+that <code class="samp docutils literal notranslate"><span class="pre">R[u][v]['flow']</span> <span class="pre">&lt;</span> <span class="pre">R[u][v]['capacity']</span></code> induces a minimum
+<code class="samp docutils literal notranslate"><span class="pre">s</span></code>-<code class="samp docutils literal notranslate"><span class="pre">t</span></code> cut.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms.flow</span> <span class="k">import</span> <span class="n">dinitz</span>
 </pre></div>
 </div>
 <p>The functions that implement flow algorithms and output a residual
 network, such as this one, are not imported to the base NetworkX
 namespace, so you have to explicitly import them from the flow package.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
@@ -392,7 +392,7 @@ Notes in Computer Science. Volume 3895. pp 218-240.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -414,7 +414,7 @@ Notes in Computer Science. Volume 3895. pp 218-240.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

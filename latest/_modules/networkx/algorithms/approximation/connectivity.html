@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.approximation.connectivity &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.approximation.connectivity &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -279,8 +279,8 @@
             <span class="n">K</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">except</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNoPath</span><span class="p">:</span>
             <span class="k">break</span>
-
-    <span class="k">return</span> <span class="n">K</span></div>
+</div>
+    <span class="k">return</span> <span class="n">K</span>
 
 
 <div class="viewcode-block" id="node_connectivity"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.approximation.connectivity.node_connectivity.html#networkx.algorithms.approximation.connectivity.node_connectivity">[docs]</a><span class="k">def</span> <span class="nf">node_connectivity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -383,8 +383,8 @@
     <span class="c1"># Same for non adjacent pairs of neighbors of v</span>
     <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">iter_func</span><span class="p">(</span><span class="n">neighbors</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">y</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">:</span>
-            <span class="n">K</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">local_node_connectivity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">K</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">K</span></div>
+            <span class="n">K</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">local_node_connectivity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">K</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">K</span>
 
 
 <div class="viewcode-block" id="all_pairs_node_connectivity"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.approximation.connectivity.all_pairs_node_connectivity.html#networkx.algorithms.approximation.connectivity.all_pairs_node_connectivity">[docs]</a><span class="k">def</span> <span class="nf">all_pairs_node_connectivity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -448,8 +448,8 @@
         <span class="n">all_pairs</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">directed</span><span class="p">:</span>
             <span class="n">all_pairs</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span>
-
-    <span class="k">return</span> <span class="n">all_pairs</span></div>
+</div>
+    <span class="k">return</span> <span class="n">all_pairs</span>
 
 
 <span class="k">def</span> <span class="nf">_bidirectional_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">exclude</span><span class="p">):</span>
@@ -483,7 +483,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    This function and its helper are originaly from</span>
+<span class="sd">    This function and its helper are originally from</span>
 <span class="sd">    networkx.algorithms.shortest_paths.unweighted and are modified to </span>
 <span class="sd">    accept the extra parameter &#39;exclude&#39;, which is a container for nodes </span>
 <span class="sd">    already used in other paths that should be ignored.</span>
@@ -544,7 +544,7 @@
 
     <span class="k">while</span> <span class="n">forward_fringe</span> <span class="ow">and</span> <span class="n">reverse_fringe</span><span class="p">:</span>
         <span class="c1"># Make sure that we iterate one step forward and one step backwards</span>
-        <span class="c1"># thus source and target will only tigger &quot;found path&quot; when they are</span>
+        <span class="c1"># thus source and target will only trigger &quot;found path&quot; when they are</span>
         <span class="c1"># adjacent and then they can be safely included in the container &#39;exclude&#39;</span>
         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">level</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -588,7 +588,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -610,7 +610,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

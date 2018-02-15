@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.classic.balanced_tree &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.classic.balanced_tree &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.classic.barbell_graph" href="networkx.generators.classic.barbell_graph.html"/>
         <link rel="prev" title="networkx.generators.atlas.graph_atlas_g" href="networkx.generators.atlas.graph_atlas_g.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -233,13 +233,13 @@
 <dl class="function">
 <dt id="networkx.generators.classic.balanced_tree">
 <code class="descname">balanced_tree</code><span class="sig-paren">(</span><em>r</em>, <em>h</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/classic.html#balanced_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.classic.balanced_tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the perfectly balanced <code class="xref py py-obj docutils literal"><span class="pre">r</span></code>-ary tree of height <code class="xref py py-obj docutils literal"><span class="pre">h</span></code>.</p>
+<dd><p>Return the perfectly balanced <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code>-ary tree of height <code class="xref py py-obj docutils literal notranslate"><span class="pre">h</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>r</strong> (<em>int</em>) – Branching factor of the tree; each node will have <code class="xref py py-obj docutils literal"><span class="pre">r</span></code>
+<li><strong>r</strong> (<em>int</em>) – Branching factor of the tree; each node will have <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code>
 children.</li>
 <li><strong>h</strong> (<em>int</em>) – Height of the tree.</li>
 <li><strong>create_using</strong> (<em>Graph, optional (default None)</em>) – If provided this graph is cleared of nodes and edges and filled
@@ -247,7 +247,7 @@ with the new graph. Usually used to set the type of the graph.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>G</strong> – A balanced <code class="xref py py-obj docutils literal"><span class="pre">r</span></code>-ary tree of height <code class="xref py py-obj docutils literal"><span class="pre">h</span></code>.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>G</strong> – A balanced <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code>-ary tree of height <code class="xref py py-obj docutils literal notranslate"><span class="pre">h</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">NetworkX graph</p>
@@ -256,9 +256,9 @@ with the new graph. Usually used to set the type of the graph.</li>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>This is the rooted tree where all leaves are at distance <code class="xref py py-obj docutils literal"><span class="pre">h</span></code> from
-the root. The root has degree <code class="xref py py-obj docutils literal"><span class="pre">r</span></code> and all other internal nodes
-have degree <code class="xref py py-obj docutils literal"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">1</span></code>.</p>
+<p>This is the rooted tree where all leaves are at distance <code class="xref py py-obj docutils literal notranslate"><span class="pre">h</span></code> from
+the root. The root has degree <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code> and all other internal nodes
+have degree <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">1</span></code>.</p>
 <p>Node labels are integers, starting from zero.</p>
 <p>A balanced tree is also known as a <em>complete r-ary tree</em>.</p>
 </dd></dl>
@@ -288,7 +288,7 @@ have degree <code class="xref py py-obj docutils literal"><span class="pre">r</s
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -310,7 +310,7 @@ have degree <code class="xref py py-obj docutils literal"><span class="pre">r</s
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

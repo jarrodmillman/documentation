@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_agraph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.drawing.nx_agraph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -277,8 +277,8 @@
     <span class="c1"># hang them on N.graph_attr</span>
     <span class="n">N</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;graph&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">graph_attr</span><span class="p">)</span>
     <span class="n">N</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">node_attr</span><span class="p">)</span>
-    <span class="n">N</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;edge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">edge_attr</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">N</span></div>
+    <span class="n">N</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;edge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">edge_attr</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">N</span>
 
 
 <div class="viewcode-block" id="to_agraph"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_agraph.to_agraph.html#networkx.drawing.nx_agraph.to_agraph">[docs]</a><span class="k">def</span> <span class="nf">to_agraph</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
@@ -340,8 +340,8 @@
             <span class="k">if</span> <span class="n">edgedata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">get_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
                 <span class="n">a</span><span class="o">.</span><span class="n">attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">str_edgedata</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">A</span></div>
+</div>
+    <span class="k">return</span> <span class="n">A</span>
 
 
 <div class="viewcode-block" id="write_dot"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_agraph.write_dot.html#networkx.drawing.nx_agraph.write_dot">[docs]</a><span class="k">def</span> <span class="nf">write_dot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
@@ -361,8 +361,8 @@
                           <span class="s1">&#39;http://pygraphviz.github.io/&#39;</span><span class="p">)</span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">to_agraph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">A</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-    <span class="n">A</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="k">return</span></div>
+    <span class="n">A</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+    <span class="k">return</span>
 
 
 <div class="viewcode-block" id="read_dot"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_agraph.read_dot.html#networkx.drawing.nx_agraph.read_dot">[docs]</a><span class="k">def</span> <span class="nf">read_dot</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
@@ -378,8 +378,8 @@
     <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">&#39;read_dot() requires pygraphviz &#39;</span><span class="p">,</span>
                           <span class="s1">&#39;http://pygraphviz.github.io/&#39;</span><span class="p">)</span>
-    <span class="n">A</span> <span class="o">=</span> <span class="n">pygraphviz</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">from_agraph</span><span class="p">(</span><span class="n">A</span><span class="p">)</span></div>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">pygraphviz</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">path</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">from_agraph</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="graphviz_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_agraph.graphviz_layout.html#networkx.drawing.nx_agraph.graphviz_layout">[docs]</a><span class="k">def</span> <span class="nf">graphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;neato&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
@@ -409,8 +409,8 @@
 <span class="sd">    -----</span>
 <span class="sd">    This is a wrapper for pygraphviz_layout.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">pygraphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="n">prog</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span></div>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="n">pygraphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="n">prog</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="pygraphviz_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_agraph.pygraphviz_layout.html#networkx.drawing.nx_agraph.pygraphviz_layout">[docs]</a><span class="k">def</span> <span class="nf">pygraphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;neato&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
@@ -454,8 +454,8 @@
             <span class="n">node_pos</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">yy</span><span class="p">))</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no position for node&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-            <span class="n">node_pos</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">node_pos</span></div>
+            <span class="n">node_pos</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">node_pos</span>
 
 
 <span class="nd">@nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
@@ -647,7 +647,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -669,7 +669,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

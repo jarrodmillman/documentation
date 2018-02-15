@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.subgraph_centrality &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.centrality.subgraph_centrality &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Centrality" href="../centrality.html"/>
         <link rel="next" title="networkx.algorithms.centrality.subgraph_centrality_exp" href="networkx.algorithms.centrality.subgraph_centrality_exp.html"/>
         <link rel="prev" title="networkx.algorithms.centrality.edge_load_centrality" href="networkx.algorithms.centrality.edge_load_centrality.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -261,8 +261,8 @@
 <dt id="networkx.algorithms.centrality.subgraph_centrality">
 <code class="descname">subgraph_centrality</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/subgraph_alg.html#subgraph_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.subgraph_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return subgraph centrality for each node in G.</p>
-<p>Subgraph centrality  of a node <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> is the sum of weighted closed
-walks of all lengths starting and ending at node <code class="xref py py-obj docutils literal"><span class="pre">n</span></code>. The weights
+<p>Subgraph centrality  of a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> is the sum of weighted closed
+walks of all lengths starting and ending at node <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code>. The weights
 decrease with path length. Each closed walk is associated with a
 connected subgraph (<a class="footnote-reference" href="#id4" id="id1">[1]</a>).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -275,26 +275,26 @@ connected subgraph (<a class="footnote-reference" href="#id4" id="id1">[1]</a>).
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dictionary</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If the graph is not undirected and simple.</td>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the graph is not undirected and simple.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="networkx.algorithms.centrality.subgraph_centrality_exp.html#networkx.algorithms.centrality.subgraph_centrality_exp" title="networkx.algorithms.centrality.subgraph_centrality_exp"><code class="xref py py-func docutils literal"><span class="pre">subgraph_centrality_exp()</span></code></a></dt>
+<dt><a class="reference internal" href="networkx.algorithms.centrality.subgraph_centrality_exp.html#networkx.algorithms.centrality.subgraph_centrality_exp" title="networkx.algorithms.centrality.subgraph_centrality_exp"><code class="xref py py-func docutils literal notranslate"><span class="pre">subgraph_centrality_exp()</span></code></a></dt>
 <dd>Alternative algorithm of the subgraph centrality for each node of G.</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
 <p>This version of the algorithm computes eigenvalues and eigenvectors
 of the adjacency matrix.</p>
-<p>Subgraph centrality of a node <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> in G can be found using
+<p>Subgraph centrality of a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> in G can be found using
 a spectral decomposition of the adjacency matrix <a class="footnote-reference" href="#id4" id="id2">[1]</a>,</p>
-<div class="math">
+<div class="math notranslate">
 \[SC(u)=\sum_{j=1}^{N}(v_{j}^{u})^2 e^{\lambda_{j}},\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">v_j</span></code> is an eigenvector of the adjacency matrix <code class="xref py py-obj docutils literal"><span class="pre">A</span></code> of G
-corresponding corresponding to the eigenvalue <code class="xref py py-obj docutils literal"><span class="pre">lambda_j</span></code>.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">v_j</span></code> is an eigenvector of the adjacency matrix <code class="xref py py-obj docutils literal notranslate"><span class="pre">A</span></code> of G
+corresponding corresponding to the eigenvalue <code class="xref py py-obj docutils literal notranslate"><span class="pre">lambda_j</span></code>.</p>
 <p class="rubric">Examples</p>
 <p>(Example from <a class="footnote-reference" href="#id4" id="id3">[1]</a>)
 &gt;&gt;&gt; G = nx.Graph([(1,2),(1,5),(1,8),(2,3),(2,8),(3,4),(3,6),(4,5),(4,7),(5,6),(6,7),(7,8)])
@@ -338,7 +338,7 @@ Physical Review E 71, 056103 (2005).
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -360,7 +360,7 @@ Physical Review E 71, 056103 (2005).
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

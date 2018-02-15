@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.simple_paths.shortest_simple_paths &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.simple_paths.shortest_simple_paths &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Simple Paths" href="../simple_paths.html"/>
         <link rel="next" title="Structural holes" href="../structuralholes.html"/>
         <link rel="prev" title="networkx.algorithms.simple_paths.is_simple_path" href="networkx.algorithms.simple_paths.is_simple_path.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -280,16 +280,16 @@ shortest to longest.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXNoPath</span></code> – If no path exists between source and target.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If source or target nodes are not in the input graph.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXNotImplemented</span></code> – If the input graph is a Multi[Di]Graph.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNoPath</span></code> – If no path exists between source and target.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If source or target nodes are not in the input graph.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If the input graph is a Multi[Di]Graph.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">shortest_simple_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
 <span class="go">[[0, 1, 2, 3], [0, 6, 5, 4, 3]]</span>
@@ -297,7 +297,7 @@ shortest to longest.</p>
 </div>
 <p>You can use this function to efficiently compute the k shortest/best
 paths between two nodes.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">islice</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">islice</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">k_shortest_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">islice</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">shortest_simple_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">),</span> <span class="n">k</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">k_shortest_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
@@ -308,10 +308,10 @@ paths between two nodes.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>This procedure is based on algorithm by Jin Y. Yen <a class="footnote-reference" href="#id2" id="id1">[1]</a>.  Finding
-the first <span class="math">\(K\)</span> paths requires <span class="math">\(O(KN^3)\)</span> operations.</p>
+the first <span class="math notranslate">\(K\)</span> paths requires <span class="math notranslate">\(O(KN^3)\)</span> operations.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal"><span class="pre">all_shortest_paths()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">shortest_path()</span></code>, <a class="reference internal" href="networkx.algorithms.simple_paths.all_simple_paths.html#networkx.algorithms.simple_paths.all_simple_paths" title="networkx.algorithms.simple_paths.all_simple_paths"><code class="xref py py-func docutils literal"><span class="pre">all_simple_paths()</span></code></a></p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">all_shortest_paths()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">shortest_path()</span></code>, <a class="reference internal" href="networkx.algorithms.simple_paths.all_simple_paths.html#networkx.algorithms.simple_paths.all_simple_paths" title="networkx.algorithms.simple_paths.all_simple_paths"><code class="xref py py-func docutils literal notranslate"><span class="pre">all_simple_paths()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
@@ -349,7 +349,7 @@ Network”, Management Science, Vol. 17, No. 11, Theory Series
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -371,7 +371,7 @@ Network”, Management Science, Vol. 17, No. 11, Theory Series
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted.multi_source_dijkstra_path_length &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted.multi_source_dijkstra_path_length &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Shortest Paths" href="../shortest_paths.html"/>
         <link rel="next" title="networkx.algorithms.shortest_paths.weighted.all_pairs_dijkstra_path" href="networkx.algorithms.shortest_paths.weighted.all_pairs_dijkstra_path.html"/>
         <link rel="prev" title="networkx.algorithms.shortest_paths.weighted.multi_source_dijkstra_path" href="networkx.algorithms.shortest_paths.weighted.multi_source_dijkstra_path.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -277,7 +277,7 @@ computed paths may begin from any one of the start nodes.</p>
 </li>
 <li><p class="first"><strong>weight</strong> (<em>string or function</em>) – If this is a string, then edge weights will be accessed via the
 edge attribute with this key (that is, the weight of the edge
-joining <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> will be <code class="docutils literal"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
+joining <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> will be <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
 such edge attribute exists, the weight of the edge is assumed to
 be one.</p>
 <p>If this is a function, the weight of an edge is the value
@@ -298,7 +298,7 @@ return a number.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">length</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">multi_source_dijkstra_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">length</span><span class="p">[</span><span class="n">node</span><span class="p">]))</span>
@@ -313,19 +313,19 @@ return a number.</p>
 <p>Edge weight attributes must be numerical.
 Distances are calculated as sums of weighted edges traversed.</p>
 <p>The weight function can be used to hide edges by returning None.
-So <code class="docutils literal"><span class="pre">weight</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">u,</span> <span class="pre">v,</span> <span class="pre">d:</span> <span class="pre">1</span> <span class="pre">if</span> <span class="pre">d['color']==&quot;red&quot;</span> <span class="pre">else</span> <span class="pre">None</span></code>
+So <code class="docutils literal notranslate"><span class="pre">weight</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">u,</span> <span class="pre">v,</span> <span class="pre">d:</span> <span class="pre">1</span> <span class="pre">if</span> <span class="pre">d['color']==&quot;red&quot;</span> <span class="pre">else</span> <span class="pre">None</span></code>
 will find the shortest red path.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> – If <code class="xref py py-obj docutils literal"><span class="pre">sources</span></code> is empty.</td>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">sources</span></code> is empty.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal"><span class="pre">multi_source_dijkstra()</span></code></p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">multi_source_dijkstra()</span></code></p>
 </div>
 </dd></dl>
 
@@ -354,7 +354,7 @@ will find the shortest red path.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -376,7 +376,7 @@ will find the shortest red path.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

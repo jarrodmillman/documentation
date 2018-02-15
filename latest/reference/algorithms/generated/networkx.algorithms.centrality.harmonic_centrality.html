@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.harmonic_centrality &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.centrality.harmonic_centrality &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Centrality" href="../centrality.html"/>
         <link rel="next" title="networkx.algorithms.centrality.local_reaching_centrality" href="networkx.algorithms.centrality.local_reaching_centrality.html"/>
         <link rel="prev" title="networkx.algorithms.centrality.estrada_index" href="networkx.algorithms.centrality.estrada_index.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -261,11 +261,11 @@
 <dt id="networkx.algorithms.centrality.harmonic_centrality">
 <code class="descname">harmonic_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>nbunch=None</em>, <em>distance=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/harmonic.html#harmonic_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.harmonic_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute harmonic centrality for nodes.</p>
-<p>Harmonic centrality <a class="footnote-reference" href="#id2" id="id1">[1]</a> of a node <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> is the sum of the reciprocal
-of the shortest path distances from all other nodes to <code class="xref py py-obj docutils literal"><span class="pre">u</span></code></p>
-<div class="math">
+<p>Harmonic centrality <a class="footnote-reference" href="#id2" id="id1">[1]</a> of a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> is the sum of the reciprocal
+of the shortest path distances from all other nodes to <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code></p>
+<div class="math notranslate">
 \[C(u) = \sum_{v \neq u} \frac{1}{d(v, u)}\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">d(v,</span> <span class="pre">u)</span></code> is the shortest-path distance between <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">u</span></code>.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">d(v,</span> <span class="pre">u)</span></code> is the shortest-path distance between <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code>.</p>
 <p>Notice that higher values indicate higher centrality.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -276,7 +276,7 @@ of the shortest path distances from all other nodes to <code class="xref py py-o
 <li><strong>nbunch</strong> (<em>container</em>) – Container of nodes. If provided harmonic centrality will be computed
 only over the nodes in nbunch.</li>
 <li><strong>distance</strong> (<em>edge attribute key, optional (default=None)</em>) – Use the specified edge attribute as the edge distance in shortest
-path calculations.  If <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">None</span></code></a>, then each edge will have distance equal to 1.</li>
+path calculations.  If <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, then each edge will have distance equal to 1.</li>
 </ul>
 </td>
 </tr>
@@ -290,7 +290,7 @@ path calculations.  If <a class="reference external" href="https://docs.python.o
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.load_centrality.html#networkx.algorithms.centrality.load_centrality" title="networkx.algorithms.centrality.load_centrality"><code class="xref py py-func docutils literal"><span class="pre">load_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality" title="networkx.algorithms.centrality.eigenvector_centrality"><code class="xref py py-func docutils literal"><span class="pre">eigenvector_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality" title="networkx.algorithms.centrality.degree_centrality"><code class="xref py py-func docutils literal"><span class="pre">degree_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.closeness_centrality.html#networkx.algorithms.centrality.closeness_centrality" title="networkx.algorithms.centrality.closeness_centrality"><code class="xref py py-func docutils literal"><span class="pre">closeness_centrality()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.load_centrality.html#networkx.algorithms.centrality.load_centrality" title="networkx.algorithms.centrality.load_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality" title="networkx.algorithms.centrality.eigenvector_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality" title="networkx.algorithms.centrality.degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">degree_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.closeness_centrality.html#networkx.algorithms.centrality.closeness_centrality" title="networkx.algorithms.centrality.closeness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">closeness_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>If the ‘distance’ keyword is set to an edge attribute key then the
@@ -331,7 +331,7 @@ Internet Mathematics 10.3-4 (2014): 222-262.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -353,7 +353,7 @@ Internet Mathematics 10.3-4 (2014): 222-262.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

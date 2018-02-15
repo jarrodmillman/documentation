@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.1 &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>Announcement: NetworkX 2.1 &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../index.html"/> 
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -197,7 +197,7 @@ new graph algorithms.<ul>
 </ul>
 </li>
 <li>G.name is no longer processed by graph operators. It remains as a
-property mechanism to access <code class="docutils literal"><span class="pre">G.graph['name']</span></code> but the user is in
+property mechanism to access <code class="docutils literal notranslate"><span class="pre">G.graph['name']</span></code> but the user is in
 charge of updating or changing it for copies, subgraphs, unions and
 other graph operations.</li>
 </ul>
@@ -209,8 +209,8 @@ other graph operations.</li>
 <div><ul class="simple">
 <li>Many bug fixes, documentation changes.</li>
 <li>Speed improvements especially for subgraphs.</li>
-<li>Changed input variable names for functions using <code class="docutils literal"><span class="pre">**kwds</span></code>
-to avoid name collisions – especially <code class="docutils literal"><span class="pre">add_node</span></code></li>
+<li>Changed input variable names for functions using <code class="docutils literal notranslate"><span class="pre">**kwds</span></code>
+to avoid name collisions – especially <code class="docutils literal notranslate"><span class="pre">add_node</span></code></li>
 <li>New examples for arrows and spectral embedding of the grid graph.</li>
 </ul>
 </div></blockquote>
@@ -219,12 +219,12 @@ to avoid name collisions – especially <code class="docutils literal"><span cla
 <h2>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2498">#2498</a>]
-In <code class="docutils literal"><span class="pre">geographical_threshold_graph</span></code>, starting in NetworkX 2.1 the parameter
-<code class="docutils literal"><span class="pre">alpha</span></code> is deprecated and replaced with the customizable <code class="docutils literal"><span class="pre">p_dist</span></code>
+In <code class="docutils literal notranslate"><span class="pre">geographical_threshold_graph</span></code>, starting in NetworkX 2.1 the parameter
+<code class="docutils literal notranslate"><span class="pre">alpha</span></code> is deprecated and replaced with the customizable <code class="docutils literal notranslate"><span class="pre">p_dist</span></code>
 function parameter, which defaults to r^-2
-if <code class="docutils literal"><span class="pre">p_dist</span></code> is not supplied. To reproduce networks of earlier NetworkX
-versions, a custom function needs to be defined and passed as the <code class="docutils literal"><span class="pre">p_dist</span></code>
-parameter. For example, if the parameter <code class="docutils literal"><span class="pre">alpha</span></code> = 2 was used in NetworkX 2.0,
+if <code class="docutils literal notranslate"><span class="pre">p_dist</span></code> is not supplied. To reproduce networks of earlier NetworkX
+versions, a custom function needs to be defined and passed as the <code class="docutils literal notranslate"><span class="pre">p_dist</span></code>
+parameter. For example, if the parameter <code class="docutils literal notranslate"><span class="pre">alpha</span></code> = 2 was used in NetworkX 2.0,
 the custom function def custom_dist(r): r**-2 can be passed in versions &gt;=2.1
 as the parameter p_dist = custom_dist to produce an equivalent network.
 Note the change in sign from +2 to -2 in this parameter change.</p>
@@ -235,8 +235,8 @@ subgraphs in directed and undirected graphs. Efficient implementations are
 provided for the special case of k=1 and k=2. The new functionality is
 provided by:</p>
 <blockquote>
-<div><p><code class="xref py py-func docutils literal"><span class="pre">k_edge_components()</span></code></p>
-<p><code class="xref py py-func docutils literal"><span class="pre">k_edge_subgraphs()</span></code></p>
+<div><p><code class="xref py py-func docutils literal notranslate"><span class="pre">k_edge_components()</span></code></p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">k_edge_subgraphs()</span></code></p>
 </div></blockquote>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/issues/2572">#2572</a>]
@@ -245,18 +245,18 @@ Efficient implementations are provided for the special case of k=1 and k=2.
 New functionality is provided by:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="xref py py-func docutils literal"><span class="pre">k_edge_augmentation()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">k_edge_augmentation()</span></code></li>
 </ul>
 </div></blockquote>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2812">#2812</a>]
-Removed <code class="docutils literal"><span class="pre">bellman_ford</span></code>, please use
-<code class="docutils literal"><span class="pre">bellman_ford_predecessor_and_distance</span></code>.</p>
+Removed <code class="docutils literal notranslate"><span class="pre">bellman_ford</span></code>, please use
+<code class="docutils literal notranslate"><span class="pre">bellman_ford_predecessor_and_distance</span></code>.</p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2811">#2811</a>]
-Removed <code class="docutils literal"><span class="pre">to_pandas_dataframe</span></code> and <code class="docutils literal"><span class="pre">from_pandas_dataframe</span></code>, please use
-<code class="docutils literal"><span class="pre">to_pandas_adjacency</span></code>, <code class="docutils literal"><span class="pre">from_pandas_adjacency</span></code>, <code class="docutils literal"><span class="pre">to_pandas_edgelist</span></code>,
-or <code class="docutils literal"><span class="pre">from_pandas_edgelist</span></code>.</p>
+Removed <code class="docutils literal notranslate"><span class="pre">to_pandas_dataframe</span></code> and <code class="docutils literal notranslate"><span class="pre">from_pandas_dataframe</span></code>, please use
+<code class="docutils literal notranslate"><span class="pre">to_pandas_adjacency</span></code>, <code class="docutils literal notranslate"><span class="pre">from_pandas_adjacency</span></code>, <code class="docutils literal notranslate"><span class="pre">to_pandas_edgelist</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">from_pandas_edgelist</span></code>.</p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2766">#2766</a>]
 Add seed keyword argument to random_layout and spring_layout</p>
@@ -279,10 +279,10 @@ Control node-border color in draw_networkx_nodes</p>
 <h2>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>[<a class="reference external" href="https://github.com/networkx/networkx/pull/2819">#2819</a>]
-Deprecate <code class="docutils literal"><span class="pre">connected_component_subgraphs</span></code>, <code class="docutils literal"><span class="pre">biconnected_component_subgraphs</span></code>,
-<code class="docutils literal"><span class="pre">attracting_component_subgraphs</span></code>, <code class="docutils literal"><span class="pre">strongly_connected_component_subgraphs</span></code>,
-<code class="docutils literal"><span class="pre">weakly_connected_component_subgraphs</span></code>.
-Instead use: <code class="docutils literal"><span class="pre">[G.subgraph(c)</span> <span class="pre">for</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">*_components]</span></code></li>
+Deprecate <code class="docutils literal notranslate"><span class="pre">connected_component_subgraphs</span></code>, <code class="docutils literal notranslate"><span class="pre">biconnected_component_subgraphs</span></code>,
+<code class="docutils literal notranslate"><span class="pre">attracting_component_subgraphs</span></code>, <code class="docutils literal notranslate"><span class="pre">strongly_connected_component_subgraphs</span></code>,
+<code class="docutils literal notranslate"><span class="pre">weakly_connected_component_subgraphs</span></code>.
+Instead use: <code class="docutils literal notranslate"><span class="pre">[G.subgraph(c)</span> <span class="pre">for</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">*_components]</span></code></li>
 </ul>
 </div>
 <div class="section" id="contributors-to-this-release">
@@ -345,9 +345,9 @@ Instead use: <code class="docutils literal"><span class="pre">[G.subgraph(c)</sp
 <li>Add directed graphs support for jit_graph reading (#2753)</li>
 <li>Arrows as a plot example. (#2801)</li>
 <li>Fix bug in len(edges) for self-loops (#2816)</li>
-<li>MRG: Remove <code class="docutils literal"><span class="pre">to_pandas_dataframe</span></code> and <code class="docutils literal"><span class="pre">from_pandas_dataframe</span></code> (#2811)</li>
+<li>MRG: Remove <code class="docutils literal notranslate"><span class="pre">to_pandas_dataframe</span></code> and <code class="docutils literal notranslate"><span class="pre">from_pandas_dataframe</span></code> (#2811)</li>
 <li>Fix Pydot tests so works with new version 1.2.4 (#2815)</li>
-<li>MRG: Remove <code class="docutils literal"><span class="pre">bellman_ford</span></code> (#2812)</li>
+<li>MRG: Remove <code class="docutils literal notranslate"><span class="pre">bellman_ford</span></code> (#2812)</li>
 <li>Combine generator modules and tweak docs (#2814)</li>
 <li>Legacy array printing for NumPy 1.14+ (#2810)</li>
 <li>Fix rare structurally forbidden mappings bug. (#2798)</li>
@@ -377,7 +377,7 @@ Instead use: <code class="docutils literal"><span class="pre">[G.subgraph(c)</sp
 <li>Fix typo in write_gml and add test (#2769)</li>
 <li>Fix bug and add checks for non-convergent fiedler_vector (#2681)</li>
 <li>Dictionary comprehensions from #1700 merged conflicts (#2768)</li>
-<li>Fix 2763: Typo <code class="xref py py-obj docutils literal"><span class="pre">furether</span></code> in networkx tutorial documentation (#2764)</li>
+<li>Fix 2763: Typo <code class="xref py py-obj docutils literal notranslate"><span class="pre">furether</span></code> in networkx tutorial documentation (#2764)</li>
 <li>Fix #2726: ensure add_path to add the first node (#2759)</li>
 <li>a minor correction in docs (#2751)</li>
 <li>Speedups for subgraph and copy methods (#2744)</li>
@@ -392,13 +392,13 @@ Instead use: <code class="docutils literal"><span class="pre">[G.subgraph(c)</sp
 <li>Fix for inter_community_edges (#2713)</li>
 <li>Fix shortest_simple_paths. Issue #2427 (#2712)</li>
 <li>Update migration_guide_from_1.x_to_2.0.rst (#2694)</li>
-<li>mention <code class="xref py py-obj docutils literal"><span class="pre">doc.txt</span></code> in <code class="xref py py-obj docutils literal"><span class="pre">requirements/README.md</span></code> (#2699)</li>
+<li>mention <code class="xref py py-obj docutils literal notranslate"><span class="pre">doc.txt</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">requirements/README.md</span></code> (#2699)</li>
 <li>docs(centrality/dispersion): updating contributor email address (#2698)</li>
 <li>Fixes bug #2503 by removing arrow labels (#2696)</li>
 <li>Add example of spectral embedding of the grid graph (#2690)</li>
 <li>Fix create_using of nx.from_pandas_adjacency() (#2693)</li>
 <li>Added function for finding a k-edge-augmentation (#2572)</li>
-<li>rm arg <code class="xref py py-obj docutils literal"><span class="pre">strict</span></code> from function <a class="reference internal" href="../reference/generated/networkx.drawing.nx_pydot.to_pydot.html#networkx.drawing.nx_pydot.to_pydot" title="networkx.drawing.nx_pydot.to_pydot"><code class="xref py py-obj docutils literal"><span class="pre">networkx.drawing.nx_pydot.to_pydot</span></code></a> (#2672)</li>
+<li>rm arg <code class="xref py py-obj docutils literal notranslate"><span class="pre">strict</span></code> from function <a class="reference internal" href="../reference/generated/networkx.drawing.nx_pydot.to_pydot.html#networkx.drawing.nx_pydot.to_pydot" title="networkx.drawing.nx_pydot.to_pydot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">networkx.drawing.nx_pydot.to_pydot</span></code></a> (#2672)</li>
 <li>Fixed problem parsing graphml with nodes in groups (#2644)</li>
 <li>Remove unused imports (#2653)</li>
 <li>Improve subgraph node iteration (#2687)</li>
@@ -423,7 +423,7 @@ Instead use: <code class="docutils literal"><span class="pre">[G.subgraph(c)</sp
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -445,7 +445,7 @@ Instead use: <code class="docutils literal"><span class="pre">[G.subgraph(c)</sp
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

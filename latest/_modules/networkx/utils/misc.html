@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.utils.misc &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.utils.misc &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -230,8 +230,8 @@
 
 
 <div class="viewcode-block" id="is_string_like"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.misc.is_string_like.html#networkx.utils.misc.is_string_like">[docs]</a><span class="k">def</span> <span class="nf">is_string_like</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>  <span class="c1"># from John Hunter, types-free version</span>
-    <span class="sd">&quot;&quot;&quot;Check if obj is string.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">basestring</span><span class="p">)</span></div>
+    <span class="sd">&quot;&quot;&quot;Check if obj is string.&quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">basestring</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="iterable"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.misc.iterable.html#networkx.utils.misc.iterable">[docs]</a><span class="k">def</span> <span class="nf">iterable</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
@@ -241,8 +241,8 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="nb">len</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="kc">True</span></div>
+        <span class="k">return</span> <span class="kc">False</span></div>
+    <span class="k">return</span> <span class="kc">True</span>
 
 
 <div class="viewcode-block" id="flatten"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.misc.flatten.html#networkx.utils.misc.flatten">[docs]</a><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -255,8 +255,8 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">iterable</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_string_like</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">flatten</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+            <span class="n">flatten</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="is_list_of_ints"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.misc.is_list_of_ints.html#networkx.utils.misc.is_list_of_ints">[docs]</a><span class="k">def</span> <span class="nf">is_list_of_ints</span><span class="p">(</span><span class="n">intlist</span><span class="p">):</span>
@@ -265,8 +265,8 @@
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">intlist</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="kc">True</span></div>
+            <span class="k">return</span> <span class="kc">False</span></div>
+    <span class="k">return</span> <span class="kc">True</span>
 
 
 <span class="n">PY2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span>
@@ -287,13 +287,13 @@
             <span class="k">return</span> <span class="n">unicode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;unicode-escape&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
 <div class="viewcode-block" id="make_str"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.misc.make_str.html#networkx.utils.misc.make_str">[docs]</a>    <span class="k">def</span> <span class="nf">make_str</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the string representation of t.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+        <span class="sd">&quot;&quot;&quot;Return the string representation of t.&quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="generate_unique_node"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.misc.generate_unique_node.html#networkx.utils.misc.generate_unique_node">[docs]</a><span class="k">def</span> <span class="nf">generate_unique_node</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; Generate a unique node label.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span></div>
+    <span class="sd">&quot;&quot;&quot; Generate a unique node label.&quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
 
 
 <div class="viewcode-block" id="default_opener"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.misc.default_opener.html#networkx.utils.misc.default_opener">[docs]</a><span class="k">def</span> <span class="nf">default_opener</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
@@ -311,8 +311,8 @@
             <span class="s1">&#39;linux&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;xdg-open&#39;</span><span class="p">],</span>
             <span class="s1">&#39;linux2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;xdg-open&#39;</span><span class="p">],</span>
             <span class="s1">&#39;win32&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;cmd.exe&#39;</span><span class="p">,</span> <span class="s1">&#39;/C&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]}</span>
-    <span class="n">cmd</span> <span class="o">=</span> <span class="n">cmds</span><span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span>
-    <span class="n">call</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span></div>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="n">cmds</span><span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span></div>
+    <span class="n">call</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">dict_to_numpy_array</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -415,8 +415,8 @@
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tee</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
     <span class="n">first</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">cyclic</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">chain</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">first</span><span class="p">,)))</span>
-    <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">chain</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">first</span><span class="p">,)))</span></div>
+    <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="groups"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.misc.groups.html#networkx.utils.misc.groups">[docs]</a><span class="k">def</span> <span class="nf">groups</span><span class="p">(</span><span class="n">many_to_one</span><span class="p">):</span>
@@ -438,8 +438,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">one_to_many</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">many_to_one</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="n">one_to_many</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">one_to_many</span><span class="p">)</span></div>
+        <span class="n">one_to_many</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">one_to_many</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">to_tuple</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -478,8 +478,8 @@
         <span class="k">return</span> <span class="n">random_state</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">random_state</span><span class="p">)</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%r</span><span class="s1"> cannot be used to generate a numpy.random.RandomState instance&#39;</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="n">random_state</span><span class="p">)</span></div>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%r</span><span class="s1"> cannot be used to generate a numpy.random.RandomState instance&#39;</span></div>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="n">random_state</span><span class="p">)</span>
 </pre></div>
 
            </div>
@@ -495,7 +495,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -517,7 +517,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.function &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.classes.function &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -208,8 +208,8 @@
 
 
 <div class="viewcode-block" id="nodes"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.nodes.html#networkx.classes.function.nodes">[docs]</a><span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return an iterator over the graph nodes.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span></div>
+    <span class="sd">&quot;&quot;&quot;Return an iterator over the graph nodes.&quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="edges"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.edges.html#networkx.classes.function.edges">[docs]</a><span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -218,15 +218,15 @@
 <span class="sd">    Return all edges if nbunch is unspecified or nbunch=None.</span>
 
 <span class="sd">    For digraphs, edges=out_edges</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">nbunch</span><span class="p">)</span></div>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">nbunch</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="degree"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.degree.html#networkx.classes.function.degree">[docs]</a><span class="k">def</span> <span class="nf">degree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a degree view of single node or of nbunch of nodes.</span>
-<span class="sd">    If nbunch is ommitted, then return degrees of *all* nodes.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">nbunch</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span></div>
+<span class="sd">    If nbunch is omitted, then return degrees of *all* nodes.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">nbunch</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">neighbors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
@@ -235,13 +235,13 @@
 
 
 <div class="viewcode-block" id="number_of_nodes"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.number_of_nodes.html#networkx.classes.function.number_of_nodes">[docs]</a><span class="k">def</span> <span class="nf">number_of_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the number of nodes in the graph.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span></div>
+    <span class="sd">&quot;&quot;&quot;Return the number of nodes in the graph.&quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="number_of_edges"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.number_of_edges.html#networkx.classes.function.number_of_edges">[docs]</a><span class="k">def</span> <span class="nf">number_of_edges</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the number of edges in the graph. &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span></div>
+    <span class="sd">&quot;&quot;&quot;Return the number of edges in the graph. &quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="density"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.density.html#networkx.classes.function.density">[docs]</a><span class="k">def</span> <span class="nf">density</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -275,8 +275,8 @@
         <span class="k">return</span> <span class="mi">0</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="n">d</span> <span class="o">*=</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="n">d</span></div>
+        <span class="n">d</span> <span class="o">*=</span> <span class="mi">2</span></div>
+    <span class="k">return</span> <span class="n">d</span>
 
 
 <div class="viewcode-block" id="degree_histogram"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.degree_histogram.html#networkx.classes.function.degree_histogram">[docs]</a><span class="k">def</span> <span class="nf">degree_histogram</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -298,13 +298,13 @@
 <span class="sd">    Note: the bins are width one, hence len(list) can be large</span>
 <span class="sd">    (Order(number_of_edges))</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span></div>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span></div>
+    <span class="k">return</span> <span class="p">[</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
 
 
 <div class="viewcode-block" id="is_directed"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.is_directed.html#networkx.classes.function.is_directed">[docs]</a><span class="k">def</span> <span class="nf">is_directed</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Return True if graph is directed.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span></div>
+    <span class="sd">&quot;&quot;&quot; Return True if graph is directed.&quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">frozen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -356,8 +356,8 @@
     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span> <span class="o">=</span> <span class="n">frozen</span>
     <span class="n">G</span><span class="o">.</span><span class="n">remove_edges_from</span> <span class="o">=</span> <span class="n">frozen</span>
     <span class="n">G</span><span class="o">.</span><span class="n">clear</span> <span class="o">=</span> <span class="n">frozen</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">frozen</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span><span class="o">.</span><span class="n">frozen</span> <span class="o">=</span> <span class="kc">True</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="is_frozen"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.is_frozen.html#networkx.classes.function.is_frozen">[docs]</a><span class="k">def</span> <span class="nf">is_frozen</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -374,8 +374,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">frozen</span>
-    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span></div>
+        <span class="k">return</span> <span class="kc">False</span>
 
 
 <div class="viewcode-block" id="add_star"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.add_star.html#networkx.classes.function.add_star">[docs]</a><span class="k">def</span> <span class="nf">add_star</span><span class="p">(</span><span class="n">G_to_add_to</span><span class="p">,</span> <span class="n">nodes_for_star</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">):</span>
@@ -405,8 +405,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">nlist</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">nodes_for_star</span><span class="p">)</span>
     <span class="n">v</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">nlist</span><span class="p">)</span>
-    <span class="n">edges</span> <span class="o">=</span> <span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nlist</span><span class="p">)</span>
-    <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span></div>
+    <span class="n">edges</span> <span class="o">=</span> <span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nlist</span><span class="p">)</span></div>
+    <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="add_path"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.add_path.html#networkx.classes.function.add_path">[docs]</a><span class="k">def</span> <span class="nf">add_path</span><span class="p">(</span><span class="n">G_to_add_to</span><span class="p">,</span> <span class="n">nodes_for_path</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">):</span>
@@ -437,8 +437,8 @@
         <span class="n">first_node</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">nlist</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
         <span class="k">return</span>
-    <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">first_node</span><span class="p">)</span>
-    <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">chain</span><span class="p">((</span><span class="n">first_node</span><span class="p">,),</span> <span class="n">nlist</span><span class="p">)),</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span></div>
+    <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">first_node</span><span class="p">)</span></div>
+    <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">chain</span><span class="p">((</span><span class="n">first_node</span><span class="p">,),</span> <span class="n">nlist</span><span class="p">)),</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="add_cycle"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.add_cycle.html#networkx.classes.function.add_cycle">[docs]</a><span class="k">def</span> <span class="nf">add_cycle</span><span class="p">(</span><span class="n">G_to_add_to</span><span class="p">,</span> <span class="n">nodes_for_cycle</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">):</span>
@@ -463,8 +463,8 @@
 <span class="sd">    &gt;&gt;&gt; G = nx.Graph()   # or DiGraph, MultiGraph, MultiDiGraph, etc</span>
 <span class="sd">    &gt;&gt;&gt; nx.add_cycle(G, [0, 1, 2, 3])</span>
 <span class="sd">    &gt;&gt;&gt; nx.add_cycle(G, [10, 11, 12], weight=7)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">nodes_for_cycle</span><span class="p">,</span> <span class="n">cyclic</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span></div>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">nodes_for_cycle</span><span class="p">,</span> <span class="n">cyclic</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="p">):</span>
@@ -631,7 +631,7 @@
 <span class="sd">    with a chain of subgraph views. Such chains can get quite slow</span>
 <span class="sd">    for lengths near 15. To avoid long chains, try to make your subgraph</span>
 <span class="sd">    based on the original graph (`subgraph.root_graph`). We do not</span>
-<span class="sd">    rule out chains programatically so that odd cases like an</span>
+<span class="sd">    rule out chains programmatically so that odd cases like an</span>
 <span class="sd">    `edge_subgraph` of a `restricted_view` can be created.</span>
 
 <span class="sd">    Examples</span>
@@ -710,8 +710,8 @@
     <span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
     <span class="n">H</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">with_data</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">with_data</span><span class="p">:</span>
-        <span class="n">H</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">H</span></div>
+        <span class="n">H</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">H</span>
 
 
 <div class="viewcode-block" id="info"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.info.html#networkx.classes.function.info">[docs]</a><span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -748,8 +748,8 @@
         <span class="n">info</span> <span class="o">+=</span> <span class="s2">&quot;Node </span><span class="si">% s</span><span class="s2"> has the following properties:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n</span>
         <span class="n">info</span> <span class="o">+=</span> <span class="s2">&quot;Degree: </span><span class="si">%d</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
         <span class="n">info</span> <span class="o">+=</span> <span class="s2">&quot;Neighbors: &quot;</span>
-        <span class="n">info</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nbr</span><span class="p">)</span> <span class="k">for</span> <span class="n">nbr</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">info</span></div>
+        <span class="n">info</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nbr</span><span class="p">)</span> <span class="k">for</span> <span class="n">nbr</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">info</span>
 
 
 <div class="viewcode-block" id="set_node_attributes"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.set_node_attributes.html#networkx.classes.function.set_node_attributes">[docs]</a><span class="k">def</span> <span class="nf">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -832,8 +832,8 @@
         <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                <span class="k">pass</span></div>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span></div>
+                <span class="k">pass</span>
 
 
 <div class="viewcode-block" id="get_node_attributes"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.get_node_attributes.html#networkx.classes.function.get_node_attributes">[docs]</a><span class="k">def</span> <span class="nf">get_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
@@ -857,8 +857,8 @@
 <span class="sd">    &gt;&gt;&gt; color = nx.get_node_attributes(G, &#39;color&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; color[1]</span>
 <span class="sd">    &#39;red&#39;</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">d</span><span class="p">}</span></div>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">d</span><span class="p">}</span>
 
 
 <div class="viewcode-block" id="set_edge_attributes"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.set_edge_attributes.html#networkx.classes.function.set_edge_attributes">[docs]</a><span class="k">def</span> <span class="nf">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -955,8 +955,8 @@
             <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">),</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                    <span class="k">pass</span></div>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span></div>
+                    <span class="k">pass</span>
 
 
 <div class="viewcode-block" id="get_edge_attributes"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.get_edge_attributes.html#networkx.classes.function.get_edge_attributes">[docs]</a><span class="k">def</span> <span class="nf">get_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
@@ -986,8 +986,8 @@
     <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="n">edges</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">edges</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">{</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]}</span></div>
+        <span class="n">edges</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="p">{</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]}</span>
 
 
 <div class="viewcode-block" id="all_neighbors"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.all_neighbors.html#networkx.classes.function.all_neighbors">[docs]</a><span class="k">def</span> <span class="nf">all_neighbors</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
@@ -1011,8 +1011,8 @@
     <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="n">values</span> <span class="o">=</span> <span class="n">chain</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">predecessors</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> <span class="n">graph</span><span class="o">.</span><span class="n">successors</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">values</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">values</span></div>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">node</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">values</span>
 
 
 <div class="viewcode-block" id="non_neighbors"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.non_neighbors.html#networkx.classes.function.non_neighbors">[docs]</a><span class="k">def</span> <span class="nf">non_neighbors</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
@@ -1031,8 +1031,8 @@
 <span class="sd">    non_neighbors : iterator</span>
 <span class="sd">        Iterator of nodes in the graph that are not neighbors of the node.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">nbors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">neighbors</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">))</span> <span class="o">|</span> <span class="p">{</span><span class="n">node</span><span class="p">}</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">nnode</span> <span class="k">for</span> <span class="n">nnode</span> <span class="ow">in</span> <span class="n">graph</span> <span class="k">if</span> <span class="n">nnode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nbors</span><span class="p">)</span></div>
+    <span class="n">nbors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">neighbors</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">))</span> <span class="o">|</span> <span class="p">{</span><span class="n">node</span><span class="p">}</span></div>
+    <span class="k">return</span> <span class="p">(</span><span class="n">nnode</span> <span class="k">for</span> <span class="n">nnode</span> <span class="ow">in</span> <span class="n">graph</span> <span class="k">if</span> <span class="n">nnode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nbors</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="non_edges"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.non_edges.html#networkx.classes.function.non_edges">[docs]</a><span class="k">def</span> <span class="nf">non_edges</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
@@ -1056,8 +1056,8 @@
         <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
         <span class="k">while</span> <span class="n">nodes</span><span class="p">:</span>
             <span class="n">u</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">]):</span>
-                <span class="k">yield</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">]):</span></div>
+                <span class="k">yield</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="common_neighbors"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.common_neighbors.html#networkx.classes.function.common_neighbors">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
@@ -1094,8 +1094,8 @@
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;v is not in the graph.&#39;</span><span class="p">)</span>
 
     <span class="c1"># Return a generator explicitly instead of yielding so that the above</span>
-    <span class="c1"># checks are executed eagerly.</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="ow">and</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span></div>
+    <span class="c1"># checks are executed eagerly.</span></div>
+    <span class="k">return</span> <span class="p">(</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="ow">and</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">is_weighted</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
@@ -1251,8 +1251,8 @@
 <span class="sd">    &gt;&gt;&gt; list(nx.nodes_with_selfloops(G))</span>
 <span class="sd">    [1]</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="p">)</span></div>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="selfloop_edges"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.selfloop_edges.html#networkx.classes.function.selfloop_edges">[docs]</a><span class="k">def</span> <span class="nf">selfloop_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1269,7 +1269,7 @@
 <span class="sd">    keys : bool, optional (default=False)</span>
 <span class="sd">        If True, return edge keys with each edge.</span>
 <span class="sd">    default : value, optional (default=None)</span>
-<span class="sd">        Value used for edges that dont have the requested attribute.</span>
+<span class="sd">        Value used for edges that don&#39;t have the requested attribute.</span>
 <span class="sd">        Only relevant if data is not True or False.</span>
 
 <span class="sd">    Returns</span>
@@ -1330,8 +1330,8 @@
                 <span class="k">return</span> <span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
                         <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
                         <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nbrs</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="p">)</span></div>
+        <span class="k">else</span><span class="p">:</span></div>
+            <span class="k">return</span> <span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="number_of_selfloops"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.number_of_selfloops.html#networkx.classes.function.number_of_selfloops">[docs]</a><span class="k">def</span> <span class="nf">number_of_selfloops</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -1355,8 +1355,8 @@
 <span class="sd">    &gt;&gt;&gt; G.add_edge(1, 2)</span>
 <span class="sd">    &gt;&gt;&gt; nx.number_of_selfloops(G)</span>
 <span class="sd">    1</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">selfloop_edges</span><span class="p">(</span><span class="n">G</span><span class="p">))</span></div>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">selfloop_edges</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
 </pre></div>
 
            </div>
@@ -1372,7 +1372,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -1394,7 +1394,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

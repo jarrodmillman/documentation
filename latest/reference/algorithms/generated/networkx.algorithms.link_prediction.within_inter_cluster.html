@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.link_prediction.within_inter_cluster &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.link_prediction.within_inter_cluster &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Link Prediction" href="../link_prediction.html"/>
         <link rel="next" title="Matching" href="../matching.html"/>
         <link rel="prev" title="networkx.algorithms.link_prediction.ra_index_soundarajan_hopcroft" href="networkx.algorithms.link_prediction.ra_index_soundarajan_hopcroft.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -258,10 +258,10 @@
 <code class="descname">within_inter_cluster</code><span class="sig-paren">(</span><em>G</em>, <em>ebunch=None</em>, <em>delta=0.001</em>, <em>community='community'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/link_prediction.html#within_inter_cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.link_prediction.within_inter_cluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the ratio of within- and inter-cluster common neighbors
 of all node pairs in ebunch.</p>
-<p>For two nodes <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">v</span></code>, if a common neighbor <code class="xref py py-obj docutils literal"><span class="pre">w</span></code> belongs to the
-same community as them, <code class="xref py py-obj docutils literal"><span class="pre">w</span></code> is considered as within-cluster common
-neighbor of <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">v</span></code>. Otherwise, it is considered as
-inter-cluster common neighbor of <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">v</span></code>. The ratio between the
+<p>For two nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>, if a common neighbor <code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code> belongs to the
+same community as them, <code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code> is considered as within-cluster common
+neighbor of <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>. Otherwise, it is considered as
+inter-cluster common neighbor of <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>. The ratio between the
 size of the set of within- and inter-cluster common neighbors is
 defined as the WIC measure. <a class="footnote-reference" href="#id3" id="id1">[1]</a></p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -294,7 +294,7 @@ pair of nodes and p is their WIC measure.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;community&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -352,7 +352,7 @@ Artificial Intelligence (SBIA‘12)
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -374,7 +374,7 @@ Artificial Intelligence (SBIA‘12)
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

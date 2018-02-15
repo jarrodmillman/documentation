@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.structuralholes.constraint &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.structuralholes.constraint &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Structural holes" href="../structuralholes.html"/>
         <link rel="next" title="networkx.algorithms.structuralholes.effective_size" href="networkx.algorithms.structuralholes.effective_size.html"/>
         <link rel="prev" title="Structural holes" href="../structuralholes.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -252,24 +252,24 @@
 <dl class="function">
 <dt id="networkx.algorithms.structuralholes.constraint">
 <code class="descname">constraint</code><span class="sig-paren">(</span><em>G</em>, <em>nodes=None</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/structuralholes.html#constraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.structuralholes.constraint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the constraint on all nodes in the graph <code class="docutils literal"><span class="pre">G</span></code>.</p>
+<dd><p>Returns the constraint on all nodes in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>The <em>constraint</em> is a measure of the extent to which a node <em>v</em> is
 invested in those nodes that are themselves invested in the
-neighbors of <em>v</em>. Formally, the <em>constraint on v</em>, denoted <code class="xref py py-obj docutils literal"><span class="pre">c(v)</span></code>,
+neighbors of <em>v</em>. Formally, the <em>constraint on v</em>, denoted <code class="xref py py-obj docutils literal notranslate"><span class="pre">c(v)</span></code>,
 is defined by</p>
-<div class="math">
+<div class="math notranslate">
 \[c(v) = \sum_{w \in N(v) \setminus \{v\}} \ell(v, w)\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">N(v)</span></code> is the subset of the neighbors of <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> that are either
-predecessors or successors of <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">ell(v,</span> <span class="pre">w)</span></code> is the local
-constraint on <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> with respect to <code class="xref py py-obj docutils literal"><span class="pre">w</span></code> <a class="footnote-reference" href="#id2" id="id1">[1]</a>. For the definition of local
-constraint, see <a class="reference internal" href="networkx.algorithms.structuralholes.local_constraint.html#networkx.algorithms.structuralholes.local_constraint" title="networkx.algorithms.structuralholes.local_constraint"><code class="xref py py-func docutils literal"><span class="pre">local_constraint()</span></code></a>.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">N(v)</span></code> is the subset of the neighbors of <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> that are either
+predecessors or successors of <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">ell(v,</span> <span class="pre">w)</span></code> is the local
+constraint on <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> with respect to <code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code> <a class="footnote-reference" href="#id2" id="id1">[1]</a>. For the definition of local
+constraint, see <a class="reference internal" href="networkx.algorithms.structuralholes.local_constraint.html#networkx.algorithms.structuralholes.local_constraint" title="networkx.algorithms.structuralholes.local_constraint"><code class="xref py py-func docutils literal notranslate"><span class="pre">local_constraint()</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph containing <code class="docutils literal"><span class="pre">v</span></code>. This can be either directed or undirected.</li>
-<li><strong>nodes</strong> (<em>container, optional</em>) – Container of nodes in the graph <code class="docutils literal"><span class="pre">G</span></code> to compute the constraint. If
+<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph containing <code class="docutils literal notranslate"><span class="pre">v</span></code>. This can be either directed or undirected.</li>
+<li><strong>nodes</strong> (<em>container, optional</em>) – Container of nodes in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code> to compute the constraint. If
 None, the constraint of every node is computed.</li>
 <li><strong>weight</strong> (<em>None or string, optional</em>) – If None, all edge weights are considered equal.
 Otherwise holds the name of the edge attribute used as weight.</li>
@@ -286,7 +286,7 @@ Otherwise holds the name of the edge attribute used as weight.</li>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.structuralholes.local_constraint.html#networkx.algorithms.structuralholes.local_constraint" title="networkx.algorithms.structuralholes.local_constraint"><code class="xref py py-func docutils literal"><span class="pre">local_constraint()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.structuralholes.local_constraint.html#networkx.algorithms.structuralholes.local_constraint" title="networkx.algorithms.structuralholes.local_constraint"><code class="xref py py-func docutils literal notranslate"><span class="pre">local_constraint()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
@@ -324,7 +324,7 @@ American Journal of Sociology (110): 349–399.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -346,7 +346,7 @@ American Journal of Sociology (110): 349–399.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

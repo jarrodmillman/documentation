@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.graph6.write_graph6 &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.readwrite.graph6.write_graph6 &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="SparseGraph6" href="../sparsegraph6.html"/>
         <link rel="next" title="networkx.readwrite.sparse6.from_sparse6_bytes" href="networkx.readwrite.sparse6.from_sparse6_bytes.html"/>
         <link rel="prev" title="networkx.readwrite.graph6.to_graph6_bytes" href="networkx.readwrite.graph6.to_graph6_bytes.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -221,15 +221,15 @@
 <li><strong>G</strong> (<em>Graph (undirected)</em>)</li>
 <li><strong>path</strong> (<em>str</em>) – The path naming the file to which to write the graph.</li>
 <li><strong>nodes</strong> (<em>list or iterable</em>) – Nodes are labeled 0…n-1 in the order provided.  If None the ordering
-given by <code class="docutils literal"><span class="pre">G.nodes()</span></code> is used.</li>
+given by <code class="docutils literal notranslate"><span class="pre">G.nodes()</span></code> is used.</li>
 <li><strong>header</strong> (<em>bool</em>) – If True add ‘&gt;&gt;graph6&lt;&lt;’ string to head of data</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXNotImplemented</span></code> – If the graph is directed or is a multigraph.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> – If the graph has at least <code class="docutils literal"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">36</span></code> nodes; the graph6 format
-is only defined for graphs of order less than <code class="docutils literal"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">36</span></code>.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If the graph is directed or is a multigraph.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If the graph has at least <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">36</span></code> nodes; the graph6 format
+is only defined for graphs of order less than <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">36</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -237,7 +237,7 @@ is only defined for graphs of order less than <code class="docutils literal"><sp
 </table>
 <p class="rubric">Examples</p>
 <p>You can write a graph6 file by giving the path to a file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tempfile</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tempfile</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">nx</span><span class="o">.</span><span class="n">write_graph6</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="n">_</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -247,7 +247,7 @@ is only defined for graphs of order less than <code class="docutils literal"><sp
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.readwrite.graph6.from_graph6_bytes.html#networkx.readwrite.graph6.from_graph6_bytes" title="networkx.readwrite.graph6.from_graph6_bytes"><code class="xref py py-func docutils literal"><span class="pre">from_graph6_bytes()</span></code></a>, <a class="reference internal" href="networkx.readwrite.graph6.read_graph6.html#networkx.readwrite.graph6.read_graph6" title="networkx.readwrite.graph6.read_graph6"><code class="xref py py-func docutils literal"><span class="pre">read_graph6()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.readwrite.graph6.from_graph6_bytes.html#networkx.readwrite.graph6.from_graph6_bytes" title="networkx.readwrite.graph6.from_graph6_bytes"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_graph6_bytes()</span></code></a>, <a class="reference internal" href="networkx.readwrite.graph6.read_graph6.html#networkx.readwrite.graph6.read_graph6" title="networkx.readwrite.graph6.read_graph6"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_graph6()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The function writes a newline character after writing the encoding
@@ -289,7 +289,7 @@ self loops.  If self loops are present they are silently ignored.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -311,7 +311,7 @@ self loops.  If self loops are present they are silently ignored.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted.dijkstra_path &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted.dijkstra_path &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Shortest Paths" href="../shortest_paths.html"/>
         <link rel="next" title="networkx.algorithms.shortest_paths.weighted.dijkstra_path_length" href="networkx.algorithms.shortest_paths.weighted.dijkstra_path_length.html"/>
         <link rel="prev" title="networkx.algorithms.shortest_paths.weighted.dijkstra_predecessor_and_distance" href="networkx.algorithms.shortest_paths.weighted.dijkstra_predecessor_and_distance.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -273,7 +273,7 @@ between two nodes in a graph.</p>
 </li>
 <li><p class="first"><strong>weight</strong> (<em>string or function</em>) – If this is a string, then edge weights will be accessed via the
 edge attribute with this key (that is, the weight of the edge
-joining <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> will be <code class="docutils literal"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
+joining <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> will be <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
 such edge attribute exists, the weight of the edge is assumed to
 be one.</p>
 <p>If this is a function, the weight of an edge is the value
@@ -291,13 +291,13 @@ return a number.</p>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXNoPath</span></code> – If no path exists between source and target.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNoPath</span></code> – If no path exists between source and target.</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">dijkstra_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="go">[0, 1, 2, 3, 4]</span>
 </pre></div>
@@ -306,10 +306,10 @@ return a number.</p>
 <p>Edge weight attributes must be numerical.
 Distances are calculated as sums of weighted edges traversed.</p>
 <p>The weight function can be used to hide edges by returning None.
-So <code class="docutils literal"><span class="pre">weight</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">u,</span> <span class="pre">v,</span> <span class="pre">d:</span> <span class="pre">1</span> <span class="pre">if</span> <span class="pre">d['color']==&quot;red&quot;</span> <span class="pre">else</span> <span class="pre">None</span></code>
+So <code class="docutils literal notranslate"><span class="pre">weight</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">u,</span> <span class="pre">v,</span> <span class="pre">d:</span> <span class="pre">1</span> <span class="pre">if</span> <span class="pre">d['color']==&quot;red&quot;</span> <span class="pre">else</span> <span class="pre">None</span></code>
 will find the shortest red path.</p>
 <p>The weight function can be used to include node weights.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">node_u_wt</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;node_weight&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="n">node_v_wt</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;node_weight&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="n">edge_wt</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -320,7 +320,7 @@ will find the shortest red path.</p>
 weights of an edge and add it to the weight of the edge.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.shortest_paths.weighted.bidirectional_dijkstra.html#networkx.algorithms.shortest_paths.weighted.bidirectional_dijkstra" title="networkx.algorithms.shortest_paths.weighted.bidirectional_dijkstra"><code class="xref py py-func docutils literal"><span class="pre">bidirectional_dijkstra()</span></code></a>, <a class="reference internal" href="networkx.algorithms.shortest_paths.weighted.bellman_ford_path.html#networkx.algorithms.shortest_paths.weighted.bellman_ford_path" title="networkx.algorithms.shortest_paths.weighted.bellman_ford_path"><code class="xref py py-func docutils literal"><span class="pre">bellman_ford_path()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.shortest_paths.weighted.bidirectional_dijkstra.html#networkx.algorithms.shortest_paths.weighted.bidirectional_dijkstra" title="networkx.algorithms.shortest_paths.weighted.bidirectional_dijkstra"><code class="xref py py-func docutils literal notranslate"><span class="pre">bidirectional_dijkstra()</span></code></a>, <a class="reference internal" href="networkx.algorithms.shortest_paths.weighted.bellman_ford_path.html#networkx.algorithms.shortest_paths.weighted.bellman_ford_path" title="networkx.algorithms.shortest_paths.weighted.bellman_ford_path"><code class="xref py py-func docutils literal notranslate"><span class="pre">bellman_ford_path()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -349,7 +349,7 @@ weights of an edge and add it to the weight of the edge.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -371,7 +371,7 @@ weights of an edge and add it to the weight of the edge.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

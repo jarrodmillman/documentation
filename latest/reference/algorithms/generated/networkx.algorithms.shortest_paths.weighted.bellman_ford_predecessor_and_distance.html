@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Shortest Paths" href="../shortest_paths.html"/>
         <link rel="next" title="networkx.algorithms.shortest_paths.weighted.negative_edge_cycle" href="networkx.algorithms.shortest_paths.weighted.negative_edge_cycle.html"/>
         <link rel="prev" title="networkx.algorithms.shortest_paths.weighted.single_source_bellman_ford" href="networkx.algorithms.shortest_paths.weighted.single_source_bellman_ford.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -259,8 +259,8 @@
 <code class="descname">bellman_ford_predecessor_and_distance</code><span class="sig-paren">(</span><em>G</em>, <em>source</em>, <em>target=None</em>, <em>cutoff=None</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/shortest_paths/weighted.html#bellman_ford_predecessor_and_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute shortest path lengths and predecessors on shortest paths
 in weighted graphs.</p>
-<p>The algorithm has a running time of <span class="math">\(O(mn)\)</span> where <span class="math">\(n\)</span> is the number of
-nodes and <span class="math">\(m\)</span> is the number of edges.  It is slower than Dijkstra but
+<p>The algorithm has a running time of <span class="math notranslate">\(O(mn)\)</span> where <span class="math notranslate">\(n\)</span> is the number of
+nodes and <span class="math notranslate">\(m\)</span> is the number of edges.  It is slower than Dijkstra but
 can handle negative edge weights.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -274,7 +274,7 @@ graphs and multigraphs.</p>
 </li>
 <li><p class="first"><strong>weight</strong> (<em>string or function</em>) – If this is a string, then edge weights will be accessed via the
 edge attribute with this key (that is, the weight of the edge
-joining <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> will be <code class="docutils literal"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
+joining <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> will be <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
 such edge attribute exists, the weight of the edge is assumed to
 be one.</p>
 <p>If this is a function, the weight of an edge is the value
@@ -295,7 +295,7 @@ only contain information for the nodes along a path to target.</p>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dictionaries</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXUnbounded</span></code> – If the (di)graph contains a negative cost (di)cycle, the
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnbounded</span></code> – If the (di)graph contains a negative cost (di)cycle, the
 algorithm raises an exception to indicate the presence of the
 negative cost (di)cycle.  Note: any negative weight edge in an
 undirected graph is a negative cost cycle.</p>
@@ -304,7 +304,7 @@ undirected graph is a negative cost cycle.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pred</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">bellman_ford_predecessor_and_distance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
@@ -313,14 +313,14 @@ undirected graph is a negative cost cycle.</p>
 <span class="go">[(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pred</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">bellman_ford_predecessor_and_distance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pred</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">bellman_ford_predecessor_and_distance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="go">[(0, [None]), (1, [0])]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="go">[(0, 0), (1, 1)]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nose.tools</span> <span class="k">import</span> <span class="n">assert_raises</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nose.tools</span> <span class="k">import</span> <span class="n">assert_raises</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">assert_raises</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">NetworkXUnbounded</span><span class="p">,</span>                       <span class="n">nx</span><span class="o">.</span><span class="n">bellman_ford_predecessor_and_distance</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -361,7 +361,7 @@ will not be detected.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -383,7 +383,7 @@ will not be detected.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

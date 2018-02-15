@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.community.community_generators.LFR_benchmark_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.community.community_generators.LFR_benchmark_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Communities" href="../community.html"/>
         <link rel="next" title="networkx.algorithms.community.kclique.k_clique_communities" href="networkx.algorithms.community.kclique.k_clique_communities.html"/>
         <link rel="prev" title="networkx.algorithms.community.kernighan_lin.kernighan_lin_bisection" href="networkx.algorithms.community.kernighan_lin.kernighan_lin_bisection.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -262,34 +262,34 @@ algorithms.</p>
 <p>This algorithm proceeds as follows:</p>
 <ol class="arabic">
 <li><p class="first">Find a degree sequence with a power law distribution, and minimum
-value <code class="docutils literal"><span class="pre">min_degree</span></code>, which has approximate average degree
-<code class="docutils literal"><span class="pre">average_degree</span></code>. This is accomplished by either</p>
+value <code class="docutils literal notranslate"><span class="pre">min_degree</span></code>, which has approximate average degree
+<code class="docutils literal notranslate"><span class="pre">average_degree</span></code>. This is accomplished by either</p>
 <ol class="loweralpha simple">
-<li>specifying <code class="docutils literal"><span class="pre">min_degree</span></code> and not <code class="docutils literal"><span class="pre">average_degree</span></code>,</li>
-<li>specifying <code class="docutils literal"><span class="pre">average_degree</span></code> and not <code class="docutils literal"><span class="pre">min_degree</span></code>, in which
+<li>specifying <code class="docutils literal notranslate"><span class="pre">min_degree</span></code> and not <code class="docutils literal notranslate"><span class="pre">average_degree</span></code>,</li>
+<li>specifying <code class="docutils literal notranslate"><span class="pre">average_degree</span></code> and not <code class="docutils literal notranslate"><span class="pre">min_degree</span></code>, in which
 case a suitable minimum degree will be found.</li>
 </ol>
-<p><code class="docutils literal"><span class="pre">max_degree</span></code> can also be specified, otherwise it will be set to
-<code class="docutils literal"><span class="pre">n</span></code>. Each node <em>u</em> will have <code class="xref py py-obj docutils literal"><span class="pre">mu</span> <span class="pre">mathrm{deg}(u)</span></code> edges
-joining it to nodes in communities other than its own and <code class="xref py py-obj docutils literal"><span class="pre">(1</span> <span class="pre">-</span>
+<p><code class="docutils literal notranslate"><span class="pre">max_degree</span></code> can also be specified, otherwise it will be set to
+<code class="docutils literal notranslate"><span class="pre">n</span></code>. Each node <em>u</em> will have <code class="xref py py-obj docutils literal notranslate"><span class="pre">mu</span> <span class="pre">mathrm{deg}(u)</span></code> edges
+joining it to nodes in communities other than its own and <code class="xref py py-obj docutils literal notranslate"><span class="pre">(1</span> <span class="pre">-</span>
 <span class="pre">mu)</span> <span class="pre">mathrm{deg}(u)</span></code> edges joining it to nodes in its own
 community.</p>
 </li>
 <li><p class="first">Generate community sizes according to a power law distribution
-with exponent <code class="docutils literal"><span class="pre">tau2</span></code>. If <code class="docutils literal"><span class="pre">min_community</span></code> and
-<code class="docutils literal"><span class="pre">max_community</span></code> are not specified they will be selected to be
-<code class="docutils literal"><span class="pre">min_degree</span></code> and <code class="docutils literal"><span class="pre">max_degree</span></code>, respectively.  Community sizes
-are generated until the sum of their sizes equals <code class="docutils literal"><span class="pre">n</span></code>.</p>
+with exponent <code class="docutils literal notranslate"><span class="pre">tau2</span></code>. If <code class="docutils literal notranslate"><span class="pre">min_community</span></code> and
+<code class="docutils literal notranslate"><span class="pre">max_community</span></code> are not specified they will be selected to be
+<code class="docutils literal notranslate"><span class="pre">min_degree</span></code> and <code class="docutils literal notranslate"><span class="pre">max_degree</span></code>, respectively.  Community sizes
+are generated until the sum of their sizes equals <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 </li>
 <li><p class="first">Each node will be randomly assigned a community with the
 condition that the community is large enough for the node’s
-intra-community degree, <code class="xref py py-obj docutils literal"><span class="pre">(1</span> <span class="pre">-</span> <span class="pre">mu)</span> <span class="pre">mathrm{deg}(u)</span></code> as
+intra-community degree, <code class="xref py py-obj docutils literal notranslate"><span class="pre">(1</span> <span class="pre">-</span> <span class="pre">mu)</span> <span class="pre">mathrm{deg}(u)</span></code> as
 described in step 2. If a community grows too large, a random node
 will be selected for reassignment to a new community, until all
 nodes have been assigned a community.</p>
 </li>
-<li><p class="first">Each node <em>u</em> then adds <code class="xref py py-obj docutils literal"><span class="pre">(1</span> <span class="pre">-</span> <span class="pre">mu)</span> <span class="pre">mathrm{deg}(u)</span></code>
-intra-community edges and <code class="xref py py-obj docutils literal"><span class="pre">mu</span> <span class="pre">mathrm{deg}(u)</span></code> inter-community
+<li><p class="first">Each node <em>u</em> then adds <code class="xref py py-obj docutils literal notranslate"><span class="pre">(1</span> <span class="pre">-</span> <span class="pre">mu)</span> <span class="pre">mathrm{deg}(u)</span></code>
+intra-community edges and <code class="xref py py-obj docutils literal notranslate"><span class="pre">mu</span> <span class="pre">mathrm{deg}(u)</span></code> inter-community
 edges.</p>
 </li>
 </ol>
@@ -307,18 +307,18 @@ created graph. This value must be strictly greater than one.</li>
 value must be in the interval [0, 1].</li>
 <li><strong>average_degree</strong> (<em>float</em>) – Desired average degree of nodes in the created graph. This value
 must be in the interval [0, <em>n</em>]. Exactly one of this and
-<code class="docutils literal"><span class="pre">min_degree</span></code> must be specified, otherwise a
-<code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> is raised.</li>
+<code class="docutils literal notranslate"><span class="pre">min_degree</span></code> must be specified, otherwise a
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> is raised.</li>
 <li><strong>min_degree</strong> (<em>int</em>) – Minimum degree of nodes in the created graph. This value must be
 in the interval [0, <em>n</em>]. Exactly one of this and
-<code class="docutils literal"><span class="pre">average_degree</span></code> must be specified, otherwise a
-<code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> is raised.</li>
+<code class="docutils literal notranslate"><span class="pre">average_degree</span></code> must be specified, otherwise a
+<code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> is raised.</li>
 <li><strong>max_degree</strong> (<em>int</em>) – Maximum degree of nodes in the created graph. If not specified,
-this is set to <code class="docutils literal"><span class="pre">n</span></code>, the total number of nodes in the graph.</li>
+this is set to <code class="docutils literal notranslate"><span class="pre">n</span></code>, the total number of nodes in the graph.</li>
 <li><strong>min_community</strong> (<em>int</em>) – Minimum size of communities in the graph. If not specified, this
-is set to <code class="docutils literal"><span class="pre">min_degree</span></code>.</li>
+is set to <code class="docutils literal notranslate"><span class="pre">min_degree</span></code>.</li>
 <li><strong>max_community</strong> (<em>int</em>) – Maximum size of communities in the graph. If not specified, this
-is set to <code class="docutils literal"><span class="pre">n</span></code>, the total number of nodes in the graph.</li>
+is set to <code class="docutils literal notranslate"><span class="pre">n</span></code>, the total number of nodes in the graph.</li>
 <li><strong>tol</strong> (<em>float</em>) – Tolerance when comparing floats, specifically when comparing
 average degree values.</li>
 <li><strong>max_iters</strong> (<em>int</em>) – Maximum number of iterations to try to create the community sizes,
@@ -329,7 +329,7 @@ degree distribution, and community affiliations.</li>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p><strong>G</strong> – The LFR benchmark graph generated according to the specified
 parameters.</p>
-<p>Each node in the graph has a node attribute <code class="docutils literal"><span class="pre">'community'</span></code> that
+<p>Each node in the graph has a node attribute <code class="docutils literal notranslate"><span class="pre">'community'</span></code> that
 stores the community (that is, the set of nodes) that includes
 it.</p>
 </p>
@@ -339,24 +339,24 @@ it.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last">
-<li><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If any of the parameters do not meet their upper and lower bounds:</p>
+<li><p class="first"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If any of the parameters do not meet their upper and lower bounds:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">tau1</span></code> and <code class="docutils literal"><span class="pre">tau2</span></code> must be less than or equal to one.</li>
-<li><code class="docutils literal"><span class="pre">mu</span></code> must be in [0, 1].</li>
-<li><code class="docutils literal"><span class="pre">max_degree</span></code> must be in {1, …, <em>n</em>}.</li>
-<li><code class="docutils literal"><span class="pre">min_community</span></code> and <code class="docutils literal"><span class="pre">max_community</span></code> must be in {0, …,
+<li><code class="docutils literal notranslate"><span class="pre">tau1</span></code> and <code class="docutils literal notranslate"><span class="pre">tau2</span></code> must be less than or equal to one.</li>
+<li><code class="docutils literal notranslate"><span class="pre">mu</span></code> must be in [0, 1].</li>
+<li><code class="docutils literal notranslate"><span class="pre">max_degree</span></code> must be in {1, …, <em>n</em>}.</li>
+<li><code class="docutils literal notranslate"><span class="pre">min_community</span></code> and <code class="docutils literal notranslate"><span class="pre">max_community</span></code> must be in {0, …,
 <em>n</em>}.</li>
 </ul>
-<p>If not exactly one of <code class="docutils literal"><span class="pre">average_degree</span></code> and <code class="docutils literal"><span class="pre">min_degree</span></code> is
+<p>If not exactly one of <code class="docutils literal notranslate"><span class="pre">average_degree</span></code> and <code class="docutils literal notranslate"><span class="pre">min_degree</span></code> is
 specified.</p>
-<p>If <code class="docutils literal"><span class="pre">min_degree</span></code> is not specified and a suitable <code class="docutils literal"><span class="pre">min_degree</span></code>
+<p>If <code class="docutils literal notranslate"><span class="pre">min_degree</span></code> is not specified and a suitable <code class="docutils literal notranslate"><span class="pre">min_degree</span></code>
 cannot be found.</p>
 </li>
-<li><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">ExceededMaxIterations</span></code> – If a valid degree sequence cannot be created within
-<code class="docutils literal"><span class="pre">max_iters</span></code> number of iterations.</p>
+<li><p class="first"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ExceededMaxIterations</span></code> – If a valid degree sequence cannot be created within
+<code class="docutils literal notranslate"><span class="pre">max_iters</span></code> number of iterations.</p>
 <p>If a valid set of community sizes cannot be created within
-<code class="docutils literal"><span class="pre">max_iters</span></code> number of iterations.</p>
-<p>If a valid community assignment cannot be created within <code class="docutils literal"><span class="pre">10</span> <span class="pre">*</span>
+<code class="docutils literal notranslate"><span class="pre">max_iters</span></code> number of iterations.</p>
+<p>If a valid community assignment cannot be created within <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">*</span>
 <span class="pre">n</span> <span class="pre">*</span> <span class="pre">max_iters</span></code> number of iterations.</p>
 </li>
 </ul>
@@ -366,7 +366,7 @@ cannot be found.</p>
 </table>
 <p class="rubric">Examples</p>
 <p>Basic usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms.community</span> <span class="k">import</span> <span class="n">LFR_benchmark_graph</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms.community</span> <span class="k">import</span> <span class="n">LFR_benchmark_graph</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">250</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tau1</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tau2</span> <span class="o">=</span> <span class="mf">1.5</span>
@@ -377,7 +377,7 @@ cannot be found.</p>
 </div>
 <p>Continuing the example above, you can get the communities from the
 node attributes of the graph:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">communities</span> <span class="o">=</span> <span class="p">{</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;community&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">communities</span> <span class="o">=</span> <span class="p">{</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;community&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
@@ -440,7 +440,7 @@ Phys. Rev. E 78, 046110 2008</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -462,7 +462,7 @@ Phys. Rev. E 78, 046110 2008</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

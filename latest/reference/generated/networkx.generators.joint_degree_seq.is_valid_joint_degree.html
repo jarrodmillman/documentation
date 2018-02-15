@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.joint_degree_seq.is_valid_joint_degree &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.joint_degree_seq.is_valid_joint_degree &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.joint_degree_seq.joint_degree_graph" href="networkx.generators.joint_degree_seq.joint_degree_graph.html"/>
         <link rel="prev" title="networkx.generators.triads.triad_graph" href="networkx.generators.triads.triad_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -222,27 +222,27 @@
 <dd><p>Checks whether the given joint degree dictionary is realizable
 as a simple graph.</p>
 <p>A <em>joint degree dictionary</em> is a dictionary of dictionaries, in
-which entry <code class="docutils literal"><span class="pre">joint_degrees[k][l]</span></code> is an integer representing the
+which entry <code class="docutils literal notranslate"><span class="pre">joint_degrees[k][l]</span></code> is an integer representing the
 number of edges joining nodes of degree <em>k</em> with nodes of degree
 <em>l</em>. Such a dictionary is realizable as a simple graph if and only
 if the following conditions are satisfied.</p>
 <ul class="simple">
 <li>each entry must be an integer,</li>
 <li>the total number of nodes of degree <em>k</em>, computed by
-<code class="docutils literal"><span class="pre">sum(joint_degrees[k].values())</span> <span class="pre">/</span> <span class="pre">k</span></code>, must be an integer,</li>
+<code class="docutils literal notranslate"><span class="pre">sum(joint_degrees[k].values())</span> <span class="pre">/</span> <span class="pre">k</span></code>, must be an integer,</li>
 <li><dl class="first docutils">
 <dt>the total number of edges joining nodes of degree <em>k</em> with</dt>
 <dd>nodes of degree <em>l</em> cannot exceed the total number of possible edges,</dd>
 </dl>
 </li>
-<li>each diagonal entry <code class="docutils literal"><span class="pre">joint_degrees[k][k]</span></code> must be even (this is
-a convention assumed by the <a class="reference internal" href="networkx.generators.joint_degree_seq.joint_degree_graph.html#networkx.generators.joint_degree_seq.joint_degree_graph" title="networkx.generators.joint_degree_seq.joint_degree_graph"><code class="xref py py-func docutils literal"><span class="pre">joint_degree_graph()</span></code></a> function).</li>
+<li>each diagonal entry <code class="docutils literal notranslate"><span class="pre">joint_degrees[k][k]</span></code> must be even (this is
+a convention assumed by the <a class="reference internal" href="networkx.generators.joint_degree_seq.joint_degree_graph.html#networkx.generators.joint_degree_seq.joint_degree_graph" title="networkx.generators.joint_degree_seq.joint_degree_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">joint_degree_graph()</span></code></a> function).</li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>joint_degrees</strong> (<em>dictionary of dictionary of integers</em>) – A joint degree dictionary in which entry <code class="docutils literal"><span class="pre">joint_degrees[k][l]</span></code>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>joint_degrees</strong> (<em>dictionary of dictionary of integers</em>) – A joint degree dictionary in which entry <code class="docutils literal notranslate"><span class="pre">joint_degrees[k][l]</span></code>
 is the number of edges joining nodes of degree <em>k</em> with nodes of
 degree <em>l</em>.</td>
 </tr>
@@ -296,7 +296,7 @@ Algorithmics, 2012.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -318,7 +318,7 @@ Algorithmics, 2012.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

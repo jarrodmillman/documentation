@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bridges.bridges &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bridges.bridges &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Bridges" href="../bridges.html"/>
         <link rel="next" title="networkx.algorithms.bridges.has_bridges" href="networkx.algorithms.bridges.has_bridges.html"/>
         <link rel="prev" title="Bridges" href="../bridges.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -261,7 +261,7 @@ edge that does not belong to any cycle.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>G</strong> (<em>undirected graph</em>)</li>
-<li><strong>root</strong> (<em>node (optional)</em>) – A node in the graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>. If specified, only the bridges in the
+<li><strong>root</strong> (<em>node (optional)</em>) – A node in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. If specified, only the bridges in the
 connected component containing this node will be returned.</li>
 </ul>
 </td>
@@ -270,14 +270,14 @@ connected component containing this node will be returned.</li>
 causes the number of connected components to increase).</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">NodeNotFound</span></code> – If <code class="xref py py-obj docutils literal"><span class="pre">root</span></code> is not in the graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NodeNotFound</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code> is not in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
 <p>The barbell graph with parameter zero has a single bridge:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">barbell_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">barbell_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">bridges</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
 <span class="go">[(9, 10)]</span>
 </pre></div>
@@ -285,10 +285,10 @@ causes the number of connected components to increase).</p>
 <p class="rubric">Notes</p>
 <p>This is an implementation of the algorithm described in _[1].  An edge is a
 bridge iff it is not contained in any chain. Chains are found using the
-<code class="xref py py-func docutils literal"><span class="pre">networkx.chain_decomposition()</span></code> function.</p>
+<code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.chain_decomposition()</span></code> function.</p>
 <p>Ignoring polylogarithmic factors, the worst-case time complexity is the
-same as the <code class="xref py py-func docutils literal"><span class="pre">networkx.chain_decomposition()</span></code> function,
-<span class="math">\(O(m + n)\)</span>, where <span class="math">\(n\)</span> is the number of nodes in the graph and <span class="math">\(m\)</span> is
+same as the <code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.chain_decomposition()</span></code> function,
+<span class="math notranslate">\(O(m + n)\)</span>, where <span class="math notranslate">\(n\)</span> is the number of nodes in the graph and <span class="math notranslate">\(m\)</span> is
 the number of edges.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id1" rules="none">
@@ -324,7 +324,7 @@ the number of edges.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -346,7 +346,7 @@ the number of edges.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

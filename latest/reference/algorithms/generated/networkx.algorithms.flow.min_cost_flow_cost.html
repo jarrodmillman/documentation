@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.min_cost_flow_cost &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.flow.min_cost_flow_cost &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Flows" href="../flow.html"/>
         <link rel="next" title="networkx.algorithms.flow.min_cost_flow" href="networkx.algorithms.flow.min_cost_flow.html"/>
         <link rel="prev" title="networkx.algorithms.flow.network_simplex" href="networkx.algorithms.flow.network_simplex.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -297,10 +297,10 @@ Default value: ‘weight’.</li>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last">
-<li><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – This exception is raised if the input graph is not directed or
+<li><p class="first"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – This exception is raised if the input graph is not directed or
 not connected.</p>
 </li>
-<li><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXUnfeasible</span></code> – This exception is raised in the following situations:</p>
+<li><p class="first"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnfeasible</span></code> – This exception is raised in the following situations:</p>
 <blockquote>
 <div><ul class="simple">
 <li>The sum of the demands is not zero. Then, there is no
@@ -309,7 +309,7 @@ flow satisfying all demands.</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXUnbounded</span></code> – This exception is raised if the digraph G has a cycle of
+<li><p class="first"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnbounded</span></code> – This exception is raised if the digraph G has a cycle of
 negative cost and infinite capacity. Then, the cost of a flow
 satisfying all demands is unbounded below.</p>
 </li>
@@ -320,7 +320,7 @@ satisfying all demands is unbounded below.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.flow.cost_of_flow.html#networkx.algorithms.flow.cost_of_flow" title="networkx.algorithms.flow.cost_of_flow"><code class="xref py py-func docutils literal"><span class="pre">cost_of_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.max_flow_min_cost.html#networkx.algorithms.flow.max_flow_min_cost" title="networkx.algorithms.flow.max_flow_min_cost"><code class="xref py py-func docutils literal"><span class="pre">max_flow_min_cost()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow.html#networkx.algorithms.flow.min_cost_flow" title="networkx.algorithms.flow.min_cost_flow"><code class="xref py py-func docutils literal"><span class="pre">min_cost_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.network_simplex.html#networkx.algorithms.flow.network_simplex" title="networkx.algorithms.flow.network_simplex"><code class="xref py py-func docutils literal"><span class="pre">network_simplex()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.flow.cost_of_flow.html#networkx.algorithms.flow.cost_of_flow" title="networkx.algorithms.flow.cost_of_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">cost_of_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.max_flow_min_cost.html#networkx.algorithms.flow.max_flow_min_cost" title="networkx.algorithms.flow.max_flow_min_cost"><code class="xref py py-func docutils literal notranslate"><span class="pre">max_flow_min_cost()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow.html#networkx.algorithms.flow.min_cost_flow" title="networkx.algorithms.flow.min_cost_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">min_cost_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.network_simplex.html#networkx.algorithms.flow.network_simplex" title="networkx.algorithms.flow.network_simplex"><code class="xref py py-func docutils literal notranslate"><span class="pre">network_simplex()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This algorithm is not guaranteed to work if edge weights or demands
@@ -330,7 +330,7 @@ multiplying the relevant edge attributes by a convenient
 constant factor (eg 100).</p>
 <p class="rubric">Examples</p>
 <p>A simple example of a min cost flow problem.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">demand</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">demand</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
@@ -370,7 +370,7 @@ constant factor (eg 100).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -392,7 +392,7 @@ constant factor (eg 100).</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.generic.average_shortest_path_length &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.shortest_paths.generic.average_shortest_path_length &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Shortest Paths" href="../shortest_paths.html"/>
         <link rel="next" title="networkx.algorithms.shortest_paths.generic.has_path" href="networkx.algorithms.shortest_paths.generic.has_path.html"/>
         <link rel="prev" title="networkx.algorithms.shortest_paths.generic.shortest_path_length" href="networkx.algorithms.shortest_paths.generic.shortest_path_length.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -259,11 +259,11 @@
 <code class="descname">average_shortest_path_length</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/shortest_paths/generic.html#average_shortest_path_length"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.shortest_paths.generic.average_shortest_path_length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the average shortest path length.</p>
 <p>The average shortest path length is</p>
-<div class="math">
+<div class="math notranslate">
 \[a =\sum_{s,t \in V} \frac{d(s, t)}{n(n-1)}\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">V</span></code> is the set of nodes in <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>,
-<code class="xref py py-obj docutils literal"><span class="pre">d(s,</span> <span class="pre">t)</span></code> is the shortest path from <code class="xref py py-obj docutils literal"><span class="pre">s</span></code> to <code class="xref py py-obj docutils literal"><span class="pre">t</span></code>,
-and <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> is the number of nodes in <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code> is the set of nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>,
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">d(s,</span> <span class="pre">t)</span></code> is the shortest path from <code class="xref py py-obj docutils literal notranslate"><span class="pre">s</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">t</span></code>,
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> is the number of nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -277,8 +277,8 @@ Any edge attribute not present defaults to 1.</li>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXPointlessConcept</span></code> – If <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> is the null graph (that is, the graph on zero nodes).</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> is not connected (or not weakly connected, in the case
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXPointlessConcept</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is the null graph (that is, the graph on zero nodes).</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not connected (or not weakly connected, in the case
 of a directed graph).</li>
 </ul>
 </td>
@@ -286,14 +286,14 @@ of a directed graph).</li>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="go">2.0</span>
 </pre></div>
 </div>
 <p>For disconnected graphs, you can compute the average shortest path
 length for each component</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">connected_component_subgraphs</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
 <span class="go">1.0</span>
@@ -327,7 +327,7 @@ length for each component</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -349,7 +349,7 @@ length for each component</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

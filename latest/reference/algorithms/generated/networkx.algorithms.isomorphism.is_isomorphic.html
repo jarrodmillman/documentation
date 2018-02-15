@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.isomorphism.is_isomorphic &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.isomorphism.is_isomorphic &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Isomorphism" href="../isomorphism.html"/>
         <link rel="next" title="networkx.algorithms.isomorphism.could_be_isomorphic" href="networkx.algorithms.isomorphism.could_be_isomorphic.html"/>
         <link rel="prev" title="Isomorphism" href="../isomorphism.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -291,11 +291,11 @@ of the edges under consideration.</p>
 <p class="rubric">Notes</p>
 <p>Uses the vf2 algorithm <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx.algorithms.isomorphism</span> <span class="k">as</span> <span class="nn">iso</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx.algorithms.isomorphism</span> <span class="k">as</span> <span class="nn">iso</span>
 </pre></div>
 </div>
 <p>For digraphs G1 and G2, using ‘weight’ edge attribute (default: 1)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G2</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">add_path</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">add_path</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -307,7 +307,7 @@ of the edges under consideration.</p>
 </pre></div>
 </div>
 <p>For multidigraphs G1 and G2, using ‘fill’ node attribute (default: ‘’)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G2</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G2</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
@@ -319,7 +319,7 @@ of the edges under consideration.</p>
 </pre></div>
 </div>
 <p>For multidigraphs G1 and G2, using ‘weight’ edge attribute (default: 7)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 <span class="go">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G2</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
 <span class="go">1</span>
@@ -331,7 +331,7 @@ of the edges under consideration.</p>
 <p>For multigraphs G1 and G2, using ‘weight’ and ‘linewidth’ edge attributes
 with default values 7 and 2.5. Also using ‘fill’ node attribute with
 default value ‘red’.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">em</span> <span class="o">=</span> <span class="n">iso</span><span class="o">.</span><span class="n">numerical_multiedge_match</span><span class="p">([</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;linewidth&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">em</span> <span class="o">=</span> <span class="n">iso</span><span class="o">.</span><span class="n">numerical_multiedge_match</span><span class="p">([</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;linewidth&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nm</span> <span class="o">=</span> <span class="n">iso</span><span class="o">.</span><span class="n">categorical_node_match</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">is_isomorphic</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">edge_match</span><span class="o">=</span><span class="n">em</span><span class="p">,</span> <span class="n">node_match</span><span class="o">=</span><span class="n">nm</span><span class="p">)</span>
 <span class="go">True</span>
@@ -339,7 +339,7 @@ default value ‘red’.</p>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.isomorphism.numerical_node_match.html#networkx.algorithms.isomorphism.numerical_node_match" title="networkx.algorithms.isomorphism.numerical_node_match"><code class="xref py py-func docutils literal"><span class="pre">numerical_node_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.numerical_edge_match.html#networkx.algorithms.isomorphism.numerical_edge_match" title="networkx.algorithms.isomorphism.numerical_edge_match"><code class="xref py py-func docutils literal"><span class="pre">numerical_edge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.numerical_multiedge_match.html#networkx.algorithms.isomorphism.numerical_multiedge_match" title="networkx.algorithms.isomorphism.numerical_multiedge_match"><code class="xref py py-func docutils literal"><span class="pre">numerical_multiedge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_node_match.html#networkx.algorithms.isomorphism.categorical_node_match" title="networkx.algorithms.isomorphism.categorical_node_match"><code class="xref py py-func docutils literal"><span class="pre">categorical_node_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_edge_match.html#networkx.algorithms.isomorphism.categorical_edge_match" title="networkx.algorithms.isomorphism.categorical_edge_match"><code class="xref py py-func docutils literal"><span class="pre">categorical_edge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_multiedge_match.html#networkx.algorithms.isomorphism.categorical_multiedge_match" title="networkx.algorithms.isomorphism.categorical_multiedge_match"><code class="xref py py-func docutils literal"><span class="pre">categorical_multiedge_match()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.isomorphism.numerical_node_match.html#networkx.algorithms.isomorphism.numerical_node_match" title="networkx.algorithms.isomorphism.numerical_node_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_node_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.numerical_edge_match.html#networkx.algorithms.isomorphism.numerical_edge_match" title="networkx.algorithms.isomorphism.numerical_edge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_edge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.numerical_multiedge_match.html#networkx.algorithms.isomorphism.numerical_multiedge_match" title="networkx.algorithms.isomorphism.numerical_multiedge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_multiedge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_node_match.html#networkx.algorithms.isomorphism.categorical_node_match" title="networkx.algorithms.isomorphism.categorical_node_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_node_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_edge_match.html#networkx.algorithms.isomorphism.categorical_edge_match" title="networkx.algorithms.isomorphism.categorical_edge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_edge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_multiedge_match.html#networkx.algorithms.isomorphism.categorical_multiedge_match" title="networkx.algorithms.isomorphism.categorical_multiedge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_multiedge_match()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
@@ -379,7 +379,7 @@ Pattern Recognition, Cuen, pp. 149-159, 2001.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -401,7 +401,7 @@ Pattern Recognition, Cuen, pp. 149-159, 2001.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

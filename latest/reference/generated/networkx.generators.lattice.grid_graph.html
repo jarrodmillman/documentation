@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.lattice.grid_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.lattice.grid_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.lattice.hexagonal_lattice_graph" href="networkx.generators.lattice.hexagonal_lattice_graph.html"/>
         <link rel="prev" title="networkx.generators.lattice.grid_2d_graph" href="networkx.generators.lattice.grid_2d_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -223,7 +223,7 @@
 <dt id="networkx.generators.lattice.grid_graph">
 <code class="descname">grid_graph</code><span class="sig-paren">(</span><em>dim</em>, <em>periodic=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/lattice.html#grid_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.lattice.grid_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the <em>n</em>-dimensional grid graph.</p>
-<p>The dimension <em>n</em> is the length of the list <code class="xref py py-obj docutils literal"><span class="pre">dim</span></code> and the size in
+<p>The dimension <em>n</em> is the length of the list <code class="xref py py-obj docutils literal notranslate"><span class="pre">dim</span></code> and the size in
 each dimension is the value of the corresponding list element.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -233,8 +233,8 @@ each dimension is the value of the corresponding list element.</p>
 <li><strong>dim</strong> (<em>list or tuple of numbers or iterables of nodes</em>) – ‘dim’ is a tuple or list with, for each dimension, either a number
 that is the size of that dimension or an iterable of nodes for
 that dimension. The dimension of the grid_graph is the length
-of <code class="xref py py-obj docutils literal"><span class="pre">dim</span></code>.</li>
-<li><strong>periodic</strong> (<em>bool</em>) – If <code class="xref py py-obj docutils literal"><span class="pre">periodic</span> <span class="pre">is</span> <span class="pre">True</span></code> the nodes on the grid boundaries are joined
+of <code class="xref py py-obj docutils literal notranslate"><span class="pre">dim</span></code>.</li>
+<li><strong>periodic</strong> (<em>bool</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">periodic</span> <span class="pre">is</span> <span class="pre">True</span></code> the nodes on the grid boundaries are joined
 to the corresponding nodes on the opposite grid boundaries.</li>
 </ul>
 </td>
@@ -249,7 +249,7 @@ to the corresponding nodes on the opposite grid boundaries.</li>
 </table>
 <p class="rubric">Examples</p>
 <p>To produce a 2 by 3 by 4 grid graph, a graph on 24 nodes:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx</span> <span class="k">import</span> <span class="n">grid_graph</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx</span> <span class="k">import</span> <span class="n">grid_graph</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">grid_graph</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="go">24</span>
@@ -285,7 +285,7 @@ to the corresponding nodes on the opposite grid boundaries.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -307,7 +307,7 @@ to the corresponding nodes on the opposite grid boundaries.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.graphml &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.readwrite.graphml &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -415,8 +415,8 @@
         <span class="n">new_bytes</span> <span class="o">=</span> <span class="n">old_bytes</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;&lt;graphml&gt;&#39;</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
         <span class="n">glist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">new_bytes</span><span class="p">))</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">glist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;file not successfully read as graphml&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">glist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;file not successfully read as graphml&#39;</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">glist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">parse_graphml</span><span class="p">(</span><span class="n">graphml_string</span><span class="p">,</span> <span class="n">node_type</span><span class="o">=</span><span class="nb">str</span><span class="p">):</span>
@@ -720,7 +720,7 @@
 <span class="k">class</span> <span class="nc">IncrementalElement</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Wrapper for _IncrementalWriter providing an Element like interface.</span>
 
-<span class="sd">    This wrapper does not intend to be a complete implemenation but rather to</span>
+<span class="sd">    This wrapper does not intend to be a complete implementation but rather to</span>
 <span class="sd">    deal with those calls used in GraphMLWriter.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -1022,7 +1022,7 @@
                 <span class="k">if</span> <span class="n">node_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">data</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">node_label</span><span class="o">.</span><span class="n">text</span>
 
-                <span class="c1"># check all the diffrent types of edges avaivable in yEd.</span>
+                <span class="c1"># check all the different types of edges avaivable in yEd.</span>
                 <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;PolyLineEdge&#39;</span><span class="p">,</span> <span class="s1">&#39;SplineEdge&#39;</span><span class="p">,</span> <span class="s1">&#39;QuadCurveEdge&#39;</span><span class="p">,</span>
                           <span class="s1">&#39;BezierEdge&#39;</span><span class="p">,</span> <span class="s1">&#39;ArcEdge&#39;</span><span class="p">]:</span>
                     <span class="n">pref</span> <span class="o">=</span> <span class="s2">&quot;{</span><span class="si">%s</span><span class="s2">}</span><span class="si">%s</span><span class="s2">/{</span><span class="si">%s</span><span class="s2">}&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NS_Y</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">NS_Y</span><span class="p">)</span>
@@ -1093,7 +1093,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -1115,7 +1115,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

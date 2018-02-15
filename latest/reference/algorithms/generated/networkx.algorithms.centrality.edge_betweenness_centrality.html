@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.edge_betweenness_centrality &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.centrality.edge_betweenness_centrality &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Centrality" href="../centrality.html"/>
         <link rel="next" title="networkx.algorithms.centrality.betweenness_centrality_subset" href="networkx.algorithms.centrality.betweenness_centrality_subset.html"/>
         <link rel="prev" title="networkx.algorithms.centrality.betweenness_centrality" href="networkx.algorithms.centrality.betweenness_centrality.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -261,13 +261,13 @@
 <dt id="networkx.algorithms.centrality.edge_betweenness_centrality">
 <code class="descname">edge_betweenness_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>k=None</em>, <em>normalized=True</em>, <em>weight=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/betweenness.html#edge_betweenness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.edge_betweenness_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute betweenness centrality for edges.</p>
-<p>Betweenness centrality of an edge <span class="math">\(e\)</span> is the sum of the
-fraction of all-pairs shortest paths that pass through <span class="math">\(e\)</span></p>
-<div class="math">
+<p>Betweenness centrality of an edge <span class="math notranslate">\(e\)</span> is the sum of the
+fraction of all-pairs shortest paths that pass through <span class="math notranslate">\(e\)</span></p>
+<div class="math notranslate">
 \[c_B(e) =\sum_{s,t \in V} \frac{\sigma(s, t|e)}{\sigma(s, t)}\]</div>
-<p>where <span class="math">\(V\)</span> is the set of nodes, <span class="math">\(\sigma(s, t)\)</span> is the number of
-shortest <span class="math">\((s, t)\)</span>-paths, and <span class="math">\(\sigma(s, t|e)\)</span> is the number of
-those paths passing through edge <span class="math">\(e\)</span> <a class="footnote-reference" href="#id4" id="id1">[2]</a>.</p>
+<p>where <span class="math notranslate">\(V\)</span> is the set of nodes, <span class="math notranslate">\(\sigma(s, t)\)</span> is the number of
+shortest <span class="math notranslate">\((s, t)\)</span>-paths, and <span class="math notranslate">\(\sigma(s, t|e)\)</span> is the number of
+those paths passing through edge <span class="math notranslate">\(e\)</span> <a class="footnote-reference" href="#id4" id="id1">[2]</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -277,8 +277,8 @@ those paths passing through edge <span class="math">\(e\)</span> <a class="footn
 <li><strong>k</strong> (<em>int, optional (default=None)</em>) – If k is not None use k node samples to estimate betweenness.
 The value of k &lt;= n where n is the number of nodes in the graph.
 Higher values give better approximation.</li>
-<li><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math">\(2/(n(n-1))\)</span>
-for graphs, and <span class="math">\(1/(n(n-1))\)</span> for directed graphs where <span class="math">\(n\)</span>
+<li><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate">\(2/(n(n-1))\)</span>
+for graphs, and <span class="math notranslate">\(1/(n(n-1))\)</span> for directed graphs where <span class="math notranslate">\(n\)</span>
 is the number of nodes in G.</li>
 <li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
 Otherwise holds the name of the edge attribute used as weight.</li>
@@ -295,7 +295,7 @@ Otherwise holds the name of the edge attribute used as weight.</li>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal"><span class="pre">betweenness_centrality()</span></code></a>, <code class="xref py py-func docutils literal"><span class="pre">edge_load()</span></code></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">edge_load()</span></code></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The algorithm is from Ulrik Brandes <a class="footnote-reference" href="#id3" id="id2">[1]</a>.</p>
@@ -347,7 +347,7 @@ Social Networks 30(2):136-145, 2008.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -369,7 +369,7 @@ Social Networks 30(2):136-145, 2008.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

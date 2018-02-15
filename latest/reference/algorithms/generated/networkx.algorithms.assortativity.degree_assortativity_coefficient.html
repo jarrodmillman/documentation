@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.assortativity.degree_assortativity_coefficient &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.assortativity.degree_assortativity_coefficient &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Assortativity" href="../assortativity.html"/>
         <link rel="next" title="networkx.algorithms.assortativity.attribute_assortativity_coefficient" href="networkx.algorithms.assortativity.attribute_assortativity_coefficient.html"/>
         <link rel="prev" title="Assortativity" href="../assortativity.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -281,7 +281,7 @@ The default is all nodes.</li>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">degree_assortativity_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%3.1f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">r</span><span class="p">)</span>
 <span class="go">-0.5</span>
@@ -289,7 +289,7 @@ The default is all nodes.</li>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.assortativity.attribute_assortativity_coefficient.html#networkx.algorithms.assortativity.attribute_assortativity_coefficient" title="networkx.algorithms.assortativity.attribute_assortativity_coefficient"><code class="xref py py-func docutils literal"><span class="pre">attribute_assortativity_coefficient()</span></code></a>, <a class="reference internal" href="networkx.algorithms.assortativity.numeric_assortativity_coefficient.html#networkx.algorithms.assortativity.numeric_assortativity_coefficient" title="networkx.algorithms.assortativity.numeric_assortativity_coefficient"><code class="xref py py-func docutils literal"><span class="pre">numeric_assortativity_coefficient()</span></code></a>, <code class="xref py py-func docutils literal"><span class="pre">neighbor_connectivity()</span></code>, <a class="reference internal" href="networkx.algorithms.assortativity.degree_mixing_dict.html#networkx.algorithms.assortativity.degree_mixing_dict" title="networkx.algorithms.assortativity.degree_mixing_dict"><code class="xref py py-func docutils literal"><span class="pre">degree_mixing_dict()</span></code></a>, <a class="reference internal" href="networkx.algorithms.assortativity.degree_mixing_matrix.html#networkx.algorithms.assortativity.degree_mixing_matrix" title="networkx.algorithms.assortativity.degree_mixing_matrix"><code class="xref py py-func docutils literal"><span class="pre">degree_mixing_matrix()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.assortativity.attribute_assortativity_coefficient.html#networkx.algorithms.assortativity.attribute_assortativity_coefficient" title="networkx.algorithms.assortativity.attribute_assortativity_coefficient"><code class="xref py py-func docutils literal notranslate"><span class="pre">attribute_assortativity_coefficient()</span></code></a>, <a class="reference internal" href="networkx.algorithms.assortativity.numeric_assortativity_coefficient.html#networkx.algorithms.assortativity.numeric_assortativity_coefficient" title="networkx.algorithms.assortativity.numeric_assortativity_coefficient"><code class="xref py py-func docutils literal notranslate"><span class="pre">numeric_assortativity_coefficient()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">neighbor_connectivity()</span></code>, <a class="reference internal" href="networkx.algorithms.assortativity.degree_mixing_dict.html#networkx.algorithms.assortativity.degree_mixing_dict" title="networkx.algorithms.assortativity.degree_mixing_dict"><code class="xref py py-func docutils literal notranslate"><span class="pre">degree_mixing_dict()</span></code></a>, <a class="reference internal" href="networkx.algorithms.assortativity.degree_mixing_matrix.html#networkx.algorithms.assortativity.degree_mixing_matrix" title="networkx.algorithms.assortativity.degree_mixing_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">degree_mixing_matrix()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This computes Eq. (21) in Ref. <a class="footnote-reference" href="#id2" id="id1">[1]</a> , where e is the joint
@@ -338,7 +338,7 @@ Edge direction and the structure of networks, PNAS 107, 10815-20 (2010).</td></t
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -360,7 +360,7 @@ Edge direction and the structure of networks, PNAS 107, 10815-20 (2010).</td></t
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

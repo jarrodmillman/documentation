@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.coding.to_nested_tuple &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.tree.coding.to_nested_tuple &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Tree" href="../tree.html"/>
         <link rel="next" title="networkx.algorithms.tree.coding.from_prufer_sequence" href="networkx.algorithms.tree.coding.from_prufer_sequence.html"/>
         <link rel="prev" title="networkx.algorithms.tree.coding.from_nested_tuple" href="networkx.algorithms.tree.coding.from_nested_tuple.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -258,8 +258,8 @@
 <dd><p>Returns a nested tuple representation of the given tree.</p>
 <p>The nested tuple representation of a tree is defined
 recursively. The tree with one node and no edges is represented by
-the empty tuple, <code class="docutils literal"><span class="pre">()</span></code>. A tree with <code class="docutils literal"><span class="pre">k</span></code> subtrees is represented
-by a tuple of length <code class="docutils literal"><span class="pre">k</span></code> in which each element is the nested tuple
+the empty tuple, <code class="docutils literal notranslate"><span class="pre">()</span></code>. A tree with <code class="docutils literal notranslate"><span class="pre">k</span></code> subtrees is represented
+by a tuple of length <code class="docutils literal notranslate"><span class="pre">k</span></code> in which each element is the nested tuple
 representation of a subtree.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -267,8 +267,8 @@ representation of a subtree.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>T</strong> (<em>NetworkX graph</em>) – An undirected graph object representing a tree.</li>
-<li><strong>root</strong> (<em>node</em>) – The node in <code class="docutils literal"><span class="pre">T</span></code> to interpret as the root of the tree.</li>
-<li><strong>canonical_form</strong> (<em>bool</em>) – If <code class="docutils literal"><span class="pre">True</span></code>, each tuple is sorted so that the function returns
+<li><strong>root</strong> (<em>node</em>) – The node in <code class="docutils literal notranslate"><span class="pre">T</span></code> to interpret as the root of the tree.</li>
+<li><strong>canonical_form</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, each tuple is sorted so that the function returns
 a canonical form for rooted trees. This means “lighter” subtrees
 will appear as nested tuples before “heavier” subtrees. In this
 way, each isomorphic rooted tree has the same nested tuple
@@ -279,21 +279,21 @@ representation.</li>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A nested tuple representation of the tree.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#tuple" title="(in Python v2.7)">tuple</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>This function is <em>not</em> the inverse of <a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal"><span class="pre">from_nested_tuple()</span></code></a>; the
+<p>This function is <em>not</em> the inverse of <a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_nested_tuple()</span></code></a>; the
 only guarantee is that the rooted trees are isomorphic.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal"><span class="pre">from_nested_tuple()</span></code></a>, <a class="reference internal" href="networkx.algorithms.tree.coding.to_prufer_sequence.html#networkx.algorithms.tree.coding.to_prufer_sequence" title="networkx.algorithms.tree.coding.to_prufer_sequence"><code class="xref py py-func docutils literal"><span class="pre">to_prufer_sequence()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_nested_tuple()</span></code></a>, <a class="reference internal" href="networkx.algorithms.tree.coding.to_prufer_sequence.html#networkx.algorithms.tree.coding.to_prufer_sequence" title="networkx.algorithms.tree.coding.to_prufer_sequence"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_prufer_sequence()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <p>The tree need not be a balanced binary tree:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)])</span>
@@ -302,14 +302,14 @@ only guarantee is that the rooted trees are isomorphic.</p>
 <span class="go">(((), ()), (), ((), ()))</span>
 </pre></div>
 </div>
-<p>Continuing the above example, if <code class="docutils literal"><span class="pre">canonical_form</span></code> is <code class="docutils literal"><span class="pre">True</span></code>, the
+<p>Continuing the above example, if <code class="docutils literal notranslate"><span class="pre">canonical_form</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the
 nested tuples will be sorted:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">to_nested_tuple</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">canonical_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">to_nested_tuple</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">canonical_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">((), ((), ()), ((), ()))</span>
 </pre></div>
 </div>
 <p>Even the path graph can be interpreted as a tree:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">to_nested_tuple</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
 <span class="go">((((),),),)</span>
@@ -342,7 +342,7 @@ nested tuples will be sorted:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -364,7 +364,7 @@ nested tuples will be sorted:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

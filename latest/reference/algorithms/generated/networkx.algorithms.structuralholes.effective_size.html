@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.structuralholes.effective_size &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.structuralholes.effective_size &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Structural holes" href="../structuralholes.html"/>
         <link rel="next" title="networkx.algorithms.structuralholes.local_constraint" href="networkx.algorithms.structuralholes.local_constraint.html"/>
         <link rel="prev" title="networkx.algorithms.structuralholes.constraint" href="networkx.algorithms.structuralholes.constraint.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -252,37 +252,37 @@
 <dl class="function">
 <dt id="networkx.algorithms.structuralholes.effective_size">
 <code class="descname">effective_size</code><span class="sig-paren">(</span><em>G</em>, <em>nodes=None</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/structuralholes.html#effective_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.structuralholes.effective_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the effective size of all nodes in the graph <code class="docutils literal"><span class="pre">G</span></code>.</p>
+<dd><p>Returns the effective size of all nodes in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>The <em>effective size</em> of a node’s ego network is based on the concept
 of redundancy. A person’s ego network has redundancy to the extent
 that her contacts are connected to each other as well. The
 nonredundant part of a person’s relationships it’s the effective
 size of her ego network <a class="footnote-reference" href="#id5" id="id1">[1]</a>.  Formally, the effective size of a
-node <span class="math">\(u\)</span>, denoted <span class="math">\(e(u)\)</span>, is defined by</p>
-<div class="math">
+node <span class="math notranslate">\(u\)</span>, denoted <span class="math notranslate">\(e(u)\)</span>, is defined by</p>
+<div class="math notranslate">
 \[e(u) = \sum_{v \in N(u) \setminus \{u\}}
 \left(1 - \sum_{w \in N(v)} p_{uw} m_{vw}\right)\]</div>
-<p>where <span class="math">\(N(u)\)</span> is the set of neighbors of <span class="math">\(u\)</span> and <span class="math">\(p_{uw}\)</span> is the
+<p>where <span class="math notranslate">\(N(u)\)</span> is the set of neighbors of <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(p_{uw}\)</span> is the
 normalized mutual weight of the (directed or undirected) edges
-joining <span class="math">\(u\)</span> and <span class="math">\(v\)</span>, for each vertex <span class="math">\(u\)</span> and <span class="math">\(v\)</span> <a class="footnote-reference" href="#id5" id="id2">[1]</a>. And <span class="math">\(m_{vw}\)</span>
-is the mutual weight of <span class="math">\(v\)</span> and <span class="math">\(w\)</span> divided by <span class="math">\(v\)</span> highest mutual
-weight with any of its neighbors. The <em>mutual weight</em> of <span class="math">\(u\)</span> and <span class="math">\(v\)</span>
+joining <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span>, for each vertex <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span> <a class="footnote-reference" href="#id5" id="id2">[1]</a>. And <span class="math notranslate">\(m_{vw}\)</span>
+is the mutual weight of <span class="math notranslate">\(v\)</span> and <span class="math notranslate">\(w\)</span> divided by <span class="math notranslate">\(v\)</span> highest mutual
+weight with any of its neighbors. The <em>mutual weight</em> of <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span>
 is the sum of the weights of edges joining them (edge weights are
 assumed to be one if the graph is unweighted).</p>
 <p>For the case of unweighted and undirected graphs, Borgatti proposed
 a simplified formula to compute effective size <a class="footnote-reference" href="#id6" id="id3">[2]</a></p>
-<div class="math">
+<div class="math notranslate">
 \[e(u) = n - \frac{2t}{n}\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">t</span></code> is the number of ties in the ego network (not including
-ties to ego) and <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> is the number of nodes (excluding ego).</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">t</span></code> is the number of ties in the ego network (not including
+ties to ego) and <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> is the number of nodes (excluding ego).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph containing <code class="docutils literal"><span class="pre">v</span></code>. Directed graphs are treated like
-undirected graphs when computing neighbors of <code class="docutils literal"><span class="pre">v</span></code>.</li>
-<li><strong>nodes</strong> (<em>container, optional</em>) – Container of nodes in the graph <code class="docutils literal"><span class="pre">G</span></code> to compute the effective size.
+<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph containing <code class="docutils literal notranslate"><span class="pre">v</span></code>. Directed graphs are treated like
+undirected graphs when computing neighbors of <code class="docutils literal notranslate"><span class="pre">v</span></code>.</li>
+<li><strong>nodes</strong> (<em>container, optional</em>) – Container of nodes in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code> to compute the effective size.
 If None, the effective size of every node is computed.</li>
 <li><strong>weight</strong> (<em>None or string, optional</em>) – If None, all edge weights are considered equal.
 Otherwise holds the name of the edge attribute used as weight.</li>
@@ -298,18 +298,18 @@ Otherwise holds the name of the edge attribute used as weight.</li>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Burt also defined the related concept of <em>efficency</em> of a node’s ego
+<p>Burt also defined the related concept of <em>efficiency</em> of a node’s ego
 network, which is its effective size divided by the degree of that
-node <a class="footnote-reference" href="#id5" id="id4">[1]</a>. So you can easily compute efficencty:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+node <a class="footnote-reference" href="#id5" id="id4">[1]</a>. So you can easily compute efficiency:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">esize</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">effective_size</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">efficency</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">esize</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">efficiency</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">esize</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.structuralholes.constraint.html#networkx.algorithms.structuralholes.constraint" title="networkx.algorithms.structuralholes.constraint"><code class="xref py py-func docutils literal"><span class="pre">constraint()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.structuralholes.constraint.html#networkx.algorithms.structuralholes.constraint" title="networkx.algorithms.structuralholes.constraint"><code class="xref py py-func docutils literal notranslate"><span class="pre">constraint()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id5" rules="none">
@@ -356,7 +356,7 @@ CONNECTIONS 20(1):35-38.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -378,7 +378,7 @@ CONNECTIONS 20(1):35-38.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

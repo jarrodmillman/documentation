@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.mst.minimum_spanning_tree &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.tree.mst.minimum_spanning_tree &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Tree" href="../tree.html"/>
         <link rel="next" title="networkx.algorithms.tree.mst.maximum_spanning_tree" href="networkx.algorithms.tree.mst.maximum_spanning_tree.html"/>
         <link rel="prev" title="networkx.algorithms.tree.operations.join" href="networkx.algorithms.tree.operations.join.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -255,20 +255,20 @@
 <dl class="function">
 <dt id="networkx.algorithms.tree.mst.minimum_spanning_tree">
 <code class="descname">minimum_spanning_tree</code><span class="sig-paren">(</span><em>G</em>, <em>weight='weight'</em>, <em>algorithm='kruskal'</em>, <em>ignore_nan=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tree/mst.html#minimum_spanning_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tree.mst.minimum_spanning_tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a minimum spanning tree or forest on an undirected graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
+<dd><p>Returns a minimum spanning tree or forest on an undirected graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>undirected graph</em>) – An undirected graph. If <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> is connected, then the algorithm finds a
+<li><strong>G</strong> (<em>undirected graph</em>) – An undirected graph. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is connected, then the algorithm finds a
 spanning tree. Otherwise, a spanning forest is found.</li>
 <li><strong>weight</strong> (<em>str</em>) – Data key to use for edge weights.</li>
 <li><strong>algorithm</strong> (<em>string</em>) – The algorithm to use when finding a minimum spanning tree. Valid
 choices are ‘kruskal’, ‘prim’, or ‘boruvka’. The default is
 ‘kruskal’.</li>
 <li><strong>ignore_nan</strong> (<em>bool (default: False)</em>) – If a NaN is found as an edge weight normally an exception is raised.
-If <code class="xref py py-obj docutils literal"><span class="pre">ignore_nan</span> <span class="pre">is</span> <span class="pre">True</span></code> then that edge is ignored instead.</li>
+If <code class="xref py py-obj docutils literal notranslate"><span class="pre">ignore_nan</span> <span class="pre">is</span> <span class="pre">True</span></code> then that edge is ignored instead.</li>
 </ul>
 </td>
 </tr>
@@ -281,7 +281,7 @@ If <code class="xref py py-obj docutils literal"><span class="pre">ignore_nan</s
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">minimum_spanning_tree</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
@@ -294,7 +294,7 @@ each edge weight must be distinct.</p>
 <p>For the other algorithms, if the graph edges do not have a weight
 attribute a default weight of 1 will be used.</p>
 <p>There may be more than one tree with the same minimum or maximum weight.
-See <code class="xref py py-mod docutils literal"><span class="pre">networkx.tree.recognition</span></code> for more detailed definitions.</p>
+See <code class="xref py py-mod docutils literal notranslate"><span class="pre">networkx.tree.recognition</span></code> for more detailed definitions.</p>
 <p>Isolated nodes with self-loops are in the tree as edgeless isolated nodes.</p>
 </dd></dl>
 
@@ -323,7 +323,7 @@ See <code class="xref py py-mod docutils literal"><span class="pre">networkx.tre
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -345,7 +345,7 @@ See <code class="xref py py-mod docutils literal"><span class="pre">networkx.tre
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

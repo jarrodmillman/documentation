@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.coding.from_prufer_sequence &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.tree.coding.from_prufer_sequence &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Tree" href="../tree.html"/>
         <link rel="next" title="networkx.algorithms.tree.coding.to_prufer_sequence" href="networkx.algorithms.tree.coding.to_prufer_sequence.html"/>
         <link rel="prev" title="networkx.algorithms.tree.coding.to_nested_tuple" href="networkx.algorithms.tree.coding.to_nested_tuple.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -276,13 +276,13 @@ zero and <em>n</em> - 1, inclusive.</td>
 </table>
 <p class="rubric">Notes</p>
 <p>There is a bijection from labeled trees to Prüfer sequences. This
-function is the inverse of the <a class="reference internal" href="#networkx.algorithms.tree.coding.from_prufer_sequence" title="networkx.algorithms.tree.coding.from_prufer_sequence"><code class="xref py py-func docutils literal"><span class="pre">from_prufer_sequence()</span></code></a> function.</p>
+function is the inverse of the <a class="reference internal" href="#networkx.algorithms.tree.coding.from_prufer_sequence" title="networkx.algorithms.tree.coding.from_prufer_sequence"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_prufer_sequence()</span></code></a> function.</p>
 <p>Sometimes Prüfer sequences use nodes labeled from 1 to <em>n</em> instead
 of from 0 to <em>n</em> - 1. This function requires nodes to be labeled in
-the latter form. You can use <code class="xref py py-func docutils literal"><span class="pre">networkx.relabel_nodes()</span></code> to
+the latter form. You can use <code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.relabel_nodes()</span></code> to
 relabel the nodes of your tree to the appropriate format.</p>
 <p>This implementation is from <a class="footnote-reference" href="#id2" id="id1">[1]</a> and has a running time of
-<span class="math">\(O(n \log n)\)</span>.</p>
+<span class="math notranslate">\(O(n \log n)\)</span>.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -295,13 +295,13 @@ relabel the nodes of your tree to the appropriate format.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal"><span class="pre">from_nested_tuple()</span></code></a>, <a class="reference internal" href="networkx.algorithms.tree.coding.to_prufer_sequence.html#networkx.algorithms.tree.coding.to_prufer_sequence" title="networkx.algorithms.tree.coding.to_prufer_sequence"><code class="xref py py-func docutils literal"><span class="pre">to_prufer_sequence()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_nested_tuple()</span></code></a>, <a class="reference internal" href="networkx.algorithms.tree.coding.to_prufer_sequence.html#networkx.algorithms.tree.coding.to_prufer_sequence" title="networkx.algorithms.tree.coding.to_prufer_sequence"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_prufer_sequence()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <p>There is a bijection between Prüfer sequences and labeled trees, so
-this function is the inverse of the <a class="reference internal" href="networkx.algorithms.tree.coding.to_prufer_sequence.html#networkx.algorithms.tree.coding.to_prufer_sequence" title="networkx.algorithms.tree.coding.to_prufer_sequence"><code class="xref py py-func docutils literal"><span class="pre">to_prufer_sequence()</span></code></a>
+this function is the inverse of the <a class="reference internal" href="networkx.algorithms.tree.coding.to_prufer_sequence.html#networkx.algorithms.tree.coding.to_prufer_sequence" title="networkx.algorithms.tree.coding.to_prufer_sequence"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_prufer_sequence()</span></code></a>
 function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sequence</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_prufer_sequence</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sequence</span>
@@ -338,7 +338,7 @@ function:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -360,7 +360,7 @@ function:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

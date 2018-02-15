@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.closeness_centrality &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.centrality.closeness_centrality &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Centrality" href="../centrality.html"/>
         <link rel="next" title="networkx.algorithms.centrality.current_flow_closeness_centrality" href="networkx.algorithms.centrality.current_flow_closeness_centrality.html"/>
         <link rel="prev" title="networkx.algorithms.centrality.katz_centrality_numpy" href="networkx.algorithms.centrality.katz_centrality_numpy.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -261,21 +261,21 @@
 <dt id="networkx.algorithms.centrality.closeness_centrality">
 <code class="descname">closeness_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>u=None</em>, <em>distance=None</em>, <em>wf_improved=True</em>, <em>reverse=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/closeness.html#closeness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.closeness_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute closeness centrality for nodes.</p>
-<p>Closeness centrality <a class="footnote-reference" href="#id3" id="id1">[1]</a> of a node <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> is the reciprocal of the
-average shortest path distance to <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> over all <code class="xref py py-obj docutils literal"><span class="pre">n-1</span></code> reachable nodes.</p>
-<div class="math">
+<p>Closeness centrality <a class="footnote-reference" href="#id3" id="id1">[1]</a> of a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> is the reciprocal of the
+average shortest path distance to <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> over all <code class="xref py py-obj docutils literal notranslate"><span class="pre">n-1</span></code> reachable nodes.</p>
+<div class="math notranslate">
 \[C(u) = \frac{n - 1}{\sum_{v=1}^{n-1} d(v, u)},\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">d(v,</span> <span class="pre">u)</span></code> is the shortest-path distance between <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">u</span></code>,
-and <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> is the number of nodes that can reach <code class="xref py py-obj docutils literal"><span class="pre">u</span></code>.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">d(v,</span> <span class="pre">u)</span></code> is the shortest-path distance between <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code>,
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> is the number of nodes that can reach <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code>.</p>
 <p>Notice that higher values of closeness indicate higher centrality.</p>
 <p>Wasserman and Faust propose an improved formula for graphs with
 more than one connected component. The result is “a ratio of the
 fraction of actors in the group who are reachable, to the average
 distance” from the reachable actors <a class="footnote-reference" href="#id4" id="id2">[2]</a>. You might think this
 scale factor is inverted but it is not. As is, nodes from small
-components receive a smaller closeness value. Letting <code class="xref py py-obj docutils literal"><span class="pre">N</span></code> denote
+components receive a smaller closeness value. Letting <code class="xref py py-obj docutils literal notranslate"><span class="pre">N</span></code> denote
 the number of nodes in the graph,</p>
-<div class="math">
+<div class="math notranslate">
 \[C_{WF}(u) = \frac{n-1}{N-1} \frac{n - 1}{\sum_{v=1}^{n-1} d(v, u)},\]</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -304,11 +304,11 @@ instead of predecessors.</li>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.load_centrality.html#networkx.algorithms.centrality.load_centrality" title="networkx.algorithms.centrality.load_centrality"><code class="xref py py-func docutils literal"><span class="pre">load_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality" title="networkx.algorithms.centrality.eigenvector_centrality"><code class="xref py py-func docutils literal"><span class="pre">eigenvector_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality" title="networkx.algorithms.centrality.degree_centrality"><code class="xref py py-func docutils literal"><span class="pre">degree_centrality()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.load_centrality.html#networkx.algorithms.centrality.load_centrality" title="networkx.algorithms.centrality.load_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality" title="networkx.algorithms.centrality.eigenvector_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality" title="networkx.algorithms.centrality.degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">degree_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The closeness centrality is normalized to <code class="xref py py-obj docutils literal"><span class="pre">(n-1)/(|G|-1)</span></code> where
-<code class="xref py py-obj docutils literal"><span class="pre">n</span></code> is the number of nodes in the connected part of graph
+<p>The closeness centrality is normalized to <code class="xref py py-obj docutils literal notranslate"><span class="pre">(n-1)/(|G|-1)</span></code> where
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> is the number of nodes in the connected part of graph
 containing the node.  If the graph is not completely connected,
 this algorithm computes the closeness centrality for each
 connected part separately scaled by that parts size.</p>
@@ -359,7 +359,7 @@ Cambridge University Press.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -381,7 +381,7 @@ Cambridge University Press.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>VF2 Algorithm &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>VF2 Algorithm &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Isomorphism" href="isomorphism.html"/>
         <link rel="next" title="networkx.algorithms.isomorphism.GraphMatcher.__init__" href="generated/networkx.algorithms.isomorphism.GraphMatcher.__init__.html"/>
         <link rel="prev" title="networkx.algorithms.isomorphism.faster_could_be_isomorphic" href="generated/networkx.algorithms.isomorphism.faster_could_be_isomorphic.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -272,7 +272,7 @@ returns True.  The effect of this is that semantics are not
 considered in the matching of G1 and G2.</p>
 <p class="rubric">Examples</p>
 <p>Suppose G1 and G2 are isomorphic graphs. Verification is as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">isomorphism</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">isomorphism</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G2</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">GM</span> <span class="o">=</span> <span class="n">isomorphism</span><span class="o">.</span><span class="n">GraphMatcher</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span><span class="n">G2</span><span class="p">)</span>
@@ -281,13 +281,13 @@ considered in the matching of G1 and G2.</p>
 </pre></div>
 </div>
 <p>GM.mapping stores the isomorphism mapping from G1 to G2.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">GM</span><span class="o">.</span><span class="n">mapping</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">GM</span><span class="o">.</span><span class="n">mapping</span>
 <span class="go">{0: 0, 1: 1, 2: 2, 3: 3}</span>
 </pre></div>
 </div>
 <p>Suppose G1 and G2 are isomorphic directed graphs
 graphs. Verification is as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G2</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">DiGM</span> <span class="o">=</span> <span class="n">isomorphism</span><span class="o">.</span><span class="n">DiGraphMatcher</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span><span class="n">G2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">DiGM</span><span class="o">.</span><span class="n">is_isomorphic</span><span class="p">()</span>
@@ -295,7 +295,7 @@ graphs. Verification is as follows:</p>
 </pre></div>
 </div>
 <p>DiGM.mapping stores the isomorphism mapping from G1 to G2.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">DiGM</span><span class="o">.</span><span class="n">mapping</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">DiGM</span><span class="o">.</span><span class="n">mapping</span>
 <span class="go">{0: 0, 1: 1, 2: 2, 3: 3}</span>
 </pre></div>
 </div>
@@ -346,18 +346,18 @@ pp. 149-159, 2001.
 </dl>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-mod docutils literal"><span class="pre">syntactic_feasibliity</span></code>, <code class="xref py py-mod docutils literal"><span class="pre">semantic_feasibility</span></code></p>
+<p class="last"><code class="xref py py-mod docutils literal notranslate"><span class="pre">syntactic_feasibliity</span></code>, <code class="xref py py-mod docutils literal notranslate"><span class="pre">semantic_feasibility</span></code></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The implementation handles both directed and undirected graphs as well
 as multigraphs. However, it does require that nodes in the graph are
 orderable (in addition to the general NetworkX requirement that nodes
 are hashable). If the nodes in your graph are not orderable, you can
-convert them to an orderable type (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">int</span></code></a>, for example) by using the
-<a class="reference internal" href="../relabel.html#module-networkx.relabel" title="networkx.relabel"><code class="xref py py-func docutils literal"><span class="pre">networkx.relabel()</span></code></a> function. You can store the dictionary of
+convert them to an orderable type (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, for example) by using the
+<a class="reference internal" href="../relabel.html#module-networkx.relabel" title="networkx.relabel"><code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.relabel()</span></code></a> function. You can store the dictionary of
 old-to-new node labels to retrieve the original node labels after
 running the isomorphism algorithm:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span> <span class="o">=</span> <span class="nb">object</span><span class="p">(),</span> <span class="nb">object</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">G</span><span class="p">)}</span>
@@ -377,34 +377,34 @@ polynomial-time algorithm is known to exist).</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.__init__.html#networkx.algorithms.isomorphism.GraphMatcher.__init__" title="networkx.algorithms.isomorphism.GraphMatcher.__init__"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.__init__</span></code></a>(G1,&nbsp;G2[,&nbsp;node_match,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.__init__.html#networkx.algorithms.isomorphism.GraphMatcher.__init__" title="networkx.algorithms.isomorphism.GraphMatcher.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.__init__</span></code></a>(G1,&nbsp;G2[,&nbsp;node_match,&nbsp;…])</td>
 <td>Initialize graph matcher.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.initialize.html#networkx.algorithms.isomorphism.GraphMatcher.initialize" title="networkx.algorithms.isomorphism.GraphMatcher.initialize"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.initialize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.initialize.html#networkx.algorithms.isomorphism.GraphMatcher.initialize" title="networkx.algorithms.isomorphism.GraphMatcher.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.initialize</span></code></a>()</td>
 <td>Reinitializes the state of the algorithm.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.is_isomorphic.html#networkx.algorithms.isomorphism.GraphMatcher.is_isomorphic" title="networkx.algorithms.isomorphism.GraphMatcher.is_isomorphic"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.is_isomorphic</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.is_isomorphic.html#networkx.algorithms.isomorphism.GraphMatcher.is_isomorphic" title="networkx.algorithms.isomorphism.GraphMatcher.is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.is_isomorphic</span></code></a>()</td>
 <td>Returns True if G1 and G2 are isomorphic graphs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.subgraph_is_isomorphic.html#networkx.algorithms.isomorphism.GraphMatcher.subgraph_is_isomorphic" title="networkx.algorithms.isomorphism.GraphMatcher.subgraph_is_isomorphic"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.subgraph_is_isomorphic</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.subgraph_is_isomorphic.html#networkx.algorithms.isomorphism.GraphMatcher.subgraph_is_isomorphic" title="networkx.algorithms.isomorphism.GraphMatcher.subgraph_is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.subgraph_is_isomorphic</span></code></a>()</td>
 <td>Returns True if a subgraph of G1 is isomorphic to G2.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.isomorphisms_iter.html#networkx.algorithms.isomorphism.GraphMatcher.isomorphisms_iter" title="networkx.algorithms.isomorphism.GraphMatcher.isomorphisms_iter"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.isomorphisms_iter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.isomorphisms_iter.html#networkx.algorithms.isomorphism.GraphMatcher.isomorphisms_iter" title="networkx.algorithms.isomorphism.GraphMatcher.isomorphisms_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.isomorphisms_iter</span></code></a>()</td>
 <td>Generator over isomorphisms between G1 and G2.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.subgraph_isomorphisms_iter.html#networkx.algorithms.isomorphism.GraphMatcher.subgraph_isomorphisms_iter" title="networkx.algorithms.isomorphism.GraphMatcher.subgraph_isomorphisms_iter"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.subgraph_isomorphisms_iter</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.subgraph_isomorphisms_iter.html#networkx.algorithms.isomorphism.GraphMatcher.subgraph_isomorphisms_iter" title="networkx.algorithms.isomorphism.GraphMatcher.subgraph_isomorphisms_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.subgraph_isomorphisms_iter</span></code></a>()</td>
 <td>Generator over isomorphisms between a subgraph of G1 and G2.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.candidate_pairs_iter.html#networkx.algorithms.isomorphism.GraphMatcher.candidate_pairs_iter" title="networkx.algorithms.isomorphism.GraphMatcher.candidate_pairs_iter"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.candidate_pairs_iter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.candidate_pairs_iter.html#networkx.algorithms.isomorphism.GraphMatcher.candidate_pairs_iter" title="networkx.algorithms.isomorphism.GraphMatcher.candidate_pairs_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.candidate_pairs_iter</span></code></a>()</td>
 <td>Iterator over candidate pairs of nodes in G1 and G2.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.match.html#networkx.algorithms.isomorphism.GraphMatcher.match" title="networkx.algorithms.isomorphism.GraphMatcher.match"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.match</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.match.html#networkx.algorithms.isomorphism.GraphMatcher.match" title="networkx.algorithms.isomorphism.GraphMatcher.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.match</span></code></a>()</td>
 <td>Extends the isomorphism mapping.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.semantic_feasibility.html#networkx.algorithms.isomorphism.GraphMatcher.semantic_feasibility" title="networkx.algorithms.isomorphism.GraphMatcher.semantic_feasibility"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.semantic_feasibility</span></code></a>(G1_node,&nbsp;…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.semantic_feasibility.html#networkx.algorithms.isomorphism.GraphMatcher.semantic_feasibility" title="networkx.algorithms.isomorphism.GraphMatcher.semantic_feasibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.semantic_feasibility</span></code></a>(G1_node,&nbsp;…)</td>
 <td>Returns True if mapping G1_node to G2_node is semantically feasible.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility.html#networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility" title="networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility"><code class="xref py py-obj docutils literal"><span class="pre">GraphMatcher.syntactic_feasibility</span></code></a>(G1_node,&nbsp;…)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility.html#networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility" title="networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphMatcher.syntactic_feasibility</span></code></a>(G1_node,&nbsp;…)</td>
 <td>Returns True if adding (G1_node, G2_node) is syntactically feasible.</td>
 </tr>
 </tbody>
@@ -418,34 +418,34 @@ polynomial-time algorithm is known to exist).</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.__init__.html#networkx.algorithms.isomorphism.DiGraphMatcher.__init__" title="networkx.algorithms.isomorphism.DiGraphMatcher.__init__"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.__init__</span></code></a>(G1,&nbsp;G2[,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.__init__.html#networkx.algorithms.isomorphism.DiGraphMatcher.__init__" title="networkx.algorithms.isomorphism.DiGraphMatcher.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.__init__</span></code></a>(G1,&nbsp;G2[,&nbsp;…])</td>
 <td>Initialize graph matcher.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.initialize.html#networkx.algorithms.isomorphism.DiGraphMatcher.initialize" title="networkx.algorithms.isomorphism.DiGraphMatcher.initialize"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.initialize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.initialize.html#networkx.algorithms.isomorphism.DiGraphMatcher.initialize" title="networkx.algorithms.isomorphism.DiGraphMatcher.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.initialize</span></code></a>()</td>
 <td>Reinitializes the state of the algorithm.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.is_isomorphic.html#networkx.algorithms.isomorphism.DiGraphMatcher.is_isomorphic" title="networkx.algorithms.isomorphism.DiGraphMatcher.is_isomorphic"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.is_isomorphic</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.is_isomorphic.html#networkx.algorithms.isomorphism.DiGraphMatcher.is_isomorphic" title="networkx.algorithms.isomorphism.DiGraphMatcher.is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.is_isomorphic</span></code></a>()</td>
 <td>Returns True if G1 and G2 are isomorphic graphs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_is_isomorphic.html#networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_is_isomorphic" title="networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_is_isomorphic"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.subgraph_is_isomorphic</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_is_isomorphic.html#networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_is_isomorphic" title="networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.subgraph_is_isomorphic</span></code></a>()</td>
 <td>Returns True if a subgraph of G1 is isomorphic to G2.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.isomorphisms_iter.html#networkx.algorithms.isomorphism.DiGraphMatcher.isomorphisms_iter" title="networkx.algorithms.isomorphism.DiGraphMatcher.isomorphisms_iter"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.isomorphisms_iter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.isomorphisms_iter.html#networkx.algorithms.isomorphism.DiGraphMatcher.isomorphisms_iter" title="networkx.algorithms.isomorphism.DiGraphMatcher.isomorphisms_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.isomorphisms_iter</span></code></a>()</td>
 <td>Generator over isomorphisms between G1 and G2.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_isomorphisms_iter.html#networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_isomorphisms_iter" title="networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_isomorphisms_iter"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.subgraph_isomorphisms_iter</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_isomorphisms_iter.html#networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_isomorphisms_iter" title="networkx.algorithms.isomorphism.DiGraphMatcher.subgraph_isomorphisms_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.subgraph_isomorphisms_iter</span></code></a>()</td>
 <td>Generator over isomorphisms between a subgraph of G1 and G2.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.candidate_pairs_iter.html#networkx.algorithms.isomorphism.DiGraphMatcher.candidate_pairs_iter" title="networkx.algorithms.isomorphism.DiGraphMatcher.candidate_pairs_iter"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.candidate_pairs_iter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.candidate_pairs_iter.html#networkx.algorithms.isomorphism.DiGraphMatcher.candidate_pairs_iter" title="networkx.algorithms.isomorphism.DiGraphMatcher.candidate_pairs_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.candidate_pairs_iter</span></code></a>()</td>
 <td>Iterator over candidate pairs of nodes in G1 and G2.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.match.html#networkx.algorithms.isomorphism.DiGraphMatcher.match" title="networkx.algorithms.isomorphism.DiGraphMatcher.match"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.match</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.match.html#networkx.algorithms.isomorphism.DiGraphMatcher.match" title="networkx.algorithms.isomorphism.DiGraphMatcher.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.match</span></code></a>()</td>
 <td>Extends the isomorphism mapping.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.semantic_feasibility.html#networkx.algorithms.isomorphism.DiGraphMatcher.semantic_feasibility" title="networkx.algorithms.isomorphism.DiGraphMatcher.semantic_feasibility"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.semantic_feasibility</span></code></a>(G1_node,&nbsp;…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.semantic_feasibility.html#networkx.algorithms.isomorphism.DiGraphMatcher.semantic_feasibility" title="networkx.algorithms.isomorphism.DiGraphMatcher.semantic_feasibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.semantic_feasibility</span></code></a>(G1_node,&nbsp;…)</td>
 <td>Returns True if mapping G1_node to G2_node is semantically feasible.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.syntactic_feasibility.html#networkx.algorithms.isomorphism.DiGraphMatcher.syntactic_feasibility" title="networkx.algorithms.isomorphism.DiGraphMatcher.syntactic_feasibility"><code class="xref py py-obj docutils literal"><span class="pre">DiGraphMatcher.syntactic_feasibility</span></code></a>(…)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.DiGraphMatcher.syntactic_feasibility.html#networkx.algorithms.isomorphism.DiGraphMatcher.syntactic_feasibility" title="networkx.algorithms.isomorphism.DiGraphMatcher.syntactic_feasibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphMatcher.syntactic_feasibility</span></code></a>(…)</td>
 <td>Returns True if adding (G1_node, G2_node) is syntactically feasible.</td>
 </tr>
 </tbody>
@@ -459,31 +459,31 @@ polynomial-time algorithm is known to exist).</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.categorical_node_match.html#networkx.algorithms.isomorphism.categorical_node_match" title="networkx.algorithms.isomorphism.categorical_node_match"><code class="xref py py-obj docutils literal"><span class="pre">categorical_node_match</span></code></a>(attr,&nbsp;default)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.categorical_node_match.html#networkx.algorithms.isomorphism.categorical_node_match" title="networkx.algorithms.isomorphism.categorical_node_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">categorical_node_match</span></code></a>(attr,&nbsp;default)</td>
 <td>Returns a comparison function for a categorical node attribute.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.categorical_edge_match.html#networkx.algorithms.isomorphism.categorical_edge_match" title="networkx.algorithms.isomorphism.categorical_edge_match"><code class="xref py py-obj docutils literal"><span class="pre">categorical_edge_match</span></code></a>(attr,&nbsp;default)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.categorical_edge_match.html#networkx.algorithms.isomorphism.categorical_edge_match" title="networkx.algorithms.isomorphism.categorical_edge_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">categorical_edge_match</span></code></a>(attr,&nbsp;default)</td>
 <td>Returns a comparison function for a categorical edge attribute.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.categorical_multiedge_match.html#networkx.algorithms.isomorphism.categorical_multiedge_match" title="networkx.algorithms.isomorphism.categorical_multiedge_match"><code class="xref py py-obj docutils literal"><span class="pre">categorical_multiedge_match</span></code></a>(attr,&nbsp;default)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.categorical_multiedge_match.html#networkx.algorithms.isomorphism.categorical_multiedge_match" title="networkx.algorithms.isomorphism.categorical_multiedge_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">categorical_multiedge_match</span></code></a>(attr,&nbsp;default)</td>
 <td>Returns a comparison function for a categorical edge attribute.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.numerical_node_match.html#networkx.algorithms.isomorphism.numerical_node_match" title="networkx.algorithms.isomorphism.numerical_node_match"><code class="xref py py-obj docutils literal"><span class="pre">numerical_node_match</span></code></a>(attr,&nbsp;default[,&nbsp;rtol,&nbsp;atol])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.numerical_node_match.html#networkx.algorithms.isomorphism.numerical_node_match" title="networkx.algorithms.isomorphism.numerical_node_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numerical_node_match</span></code></a>(attr,&nbsp;default[,&nbsp;rtol,&nbsp;atol])</td>
 <td>Returns a comparison function for a numerical node attribute.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.numerical_edge_match.html#networkx.algorithms.isomorphism.numerical_edge_match" title="networkx.algorithms.isomorphism.numerical_edge_match"><code class="xref py py-obj docutils literal"><span class="pre">numerical_edge_match</span></code></a>(attr,&nbsp;default[,&nbsp;rtol,&nbsp;atol])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.numerical_edge_match.html#networkx.algorithms.isomorphism.numerical_edge_match" title="networkx.algorithms.isomorphism.numerical_edge_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numerical_edge_match</span></code></a>(attr,&nbsp;default[,&nbsp;rtol,&nbsp;atol])</td>
 <td>Returns a comparison function for a numerical edge attribute.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.numerical_multiedge_match.html#networkx.algorithms.isomorphism.numerical_multiedge_match" title="networkx.algorithms.isomorphism.numerical_multiedge_match"><code class="xref py py-obj docutils literal"><span class="pre">numerical_multiedge_match</span></code></a>(attr,&nbsp;default[,&nbsp;…])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.numerical_multiedge_match.html#networkx.algorithms.isomorphism.numerical_multiedge_match" title="networkx.algorithms.isomorphism.numerical_multiedge_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numerical_multiedge_match</span></code></a>(attr,&nbsp;default[,&nbsp;…])</td>
 <td>Returns a comparison function for a numerical edge attribute.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.generic_node_match.html#networkx.algorithms.isomorphism.generic_node_match" title="networkx.algorithms.isomorphism.generic_node_match"><code class="xref py py-obj docutils literal"><span class="pre">generic_node_match</span></code></a>(attr,&nbsp;default,&nbsp;op)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.generic_node_match.html#networkx.algorithms.isomorphism.generic_node_match" title="networkx.algorithms.isomorphism.generic_node_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generic_node_match</span></code></a>(attr,&nbsp;default,&nbsp;op)</td>
 <td>Returns a comparison function for a generic attribute.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.generic_edge_match.html#networkx.algorithms.isomorphism.generic_edge_match" title="networkx.algorithms.isomorphism.generic_edge_match"><code class="xref py py-obj docutils literal"><span class="pre">generic_edge_match</span></code></a>(attr,&nbsp;default,&nbsp;op)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.generic_edge_match.html#networkx.algorithms.isomorphism.generic_edge_match" title="networkx.algorithms.isomorphism.generic_edge_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generic_edge_match</span></code></a>(attr,&nbsp;default,&nbsp;op)</td>
 <td>Returns a comparison function for a generic attribute.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.generic_multiedge_match.html#networkx.algorithms.isomorphism.generic_multiedge_match" title="networkx.algorithms.isomorphism.generic_multiedge_match"><code class="xref py py-obj docutils literal"><span class="pre">generic_multiedge_match</span></code></a>(attr,&nbsp;default,&nbsp;op)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.generic_multiedge_match.html#networkx.algorithms.isomorphism.generic_multiedge_match" title="networkx.algorithms.isomorphism.generic_multiedge_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generic_multiedge_match</span></code></a>(attr,&nbsp;default,&nbsp;op)</td>
 <td>Returns a comparison function for a generic attribute.</td>
 </tr>
 </tbody>
@@ -514,7 +514,7 @@ polynomial-time algorithm is known to exist).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -536,7 +536,7 @@ polynomial-time algorithm is known to exist).</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

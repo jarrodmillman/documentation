@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.geographical_threshold_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.geometric.geographical_threshold_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.geometric.waxman_graph" href="networkx.generators.geometric.waxman_graph.html"/>
         <link rel="prev" title="networkx.generators.geometric.soft_random_geometric_graph" href="networkx.generators.geometric.soft_random_geometric_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -224,13 +224,13 @@
 <dt id="networkx.generators.geometric.geographical_threshold_graph">
 <code class="descname">geographical_threshold_graph</code><span class="sig-paren">(</span><em>n</em>, <em>theta</em>, <em>dim=2</em>, <em>pos=None</em>, <em>weight=None</em>, <em>metric=None</em>, <em>p_dist=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#geographical_threshold_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.geographical_threshold_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a geographical threshold graph.</p>
-<p>The geographical threshold graph model places <span class="math">\(n\)</span> nodes uniformly at
-random in a rectangular domain.  Each node <span class="math">\(u\)</span> is assigned a weight
-<span class="math">\(w_u\)</span>. Two nodes <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are joined by an edge if</p>
-<div class="math">
+<p>The geographical threshold graph model places <span class="math notranslate">\(n\)</span> nodes uniformly at
+random in a rectangular domain.  Each node <span class="math notranslate">\(u\)</span> is assigned a weight
+<span class="math notranslate">\(w_u\)</span>. Two nodes <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span> are joined by an edge if</p>
+<div class="math notranslate">
 \[(w_u + w_v)h(r) \ge \theta\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">r</span></code> is the distance between <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">v</span></code>, h(r) is a probability of
-connection as a function of <code class="xref py py-obj docutils literal"><span class="pre">r</span></code>, and <span class="math">\(\theta\)</span> as the threshold
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code> is the distance between <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>, h(r) is a probability of
+connection as a function of <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code>, and <span class="math notranslate">\(\theta\)</span> as the threshold
 parameter. h(r) corresponds to the p_dist parameter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -251,38 +251,38 @@ parameter. h(r) corresponds to the p_dist parameter.</p>
 tuples). This must be a function that accepts two lists (or
 tuples) as input and yields a number as output. The function
 must also satisfy the four requirements of a <a class="reference external" href="https://en.wikipedia.org/wiki/Metric_%28mathematics%29">metric</a>.
-Specifically, if <span class="math">\(d\)</span> is the function and <span class="math">\(x\)</span>, <span class="math">\(y\)</span>,
-and <span class="math">\(z\)</span> are vectors in the graph, then <span class="math">\(d\)</span> must satisfy</p>
+Specifically, if <span class="math notranslate">\(d\)</span> is the function and <span class="math notranslate">\(x\)</span>, <span class="math notranslate">\(y\)</span>,
+and <span class="math notranslate">\(z\)</span> are vectors in the graph, then <span class="math notranslate">\(d\)</span> must satisfy</p>
 <ol class="arabic simple">
-<li><span class="math">\(d(x, y) \ge 0\)</span>,</li>
-<li><span class="math">\(d(x, y) = 0\)</span> if and only if <span class="math">\(x = y\)</span>,</li>
-<li><span class="math">\(d(x, y) = d(y, x)\)</span>,</li>
-<li><span class="math">\(d(x, z) \le d(x, y) + d(y, z)\)</span>.</li>
+<li><span class="math notranslate">\(d(x, y) \ge 0\)</span>,</li>
+<li><span class="math notranslate">\(d(x, y) = 0\)</span> if and only if <span class="math notranslate">\(x = y\)</span>,</li>
+<li><span class="math notranslate">\(d(x, y) = d(y, x)\)</span>,</li>
+<li><span class="math notranslate">\(d(x, z) \le d(x, y) + d(y, z)\)</span>.</li>
 </ol>
 <p>If this argument is not specified, the Euclidean distance metric is
 used.</p>
 </li>
 <li><p class="first"><strong>p_dist</strong> (<em>function, optional</em>) – A probability density function computing the probability of
 connecting two nodes that are of distance, r, computed by metric.
-The probability density function, <code class="xref py py-obj docutils literal"><span class="pre">p_dist</span></code>, must
+The probability density function, <code class="xref py py-obj docutils literal notranslate"><span class="pre">p_dist</span></code>, must
 be any function that takes the metric value as input
 and outputs a single probability value between 0-1. The scipy.stats
 package has many probability distribution functions implemented and tools
-for custom probability distribution defintions [2], and passing the .pdf
+for custom probability distribution definitions [2], and passing the .pdf
 method of scipy.stats distributions can be used here. If the probability
-function, <code class="xref py py-obj docutils literal"><span class="pre">p_dist</span></code>, is not supplied, the default exponential function
-:math: <code class="xref py py-obj docutils literal"><span class="pre">r^{-2}</span></code> is used.</p>
+function, <code class="xref py py-obj docutils literal notranslate"><span class="pre">p_dist</span></code>, is not supplied, the default exponential function
+:math: <code class="xref py py-obj docutils literal notranslate"><span class="pre">r^{-2}</span></code> is used.</p>
 </li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>A random geographic threshold graph, undirected and without
 self-loops.</p>
-<p>Each node has a node attribute <code class="docutils literal"><span class="pre">pos</span></code> that stores the
+<p>Each node has a node attribute <code class="docutils literal notranslate"><span class="pre">pos</span></code> that stores the
 position of that node in Euclidean space as provided by the
-<code class="docutils literal"><span class="pre">pos</span></code> keyword argument or, if <code class="docutils literal"><span class="pre">pos</span></code> was not provided, as
+<code class="docutils literal notranslate"><span class="pre">pos</span></code> keyword argument or, if <code class="docutils literal notranslate"><span class="pre">pos</span></code> was not provided, as
 generated by this function. Similarly, each node has a node
-attribute <code class="docutils literal"><span class="pre">weight</span></code> that stores the weight of that node as
+attribute <code class="docutils literal notranslate"><span class="pre">weight</span></code> that stores the weight of that node as
 provided or as generated.</p>
 </p>
 </td>
@@ -293,19 +293,19 @@ provided or as generated.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<p>Specify an alternate distance metric using the <code class="docutils literal"><span class="pre">metric</span></code> keyword
+<p>Specify an alternate distance metric using the <code class="docutils literal notranslate"><span class="pre">metric</span></code> keyword
 argument. For example, to use the <a class="reference external" href="https://en.wikipedia.org/wiki/Taxicab_geometry">taxicab metric</a> instead of the
 default <a class="reference external" href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean metric</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dist</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dist</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">geographical_threshold_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">dist</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
 <p>If weights are not specified they are assigned to nodes by drawing randomly
-from the exponential distribution with rate parameter <span class="math">\(\lambda=1\)</span>.
-To specify weights from a different distribution, use the <code class="xref py py-obj docutils literal"><span class="pre">weight</span></code> keyword
+from the exponential distribution with rate parameter <span class="math notranslate">\(\lambda=1\)</span>.
+To specify weights from a different distribution, use the <code class="xref py py-obj docutils literal notranslate"><span class="pre">weight</span></code> keyword
 argument:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">expovariate</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">geographical_threshold_graph</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
@@ -313,11 +313,11 @@ argument:</p>
 </div>
 <p>If node positions are not specified they are randomly assigned from the
 uniform distribution.</p>
-<p>Starting in NetworkX 2.1 the parameter <code class="docutils literal"><span class="pre">alpha</span></code> is deprecated and replaced
-with the customizable <code class="docutils literal"><span class="pre">p_dist</span></code> function parameter, which defaults to r^-2
-if <code class="docutils literal"><span class="pre">p_dist</span></code> is not supplied. To reproduce networks of earlier NetworkX
-versions, a custom function needs to be defined and passed as the <code class="docutils literal"><span class="pre">p_dist</span></code>
-parameter. For example, if the parameter <code class="docutils literal"><span class="pre">alpha</span></code> = 2 was used in NetworkX 2.0,
+<p>Starting in NetworkX 2.1 the parameter <code class="docutils literal notranslate"><span class="pre">alpha</span></code> is deprecated and replaced
+with the customizable <code class="docutils literal notranslate"><span class="pre">p_dist</span></code> function parameter, which defaults to r^-2
+if <code class="docutils literal notranslate"><span class="pre">p_dist</span></code> is not supplied. To reproduce networks of earlier NetworkX
+versions, a custom function needs to be defined and passed as the <code class="docutils literal notranslate"><span class="pre">p_dist</span></code>
+parameter. For example, if the parameter <code class="docutils literal notranslate"><span class="pre">alpha</span></code> = 2 was used in NetworkX 2.0,
 the custom function def custom_dist(r): r**-2 can be passed in versions &gt;=2.1
 as the parameter p_dist = custom_dist to produce an equivalent network. Note the
 change in sign from +2 to -2 in this parameter change.</p>
@@ -367,7 +367,7 @@ Antony Bonato and Fan Chung (Eds), pp. 209–216, 2007</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -389,7 +389,7 @@ Antony Bonato and Fan Chung (Eds), pp. 209–216, 2007</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

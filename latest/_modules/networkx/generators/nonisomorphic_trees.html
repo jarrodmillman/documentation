@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.nonisomorphic_trees &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.nonisomorphic_trees &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -226,8 +226,8 @@
             <span class="k">if</span> <span class="n">create</span> <span class="o">==</span> <span class="s2">&quot;graph&quot;</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="n">_layout_to_graph</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">create</span> <span class="o">==</span> <span class="s2">&quot;matrix&quot;</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">_layout_to_matrix</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
-            <span class="n">layout</span> <span class="o">=</span> <span class="n">_next_rooted_tree</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span></div>
+                <span class="k">yield</span> <span class="n">_layout_to_matrix</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span></div>
+            <span class="n">layout</span> <span class="o">=</span> <span class="n">_next_rooted_tree</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="number_of_nonisomorphic_trees"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.nonisomorphic_trees.number_of_nonisomorphic_trees.html#networkx.generators.nonisomorphic_trees.number_of_nonisomorphic_trees">[docs]</a><span class="k">def</span> <span class="nf">number_of_nonisomorphic_trees</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
@@ -245,8 +245,8 @@
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">nonisomorphic_trees</span><span class="p">(</span><span class="n">order</span><span class="p">))</span></div>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">nonisomorphic_trees</span><span class="p">(</span><span class="n">order</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">_next_rooted_tree</span><span class="p">(</span><span class="n">predecessor</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -383,7 +383,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -405,7 +405,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

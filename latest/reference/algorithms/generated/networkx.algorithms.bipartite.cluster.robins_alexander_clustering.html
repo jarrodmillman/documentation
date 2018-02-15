@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.cluster.robins_alexander_clustering &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bipartite.cluster.robins_alexander_clustering &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Bipartite" href="../bipartite.html"/>
         <link rel="next" title="networkx.algorithms.bipartite.redundancy.node_redundancy" href="networkx.algorithms.bipartite.redundancy.node_redundancy.html"/>
         <link rel="prev" title="networkx.algorithms.bipartite.cluster.latapy_clustering" href="networkx.algorithms.bipartite.cluster.latapy_clustering.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -261,9 +261,9 @@
 <code class="descname">robins_alexander_clustering</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/cluster.html#robins_alexander_clustering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.cluster.robins_alexander_clustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the bipartite clustering of G.</p>
 <p>Robins and Alexander <a class="footnote-reference" href="#id2" id="id1">[1]</a> defined bipartite clustering coefficient as
-four times the number of four cycles <code class="xref py py-obj docutils literal"><span class="pre">C_4</span></code> divided by the number of
-three paths <code class="xref py py-obj docutils literal"><span class="pre">L_3</span></code> in a bipartite graph:</p>
-<div class="math">
+four times the number of four cycles <code class="xref py py-obj docutils literal notranslate"><span class="pre">C_4</span></code> divided by the number of
+three paths <code class="xref py py-obj docutils literal notranslate"><span class="pre">L_3</span></code> in a bipartite graph:</p>
+<div class="math notranslate">
 \[CC_4 = \frac{4 * C_4}{L_3}\]</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -278,7 +278,7 @@ three paths <code class="xref py py-obj docutils literal"><span class="pre">L_3<
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">davis_southern_women_graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">bipartite</span><span class="o">.</span><span class="n">robins_alexander_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
 <span class="go">0.468</span>
@@ -286,7 +286,7 @@ three paths <code class="xref py py-obj docutils literal"><span class="pre">L_3<
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.bipartite.cluster.latapy_clustering.html#networkx.algorithms.bipartite.cluster.latapy_clustering" title="networkx.algorithms.bipartite.cluster.latapy_clustering"><code class="xref py py-func docutils literal"><span class="pre">latapy_clustering()</span></code></a>, <code class="xref py py-func docutils literal"><span class="pre">square_clustering()</span></code></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.bipartite.cluster.latapy_clustering.html#networkx.algorithms.bipartite.cluster.latapy_clustering" title="networkx.algorithms.bipartite.cluster.latapy_clustering"><code class="xref py py-func docutils literal notranslate"><span class="pre">latapy_clustering()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">square_clustering()</span></code></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
@@ -324,7 +324,7 @@ Computational &amp; Mathematical Organization Theory 10(1), 69–94.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -346,7 +346,7 @@ Computational &amp; Mathematical Organization Theory 10(1), 69–94.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

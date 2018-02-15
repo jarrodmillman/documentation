@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.relabel.relabel_nodes &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.relabel.relabel_nodes &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Relabeling nodes" href="../relabel.html"/>
         <link rel="next" title="Reading and writing graphs" href="../readwrite/index.html"/>
         <link rel="prev" title="networkx.relabel.convert_node_labels_to_integers" href="networkx.relabel.convert_node_labels_to_integers.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -216,7 +216,7 @@ A partial mapping is allowed.</li>
 <p class="rubric">Examples</p>
 <p>To create a new graph with nodes relabeled according to a given
 dictionary:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="go">[0, 1, 2]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">}</span>
@@ -227,7 +227,7 @@ dictionary:</p>
 </div>
 <p>Nodes can be relabeled with any hashable object, including numbers
 and strings:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">string</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">string</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>  <span class="c1"># nodes are integers 0 through 25</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
 <span class="go">[0, 1, 2]</span>
@@ -242,9 +242,9 @@ and strings:</p>
 </pre></div>
 </div>
 <p>To perform a partial in-place relabeling, provide a dictionary
-mapping only a subset of the nodes, and set the <a class="reference external" href="https://docs.python.org/2/library/copy.html#module-copy" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a> keyword
+mapping only a subset of the nodes, and set the <a class="reference external" href="https://docs.python.org/2/library/copy.html#module-copy" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a> keyword
 argument to False:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># nodes 0-1-2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># nodes 0-1-2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">}</span> <span class="c1"># 0-&gt;&#39;a&#39; and 1-&gt;&#39;b&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">relabel_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
@@ -252,7 +252,7 @@ argument to False:</p>
 </pre></div>
 </div>
 <p>A mapping can also be given as a function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">relabel_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
 <span class="go">[0, 1, 4]</span>
@@ -262,7 +262,7 @@ argument to False:</p>
 <p>Only the nodes specified in the mapping will be relabeled.</p>
 <p>The keyword setting copy=False modifies the graph in place.
 Relabel_nodes avoids naming collisions by building a
-directed graph from <code class="docutils literal"><span class="pre">mapping</span></code> which specifies the order of
+directed graph from <code class="docutils literal notranslate"><span class="pre">mapping</span></code> which specifies the order of
 relabelings. Naming collisions, such as a-&gt;b, b-&gt;c, are ordered
 such that “b” gets renamed to “c” before “a” gets renamed “b”.
 In cases of circular mappings (e.g. a-&gt;b, b-&gt;a), modifying the
@@ -270,7 +270,7 @@ graph is not possible in-place and an exception is raised.
 In that case, use copy=True.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.relabel.convert_node_labels_to_integers.html#networkx.relabel.convert_node_labels_to_integers" title="networkx.relabel.convert_node_labels_to_integers"><code class="xref py py-func docutils literal"><span class="pre">convert_node_labels_to_integers()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.relabel.convert_node_labels_to_integers.html#networkx.relabel.convert_node_labels_to_integers" title="networkx.relabel.convert_node_labels_to_integers"><code class="xref py py-func docutils literal notranslate"><span class="pre">convert_node_labels_to_integers()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -299,7 +299,7 @@ In that case, use copy=True.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -321,7 +321,7 @@ In that case, use copy=True.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

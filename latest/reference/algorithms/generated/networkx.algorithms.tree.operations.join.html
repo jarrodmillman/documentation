@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.operations.join &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.tree.operations.join &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Tree" href="../tree.html"/>
         <link rel="next" title="networkx.algorithms.tree.mst.minimum_spanning_tree" href="networkx.algorithms.tree.mst.minimum_spanning_tree.html"/>
         <link rel="prev" title="networkx.algorithms.tree.coding.to_prufer_sequence" href="networkx.algorithms.tree.coding.to_prufer_sequence.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -268,14 +268,14 @@ node of that tree. The nodes of these trees will be relabeled to
 integers.</li>
 <li><strong>label_attribute</strong> (<em>str</em>) – If provided, the old node labels will be stored in the new tree
 under this node attribute. If not provided, the node attribute
-<code class="docutils literal"><span class="pre">'_old'</span></code> will store the original label of the node in the
+<code class="docutils literal notranslate"><span class="pre">'_old'</span></code> will store the original label of the node in the
 rooted trees given in the input.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The rooted tree whose subtrees are the given rooted trees. The
 new root node is labeled 0. Each non-root node has an attribute,
-as described under the keyword argument <code class="docutils literal"><span class="pre">label_attribute</span></code>,
+as described under the keyword argument <code class="docutils literal notranslate"><span class="pre">label_attribute</span></code>,
 that indicates the label of the original node in the input tree.</p>
 </td>
 </tr>
@@ -292,7 +292,7 @@ trees in the tuple of positional arguments.</p>
 <p class="rubric">Examples</p>
 <p>Join two full balanced binary trees of height <em>h</em> to get a full
 balanced binary tree of depth <em>h</em> + 1:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="mi">4</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">left</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">balanced_tree</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">right</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">balanced_tree</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">joined_tree</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">join</span><span class="p">([(</span><span class="n">left</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
@@ -327,7 +327,7 @@ balanced binary tree of depth <em>h</em> + 1:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -349,7 +349,7 @@ balanced binary tree of depth <em>h</em> + 1:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.max_flow_min_cost &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.flow.max_flow_min_cost &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Flows" href="../flow.html"/>
         <link rel="next" title="networkx.algorithms.flow.capacity_scaling" href="networkx.algorithms.flow.capacity_scaling.html"/>
         <link rel="prev" title="networkx.algorithms.flow.cost_of_flow" href="networkx.algorithms.flow.cost_of_flow.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -291,9 +291,9 @@ flowDict[u][v] is the flow edge (u, v).</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – This exception is raised if the input graph is not directed or
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – This exception is raised if the input graph is not directed or
 not connected.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXUnbounded</span></code> – This exception is raised if there is an infinite capacity path
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnbounded</span></code> – This exception is raised if there is an infinite capacity path
 from s to t in G. In this case there is no maximum flow. This
 exception is also raised if the digraph G has a cycle of
 negative cost and infinite capacity. Then, the cost of a flow
@@ -305,7 +305,7 @@ is unbounded below.</li>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.flow.cost_of_flow.html#networkx.algorithms.flow.cost_of_flow" title="networkx.algorithms.flow.cost_of_flow"><code class="xref py py-func docutils literal"><span class="pre">cost_of_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow.html#networkx.algorithms.flow.min_cost_flow" title="networkx.algorithms.flow.min_cost_flow"><code class="xref py py-func docutils literal"><span class="pre">min_cost_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow_cost.html#networkx.algorithms.flow.min_cost_flow_cost" title="networkx.algorithms.flow.min_cost_flow_cost"><code class="xref py py-func docutils literal"><span class="pre">min_cost_flow_cost()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.network_simplex.html#networkx.algorithms.flow.network_simplex" title="networkx.algorithms.flow.network_simplex"><code class="xref py py-func docutils literal"><span class="pre">network_simplex()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.flow.cost_of_flow.html#networkx.algorithms.flow.cost_of_flow" title="networkx.algorithms.flow.cost_of_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">cost_of_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow.html#networkx.algorithms.flow.min_cost_flow" title="networkx.algorithms.flow.min_cost_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">min_cost_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow_cost.html#networkx.algorithms.flow.min_cost_flow_cost" title="networkx.algorithms.flow.min_cost_flow_cost"><code class="xref py py-func docutils literal notranslate"><span class="pre">min_cost_flow_cost()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.network_simplex.html#networkx.algorithms.flow.network_simplex" title="networkx.algorithms.flow.network_simplex"><code class="xref py py-func docutils literal notranslate"><span class="pre">network_simplex()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This algorithm is not guaranteed to work if edge weights or demands
@@ -314,7 +314,7 @@ cause problems). As a workaround you can use integer numbers by
 multiplying the relevant edge attributes by a convenient
 constant factor (eg 100).</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;capacity&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}),</span>
 <span class="gp">... </span>                  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;capacity&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}),</span>
 <span class="gp">... </span>                  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;capacity&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="p">}),</span>
@@ -368,7 +368,7 @@ constant factor (eg 100).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -390,7 +390,7 @@ constant factor (eg 100).</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

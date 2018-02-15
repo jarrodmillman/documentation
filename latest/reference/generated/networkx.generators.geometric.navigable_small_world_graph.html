@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.navigable_small_world_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.geometric.navigable_small_world_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.geometric.thresholded_random_geometric_graph" href="networkx.generators.geometric.thresholded_random_geometric_graph.html"/>
         <link rel="prev" title="networkx.generators.geometric.waxman_graph" href="networkx.generators.geometric.waxman_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -228,17 +228,17 @@
 connections that are chosen randomly.</p>
 <blockquote>
 <div><p>[…] we begin with a set of nodes […] that are identified with the set
-of lattice points in an <span class="math">\(n \times n\)</span> square,
-<span class="math">\(\{(i, j): i \in \{1, 2, \ldots, n\}, j \in \{1, 2, \ldots, n\}\}\)</span>,
-and we define the <em>lattice distance</em> between two nodes <span class="math">\((i, j)\)</span> and
-<span class="math">\((k, l)\)</span> to be the number of “lattice steps” separating them:
-<span class="math">\(d((i, j), (k, l)) = |k - i| + |l - j|\)</span>.</p>
-<p>For a universal constant <span class="math">\(p &gt;= 1\)</span>, the node <span class="math">\(u\)</span> has a directed edge to
-every other node within lattice distance <span class="math">\(p\)</span>—these are its <em>local
-contacts</em>. For universal constants <span class="math">\(q &gt;= 0\)</span> and <span class="math">\(r &gt;= 0\)</span> we also
-construct directed edges from <span class="math">\(u\)</span> to <span class="math">\(q\)</span> other nodes (the <em>long-range
-contacts</em>) using independent random trials; the <span class="math">\(i`th directed edge from
-:math:`u\)</span> has endpoint <span class="math">\(v\)</span> with probability proportional to <span class="math">\([d(u,v)]^{-r}\)</span>.</p>
+of lattice points in an <span class="math notranslate">\(n \times n\)</span> square,
+<span class="math notranslate">\(\{(i, j): i \in \{1, 2, \ldots, n\}, j \in \{1, 2, \ldots, n\}\}\)</span>,
+and we define the <em>lattice distance</em> between two nodes <span class="math notranslate">\((i, j)\)</span> and
+<span class="math notranslate">\((k, l)\)</span> to be the number of “lattice steps” separating them:
+<span class="math notranslate">\(d((i, j), (k, l)) = |k - i| + |l - j|\)</span>.</p>
+<p>For a universal constant <span class="math notranslate">\(p &gt;= 1\)</span>, the node <span class="math notranslate">\(u\)</span> has a directed edge to
+every other node within lattice distance <span class="math notranslate">\(p\)</span>—these are its <em>local
+contacts</em>. For universal constants <span class="math notranslate">\(q &gt;= 0\)</span> and <span class="math notranslate">\(r &gt;= 0\)</span> we also
+construct directed edges from <span class="math notranslate">\(u\)</span> to <span class="math notranslate">\(q\)</span> other nodes (the <em>long-range
+contacts</em>) using independent random trials; the <span class="math notranslate">\(i`th directed edge from
+:math:`u\)</span> has endpoint <span class="math notranslate">\(v\)</span> with probability proportional to <span class="math notranslate">\([d(u,v)]^{-r}\)</span>.</p>
 <p class="attribution">&mdash;<a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
 </div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
@@ -247,12 +247,12 @@ contacts</em>) using independent random trials; the <span class="math">\(i`th di
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>n</strong> (<em>int</em>) – The length of one side of the lattice; the number of nodes in
-the graph is therefore <span class="math">\(n^2\)</span>.</li>
+the graph is therefore <span class="math notranslate">\(n^2\)</span>.</li>
 <li><strong>p</strong> (<em>int</em>) – The diameter of short range connections. Each node is joined with every
 other node within this lattice distance.</li>
 <li><strong>q</strong> (<em>int</em>) – The number of long-range connections for each node.</li>
 <li><strong>r</strong> (<em>float</em>) – Exponent for decaying probability of connections.  The probability of
-connecting to a node at lattice distance <span class="math">\(d\)</span> is <span class="math">\(1/d^r\)</span>.</li>
+connecting to a node at lattice distance <span class="math notranslate">\(d\)</span> is <span class="math notranslate">\(1/d^r\)</span>.</li>
 <li><strong>dim</strong> (<em>int</em>) – Dimension of grid</li>
 <li><strong>seed</strong> (<em>int, optional</em>) – Seed for random number generator (default=None).</li>
 </ul>
@@ -295,7 +295,7 @@ perspective. Proc. 32nd ACM Symposium on Theory of Computing, 2000.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -317,7 +317,7 @@ perspective. Proc. 32nd ACM Symposium on Theory of Computing, 2000.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

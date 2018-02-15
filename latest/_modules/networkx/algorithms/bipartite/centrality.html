@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.centrality &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bipartite.centrality &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -210,7 +210,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The nodes input parameter must conatin all nodes in one bipartite node set,</span>
+<span class="sd">    The nodes input parameter must contain all nodes in one bipartite node set,</span>
 <span class="sd">    but the dictionary returned contains all nodes from both bipartite node</span>
 <span class="sd">    sets. See :mod:`bipartite documentation &lt;networkx.algorithms.bipartite&gt;`</span>
 <span class="sd">    for further details on how bipartite graphs are handled in NetworkX.</span>
@@ -245,8 +245,8 @@
     <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">bottom</span><span class="p">)</span>
     <span class="n">centrality</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">top</span><span class="p">))</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">top</span><span class="p">)</span>
-    <span class="n">centrality</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">bottom</span><span class="p">)))</span>
-    <span class="k">return</span> <span class="n">centrality</span></div>
+    <span class="n">centrality</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">bottom</span><span class="p">)))</span></div>
+    <span class="k">return</span> <span class="n">centrality</span>
 
 
 <div class="viewcode-block" id="betweenness_centrality"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.bipartite.centrality.betweenness_centrality.html#networkx.algorithms.bipartite.centrality.betweenness_centrality">[docs]</a><span class="k">def</span> <span class="nf">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
@@ -340,8 +340,8 @@
     <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">top</span><span class="p">:</span>
         <span class="n">betweenness</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">/=</span> <span class="n">bet_max_top</span>
     <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">bottom</span><span class="p">:</span>
-        <span class="n">betweenness</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">/=</span> <span class="n">bet_max_bot</span>
-    <span class="k">return</span> <span class="n">betweenness</span></div>
+        <span class="n">betweenness</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">/=</span> <span class="n">bet_max_bot</span></div>
+    <span class="k">return</span> <span class="n">betweenness</span>
 
 
 <div class="viewcode-block" id="closeness_centrality"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.bipartite.centrality.closeness_centrality.html#networkx.algorithms.bipartite.centrality.closeness_centrality">[docs]</a><span class="k">def</span> <span class="nf">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -377,7 +377,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The nodes input parameter must conatin all nodes in one bipartite node set,</span>
+<span class="sd">    The nodes input parameter must contain all nodes in one bipartite node set,</span>
 <span class="sd">    but the dictionary returned contains all nodes from both node sets.</span>
 <span class="sd">    See :mod:`bipartite documentation &lt;networkx.algorithms.bipartite&gt;`</span>
 <span class="sd">    for further details on how bipartite graphs are handled in NetworkX.</span>
@@ -440,8 +440,8 @@
                 <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
                 <span class="n">closeness</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">*=</span> <span class="n">s</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">closeness</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="k">return</span> <span class="n">closeness</span></div>
+            <span class="n">closeness</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span></div>
+    <span class="k">return</span> <span class="n">closeness</span>
 </pre></div>
 
            </div>
@@ -457,7 +457,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -479,7 +479,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

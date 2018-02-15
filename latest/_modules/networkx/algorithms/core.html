@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.core &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.core &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -274,8 +274,8 @@
                 <span class="n">node_pos</span><span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="n">bin_start</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pos</span>
                 <span class="n">nodes</span><span class="p">[</span><span class="n">bin_start</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">bin_start</span><span class="p">]</span>
                 <span class="n">bin_boundaries</span><span class="p">[</span><span class="n">core</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="n">core</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">core</span></div>
+                <span class="n">core</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span></div>
+    <span class="k">return</span> <span class="n">core</span>
 
 
 <span class="n">find_cores</span> <span class="o">=</span> <span class="n">core_number</span>
@@ -354,8 +354,8 @@
 <span class="sd">       https://arxiv.org/abs/cs.DS/0310049</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">k_filter</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span>
-    <span class="k">return</span> <span class="n">_core_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">k_filter</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">core_number</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span></div>
+    <span class="k">return</span> <span class="n">_core_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">k_filter</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">core_number</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="k_shell"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.core.k_shell.html#networkx.algorithms.core.k_shell">[docs]</a><span class="k">def</span> <span class="nf">k_shell</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">core_number</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -411,8 +411,8 @@
 <span class="sd">       http://www.pnas.org/content/104/27/11150.full</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">k_filter</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span>
-    <span class="k">return</span> <span class="n">_core_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">k_filter</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">core_number</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span></div>
+    <span class="k">return</span> <span class="n">_core_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">k_filter</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">core_number</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="k_crust"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.core.k_crust.html#networkx.algorithms.core.k_crust">[docs]</a><span class="k">def</span> <span class="nf">k_crust</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">core_number</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -469,8 +469,8 @@
         <span class="n">core_number</span> <span class="o">=</span> <span class="n">find_cores</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">k</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">core_number</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="n">nodes</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">core_number</span> <span class="k">if</span> <span class="n">core_number</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">core_number</span> <span class="k">if</span> <span class="n">core_number</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="k_corona"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.core.k_corona.html#networkx.algorithms.core.k_corona">[docs]</a><span class="k">def</span> <span class="nf">k_corona</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">core_number</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -521,8 +521,8 @@
 <span class="sd">       http://link.aps.org/doi/10.1103/PhysRevE.73.056101</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">_core_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">core_number</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">_core_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">core_number</span><span class="p">)</span>
 </pre></div>
 
            </div>
@@ -538,7 +538,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -560,7 +560,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.covering.min_edge_cover &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bipartite.covering.min_edge_cover &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Bipartite" href="../bipartite.html"/>
         <link rel="next" title="Boundary" href="../boundary.html"/>
         <link rel="prev" title="networkx.algorithms.bipartite.generators.gnmk_random_graph" href="networkx.algorithms.bipartite.generators.gnmk_random_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -272,17 +272,17 @@ are covered.</p>
 <li><strong>G</strong> (<em>NetworkX graph</em>) – An undirected bipartite graph.</li>
 <li><strong>matching_algorithm</strong> (<em>function</em>) – A function that returns a maximum cardinality matching in a
 given bipartite graph. The function must take one input, the
-graph <code class="docutils literal"><span class="pre">G</span></code>, and return a dictionary mapping each node to its
+graph <code class="docutils literal notranslate"><span class="pre">G</span></code>, and return a dictionary mapping each node to its
 mate. If not specified,
-<a class="reference internal" href="networkx.algorithms.bipartite.matching.hopcroft_karp_matching.html#networkx.algorithms.bipartite.matching.hopcroft_karp_matching" title="networkx.algorithms.bipartite.matching.hopcroft_karp_matching"><code class="xref py py-func docutils literal"><span class="pre">hopcroft_karp_matching()</span></code></a>
+<a class="reference internal" href="networkx.algorithms.bipartite.matching.hopcroft_karp_matching.html#networkx.algorithms.bipartite.matching.hopcroft_karp_matching" title="networkx.algorithms.bipartite.matching.hopcroft_karp_matching"><code class="xref py py-func docutils literal notranslate"><span class="pre">hopcroft_karp_matching()</span></code></a>
 will be used. Other possibilities include
-<a class="reference internal" href="networkx.algorithms.bipartite.matching.eppstein_matching.html#networkx.algorithms.bipartite.matching.eppstein_matching" title="networkx.algorithms.bipartite.matching.eppstein_matching"><code class="xref py py-func docutils literal"><span class="pre">eppstein_matching()</span></code></a>,</li>
+<a class="reference internal" href="networkx.algorithms.bipartite.matching.eppstein_matching.html#networkx.algorithms.bipartite.matching.eppstein_matching" title="networkx.algorithms.bipartite.matching.eppstein_matching"><code class="xref py py-func docutils literal notranslate"><span class="pre">eppstein_matching()</span></code></a>,</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A set of the edges in a minimum edge cover of the graph, given as
-pairs of nodes. It contains both the edges <code class="xref py py-obj docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">(v,</span> <span class="pre">u)</span></code>
-for given nodes <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> among the edges of minimum edge cover.</p>
+pairs of nodes. It contains both the edges <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">(v,</span> <span class="pre">u)</span></code>
+for given nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> among the edges of minimum edge cover.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></p>
@@ -296,7 +296,7 @@ the graph is incident to at least one edge of the set.
 A minimum edge cover is an edge covering of smallest cardinality.</p>
 <p>Due to its implementation, the worst-case running time of this algorithm
 is bounded by the worst-case running time of the function
-<code class="docutils literal"><span class="pre">matching_algorithm</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">matching_algorithm</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -324,7 +324,7 @@ is bounded by the worst-case running time of the function
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -346,7 +346,7 @@ is bounded by the worst-case running time of the function
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

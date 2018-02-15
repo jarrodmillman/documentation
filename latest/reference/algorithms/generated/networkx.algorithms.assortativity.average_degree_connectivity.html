@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.assortativity.average_degree_connectivity &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.assortativity.average_degree_connectivity &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Assortativity" href="../assortativity.html"/>
         <link rel="next" title="networkx.algorithms.assortativity.k_nearest_neighbors" href="networkx.algorithms.assortativity.k_nearest_neighbors.html"/>
         <link rel="prev" title="networkx.algorithms.assortativity.average_neighbor_degree" href="networkx.algorithms.assortativity.average_neighbor_degree.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -257,12 +257,12 @@
 <p>The average degree connectivity is the average nearest neighbor degree of
 nodes with degree k. For weighted graphs, an analogous measure can
 be computed using the weighted average neighbors degree defined in
-<a class="footnote-reference" href="#id2" id="id1">[1]</a>, for a node <code class="xref py py-obj docutils literal"><span class="pre">i</span></code>, as</p>
-<div class="math">
+<a class="footnote-reference" href="#id2" id="id1">[1]</a>, for a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code>, as</p>
+<div class="math notranslate">
 \[k_{nn,i}^{w} = \frac{1}{s_i} \sum_{j \in N(i)} w_{ij} k_j\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">s_i</span></code> is the weighted degree of node <code class="xref py py-obj docutils literal"><span class="pre">i</span></code>,
-<code class="xref py py-obj docutils literal"><span class="pre">w_{ij}</span></code> is the weight of the edge that links <code class="xref py py-obj docutils literal"><span class="pre">i</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">j</span></code>,
-and <code class="xref py py-obj docutils literal"><span class="pre">N(i)</span></code> are the neighbors of node <code class="xref py py-obj docutils literal"><span class="pre">i</span></code>.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">s_i</span></code> is the weighted degree of node <code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code>,
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">w_{ij}</span></code> is the weight of the edge that links <code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">j</span></code>,
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">N(i)</span></code> are the neighbors of node <code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -284,14 +284,14 @@ If None, then each edge has weight 1.</li>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> – If either <code class="xref py py-obj docutils literal"><span class="pre">source</span></code> or <code class="xref py py-obj docutils literal"><span class="pre">target</span></code> are not one of ‘in’,
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If either <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">target</span></code> are not one of ‘in’,
 ‘out’, or ‘in+out’.</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">k_nearest_neighbors</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="go">{1: 2.0, 2: 1.5}</span>
@@ -301,11 +301,11 @@ If None, then each edge has weight 1.</li>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal"><span class="pre">neighbors_average_degree()</span></code></p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">neighbors_average_degree()</span></code></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This algorithm is sometimes called “k nearest neighbors” and is also
-available as <a class="reference internal" href="networkx.algorithms.assortativity.k_nearest_neighbors.html#networkx.algorithms.assortativity.k_nearest_neighbors" title="networkx.algorithms.assortativity.k_nearest_neighbors"><code class="xref py py-obj docutils literal"><span class="pre">k_nearest_neighbors</span></code></a>.</p>
+available as <a class="reference internal" href="networkx.algorithms.assortativity.k_nearest_neighbors.html#networkx.algorithms.assortativity.k_nearest_neighbors" title="networkx.algorithms.assortativity.k_nearest_neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_nearest_neighbors</span></code></a>.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -342,7 +342,7 @@ PNAS 101 (11): 3747–3752 (2004).</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -364,7 +364,7 @@ PNAS 101 (11): 3747–3752 (2004).</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

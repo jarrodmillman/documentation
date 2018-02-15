@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix.to_scipy_sparse_matrix &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.convert_matrix.to_scipy_sparse_matrix &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Converting to and from other data formats" href="../convert.html"/>
         <link rel="next" title="networkx.convert_matrix.from_scipy_sparse_matrix" href="networkx.convert_matrix.from_scipy_sparse_matrix.html"/>
         <link rel="prev" title="networkx.convert_matrix.from_numpy_matrix" href="networkx.convert_matrix.from_numpy_matrix.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -210,8 +210,8 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>G</strong> (<em>graph</em>) – The NetworkX graph used to construct the NumPy matrix.</li>
-<li><strong>nodelist</strong> (<em>list, optional</em>) – The rows and columns are ordered according to the nodes in <code class="xref py py-obj docutils literal"><span class="pre">nodelist</span></code>.
-If <code class="xref py py-obj docutils literal"><span class="pre">nodelist</span></code> is None, then the ordering is produced by G.nodes().</li>
+<li><strong>nodelist</strong> (<em>list, optional</em>) – The rows and columns are ordered according to the nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodelist</span></code>.
+If <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodelist</span></code> is None, then the ordering is produced by G.nodes().</li>
 <li><strong>dtype</strong> (<em>NumPy data-type, optional</em>) – A valid NumPy dtype used to initialize the array. If None, then the
 NumPy default is used.</li>
 <li><strong>weight</strong> (<em>string or None   optional (default=’weight’)</em>) – The edge attribute that holds the numerical value used for
@@ -235,8 +235,8 @@ can perform better.  See <a class="footnote-reference" href="#id2" id="id1">[1]<
 parameter weight. When an edge does not have that attribute, the
 value of the entry is 1.</p>
 <p>For multiple edges the matrix values are the sums of the edge weights.</p>
-<p>When <code class="xref py py-obj docutils literal"><span class="pre">nodelist</span></code> does not contain every node in <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>, the matrix is built
-from the subgraph of <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> that is induced by the nodes in <code class="xref py py-obj docutils literal"><span class="pre">nodelist</span></code>.</p>
+<p>When <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodelist</span></code> does not contain every node in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, the matrix is built
+from the subgraph of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> that is induced by the nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodelist</span></code>.</p>
 <p>Uses coo_matrix format. To convert to other formats specify the
 format= keyword.</p>
 <p>The convention used for self-loop edges in graphs is to assign the
@@ -244,7 +244,7 @@ diagonal matrix entry value to the weight attribute of the edge
 (or the number 1 if the edge has no weight attribute).  If the
 alternate convention of doubling the edge weight is desired the
 resulting Scipy sparse matrix can be modified as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_scipy_sparse_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span>
@@ -255,7 +255,7 @@ resulting Scipy sparse matrix can be modified as follows:</p>
 </pre></div>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -306,7 +306,7 @@ resulting Scipy sparse matrix can be modified as follows:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -328,7 +328,7 @@ resulting Scipy sparse matrix can be modified as follows:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.matching.hopcroft_karp_matching &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bipartite.matching.hopcroft_karp_matching &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Bipartite" href="../bipartite.html"/>
         <link rel="next" title="networkx.algorithms.bipartite.matching.to_vertex_cover" href="networkx.algorithms.bipartite.matching.to_vertex_cover.html"/>
         <link rel="prev" title="networkx.algorithms.bipartite.matching.eppstein_matching" href="networkx.algorithms.bipartite.matching.eppstein_matching.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -259,7 +259,7 @@
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.matching.hopcroft_karp_matching">
 <code class="descname">hopcroft_karp_matching</code><span class="sig-paren">(</span><em>G</em>, <em>top_nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/matching.html#hopcroft_karp_matching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.matching.hopcroft_karp_matching" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the maximum cardinality matching of the bipartite graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
+<dd><p>Returns the maximum cardinality matching of the bipartite graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -272,8 +272,8 @@ will be raised.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>matches</strong> – The matching is returned as a dictionary, <code class="xref py py-obj docutils literal"><span class="pre">matches</span></code>, such that
-<code class="docutils literal"><span class="pre">matches[v]</span> <span class="pre">==</span> <span class="pre">w</span></code> if node <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> is matched to node <code class="xref py py-obj docutils literal"><span class="pre">w</span></code>. Unmatched
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>matches</strong> – The matching is returned as a dictionary, <code class="xref py py-obj docutils literal notranslate"><span class="pre">matches</span></code>, such that
+<code class="docutils literal notranslate"><span class="pre">matches[v]</span> <span class="pre">==</span> <span class="pre">w</span></code> if node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> is matched to node <code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code>. Unmatched
 nodes do not occur as a key in mate.</p>
 </td>
 </tr>
@@ -291,11 +291,11 @@ possible if the input graph is disconnected.</p>
 <p class="rubric">Notes</p>
 <p>This function is implemented with the <a class="reference external" href="https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm">Hopcroft–Karp matching algorithm</a> for
 bipartite graphs.</p>
-<p>See <a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite" title="networkx.algorithms.bipartite"><code class="xref py py-mod docutils literal"><span class="pre">bipartite</span> <span class="pre">documentation</span></code></a>
+<p>See <a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite" title="networkx.algorithms.bipartite"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bipartite</span> <span class="pre">documentation</span></code></a>
 for further details on how bipartite graphs are handled in NetworkX.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.bipartite.matching.eppstein_matching.html#networkx.algorithms.bipartite.matching.eppstein_matching" title="networkx.algorithms.bipartite.matching.eppstein_matching"><code class="xref py py-func docutils literal"><span class="pre">eppstein_matching()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.bipartite.matching.eppstein_matching.html#networkx.algorithms.bipartite.matching.eppstein_matching" title="networkx.algorithms.bipartite.matching.eppstein_matching"><code class="xref py py-func docutils literal notranslate"><span class="pre">eppstein_matching()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id1" rules="none">
@@ -333,7 +333,7 @@ Maximum Matchings in Bipartite Graphs” In: <strong>SIAM Journal of Computing</
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -355,7 +355,7 @@ Maximum Matchings in Bipartite Graphs” In: <strong>SIAM Journal of Computing</
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

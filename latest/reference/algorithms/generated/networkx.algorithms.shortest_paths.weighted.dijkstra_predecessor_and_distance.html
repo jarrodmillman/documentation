@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted.dijkstra_predecessor_and_distance &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted.dijkstra_predecessor_and_distance &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Shortest Paths" href="../shortest_paths.html"/>
         <link rel="next" title="networkx.algorithms.shortest_paths.weighted.dijkstra_path" href="networkx.algorithms.shortest_paths.weighted.dijkstra_path.html"/>
         <link rel="prev" title="networkx.algorithms.shortest_paths.unweighted.predecessor" href="networkx.algorithms.shortest_paths.unweighted.predecessor.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -260,7 +260,7 @@
 <dd><p>Compute weighted shortest path length and predecessors.</p>
 <p>Uses Dijkstra’s Method to obtain the shortest weighted paths
 and return dictionaries of predecessors for each node and
-distance for each node from the <code class="xref py py-obj docutils literal"><span class="pre">source</span></code>.</p>
+distance for each node from the <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -274,7 +274,7 @@ distance for each node from the <code class="xref py py-obj docutils literal"><s
 </li>
 <li><p class="first"><strong>weight</strong> (<em>string or function</em>) – If this is a string, then edge weights will be accessed via the
 edge attribute with this key (that is, the weight of the edge
-joining <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> will be <code class="docutils literal"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
+joining <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> will be <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
 such edge attribute exists, the weight of the edge is assumed to
 be one.</p>
 <p>If this is a function, the weight of an edge is the value
@@ -303,7 +303,7 @@ Distances are calculated as sums of weighted edges traversed.</p>
 <p>The list of predecessors contains more than one element only when
 there are more than one shortest paths to the key node.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pred</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dijkstra_predecessor_and_distance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
@@ -312,7 +312,7 @@ there are more than one shortest paths to the key node.</p>
 <span class="go">[(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pred</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dijkstra_predecessor_and_distance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pred</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dijkstra_predecessor_and_distance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="go">[(0, []), (1, [0])]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
@@ -346,7 +346,7 @@ there are more than one shortest paths to the key node.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -368,7 +368,7 @@ there are more than one shortest paths to the key node.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

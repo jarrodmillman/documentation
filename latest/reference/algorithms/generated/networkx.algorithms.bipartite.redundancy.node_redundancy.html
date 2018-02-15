@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.redundancy.node_redundancy &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bipartite.redundancy.node_redundancy &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Bipartite" href="../bipartite.html"/>
         <link rel="next" title="networkx.algorithms.bipartite.centrality.closeness_centrality" href="networkx.algorithms.bipartite.centrality.closeness_centrality.html"/>
         <link rel="prev" title="networkx.algorithms.bipartite.cluster.robins_alexander_clustering" href="networkx.algorithms.bipartite.cluster.robins_alexander_clustering.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -260,18 +260,18 @@
 <dt id="networkx.algorithms.bipartite.redundancy.node_redundancy">
 <code class="descname">node_redundancy</code><span class="sig-paren">(</span><em>G</em>, <em>nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/redundancy.html#node_redundancy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.redundancy.node_redundancy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the node redundancy coefficients for the nodes in the bipartite
-graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
-<p>The redundancy coefficient of a node <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> is the fraction of pairs of
-neighbors of <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> that are both linked to other nodes. In a one-mode
-projection these nodes would be linked together even if <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> were
+graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
+<p>The redundancy coefficient of a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> is the fraction of pairs of
+neighbors of <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> that are both linked to other nodes. In a one-mode
+projection these nodes would be linked together even if <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> were
 not there.</p>
-<p>More formally, for any vertex <code class="xref py py-obj docutils literal"><span class="pre">v</span></code>, the <em>redundancy coefficient of `v`</em> is
+<p>More formally, for any vertex <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>, the <em>redundancy coefficient of `v`</em> is
 defined by</p>
-<div class="math">
+<div class="math notranslate">
 \[rc(v) = \frac{|\{\{u, w\} \subseteq N(v),
 \: \exists v' \neq  v,\: (v',u) \in E\:
 \mathrm{and}\: (v',w) \in E\}|}{ \frac{|N(v)|(|N(v)|-1)}{2}},\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">N(v)</span></code> is the set of neighbors of <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> in <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">N(v)</span></code> is the set of neighbors of <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -292,7 +292,7 @@ defined by</p>
 </table>
 <p class="rubric">Examples</p>
 <p>Compute the redundancy coefficient of each node in a graph:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">node_redundancy</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -301,7 +301,7 @@ defined by</p>
 </pre></div>
 </div>
 <p>Compute the average redundancy for the graph:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">node_redundancy</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -310,7 +310,7 @@ defined by</p>
 </pre></div>
 </div>
 <p>Compute the average redundancy for a set of nodes:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">node_redundancy</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -323,7 +323,7 @@ defined by</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If any of the nodes in the graph (or in <code class="xref py py-obj docutils literal"><span class="pre">nodes</span></code>, if specified) has
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If any of the nodes in the graph (or in <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>, if specified) has
 (out-)degree less than two (which would result in division by zero,
 according to the definition of the redundancy coefficient).</td>
 </tr>
@@ -365,7 +365,7 @@ Social Networks 30(1), 31–48.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -387,7 +387,7 @@ Social Networks 30(1), 31–48.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

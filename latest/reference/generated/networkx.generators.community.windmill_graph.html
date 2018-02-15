@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.community.windmill_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.community.windmill_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.trees.random_tree" href="networkx.generators.trees.random_tree.html"/>
         <link rel="prev" title="networkx.generators.community.ring_of_cliques" href="networkx.generators.community.ring_of_cliques.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -226,11 +226,11 @@
 <dt id="networkx.generators.community.windmill_graph">
 <code class="descname">windmill_graph</code><span class="sig-paren">(</span><em>n</em>, <em>k</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/community.html#windmill_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.community.windmill_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a windmill graph.
-A windmill graph is a graph of <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> cliques each of size <code class="xref py py-obj docutils literal"><span class="pre">k</span></code> that are all
+A windmill graph is a graph of <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> cliques each of size <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code> that are all
 joined at one node.
-It can be thought of as taking a disjoint union of <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> cliques of size <code class="xref py py-obj docutils literal"><span class="pre">k</span></code>,
+It can be thought of as taking a disjoint union of <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> cliques of size <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code>,
 selecting one point from each, and contracting all of the selected points.
-Alternatively, one could generate <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> cliques of size <code class="xref py py-obj docutils literal"><span class="pre">k-1</span></code> and one node
+Alternatively, one could generate <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> cliques of size <code class="xref py py-obj docutils literal notranslate"><span class="pre">k-1</span></code> and one node
 that is connected to all other nodes in the graph.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -248,19 +248,19 @@ that is connected to all other nodes in the graph.</p>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">NetworkX Graph</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If the number of cliques is less than two
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the number of cliques is less than two
 If the size of the cliques are less than two</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">windmill_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">windmill_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>The node labeled <code class="xref py py-obj docutils literal"><span class="pre">0</span></code> will be the node connected to all other nodes.
-Note that windmill graphs are usually denoted <code class="xref py py-obj docutils literal"><span class="pre">Wd(k,n)</span></code>, so the parameters
+<p>The node labeled <code class="xref py py-obj docutils literal notranslate"><span class="pre">0</span></code> will be the node connected to all other nodes.
+Note that windmill graphs are usually denoted <code class="xref py py-obj docutils literal notranslate"><span class="pre">Wd(k,n)</span></code>, so the parameters
 are in the opposite order as the parameters of this method.</p>
 </dd></dl>
 
@@ -289,7 +289,7 @@ are in the opposite order as the parameters of this method.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -311,7 +311,7 @@ are in the opposite order as the parameters of this method.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.distance_measures &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.distance_measures &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -414,8 +414,8 @@
 
     <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">e</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>  <span class="c1"># return single value</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">e</span></div>
+    <span class="k">else</span><span class="p">:</span></div>
+        <span class="k">return</span> <span class="n">e</span>
 
 
 <div class="viewcode-block" id="diameter"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.diameter.html#networkx.algorithms.distance_measures.diameter">[docs]</a><span class="k">def</span> <span class="nf">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usebounds</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -443,8 +443,8 @@
     <span class="k">if</span> <span class="n">usebounds</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">e</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;diameter&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">e</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">e</span> <span class="o">=</span> <span class="n">eccentricity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">eccentricity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
 
 <div class="viewcode-block" id="periphery"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.periphery.html#networkx.algorithms.distance_measures.periphery">[docs]</a><span class="k">def</span> <span class="nf">periphery</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usebounds</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -470,8 +470,8 @@
     <span class="k">if</span> <span class="n">e</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">e</span> <span class="o">=</span> <span class="n">eccentricity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">diameter</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">e</span> <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">diameter</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">p</span></div>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">e</span> <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">diameter</span><span class="p">]</span></div>
+    <span class="k">return</span> <span class="n">p</span>
 
 
 <div class="viewcode-block" id="radius"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.radius.html#networkx.algorithms.distance_measures.radius">[docs]</a><span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usebounds</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -495,8 +495,8 @@
     <span class="k">if</span> <span class="n">usebounds</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">e</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;radius&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">e</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">e</span> <span class="o">=</span> <span class="n">eccentricity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">eccentricity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
 
 <div class="viewcode-block" id="center"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.center.html#networkx.algorithms.distance_measures.center">[docs]</a><span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usebounds</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -522,8 +522,8 @@
     <span class="k">if</span> <span class="n">e</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">e</span> <span class="o">=</span> <span class="n">eccentricity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">radius</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">e</span> <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">radius</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">p</span></div>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">e</span> <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">radius</span><span class="p">]</span></div>
+    <span class="k">return</span> <span class="n">p</span>
 </pre></div>
 
            </div>
@@ -539,7 +539,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -561,7 +561,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

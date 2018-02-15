@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.components.biconnected &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.components.biconnected &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -260,8 +260,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">bcc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">biconnected_components</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bcc</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">bcc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Multiple bicomponents or No bicomponents (empty graph?)</span></div>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">bcc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Multiple bicomponents or No bicomponents (empty graph?)</span>
 <span class="c1">#    if len(bcc) == 0:  # No bicomponents (it could be an empty graph)</span>
 <span class="c1">#        return False</span>
 <span class="c1">#    return len(bcc[0]) == len(G)</span>
@@ -336,8 +336,8 @@
 <span class="sd">           Communications of the ACM 16: 372–378. doi:10.1145/362248.362272</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">_biconnected_dfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">components</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">comp</span></div>
+    <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">_biconnected_dfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">components</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span></div>
+        <span class="k">yield</span> <span class="n">comp</span>
 
 
 <div class="viewcode-block" id="biconnected_components"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.components.biconnected_components.html#networkx.algorithms.components.biconnected_components">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
@@ -429,8 +429,8 @@
 <span class="sd">           Communications of the ACM 16: 372–378. doi:10.1145/362248.362272</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">_biconnected_dfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">components</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="nb">set</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">comp</span><span class="p">))</span></div>
+    <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">_biconnected_dfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">components</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span></div>
+        <span class="k">yield</span> <span class="nb">set</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">comp</span><span class="p">))</span>
 
 
 <div class="viewcode-block" id="biconnected_component_subgraphs"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.components.biconnected_component_subgraphs.html#networkx.algorithms.components.biconnected_component_subgraphs">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
@@ -445,8 +445,8 @@
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">biconnected_components</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">copy</span><span class="p">:</span>
             <span class="k">yield</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">c</span><span class="p">)</span></div>
+        <span class="k">else</span><span class="p">:</span></div>
+            <span class="k">yield</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="articulation_points"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.components.articulation_points.html#networkx.algorithms.components.articulation_points">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
@@ -519,8 +519,8 @@
     <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">articulation</span> <span class="ow">in</span> <span class="n">_biconnected_dfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">components</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">articulation</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
-            <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">articulation</span><span class="p">)</span>
-            <span class="k">yield</span> <span class="n">articulation</span></div>
+            <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">articulation</span><span class="p">)</span></div>
+            <span class="k">yield</span> <span class="n">articulation</span>
 
 
 <span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
@@ -589,7 +589,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -611,7 +611,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

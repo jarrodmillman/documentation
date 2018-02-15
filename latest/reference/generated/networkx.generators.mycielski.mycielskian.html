@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.mycielski.mycielskian &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.mycielski.mycielskian &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.mycielski.mycielski_graph" href="networkx.generators.mycielski.mycielski_graph.html"/>
         <link rel="prev" title="networkx.generators.joint_degree_seq.joint_degree_graph" href="networkx.generators.joint_degree_seq.joint_degree_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -222,15 +222,15 @@
 <dd><p>Returns the Mycielskian of a simple, undirected graph G</p>
 <p>The Mycielskian of graph preserves a graph’s triangle free
 property while increasing the chromatic number by 1.</p>
-<p>The Mycielski Operation on a graph, <span class="math">\(G=(V, E)\)</span>, constructs a new
-graph with <span class="math">\(2|V| + 1\)</span> nodes and <span class="math">\(3|E| + |V|\)</span> edges.</p>
+<p>The Mycielski Operation on a graph, <span class="math notranslate">\(G=(V, E)\)</span>, constructs a new
+graph with <span class="math notranslate">\(2|V| + 1\)</span> nodes and <span class="math notranslate">\(3|E| + |V|\)</span> edges.</p>
 <p>The construction is as follows:</p>
-<p>Let <span class="math">\(V = {0, ..., n-1}\)</span>. Construct another vertex set
-<span class="math">\(U = {n, ..., 2n}\)</span> and a vertex, <code class="xref py py-obj docutils literal"><span class="pre">w</span></code>.
-Construct a new graph, <code class="xref py py-obj docutils literal"><span class="pre">M</span></code>, with vertices <span class="math">\(U \bigcup V \bigcup w\)</span>.
-For edges, <span class="math">\((u, v) \in E\)</span> add edges <span class="math">\((u, v), (u, v + n)\)</span>, and
-<span class="math">\((u + n, v)\)</span> to M. Finally, for all vertices <span class="math">\(u \in U\)</span>, add
-edge <span class="math">\((u, w)\)</span> to M.</p>
+<p>Let <span class="math notranslate">\(V = {0, ..., n-1}\)</span>. Construct another vertex set
+<span class="math notranslate">\(U = {n, ..., 2n}\)</span> and a vertex, <code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code>.
+Construct a new graph, <code class="xref py py-obj docutils literal notranslate"><span class="pre">M</span></code>, with vertices <span class="math notranslate">\(U \bigcup V \bigcup w\)</span>.
+For edges, <span class="math notranslate">\((u, v) \in E\)</span> add edges <span class="math notranslate">\((u, v), (u, v + n)\)</span>, and
+<span class="math notranslate">\((u + n, v)\)</span> to M. Finally, for all vertices <span class="math notranslate">\(u \in U\)</span>, add
+edge <span class="math notranslate">\((u, w)\)</span> to M.</p>
 <p>The Mycielski Operation can be done multiple times by repeating the above
 process iteratively.</p>
 <p>More information can be found at <a class="reference external" href="https://en.wikipedia.org/wiki/Mycielskian">https://en.wikipedia.org/wiki/Mycielskian</a></p>
@@ -241,7 +241,7 @@ process iteratively.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>G</strong> (<em>graph</em>) – A simple, undirected NetworkX graph</li>
 <li><strong>iterations</strong> (<em>int</em>) – The number of iterations of the Mycielski operation to
-preform on G. Defaults to 1. Must be a non-negative integer.</li>
+perform on G. Defaults to 1. Must be a non-negative integer.</li>
 </ul>
 </td>
 </tr>
@@ -282,7 +282,7 @@ preform on G. Defaults to 1. Must be a non-negative integer.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -304,7 +304,7 @@ preform on G. Defaults to 1. Must be a non-negative integer.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

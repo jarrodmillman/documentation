@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.isomorphism.isomorphvf2 &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.isomorphism.isomorphvf2 &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -406,8 +406,8 @@
                 <span class="c1"># First we determine the candidate node for G2</span>
                 <span class="n">other_node</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">G2_nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">))</span>
                 <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">G1</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">:</span>
-                        <span class="k">yield</span> <span class="n">node</span><span class="p">,</span> <span class="n">other_node</span></div>
+                    <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">:</span></div>
+                        <span class="k">yield</span> <span class="n">node</span><span class="p">,</span> <span class="n">other_node</span>
 
         <span class="c1"># For all other cases, we don&#39;t have any candidate pairs.</span>
 
@@ -439,8 +439,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">GMState</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-        <span class="c1"># Provide a convienient way to access the isomorphism mapping.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+        <span class="c1"># Provide a convenient way to access the isomorphism mapping.</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <div class="viewcode-block" id="GraphMatcher.is_isomorphic"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.isomorphism.GraphMatcher.is_isomorphic.html#networkx.algorithms.isomorphism.GraphMatcher.is_isomorphic">[docs]</a>    <span class="k">def</span> <span class="nf">is_isomorphic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns True if G1 and G2 are isomorphic graphs.&quot;&quot;&quot;</span>
@@ -462,16 +462,16 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">x</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isomorphisms_iter</span><span class="p">())</span>
             <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span></div>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span></div>
+            <span class="k">return</span> <span class="kc">False</span>
 
 <div class="viewcode-block" id="GraphMatcher.isomorphisms_iter"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.isomorphism.GraphMatcher.isomorphisms_iter.html#networkx.algorithms.isomorphism.GraphMatcher.isomorphisms_iter">[docs]</a>    <span class="k">def</span> <span class="nf">isomorphisms_iter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generator over isomorphisms between G1 and G2.&quot;&quot;&quot;</span>
         <span class="c1"># Declare that we are looking for a graph-graph isomorphism.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="s1">&#39;graph&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">match</span><span class="p">():</span>
-            <span class="k">yield</span> <span class="n">mapping</span></div>
+        <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">match</span><span class="p">():</span></div>
+            <span class="k">yield</span> <span class="n">mapping</span>
 
 <div class="viewcode-block" id="GraphMatcher.match"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.isomorphism.GraphMatcher.match.html#networkx.algorithms.isomorphism.GraphMatcher.match">[docs]</a>    <span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Extends the isomorphism mapping.</span>
@@ -496,8 +496,8 @@
                         <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">match</span><span class="p">():</span>
                             <span class="k">yield</span> <span class="n">mapping</span>
 
-                        <span class="c1"># restore data structures</span>
-                        <span class="n">newstate</span><span class="o">.</span><span class="n">restore</span><span class="p">()</span></div>
+                        <span class="c1"># restore data structures</span></div>
+                        <span class="n">newstate</span><span class="o">.</span><span class="n">restore</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">semantic_feasibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G1_node</span><span class="p">,</span> <span class="n">G2_node</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns True if adding (G1_node, G2_node) is symantically feasible.</span>
@@ -540,8 +540,8 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">x</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subgraph_isomorphisms_iter</span><span class="p">())</span>
             <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span></div>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span></div>
+            <span class="k">return</span> <span class="kc">False</span>
 
 <span class="c1">#    subgraph_is_isomorphic.__doc__ += &quot;\n&quot; + subgraph.replace(&#39;\n&#39;,&#39;\n&#39;+indent)</span>
 
@@ -550,8 +550,8 @@
         <span class="c1"># Declare that we are looking for graph-subgraph isomorphism.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="s1">&#39;subgraph&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">match</span><span class="p">():</span>
-            <span class="k">yield</span> <span class="n">mapping</span></div>
+        <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">match</span><span class="p">():</span></div>
+            <span class="k">yield</span> <span class="n">mapping</span>
 
 <span class="c1">#    subgraph_isomorphisms_iter.__doc__ += &quot;\n&quot; + subgraph.replace(&#39;\n&#39;,&#39;\n&#39;+indent)</span>
 
@@ -653,8 +653,8 @@
             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;=</span> <span class="n">num2</span><span class="p">):</span>
                 <span class="k">return</span> <span class="kc">False</span>
 
-        <span class="c1"># Otherwise, this node pair is syntactically feasible!</span>
-        <span class="k">return</span> <span class="kc">True</span></div>
+        <span class="c1"># Otherwise, this node pair is syntactically feasible!</span></div>
+        <span class="k">return</span> <span class="kc">True</span>
 
 
 <span class="k">class</span> <span class="nc">DiGraphMatcher</span><span class="p">(</span><span class="n">GraphMatcher</span><span class="p">):</span>
@@ -721,8 +721,8 @@
             <span class="k">else</span><span class="p">:</span>                          <span class="c1"># as inferred from [1], correct</span>
                 <span class="n">node_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">G2_nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">))</span>
                 <span class="k">for</span> <span class="n">node_1</span> <span class="ow">in</span> <span class="n">G1_nodes</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">node_1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">:</span>
-                        <span class="k">yield</span> <span class="n">node_1</span><span class="p">,</span> <span class="n">node_2</span></div>
+                    <span class="k">if</span> <span class="n">node_1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">:</span></div>
+                        <span class="k">yield</span> <span class="n">node_1</span><span class="p">,</span> <span class="n">node_2</span>
 
         <span class="c1"># For all other cases, we don&#39;t have any candidate pairs.</span>
 
@@ -757,8 +757,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">DiGMState</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-        <span class="c1"># Provide a convienient way to access the isomorphism mapping.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+        <span class="c1"># Provide a convenient way to access the isomorphism mapping.</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <div class="viewcode-block" id="DiGraphMatcher.syntactic_feasibility"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.isomorphism.DiGraphMatcher.syntactic_feasibility.html#networkx.algorithms.isomorphism.DiGraphMatcher.syntactic_feasibility">[docs]</a>    <span class="k">def</span> <span class="nf">syntactic_feasibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G1_node</span><span class="p">,</span> <span class="n">G2_node</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns True if adding (G1_node, G2_node) is syntactically feasible.</span>
@@ -949,8 +949,8 @@
             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;=</span> <span class="n">num2</span><span class="p">):</span>
                 <span class="k">return</span> <span class="kc">False</span>
 
-        <span class="c1"># Otherwise, this node pair is syntactically feasible!</span>
-        <span class="k">return</span> <span class="kc">True</span></div>
+        <span class="c1"># Otherwise, this node pair is syntactically feasible!</span></div>
+        <span class="k">return</span> <span class="kc">True</span>
 
 
 <span class="k">class</span> <span class="nc">GMState</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -1158,7 +1158,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -1180,7 +1180,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

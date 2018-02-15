@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.Graph.subgraph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.Graph.subgraph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Graph—Undirected graphs with self loops" href="../graph.html"/>
         <link rel="next" title="networkx.Graph.edge_subgraph" href="networkx.Graph.edge_subgraph.html"/>
         <link rel="prev" title="networkx.Graph.to_directed" href="networkx.Graph.to_directed.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -204,8 +204,8 @@
 <dl class="method">
 <dt id="networkx.Graph.subgraph">
 <code class="descclassname">Graph.</code><code class="descname">subgraph</code><span class="sig-paren">(</span><em>nodes</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/classes/graph.html#Graph.subgraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.Graph.subgraph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a SubGraph view of the subgraph induced on <a class="reference internal" href="networkx.Graph.nodes.html#networkx.Graph.nodes" title="networkx.Graph.nodes"><code class="xref py py-obj docutils literal"><span class="pre">nodes</span></code></a>.</p>
-<p>The induced subgraph of the graph contains the nodes in <a class="reference internal" href="networkx.Graph.nodes.html#networkx.Graph.nodes" title="networkx.Graph.nodes"><code class="xref py py-obj docutils literal"><span class="pre">nodes</span></code></a>
+<dd><p>Return a SubGraph view of the subgraph induced on <a class="reference internal" href="networkx.Graph.nodes.html#networkx.Graph.nodes" title="networkx.Graph.nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code></a>.</p>
+<p>The induced subgraph of the graph contains the nodes in <a class="reference internal" href="networkx.Graph.nodes.html#networkx.Graph.nodes" title="networkx.Graph.nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code></a>
 and the edges between those nodes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -230,7 +230,7 @@ G.subgraph(nodes).copy()</p>
 <p>For an inplace reduction of a graph to a subgraph you can remove nodes:
 G.remove_nodes_from([n for n in G if n not in set(nodes)])</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
 <span class="go">[(0, 1), (1, 2)]</span>
@@ -263,7 +263,7 @@ G.remove_nodes_from([n for n in G if n not in set(nodes)])</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -285,7 +285,7 @@ G.remove_nodes_from([n for n in G if n not in set(nodes)])</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

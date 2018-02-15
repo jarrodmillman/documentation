@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.swap &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.swap &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -267,8 +267,8 @@
             <span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Maximum number of swap attempts (</span><span class="si">%s</span><span class="s1">) exceeded &#39;</span> <span class="o">%</span> <span class="n">n</span> <span class="o">+</span>
                  <span class="s1">&#39;before desired swaps achieved (</span><span class="si">%s</span><span class="s1">).&#39;</span> <span class="o">%</span> <span class="n">nswap</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXAlgorithmError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="connected_double_edge_swap"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.swap.connected_double_edge_swap.html#networkx.algorithms.swap.connected_double_edge_swap">[docs]</a><span class="k">def</span> <span class="nf">connected_double_edge_swap</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nswap</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">_window_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
@@ -437,8 +437,8 @@
                     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
                     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
                     <span class="n">swapcount</span> <span class="o">-=</span> <span class="mi">1</span>
-                <span class="n">window</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">window</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">swapcount</span></div>
+                <span class="n">window</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">window</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">swapcount</span>
 </pre></div>
 
            </div>
@@ -454,7 +454,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -476,7 +476,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

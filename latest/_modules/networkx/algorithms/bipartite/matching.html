@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.matching &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bipartite.matching &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -337,8 +337,8 @@
     <span class="c1">#</span>
     <span class="c1">#     leftmatches == {v, k for k, v in rightmatches.items()}</span>
     <span class="c1">#</span>
-    <span class="c1"># Finally, we combine both the left matches and right matches.</span>
-    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">leftmatches</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">rightmatches</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span></div>
+    <span class="c1"># Finally, we combine both the left matches and right matches.</span></div>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">leftmatches</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">rightmatches</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
 
 
 <div class="viewcode-block" id="eppstein_matching"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.bipartite.matching.eppstein_matching.html#networkx.algorithms.bipartite.matching.eppstein_matching">[docs]</a><span class="k">def</span> <span class="nf">eppstein_matching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">top_nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -472,8 +472,8 @@
                             <span class="k">return</span> <span class="kc">True</span>
             <span class="k">return</span> <span class="kc">False</span>
 
-        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">unmatched</span><span class="p">:</span>
-            <span class="n">recurse</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">unmatched</span><span class="p">:</span></div>
+            <span class="n">recurse</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_is_connected_by_alternating_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">matched_edges</span><span class="p">,</span> <span class="n">unmatched_edges</span><span class="p">,</span>
@@ -645,8 +645,8 @@
     <span class="c1"># by alternating paths.</span>
     <span class="n">Z</span> <span class="o">=</span> <span class="n">_connected_by_alternating_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">matching</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
     <span class="c1"># At this point, every edge either has a right endpoint in Z or a left</span>
-    <span class="c1"># endpoint not in Z. This gives us the vertex cover.</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">L</span> <span class="o">-</span> <span class="n">Z</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">R</span> <span class="o">&amp;</span> <span class="n">Z</span><span class="p">)</span></div>
+    <span class="c1"># endpoint not in Z. This gives us the vertex cover.</span></div>
+    <span class="k">return</span> <span class="p">(</span><span class="n">L</span> <span class="o">-</span> <span class="n">Z</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">R</span> <span class="o">&amp;</span> <span class="n">Z</span><span class="p">)</span>
 
 
 <span class="c1">#: Returns the maximum cardinality matching in the given bipartite graph.</span>
@@ -668,7 +668,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -690,7 +690,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

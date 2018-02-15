@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.structuralholes.local_constraint &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.structuralholes.local_constraint &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Structural holes" href="../structuralholes.html"/>
         <link rel="next" title="Swap" href="../swap.html"/>
         <link rel="prev" title="networkx.algorithms.structuralholes.effective_size" href="networkx.algorithms.structuralholes.effective_size.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -252,16 +252,16 @@
 <dl class="function">
 <dt id="networkx.algorithms.structuralholes.local_constraint">
 <code class="descname">local_constraint</code><span class="sig-paren">(</span><em>G</em>, <em>u</em>, <em>v</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/structuralholes.html#local_constraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.structuralholes.local_constraint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the local constraint on the node <code class="docutils literal"><span class="pre">u</span></code> with respect to
-the node <code class="docutils literal"><span class="pre">v</span></code> in the graph <code class="docutils literal"><span class="pre">G</span></code>.</p>
+<dd><p>Returns the local constraint on the node <code class="docutils literal notranslate"><span class="pre">u</span></code> with respect to
+the node <code class="docutils literal notranslate"><span class="pre">v</span></code> in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>Formally, the <em>local constraint on u with respect to v</em>, denoted
-<span class="math">\(\ell(v)\)</span>, is defined by</p>
-<div class="math">
+<span class="math notranslate">\(\ell(v)\)</span>, is defined by</p>
+<div class="math notranslate">
 \[\ell(u, v) = \left(p_{uv} + \sum_{w \in N(v)} p_{uw} p{wv}\right)^2,\]</div>
-<p>where <span class="math">\(N(v)\)</span> is the set of neighbors of <span class="math">\(v\)</span> and <span class="math">\(p_{uv}\)</span> is the
+<p>where <span class="math notranslate">\(N(v)\)</span> is the set of neighbors of <span class="math notranslate">\(v\)</span> and <span class="math notranslate">\(p_{uv}\)</span> is the
 normalized mutual weight of the (directed or undirected) edges
-joining <span class="math">\(u\)</span> and <span class="math">\(v\)</span>, for each vertex <span class="math">\(u\)</span> and <span class="math">\(v\)</span> <a class="footnote-reference" href="#id2" id="id1">[1]</a>. The <em>mutual
-weight</em> of <span class="math">\(u\)</span> and <span class="math">\(v\)</span> is the sum of the weights of edges joining
+joining <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span>, for each vertex <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span> <a class="footnote-reference" href="#id2" id="id1">[1]</a>. The <em>mutual
+weight</em> of <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span> is the sum of the weights of edges joining
 them (edge weights are assumed to be one if the graph is
 unweighted).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -269,16 +269,16 @@ unweighted).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph containing <code class="docutils literal"><span class="pre">u</span></code> and <code class="docutils literal"><span class="pre">v</span></code>. This can be either
+<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph containing <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code>. This can be either
 directed or undirected.</li>
-<li><strong>u</strong> (<em>node</em>) – A node in the graph <code class="docutils literal"><span class="pre">G</span></code>.</li>
-<li><strong>v</strong> (<em>node</em>) – A node in the graph <code class="docutils literal"><span class="pre">G</span></code>.</li>
+<li><strong>u</strong> (<em>node</em>) – A node in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</li>
+<li><strong>v</strong> (<em>node</em>) – A node in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</li>
 <li><strong>weight</strong> (<em>None or string, optional</em>) – If None, all edge weights are considered equal.
 Otherwise holds the name of the edge attribute used as weight.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The constraint of the node <code class="docutils literal"><span class="pre">v</span></code> in the graph <code class="docutils literal"><span class="pre">G</span></code>.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The constraint of the node <code class="docutils literal notranslate"><span class="pre">v</span></code> in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
@@ -288,7 +288,7 @@ Otherwise holds the name of the edge attribute used as weight.</li>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.structuralholes.constraint.html#networkx.algorithms.structuralholes.constraint" title="networkx.algorithms.structuralholes.constraint"><code class="xref py py-func docutils literal"><span class="pre">constraint()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.structuralholes.constraint.html#networkx.algorithms.structuralholes.constraint" title="networkx.algorithms.structuralholes.constraint"><code class="xref py py-func docutils literal notranslate"><span class="pre">constraint()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
@@ -326,7 +326,7 @@ American Journal of Sociology (110): 349–399.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -348,7 +348,7 @@ American Journal of Sociology (110): 349–399.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

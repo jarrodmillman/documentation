@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Converting to and from other data formats &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>Converting to and from other data formats &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../index.html"/>
         <link rel="up" title="Reference" href="index.html"/>
         <link rel="next" title="networkx.convert.to_networkx_graph" href="generated/networkx.convert.to_networkx_graph.html"/>
         <link rel="prev" title="networkx.linalg.attrmatrix.attr_sparse_matrix" href="generated/networkx.linalg.attrmatrix.attr_sparse_matrix.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -226,17 +226,17 @@
 <span id="to-networkx-graph"></span><h2>To NetworkX Graph<a class="headerlink" href="#module-networkx.convert" title="Permalink to this headline">¶</a></h2>
 <p>Functions to convert NetworkX graphs to and from other formats.</p>
 <p>The preferred way of converting data to a NetworkX graph is through the
-graph constuctor.  The constructor calls the to_networkx_graph() function
+graph constructor.  The constructor calls the to_networkx_graph() function
 which attempts to guess the input type and convert it automatically.</p>
 <p class="rubric">Examples</p>
 <p>Create a graph with a single edge from a dictionary of dictionaries</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span> <span class="c1"># dict-of-dicts single edge (0,1)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span> <span class="c1"># dict-of-dicts single edge (0,1)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-mod docutils literal"><span class="pre">nx_agraph</span></code>, <code class="xref py py-mod docutils literal"><span class="pre">nx_pydot</span></code></p>
+<p class="last"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nx_agraph</span></code>, <code class="xref py py-mod docutils literal notranslate"><span class="pre">nx_pydot</span></code></p>
 </div>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -244,7 +244,7 @@ which attempts to guess the input type and convert it automatically.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert.to_networkx_graph.html#networkx.convert.to_networkx_graph" title="networkx.convert.to_networkx_graph"><code class="xref py py-obj docutils literal"><span class="pre">to_networkx_graph</span></code></a>(data[,&nbsp;create_using,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert.to_networkx_graph.html#networkx.convert.to_networkx_graph" title="networkx.convert.to_networkx_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_networkx_graph</span></code></a>(data[,&nbsp;create_using,&nbsp;…])</td>
 <td>Make a NetworkX graph from a known data structure.</td>
 </tr>
 </tbody>
@@ -258,10 +258,10 @@ which attempts to guess the input type and convert it automatically.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert.to_dict_of_dicts.html#networkx.convert.to_dict_of_dicts" title="networkx.convert.to_dict_of_dicts"><code class="xref py py-obj docutils literal"><span class="pre">to_dict_of_dicts</span></code></a>(G[,&nbsp;nodelist,&nbsp;edge_data])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert.to_dict_of_dicts.html#networkx.convert.to_dict_of_dicts" title="networkx.convert.to_dict_of_dicts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict_of_dicts</span></code></a>(G[,&nbsp;nodelist,&nbsp;edge_data])</td>
 <td>Return adjacency representation of graph as a dictionary of dictionaries.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert.from_dict_of_dicts.html#networkx.convert.from_dict_of_dicts" title="networkx.convert.from_dict_of_dicts"><code class="xref py py-obj docutils literal"><span class="pre">from_dict_of_dicts</span></code></a>(d[,&nbsp;create_using,&nbsp;…])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert.from_dict_of_dicts.html#networkx.convert.from_dict_of_dicts" title="networkx.convert.from_dict_of_dicts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict_of_dicts</span></code></a>(d[,&nbsp;create_using,&nbsp;…])</td>
 <td>Return a graph from a dictionary of dictionaries.</td>
 </tr>
 </tbody>
@@ -275,16 +275,16 @@ which attempts to guess the input type and convert it automatically.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert.to_dict_of_lists.html#networkx.convert.to_dict_of_lists" title="networkx.convert.to_dict_of_lists"><code class="xref py py-obj docutils literal"><span class="pre">to_dict_of_lists</span></code></a>(G[,&nbsp;nodelist])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert.to_dict_of_lists.html#networkx.convert.to_dict_of_lists" title="networkx.convert.to_dict_of_lists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict_of_lists</span></code></a>(G[,&nbsp;nodelist])</td>
 <td>Return adjacency representation of graph as a dictionary of lists.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert.from_dict_of_lists.html#networkx.convert.from_dict_of_lists" title="networkx.convert.from_dict_of_lists"><code class="xref py py-obj docutils literal"><span class="pre">from_dict_of_lists</span></code></a>(d[,&nbsp;create_using])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert.from_dict_of_lists.html#networkx.convert.from_dict_of_lists" title="networkx.convert.from_dict_of_lists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict_of_lists</span></code></a>(d[,&nbsp;create_using])</td>
 <td>Return a graph from a dictionary of lists.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert.to_edgelist.html#networkx.convert.to_edgelist" title="networkx.convert.to_edgelist"><code class="xref py py-obj docutils literal"><span class="pre">to_edgelist</span></code></a>(G[,&nbsp;nodelist])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert.to_edgelist.html#networkx.convert.to_edgelist" title="networkx.convert.to_edgelist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_edgelist</span></code></a>(G[,&nbsp;nodelist])</td>
 <td>Return a list of edges in the graph.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert.from_edgelist.html#networkx.convert.from_edgelist" title="networkx.convert.from_edgelist"><code class="xref py py-obj docutils literal"><span class="pre">from_edgelist</span></code></a>(edgelist[,&nbsp;create_using])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert.from_edgelist.html#networkx.convert.from_edgelist" title="networkx.convert.from_edgelist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_edgelist</span></code></a>(edgelist[,&nbsp;create_using])</td>
 <td>Return a graph from a list of edges.</td>
 </tr>
 </tbody>
@@ -294,22 +294,22 @@ which attempts to guess the input type and convert it automatically.</p>
 <span id="numpy"></span><h2>Numpy<a class="headerlink" href="#module-networkx.convert_matrix" title="Permalink to this headline">¶</a></h2>
 <p>Functions to convert NetworkX graphs to and from numpy/scipy matrices.</p>
 <p>The preferred way of converting data to a NetworkX graph is through the
-graph constuctor.  The constructor calls the to_networkx_graph() function
+graph constructor.  The constructor calls the to_networkx_graph() function
 which attempts to guess the input type and convert it automatically.</p>
 <p class="rubric">Examples</p>
 <p>Create a 10 node random graph from a numpy matrix</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or equivalently</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_networkx_graph</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_networkx_graph</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-mod docutils literal"><span class="pre">nx_agraph</span></code>, <code class="xref py py-mod docutils literal"><span class="pre">nx_pydot</span></code></p>
+<p class="last"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nx_agraph</span></code>, <code class="xref py py-mod docutils literal notranslate"><span class="pre">nx_pydot</span></code></p>
 </div>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -317,13 +317,13 @@ which attempts to guess the input type and convert it automatically.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_matrix.html#networkx.convert_matrix.to_numpy_matrix" title="networkx.convert_matrix.to_numpy_matrix"><code class="xref py py-obj docutils literal"><span class="pre">to_numpy_matrix</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;order,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_matrix.html#networkx.convert_matrix.to_numpy_matrix" title="networkx.convert_matrix.to_numpy_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_matrix</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;order,&nbsp;…])</td>
 <td>Return the graph adjacency matrix as a NumPy matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray" title="networkx.convert_matrix.to_numpy_recarray"><code class="xref py py-obj docutils literal"><span class="pre">to_numpy_recarray</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;order])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray" title="networkx.convert_matrix.to_numpy_recarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_recarray</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;order])</td>
 <td>Return the graph adjacency matrix as a NumPy recarray.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_matrix.html#networkx.convert_matrix.from_numpy_matrix" title="networkx.convert_matrix.from_numpy_matrix"><code class="xref py py-obj docutils literal"><span class="pre">from_numpy_matrix</span></code></a>(A[,&nbsp;parallel_edges,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_matrix.html#networkx.convert_matrix.from_numpy_matrix" title="networkx.convert_matrix.from_numpy_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_numpy_matrix</span></code></a>(A[,&nbsp;parallel_edges,&nbsp;…])</td>
 <td>Return a graph from numpy matrix.</td>
 </tr>
 </tbody>
@@ -337,10 +337,10 @@ which attempts to guess the input type and convert it automatically.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_scipy_sparse_matrix.html#networkx.convert_matrix.to_scipy_sparse_matrix" title="networkx.convert_matrix.to_scipy_sparse_matrix"><code class="xref py py-obj docutils literal"><span class="pre">to_scipy_sparse_matrix</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_scipy_sparse_matrix.html#networkx.convert_matrix.to_scipy_sparse_matrix" title="networkx.convert_matrix.to_scipy_sparse_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_scipy_sparse_matrix</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;…])</td>
 <td>Return the graph adjacency matrix as a SciPy sparse matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_scipy_sparse_matrix.html#networkx.convert_matrix.from_scipy_sparse_matrix" title="networkx.convert_matrix.from_scipy_sparse_matrix"><code class="xref py py-obj docutils literal"><span class="pre">from_scipy_sparse_matrix</span></code></a>(A[,&nbsp;…])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_scipy_sparse_matrix.html#networkx.convert_matrix.from_scipy_sparse_matrix" title="networkx.convert_matrix.from_scipy_sparse_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_scipy_sparse_matrix</span></code></a>(A[,&nbsp;…])</td>
 <td>Creates a new graph from an adjacency matrix given as a SciPy sparse matrix.</td>
 </tr>
 </tbody>
@@ -354,16 +354,16 @@ which attempts to guess the input type and convert it automatically.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_pandas_adjacency.html#networkx.convert_matrix.to_pandas_adjacency" title="networkx.convert_matrix.to_pandas_adjacency"><code class="xref py py-obj docutils literal"><span class="pre">to_pandas_adjacency</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_pandas_adjacency.html#networkx.convert_matrix.to_pandas_adjacency" title="networkx.convert_matrix.to_pandas_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas_adjacency</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;…])</td>
 <td>Return the graph adjacency matrix as a Pandas DataFrame.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_pandas_adjacency.html#networkx.convert_matrix.from_pandas_adjacency" title="networkx.convert_matrix.from_pandas_adjacency"><code class="xref py py-obj docutils literal"><span class="pre">from_pandas_adjacency</span></code></a>(df[,&nbsp;create_using])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_pandas_adjacency.html#networkx.convert_matrix.from_pandas_adjacency" title="networkx.convert_matrix.from_pandas_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pandas_adjacency</span></code></a>(df[,&nbsp;create_using])</td>
 <td>Return a graph from Pandas DataFrame.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_pandas_edgelist.html#networkx.convert_matrix.to_pandas_edgelist" title="networkx.convert_matrix.to_pandas_edgelist"><code class="xref py py-obj docutils literal"><span class="pre">to_pandas_edgelist</span></code></a>(G[,&nbsp;source,&nbsp;target,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_pandas_edgelist.html#networkx.convert_matrix.to_pandas_edgelist" title="networkx.convert_matrix.to_pandas_edgelist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas_edgelist</span></code></a>(G[,&nbsp;source,&nbsp;target,&nbsp;…])</td>
 <td>Return the graph edge list as a Pandas DataFrame.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_pandas_edgelist.html#networkx.convert_matrix.from_pandas_edgelist" title="networkx.convert_matrix.from_pandas_edgelist"><code class="xref py py-obj docutils literal"><span class="pre">from_pandas_edgelist</span></code></a>(df[,&nbsp;source,&nbsp;target,&nbsp;…])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_pandas_edgelist.html#networkx.convert_matrix.from_pandas_edgelist" title="networkx.convert_matrix.from_pandas_edgelist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pandas_edgelist</span></code></a>(df[,&nbsp;source,&nbsp;target,&nbsp;…])</td>
 <td>Return a graph from Pandas DataFrame containing an edge list.</td>
 </tr>
 </tbody>
@@ -394,7 +394,7 @@ which attempts to guess the input type and convert it automatically.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -416,7 +416,7 @@ which attempts to guess the input type and convert it automatically.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

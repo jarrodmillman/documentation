@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.MultiDiGraph.copy &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.MultiDiGraph.copy &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="MultiDiGraph—Directed graphs with self loops and parallel edges" href="../multidigraph.html"/>
         <link rel="next" title="networkx.MultiDiGraph.to_undirected" href="networkx.MultiDiGraph.to_undirected.html"/>
         <link rel="prev" title="networkx.MultiDiGraph.number_of_edges" href="networkx.MultiDiGraph.number_of_edges.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -208,8 +208,8 @@
 <p>The copy method by default returns a shallow copy of the graph
 and attributes. That is, if an attribute is a container, that
 container is shared by the original an the copy.
-Use Python’s <a class="reference external" href="https://docs.python.org/2/library/copy.html#copy.deepcopy" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">copy.deepcopy</span></code></a> for new containers.</p>
-<p>If <code class="xref py py-obj docutils literal"><span class="pre">as_view</span></code> is True then a view is returned instead of a copy.</p>
+Use Python’s <a class="reference external" href="https://docs.python.org/2/library/copy.html#copy.deepcopy" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy.deepcopy</span></code></a> for new containers.</p>
+<p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">as_view</span></code> is True then a view is returned instead of a copy.</p>
 <p class="rubric">Notes</p>
 <p>All copies reproduce the graph structure, but data attributes
 may be handled in different ways. There are four types of copies
@@ -228,9 +228,9 @@ NetworkX does not provide this level of shallow copy.</p>
 <p>Independent Shallow – This copy creates new independent attribute
 dicts and then does a shallow copy of the attributes. That is, any
 attributes that are containers are shared between the new graph
-and the original. This is exactly what <code class="xref py py-obj docutils literal"><span class="pre">dict.copy()</span></code> provides.
+and the original. This is exactly what <code class="xref py py-obj docutils literal notranslate"><span class="pre">dict.copy()</span></code> provides.
 You can obtain this style copy using:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -241,7 +241,7 @@ You can obtain this style copy using:</p>
 new empty data attribute dicts are created. The resulting graph
 is independent of the original and it has no edge, node or graph
 attributes. Fresh copies are not enabled. Instead use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
 </pre></div>
@@ -267,12 +267,12 @@ of the original graph without actually copying any data.</td>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="networkx.MultiDiGraph.to_directed.html#networkx.MultiDiGraph.to_directed" title="networkx.MultiDiGraph.to_directed"><code class="xref py py-meth docutils literal"><span class="pre">to_directed()</span></code></a></dt>
+<dt><a class="reference internal" href="networkx.MultiDiGraph.to_directed.html#networkx.MultiDiGraph.to_directed" title="networkx.MultiDiGraph.to_directed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_directed()</span></code></a></dt>
 <dd>return a directed copy of the graph.</dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -303,7 +303,7 @@ of the original graph without actually copying any data.</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -325,7 +325,7 @@ of the original graph without actually copying any data.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

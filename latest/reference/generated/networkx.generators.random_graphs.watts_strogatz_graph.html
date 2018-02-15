@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.random_graphs.watts_strogatz_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.random_graphs.watts_strogatz_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.random_graphs.connected_watts_strogatz_graph" href="networkx.generators.random_graphs.connected_watts_strogatz_graph.html"/>
         <link rel="prev" title="networkx.generators.random_graphs.newman_watts_strogatz_graph" href="networkx.generators.random_graphs.newman_watts_strogatz_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -241,7 +241,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>n</strong> (<em>int</em>) – The number of nodes</li>
-<li><strong>k</strong> (<em>int</em>) – Each node is joined with its <code class="xref py py-obj docutils literal"><span class="pre">k</span></code> nearest neighbors in a ring
+<li><strong>k</strong> (<em>int</em>) – Each node is joined with its <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code> nearest neighbors in a ring
 topology.</li>
 <li><strong>p</strong> (<em>float</em>) – The probability of rewiring each edge</li>
 <li><strong>seed</strong> (<em>int, optional</em>) – Seed for random number generator (default=None)</li>
@@ -252,18 +252,18 @@ topology.</li>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.generators.random_graphs.newman_watts_strogatz_graph.html#networkx.generators.random_graphs.newman_watts_strogatz_graph" title="networkx.generators.random_graphs.newman_watts_strogatz_graph"><code class="xref py py-func docutils literal"><span class="pre">newman_watts_strogatz_graph()</span></code></a>, <a class="reference internal" href="networkx.generators.random_graphs.connected_watts_strogatz_graph.html#networkx.generators.random_graphs.connected_watts_strogatz_graph" title="networkx.generators.random_graphs.connected_watts_strogatz_graph"><code class="xref py py-func docutils literal"><span class="pre">connected_watts_strogatz_graph()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.generators.random_graphs.newman_watts_strogatz_graph.html#networkx.generators.random_graphs.newman_watts_strogatz_graph" title="networkx.generators.random_graphs.newman_watts_strogatz_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">newman_watts_strogatz_graph()</span></code></a>, <a class="reference internal" href="networkx.generators.random_graphs.connected_watts_strogatz_graph.html#networkx.generators.random_graphs.connected_watts_strogatz_graph" title="networkx.generators.random_graphs.connected_watts_strogatz_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">connected_watts_strogatz_graph()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>First create a ring over <span class="math">\(n\)</span> nodes <a class="footnote-reference" href="#id2" id="id1">[1]</a>.  Then each node in the ring is joined
-to its <span class="math">\(k\)</span> nearest neighbors (or <span class="math">\(k - 1\)</span> neighbors if <span class="math">\(k\)</span> is odd).
+<p>First create a ring over <span class="math notranslate">\(n\)</span> nodes <a class="footnote-reference" href="#id2" id="id1">[1]</a>.  Then each node in the ring is joined
+to its <span class="math notranslate">\(k\)</span> nearest neighbors (or <span class="math notranslate">\(k - 1\)</span> neighbors if <span class="math notranslate">\(k\)</span> is odd).
 Then shortcuts are created by replacing some edges as follows: for each
-edge <span class="math">\((u, v)\)</span> in the underlying “<span class="math">\(n\)</span>-ring with <span class="math">\(k\)</span> nearest neighbors”
-with probability <span class="math">\(p\)</span> replace it with a new edge <span class="math">\((u, w)\)</span> with uniformly
-random choice of existing node <span class="math">\(w\)</span>.</p>
-<p>In contrast with <a class="reference internal" href="networkx.generators.random_graphs.newman_watts_strogatz_graph.html#networkx.generators.random_graphs.newman_watts_strogatz_graph" title="networkx.generators.random_graphs.newman_watts_strogatz_graph"><code class="xref py py-func docutils literal"><span class="pre">newman_watts_strogatz_graph()</span></code></a>, the random rewiring
+edge <span class="math notranslate">\((u, v)\)</span> in the underlying “<span class="math notranslate">\(n\)</span>-ring with <span class="math notranslate">\(k\)</span> nearest neighbors”
+with probability <span class="math notranslate">\(p\)</span> replace it with a new edge <span class="math notranslate">\((u, w)\)</span> with uniformly
+random choice of existing node <span class="math notranslate">\(w\)</span>.</p>
+<p>In contrast with <a class="reference internal" href="networkx.generators.random_graphs.newman_watts_strogatz_graph.html#networkx.generators.random_graphs.newman_watts_strogatz_graph" title="networkx.generators.random_graphs.newman_watts_strogatz_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">newman_watts_strogatz_graph()</span></code></a>, the random rewiring
 does not increase the number of edges. The rewired graph is not guaranteed
-to be connected as in <a class="reference internal" href="networkx.generators.random_graphs.connected_watts_strogatz_graph.html#networkx.generators.random_graphs.connected_watts_strogatz_graph" title="networkx.generators.random_graphs.connected_watts_strogatz_graph"><code class="xref py py-func docutils literal"><span class="pre">connected_watts_strogatz_graph()</span></code></a>.</p>
+to be connected as in <a class="reference internal" href="networkx.generators.random_graphs.connected_watts_strogatz_graph.html#networkx.generators.random_graphs.connected_watts_strogatz_graph" title="networkx.generators.random_graphs.connected_watts_strogatz_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">connected_watts_strogatz_graph()</span></code></a>.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -300,7 +300,7 @@ Nature, 393, pp. 440–442, 1998.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -322,7 +322,7 @@ Nature, 393, pp. 440–442, 1998.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

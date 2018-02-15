@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.lattice.triangular_lattice_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.lattice.triangular_lattice_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.small.make_small_graph" href="networkx.generators.small.make_small_graph.html"/>
         <link rel="prev" title="networkx.generators.lattice.hypercube_graph" href="networkx.generators.lattice.hypercube_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -222,21 +222,21 @@
 <dl class="function">
 <dt id="networkx.generators.lattice.triangular_lattice_graph">
 <code class="descname">triangular_lattice_graph</code><span class="sig-paren">(</span><em>m</em>, <em>n</em>, <em>periodic=False</em>, <em>with_positions=True</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/lattice.html#triangular_lattice_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.lattice.triangular_lattice_graph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the <span class="math">\(m\)</span> by <span class="math">\(n\)</span> triangular lattice graph.</p>
+<dd><p>Returns the <span class="math notranslate">\(m\)</span> by <span class="math notranslate">\(n\)</span> triangular lattice graph.</p>
 <p>The <a class="reference external" href="http://mathworld.wolfram.com/TriangularGrid.html">triangular lattice graph</a> is a two-dimensional <a class="reference external" href="http://www-cs-students.stanford.edu/~amitp/game-programming/grids/">grid graph</a> in
 which each square unit has a diagonal edge (each grid unit has a chord).</p>
-<p>The returned graph has <span class="math">\(m\)</span> rows and <span class="math">\(n\)</span> columns of triangles. Rows and
+<p>The returned graph has <span class="math notranslate">\(m\)</span> rows and <span class="math notranslate">\(n\)</span> columns of triangles. Rows and
 columns include both triangles pointing up and down. Rows form a strip
 of constant height. Columns form a series of diamond shapes, staggered
 with the columns on either side. Another way to state the size is that
-the nodes form a grid of <code class="xref py py-obj docutils literal"><span class="pre">m+1</span></code> rows and <code class="xref py py-obj docutils literal"><span class="pre">(n</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">//</span> <span class="pre">2</span></code> columns.
+the nodes form a grid of <code class="xref py py-obj docutils literal notranslate"><span class="pre">m+1</span></code> rows and <code class="xref py py-obj docutils literal notranslate"><span class="pre">(n</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">//</span> <span class="pre">2</span></code> columns.
 The odd row nodes are shifted horizontally relative to the even rows.</p>
 <p>Directed graph types have edges pointed up or right.</p>
-<p>Positions of nodes are computed by default or <code class="xref py py-obj docutils literal"><span class="pre">with_positions</span> <span class="pre">is</span> <span class="pre">True</span></code>.
+<p>Positions of nodes are computed by default or <code class="xref py py-obj docutils literal notranslate"><span class="pre">with_positions</span> <span class="pre">is</span> <span class="pre">True</span></code>.
 The position of each node (embedded in a euclidean plane) is stored in
 the graph using equilateral triangles with sidelength 1.
-The height between rows of nodes is thus <span class="math">\(\sqrt(3)/2\)</span>.
-Nodes lie in the first quadrant with the node <span class="math">\((0, 0)\)</span> at the origin.</p>
+The height between rows of nodes is thus <span class="math notranslate">\(\sqrt(3)/2\)</span>.
+Nodes lie in the first quadrant with the node <span class="math notranslate">\((0, 0)\)</span> at the origin.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -248,7 +248,7 @@ Nodes lie in the first quadrant with the node <span class="math">\((0, 0)\)</spa
 boundary conditions. The join between boundaries is the final row
 and column of triangles. This means there is one row and one column
 fewer nodes for the periodic lattice. Periodic lattices require
-<code class="xref py py-obj docutils literal"><span class="pre">m</span> <span class="pre">&gt;=</span> <span class="pre">3</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">n</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code> and are allowed but misaligned if <code class="xref py py-obj docutils literal"><span class="pre">m</span></code> or <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> are odd</li>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span> <span class="pre">&gt;=</span> <span class="pre">3</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code> and are allowed but misaligned if <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> are odd</li>
 <li><strong>with_positions</strong> (<em>bool (default: True)</em>) – Store the coordinates of each node in the graph node attribute ‘pos’.
 The coordinates provide a lattice with equilateral triangles.
 Periodic positions shift the nodes vertically in a nonlinear way so
@@ -294,7 +294,7 @@ with the new graph. Usually used to set the type of the graph.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -316,7 +316,7 @@ with the new graph. Usually used to set the type of the graph.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

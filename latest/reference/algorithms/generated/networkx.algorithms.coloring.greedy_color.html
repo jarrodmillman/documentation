@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.coloring.greedy_color &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.coloring.greedy_color &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Coloring" href="../coloring.html"/>
         <link rel="next" title="networkx.algorithms.coloring.strategy_connected_sequential" href="networkx.algorithms.coloring.strategy_connected_sequential.html"/>
         <link rel="prev" title="Coloring" href="../coloring.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -273,34 +273,34 @@ given strategy determines the order in which nodes are colored.</p>
 </li>
 <li><p class="first"><strong>strategy</strong> (<em>string or function(G, colors)</em>) – A function (or a string representing a function) that provides
 the coloring strategy, by returning nodes in the ordering they
-should be colored. <code class="docutils literal"><span class="pre">G</span></code> is the graph, and <code class="docutils literal"><span class="pre">colors</span></code> is a
+should be colored. <code class="docutils literal notranslate"><span class="pre">G</span></code> is the graph, and <code class="docutils literal notranslate"><span class="pre">colors</span></code> is a
 dictionary of the currently assigned colors, keyed by nodes. The
-function must return an iterable over all the nodes in <code class="docutils literal"><span class="pre">G</span></code>.</p>
+function must return an iterable over all the nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>If the strategy function is an iterator generator (that is, a
-function with <code class="docutils literal"><span class="pre">yield</span></code> statements), keep in mind that the
-<code class="docutils literal"><span class="pre">colors</span></code> dictionary will be updated after each <code class="docutils literal"><span class="pre">yield</span></code>, since
+function with <code class="docutils literal notranslate"><span class="pre">yield</span></code> statements), keep in mind that the
+<code class="docutils literal notranslate"><span class="pre">colors</span></code> dictionary will be updated after each <code class="docutils literal notranslate"><span class="pre">yield</span></code>, since
 this function chooses colors greedily.</p>
-<p>If <code class="docutils literal"><span class="pre">strategy</span></code> is a string, it must be one of the following,
+<p>If <code class="docutils literal notranslate"><span class="pre">strategy</span></code> is a string, it must be one of the following,
 each of which represents one of the built-in strategy functions.</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">'largest_first'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'random_sequential'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'smallest_last'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'independent_set'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'connected_sequential_bfs'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'connected_sequential_dfs'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'connected_sequential'</span></code> (alias for the previous strategy)</li>
-<li><code class="docutils literal"><span class="pre">'strategy_saturation_largest_first'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'DSATUR'</span></code> (alias for the previous strategy)</li>
+<li><code class="docutils literal notranslate"><span class="pre">'largest_first'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'random_sequential'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'smallest_last'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'independent_set'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'connected_sequential_bfs'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'connected_sequential_dfs'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'connected_sequential'</span></code> (alias for the previous strategy)</li>
+<li><code class="docutils literal notranslate"><span class="pre">'strategy_saturation_largest_first'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'DSATUR'</span></code> (alias for the previous strategy)</li>
 </ul>
 </li>
 <li><p class="first"><strong>interchange</strong> (<em>bool</em>) – Will use the color interchange algorithm described by <a class="footnote-reference" href="#id6" id="id3">[3]</a> if set
-to <code class="docutils literal"><span class="pre">True</span></code>.</p>
-<p>Note that <code class="docutils literal"><span class="pre">strategy_saturation_largest_first</span></code> and
-<code class="docutils literal"><span class="pre">strategy_independent_set</span></code> do not work with
+to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code> and
+<code class="docutils literal notranslate"><span class="pre">strategy_independent_set</span></code> do not work with
 interchange. Furthermore, if you use interchange with your own
 strategy function, you cannot rely on the values in the
-<code class="docutils literal"><span class="pre">colors</span></code> argument.</p>
+<code class="docutils literal notranslate"><span class="pre">colors</span></code> argument.</p>
 </li>
 </ul>
 </td>
@@ -315,7 +315,7 @@ strategy function, you cannot rely on the values in the
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">coloring</span><span class="o">.</span><span class="n">greedy_color</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;largest_first&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="ow">in</span> <span class="p">[{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">0</span><span class="p">}]</span>
 <span class="go">True</span>
@@ -325,8 +325,8 @@ strategy function, you cannot rely on the values in the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXPointlessConcept</span></code> – If <code class="docutils literal"><span class="pre">strategy</span></code> is <code class="docutils literal"><span class="pre">strategy_saturation_largest_first</span></code> or
-<code class="docutils literal"><span class="pre">strategy_independent_set</span></code> and <code class="docutils literal"><span class="pre">interchange</span></code> is <code class="docutils literal"><span class="pre">True</span></code>.</td>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXPointlessConcept</span></code> – If <code class="docutils literal notranslate"><span class="pre">strategy</span></code> is <code class="docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code> or
+<code class="docutils literal notranslate"><span class="pre">strategy_independent_set</span></code> and <code class="docutils literal notranslate"><span class="pre">interchange</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</td>
 </tr>
 </tbody>
 </table>
@@ -382,7 +382,7 @@ ISBN 0-486-45353-7.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -404,7 +404,7 @@ ISBN 0-486-45353-7.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

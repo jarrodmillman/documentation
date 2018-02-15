@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cluster.square_clustering &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.cluster.square_clustering &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Clustering" href="../clustering.html"/>
         <link rel="next" title="networkx.algorithms.cluster.generalized_degree" href="networkx.algorithms.cluster.generalized_degree.html"/>
         <link rel="prev" title="networkx.algorithms.cluster.average_clustering" href="networkx.algorithms.cluster.average_clustering.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -258,14 +258,14 @@
 <dd><p>Compute the squares clustering coefficient for nodes.</p>
 <p>For each node return the fraction of possible squares that exist at
 the node <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
-<div class="math">
+<div class="math notranslate">
 \[C_4(v) = \frac{ \sum_{u=1}^{k_v}
 \sum_{w=u+1}^{k_v} q_v(u,w) }{ \sum_{u=1}^{k_v}
 \sum_{w=u+1}^{k_v} [a_v(u,w) + q_v(u,w)]},\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">q_v(u,w)</span></code> are the number of common neighbors of <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">w</span></code>
-other than <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> (ie squares), and
-<code class="xref py py-obj docutils literal"><span class="pre">a_v(u,w)</span> <span class="pre">=</span> <span class="pre">(k_u</span> <span class="pre">-</span> <span class="pre">(1+q_v(u,w)+theta_{uv}))(k_w</span> <span class="pre">-</span> <span class="pre">(1+q_v(u,w)+theta_{uw}))</span></code>,
-where <code class="xref py py-obj docutils literal"><span class="pre">theta_{uw}</span> <span class="pre">=</span> <span class="pre">1</span></code> if <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">w</span></code> are connected and 0 otherwise.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">q_v(u,w)</span></code> are the number of common neighbors of <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code>
+other than <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> (ie squares), and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">a_v(u,w)</span> <span class="pre">=</span> <span class="pre">(k_u</span> <span class="pre">-</span> <span class="pre">(1+q_v(u,w)+theta_{uv}))(k_w</span> <span class="pre">-</span> <span class="pre">(1+q_v(u,w)+theta_{uw}))</span></code>,
+where <code class="xref py py-obj docutils literal notranslate"><span class="pre">theta_{uw}</span> <span class="pre">=</span> <span class="pre">1</span></code> if <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code> are connected and 0 otherwise.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -285,7 +285,7 @@ where <code class="xref py py-obj docutils literal"><span class="pre">theta_{uw}
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">square_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="go">1.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">square_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
@@ -293,8 +293,8 @@ where <code class="xref py py-obj docutils literal"><span class="pre">theta_{uw}
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>While <code class="xref py py-obj docutils literal"><span class="pre">C_3(v)</span></code> (triangle clustering) gives the probability that
-two neighbors of node v are connected with each other, <code class="xref py py-obj docutils literal"><span class="pre">C_4(v)</span></code> is
+<p>While <code class="xref py py-obj docutils literal notranslate"><span class="pre">C_3(v)</span></code> (triangle clustering) gives the probability that
+two neighbors of node v are connected with each other, <code class="xref py py-obj docutils literal notranslate"><span class="pre">C_4(v)</span></code> is
 the probability that two neighbors of node v share a common
 neighbor different from v. This algorithm can be applied to both
 bipartite and unipartite networks.</p>
@@ -334,7 +334,7 @@ Physical Review E (72) 056127.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -356,7 +356,7 @@ Physical Review E (72) 056127.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

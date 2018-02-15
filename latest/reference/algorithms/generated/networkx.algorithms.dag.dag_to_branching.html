@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.dag.dag_to_branching &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.dag.dag_to_branching &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Directed Acyclic Graphs" href="../dag.html"/>
         <link rel="next" title="Dispersion" href="../dispersion.html"/>
         <link rel="prev" title="networkx.algorithms.dag.dag_longest_path_length" href="networkx.algorithms.dag.dag_longest_path_length.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -263,17 +263,17 @@
 <code class="descname">dag_to_branching</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/dag.html#dag_to_branching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.dag.dag_to_branching" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a branching representing all (overlapping) paths from
 root nodes to leaf nodes in the given directed acyclic graph.</p>
-<p>As described in <a class="reference internal" href="../tree.html#module-networkx.algorithms.tree.recognition" title="networkx.algorithms.tree.recognition"><code class="xref py py-mod docutils literal"><span class="pre">networkx.algorithms.tree.recognition</span></code></a>, a
+<p>As described in <a class="reference internal" href="../tree.html#module-networkx.algorithms.tree.recognition" title="networkx.algorithms.tree.recognition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">networkx.algorithms.tree.recognition</span></code></a>, a
 <em>branching</em> is a directed forest in which each node has at most one
 parent. In other words, a branching is a disjoint union of
 <em>arborescences</em>. For this function, each node of in-degree zero in
-<code class="xref py py-obj docutils literal"><span class="pre">G</span></code> becomes a root of one of the arborescences, and there will be
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> becomes a root of one of the arborescences, and there will be
 one leaf node for each distinct path from that root to a leaf node
-in <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
-<p>Each node <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> in <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> with <em>k</em> parents becomes <em>k</em> distinct nodes in
+in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
+<p>Each node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> with <em>k</em> parents becomes <em>k</em> distinct nodes in
 the returned branching, one for each parent, and the sub-DAG rooted
-at <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> is duplicated for each copy. The algorithm then recurses on
-the children of each copy of <code class="xref py py-obj docutils literal"><span class="pre">v</span></code>.</p>
+at <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> is duplicated for each copy. The algorithm then recurses on
+the children of each copy of <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -282,7 +282,7 @@ the children of each copy of <code class="xref py py-obj docutils literal"><span
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>The branching in which there is a bijection between root-to-leaf
-paths in <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> (in which multiple paths may share the same leaf)
+paths in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> (in which multiple paths may share the same leaf)
 and root-to-leaf paths in the branching (in which there is a
 unique path from a root to a leaf).</p>
 <p>Each node has an attribute ‘source’ whose value is the original
@@ -295,8 +295,8 @@ edge attributes are copied into this new graph.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXNotImplemented</span></code> – If <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> is not directed, or if <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> is a multigraph.</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">HasACycle</span></code> – If <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> is not acyclic.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not directed, or if <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is a multigraph.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">HasACycle</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not acyclic.</li>
 </ul>
 </td>
 </tr>
@@ -307,7 +307,7 @@ edge attributes are copied into this new graph.</p>
 which original node in the directed acyclic graph, we can collect
 the mapping from source node to new nodes into a dictionary. For
 example, consider the directed diamond graph:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">itemgetter</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">pairwise</span><span class="p">(</span><span class="s1">&#39;abd&#39;</span><span class="p">))</span>
@@ -326,7 +326,7 @@ example, consider the directed diamond graph:</p>
 <p>To copy node attributes from the original graph to the new graph,
 you can use a dictionary like the one constructed in the above
 example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">sources</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">sources</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
 <span class="gp">... </span>        <span class="n">B</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">source</span><span class="p">])</span>
 </pre></div>
@@ -336,9 +336,9 @@ example:</p>
 the returned branching may be uniquely generated each time the
 function is invoked. In fact, the node labels may not be integers;
 in order to relabel the nodes to be more readable, you can use the
-<code class="xref py py-func docutils literal"><span class="pre">networkx.convert_node_labels_to_integers()</span></code> function.</p>
+<code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.convert_node_labels_to_integers()</span></code> function.</p>
 <p>The current implementation of this function uses
-<code class="xref py py-func docutils literal"><span class="pre">networkx.prefix_tree()</span></code>, so it is subject to the limitations of
+<code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.prefix_tree()</span></code>, so it is subject to the limitations of
 that function.</p>
 </dd></dl>
 
@@ -367,7 +367,7 @@ that function.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -389,7 +389,7 @@ that function.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

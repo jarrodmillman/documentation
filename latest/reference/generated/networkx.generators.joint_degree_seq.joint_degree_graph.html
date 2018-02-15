@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.joint_degree_seq.joint_degree_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.joint_degree_seq.joint_degree_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.mycielski.mycielskian" href="networkx.generators.mycielski.mycielskian.html"/>
         <link rel="prev" title="networkx.generators.joint_degree_seq.is_valid_joint_degree" href="networkx.generators.joint_degree_seq.is_valid_joint_degree.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -225,7 +225,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>joint_degrees</strong> (<em>dictionary of dictionary of integers</em>) – A joint degree dictionary in which entry <code class="docutils literal"><span class="pre">joint_degrees[k][l]</span></code> is the
+<li><strong>joint_degrees</strong> (<em>dictionary of dictionary of integers</em>) – A joint degree dictionary in which entry <code class="docutils literal notranslate"><span class="pre">joint_degrees[k][l]</span></code> is the
 number of edges joining nodes of degree <em>k</em> with nodes of degree <em>l</em>.</li>
 <li><strong>seed</strong> (<em>hashable object, optional</em>) – Seed for random number generator.</li>
 </ul>
@@ -237,7 +237,7 @@ number of edges joining nodes of degree <em>k</em> with nodes of degree <em>l</e
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If <em>joint_degrees</em> dictionary is not realizable.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If <em>joint_degrees</em> dictionary is not realizable.</p>
 </td>
 </tr>
 </tbody>
@@ -245,7 +245,7 @@ number of edges joining nodes of degree <em>k</em> with nodes of degree <em>l</e
 <p class="rubric">Notes</p>
 <p>In each iteration of the “while loop” the algorithm picks two disconnected
 nodes <em>v</em> and <em>w</em>, of degree <em>k</em> and <em>l</em> correspondingly,  for which
-<code class="docutils literal"><span class="pre">joint_degrees[k][l]</span></code> has not reached its target yet. It then adds
+<code class="docutils literal notranslate"><span class="pre">joint_degrees[k][l]</span></code> has not reached its target yet. It then adds
 edge (<em>v</em>, <em>w</em>) and increases the number of edges in graph G by one.</p>
 <p>The intelligence of the algorithm lies in the fact that  it is always
 possible to add an edge between such disconnected nodes <em>v</em> and <em>w</em>,
@@ -254,7 +254,7 @@ executing a “neighbor switch”, an edge rewiring move that releases
 a free stub while keeping the joint degree of G the same.</p>
 <p>The algorithm continues for E (number of edges) iterations of
 the “while loop”, at the which point all entries of the given
-<code class="docutils literal"><span class="pre">joint_degrees[k][l]</span></code> have reached their target values and the
+<code class="docutils literal notranslate"><span class="pre">joint_degrees[k][l]</span></code> have reached their target values and the
 construction is complete.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id1" rules="none">
@@ -265,7 +265,7 @@ Graphs with a Target Joint Degree Matrix and Beyond”, IEEE Infocom, ‘15.</td
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">joint_degrees</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">4</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
 <span class="gp">... </span>                     <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
 <span class="gp">... </span>                     <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
@@ -301,7 +301,7 @@ Graphs with a Target Joint Degree Matrix and Beyond”, IEEE Infocom, ‘15.</td
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -323,7 +323,7 @@ Graphs with a Target Joint Degree Matrix and Beyond”, IEEE Infocom, ‘15.</td
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

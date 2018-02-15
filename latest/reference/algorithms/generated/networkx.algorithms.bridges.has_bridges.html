@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bridges.has_bridges &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bridges.has_bridges &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Bridges" href="../bridges.html"/>
         <link rel="next" title="Centrality" href="../centrality.html"/>
         <link rel="prev" title="networkx.algorithms.bridges.bridges" href="networkx.algorithms.bridges.bridges.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -260,41 +260,41 @@ connected components of the graph to increase.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>G</strong> (<em>undirected graph</em>)</li>
-<li><strong>root</strong> (<em>node (optional)</em>) – A node in the graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>. If specified, only the bridges in the
+<li><strong>root</strong> (<em>node (optional)</em>) – A node in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. If specified, only the bridges in the
 connected component containing this node will be considered.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Whether the graph (or the connected component containing <code class="xref py py-obj docutils literal"><span class="pre">root</span></code>)
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Whether the graph (or the connected component containing <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code>)
 has any bridges.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">NodeNotFound</span></code> – If <code class="xref py py-obj docutils literal"><span class="pre">root</span></code> is not in the graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NodeNotFound</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code> is not in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
 <p>The barbell graph with parameter zero has a single bridge:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">barbell_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">barbell_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">has_bridges</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
 <p>On the other hand, the cycle graph has no bridges:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">has_bridges</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>This implementation uses the <code class="xref py py-func docutils literal"><span class="pre">networkx.bridges()</span></code> function, so
-it shares its worst-case time complexity, <span class="math">\(O(m + n)\)</span>, ignoring
-polylogarithmic factors, where <span class="math">\(n\)</span> is the number of nodes in the
-graph and <span class="math">\(m\)</span> is the number of edges.</p>
+<p>This implementation uses the <code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.bridges()</span></code> function, so
+it shares its worst-case time complexity, <span class="math notranslate">\(O(m + n)\)</span>, ignoring
+polylogarithmic factors, where <span class="math notranslate">\(n\)</span> is the number of nodes in the
+graph and <span class="math notranslate">\(m\)</span> is the number of edges.</p>
 </dd></dl>
 
 </div>
@@ -322,7 +322,7 @@ graph and <span class="math">\(m\)</span> is the number of edges.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -344,7 +344,7 @@ graph and <span class="math">\(m\)</span> is the number of edges.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

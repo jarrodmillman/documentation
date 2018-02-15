@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Spectral Embedding &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>Spectral Embedding &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Examples" href="../index.html"/>
         <link rel="next" title="Four Grids" href="plot_four_grids.html"/>
         <link rel="prev" title="Degree Rank" href="plot_degree_rank.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -207,12 +207,12 @@
   <div class="section" id="spectral-embedding">
 <span id="sphx-glr-auto-examples-drawing-plot-spectral-grid-py"></span><h1>Spectral Embedding<a class="headerlink" href="#spectral-embedding" title="Permalink to this headline">¶</a></h1>
 <p>The spectral layout positions the nodes of the graph based on the
-eigenvectors of the graph Laplacian <span class="math">\(L = D - A\)</span>, where <span class="math">\(A\)</span> is the
-adjacency matrix and <span class="math">\(D\)</span> is the degree matrix of the graph.
+eigenvectors of the graph Laplacian <span class="math notranslate">\(L = D - A\)</span>, where <span class="math notranslate">\(A\)</span> is the
+adjacency matrix and <span class="math notranslate">\(D\)</span> is the degree matrix of the graph.
 By default, the spectral layout will embed the graph in two
 dimensions (you can embed your graph in other dimensions using the
-<code class="docutils literal"><span class="pre">dim</span></code> argument to either <code class="xref py py-func docutils literal"><span class="pre">draw_spectral()</span></code> or
-<code class="xref py py-func docutils literal"><span class="pre">spectral_layout()</span></code>).</p>
+<code class="docutils literal notranslate"><span class="pre">dim</span></code> argument to either <code class="xref py py-func docutils literal notranslate"><span class="pre">draw_spectral()</span></code> or
+<code class="xref py py-func docutils literal notranslate"><span class="pre">spectral_layout()</span></code>).</p>
 <p>When the edges of the graph represent similarity between the incident
 nodes, the spectral embedding will place highly similar nodes closer
 to one another than nodes which are less similar.</p>
@@ -221,7 +221,7 @@ graph.  In the full grid graph, the nodes in the center of the
 graph are pulled apart more than nodes on the periphery.
 As you remove internal nodes, this effect increases.</p>
 <img alt="../../_images/sphx_glr_plot_spectral_grid_001.png" class="align-center" src="../../_images/sphx_glr_plot_spectral_grid_001.png" />
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
 
 
@@ -261,12 +261,12 @@ As you remove internal nodes, this effect increases.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.302 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  2.600 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../../_downloads/plot_spectral_grid.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_spectral_grid.py</span></code></a></div>
+<a class="reference download internal" href="../../_downloads/plot_spectral_grid.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_spectral_grid.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../../_downloads/plot_spectral_grid.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_spectral_grid.ipynb</span></code></a></div>
+<a class="reference download internal" href="../../_downloads/plot_spectral_grid.ipynb" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_spectral_grid.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
@@ -294,7 +294,7 @@ As you remove internal nodes, this effect increases.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -316,7 +316,7 @@ As you remove internal nodes, this effect increases.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

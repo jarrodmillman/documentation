@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.degree_seq &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.degree_seq &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -412,8 +412,8 @@
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNotImplemented</span><span class="p">(</span><span class="s1">&#39;not implemented for directed graphs&#39;</span><span class="p">)</span>
 
     <span class="n">G</span> <span class="o">=</span> <span class="n">_configuration_model</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">G</span></div>
+</div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="directed_configuration_model"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.directed_configuration_model.html#networkx.generators.degree_seq.directed_configuration_model">[docs]</a><span class="k">def</span> <span class="nf">directed_configuration_model</span><span class="p">(</span><span class="n">in_degree_sequence</span><span class="p">,</span>
@@ -507,8 +507,8 @@
     <span class="n">G</span> <span class="o">=</span> <span class="n">_configuration_model</span><span class="p">(</span><span class="n">out_degree_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                              <span class="n">in_deg_sequence</span><span class="o">=</span><span class="n">in_degree_sequence</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
-    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;directed configuration_model </span><span class="si">{}</span><span class="s2"> nodes </span><span class="si">{}</span><span class="s2"> edges&quot;</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;directed configuration_model </span><span class="si">{}</span><span class="s2"> nodes </span><span class="si">{}</span><span class="s2"> edges&quot;</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="expected_degree_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.expected_degree_graph.html#networkx.generators.degree_seq.expected_degree_graph">[docs]</a><span class="k">def</span> <span class="nf">expected_degree_graph</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selfloops</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -616,8 +616,8 @@
                 <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">q</span> <span class="o">/</span> <span class="n">p</span><span class="p">:</span>
                     <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">mapping</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">mapping</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
                 <span class="n">v</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="n">p</span> <span class="o">=</span> <span class="n">q</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">q</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="havel_hakimi_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.havel_hakimi_graph.html#networkx.generators.degree_seq.havel_hakimi_graph">[docs]</a><span class="k">def</span> <span class="nf">havel_hakimi_graph</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -708,8 +708,8 @@
             <span class="p">(</span><span class="n">stubval</span><span class="p">,</span> <span class="n">stubtarget</span><span class="p">)</span> <span class="o">=</span> <span class="n">modstubs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="n">num_degs</span><span class="p">[</span><span class="n">stubval</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stubtarget</span><span class="p">)</span>
             <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">return</span> <span class="n">G</span></div>
+</div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="directed_havel_hakimi_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.directed_havel_hakimi_graph.html#networkx.generators.degree_seq.directed_havel_hakimi_graph">[docs]</a><span class="k">def</span> <span class="nf">directed_havel_hakimi_graph</span><span class="p">(</span><span class="n">in_deg_sequence</span><span class="p">,</span>
@@ -822,8 +822,8 @@
                 <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">zeroheap</span><span class="p">,</span> <span class="p">(</span><span class="n">stub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">stub</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
         <span class="k">if</span> <span class="n">freeout</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">zeroheap</span><span class="p">,</span> <span class="p">(</span><span class="n">freeout</span><span class="p">,</span> <span class="n">target</span><span class="p">))</span>
-
-    <span class="k">return</span> <span class="n">G</span></div>
+</div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="degree_sequence_tree"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.degree_sequence_tree.html#networkx.generators.degree_seq.degree_sequence_tree">[docs]</a><span class="k">def</span> <span class="nf">degree_sequence_tree</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -864,8 +864,8 @@
 
     <span class="c1"># in case we added one too many</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">):</span>
-        <span class="n">G</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+        <span class="n">G</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="random_degree_sequence_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.random_degree_sequence_graph.html#networkx.generators.degree_seq.random_degree_sequence_graph">[docs]</a><span class="k">def</span> <span class="nf">random_degree_sequence_graph</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tries</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
@@ -925,8 +925,8 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">DSRG</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
         <span class="k">except</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXUnfeasible</span><span class="p">:</span>
-            <span class="k">pass</span>
-    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;failed to generate graph in </span><span class="si">%d</span><span class="s1"> tries&#39;</span> <span class="o">%</span> <span class="n">tries</span><span class="p">)</span></div>
+            <span class="k">pass</span></div>
+    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;failed to generate graph in </span><span class="si">%d</span><span class="s1"> tries&#39;</span> <span class="o">%</span> <span class="n">tries</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">DegreeSequenceRandomGraph</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -963,9 +963,9 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span>
 
     <span class="k">def</span> <span class="nf">update_remaining</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">aux_graph</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="c1"># decrement remaining nodes, modify auxilliary graph if in phase3</span>
+        <span class="c1"># decrement remaining nodes, modify auxiliary graph if in phase3</span>
         <span class="k">if</span> <span class="n">aux_graph</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="c1"># remove edges from auxilliary graph</span>
+            <span class="c1"># remove edges from auxiliary graph</span>
             <span class="n">aux_graph</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">remaining_degree</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">remaining_degree</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
@@ -1025,7 +1025,7 @@
     <span class="k">def</span> <span class="nf">phase3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># build potential remaining edges and choose with rejection sampling</span>
         <span class="n">potential_edges</span> <span class="o">=</span> <span class="n">combinations</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">remaining_degree</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="c1"># build auxilliary graph of potential edges not already in graph</span>
+        <span class="c1"># build auxiliary graph of potential edges not already in graph</span>
         <span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">potential_edges</span>
                       <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)])</span>
         <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">remaining_degree</span><span class="p">:</span>
@@ -1053,7 +1053,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -1075,7 +1075,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.richclub.rich_club_coefficient &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.richclub.rich_club_coefficient &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Rich Club" href="../rich_club.html"/>
         <link rel="next" title="Shortest Paths" href="../shortest_paths.html"/>
         <link rel="prev" title="Rich Club" href="../rich_club.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -250,14 +250,14 @@
 <dl class="function">
 <dt id="networkx.algorithms.richclub.rich_club_coefficient">
 <code class="descname">rich_club_coefficient</code><span class="sig-paren">(</span><em>G</em>, <em>normalized=True</em>, <em>Q=100</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/richclub.html#rich_club_coefficient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.richclub.rich_club_coefficient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the rich-club coefficient of the graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
+<dd><p>Returns the rich-club coefficient of the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>For each degree <em>k</em>, the <em>rich-club coefficient</em> is the ratio of the
 number of actual to the number of potential edges for nodes with
 degree greater than <em>k</em>:</p>
-<div class="math">
+<div class="math notranslate">
 \[\phi(k) = \frac{2 E_k}{N_k (N_k - 1)}\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">N_k</span></code> is the number of nodes with degree larger than <em>k</em>, and
-<code class="xref py py-obj docutils literal"><span class="pre">E_k</span></code> is the number of edges among those nodes.</p>
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">N_k</span></code> is the number of nodes with degree larger than <em>k</em>, and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">E_k</span></code> is the number of edges among those nodes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -265,8 +265,8 @@ degree greater than <em>k</em>:</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>G</strong> (<em>NetworkX graph</em>) – Undirected graph with neither parallel edges nor self-loops.</li>
 <li><strong>normalized</strong> (<em>bool (optional)</em>) – Normalize using randomized network as in <a class="footnote-reference" href="#id4" id="id1">[1]</a></li>
-<li><strong>Q</strong> (<em>float (optional, default=100)</em>) – If <code class="xref py py-obj docutils literal"><span class="pre">normalized</span></code> is True, perform <code class="xref py py-obj docutils literal"><span class="pre">Q</span> <span class="pre">*</span> <span class="pre">m</span></code> double-edge
-swaps, where <code class="xref py py-obj docutils literal"><span class="pre">m</span></code> is the number of edges in <code class="xref py py-obj docutils literal"><span class="pre">G</span></code>, to use as a
+<li><strong>Q</strong> (<em>float (optional, default=100)</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">normalized</span></code> is True, perform <code class="xref py py-obj docutils literal notranslate"><span class="pre">Q</span> <span class="pre">*</span> <span class="pre">m</span></code> double-edge
+swaps, where <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> is the number of edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, to use as a
 null-model for normalization.</li>
 </ul>
 </td>
@@ -280,7 +280,7 @@ null-model for normalization.</li>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">rich_club_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
 <span class="go">0.4</span>
@@ -290,7 +290,7 @@ null-model for normalization.</li>
 <p>The rich club definition and algorithm are found in <a class="footnote-reference" href="#id4" id="id2">[1]</a>.  This
 algorithm ignores any edge weights and is not defined for directed
 graphs or graphs with parallel edges or self loops.</p>
-<p>Estimates for appropriate values of <code class="xref py py-obj docutils literal"><span class="pre">Q</span></code> are found in <a class="footnote-reference" href="#id5" id="id3">[2]</a>.</p>
+<p>Estimates for appropriate values of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Q</span></code> are found in <a class="footnote-reference" href="#id5" id="id3">[2]</a>.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -337,7 +337,7 @@ sequences”, 2006. <a class="reference external" href="https://arxiv.org/abs/co
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -359,7 +359,7 @@ sequences”, 2006. <a class="reference external" href="https://arxiv.org/abs/co
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

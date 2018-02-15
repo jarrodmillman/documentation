@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.linalg.laplacianmatrix.directed_laplacian_matrix &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.linalg.laplacianmatrix.directed_laplacian_matrix &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Linear algebra" href="../linalg.html"/>
         <link rel="next" title="networkx.linalg.spectrum.laplacian_spectrum" href="networkx.linalg.spectrum.laplacian_spectrum.html"/>
         <link rel="prev" title="networkx.linalg.laplacianmatrix.normalized_laplacian_matrix" href="networkx.linalg.laplacianmatrix.normalized_laplacian_matrix.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -205,12 +205,12 @@
 <code class="descname">directed_laplacian_matrix</code><span class="sig-paren">(</span><em>G</em>, <em>nodelist=None</em>, <em>weight='weight'</em>, <em>walk_type=None</em>, <em>alpha=0.95</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/linalg/laplacianmatrix.html#directed_laplacian_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.linalg.laplacianmatrix.directed_laplacian_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the directed Laplacian matrix of G.</p>
 <p>The graph directed Laplacian is the matrix</p>
-<div class="math">
+<div class="math notranslate">
 \[L = I - (\Phi^{1/2} P \Phi^{-1/2} + \Phi^{-1/2} P^T \Phi^{1/2} ) / 2\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">I</span></code> is the identity matrix, <code class="xref py py-obj docutils literal"><span class="pre">P</span></code> is the transition matrix of the
-graph, and <code class="xref py py-obj docutils literal"><span class="pre">Phi</span></code> a matrix with the Perron vector of <code class="xref py py-obj docutils literal"><span class="pre">P</span></code> in the diagonal and
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">I</span></code> is the identity matrix, <code class="xref py py-obj docutils literal notranslate"><span class="pre">P</span></code> is the transition matrix of the
+graph, and <code class="xref py py-obj docutils literal notranslate"><span class="pre">Phi</span></code> a matrix with the Perron vector of <code class="xref py py-obj docutils literal notranslate"><span class="pre">P</span></code> in the diagonal and
 zeros elsewhere.</p>
-<p>Depending on the value of walk_type, <code class="xref py py-obj docutils literal"><span class="pre">P</span></code> can be the transition matrix
+<p>Depending on the value of walk_type, <code class="xref py py-obj docutils literal notranslate"><span class="pre">P</span></code> can be the transition matrix
 induced by a random walk, a lazy random walk, or a random walk with
 teleportation (PageRank).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -223,7 +223,7 @@ teleportation (PageRank).</p>
 If nodelist is None, then the ordering is produced by G.nodes().</li>
 <li><strong>weight</strong> (<em>string or None, optional (default=’weight’)</em>) – The edge data key used to compute each value in the matrix.
 If None, then each edge has weight 1.</li>
-<li><strong>walk_type</strong> (<em>string or None, optional (default=None)</em>) – If None, <code class="xref py py-obj docutils literal"><span class="pre">P</span></code> is selected depending on the properties of the
+<li><strong>walk_type</strong> (<em>string or None, optional (default=None)</em>) – If None, <code class="xref py py-obj docutils literal notranslate"><span class="pre">P</span></code> is selected depending on the properties of the
 graph. Otherwise is one of ‘random’, ‘lazy’, or ‘pagerank’</li>
 <li><strong>alpha</strong> (<em>real</em>) – (1 - alpha) is the teleportation probability used with pagerank</li>
 </ul>
@@ -236,8 +236,8 @@ graph. Otherwise is one of ‘random’, ‘lazy’, or ‘pagerank’</li>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If NumPy cannot be imported</li>
-<li><code class="xref py py-exc docutils literal"><span class="pre">NetworkXNotImplemnted</span></code> – If G is not a DiGraph</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If NumPy cannot be imported</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemnted</span></code> – If G is not a DiGraph</li>
 </ul>
 </td>
 </tr>
@@ -247,7 +247,7 @@ graph. Otherwise is one of ‘random’, ‘lazy’, or ‘pagerank’</li>
 <p>Only implemented for DiGraphs</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.linalg.laplacianmatrix.laplacian_matrix.html#networkx.linalg.laplacianmatrix.laplacian_matrix" title="networkx.linalg.laplacianmatrix.laplacian_matrix"><code class="xref py py-func docutils literal"><span class="pre">laplacian_matrix()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.linalg.laplacianmatrix.laplacian_matrix.html#networkx.linalg.laplacianmatrix.laplacian_matrix" title="networkx.linalg.laplacianmatrix.laplacian_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">laplacian_matrix()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id1" rules="none">
@@ -285,7 +285,7 @@ Annals of Combinatorics, 9(1), 2005</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -307,7 +307,7 @@ Annals of Combinatorics, 9(1), 2005</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

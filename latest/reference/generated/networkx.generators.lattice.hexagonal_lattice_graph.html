@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.lattice.hexagonal_lattice_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.lattice.hexagonal_lattice_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../index.html"/>
         <link rel="up" title="Graph generators" href="../generators.html"/>
         <link rel="next" title="networkx.generators.lattice.hypercube_graph" href="networkx.generators.lattice.hypercube_graph.html"/>
         <link rel="prev" title="networkx.generators.lattice.grid_graph" href="networkx.generators.lattice.grid_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -222,15 +222,15 @@
 <dl class="function">
 <dt id="networkx.generators.lattice.hexagonal_lattice_graph">
 <code class="descname">hexagonal_lattice_graph</code><span class="sig-paren">(</span><em>m</em>, <em>n</em>, <em>periodic=False</em>, <em>with_positions=True</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/lattice.html#hexagonal_lattice_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.lattice.hexagonal_lattice_graph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an <code class="xref py py-obj docutils literal"><span class="pre">m</span></code> by <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> hexagonal lattice graph.</p>
+<dd><p>Returns an <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> by <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> hexagonal lattice graph.</p>
 <p>The <em>hexagonal lattice graph</em> is a graph whose nodes and edges are
 the <a class="reference external" href="https://en.wikipedia.org/wiki/Hexagonal_tiling">hexagonal tiling</a> of the plane.</p>
-<p>The returned graph will have <code class="xref py py-obj docutils literal"><span class="pre">m</span></code> rows and <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> columns of hexagons.
+<p>The returned graph will have <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> rows and <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> columns of hexagons.
 <a class="reference external" href="http://www-cs-students.stanford.edu/~amitp/game-programming/grids/">Odd numbered columns</a> are shifted up relative to even numbered columns.</p>
-<p>Positions of nodes are computed by default or <code class="xref py py-obj docutils literal"><span class="pre">with_positions</span> <span class="pre">is</span> <span class="pre">True</span></code>.
+<p>Positions of nodes are computed by default or <code class="xref py py-obj docutils literal notranslate"><span class="pre">with_positions</span> <span class="pre">is</span> <span class="pre">True</span></code>.
 Node positions creating the standard embedding in the plane
 with sidelength 1 and are stored in the node attribute ‘pos’.
-<code class="xref py py-obj docutils literal"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.get_node_attributes(G,</span> <span class="pre">'pos')</span></code> creates a dict ready for drawing.</p>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.get_node_attributes(G,</span> <span class="pre">'pos')</span></code> creates a dict ready for drawing.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -239,7 +239,7 @@ with sidelength 1 and are stored in the node attribute ‘pos’.
 <li><strong>m</strong> (<em>int</em>) – The number of rows of hexagons in the lattice.</li>
 <li><strong>n</strong> (<em>int</em>) – The number of columns of hexagons in the lattice.</li>
 <li><strong>periodic</strong> (<em>bool</em>) – Whether to make a periodic grid by joining the boundary vertices.
-For this to work <code class="xref py py-obj docutils literal"><span class="pre">n</span></code> must be odd and both <code class="xref py py-obj docutils literal"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">m</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>.
+For this to work <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> must be odd and both <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>.
 The periodic connections create another row and column of hexagons
 so these graphs have fewer nodes as boundary nodes are identified.</li>
 <li><strong>with_positions</strong> (<em>bool (default: True)</em>) – Store the coordinates of each node in the graph node attribute ‘pos’.
@@ -289,7 +289,7 @@ If graph is directed, edges will point up or right.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -311,7 +311,7 @@ If graph is directed, edges will point up or right.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

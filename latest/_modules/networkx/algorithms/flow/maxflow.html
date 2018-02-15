@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.maxflow &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.flow.maxflow &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -266,7 +266,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The function used in the flow_func paramter has to return a residual</span>
+<span class="sd">    The function used in the flow_func parameter has to return a residual</span>
 <span class="sd">    network that follows NetworkX conventions:</span>
 
 <span class="sd">    The residual network :samp:`R` from an input graph :samp:`G` has the</span>
@@ -338,8 +338,8 @@
 
     <span class="n">R</span> <span class="o">=</span> <span class="n">flow_func</span><span class="p">(</span><span class="n">flowG</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">_t</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="n">capacity</span><span class="p">,</span> <span class="n">value_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">build_flow_dict</span><span class="p">(</span><span class="n">flowG</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;flow_value&#39;</span><span class="p">],</span> <span class="n">flow_dict</span><span class="p">)</span></div>
+</div>
+    <span class="k">return</span> <span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;flow_value&#39;</span><span class="p">],</span> <span class="n">flow_dict</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="maximum_flow_value"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.flow.maximum_flow_value.html#networkx.algorithms.flow.maximum_flow_value">[docs]</a><span class="k">def</span> <span class="nf">maximum_flow_value</span><span class="p">(</span><span class="n">flowG</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">_t</span><span class="p">,</span>
@@ -407,7 +407,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The function used in the flow_func paramter has to return a residual</span>
+<span class="sd">    The function used in the flow_func parameter has to return a residual</span>
 <span class="sd">    network that follows NetworkX conventions:</span>
 
 <span class="sd">    The residual network :samp:`R` from an input graph :samp:`G` has the</span>
@@ -476,8 +476,8 @@
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;flow_func has to be callable.&quot;</span><span class="p">)</span>
 
     <span class="n">R</span> <span class="o">=</span> <span class="n">flow_func</span><span class="p">(</span><span class="n">flowG</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">_t</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="n">capacity</span><span class="p">,</span> <span class="n">value_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;flow_value&#39;</span><span class="p">]</span></div>
+</div>
+    <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;flow_value&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="minimum_cut"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.flow.minimum_cut.html#networkx.algorithms.flow.minimum_cut">[docs]</a><span class="k">def</span> <span class="nf">minimum_cut</span><span class="p">(</span><span class="n">flowG</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">_t</span><span class="p">,</span>
@@ -545,7 +545,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The function used in the flow_func paramter has to return a residual</span>
+<span class="sd">    The function used in the flow_func parameter has to return a residual</span>
 <span class="sd">    network that follows NetworkX conventions:</span>
 
 <span class="sd">    The residual network :samp:`R` from an input graph :samp:`G` has the</span>
@@ -638,11 +638,11 @@
     <span class="c1"># the minimum cut.</span>
     <span class="n">non_reachable</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">_t</span><span class="p">)))</span>
     <span class="n">partition</span> <span class="o">=</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">flowG</span><span class="p">)</span> <span class="o">-</span> <span class="n">non_reachable</span><span class="p">,</span> <span class="n">non_reachable</span><span class="p">)</span>
-    <span class="c1"># Finaly add again cutset edges to the residual network to make</span>
+    <span class="c1"># Finally add again cutset edges to the residual network to make</span>
     <span class="c1"># sure that it is reusable.</span>
     <span class="k">if</span> <span class="n">cutset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">R</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">cutset</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;flow_value&#39;</span><span class="p">],</span> <span class="n">partition</span><span class="p">)</span></div>
+        <span class="n">R</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">cutset</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;flow_value&#39;</span><span class="p">],</span> <span class="n">partition</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="minimum_cut_value"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.flow.minimum_cut_value.html#networkx.algorithms.flow.minimum_cut_value">[docs]</a><span class="k">def</span> <span class="nf">minimum_cut_value</span><span class="p">(</span><span class="n">flowG</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">_t</span><span class="p">,</span>
@@ -707,7 +707,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The function used in the flow_func paramter has to return a residual</span>
+<span class="sd">    The function used in the flow_func parameter has to return a residual</span>
 <span class="sd">    network that follows NetworkX conventions:</span>
 
 <span class="sd">    The residual network :samp:`R` from an input graph :samp:`G` has the</span>
@@ -779,8 +779,8 @@
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;cutoff should not be specified.&quot;</span><span class="p">)</span>
 
     <span class="n">R</span> <span class="o">=</span> <span class="n">flow_func</span><span class="p">(</span><span class="n">flowG</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">_t</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="n">capacity</span><span class="p">,</span> <span class="n">value_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;flow_value&#39;</span><span class="p">]</span></div>
+</div>
+    <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;flow_value&#39;</span><span class="p">]</span>
 </pre></div>
 
            </div>
@@ -796,7 +796,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -818,7 +818,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

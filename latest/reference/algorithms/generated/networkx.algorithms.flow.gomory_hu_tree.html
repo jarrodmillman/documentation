@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.gomory_hu_tree &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.flow.gomory_hu_tree &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Flows" href="../flow.html"/>
         <link rel="next" title="networkx.algorithms.flow.build_residual_network" href="networkx.algorithms.flow.build_residual_network.html"/>
         <link rel="prev" title="networkx.algorithms.flow.boykov_kolmogorov" href="networkx.algorithms.flow.boykov_kolmogorov.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -263,8 +263,8 @@
 <p>A Gomory-Hu tree of an undirected graph with capacities is a
 weighted tree that represents the minimum s-t cuts for all s-t
 pairs in the graph.</p>
-<p>It only requires <code class="xref py py-obj docutils literal"><span class="pre">n-1</span></code> minimum cut computations instead of the
-obvious <code class="xref py py-obj docutils literal"><span class="pre">n(n-1)/2</span></code>. The tree represents all s-t cuts as the
+<p>It only requires <code class="xref py py-obj docutils literal notranslate"><span class="pre">n-1</span></code> minimum cut computations instead of the
+obvious <code class="xref py py-obj docutils literal notranslate"><span class="pre">n(n-1)/2</span></code>. The tree represents all s-t cuts as the
 minimum cut value among any pair of nodes is the minimum edge
 weight in the shortest path between the two nodes in the
 Gomory-Hu tree.</p>
@@ -285,9 +285,9 @@ that indicates how much flow the edge can support. If this
 attribute is not present, the edge is considered to have
 infinite capacity. Default value: ‘capacity’.</li>
 <li><strong>flow_func</strong> (<em>function</em>) – Function to perform the underlying flow computations. Default value
-<a class="reference internal" href="networkx.algorithms.flow.edmonds_karp.html#networkx.algorithms.flow.edmonds_karp" title="networkx.algorithms.flow.edmonds_karp"><code class="xref py py-func docutils literal"><span class="pre">edmonds_karp()</span></code></a>. This function performs better in sparse graphs
+<a class="reference internal" href="networkx.algorithms.flow.edmonds_karp.html#networkx.algorithms.flow.edmonds_karp" title="networkx.algorithms.flow.edmonds_karp"><code class="xref py py-func docutils literal notranslate"><span class="pre">edmonds_karp()</span></code></a>. This function performs better in sparse graphs
 with right tailed degree distributions.
-<a class="reference internal" href="networkx.algorithms.flow.shortest_augmenting_path.html#networkx.algorithms.flow.shortest_augmenting_path" title="networkx.algorithms.flow.shortest_augmenting_path"><code class="xref py py-func docutils literal"><span class="pre">shortest_augmenting_path()</span></code></a> will perform better in denser
+<a class="reference internal" href="networkx.algorithms.flow.shortest_augmenting_path.html#networkx.algorithms.flow.shortest_augmenting_path" title="networkx.algorithms.flow.shortest_augmenting_path"><code class="xref py py-func docutils literal notranslate"><span class="pre">shortest_augmenting_path()</span></code></a> will perform better in denser
 graphs.</li>
 </ul>
 </td>
@@ -307,7 +307,7 @@ graphs.</li>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;capacity&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gomory_hu_tree</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># The value of the minimum cut between any pair</span>
@@ -359,7 +359,7 @@ Comory-Hu trees, which does not require node contractions and has
 the same computational complexity than the original method.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.flow.minimum_cut.html#networkx.algorithms.flow.minimum_cut" title="networkx.algorithms.flow.minimum_cut"><code class="xref py py-func docutils literal"><span class="pre">minimum_cut()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.maximum_flow.html#networkx.algorithms.flow.maximum_flow" title="networkx.algorithms.flow.maximum_flow"><code class="xref py py-func docutils literal"><span class="pre">maximum_flow()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.flow.minimum_cut.html#networkx.algorithms.flow.minimum_cut" title="networkx.algorithms.flow.minimum_cut"><code class="xref py py-func docutils literal notranslate"><span class="pre">minimum_cut()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.maximum_flow.html#networkx.algorithms.flow.maximum_flow" title="networkx.algorithms.flow.maximum_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">maximum_flow()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
@@ -396,7 +396,7 @@ SIAM J Comput 19(1):143-155, 1990.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -418,7 +418,7 @@ SIAM J Comput 19(1):143-155, 1990.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

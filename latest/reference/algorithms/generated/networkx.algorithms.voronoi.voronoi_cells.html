@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.voronoi.voronoi_cells &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.voronoi.voronoi_cells &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Voronoi cells" href="../voronoi.html"/>
         <link rel="next" title="Wiener index" href="../wiener.html"/>
         <link rel="prev" title="Voronoi cells" href="../voronoi.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -250,7 +250,7 @@
 <dl class="function">
 <dt id="networkx.algorithms.voronoi.voronoi_cells">
 <code class="descname">voronoi_cells</code><span class="sig-paren">(</span><em>G</em>, <em>center_nodes</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/voronoi.html#voronoi_cells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.voronoi.voronoi_cells" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the Voronoi cells centered at <code class="xref py py-obj docutils literal"><span class="pre">center_nodes</span></code> with respect
+<dd><p>Returns the Voronoi cells centered at <code class="xref py py-obj docutils literal notranslate"><span class="pre">center_nodes</span></code> with respect
 to the shortest-path distance metric.</p>
 <p>If <em>C</em> is a set of nodes in the graph and <em>c</em> is an element of <em>C</em>,
 the <em>Voronoi cell</em> centered at a node <em>c</em> is the set of all nodes
@@ -259,7 +259,7 @@ respect to the shortest-path distance metric. <a class="footnote-reference" href
 <p>For directed graphs, this will compute the “outward” Voronoi cells,
 as defined in <a class="footnote-reference" href="#id3" id="id2">[1]</a>, in which distance is measured from the center
 nodes to the target node. For the “inward” Voronoi cells, use the
-<code class="xref py py-meth docutils literal"><span class="pre">DiGraph.reverse()</span></code> method to reverse the orientation of the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">DiGraph.reverse()</span></code> method to reverse the orientation of the
 edges before invoking this function on the directed graph.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -267,20 +267,20 @@ edges before invoking this function on the directed graph.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>center_nodes</strong> (<em>set</em>) – A nonempty set of nodes in the graph <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> that represent the
+<li><strong>center_nodes</strong> (<em>set</em>) – A nonempty set of nodes in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> that represent the
 center of the Voronoi cells.</li>
 <li><strong>weight</strong> (<em>string or function</em>) – The edge attribute (or an arbitrary function) representing the
 weight of an edge. This keyword argument is as described in the
-documentation for <code class="xref py py-func docutils literal"><span class="pre">multi_source_dijkstra_path()</span></code>,
+documentation for <code class="xref py py-func docutils literal notranslate"><span class="pre">multi_source_dijkstra_path()</span></code>,
 for example.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A mapping from center node to set of all nodes in the graph
 closer to that center node than to any other center node. The
-keys of the dictionary are the element of <code class="xref py py-obj docutils literal"><span class="pre">center_nodes</span></code>, and
+keys of the dictionary are the element of <code class="xref py py-obj docutils literal notranslate"><span class="pre">center_nodes</span></code>, and
 the values of the dictionary form a partition of the nodes of
-<code class="xref py py-obj docutils literal"><span class="pre">G</span></code>.</p>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
@@ -291,7 +291,7 @@ the values of the dictionary form a partition of the nodes of
 <p class="rubric">Examples</p>
 <p>To get only the partition of the graph induced by the Voronoi cells,
 take the collection of all values in the returned dictionary:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">center_nodes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cells</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">voronoi_cells</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">center_nodes</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">partition</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">,</span> <span class="n">cells</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
@@ -303,7 +303,7 @@ take the collection of all values in the returned dictionary:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> – If <code class="xref py py-obj docutils literal"><span class="pre">center_nodes</span></code> is empty.</td>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">center_nodes</span></code> is empty.</td>
 </tr>
 </tbody>
 </table>
@@ -344,7 +344,7 @@ take the collection of all values in the returned dictionary:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -366,7 +366,7 @@ take the collection of all values in the returned dictionary:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

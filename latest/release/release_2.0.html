@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.0 &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>Announcement: NetworkX 2.0 &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../index.html"/> 
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -191,12 +191,12 @@ We used to have two methods for the same property of the graph, one that returns
 list and one that returns an iterator. With 2.0 we have replaced them with a view.
 A view is a read-only object that is quick to create, automatically updated, and
 provides basic access like iteration, membership and set operations where appropriate.
-For example, <code class="docutils literal"><span class="pre">G.nodes()</span></code> used to return a list and <code class="docutils literal"><span class="pre">G.nodes_iter()</span></code> an iterator.
-Now <code class="docutils literal"><span class="pre">G.nodes()</span></code> returns a view and <code class="docutils literal"><span class="pre">G.nodes_iter()</span></code> is removed. <code class="docutils literal"><span class="pre">G.degree()</span></code>
-returns a view with <code class="docutils literal"><span class="pre">(node,</span> <span class="pre">degree)</span></code> iteration, so that <code class="docutils literal"><span class="pre">dict(G.degree())</span></code>
+For example, <code class="docutils literal notranslate"><span class="pre">G.nodes()</span></code> used to return a list and <code class="docutils literal notranslate"><span class="pre">G.nodes_iter()</span></code> an iterator.
+Now <code class="docutils literal notranslate"><span class="pre">G.nodes()</span></code> returns a view and <code class="docutils literal notranslate"><span class="pre">G.nodes_iter()</span></code> is removed. <code class="docutils literal notranslate"><span class="pre">G.degree()</span></code>
+returns a view with <code class="docutils literal notranslate"><span class="pre">(node,</span> <span class="pre">degree)</span></code> iteration, so that <code class="docutils literal notranslate"><span class="pre">dict(G.degree())</span></code>
 returns a dict keyed by node with degree as value.
 The old behavior</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>  
 <span class="go">[0, 1, 2, 3, 4]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes_iter</span><span class="p">()</span>  
@@ -204,7 +204,7 @@ The old behavior</p>
 </pre></div>
 </div>
 <p>has changed to</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>
 <span class="go">NodeView((0, 1, 2, 3, 4))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
@@ -213,7 +213,7 @@ The old behavior</p>
 </div>
 <p>New feature include lookup of node and edge data from the views, property
 access without parentheses, and set operations.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="go">{&#39;color&#39;: &#39;blue&#39;}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span> <span class="o">&amp;</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
@@ -224,25 +224,25 @@ access without parentheses, and set operations.</p>
 <blockquote>
 <div><ul class="simple">
 <li>Graph/MultiGraph<ul>
-<li><code class="docutils literal"><span class="pre">G.nodes()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.edges()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.neighbors()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.adjacency_list()</span></code> and <code class="docutils literal"><span class="pre">G.adjacency_iter()</span></code> to <code class="docutils literal"><span class="pre">G.adjacency()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.degree()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.subgraph()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.copy()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.__class__()</span></code> should be replaced with <code class="docutils literal"><span class="pre">G.fresh_copy()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.nodes()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.edges()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.neighbors()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.adjacency_list()</span></code> and <code class="docutils literal notranslate"><span class="pre">G.adjacency_iter()</span></code> to <code class="docutils literal notranslate"><span class="pre">G.adjacency()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.degree()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.subgraph()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.copy()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.__class__()</span></code> should be replaced with <code class="docutils literal notranslate"><span class="pre">G.fresh_copy()</span></code></li>
 </ul>
 </li>
 <li>DiGraph/MultiDiGraph<ul>
-<li><code class="docutils literal"><span class="pre">G.nodes()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.edges()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.in_edges()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.out_edges()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.degree()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.in_degree()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.out_degree()</span></code></li>
-<li><code class="docutils literal"><span class="pre">G.reverse()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.nodes()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.edges()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.in_edges()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.out_edges()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.degree()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.in_degree()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.out_degree()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">G.reverse()</span></code></li>
 </ul>
 </li>
 </ul>
@@ -250,10 +250,10 @@ access without parentheses, and set operations.</p>
 <dl class="docutils">
 <dt>The following deprecated methods will be removed in a future release (3.0?).</dt>
 <dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">G.node</span></code>, <code class="docutils literal"><span class="pre">G.edge</span></code> (replaced by G.nodes, G.edges)</li>
-<li><code class="docutils literal"><span class="pre">G.add_path</span></code>, <code class="docutils literal"><span class="pre">G.add_cycle</span></code>, <code class="docutils literal"><span class="pre">G.add_star</span></code> (Now <code class="docutils literal"><span class="pre">nx.add_path(G,...</span></code>)</li>
-<li><code class="docutils literal"><span class="pre">G.selfloop_edges</span></code>, <code class="docutils literal"><span class="pre">G.nodes_with_selfloops</span></code>, <code class="docutils literal"><span class="pre">G.number_of_selfloops</span></code>
-(Now <code class="docutils literal"><span class="pre">nx.selfloop_edges(G)</span></code>, etc)</li>
+<li><code class="docutils literal notranslate"><span class="pre">G.node</span></code>, <code class="docutils literal notranslate"><span class="pre">G.edge</span></code> (replaced by G.nodes, G.edges)</li>
+<li><code class="docutils literal notranslate"><span class="pre">G.add_path</span></code>, <code class="docutils literal notranslate"><span class="pre">G.add_cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">G.add_star</span></code> (Now <code class="docutils literal notranslate"><span class="pre">nx.add_path(G,...</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">G.selfloop_edges</span></code>, <code class="docutils literal notranslate"><span class="pre">G.nodes_with_selfloops</span></code>, <code class="docutils literal notranslate"><span class="pre">G.number_of_selfloops</span></code>
+(Now <code class="docutils literal notranslate"><span class="pre">nx.selfloop_edges(G)</span></code>, etc)</li>
 </ul>
 </dd>
 <dt>Many subclasses have been changed accordingly such as:</dt>
@@ -266,39 +266,39 @@ access without parentheses, and set operations.</p>
 </dl>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2107">#2107</a>]
-The Graph class methods <code class="docutils literal"><span class="pre">add_edge</span></code> and <code class="docutils literal"><span class="pre">add_edges_from</span></code> no longer
-allow the use of the <code class="docutils literal"><span class="pre">attr_dict</span></code> parameter.  Instead use keyword arguments.
-Thus <code class="docutils literal"><span class="pre">G.add_edge(1,</span> <span class="pre">2,</span> <span class="pre">{'color':</span> <span class="pre">'red'})</span></code> becomes
-<code class="docutils literal"><span class="pre">G.add_edge(1,</span> <span class="pre">2,</span> <span class="pre">color='red')</span></code>.
+The Graph class methods <code class="docutils literal notranslate"><span class="pre">add_edge</span></code> and <code class="docutils literal notranslate"><span class="pre">add_edges_from</span></code> no longer
+allow the use of the <code class="docutils literal notranslate"><span class="pre">attr_dict</span></code> parameter.  Instead use keyword arguments.
+Thus <code class="docutils literal notranslate"><span class="pre">G.add_edge(1,</span> <span class="pre">2,</span> <span class="pre">{'color':</span> <span class="pre">'red'})</span></code> becomes
+<code class="docutils literal notranslate"><span class="pre">G.add_edge(1,</span> <span class="pre">2,</span> <span class="pre">color='red')</span></code>.
 Note that this only works if the attribute name is a string. For non-string
 attributes you will need to add the edge and then update manually using
-e.g. <code class="docutils literal"><span class="pre">G.edges[1,</span> <span class="pre">2].update({0:</span> <span class="pre">&quot;zero&quot;})</span></code></p>
+e.g. <code class="docutils literal notranslate"><span class="pre">G.edges[1,</span> <span class="pre">2].update({0:</span> <span class="pre">&quot;zero&quot;})</span></code></p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/1577">#1577</a>]
 In addition to minimum spanning trees, a new function for calculating maximum
 spanning trees is now provided. The new API consists of four functions:
-<code class="docutils literal"><span class="pre">minimum_spanning_edges</span></code>, <code class="docutils literal"><span class="pre">maximum_spanning_edges</span></code>,
-<code class="docutils literal"><span class="pre">minimum_spanning_tree</span></code>, and <code class="docutils literal"><span class="pre">maximum_spanning_tree</span></code>.
-All of these functions accept an <code class="docutils literal"><span class="pre">algorithm</span></code> parameter which specifies the
+<code class="docutils literal notranslate"><span class="pre">minimum_spanning_edges</span></code>, <code class="docutils literal notranslate"><span class="pre">maximum_spanning_edges</span></code>,
+<code class="docutils literal notranslate"><span class="pre">minimum_spanning_tree</span></code>, and <code class="docutils literal notranslate"><span class="pre">maximum_spanning_tree</span></code>.
+All of these functions accept an <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> parameter which specifies the
 algorithm to use when finding the minimum or maximum spanning tree. Currently,
 Kruskal’s and Prim’s algorithms are implemented, defined as ‘kruskal’ and
 ‘prim’, respectively. If nothing is specified, Kruskal’s algorithm is used.
 For example, to calculate the maximum spanning tree of a graph using Kruskal’s
-algorithm, the function <code class="docutils literal"><span class="pre">maximum_spanning_tree</span></code> has to be called like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">maximum_spanning_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;kruskal&#39;</span><span class="p">)</span>
+algorithm, the function <code class="docutils literal notranslate"><span class="pre">maximum_spanning_tree</span></code> has to be called like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">maximum_spanning_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;kruskal&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">algorithm</span></code> parameter is new and appears before the existing <code class="docutils literal"><span class="pre">weight</span></code>
+<p>The <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> parameter is new and appears before the existing <code class="docutils literal notranslate"><span class="pre">weight</span></code>
 parameter. So existing code that did not explicitly name the optional
-<code class="docutils literal"><span class="pre">weight</span></code> parameter will need to be updated:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">minimum_spanning_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;mass&#39;</span><span class="p">)</span>  <span class="c1"># old</span>
+<code class="docutils literal notranslate"><span class="pre">weight</span></code> parameter will need to be updated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">minimum_spanning_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;mass&#39;</span><span class="p">)</span>  <span class="c1"># old</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">minimum_spanning_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;mass&#39;</span><span class="p">)</span> <span class="c1"># new</span>
 </pre></div>
 </div>
 <p>In the above, we are still relying on the the functions being imported into the
 top-level  namespace. We do not have immediate plans to deprecate this approach,
 but we recommend the following instead:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">tree</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">tree</span>
 <span class="go"># recommended</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">minimum_spanning_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;kruskal&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;mass&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">minimum_spanning_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;prim&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;mass&#39;</span><span class="p">)</span>
@@ -306,25 +306,25 @@ but we recommend the following instead:</p>
 </div>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/1445">#1445</a>]
-Most of the <code class="docutils literal"><span class="pre">shortest_path</span></code> algorithms now raise a <code class="docutils literal"><span class="pre">NodeNotFound</span></code> exception
+Most of the <code class="docutils literal notranslate"><span class="pre">shortest_path</span></code> algorithms now raise a <code class="docutils literal notranslate"><span class="pre">NodeNotFound</span></code> exception
 when a source or a target are not present in the graph.</p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2326">#2326</a>]
 Centrality algorithms were harmonized with respect to the default behavior of
-the weight parameter. The default value of the <code class="docutils literal"><span class="pre">weight</span></code> keyword argument has
-been changed from <code class="docutils literal"><span class="pre">weight</span></code> to <code class="docutils literal"><span class="pre">None</span></code>.  This affects the
+the weight parameter. The default value of the <code class="docutils literal notranslate"><span class="pre">weight</span></code> keyword argument has
+been changed from <code class="docutils literal notranslate"><span class="pre">weight</span></code> to <code class="docutils literal notranslate"><span class="pre">None</span></code>.  This affects the
 following centrality functions:</p>
 <ul class="simple">
-<li><code class="xref py py-func docutils literal"><span class="pre">approximate_current_flow_betweenness_centrality()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">current_flow_betweenness_centrality()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">current_flow_betweenness_centrality_subset()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">current_flow_closeness_centrality()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">edge_current_flow_betweenness_centrality()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">edge_current_flow_betweenness_centrality_subset()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">eigenvector_centrality()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">eigenvector_centrality_numpy()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">katz_centrality()</span></code></li>
-<li><code class="xref py py-func docutils literal"><span class="pre">katz_centrality_numpy()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">approximate_current_flow_betweenness_centrality()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">current_flow_betweenness_centrality()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">current_flow_betweenness_centrality_subset()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">current_flow_closeness_centrality()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">edge_current_flow_betweenness_centrality()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">edge_current_flow_betweenness_centrality_subset()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality_numpy()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">katz_centrality()</span></code></li>
+<li><code class="xref py py-func docutils literal notranslate"><span class="pre">katz_centrality_numpy()</span></code></li>
 </ul>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2420">#2420</a>]
@@ -336,38 +336,38 @@ Detection Algorithm”</a>.</p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2510">#2510</a> and
 <a class="reference external" href="https://github.com/networkx/networkx/pull/2508">#2508</a>]
-<code class="docutils literal"><span class="pre">single_source_dijkstra</span></code>, <code class="docutils literal"><span class="pre">multi_source_dijkstra</span></code> and functions that use
-these now have new behavior when <code class="docutils literal"><span class="pre">target</span></code> is specified. Instead of
-returning dicts for distances and paths a 2-tuple of <code class="docutils literal"><span class="pre">(distance,</span> <span class="pre">path)</span></code> is
-returned.  When <code class="docutils literal"><span class="pre">target</span></code> is not specified the return value is still 2
+<code class="docutils literal notranslate"><span class="pre">single_source_dijkstra</span></code>, <code class="docutils literal notranslate"><span class="pre">multi_source_dijkstra</span></code> and functions that use
+these now have new behavior when <code class="docutils literal notranslate"><span class="pre">target</span></code> is specified. Instead of
+returning dicts for distances and paths a 2-tuple of <code class="docutils literal notranslate"><span class="pre">(distance,</span> <span class="pre">path)</span></code> is
+returned.  When <code class="docutils literal notranslate"><span class="pre">target</span></code> is not specified the return value is still 2
 dicts.</p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2553">#2553</a>]
-<code class="docutils literal"><span class="pre">set_node_attributes()</span></code> and <code class="docutils literal"><span class="pre">set_edge_attributes()</span></code> now accept
-dict-of-dict input of shape <code class="docutils literal"><span class="pre">{node/edge:</span> <span class="pre">{name:</span> <span class="pre">value}}</span></code> in addition to
-previous valid inputs: <code class="docutils literal"><span class="pre">{node/edge:</span> <span class="pre">value}</span></code> and <code class="docutils literal"><span class="pre">value</span></code>. The order of the
+<code class="docutils literal notranslate"><span class="pre">set_node_attributes()</span></code> and <code class="docutils literal notranslate"><span class="pre">set_edge_attributes()</span></code> now accept
+dict-of-dict input of shape <code class="docutils literal notranslate"><span class="pre">{node/edge:</span> <span class="pre">{name:</span> <span class="pre">value}}</span></code> in addition to
+previous valid inputs: <code class="docutils literal notranslate"><span class="pre">{node/edge:</span> <span class="pre">value}</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code>. The order of the
 parameters changed also: The second parameter “values” is the value argument
 and the third parameter “name” is the name of the attribute. “name” has
-default value <code class="docutils literal"><span class="pre">None</span></code> in which case “values” must be the newly allowed form
+default value <code class="docutils literal notranslate"><span class="pre">None</span></code> in which case “values” must be the newly allowed form
 containing names. Previously “name” came second without default, and “values”
 came third.</p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2604">#2604</a>] Move selfloop
 methods out of base classes to networkx functions.
-<code class="docutils literal"><span class="pre">G.number_of_selfloops()</span></code>, <code class="docutils literal"><span class="pre">G.selfloop_edges()</span></code>,
-<code class="docutils literal"><span class="pre">G.nodes_with_selfloops()</span></code> are now <code class="docutils literal"><span class="pre">nx.number_of_selfloops(G)</span></code>,
-<code class="docutils literal"><span class="pre">nx.selfloop_edges(G)</span></code>, <code class="docutils literal"><span class="pre">nx.nodes_with_selfloops(G)</span></code>.</p>
-<p><code class="docutils literal"><span class="pre">G.node</span></code> and <code class="docutils literal"><span class="pre">G.edge</span></code> are removed. Their functionality are replaced by
-<code class="docutils literal"><span class="pre">G.nodes</span></code> and <code class="docutils literal"><span class="pre">G.edges</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">G.number_of_selfloops()</span></code>, <code class="docutils literal notranslate"><span class="pre">G.selfloop_edges()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">G.nodes_with_selfloops()</span></code> are now <code class="docutils literal notranslate"><span class="pre">nx.number_of_selfloops(G)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">nx.selfloop_edges(G)</span></code>, <code class="docutils literal notranslate"><span class="pre">nx.nodes_with_selfloops(G)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">G.node</span></code> and <code class="docutils literal notranslate"><span class="pre">G.edge</span></code> are removed. Their functionality are replaced by
+<code class="docutils literal notranslate"><span class="pre">G.nodes</span></code> and <code class="docutils literal notranslate"><span class="pre">G.edges</span></code>.</p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2558">#2558</a>]
-Previously, the function <code class="docutils literal"><span class="pre">from_pandas_dataframe</span></code> assumed that the dataframe
-has edge-list like structures, but <code class="docutils literal"><span class="pre">to_pandas_dataframe</span></code> generates an
-adjacency matrix.  We now provide four functions <code class="docutils literal"><span class="pre">from_pandas_edgelist</span></code>,
-<code class="docutils literal"><span class="pre">to_pandas_edgelist</span></code>, <code class="docutils literal"><span class="pre">from_pandas_adjacency</span></code>, and <code class="docutils literal"><span class="pre">to_pandas_adjacency</span></code>.</p>
+Previously, the function <code class="docutils literal notranslate"><span class="pre">from_pandas_dataframe</span></code> assumed that the dataframe
+has edge-list like structures, but <code class="docutils literal notranslate"><span class="pre">to_pandas_dataframe</span></code> generates an
+adjacency matrix.  We now provide four functions <code class="docutils literal notranslate"><span class="pre">from_pandas_edgelist</span></code>,
+<code class="docutils literal notranslate"><span class="pre">to_pandas_edgelist</span></code>, <code class="docutils literal notranslate"><span class="pre">from_pandas_adjacency</span></code>, and <code class="docutils literal notranslate"><span class="pre">to_pandas_adjacency</span></code>.</p>
 </li>
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2620">#2620</a>]
-Removed <code class="docutils literal"><span class="pre">draw_nx</span></code>, please use <code class="docutils literal"><span class="pre">draw</span></code> or <code class="docutils literal"><span class="pre">draw_networkx</span></code>.</p>
+Removed <code class="docutils literal notranslate"><span class="pre">draw_nx</span></code>, please use <code class="docutils literal notranslate"><span class="pre">draw</span></code> or <code class="docutils literal notranslate"><span class="pre">draw_networkx</span></code>.</p>
 </li>
 </ul>
 </div>
@@ -375,11 +375,11 @@ Removed <code class="docutils literal"><span class="pre">draw_nx</span></code>, 
 <h2>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h2>
 <p>The following deprecated functions will be removed in 2.1.</p>
 <ul class="simple">
-<li>The function <code class="docutils literal"><span class="pre">bellman_ford</span></code> has been deprecated in favor of
-<code class="docutils literal"><span class="pre">bellman_ford_predecessor_and_distance</span></code>.</li>
-<li>The functions <code class="docutils literal"><span class="pre">to_pandas_dataframe</span></code> and <code class="docutils literal"><span class="pre">from_pandas_dataframe</span></code> have been
-deprecated in favor of <code class="docutils literal"><span class="pre">to_pandas_adjacency</span></code>, <code class="docutils literal"><span class="pre">from_pandas_adjacency</span></code>,
-<code class="docutils literal"><span class="pre">to_pandas_edgelist</span></code>, and <code class="docutils literal"><span class="pre">from_pandas_edgelist</span></code>.</li>
+<li>The function <code class="docutils literal notranslate"><span class="pre">bellman_ford</span></code> has been deprecated in favor of
+<code class="docutils literal notranslate"><span class="pre">bellman_ford_predecessor_and_distance</span></code>.</li>
+<li>The functions <code class="docutils literal notranslate"><span class="pre">to_pandas_dataframe</span></code> and <code class="docutils literal notranslate"><span class="pre">from_pandas_dataframe</span></code> have been
+deprecated in favor of <code class="docutils literal notranslate"><span class="pre">to_pandas_adjacency</span></code>, <code class="docutils literal notranslate"><span class="pre">from_pandas_adjacency</span></code>,
+<code class="docutils literal notranslate"><span class="pre">to_pandas_edgelist</span></code>, and <code class="docutils literal notranslate"><span class="pre">from_pandas_edgelist</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="contributors-to-this-release">
@@ -542,7 +542,7 @@ deprecated in favor of <code class="docutils literal"><span class="pre">to_panda
 <li>Simplifies eigenvector centrality implementation. (#1708)</li>
 <li>Fjmalass nodes as tuples (#2089)</li>
 <li>Generator rename (#2090)</li>
-<li>Ensure links in doc <code class="docutils literal"><span class="pre">`See</span> <span class="pre">also`</span></code> sections (#2082)</li>
+<li>Ensure links in doc <code class="docutils literal notranslate"><span class="pre">`See</span> <span class="pre">also`</span></code> sections (#2082)</li>
 <li>Document integer-only numeric mixing (#2085)</li>
 <li>doc sphinx error removal (#2091)</li>
 <li>Correct see also links (#2095)</li>
@@ -653,7 +653,7 @@ deprecated in favor of <code class="docutils literal"><span class="pre">to_panda
 <li>Note the precondition that graphs are directed and acyclic (#2500)</li>
 <li>Add CONTRIBUTE file (#2501)</li>
 <li>Remove external module (#2521)</li>
-<li>Ensure <code class="xref py py-obj docutils literal"><span class="pre">make</span> <span class="pre">html</span></code> doesn’t fail build on exit (#2530)</li>
+<li>Ensure <code class="xref py py-obj docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> doesn’t fail build on exit (#2530)</li>
 <li>Cherry pick missing commits (#2535)</li>
 <li>Document release process (#2539)</li>
 <li>Update copyright (#2551)</li>
@@ -687,7 +687,7 @@ deprecated in favor of <code class="docutils literal"><span class="pre">to_panda
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -709,7 +709,7 @@ deprecated in favor of <code class="docutils literal"><span class="pre">to_panda
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

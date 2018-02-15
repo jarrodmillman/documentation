@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.projection.generic_weighted_projected_graph &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.bipartite.projection.generic_weighted_projected_graph &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Bipartite" href="../bipartite.html"/>
         <link rel="next" title="networkx.algorithms.bipartite.spectral.spectral_bipartivity" href="networkx.algorithms.bipartite.spectral.spectral_bipartivity.html"/>
         <link rel="prev" title="networkx.algorithms.bipartite.projection.overlap_weighted_projected_graph" href="networkx.algorithms.bipartite.projection.overlap_weighted_projected_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -288,7 +288,7 @@ The default function computes the number of shared neighbors.</li>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define some custom weight functions</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">jaccard</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">unbrs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
@@ -330,11 +330,11 @@ The default function computes the number of shared neighbors.</li>
 <p class="rubric">Notes</p>
 <p>No attempt is made to verify that the input graph B is bipartite.
 The graph and node properties are (shallow) copied to the projected graph.</p>
-<p>See <a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite" title="networkx.algorithms.bipartite"><code class="xref py py-mod docutils literal"><span class="pre">bipartite</span> <span class="pre">documentation</span></code></a>
+<p>See <a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite" title="networkx.algorithms.bipartite"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bipartite</span> <span class="pre">documentation</span></code></a>
 for further details on how bipartite graphs are handled in NetworkX.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal"><span class="pre">is_bipartite()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">is_bipartite_node_set()</span></code>, <code class="xref py py-func docutils literal"><span class="pre">sets()</span></code>, <a class="reference internal" href="networkx.algorithms.bipartite.projection.weighted_projected_graph.html#networkx.algorithms.bipartite.projection.weighted_projected_graph" title="networkx.algorithms.bipartite.projection.weighted_projected_graph"><code class="xref py py-func docutils literal"><span class="pre">weighted_projected_graph()</span></code></a>, <a class="reference internal" href="networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph.html#networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph" title="networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph"><code class="xref py py-func docutils literal"><span class="pre">collaboration_weighted_projected_graph()</span></code></a>, <a class="reference internal" href="networkx.algorithms.bipartite.projection.overlap_weighted_projected_graph.html#networkx.algorithms.bipartite.projection.overlap_weighted_projected_graph" title="networkx.algorithms.bipartite.projection.overlap_weighted_projected_graph"><code class="xref py py-func docutils literal"><span class="pre">overlap_weighted_projected_graph()</span></code></a>, <a class="reference internal" href="networkx.algorithms.bipartite.projection.projected_graph.html#networkx.algorithms.bipartite.projection.projected_graph" title="networkx.algorithms.bipartite.projection.projected_graph"><code class="xref py py-func docutils literal"><span class="pre">projected_graph()</span></code></a></p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_bipartite()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">is_bipartite_node_set()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">sets()</span></code>, <a class="reference internal" href="networkx.algorithms.bipartite.projection.weighted_projected_graph.html#networkx.algorithms.bipartite.projection.weighted_projected_graph" title="networkx.algorithms.bipartite.projection.weighted_projected_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">weighted_projected_graph()</span></code></a>, <a class="reference internal" href="networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph.html#networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph" title="networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">collaboration_weighted_projected_graph()</span></code></a>, <a class="reference internal" href="networkx.algorithms.bipartite.projection.overlap_weighted_projected_graph.html#networkx.algorithms.bipartite.projection.overlap_weighted_projected_graph" title="networkx.algorithms.bipartite.projection.overlap_weighted_projected_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">overlap_weighted_projected_graph()</span></code></a>, <a class="reference internal" href="networkx.algorithms.bipartite.projection.projected_graph.html#networkx.algorithms.bipartite.projection.projected_graph" title="networkx.algorithms.bipartite.projection.projected_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">projected_graph()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -363,7 +363,7 @@ for further details on how bipartite graphs are handled in NetworkX.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -385,7 +385,7 @@ for further details on how bipartite graphs are handled in NetworkX.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

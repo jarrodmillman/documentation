@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.vitality &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.vitality &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -207,7 +207,7 @@
 
 <span class="sd">    node : object</span>
 <span class="sd">        If specified, only the closeness vitality for this node will be</span>
-<span class="sd">        returned. Otherwise, a dictionary mappping each node to its</span>
+<span class="sd">        returned. Otherwise, a dictionary mapping each node to its</span>
 <span class="sd">        closeness vitality will be returned.</span>
 
 <span class="sd">    Other parameters</span>
@@ -220,7 +220,7 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    dictionary or float</span>
-<span class="sd">        If `node` is None, this function returnes a dictionary</span>
+<span class="sd">        If `node` is None, this function returns a dictionary</span>
 <span class="sd">        with nodes as keys and closeness vitality as the</span>
 <span class="sd">        value. Otherwise, it returns only the closeness vitality for the</span>
 <span class="sd">        specified `node`.</span>
@@ -253,8 +253,8 @@
         <span class="k">return</span> <span class="n">wiener_index</span> <span class="o">-</span> <span class="n">after</span>
     <span class="n">vitality</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">closeness_vitality</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span>
                        <span class="n">wiener_index</span><span class="o">=</span><span class="n">wiener_index</span><span class="p">)</span>
-    <span class="c1"># TODO This can be trivially parallelized.</span>
-    <span class="k">return</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">vitality</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span></div>
+    <span class="c1"># TODO This can be trivially parallelized.</span></div>
+    <span class="k">return</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">vitality</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
 </pre></div>
 
            </div>
@@ -270,7 +270,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -292,7 +292,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

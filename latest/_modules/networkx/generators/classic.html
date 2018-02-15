@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.classic &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.generators.classic &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -315,8 +315,8 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># This must be an integer if both `r` and `h` are integers. If</span>
         <span class="c1"># they are not, we force integer division anyway.</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span> <span class="o">**</span> <span class="p">(</span><span class="n">h</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">//</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">full_rary_tree</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">create_using</span><span class="p">)</span></div>
+        <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span> <span class="o">**</span> <span class="p">(</span><span class="n">h</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">//</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">full_rary_tree</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">create_using</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="barbell_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.barbell_graph.html#networkx.generators.classic.barbell_graph">[docs]</a><span class="k">def</span> <span class="nf">barbell_graph</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -362,8 +362,8 @@
     <span class="c1"># connect it up</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">m1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m1</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">m2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="complete_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.complete_graph.html#networkx.generators.classic.complete_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -401,8 +401,8 @@
             <span class="n">edges</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">edges</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="circular_ladder_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.circular_ladder_graph.html#networkx.generators.classic.circular_ladder_graph">[docs]</a><span class="k">def</span> <span class="nf">circular_ladder_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -416,8 +416,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">ladder_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <span class="k">def</span> <span class="nf">circulant_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -497,8 +497,8 @@
     <span class="n">n_orig</span><span class="p">,</span> <span class="n">nodes</span> <span class="o">=</span> <span class="n">n</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="dorogovtsev_goltsev_mendes_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.dorogovtsev_goltsev_mendes_graph.html#networkx.generators.classic.dorogovtsev_goltsev_mendes_graph">[docs]</a><span class="k">def</span> <span class="nf">dorogovtsev_goltsev_mendes_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -524,8 +524,8 @@
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">number_of_edges_in_last_generation</span><span class="p">):</span>
             <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">new_node</span><span class="p">,</span> <span class="n">last_generation_edges</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
             <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">new_node</span><span class="p">,</span> <span class="n">last_generation_edges</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-            <span class="n">new_node</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+            <span class="n">new_node</span> <span class="o">+=</span> <span class="mi">1</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="empty_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.empty_graph.html#networkx.generators.classic.empty_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -588,8 +588,8 @@
         <span class="n">G</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
     <span class="n">n_name</span><span class="p">,</span> <span class="n">nodes</span> <span class="o">=</span> <span class="n">n</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="ladder_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.ladder_graph.html#networkx.generators.classic.ladder_graph">[docs]</a><span class="k">def</span> <span class="nf">ladder_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -606,8 +606,8 @@
     <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">)))</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="lollipop_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.lollipop_graph.html#networkx.generators.classic.lollipop_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -660,8 +660,8 @@
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">n_nodes</span><span class="p">))</span>
     <span class="c1"># connect ball to stick</span>
     <span class="k">if</span> <span class="n">M</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">N</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">m_nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">n_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">m_nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">n_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="null_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.null_graph.html#networkx.generators.classic.null_graph">[docs]</a><span class="k">def</span> <span class="nf">null_graph</span><span class="p">(</span><span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -670,8 +670,8 @@
 <span class="sd">    See empty_graph for the use of create_using.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="path_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.path_graph.html#networkx.generators.classic.path_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -690,8 +690,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">n_name</span><span class="p">,</span> <span class="n">nodes</span> <span class="o">=</span> <span class="n">n</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="star_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.star_graph.html#networkx.generators.classic.star_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -721,16 +721,16 @@
     <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">first</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">first</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="trivial_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.trivial_graph.html#networkx.generators.classic.trivial_graph">[docs]</a><span class="k">def</span> <span class="nf">trivial_graph</span><span class="p">(</span><span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Return the Trivial graph with one node (with label 0) and no edges.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="turan_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.turan_graph.html#networkx.generators.classic.turan_graph">[docs]</a><span class="k">def</span> <span class="nf">turan_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
@@ -762,8 +762,8 @@
         <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Must satisfy 1 &lt;= r &lt;= n&quot;</span><span class="p">)</span>
 
     <span class="n">partitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="o">//</span> <span class="n">r</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">r</span><span class="p">))</span> <span class="o">+</span> <span class="p">[</span><span class="n">n</span> <span class="o">//</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">r</span><span class="p">)</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">complete_multipartite_graph</span><span class="p">(</span><span class="o">*</span><span class="n">partitions</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">complete_multipartite_graph</span><span class="p">(</span><span class="o">*</span><span class="n">partitions</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="wheel_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.wheel_graph.html#networkx.generators.classic.wheel_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -790,8 +790,8 @@
     <span class="n">G</span> <span class="o">=</span> <span class="n">star_graph</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
-        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 
 
 <div class="viewcode-block" id="complete_multipartite_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.complete_multipartite_graph.html#networkx.generators.classic.complete_multipartite_graph">[docs]</a><span class="k">def</span> <span class="nf">complete_multipartite_graph</span><span class="p">(</span><span class="o">*</span><span class="n">subset_sizes</span><span class="p">):</span>
@@ -874,8 +874,8 @@
     <span class="c1"># Across subsets, all vertices should be adjacent.</span>
     <span class="c1"># We can use itertools.combinations() because undirected.</span>
     <span class="k">for</span> <span class="n">subset1</span><span class="p">,</span> <span class="n">subset2</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">subsets</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">subset1</span><span class="p">,</span> <span class="n">subset2</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">G</span></div>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">subset1</span><span class="p">,</span> <span class="n">subset2</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">G</span>
 </pre></div>
 
            </div>
@@ -891,7 +891,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -913,7 +913,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

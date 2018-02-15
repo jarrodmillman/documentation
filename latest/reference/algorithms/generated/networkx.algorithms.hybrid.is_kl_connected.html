@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.hybrid.is_kl_connected &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.hybrid.is_kl_connected &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Hybrid" href="../hybrid.html"/>
         <link rel="next" title="Isolates" href="../isolates.html"/>
         <link rel="prev" title="networkx.algorithms.hybrid.kl_connected_subgraph" href="networkx.algorithms.hybrid.kl_connected_subgraph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -251,16 +251,16 @@
 <dl class="function">
 <dt id="networkx.algorithms.hybrid.is_kl_connected">
 <code class="descname">is_kl_connected</code><span class="sig-paren">(</span><em>G</em>, <em>k</em>, <em>l</em>, <em>low_memory=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/hybrid.html#is_kl_connected"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.hybrid.is_kl_connected" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if and only if <code class="xref py py-obj docutils literal"><span class="pre">G</span></code> is locally <code class="xref py py-obj docutils literal"><span class="pre">(k,</span> <span class="pre">l)</span></code>-connected.</p>
-<p>A graph is locally <code class="xref py py-obj docutils literal"><span class="pre">(k,</span> <span class="pre">l)</span></code>-connected if for each edge <code class="xref py py-obj docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></code> in the
-graph there are at least <code class="xref py py-obj docutils literal"><span class="pre">l</span></code> edge-disjoint paths of length at most <code class="xref py py-obj docutils literal"><span class="pre">k</span></code>
-joining <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal"><span class="pre">v</span></code>.</p>
+<dd><p>Returns True if and only if <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is locally <code class="xref py py-obj docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">l)</span></code>-connected.</p>
+<p>A graph is locally <code class="xref py py-obj docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">l)</span></code>-connected if for each edge <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> in the
+graph there are at least <code class="xref py py-obj docutils literal notranslate"><span class="pre">l</span></code> edge-disjoint paths of length at most <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code>
+joining <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph to test for local <code class="xref py py-obj docutils literal"><span class="pre">(k,</span> <span class="pre">l)</span></code>-connectedness.</li>
+<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph to test for local <code class="xref py py-obj docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">l)</span></code>-connectedness.</li>
 <li><strong>k</strong> (<em>integer</em>) – The maximum length of paths to consider. A higher number means a looser
 connectivity requirement.</li>
 <li><strong>l</strong> (<em>integer</em>) – The number of edge-disjoint paths. A higher number means a stricter
@@ -270,7 +270,7 @@ more time but less memory.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Whether the graph is locally <code class="xref py py-obj docutils literal"><span class="pre">(k,</span> <span class="pre">l)</span></code>-connected subgraph.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Whether the graph is locally <code class="xref py py-obj docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">l)</span></code>-connected subgraph.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
@@ -280,7 +280,7 @@ more time but less memory.</li>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.hybrid.kl_connected_subgraph.html#networkx.algorithms.hybrid.kl_connected_subgraph" title="networkx.algorithms.hybrid.kl_connected_subgraph"><code class="xref py py-func docutils literal"><span class="pre">kl_connected_subgraph()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.algorithms.hybrid.kl_connected_subgraph.html#networkx.algorithms.hybrid.kl_connected_subgraph" title="networkx.algorithms.hybrid.kl_connected_subgraph"><code class="xref py py-func docutils literal notranslate"><span class="pre">kl_connected_subgraph()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
 </dd></dl>
@@ -310,7 +310,7 @@ more time but less memory.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -332,7 +332,7 @@ more time but less memory.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.communicability_alg.communicability &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.algorithms.communicability_alg.communicability &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="Communicability" href="../communicability_alg.html"/>
         <link rel="next" title="networkx.algorithms.communicability_alg.communicability_exp" href="networkx.algorithms.communicability_alg.communicability_exp.html"/>
         <link rel="prev" title="Communicability" href="../communicability_alg.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -265,16 +265,16 @@ as the value.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dictionary of dictionaries</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If the graph is not undirected and simple.</td>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the graph is not undirected and simple.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="networkx.algorithms.communicability_alg.communicability_exp.html#networkx.algorithms.communicability_alg.communicability_exp" title="networkx.algorithms.communicability_alg.communicability_exp"><code class="xref py py-func docutils literal"><span class="pre">communicability_exp()</span></code></a></dt>
+<dt><a class="reference internal" href="networkx.algorithms.communicability_alg.communicability_exp.html#networkx.algorithms.communicability_alg.communicability_exp" title="networkx.algorithms.communicability_alg.communicability_exp"><code class="xref py py-func docutils literal notranslate"><span class="pre">communicability_exp()</span></code></a></dt>
 <dd>Communicability between all pairs of nodes in G  using spectral decomposition.</dd>
-<dt><code class="xref py py-func docutils literal"><span class="pre">communicability_betweenness_centrality()</span></code></dt>
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">communicability_betweenness_centrality()</span></code></dt>
 <dd>Communicability betweeness centrality for each node in G.</dd>
 </dl>
 </div>
@@ -282,13 +282,13 @@ as the value.</td>
 <p>This algorithm uses a spectral decomposition of the adjacency matrix.
 Let G=(V,E) be a simple undirected graph.  Using the connection between
 the powers  of the adjacency matrix and the number of walks in the graph,
-the communicability  between nodes <code class="xref py py-obj docutils literal"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">v</span></code> based on the graph spectrum
+the communicability  between nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> based on the graph spectrum
 is <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
-<div class="math">
+<div class="math notranslate">
 \[C(u,v)=\sum_{j=1}^{n}\phi_{j}(u)\phi_{j}(v)e^{\lambda_{j}},\]</div>
-<p>where <code class="xref py py-obj docutils literal"><span class="pre">phi_{j}(u)</span></code> is the <code class="xref py py-obj docutils literal"><span class="pre">urm{th}</span></code> element of the <code class="xref py py-obj docutils literal"><span class="pre">jrm{th}</span></code> orthonormal
+<p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">phi_{j}(u)</span></code> is the <code class="xref py py-obj docutils literal notranslate"><span class="pre">urm{th}</span></code> element of the <code class="xref py py-obj docutils literal notranslate"><span class="pre">jrm{th}</span></code> orthonormal
 eigenvector of the adjacency matrix associated with the eigenvalue
-<code class="xref py py-obj docutils literal"><span class="pre">lambda_{j}</span></code>.</p>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">lambda_{j}</span></code>.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -300,7 +300,7 @@ Phys. Rev. E 77, 036111 (2008).
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">communicability</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -331,7 +331,7 @@ Phys. Rev. E 77, 036111 (2008).
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -353,7 +353,7 @@ Phys. Rev. E 77, 036111 (2008).
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.json_graph.node_link_data &mdash; NetworkX 2.2rc1.dev20180207002941 documentation</title>
+  <title>networkx.readwrite.json_graph.node_link_data &mdash; NetworkX 2.2rc1.dev20180215004731 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180207002941 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180215004731 documentation" href="../../../index.html"/>
         <link rel="up" title="JSON" href="../json_graph.html"/>
         <link rel="next" title="networkx.readwrite.json_graph.node_link_graph" href="networkx.readwrite.json_graph.node_link_graph.html"/>
         <link rel="prev" title="JSON" href="../json_graph.html"/> 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180207002941
+                2.2rc1.dev_20180215004731
               </div>
             
           
@@ -232,7 +232,7 @@ and use in Javascript documents.</p>
 ‘key’ and ‘link’.  The corresponding values provide the attribute
 names for storing NetworkX-internal graph data.  The values should
 be unique.  Default value:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
      <span class="n">key</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="s1">&#39;links&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -248,13 +248,13 @@ they may be silently dropped.</p>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">NetworkXError</span></code> – If values in attrs are not unique.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If values in attrs are not unique.</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.readwrite</span> <span class="k">import</span> <span class="n">json_graph</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.readwrite</span> <span class="k">import</span> <span class="n">json_graph</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data1</span> <span class="o">=</span> <span class="n">json_graph</span><span class="o">.</span><span class="n">node_link_data</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gn_graph</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -262,7 +262,7 @@ they may be silently dropped.</p>
 </pre></div>
 </div>
 <p>To serialize with json</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="s1">&#39;edges&#39;</span><span class="p">,</span> <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="s1">&#39;from&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="s1">&#39;to&#39;</span><span class="p">})</span>
 </pre></div>
@@ -273,7 +273,7 @@ attribute keys will be converted to strings in order to comply with JSON.</p>
 <p>Attribute ‘key’ is only used for multigraphs.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.readwrite.json_graph.node_link_graph.html#networkx.readwrite.json_graph.node_link_graph" title="networkx.readwrite.json_graph.node_link_graph"><code class="xref py py-func docutils literal"><span class="pre">node_link_graph()</span></code></a>, <a class="reference internal" href="networkx.readwrite.json_graph.adjacency_data.html#networkx.readwrite.json_graph.adjacency_data" title="networkx.readwrite.json_graph.adjacency_data"><code class="xref py py-func docutils literal"><span class="pre">adjacency_data()</span></code></a>, <a class="reference internal" href="networkx.readwrite.json_graph.tree_data.html#networkx.readwrite.json_graph.tree_data" title="networkx.readwrite.json_graph.tree_data"><code class="xref py py-func docutils literal"><span class="pre">tree_data()</span></code></a></p>
+<p class="last"><a class="reference internal" href="networkx.readwrite.json_graph.node_link_graph.html#networkx.readwrite.json_graph.node_link_graph" title="networkx.readwrite.json_graph.node_link_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">node_link_graph()</span></code></a>, <a class="reference internal" href="networkx.readwrite.json_graph.adjacency_data.html#networkx.readwrite.json_graph.adjacency_data" title="networkx.readwrite.json_graph.adjacency_data"><code class="xref py py-func docutils literal notranslate"><span class="pre">adjacency_data()</span></code></a>, <a class="reference internal" href="networkx.readwrite.json_graph.tree_data.html#networkx.readwrite.json_graph.tree_data" title="networkx.readwrite.json_graph.tree_data"><code class="xref py py-func docutils literal notranslate"><span class="pre">tree_data()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -302,7 +302,7 @@ attribute keys will be converted to strings in order to comply with JSON.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 07, 2018.
+      Last updated on Feb 15, 2018.
 
     </p>
   </div>
@@ -324,7 +324,7 @@ attribute keys will be converted to strings in order to comply with JSON.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180207002941',
+            VERSION:'2.2rc1.dev20180215004731',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
