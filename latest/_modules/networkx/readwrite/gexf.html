@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.gexf &mdash; NetworkX 2.2rc1.dev20180218045646 documentation</title>
+  <title>networkx.readwrite.gexf &mdash; NetworkX 2.2rc1.dev20180218051235 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180218045646 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180218051235 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180218045646 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180218051235 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180218045646
+                2.2rc1.dev_20180218051235
               </div>
             
           
@@ -494,6 +494,18 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">pid</span> <span class="o">=</span> <span class="n">node_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;pid&#39;</span><span class="p">)</span>
                 <span class="n">kw</span><span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="n">node_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">)</span>
+                <span class="n">kw</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">alter_graph_mode_timeformat</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">end</span> <span class="o">=</span> <span class="n">node_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">)</span>
+                <span class="n">kw</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">alter_graph_mode_timeformat</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                 <span class="k">pass</span>
             <span class="c1"># add node element with attributes</span>
@@ -1203,7 +1215,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180218045646',
+            VERSION:'2.2rc1.dev20180218051235',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
