@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.dense &mdash; NetworkX 2.2rc1.dev20180228050733 documentation</title>
+  <title>networkx.algorithms.shortest_paths.dense &mdash; NetworkX 2.2rc1.dev20180228052053 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180228050733 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180228052053 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180228050733 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180228052053 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180228050733
+                2.2rc1.dev_20180228052053
               </div>
             
           
@@ -177,10 +177,14 @@
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
 <span class="c1">#    All rights reserved.</span>
 <span class="c1">#    BSD license.</span>
+<span class="c1">#</span>
+<span class="c1"># Authors: Aric Hagberg &lt;aric.hagberg@gmail.com&gt;</span>
+<span class="c1">#          Miguel Sozinho Ramalho &lt;m.ramalho@fe.up.pt&gt;</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Aric Hagberg &lt;aric.hagberg@gmail.com&gt;&quot;&quot;&quot;</span>
+
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;floyd_warshall&#39;</span><span class="p">,</span>
            <span class="s1">&#39;floyd_warshall_predecessor_and_distance&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;reconstruct_path&#39;</span><span class="p">,</span>
            <span class="s1">&#39;floyd_warshall_numpy&#39;</span><span class="p">]</span>
 
 
@@ -246,6 +250,16 @@
 <span class="sd">       Dictionaries, keyed by source and target, of predecessors and distances</span>
 <span class="sd">       in the shortest path.</span>
 
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.DiGraph()</span>
+<span class="sd">    &gt;&gt;&gt; G.add_weighted_edges_from([(&#39;s&#39;, &#39;u&#39;, 10), (&#39;s&#39;, &#39;x&#39;, 5),</span>
+<span class="sd">    ...     (&#39;u&#39;, &#39;v&#39;, 1), (&#39;u&#39;, &#39;x&#39;, 2), (&#39;v&#39;, &#39;y&#39;, 1), (&#39;x&#39;, &#39;u&#39;, 3),</span>
+<span class="sd">    ...     (&#39;x&#39;, &#39;v&#39;, 5), (&#39;x&#39;, &#39;y&#39;, 2), (&#39;y&#39;, &#39;s&#39;, 7), (&#39;y&#39;, &#39;v&#39;, 6)])</span>
+<span class="sd">    &gt;&gt;&gt; predecessors, _ = nx.floyd_warshall_predecessor_and_distance(G)</span>
+<span class="sd">    &gt;&gt;&gt; print(reconstruct_path(&#39;s&#39;, &#39;v&#39;, predecessors))</span>
+<span class="sd">    [&#39;s&#39;, &#39;x&#39;, &#39;u&#39;, &#39;v&#39;]</span>
+
 <span class="sd">    Notes</span>
 <span class="sd">    ------</span>
 <span class="sd">    Floyd&#39;s algorithm is appropriate for finding shortest paths</span>
@@ -285,6 +299,49 @@
                     <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">w</span><span class="p">]</span> <span class="o">+</span> <span class="n">dist</span><span class="p">[</span><span class="n">w</span><span class="p">][</span><span class="n">v</span><span class="p">]</span>
                     <span class="n">pred</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">pred</span><span class="p">[</span><span class="n">w</span><span class="p">][</span><span class="n">v</span><span class="p">]</span></div>
     <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">pred</span><span class="p">),</span> <span class="nb">dict</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">reconstruct_path</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">predecessors</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Reconstruct a path from source to target using the predecessors</span>
+<span class="sd">    dict as returned by floyd_warshall_predecessor_and_distance</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    source : node</span>
+<span class="sd">       Starting node for path</span>
+
+<span class="sd">    target : node</span>
+<span class="sd">       Ending node for path</span>
+
+<span class="sd">    predecessors: dictionary</span>
+<span class="sd">       Dictionary, keyed by source and target, of predecessors in the</span>
+<span class="sd">       shortest path, as returned by floyd_warshall_predecessor_and_distance</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    path : list</span>
+<span class="sd">       A list of nodes containing the shortest path from source to target</span>
+
+<span class="sd">       If source and target are the same, an empty list is returned</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    ------</span>
+<span class="sd">    This function is meant to give more applicability to the</span>
+<span class="sd">    floyd_warshall_predecessor_and_distance function</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    floyd_warshall_predecessor_and_distance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">source</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="n">predecessors</span><span class="p">[</span><span class="n">source</span><span class="p">]</span>
+    <span class="n">curr</span> <span class="o">=</span> <span class="n">prev</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">target</span><span class="p">,</span> <span class="n">curr</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">curr</span> <span class="o">!=</span> <span class="n">source</span><span class="p">:</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">prev</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">curr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
 
 
 <div class="viewcode-block" id="floyd_warshall"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.dense.floyd_warshall.html#networkx.algorithms.shortest_paths.dense.floyd_warshall">[docs]</a><span class="k">def</span> <span class="nf">floyd_warshall</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
@@ -367,7 +424,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180228050733',
+            VERSION:'2.2rc1.dev20180228052053',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
