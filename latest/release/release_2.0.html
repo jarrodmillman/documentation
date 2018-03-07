@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.0 &mdash; NetworkX 2.2rc1.dev20180228052053 documentation</title>
+  <title>Announcement: NetworkX 2.0 &mdash; NetworkX 2.2rc1.dev20180307120108 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180228052053 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180307120108 documentation" href="../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180228052053 documentation" href="../index.html"/> 
+    <link rel="top" title="NetworkX 2.2rc1.dev20180307120108 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180228052053
+                2.2rc1.dev_20180307120108
               </div>
             
           
@@ -369,6 +369,11 @@ adjacency matrix.  We now provide four functions <code class="docutils literal n
 <li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/2620">#2620</a>]
 Removed <code class="docutils literal notranslate"><span class="pre">draw_nx</span></code>, please use <code class="docutils literal notranslate"><span class="pre">draw</span></code> or <code class="docutils literal notranslate"><span class="pre">draw_networkx</span></code>.</p>
 </li>
+<li><p class="first">[<a class="reference external" href="https://github.com/networkx/networkx/pull/1662">#1662</a>]
+Rewrote <code class="docutils literal notranslate"><span class="pre">topolgical_sort</span></code> as a generator.  It no longer accepts
+<code class="docutils literal notranslate"><span class="pre">reverse</span></code> or <code class="docutils literal notranslate"><span class="pre">nbunch</span></code> arguments and is slightly faster.
+Added <code class="docutils literal notranslate"><span class="pre">lexicographical_topological_sort</span></code>, which accepts a key.</p>
+</li>
 </ul>
 </div>
 <div class="section" id="deprecations">
@@ -471,6 +476,7 @@ deprecated in favor of <code class="docutils literal notranslate"><span class="p
 <li>thegreathippo</li>
 <li>vpodpecan</li>
 <li>yash14123</li>
+<li>Neil Girdhar</li>
 </ul>
 </div>
 <div class="section" id="pull-requests-merged-in-this-release">
@@ -669,6 +675,7 @@ deprecated in favor of <code class="docutils literal notranslate"><span class="p
 <li>Prep beta release (#2624)</li>
 <li>Refactor travis tests and deploy docs with travis (#2647)</li>
 <li>matplotlib 2.1 deprecated is_string_like (#2659)</li>
+<li>topolgical_sort, lexicographical_topological_sort (#1662)</li>
 </ul>
 </div>
 </div>
@@ -687,7 +694,7 @@ deprecated in favor of <code class="docutils literal notranslate"><span class="p
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 28, 2018.
+      Last updated on Mar 07, 2018.
 
     </p>
   </div>
@@ -709,7 +716,7 @@ deprecated in favor of <code class="docutils literal notranslate"><span class="p
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180228052053',
+            VERSION:'2.2rc1.dev20180307120108',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

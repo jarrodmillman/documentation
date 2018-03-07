@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Migration guide from 1.X to 2.0 &mdash; NetworkX 2.2rc1.dev20180228052053 documentation</title>
+  <title>Migration guide from 1.X to 2.0 &mdash; NetworkX 2.2rc1.dev20180307120108 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180228052053 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180307120108 documentation" href="../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180228052053 documentation" href="../index.html"/> 
+    <link rel="top" title="NetworkX 2.2rc1.dev20180307120108 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180228052053
+                2.2rc1.dev_20180307120108
               </div>
             
           
@@ -173,11 +173,11 @@ work with both NetworkX v1.x and v2.0.</p>
 <p>We have made some major changes to the methods in the Multi/Di/Graph classes.
 The methods changed are explained with examples below.</p>
 <p>With the release of NetworkX 2.0 we are moving to a view/iterator reporting API.
-We have moved many methods from reporting lists or dicts to iterating over
+We have changed many methods from reporting lists or dicts to iterating over
 the information. Most of the changes in this regard are in the base classes.
 Methods that used to return containers now return views (inspired from
 <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict-views">dictionary views</a>
-in Python) and methods that returned iterators have been removed.
+in Python) and methods that returned an iterator have been removed.
 The methods which create new graphs have changed in the depth of data copying.
 <code class="docutils literal notranslate"><span class="pre">G.subgraph</span></code>/<code class="docutils literal notranslate"><span class="pre">edge_subgraph</span></code>/<code class="docutils literal notranslate"><span class="pre">reverse</span></code>/<code class="docutils literal notranslate"><span class="pre">to_directed</span></code>/<code class="docutils literal notranslate"><span class="pre">to_undirected</span></code>
 are affected.  Many now have options for view creation instead of copying data.
@@ -381,6 +381,16 @@ create a null graph of the correct type—ready to fill with nodes and edges.</p
 original graph at the end of this chain use <code class="docutils literal notranslate"><span class="pre">G.root_graph</span></code>. Be careful though
 because it may be a different graph type (directed/undirected) than the view.</p>
 <hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">topolgical_sort</span></code>  no longer accepts <code class="docutils literal notranslate"><span class="pre">reverse</span></code> or <code class="docutils literal notranslate"><span class="pre">nbunch</span></code> arguments.
+If <code class="docutils literal notranslate"><span class="pre">nbunch</span></code> was a single node source, then the same effect can now be achieved
+using the <code class="docutils literal notranslate"><span class="pre">subgraph</span></code> operator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">topological_sort</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">descendants</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>To achieve a reverse topological sort, the output should be converted to a list:</p>
+<blockquote>
+<div>&gt;&gt;&gt;&gt; reversed(list(nx.topological_sort(G)))</div></blockquote>
+<hr class="docutils" />
 <div class="section" id="writing-code-that-works-for-both-versions">
 <h2>Writing code that works for both versions<a class="headerlink" href="#writing-code-that-works-for-both-versions" title="Permalink to this headline">¶</a></h2>
 <p>Methods <code class="docutils literal notranslate"><span class="pre">set_node_attributes</span></code>/<code class="docutils literal notranslate"><span class="pre">get_node_attributes</span></code>/<code class="docutils literal notranslate"><span class="pre">set_edge_attributes</span></code>/<code class="docutils literal notranslate"><span class="pre">get_edge_attributes</span></code>
@@ -469,7 +479,7 @@ and edges to a fresh graph. Try something similar to this:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Feb 28, 2018.
+      Last updated on Mar 07, 2018.
 
     </p>
   </div>
@@ -491,7 +501,7 @@ and edges to a fresh graph. Try something similar to this:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180228052053',
+            VERSION:'2.2rc1.dev20180307120108',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
