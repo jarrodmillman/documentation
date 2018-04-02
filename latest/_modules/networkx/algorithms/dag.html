@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.dag &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.dag &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -237,8 +237,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;The node </span><span class="si">%s</span><span class="s2"> is not in the graph.&quot;</span> <span class="o">%</span> <span class="n">source</span><span class="p">)</span>
-    <span class="n">des</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div>
-    <span class="k">return</span> <span class="n">des</span> <span class="o">-</span> <span class="p">{</span><span class="n">source</span><span class="p">}</span>
+    <span class="n">des</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">des</span> <span class="o">-</span> <span class="p">{</span><span class="n">source</span><span class="p">}</span></div>
 
 
 <div class="viewcode-block" id="ancestors"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.ancestors.html#networkx.algorithms.dag.ancestors">[docs]</a><span class="k">def</span> <span class="nf">ancestors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
@@ -257,8 +257,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;The node </span><span class="si">%s</span><span class="s2"> is not in the graph.&quot;</span> <span class="o">%</span> <span class="n">source</span><span class="p">)</span>
-    <span class="n">anc</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div>
-    <span class="k">return</span> <span class="n">anc</span> <span class="o">-</span> <span class="p">{</span><span class="n">source</span><span class="p">}</span>
+    <span class="n">anc</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">anc</span> <span class="o">-</span> <span class="p">{</span><span class="n">source</span><span class="p">}</span></div>
 
 
 <span class="k">def</span> <span class="nf">has_cycle</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -283,8 +283,8 @@
 <span class="sd">    -------</span>
 <span class="sd">    bool</span>
 <span class="sd">        True if `G` is a DAG, False otherwise</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">has_cycle</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">has_cycle</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="topological_sort"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.topological_sort.html#networkx.algorithms.dag.topological_sort">[docs]</a><span class="k">def</span> <span class="nf">topological_sort</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -364,8 +364,8 @@
         <span class="k">yield</span> <span class="n">node</span>
 
     <span class="k">if</span> <span class="n">indegree_map</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXUnfeasible</span><span class="p">(</span><span class="s2">&quot;Graph contains a cycle or graph changed &quot;</span></div>
-                                    <span class="s2">&quot;during iteration&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXUnfeasible</span><span class="p">(</span><span class="s2">&quot;Graph contains a cycle or graph changed &quot;</span>
+                                    <span class="s2">&quot;during iteration&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="lexicographical_topological_sort"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.lexicographical_topological_sort.html#networkx.algorithms.dag.lexicographical_topological_sort">[docs]</a><span class="k">def</span> <span class="nf">lexicographical_topological_sort</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -450,8 +450,8 @@
         <span class="k">yield</span> <span class="n">node</span>
 
     <span class="k">if</span> <span class="n">indegree_map</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXUnfeasible</span><span class="p">(</span><span class="s2">&quot;Graph contains a cycle or graph changed &quot;</span></div>
-                                    <span class="s2">&quot;during iteration&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXUnfeasible</span><span class="p">(</span><span class="s2">&quot;Graph contains a cycle or graph changed &quot;</span>
+                                    <span class="s2">&quot;during iteration&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="is_aperiodic"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.is_aperiodic.html#networkx.algorithms.dag.is_aperiodic">[docs]</a><span class="k">def</span> <span class="nf">is_aperiodic</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -510,8 +510,8 @@
         <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>  <span class="c1"># All nodes in tree</span>
         <span class="k">return</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span></div>
-        <span class="k">return</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_aperiodic</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">levels</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_aperiodic</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">levels</span><span class="p">)))</span></div>
 
 
 <div class="viewcode-block" id="transitive_closure"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.transitive_closure.html#networkx.algorithms.dag.transitive_closure">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -545,8 +545,8 @@
     <span class="n">TC</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
         <span class="n">TC</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">dfs_preorder_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
-                          <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="n">u</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">TC</span>
+                          <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="n">u</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">TC</span></div>
 
 
 <div class="viewcode-block" id="transitive_reduction"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.transitive_reduction.html#networkx.algorithms.dag.transitive_reduction">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -587,8 +587,8 @@
         <span class="n">u_edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
         <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
             <span class="n">u_edges</span> <span class="o">-=</span> <span class="p">{</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">dfs_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">)}</span>
-        <span class="n">TR</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">u_edges</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">TR</span>
+        <span class="n">TR</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">u_edges</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">TR</span></div>
 
 
 <div class="viewcode-block" id="antichains"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.antichains.html#networkx.algorithms.dag.antichains">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -640,8 +640,8 @@
             <span class="n">x</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
             <span class="n">new_antichain</span> <span class="o">=</span> <span class="n">antichain</span> <span class="o">+</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
             <span class="n">new_stack</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">stack</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">((</span><span class="n">t</span> <span class="ow">in</span> <span class="n">TC</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="ow">in</span> <span class="n">TC</span><span class="p">[</span><span class="n">t</span><span class="p">]))]</span></div>
-            <span class="n">antichains_stacks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">new_antichain</span><span class="p">,</span> <span class="n">new_stack</span><span class="p">))</span>
+                <span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">stack</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">((</span><span class="n">t</span> <span class="ow">in</span> <span class="n">TC</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="ow">in</span> <span class="n">TC</span><span class="p">[</span><span class="n">t</span><span class="p">]))]</span>
+            <span class="n">antichains_stacks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">new_antichain</span><span class="p">,</span> <span class="n">new_stack</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="dag_longest_path"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.dag_longest_path.html#networkx.algorithms.dag.dag_longest_path">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -694,8 +694,8 @@
         <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
         <span class="n">u</span> <span class="o">=</span> <span class="n">v</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">path</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span></div>
-    <span class="k">return</span> <span class="n">path</span>
+    <span class="n">path</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">path</span></div>
 
 
 <div class="viewcode-block" id="dag_longest_path_length"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.dag_longest_path_length.html#networkx.algorithms.dag.dag_longest_path_length">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -731,8 +731,8 @@
     <span class="n">path_length</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pairwise</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
         <span class="n">path_length</span> <span class="o">+=</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">default_weight</span><span class="p">)</span>
-</div>
-    <span class="k">return</span> <span class="n">path_length</span>
+
+    <span class="k">return</span> <span class="n">path_length</span></div>
 
 
 <span class="k">def</span> <span class="nf">root_to_leaf_paths</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -847,8 +847,8 @@
     <span class="n">B</span><span class="p">,</span> <span class="n">root</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">prefix_tree</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
     <span class="c1"># Remove the synthetic `root` and `NIL` nodes in the prefix tree.</span>
     <span class="n">B</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="n">B</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="n">NIL</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">B</span>
+    <span class="n">B</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="n">NIL</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">B</span></div>
 </pre></div>
 
            </div>
@@ -864,7 +864,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -886,7 +886,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

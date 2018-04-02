@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.subgraph_alg &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.centrality.subgraph_alg &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -252,8 +252,8 @@
     <span class="n">A</span><span class="p">[</span><span class="n">A</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">expA</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
     <span class="c1"># convert diagonal to dictionary keyed by node</span>
-    <span class="n">sc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">expA</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())))</span></div>
-    <span class="k">return</span> <span class="n">sc</span>
+    <span class="n">sc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">expA</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())))</span>
+    <span class="k">return</span> <span class="n">sc</span></div>
 
 
 <div class="viewcode-block" id="subgraph_centrality"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.centrality.subgraph_centrality.html#networkx.algorithms.centrality.subgraph_centrality">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
@@ -327,8 +327,8 @@
     <span class="n">expw</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
     <span class="n">xg</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">vsquare</span><span class="p">,</span> <span class="n">expw</span><span class="p">)</span>
     <span class="c1"># convert vector dictionary keyed by node</span>
-    <span class="n">sc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">xg</span><span class="p">)))</span></div>
-    <span class="k">return</span> <span class="n">sc</span>
+    <span class="n">sc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">xg</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">sc</span></div>
 
 
 <div class="viewcode-block" id="communicability_betweenness_centrality"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.centrality.communicability_betweenness_centrality.html#networkx.algorithms.centrality.communicability_betweenness_centrality">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
@@ -423,8 +423,8 @@
         <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">row</span>
         <span class="n">A</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span>
     <span class="c1"># rescaling</span>
-    <span class="n">cbc</span> <span class="o">=</span> <span class="n">_rescale</span><span class="p">(</span><span class="n">cbc</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="n">normalized</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">cbc</span>
+    <span class="n">cbc</span> <span class="o">=</span> <span class="n">_rescale</span><span class="p">(</span><span class="n">cbc</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="n">normalized</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cbc</span></div>
 
 
 <span class="k">def</span> <span class="nf">_rescale</span><span class="p">(</span><span class="n">cbc</span><span class="p">,</span> <span class="n">normalized</span><span class="p">):</span>
@@ -483,8 +483,8 @@
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; G=nx.Graph([(0,1),(1,2),(1,5),(5,4),(2,4),(2,3),(4,3),(3,6)])</span>
 <span class="sd">    &gt;&gt;&gt; ei=nx.estrada_index(G)</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">subgraph_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">subgraph_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
 
 <span class="c1"># fixture for nose tests</span>
 
@@ -514,7 +514,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -536,7 +536,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

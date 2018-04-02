@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.drawing.nx_pylab &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -297,8 +297,8 @@
         <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">draw_if_interactive</span><span class="p">()</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="k">raise</span></div>
-    <span class="k">return</span>
+        <span class="k">raise</span>
+    <span class="k">return</span></div>
 
 
 <div class="viewcode-block" id="draw_networkx"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx">[docs]</a><span class="k">def</span> <span class="nf">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
@@ -447,8 +447,8 @@
     <span class="n">node_collection</span> <span class="o">=</span> <span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
     <span class="n">edge_collection</span> <span class="o">=</span> <span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="n">arrows</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">with_labels</span><span class="p">:</span>
-        <span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span></div>
-    <span class="n">plt</span><span class="o">.</span><span class="n">draw_if_interactive</span><span class="p">()</span>
+        <span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">draw_if_interactive</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="draw_networkx_nodes"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_networkx_nodes.html#networkx.drawing.nx_pylab.draw_networkx_nodes">[docs]</a><span class="k">def</span> <span class="nf">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span>
@@ -583,8 +583,8 @@
                                  <span class="n">edgecolors</span><span class="o">=</span><span class="n">edgecolors</span><span class="p">,</span>
                                  <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
 
-    <span class="n">node_collection</span><span class="o">.</span><span class="n">set_zorder</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">node_collection</span>
+    <span class="n">node_collection</span><span class="o">.</span><span class="n">set_zorder</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">node_collection</span></div>
 
 
 <div class="viewcode-block" id="draw_networkx_edges"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_networkx_edges.html#networkx.drawing.nx_pylab.draw_networkx_edges">[docs]</a><span class="k">def</span> <span class="nf">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span>
@@ -871,8 +871,8 @@
     <span class="n">corners</span> <span class="o">=</span> <span class="p">(</span><span class="n">minx</span> <span class="o">-</span> <span class="n">padx</span><span class="p">,</span> <span class="n">miny</span> <span class="o">-</span> <span class="n">pady</span><span class="p">),</span> <span class="p">(</span><span class="n">maxx</span> <span class="o">+</span> <span class="n">padx</span><span class="p">,</span> <span class="n">maxy</span> <span class="o">+</span> <span class="n">pady</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">update_datalim</span><span class="p">(</span><span class="n">corners</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">autoscale_view</span><span class="p">()</span>
-</div>
-    <span class="k">return</span> <span class="n">arrow_collection</span>
+
+    <span class="k">return</span> <span class="n">arrow_collection</span></div>
 
 
 <div class="viewcode-block" id="draw_networkx_labels"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_networkx_labels.html#networkx.drawing.nx_pylab.draw_networkx_labels">[docs]</a><span class="k">def</span> <span class="nf">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span>
@@ -976,8 +976,8 @@
                     <span class="n">clip_on</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                     <span class="p">)</span>
         <span class="n">text_items</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
-</div>
-    <span class="k">return</span> <span class="n">text_items</span>
+
+    <span class="k">return</span> <span class="n">text_items</span></div>
 
 
 <div class="viewcode-block" id="draw_networkx_edge_labels"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_networkx_edge_labels.html#networkx.drawing.nx_pylab.draw_networkx_edge_labels">[docs]</a><span class="k">def</span> <span class="nf">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span>
@@ -1121,8 +1121,8 @@
                     <span class="n">clip_on</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                     <span class="p">)</span>
         <span class="n">text_items</span><span class="p">[(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">t</span>
-</div>
-    <span class="k">return</span> <span class="n">text_items</span>
+
+    <span class="k">return</span> <span class="n">text_items</span></div>
 
 
 <div class="viewcode-block" id="draw_circular"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_circular.html#networkx.drawing.nx_pylab.draw_circular">[docs]</a><span class="k">def</span> <span class="nf">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1137,8 +1137,8 @@
 <span class="sd">       See networkx.draw_networkx() for a description of optional keywords,</span>
 <span class="sd">       with the exception of the pos parameter which is not used by this</span>
 <span class="sd">       function.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="draw_kamada_kawai"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_kamada_kawai.html#networkx.drawing.nx_pylab.draw_kamada_kawai">[docs]</a><span class="k">def</span> <span class="nf">draw_kamada_kawai</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1153,8 +1153,8 @@
 <span class="sd">       See networkx.draw_networkx() for a description of optional keywords,</span>
 <span class="sd">       with the exception of the pos parameter which is not used by this</span>
 <span class="sd">       function.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="draw_random"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_random.html#networkx.drawing.nx_pylab.draw_random">[docs]</a><span class="k">def</span> <span class="nf">draw_random</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1169,8 +1169,8 @@
 <span class="sd">       See networkx.draw_networkx() for a description of optional keywords,</span>
 <span class="sd">       with the exception of the pos parameter which is not used by this</span>
 <span class="sd">       function.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">random_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">random_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="draw_spectral"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_spectral.html#networkx.drawing.nx_pylab.draw_spectral">[docs]</a><span class="k">def</span> <span class="nf">draw_spectral</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1185,8 +1185,8 @@
 <span class="sd">       See networkx.draw_networkx() for a description of optional keywords,</span>
 <span class="sd">       with the exception of the pos parameter which is not used by this</span>
 <span class="sd">       function.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">spectral_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">spectral_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="draw_spring"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_spring.html#networkx.drawing.nx_pylab.draw_spring">[docs]</a><span class="k">def</span> <span class="nf">draw_spring</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1201,8 +1201,8 @@
 <span class="sd">       See networkx.draw_networkx() for a description of optional keywords,</span>
 <span class="sd">       with the exception of the pos parameter which is not used by this</span>
 <span class="sd">       function.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="draw_shell"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_shell.html#networkx.drawing.nx_pylab.draw_shell">[docs]</a><span class="k">def</span> <span class="nf">draw_shell</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1220,8 +1220,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">nlist</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nlist&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">nlist</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">del</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;nlist&#39;</span><span class="p">])</span></div>
-    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">shell_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nlist</span><span class="o">=</span><span class="n">nlist</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">del</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;nlist&#39;</span><span class="p">])</span>
+    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">shell_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nlist</span><span class="o">=</span><span class="n">nlist</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">apply_alpha</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">elem_list</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1329,7 +1329,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -1351,7 +1351,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

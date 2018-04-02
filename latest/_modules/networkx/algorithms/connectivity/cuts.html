@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.connectivity.cuts &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.connectivity.cuts &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -322,8 +322,8 @@
     <span class="n">cutset</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">G</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">reachable</span><span class="p">):</span>
         <span class="n">cutset</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nbrs</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">non_reachable</span><span class="p">)</span>
-</div>
-    <span class="k">return</span> <span class="n">cutset</span>
+
+    <span class="k">return</span> <span class="n">cutset</span></div>
 
 
 <div class="viewcode-block" id="minimum_st_node_cut"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.connectivity.cuts.minimum_st_node_cut.html#networkx.algorithms.connectivity.cuts.minimum_st_node_cut">[docs]</a><span class="k">def</span> <span class="nf">minimum_st_node_cut</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auxiliary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">residual</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -462,8 +462,8 @@
     <span class="n">edge_cut</span> <span class="o">=</span> <span class="n">minimum_st_edge_cut</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">B&#39;</span> <span class="o">%</span> <span class="n">mapping</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">A&#39;</span> <span class="o">%</span> <span class="n">mapping</span><span class="p">[</span><span class="n">t</span><span class="p">],</span>
                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="c1"># Each node in the original graph maps to two nodes of the auxiliary graph</span>
-    <span class="n">node_cut</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edge_cut</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">node_cut</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">])</span>
+    <span class="n">node_cut</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edge_cut</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">node_cut</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">])</span></div>
 
 
 <div class="viewcode-block" id="minimum_node_cut"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.connectivity.cuts.minimum_node_cut.html#networkx.algorithms.connectivity.cuts.minimum_node_cut">[docs]</a><span class="k">def</span> <span class="nf">minimum_node_cut</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -607,8 +607,8 @@
         <span class="n">this_cut</span> <span class="o">=</span> <span class="n">minimum_st_node_cut</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">min_cut</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">this_cut</span><span class="p">):</span>
             <span class="n">min_cut</span> <span class="o">=</span> <span class="n">this_cut</span>
-</div>
-    <span class="k">return</span> <span class="n">min_cut</span>
+
+    <span class="k">return</span> <span class="n">min_cut</span></div>
 
 
 <div class="viewcode-block" id="minimum_edge_cut"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.connectivity.cuts.minimum_edge_cut.html#networkx.algorithms.connectivity.cuts.minimum_edge_cut">[docs]</a><span class="k">def</span> <span class="nf">minimum_edge_cut</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -770,8 +770,8 @@
             <span class="n">this_cut</span> <span class="o">=</span> <span class="n">minimum_st_edge_cut</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">this_cut</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">min_cut</span><span class="p">):</span>
                 <span class="n">min_cut</span> <span class="o">=</span> <span class="n">this_cut</span>
-</div>
-        <span class="k">return</span> <span class="n">min_cut</span>
+
+        <span class="k">return</span> <span class="n">min_cut</span></div>
 </pre></div>
 
            </div>
@@ -787,7 +787,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -809,7 +809,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.random_graphs &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.generators.random_graphs &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -287,8 +287,8 @@
                 <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="n">v</span>
                 <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="k">if</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-                <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+                <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="gnp_random_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.gnp_random_graph.html#networkx.generators.random_graphs.gnp_random_graph">[docs]</a><span class="k">def</span> <span class="nf">gnp_random_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -345,8 +345,8 @@
 
     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <span class="c1"># add some aliases to common names</span>
@@ -412,8 +412,8 @@
         <span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="n">v</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>  <span class="c1"># go to next row of adjacency matrix</span>
-            <span class="n">u</span> <span class="o">+=</span> <span class="mi">1</span></div>
-            <span class="n">v</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">u</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span></div>
 
 
 <div class="viewcode-block" id="gnm_random_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.gnm_random_graph.html#networkx.generators.random_graphs.gnm_random_graph">[docs]</a><span class="k">def</span> <span class="nf">gnm_random_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -468,8 +468,8 @@
             <span class="k">continue</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-            <span class="n">edge_count</span> <span class="o">=</span> <span class="n">edge_count</span> <span class="o">+</span> <span class="mi">1</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+            <span class="n">edge_count</span> <span class="o">=</span> <span class="n">edge_count</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="newman_watts_strogatz_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.newman_watts_strogatz_graph.html#networkx.generators.random_graphs.newman_watts_strogatz_graph">[docs]</a><span class="k">def</span> <span class="nf">newman_watts_strogatz_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -533,8 +533,8 @@
                 <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
                     <span class="k">break</span>  <span class="c1"># skip this rewiring</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+                <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="watts_strogatz_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.watts_strogatz_graph.html#networkx.generators.random_graphs.watts_strogatz_graph">[docs]</a><span class="k">def</span> <span class="nf">watts_strogatz_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -603,8 +603,8 @@
                         <span class="k">break</span>  <span class="c1"># skip this rewiring</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-                    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+                    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="connected_watts_strogatz_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.connected_watts_strogatz_graph.html#networkx.generators.random_graphs.connected_watts_strogatz_graph">[docs]</a><span class="k">def</span> <span class="nf">connected_watts_strogatz_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">tries</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -637,8 +637,8 @@
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tries</span><span class="p">):</span>
         <span class="n">G</span> <span class="o">=</span> <span class="n">watts_strogatz_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">G</span></div>
-    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Maximum number of tries exceeded&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">G</span>
+    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Maximum number of tries exceeded&#39;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="random_regular_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.random_regular_graph.html#networkx.generators.random_graphs.random_regular_graph">[docs]</a><span class="k">def</span> <span class="nf">random_regular_graph</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -748,8 +748,8 @@
 
     <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-</div>
-    <span class="k">return</span> <span class="n">G</span>
+
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <span class="k">def</span> <span class="nf">_random_subset</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
@@ -820,8 +820,8 @@
         <span class="c1"># Now choose m unique nodes from the existing nodes</span>
         <span class="c1"># Pick uniformly from repeated_nodes (preferential attachment)</span>
         <span class="n">targets</span> <span class="o">=</span> <span class="n">_random_subset</span><span class="p">(</span><span class="n">repeated_nodes</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-        <span class="n">source</span> <span class="o">+=</span> <span class="mi">1</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+        <span class="n">source</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <span class="k">def</span> <span class="nf">extended_barabasi_albert_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1070,8 +1070,8 @@
             <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
 
         <span class="n">repeated_nodes</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">source</span><span class="p">]</span> <span class="o">*</span> <span class="n">m</span><span class="p">)</span>  <span class="c1"># add source node to list m times</span>
-        <span class="n">source</span> <span class="o">+=</span> <span class="mi">1</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+        <span class="n">source</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="random_lobster"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.random_lobster.html#networkx.generators.random_graphs.random_lobster">[docs]</a><span class="k">def</span> <span class="nf">random_lobster</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1105,8 +1105,8 @@
             <span class="n">L</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">current_node</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">:</span>  <span class="c1"># add crunchy lobster bits</span>
                 <span class="n">current_node</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="n">L</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">current_node</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">current_node</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">L</span>  <span class="c1"># voila, un lobster!</span>
+                <span class="n">L</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">current_node</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">current_node</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L</span>  <span class="c1"># voila, un lobster!</span></div>
 
 
 <div class="viewcode-block" id="random_shell_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.random_shell_graph.html#networkx.generators.random_graphs.random_shell_graph">[docs]</a><span class="k">def</span> <span class="nf">random_shell_graph</span><span class="p">(</span><span class="n">constructor</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1163,8 +1163,8 @@
                 <span class="k">continue</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-                <span class="n">edge_count</span> <span class="o">=</span> <span class="n">edge_count</span> <span class="o">+</span> <span class="mi">1</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+                <span class="n">edge_count</span> <span class="o">=</span> <span class="n">edge_count</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="random_powerlaw_tree"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.random_powerlaw_tree.html#networkx.generators.random_graphs.random_powerlaw_tree">[docs]</a><span class="k">def</span> <span class="nf">random_powerlaw_tree</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tries</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
@@ -1197,8 +1197,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># This call may raise a NetworkXError if the number of tries is succeeded.</span>
     <span class="n">seq</span> <span class="o">=</span> <span class="n">random_powerlaw_tree_sequence</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">tries</span><span class="o">=</span><span class="n">tries</span><span class="p">)</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">degree_sequence_tree</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">degree_sequence_tree</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="random_powerlaw_tree_sequence"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.random_powerlaw_tree_sequence.html#networkx.generators.random_graphs.random_powerlaw_tree_sequence">[docs]</a><span class="k">def</span> <span class="nf">random_powerlaw_tree_sequence</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tries</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
@@ -1253,8 +1253,8 @@
         <span class="n">index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">zseq</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">swap</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 
-    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Exceeded max (</span><span class="si">%d</span><span class="s1">) attempts for a valid tree&#39;</span></div>
-                           <span class="s1">&#39; sequence.&#39;</span> <span class="o">%</span> <span class="n">tries</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Exceeded max (</span><span class="si">%d</span><span class="s1">) attempts for a valid tree&#39;</span>
+                           <span class="s1">&#39; sequence.&#39;</span> <span class="o">%</span> <span class="n">tries</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="random_kernel_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_graphs.random_kernel_graph.html#networkx.generators.random_graphs.random_kernel_graph">[docs]</a><span class="k">def</span> <span class="nf">random_kernel_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">kernel_integral</span><span class="p">,</span> <span class="n">kernel_root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1333,8 +1333,8 @@
             <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">j</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">kernel_root</span><span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="n">n</span><span class="p">,</span> <span class="n">j</span> <span class="o">/</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">)))</span>
-            <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">graph</span>
+            <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph</span></div>
 </pre></div>
 
            </div>
@@ -1350,7 +1350,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -1372,7 +1372,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

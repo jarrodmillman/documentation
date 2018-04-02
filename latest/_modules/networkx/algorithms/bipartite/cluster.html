@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.cluster &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.bipartite.cluster &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -299,8 +299,8 @@
             <span class="n">cc</span> <span class="o">+=</span> <span class="n">cc_func</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]),</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]))</span>
         <span class="k">if</span> <span class="n">cc</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>  <span class="c1"># len(nbrs2)&gt;0</span>
             <span class="n">cc</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nbrs2</span><span class="p">)</span>
-        <span class="n">ccs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span></div>
-    <span class="k">return</span> <span class="n">ccs</span>
+        <span class="n">ccs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+    <span class="k">return</span> <span class="n">ccs</span></div>
 
 
 <span class="n">clustering</span> <span class="o">=</span> <span class="n">latapy_clustering</span>
@@ -378,8 +378,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">nodes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">nodes</span> <span class="o">=</span> <span class="n">G</span>
-    <span class="n">ccs</span> <span class="o">=</span> <span class="n">latapy_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">ccs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="n">ccs</span> <span class="o">=</span> <span class="n">latapy_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">ccs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="robins_alexander_clustering"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.bipartite.cluster.robins_alexander_clustering.html#networkx.algorithms.bipartite.cluster.robins_alexander_clustering">[docs]</a><span class="k">def</span> <span class="nf">robins_alexander_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -427,8 +427,8 @@
     <span class="n">L_3</span> <span class="o">=</span> <span class="n">_threepaths</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">L_3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
-    <span class="n">C_4</span> <span class="o">=</span> <span class="n">_four_cycles</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="p">(</span><span class="mf">4.</span> <span class="o">*</span> <span class="n">C_4</span><span class="p">)</span> <span class="o">/</span> <span class="n">L_3</span>
+    <span class="n">C_4</span> <span class="o">=</span> <span class="n">_four_cycles</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mf">4.</span> <span class="o">*</span> <span class="n">C_4</span><span class="p">)</span> <span class="o">/</span> <span class="n">L_3</span></div>
 
 
 <span class="k">def</span> <span class="nf">_four_cycles</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -463,7 +463,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -485,7 +485,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

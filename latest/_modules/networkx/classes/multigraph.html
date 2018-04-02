@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.multigraph &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.classes.multigraph &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -447,8 +447,8 @@
 <span class="sd">        {&#39;day&#39;: &#39;Friday&#39;}</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">edge_key_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_key_dict_factory</span></div>
-        <span class="n">Graph</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incoming_graph_data</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edge_key_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_key_dict_factory</span>
+        <span class="n">Graph</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incoming_graph_data</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">adj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -495,8 +495,8 @@
             <span class="k">return</span> <span class="mi">0</span>
         <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">keydict</span><span class="p">)</span>
         <span class="k">while</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keydict</span><span class="p">:</span>
-            <span class="n">key</span> <span class="o">+=</span> <span class="mi">1</span></div>
-        <span class="k">return</span> <span class="n">key</span>
+            <span class="n">key</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">key</span></div>
 
 <div class="viewcode-block" id="MultiGraph.add_edge"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.add_edge.html#networkx.MultiGraph.add_edge">[docs]</a>    <span class="k">def</span> <span class="nf">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u_for_edge</span><span class="p">,</span> <span class="n">v_for_edge</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add an edge between u and v.</span>
@@ -586,8 +586,8 @@
             <span class="n">keydict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_key_dict_factory</span><span class="p">()</span>
             <span class="n">keydict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">datadict</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">keydict</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">keydict</span></div>
-        <span class="k">return</span> <span class="n">key</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">keydict</span>
+        <span class="k">return</span> <span class="n">key</span></div>
 
 <div class="viewcode-block" id="MultiGraph.add_edges_from"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.add_edges_from.html#networkx.MultiGraph.add_edges_from">[docs]</a>    <span class="k">def</span> <span class="nf">add_edges_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ebunch_to_add</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add all the edges in ebunch_to_add.</span>
@@ -665,8 +665,8 @@
                 <span class="n">key</span> <span class="o">=</span> <span class="n">dd</span>
             <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
             <span class="bp">self</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ddd</span><span class="p">)</span>
-            <span class="n">keylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></div>
-        <span class="k">return</span> <span class="n">keylist</span>
+            <span class="n">keylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">keylist</span></div>
 
 <div class="viewcode-block" id="MultiGraph.remove_edge"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.remove_edge.html#networkx.MultiGraph.remove_edge">[docs]</a>    <span class="k">def</span> <span class="nf">remove_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Remove an edge between u and v.</span>
@@ -731,8 +731,8 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="c1"># remove the key entries if last edge</span>
             <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">u</span> <span class="o">!=</span> <span class="n">v</span><span class="p">:</span>  <span class="c1"># check for selfloop</span></div>
-                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">u</span> <span class="o">!=</span> <span class="n">v</span><span class="p">:</span>  <span class="c1"># check for selfloop</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="MultiGraph.remove_edges_from"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.remove_edges_from.html#networkx.MultiGraph.remove_edges_from">[docs]</a>    <span class="k">def</span> <span class="nf">remove_edges_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ebunch</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Remove all edges specified in ebunch.</span>
@@ -775,8 +775,8 @@
         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ebunch</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
-            <span class="k">except</span> <span class="n">NetworkXError</span><span class="p">:</span></div>
-                <span class="k">pass</span>
+            <span class="k">except</span> <span class="n">NetworkXError</span><span class="p">:</span>
+                <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="MultiGraph.has_edge"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.has_edge.html#networkx.MultiGraph.has_edge">[docs]</a>    <span class="k">def</span> <span class="nf">has_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True if the graph has an edge between nodes u and v.</span>
@@ -831,8 +831,8 @@
                 <span class="k">return</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span>
-        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span></div>
-            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -962,8 +962,8 @@
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
-        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span></div>
-            <span class="k">return</span> <span class="n">default</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">default</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">degree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1028,8 +1028,8 @@
 <span class="sd">        -----</span>
 <span class="sd">        If you subclass the base class you should overwrite this method</span>
 <span class="sd">        to return your class of graph.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
-        <span class="k">return</span> <span class="n">MultiGraph</span><span class="p">()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">MultiGraph</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="MultiGraph.copy"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.copy.html#networkx.MultiGraph.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy of the graph.</span>
@@ -1117,8 +1117,8 @@
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
                          <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
                          <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">keydict</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-                         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span> <span class="ow">in</span> <span class="n">keydict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div>
-        <span class="k">return</span> <span class="n">G</span>
+                         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span> <span class="ow">in</span> <span class="n">keydict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="MultiGraph.to_directed"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.to_directed.html#networkx.MultiGraph.to_directed">[docs]</a>    <span class="k">def</span> <span class="nf">to_directed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a directed representation of the graph.</span>
@@ -1172,8 +1172,8 @@
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">datadict</span><span class="p">))</span>
                          <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
                          <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">keydict</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-                         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span> <span class="ow">in</span> <span class="n">keydict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div>
-        <span class="k">return</span> <span class="n">G</span>
+                         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span> <span class="ow">in</span> <span class="n">keydict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="MultiGraph.to_undirected"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.to_undirected.html#networkx.MultiGraph.to_undirected">[docs]</a>    <span class="k">def</span> <span class="nf">to_undirected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return an undirected copy of the graph.</span>
@@ -1222,8 +1222,8 @@
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">datadict</span><span class="p">))</span>
                          <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
                          <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">keydict</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-                         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span> <span class="ow">in</span> <span class="n">keydict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div>
-        <span class="k">return</span> <span class="n">G</span>
+                         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span> <span class="ow">in</span> <span class="n">keydict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="MultiGraph.subgraph"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.subgraph.html#networkx.MultiGraph.subgraph">[docs]</a>    <span class="k">def</span> <span class="nf">subgraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a SubGraph view of the subgraph induced on nodes in `nodes`.</span>
@@ -1267,8 +1267,8 @@
         <span class="n">SubGraph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">SubMultiGraph</span>
         <span class="c1"># if already a subgraph, don&#39;t make a chain</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_NODE_OK&#39;</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">SubGraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_EDGE_OK</span><span class="p">)</span></div>
-        <span class="k">return</span> <span class="n">SubGraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">SubGraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_EDGE_OK</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">SubGraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MultiGraph.number_of_edges"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.number_of_edges.html#networkx.MultiGraph.number_of_edges">[docs]</a>    <span class="k">def</span> <span class="nf">number_of_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the number of edges between two nodes.</span>
@@ -1325,8 +1325,8 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">edgedata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">0</span>  <span class="c1"># no such edge</span></div></div>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">edgedata</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">0</span>  <span class="c1"># no such edge</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">edgedata</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>
@@ -1342,7 +1342,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -1364,7 +1364,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

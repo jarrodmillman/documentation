@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.link_analysis.hits_alg &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.link_analysis.hits_alg &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -292,20 +292,20 @@
             <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*=</span> <span class="n">s</span>
         <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">h</span><span class="p">:</span>
-            <span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*=</span> <span class="n">s</span></div>
-    <span class="k">return</span> <span class="n">h</span><span class="p">,</span> <span class="n">a</span>
+            <span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*=</span> <span class="n">s</span>
+    <span class="k">return</span> <span class="n">h</span><span class="p">,</span> <span class="n">a</span></div>
 
 
 <div class="viewcode-block" id="authority_matrix"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.authority_matrix.html#networkx.algorithms.link_analysis.hits_alg.authority_matrix">[docs]</a><span class="k">def</span> <span class="nf">authority_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return the HITS authority matrix.&quot;&quot;&quot;</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">M</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">M</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">M</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">M</span></div>
 
 
 <div class="viewcode-block" id="hub_matrix"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.hub_matrix.html#networkx.algorithms.link_analysis.hits_alg.hub_matrix">[docs]</a><span class="k">def</span> <span class="nf">hub_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return the HITS hub matrix.&quot;&quot;&quot;</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">M</span> <span class="o">*</span> <span class="n">M</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">M</span> <span class="o">*</span> <span class="n">M</span><span class="o">.</span><span class="n">T</span></div>
 
 
 <div class="viewcode-block" id="hits_numpy"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.hits_numpy.html#networkx.algorithms.link_analysis.hits_alg.hits_numpy">[docs]</a><span class="k">def</span> <span class="nf">hits_numpy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -375,8 +375,8 @@
         <span class="n">h</span> <span class="o">=</span> <span class="n">h</span> <span class="o">/</span> <span class="n">h</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
     <span class="n">hubs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">h</span><span class="p">)))</span>
-    <span class="n">authorities</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">a</span><span class="p">)))</span></div>
-    <span class="k">return</span> <span class="n">hubs</span><span class="p">,</span> <span class="n">authorities</span>
+    <span class="n">authorities</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">a</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">hubs</span><span class="p">,</span> <span class="n">authorities</span></div>
 
 
 <div class="viewcode-block" id="hits_scipy"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.hits_scipy.html#networkx.algorithms.link_analysis.hits_alg.hits_scipy">[docs]</a><span class="k">def</span> <span class="nf">hits_scipy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.0e-6</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -478,8 +478,8 @@
         <span class="n">h</span> <span class="o">=</span> <span class="n">h</span> <span class="o">/</span> <span class="n">h</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="n">hubs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">h</span><span class="p">)))</span>
-    <span class="n">authorities</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">a</span><span class="p">)))</span></div>
-    <span class="k">return</span> <span class="n">hubs</span><span class="p">,</span> <span class="n">authorities</span>
+    <span class="n">authorities</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">a</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">hubs</span><span class="p">,</span> <span class="n">authorities</span></div>
 
 <span class="c1"># fixture for nose tests</span>
 
@@ -509,7 +509,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -531,7 +531,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.exception &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.exception &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -207,12 +207,12 @@
 <span class="p">]</span>
 
 
-<div class="viewcode-block" id="NetworkXException"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXException">[docs]</a><span class="k">class</span> <span class="nc">NetworkXException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span></div>
-    <span class="sd">&quot;&quot;&quot;Base class for exceptions in NetworkX.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="NetworkXException"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXException">[docs]</a><span class="k">class</span> <span class="nc">NetworkXException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base class for exceptions in NetworkX.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="NetworkXError"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXError">[docs]</a><span class="k">class</span> <span class="nc">NetworkXError</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span></div>
-    <span class="sd">&quot;&quot;&quot;Exception for a serious error in NetworkX&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="NetworkXError"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXError">[docs]</a><span class="k">class</span> <span class="nc">NetworkXError</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception for a serious error in NetworkX&quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="NetworkXPointlessConcept"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXPointlessConcept">[docs]</a><span class="k">class</span> <span class="nc">NetworkXPointlessConcept</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span>
@@ -227,47 +227,47 @@
 <span class="sd">    .. [1] Harary, F. and Read, R. &quot;Is the Null Graph a Pointless</span>
 <span class="sd">       Concept?&quot;  In Graphs and Combinatorics Conference, George</span>
 <span class="sd">       Washington University.  New York: Springer-Verlag, 1973.</span>
-</div>
-<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="NetworkXAlgorithmError"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXAlgorithmError">[docs]</a><span class="k">class</span> <span class="nc">NetworkXAlgorithmError</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span></div>
-    <span class="sd">&quot;&quot;&quot;Exception for unexpected termination of algorithms.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="NetworkXAlgorithmError"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXAlgorithmError">[docs]</a><span class="k">class</span> <span class="nc">NetworkXAlgorithmError</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception for unexpected termination of algorithms.&quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="NetworkXUnfeasible"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXUnfeasible">[docs]</a><span class="k">class</span> <span class="nc">NetworkXUnfeasible</span><span class="p">(</span><span class="n">NetworkXAlgorithmError</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exception raised by algorithms trying to solve a problem</span></div>
-<span class="sd">    instance that has no feasible solution.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised by algorithms trying to solve a problem</span>
+<span class="sd">    instance that has no feasible solution.&quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="NetworkXNoPath"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXNoPath">[docs]</a><span class="k">class</span> <span class="nc">NetworkXNoPath</span><span class="p">(</span><span class="n">NetworkXUnfeasible</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exception for algorithms that should return a path when running</span></div>
-<span class="sd">    on graphs where such a path does not exist.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Exception for algorithms that should return a path when running</span>
+<span class="sd">    on graphs where such a path does not exist.&quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="NetworkXNoCycle"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXNoCycle">[docs]</a><span class="k">class</span> <span class="nc">NetworkXNoCycle</span><span class="p">(</span><span class="n">NetworkXUnfeasible</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exception for algorithms that should return a cycle when running</span></div>
-<span class="sd">    on graphs where such a cycle does not exist.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Exception for algorithms that should return a cycle when running</span>
+<span class="sd">    on graphs where such a cycle does not exist.&quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="HasACycle"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.HasACycle">[docs]</a><span class="k">class</span> <span class="nc">HasACycle</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Raised if a graph has a cycle when an algorithm expects that it</span>
 <span class="sd">    will have no cycles.</span>
-</div>
-<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="NetworkXUnbounded"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXUnbounded">[docs]</a><span class="k">class</span> <span class="nc">NetworkXUnbounded</span><span class="p">(</span><span class="n">NetworkXAlgorithmError</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exception raised by algorithms trying to solve a maximization</span></div>
-<span class="sd">    or a minimization problem instance that is unbounded.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised by algorithms trying to solve a maximization</span>
+<span class="sd">    or a minimization problem instance that is unbounded.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="NetworkXNotImplemented"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXNotImplemented">[docs]</a><span class="k">class</span> <span class="nc">NetworkXNotImplemented</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span></div>
-    <span class="sd">&quot;&quot;&quot;Exception raised by algorithms not implemented for a type of graph.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="NetworkXNotImplemented"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NetworkXNotImplemented">[docs]</a><span class="k">class</span> <span class="nc">NetworkXNotImplemented</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised by algorithms not implemented for a type of graph.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="NodeNotFound"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NodeNotFound">[docs]</a><span class="k">class</span> <span class="nc">NodeNotFound</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span></div>
-    <span class="sd">&quot;&quot;&quot;Exception raised if requested node is not present in the graph&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="NodeNotFound"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.NodeNotFound">[docs]</a><span class="k">class</span> <span class="nc">NodeNotFound</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised if requested node is not present in the graph&quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="AmbiguousSolution"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.AmbiguousSolution">[docs]</a><span class="k">class</span> <span class="nc">AmbiguousSolution</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span>
@@ -278,8 +278,8 @@
 <span class="sd">    This may occur, for example, when trying to determine the</span>
 <span class="sd">    bipartite node sets in a disconnected bipartite graph when</span>
 <span class="sd">    computing bipartite matchings.</span>
-</div>
-<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="ExceededMaxIterations"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.ExceededMaxIterations">[docs]</a><span class="k">class</span> <span class="nc">ExceededMaxIterations</span><span class="p">(</span><span class="n">NetworkXException</span><span class="p">):</span>
@@ -288,8 +288,8 @@
 <span class="sd">    This may occur, for example, in an algorithm that computes</span>
 <span class="sd">    progressively better approximations to a value but exceeds an</span>
 <span class="sd">    iteration bound specified by the user.</span>
-</div>
-<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="PowerIterationFailedConvergence"><a class="viewcode-back" href="../../reference/exceptions.html#networkx.PowerIterationFailedConvergence">[docs]</a><span class="k">class</span> <span class="nc">PowerIterationFailedConvergence</span><span class="p">(</span><span class="n">ExceededMaxIterations</span><span class="p">):</span>
@@ -304,8 +304,8 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;power iteration failed to converge within </span><span class="si">{}</span><span class="s1"> iterations&#39;</span>
         <span class="n">exception_message</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">)</span>
-        <span class="n">superinit</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">PowerIterationFailedConvergence</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span></div>
-        <span class="n">superinit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception_message</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="n">superinit</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">PowerIterationFailedConvergence</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span>
+        <span class="n">superinit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception_message</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
@@ -321,7 +321,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -343,7 +343,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

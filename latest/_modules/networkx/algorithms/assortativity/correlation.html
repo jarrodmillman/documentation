@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.assortativity.correlation &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.assortativity.correlation &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -244,8 +244,8 @@
 <span class="sd">    .. [2] Foster, J.G., Foster, D.V., Grassberger, P. &amp; Paczuski, M. </span>
 <span class="sd">       Edge direction and the structure of networks, PNAS 107, 10815-20 (2010).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">degree_mixing_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">numeric_ac</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">degree_mixing_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numeric_ac</span><span class="p">(</span><span class="n">M</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="degree_pearson_correlation_coefficient"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.assortativity.degree_pearson_correlation_coefficient.html#networkx.algorithms.assortativity.degree_pearson_correlation_coefficient">[docs]</a><span class="k">def</span> <span class="nf">degree_pearson_correlation_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span>
@@ -306,8 +306,8 @@
         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
             <span class="s2">&quot;Assortativity requires SciPy: http://scipy.org/ &quot;</span><span class="p">)</span>
     <span class="n">xy</span> <span class="o">=</span> <span class="n">node_degree_xy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">xy</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">xy</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="attribute_assortativity_coefficient"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.assortativity.attribute_assortativity_coefficient.html#networkx.algorithms.assortativity.attribute_assortativity_coefficient">[docs]</a><span class="k">def</span> <span class="nf">attribute_assortativity_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -352,8 +352,8 @@
 <span class="sd">    .. [1] M. E. J. Newman, Mixing patterns in networks,</span>
 <span class="sd">       Physical Review E, 67 026126, 2003</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">attribute_mixing_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">attribute_ac</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">attribute_mixing_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">attribute_ac</span><span class="p">(</span><span class="n">M</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="numeric_assortativity_coefficient"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.assortativity.numeric_assortativity_coefficient.html#networkx.algorithms.assortativity.numeric_assortativity_coefficient">[docs]</a><span class="k">def</span> <span class="nf">numeric_assortativity_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -399,8 +399,8 @@
 <span class="sd">    .. [1] M. E. J. Newman, Mixing patterns in networks</span>
 <span class="sd">           Physical Review E, 67 026126, 2003</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">numeric_mixing_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">numeric_ac</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">numeric_mixing_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numeric_ac</span><span class="p">(</span><span class="n">a</span><span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">attribute_ac</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
@@ -484,7 +484,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -506,7 +506,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

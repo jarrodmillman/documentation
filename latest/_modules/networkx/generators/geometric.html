@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.generators.geometric &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -335,8 +335,8 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">edges</span> <span class="o">=</span> <span class="n">_slow_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-</div>
-    <span class="k">return</span> <span class="n">G</span>
+
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="soft_random_geometric_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.geometric.soft_random_geometric_graph.html#networkx.generators.geometric.soft_random_geometric_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -469,8 +469,8 @@
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">should_join</span><span class="p">,</span> <span class="n">edges</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">should_join</span><span class="p">,</span> <span class="n">combinations</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
-</div>
-    <span class="k">return</span> <span class="n">G</span>
+
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="geographical_threshold_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.geometric.geographical_threshold_graph.html#networkx.generators.geometric.geographical_threshold_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -622,8 +622,8 @@
         <span class="n">u_weight</span><span class="p">,</span> <span class="n">v_weight</span> <span class="o">=</span> <span class="n">weight</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">weight</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">u_weight</span> <span class="o">+</span> <span class="n">v_weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">p_dist</span><span class="p">(</span><span class="n">metric</span><span class="p">(</span><span class="n">u_pos</span><span class="p">,</span> <span class="n">v_pos</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="n">theta</span>
 
-    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">should_join</span><span class="p">,</span> <span class="n">combinations</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">should_join</span><span class="p">,</span> <span class="n">combinations</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="waxman_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.geometric.waxman_graph.html#networkx.generators.geometric.waxman_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -736,8 +736,8 @@
     <span class="k">def</span> <span class="nf">should_join</span><span class="p">(</span><span class="n">pair</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dist</span><span class="p">(</span><span class="o">*</span><span class="n">pair</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">L</span><span class="p">))</span>
 
-    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">should_join</span><span class="p">,</span> <span class="n">combinations</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">should_join</span><span class="p">,</span> <span class="n">combinations</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="navigable_small_world_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.geometric.navigable_small_world_graph.html#networkx.generators.geometric.navigable_small_world_graph">[docs]</a><span class="k">def</span> <span class="nf">navigable_small_world_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -807,8 +807,8 @@
         <span class="n">cdf</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">probs</span><span class="p">))</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
             <span class="n">target</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))]</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="thresholded_random_geometric_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.geometric.thresholded_random_geometric_graph.html#networkx.generators.geometric.thresholded_random_geometric_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -945,8 +945,8 @@
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">should_join</span><span class="p">,</span> <span class="n">edges</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">should_join</span><span class="p">,</span> <span class="n">combinations</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
-</div>
-    <span class="k">return</span> <span class="n">G</span>
+
+    <span class="k">return</span> <span class="n">G</span></div>
 </pre></div>
 
            </div>
@@ -962,7 +962,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -984,7 +984,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

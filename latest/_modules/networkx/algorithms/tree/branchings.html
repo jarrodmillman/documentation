@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.branchings &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.tree.branchings &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -244,8 +244,8 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the total weight of a branching.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="greedy_branching"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.tree.branchings.greedy_branching.html#networkx.algorithms.tree.branchings.greedy_branching">[docs]</a><span class="k">def</span> <span class="nf">greedy_branching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">):</span>
@@ -321,8 +321,8 @@
                 <span class="n">data</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
             <span class="n">B</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
             <span class="n">uf</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-</div>
-    <span class="k">return</span> <span class="n">B</span>
+
+    <span class="k">return</span> <span class="n">B</span></div>
 
 
 <span class="k">class</span> <span class="nc">MultiDiGraph_EdgeKey</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">):</span>
@@ -439,8 +439,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="c1"># Since we will be creating graphs with new nodes, we need to make</span>
-        <span class="c1"># sure that our node names do not conflict with the real node names.</span></div>
-        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">random_string</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_</span><span class="si">{0}</span><span class="s1">&#39;</span>
+        <span class="c1"># sure that our node names do not conflict with the real node names.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">random_string</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_</span><span class="si">{0}</span><span class="s1">&#39;</span></div>
 
     <span class="k">def</span> <span class="nf">_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">KINDS</span><span class="p">:</span>
@@ -773,20 +773,20 @@
             <span class="c1"># TODO: make this preserve the key. In fact, make this use the</span>
             <span class="c1"># same edge attributes as the original graph.</span>
             <span class="n">H</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="o">**</span><span class="n">dd</span><span class="p">)</span>
-</div>
-        <span class="k">return</span> <span class="n">H</span>
+
+        <span class="k">return</span> <span class="n">H</span></div>
 
 
 <div class="viewcode-block" id="maximum_branching"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.tree.branchings.maximum_branching.html#networkx.algorithms.tree.branchings.maximum_branching">[docs]</a><span class="k">def</span> <span class="nf">maximum_branching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">ed</span> <span class="o">=</span> <span class="n">Edmonds</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="n">B</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">find_optimum</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;branching&#39;</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">B</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">find_optimum</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;branching&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">B</span></div>
 
 
 <div class="viewcode-block" id="minimum_branching"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.tree.branchings.minimum_branching.html#networkx.algorithms.tree.branchings.minimum_branching">[docs]</a><span class="k">def</span> <span class="nf">minimum_branching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">ed</span> <span class="o">=</span> <span class="n">Edmonds</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="n">B</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">find_optimum</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;branching&#39;</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">B</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">find_optimum</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;branching&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">B</span></div>
 
 
 <div class="viewcode-block" id="maximum_spanning_arborescence"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.tree.branchings.maximum_spanning_arborescence.html#networkx.algorithms.tree.branchings.maximum_spanning_arborescence">[docs]</a><span class="k">def</span> <span class="nf">maximum_spanning_arborescence</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -794,8 +794,8 @@
     <span class="n">B</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">find_optimum</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;arborescence&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_arborescence</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;No maximum spanning arborescence in G.&#39;</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">exception</span><span class="o">.</span><span class="n">NetworkXException</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">B</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">exception</span><span class="o">.</span><span class="n">NetworkXException</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">B</span></div>
 
 
 <div class="viewcode-block" id="minimum_spanning_arborescence"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.tree.branchings.minimum_spanning_arborescence.html#networkx.algorithms.tree.branchings.minimum_spanning_arborescence">[docs]</a><span class="k">def</span> <span class="nf">minimum_spanning_arborescence</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -803,8 +803,8 @@
     <span class="n">B</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">find_optimum</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;arborescence&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_arborescence</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;No minimum spanning arborescence in G.&#39;</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">exception</span><span class="o">.</span><span class="n">NetworkXException</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">B</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">exception</span><span class="o">.</span><span class="n">NetworkXException</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">B</span></div>
 
 
 <span class="n">docstring_branching</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
@@ -860,7 +860,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -882,7 +882,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

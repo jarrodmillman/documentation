@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.connectivity.disjoint_paths &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.connectivity.disjoint_paths &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -408,8 +408,8 @@
                 <span class="k">break</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-            <span class="k">yield</span> <span class="n">path</span></div>
-            <span class="n">paths_found</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">yield</span> <span class="n">path</span>
+            <span class="n">paths_found</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
 
 <div class="viewcode-block" id="node_disjoint_paths"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.connectivity.disjoint_paths.node_disjoint_paths.html#networkx.algorithms.connectivity.disjoint_paths.node_disjoint_paths">[docs]</a><span class="k">def</span> <span class="nf">node_disjoint_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auxiliary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -569,8 +569,8 @@
     <span class="n">paths_edges</span> <span class="o">=</span> <span class="n">edge_disjoint_paths</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">B&#39;</span> <span class="o">%</span> <span class="n">mapping</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">A&#39;</span> <span class="o">%</span> <span class="n">mapping</span><span class="p">[</span><span class="n">t</span><span class="p">],</span>
                                       <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths_edges</span><span class="p">:</span>
-        <span class="c1"># Each node in the original graph maps to two nodes in auxiliary graph</span></div>
-        <span class="k">yield</span> <span class="nb">list</span><span class="p">(</span><span class="n">_unique_everseen</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">path</span><span class="p">))</span>
+        <span class="c1"># Each node in the original graph maps to two nodes in auxiliary graph</span>
+        <span class="k">yield</span> <span class="nb">list</span><span class="p">(</span><span class="n">_unique_everseen</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">path</span><span class="p">))</span></div>
 
 
 <span class="k">def</span> <span class="nf">_unique_everseen</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
@@ -597,7 +597,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -619,7 +619,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

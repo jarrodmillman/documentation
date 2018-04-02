@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.generic &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.shortest_paths.generic &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -209,8 +209,8 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="n">sp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNoPath</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
-    <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
 
 
 <div class="viewcode-block" id="shortest_path"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.generic.shortest_path.html#networkx.algorithms.shortest_paths.generic.shortest_path">[docs]</a><span class="k">def</span> <span class="nf">shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -312,8 +312,8 @@
                 <span class="n">paths</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">bidirectional_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">paths</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dijkstra_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
-</div>
-    <span class="k">return</span> <span class="n">paths</span>
+
+    <span class="k">return</span> <span class="n">paths</span></div>
 
 
 <div class="viewcode-block" id="shortest_path_length"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.generic.shortest_path_length.html#networkx.algorithms.shortest_paths.generic.shortest_path_length">[docs]</a><span class="k">def</span> <span class="nf">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -426,8 +426,8 @@
                 <span class="n">p</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">bidirectional_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
                 <span class="n">paths</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">paths</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dijkstra_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">paths</span>
+                <span class="n">paths</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dijkstra_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">paths</span></div>
 
 
 <div class="viewcode-block" id="average_shortest_path_length"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.generic.average_shortest_path_length.html#networkx.algorithms.shortest_paths.generic.average_shortest_path_length">[docs]</a><span class="k">def</span> <span class="nf">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -500,8 +500,8 @@
 
         <span class="k">def</span> <span class="nf">path_length</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="k">return</span> <span class="n">ssdpl</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
     <span class="c1"># Sum the distances for each (ordered) pair of source and target node.</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">G</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">path_length</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
-    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">G</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">path_length</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="all_shortest_paths"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.generic.all_shortest_paths.html#networkx.algorithms.shortest_paths.generic.all_shortest_paths">[docs]</a><span class="k">def</span> <span class="nf">all_shortest_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -570,8 +570,8 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">stack</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pred</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">stack</span><span class="p">[</span><span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span></div>
-            <span class="n">top</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">stack</span><span class="p">[</span><span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">top</span> <span class="o">-=</span> <span class="mi">1</span></div>
 </pre></div>
 
            </div>
@@ -587,7 +587,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -609,7 +609,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

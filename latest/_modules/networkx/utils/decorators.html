@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.utils.decorators &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.utils.decorators &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -240,8 +240,8 @@
             <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;not implemented for </span><span class="si">%s</span><span class="s1"> type&#39;</span> <span class="o">%</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">graph_types</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNotImplemented</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">not_implement_for_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">_not_implemented_for</span>
+            <span class="k">return</span> <span class="n">not_implement_for_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_not_implemented_for</span></div>
 
 
 <span class="k">def</span> <span class="nf">_open_gz</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
@@ -400,8 +400,8 @@
                 <span class="n">fobj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">result</span>
-</div>
-    <span class="k">return</span> <span class="n">_open_file</span>
+
+    <span class="k">return</span> <span class="n">_open_file</span></div>
 
 
 <div class="viewcode-block" id="nodes_or_number"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.decorators.nodes_or_number.html#networkx.utils.decorators.nodes_or_number">[docs]</a><span class="k">def</span> <span class="nf">nodes_or_number</span><span class="p">(</span><span class="n">which_args</span><span class="p">):</span>
@@ -457,8 +457,8 @@
                     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Negative number of nodes not valid: </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n</span>
                     <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
             <span class="n">new_args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">func_to_be_decorated</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">_nodes_or_number</span>
+        <span class="k">return</span> <span class="n">func_to_be_decorated</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_nodes_or_number</span></div>
 
 
 <div class="viewcode-block" id="preserve_random_state"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.decorators.preserve_random_state.html#networkx.utils.decorators.preserve_random_state">[docs]</a><span class="k">def</span> <span class="nf">preserve_random_state</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
@@ -504,8 +504,8 @@
                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">wrapper</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
         <span class="k">return</span> <span class="n">wrapper</span>
-    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span></div>
-        <span class="k">return</span> <span class="n">func</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">func</span></div>
 
 
 <div class="viewcode-block" id="random_state"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.decorators.random_state.html#networkx.utils.decorators.random_state">[docs]</a><span class="k">def</span> <span class="nf">random_state</span><span class="p">(</span><span class="n">random_state_index</span><span class="p">):</span>
@@ -554,8 +554,8 @@
         <span class="c1"># args is a tuple, so we must convert to list before modifying it.</span>
         <span class="n">new_args</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
         <span class="n">new_args</span><span class="p">[</span><span class="n">random_state_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">random_state_instance</span>
-        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">_random_state</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_random_state</span></div>
 </pre></div>
 
            </div>
@@ -571,7 +571,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -593,7 +593,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

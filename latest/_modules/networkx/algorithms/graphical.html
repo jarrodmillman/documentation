@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.graphical &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.graphical &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -236,8 +236,8 @@
         <span class="n">valid</span> <span class="o">=</span> <span class="n">is_valid_degree_sequence_havel_hakimi</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sequence</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;`method` must be &#39;eg&#39; or &#39;hh&#39;&quot;</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXException</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">valid</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXException</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">valid</span></div>
 
 
 <span class="k">def</span> <span class="nf">_basic_graphical_tests</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">):</span>
@@ -329,8 +329,8 @@
         <span class="c1"># Add back to the list any non-zero stubs that were removed</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mslen</span><span class="p">):</span>
             <span class="n">stub</span> <span class="o">=</span> <span class="n">modstubs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">num_degs</span><span class="p">[</span><span class="n">stub</span><span class="p">],</span> <span class="n">n</span> <span class="o">=</span> <span class="n">num_degs</span><span class="p">[</span><span class="n">stub</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span></div>
-    <span class="k">return</span> <span class="kc">True</span>
+            <span class="n">num_degs</span><span class="p">[</span><span class="n">stub</span><span class="p">],</span> <span class="n">n</span> <span class="o">=</span> <span class="n">num_degs</span><span class="p">[</span><span class="n">stub</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
 
 
 <div class="viewcode-block" id="is_valid_degree_sequence_erdos_gallai"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai.html#networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai">[docs]</a><span class="k">def</span> <span class="nf">is_valid_degree_sequence_erdos_gallai</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">):</span>
@@ -407,8 +407,8 @@
                 <span class="n">sum_jnj</span> <span class="o">+=</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">num_degs</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="n">v</span><span class="p">]</span>
             <span class="n">k</span> <span class="o">+=</span> <span class="n">run_size</span>
             <span class="k">if</span> <span class="n">sum_deg</span> <span class="o">&gt;</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">sum_nj</span> <span class="o">+</span> <span class="n">sum_jnj</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">False</span></div>
-    <span class="k">return</span> <span class="kc">True</span>
+                <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
 
 
 <div class="viewcode-block" id="is_multigraphical"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.graphical.is_multigraphical.html#networkx.algorithms.graphical.is_multigraphical">[docs]</a><span class="k">def</span> <span class="nf">is_multigraphical</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
@@ -443,8 +443,8 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="n">dsum</span><span class="p">,</span> <span class="n">dmax</span> <span class="o">=</span> <span class="n">dsum</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">dmax</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">dsum</span> <span class="o">%</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">dsum</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">dmax</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
-    <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
 
 
 <div class="viewcode-block" id="is_pseudographical"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.graphical.is_pseudographical.html#networkx.algorithms.graphical.is_pseudographical">[docs]</a><span class="k">def</span> <span class="nf">is_pseudographical</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
@@ -475,8 +475,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">s</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">is_list_of_ints</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">min</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">min</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span></div>
 
 
 <div class="viewcode-block" id="is_digraphical"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.graphical.is_digraphical.html#networkx.algorithms.graphical.is_digraphical">[docs]</a><span class="k">def</span> <span class="nf">is_digraphical</span><span class="p">(</span><span class="n">in_sequence</span><span class="p">,</span> <span class="n">out_sequence</span><span class="p">):</span>
@@ -572,8 +572,8 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">zeroheap</span><span class="p">,</span> <span class="n">stub</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">freeout</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">zeroheap</span><span class="p">,</span> <span class="n">freeout</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="kc">True</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">zeroheap</span><span class="p">,</span> <span class="n">freeout</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
 </pre></div>
 
            </div>
@@ -589,7 +589,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -611,7 +611,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

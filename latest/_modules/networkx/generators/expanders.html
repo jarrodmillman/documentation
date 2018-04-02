@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.expanders &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.generators.expanders &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -251,8 +251,8 @@
         <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(((</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">%</span> <span class="n">n</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
                        <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">%</span> <span class="n">n</span><span class="p">)):</span>
             <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;margulis_gabber_galil_graph(</span><span class="si">{0}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;margulis_gabber_galil_graph(</span><span class="si">{0}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="chordal_cycle_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.expanders.chordal_cycle_graph.html#networkx.generators.expanders.chordal_cycle_graph">[docs]</a><span class="k">def</span> <span class="nf">chordal_cycle_graph</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -318,8 +318,8 @@
         <span class="n">chord</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">chord</span><span class="p">):</span>
             <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;chordal_cycle_graph(</span><span class="si">{0}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;chordal_cycle_graph(</span><span class="si">{0}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 </pre></div>
 
            </div>
@@ -335,7 +335,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -357,7 +357,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

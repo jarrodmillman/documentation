@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cycles &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.algorithms.cycles &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -272,8 +272,8 @@
                     <span class="n">cycles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cycle</span><span class="p">)</span>
                     <span class="n">used</span><span class="p">[</span><span class="n">nbr</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
         <span class="n">gnodes</span> <span class="o">-=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="kc">None</span></div>
-    <span class="k">return</span> <span class="n">cycles</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">cycles</span></div>
 
 
 <div class="viewcode-block" id="simple_cycles"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.cycles.simple_cycles.html#networkx.algorithms.cycles.simple_cycles">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -391,8 +391,8 @@
                 <span class="n">path</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
         <span class="c1"># done processing this node</span>
         <span class="n">subG</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="n">startnode</span><span class="p">)</span>
-        <span class="n">H</span> <span class="o">=</span> <span class="n">subG</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">scc</span><span class="p">)</span>  <span class="c1"># make smaller to avoid work in SCC routine</span></div>
-        <span class="n">sccs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">strongly_connected_components</span><span class="p">(</span><span class="n">H</span><span class="p">)))</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">subG</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">scc</span><span class="p">)</span>  <span class="c1"># make smaller to avoid work in SCC routine</span>
+        <span class="n">sccs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">strongly_connected_components</span><span class="p">(</span><span class="n">H</span><span class="p">)))</span></div>
 
 
 <span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -637,8 +637,8 @@
         <span class="n">tail</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="n">tailhead</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">tail</span> <span class="o">==</span> <span class="n">final_node</span><span class="p">:</span>
             <span class="k">break</span>
-</div>
-    <span class="k">return</span> <span class="n">cycle</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span>
+
+    <span class="k">return</span> <span class="n">cycle</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span></div>
 
 
 <div class="viewcode-block" id="minimum_cycle_basis"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.cycles.minimum_cycle_basis.html#networkx.algorithms.cycles.minimum_cycle_basis">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
@@ -681,8 +681,8 @@
 <span class="sd">    simple_cycles, cycle_basis</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># We first split the graph in commected subgraphs</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">((</span><span class="n">_min_cycle_basis</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span></div>
-                <span class="n">nx</span><span class="o">.</span><span class="n">connected_component_subgraphs</span><span class="p">(</span><span class="n">G</span><span class="p">)),</span> <span class="p">[])</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">((</span><span class="n">_min_cycle_basis</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span>
+                <span class="n">nx</span><span class="o">.</span><span class="n">connected_component_subgraphs</span><span class="p">(</span><span class="n">G</span><span class="p">)),</span> <span class="p">[])</span></div>
 
 
 <span class="k">def</span> <span class="nf">_min_cycle_basis</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
@@ -777,7 +777,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -799,7 +799,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

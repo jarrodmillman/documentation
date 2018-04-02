@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.gml &mdash; NetworkX 2.2rc1.dev20180319180932 documentation</title>
+  <title>networkx.readwrite.gml &mdash; NetworkX 2.2rc1.dev20180402145104 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../_static/opensearch.xml"/>
     
 
   
@@ -39,7 +39,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="NetworkX 2.2rc1.dev20180319180932 documentation" href="../../../index.html"/>
+    <link rel="top" title="NetworkX 2.2rc1.dev20180402145104 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180319180932
+                2.2rc1.dev_20180402145104
               </div>
             
           
@@ -317,8 +317,8 @@
             <span class="k">return</span> <span class="n">literal_eval</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">SyntaxError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%r</span><span class="s1"> is not a valid Python literal&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">orig_rep</span><span class="p">,))</span>
-    <span class="k">else</span><span class="p">:</span></div>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%r</span><span class="s1"> is not a string&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rep</span><span class="p">,))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%r</span><span class="s1"> is not a string&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rep</span><span class="p">,))</span></div>
 
 
 <div class="viewcode-block" id="read_gml"><a class="viewcode-back" href="../../../reference/readwrite/generated/networkx.readwrite.gml.read_gml.html#networkx.readwrite.gml.read_gml">[docs]</a><span class="nd">@open_file</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>
@@ -385,8 +385,8 @@
                 <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
             <span class="k">yield</span> <span class="n">line</span>
 
-    <span class="n">G</span> <span class="o">=</span> <span class="n">parse_gml_lines</span><span class="p">(</span><span class="n">filter_lines</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">label</span><span class="p">,</span> <span class="n">destringizer</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">parse_gml_lines</span><span class="p">(</span><span class="n">filter_lines</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">label</span><span class="p">,</span> <span class="n">destringizer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="parse_gml"><a class="viewcode-back" href="../../../reference/readwrite/generated/networkx.readwrite.gml.parse_gml.html#networkx.readwrite.gml.parse_gml">[docs]</a><span class="k">def</span> <span class="nf">parse_gml</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">destringizer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -462,8 +462,8 @@
                     <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;input line contains newline&#39;</span><span class="p">)</span>
                 <span class="k">yield</span> <span class="n">line</span>
 
-    <span class="n">G</span> <span class="o">=</span> <span class="n">parse_gml_lines</span><span class="p">(</span><span class="n">filter_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">),</span> <span class="n">label</span><span class="p">,</span> <span class="n">destringizer</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">parse_gml_lines</span><span class="p">(</span><span class="n">filter_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">),</span> <span class="n">label</span><span class="p">,</span> <span class="n">destringizer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <span class="k">def</span> <span class="nf">parse_gml_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">destringizer</span><span class="p">):</span>
@@ -731,8 +731,8 @@
                 <span class="s1">&#39;</span><span class="si">%r</span><span class="s1"> cannot be converted into a Python literal&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,))</span>
 
     <span class="n">buf</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
-    <span class="n">stringize</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+    <span class="n">stringize</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="generate_gml"><a class="viewcode-back" href="../../../reference/readwrite/generated/networkx.readwrite.gml.generate_gml.html#networkx.readwrite.gml.generate_gml">[docs]</a><span class="k">def</span> <span class="nf">generate_gml</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">stringizer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -916,8 +916,8 @@
         <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">e</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stringize</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ignored_keys</span><span class="p">,</span> <span class="s1">&#39;    &#39;</span><span class="p">):</span>
                 <span class="k">yield</span> <span class="n">line</span>
-        <span class="k">yield</span> <span class="s1">&#39;  ]&#39;</span></div>
-    <span class="k">yield</span> <span class="s1">&#39;]&#39;</span>
+        <span class="k">yield</span> <span class="s1">&#39;  ]&#39;</span>
+    <span class="k">yield</span> <span class="s1">&#39;]&#39;</span></div>
 
 
 <div class="viewcode-block" id="write_gml"><a class="viewcode-back" href="../../../reference/readwrite/generated/networkx.readwrite.gml.write_gml.html#networkx.readwrite.gml.write_gml">[docs]</a><span class="nd">@open_file</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span>
@@ -977,8 +977,8 @@
 
 <span class="sd">    &gt;&gt;&gt; nx.write_gml(G, &quot;test.gml.gz&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">generate_gml</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">stringizer</span><span class="p">):</span></div>
-        <span class="n">path</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="n">line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">generate_gml</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">stringizer</span><span class="p">):</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="n">line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">))</span></div>
 
 
 <span class="c1"># fixture for nose</span>
@@ -1002,7 +1002,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Mar 19, 2018.
+      Last updated on Apr 02, 2018.
 
     </p>
   </div>
@@ -1024,7 +1024,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180319180932',
+            VERSION:'2.2rc1.dev20180402145104',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
