@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.thresholded_random_geometric_graph &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.generators.geometric.thresholded_random_geometric_graph &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -220,12 +220,12 @@
 <dd><p>Returns a thresholded random geometric graph in the unit cube of dimensions <code class="xref py py-obj docutils literal notranslate"><span class="pre">dim</span></code>.</p>
 <p>The thresholded random geometric graph [1] model places <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes uniformly at
 random in the unit cube. Each node <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> is assigned a weight
-<span class="math notranslate">\(w_u\)</span>. Two nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> are joined by an edge if they are within
+<span class="math notranslate nohighlight">\(w_u\)</span>. Two nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> are joined by an edge if they are within
 the maximum connection distance, <code class="xref py py-obj docutils literal notranslate"><span class="pre">radius</span></code> computed by the <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code>-Minkowski distance
-and the summation of weights <span class="math notranslate">\(w_u\)</span> + <span class="math notranslate">\(w_v\)</span> is greater than or equal
+and the summation of weights <span class="math notranslate nohighlight">\(w_u\)</span> + <span class="math notranslate nohighlight">\(w_v\)</span> is greater than or equal
 to the threshold parameter <code class="xref py py-obj docutils literal notranslate"><span class="pre">theta</span></code>.</p>
 <p>Edges within <code class="xref py py-obj docutils literal notranslate"><span class="pre">radius</span></code> of each other are determined using a KDTree when SciPy
-is available. This reduces the time complexity from <span class="math notranslate">\(O(n^2)\)</span> to <span class="math notranslate">\(O(n)\)</span>.</p>
+is available. This reduces the time complexity from <span class="math notranslate nohighlight">\(O(n^2)\)</span> to <span class="math notranslate nohighlight">\(O(n)\)</span>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -245,7 +245,7 @@ is available. This reduces the time complexity from <span class="math notranslat
 </li>
 <li><p class="first"><strong>p</strong> (<em>float, optional</em>) – Which Minkowski distance metric to use.  <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code> has to meet the condition
 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">p</span> <span class="pre">&lt;=</span> <span class="pre">infinity</span></code>.</p>
-<p>If this argument is not specified, the <span class="math notranslate">\(L^2\)</span> metric (the Euclidean
+<p>If this argument is not specified, the <span class="math notranslate nohighlight">\(L^2\)</span> metric (the Euclidean
 distance metric), p = 2 is used.</p>
 <p>This should not be confused with the <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code> of an Erdős-Rényi random
 graph, which represents probability.</p>
@@ -284,7 +284,7 @@ can create an arbitrary distribution and domain for positions.</p>
 <p>For example, to use a 2D Gaussian distribution of node positions with mean
 (0, 0) and standard deviation 2</p>
 <p>If weights are not specified they are assigned to nodes by drawing randomly
-from the exponential distribution with rate parameter <span class="math notranslate">\(\lambda=1\)</span>.
+from the exponential distribution with rate parameter <span class="math notranslate nohighlight">\(\lambda=1\)</span>.
 To specify weights from a different distribution, use the <code class="xref py py-obj docutils literal notranslate"><span class="pre">weight</span></code> keyword
 argument:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">::</span>
@@ -330,7 +330,7 @@ argument:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -352,7 +352,7 @@ argument:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.edge_current_flow_betweenness_centrality &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.algorithms.centrality.edge_current_flow_betweenness_centrality &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -296,13 +296,13 @@ is raised.</p>
 <p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.edge_betweenness_centrality.html#networkx.algorithms.centrality.edge_betweenness_centrality" title="networkx.algorithms.centrality.edge_betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">edge_betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.current_flow_betweenness_centrality.html#networkx.algorithms.centrality.current_flow_betweenness_centrality" title="networkx.algorithms.centrality.current_flow_betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">current_flow_betweenness_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>Current-flow betweenness can be computed in <span class="math notranslate">\(O(I(n-1)+mn \log n)\)</span>
-time <a class="footnote-reference" href="#id3" id="id2">[1]</a>, where <span class="math notranslate">\(I(n-1)\)</span> is the time needed to compute the
-inverse Laplacian.  For a full matrix this is <span class="math notranslate">\(O(n^3)\)</span> but using
-sparse methods you can achieve <span class="math notranslate">\(O(nm{\sqrt k})\)</span> where <span class="math notranslate">\(k\)</span> is the
+<p>Current-flow betweenness can be computed in <span class="math notranslate nohighlight">\(O(I(n-1)+mn \log n)\)</span>
+time <a class="footnote-reference" href="#id3" id="id2">[1]</a>, where <span class="math notranslate nohighlight">\(I(n-1)\)</span> is the time needed to compute the
+inverse Laplacian.  For a full matrix this is <span class="math notranslate nohighlight">\(O(n^3)\)</span> but using
+sparse methods you can achieve <span class="math notranslate nohighlight">\(O(nm{\sqrt k})\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the
 Laplacian matrix condition number.</p>
-<p>The space required is <span class="math notranslate">\(O(nw)\)</span> where <span class="math notranslate">\(w\)</span> is the width of the sparse
-Laplacian matrix.  Worse case is <span class="math notranslate">\(w=n\)</span> for <span class="math notranslate">\(O(n^2)\)</span>.</p>
+<p>The space required is <span class="math notranslate nohighlight">\(O(nw)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is the width of the sparse
+Laplacian matrix.  Worse case is <span class="math notranslate nohighlight">\(w=n\)</span> for <span class="math notranslate nohighlight">\(O(n^2)\)</span>.</p>
 <p>If the edges have a ‘weight’ attribute they will be used as
 weights in this algorithm.  Unspecified weights are set to 1.</p>
 <p class="rubric">References</p>
@@ -348,7 +348,7 @@ M. E. J. Newman, Social Networks 27, 39-54 (2005).</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -370,7 +370,7 @@ M. E. J. Newman, Social Networks 27, 39-54 (2005).</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

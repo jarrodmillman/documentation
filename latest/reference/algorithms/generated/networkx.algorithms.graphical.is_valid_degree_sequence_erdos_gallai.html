@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -265,11 +265,11 @@
 </table>
 <p class="rubric">Notes</p>
 <p>This implementation uses an equivalent form of the Erdős-Gallai criterion.
-Worst-case run time is <span class="math notranslate">\(O(n)\)</span> where <span class="math notranslate">\(n\)</span> is the length of the sequence.</p>
+Worst-case run time is <span class="math notranslate nohighlight">\(O(n)\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the length of the sequence.</p>
 <p>Specifically, a sequence d is graphical if and only if the
 sum of the sequence is even and for all strong indices k in the sequence,</p>
 <blockquote>
-<div><div class="math notranslate">
+<div><div class="math notranslate nohighlight">
 \[\sum_{i=1}^{k} d_i \leq k(k-1) + \sum_{j=k+1}^{n} \min(d_i,k)
       = k(n-1) - ( k \sum_{j=0}^{k-1} n_j - \sum_{j=0}^{k-1} j n_j )\]</div>
 </div></blockquote>
@@ -278,7 +278,7 @@ number of occurrences of j in d.  The maximal strong index is called the
 Durfee index.</p>
 <p>This particular rearrangement comes from the proof of Theorem 3 in <a class="footnote-reference" href="#id5" id="id2">[2]</a>.</p>
 <p>The ZZ condition says that for the sequence d if</p>
-<div class="math notranslate">
+<div class="math notranslate nohighlight">
 \[|d| &gt;= \frac{(\max(d) + \min(d) + 1)^2}{4*\min(d)}\]</div>
 <p>then d is graphical.  This was shown in Theorem 6 in <a class="footnote-reference" href="#id5" id="id3">[2]</a>.</p>
 <p class="rubric">References</p>
@@ -322,7 +322,7 @@ of graphic sequences”, Discrete Mathematics, 105, pp. 292-303 (1992).</td></tr
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -344,7 +344,7 @@ of graphic sequences”, Discrete Mathematics, 105, pp. 292-303 (1992).</td></tr
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

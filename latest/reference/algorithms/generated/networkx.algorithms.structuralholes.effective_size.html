@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.structuralholes.effective_size &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.algorithms.structuralholes.effective_size &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -252,20 +252,20 @@ of redundancy. A person’s ego network has redundancy to the extent
 that her contacts are connected to each other as well. The
 nonredundant part of a person’s relationships it’s the effective
 size of her ego network <a class="footnote-reference" href="#id5" id="id1">[1]</a>.  Formally, the effective size of a
-node <span class="math notranslate">\(u\)</span>, denoted <span class="math notranslate">\(e(u)\)</span>, is defined by</p>
-<div class="math notranslate">
+node <span class="math notranslate nohighlight">\(u\)</span>, denoted <span class="math notranslate nohighlight">\(e(u)\)</span>, is defined by</p>
+<div class="math notranslate nohighlight">
 \[e(u) = \sum_{v \in N(u) \setminus \{u\}}
 \left(1 - \sum_{w \in N(v)} p_{uw} m_{vw}\right)\]</div>
-<p>where <span class="math notranslate">\(N(u)\)</span> is the set of neighbors of <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(p_{uw}\)</span> is the
+<p>where <span class="math notranslate nohighlight">\(N(u)\)</span> is the set of neighbors of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(p_{uw}\)</span> is the
 normalized mutual weight of the (directed or undirected) edges
-joining <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span>, for each vertex <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span> <a class="footnote-reference" href="#id5" id="id2">[1]</a>. And <span class="math notranslate">\(m_{vw}\)</span>
-is the mutual weight of <span class="math notranslate">\(v\)</span> and <span class="math notranslate">\(w\)</span> divided by <span class="math notranslate">\(v\)</span> highest mutual
-weight with any of its neighbors. The <em>mutual weight</em> of <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span>
+joining <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, for each vertex <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> <a class="footnote-reference" href="#id5" id="id2">[1]</a>. And <span class="math notranslate nohighlight">\(m_{vw}\)</span>
+is the mutual weight of <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> divided by <span class="math notranslate nohighlight">\(v\)</span> highest mutual
+weight with any of its neighbors. The <em>mutual weight</em> of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>
 is the sum of the weights of edges joining them (edge weights are
 assumed to be one if the graph is unweighted).</p>
 <p>For the case of unweighted and undirected graphs, Borgatti proposed
 a simplified formula to compute effective size <a class="footnote-reference" href="#id6" id="id3">[2]</a></p>
-<div class="math notranslate">
+<div class="math notranslate nohighlight">
 \[e(u) = n - \frac{2t}{n}\]</div>
 <p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">t</span></code> is the number of ties in the ego network (not including
 ties to ego) and <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> is the number of nodes (excluding ego).</p>
@@ -348,7 +348,7 @@ CONNECTIONS 20(1):35-38.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -370,7 +370,7 @@ CONNECTIONS 20(1):35-38.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

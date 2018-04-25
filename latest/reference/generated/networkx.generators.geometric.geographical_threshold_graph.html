@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.geographical_threshold_graph &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.generators.geometric.geographical_threshold_graph &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -218,13 +218,13 @@
 <dt id="networkx.generators.geometric.geographical_threshold_graph">
 <code class="descname">geographical_threshold_graph</code><span class="sig-paren">(</span><em>n</em>, <em>theta</em>, <em>dim=2</em>, <em>pos=None</em>, <em>weight=None</em>, <em>metric=None</em>, <em>p_dist=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#geographical_threshold_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.geographical_threshold_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a geographical threshold graph.</p>
-<p>The geographical threshold graph model places <span class="math notranslate">\(n\)</span> nodes uniformly at
-random in a rectangular domain.  Each node <span class="math notranslate">\(u\)</span> is assigned a weight
-<span class="math notranslate">\(w_u\)</span>. Two nodes <span class="math notranslate">\(u\)</span> and <span class="math notranslate">\(v\)</span> are joined by an edge if</p>
-<div class="math notranslate">
+<p>The geographical threshold graph model places <span class="math notranslate nohighlight">\(n\)</span> nodes uniformly at
+random in a rectangular domain.  Each node <span class="math notranslate nohighlight">\(u\)</span> is assigned a weight
+<span class="math notranslate nohighlight">\(w_u\)</span>. Two nodes <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are joined by an edge if</p>
+<div class="math notranslate nohighlight">
 \[(w_u + w_v)h(r) \ge \theta\]</div>
 <p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code> is the distance between <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>, h(r) is a probability of
-connection as a function of <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code>, and <span class="math notranslate">\(\theta\)</span> as the threshold
+connection as a function of <code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code>, and <span class="math notranslate nohighlight">\(\theta\)</span> as the threshold
 parameter. h(r) corresponds to the p_dist parameter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -245,13 +245,13 @@ parameter. h(r) corresponds to the p_dist parameter.</p>
 tuples). This must be a function that accepts two lists (or
 tuples) as input and yields a number as output. The function
 must also satisfy the four requirements of a <a class="reference external" href="https://en.wikipedia.org/wiki/Metric_%28mathematics%29">metric</a>.
-Specifically, if <span class="math notranslate">\(d\)</span> is the function and <span class="math notranslate">\(x\)</span>, <span class="math notranslate">\(y\)</span>,
-and <span class="math notranslate">\(z\)</span> are vectors in the graph, then <span class="math notranslate">\(d\)</span> must satisfy</p>
+Specifically, if <span class="math notranslate nohighlight">\(d\)</span> is the function and <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>,
+and <span class="math notranslate nohighlight">\(z\)</span> are vectors in the graph, then <span class="math notranslate nohighlight">\(d\)</span> must satisfy</p>
 <ol class="arabic simple">
-<li><span class="math notranslate">\(d(x, y) \ge 0\)</span>,</li>
-<li><span class="math notranslate">\(d(x, y) = 0\)</span> if and only if <span class="math notranslate">\(x = y\)</span>,</li>
-<li><span class="math notranslate">\(d(x, y) = d(y, x)\)</span>,</li>
-<li><span class="math notranslate">\(d(x, z) \le d(x, y) + d(y, z)\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(d(x, y) \ge 0\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(d(x, y) = 0\)</span> if and only if <span class="math notranslate nohighlight">\(x = y\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(d(x, y) = d(y, x)\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(d(x, z) \le d(x, y) + d(y, z)\)</span>.</li>
 </ol>
 <p>If this argument is not specified, the Euclidean distance metric is
 used.</p>
@@ -296,7 +296,7 @@ default <a class="reference external" href="https://en.wikipedia.org/wiki/Euclid
 </div>
 <p class="rubric">Notes</p>
 <p>If weights are not specified they are assigned to nodes by drawing randomly
-from the exponential distribution with rate parameter <span class="math notranslate">\(\lambda=1\)</span>.
+from the exponential distribution with rate parameter <span class="math notranslate nohighlight">\(\lambda=1\)</span>.
 To specify weights from a different distribution, use the <code class="xref py py-obj docutils literal notranslate"><span class="pre">weight</span></code> keyword
 argument:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
@@ -359,7 +359,7 @@ Antony Bonato and Fan Chung (Eds), pp. 209–216, 2007</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -381,7 +381,7 @@ Antony Bonato and Fan Chung (Eds), pp. 209–216, 2007</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

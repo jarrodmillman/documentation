@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.waxman_graph &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.generators.geometric.waxman_graph &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -221,7 +221,7 @@
 <p>The Waxman random graph model places <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes uniformly at random
 in a rectangular domain. Each pair of nodes at distance <code class="xref py py-obj docutils literal notranslate"><span class="pre">d</span></code> is
 joined by an edge with probability</p>
-<div class="math notranslate">
+<div class="math notranslate nohighlight">
 \[p = \beta \exp(-d / \alpha L).\]</div>
 <p>This function implements both Waxman models, using the <code class="xref py py-obj docutils literal notranslate"><span class="pre">L</span></code> keyword
 argument.</p>
@@ -252,13 +252,13 @@ is calculated.</p>
 tuples). This must be a function that accepts two lists (or
 tuples) as input and yields a number as output. The function
 must also satisfy the four requirements of a <a class="reference external" href="https://en.wikipedia.org/wiki/Metric_%28mathematics%29">metric</a>.
-Specifically, if <span class="math notranslate">\(d\)</span> is the function and <span class="math notranslate">\(x\)</span>, <span class="math notranslate">\(y\)</span>,
-and <span class="math notranslate">\(z\)</span> are vectors in the graph, then <span class="math notranslate">\(d\)</span> must satisfy</p>
+Specifically, if <span class="math notranslate nohighlight">\(d\)</span> is the function and <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>,
+and <span class="math notranslate nohighlight">\(z\)</span> are vectors in the graph, then <span class="math notranslate nohighlight">\(d\)</span> must satisfy</p>
 <ol class="arabic simple">
-<li><span class="math notranslate">\(d(x, y) \ge 0\)</span>,</li>
-<li><span class="math notranslate">\(d(x, y) = 0\)</span> if and only if <span class="math notranslate">\(x = y\)</span>,</li>
-<li><span class="math notranslate">\(d(x, y) = d(y, x)\)</span>,</li>
-<li><span class="math notranslate">\(d(x, z) \le d(x, y) + d(y, z)\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(d(x, y) \ge 0\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(d(x, y) = 0\)</span> if and only if <span class="math notranslate nohighlight">\(x = y\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(d(x, y) = d(y, x)\)</span>,</li>
+<li><span class="math notranslate nohighlight">\(d(x, z) \le d(x, y) + d(y, z)\)</span>.</li>
 </ol>
 <p>If this argument is not specified, the Euclidean distance metric is
 used.</p>
@@ -322,7 +322,7 @@ IEEE J. Select. Areas Commun. 6(9),(1988) 1617–1622.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -344,7 +344,7 @@ IEEE J. Select. Areas Commun. 6(9),(1988) 1617–1622.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

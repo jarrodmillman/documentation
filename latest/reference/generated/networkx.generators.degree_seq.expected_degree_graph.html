@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.degree_seq.expected_degree_graph &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.generators.degree_seq.expected_degree_graph &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -219,10 +219,10 @@
 <dt id="networkx.generators.degree_seq.expected_degree_graph">
 <code class="descname">expected_degree_graph</code><span class="sig-paren">(</span><em>w</em>, <em>seed=None</em>, <em>selfloops=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/degree_seq.html#expected_degree_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.degree_seq.expected_degree_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a random graph with given expected degrees.</p>
-<p>Given a sequence of expected degrees <span class="math notranslate">\(W=(w_0,w_1,\ldots,w_{n-1})\)</span>
-of length <span class="math notranslate">\(n\)</span> this algorithm assigns an edge between node <span class="math notranslate">\(u\)</span> and
-node <span class="math notranslate">\(v\)</span> with probability</p>
-<div class="math notranslate">
+<p>Given a sequence of expected degrees <span class="math notranslate nohighlight">\(W=(w_0,w_1,\ldots,w_{n-1})\)</span>
+of length <span class="math notranslate nohighlight">\(n\)</span> this algorithm assigns an edge between node <span class="math notranslate nohighlight">\(u\)</span> and
+node <span class="math notranslate nohighlight">\(v\)</span> with probability</p>
+<div class="math notranslate nohighlight">
 \[p_{uv} = \frac{w_u w_v}{\sum_k w_k} .\]</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -251,20 +251,20 @@ node <span class="math notranslate">\(v\)</span> with probability</p>
 <p class="rubric">Notes</p>
 <p>The nodes have integer labels corresponding to index of expected degrees
 input sequence.</p>
-<p>The complexity of this algorithm is <span class="math notranslate">\(\mathcal{O}(n+m)\)</span> where <span class="math notranslate">\(n\)</span> is the
-number of nodes and <span class="math notranslate">\(m\)</span> is the expected number of edges.</p>
+<p>The complexity of this algorithm is <span class="math notranslate nohighlight">\(\mathcal{O}(n+m)\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the
+number of nodes and <span class="math notranslate nohighlight">\(m\)</span> is the expected number of edges.</p>
 <p>The model in <a class="footnote-reference" href="#id2" id="id1">[1]</a> includes the possibility of self-loop edges.
 Set selfloops=False to produce a graph without self loops.</p>
 <p>For finite graphs this model doesn’t produce exactly the given
 expected degree sequence.  Instead the expected degrees are as
 follows.</p>
 <p>For the case without self loops (selfloops=False),</p>
-<div class="math notranslate">
+<div class="math notranslate nohighlight">
 \[E[deg(u)] = \sum_{v \ne u} p_{uv}
          = w_u \left( 1 - \frac{w_u}{\sum_k w_k} \right) .\]</div>
 <p>NetworkX uses the standard convention that a self-loop edge counts 2
 in the degree of a node, so with self loops (selfloops=True),</p>
-<div class="math notranslate">
+<div class="math notranslate nohighlight">
 \[E[deg(u)] =  \sum_{v \ne u} p_{uv}  + 2 p_{uu}
          = w_u \left( 1 + \frac{w_u}{\sum_k w_k} \right) .\]</div>
 <p class="rubric">References</p>
@@ -311,7 +311,7 @@ pp. 115-126, 2011.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -333,7 +333,7 @@ pp. 115-126, 2011.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

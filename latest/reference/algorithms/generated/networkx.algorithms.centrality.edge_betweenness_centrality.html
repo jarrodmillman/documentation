@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.edge_betweenness_centrality &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.algorithms.centrality.edge_betweenness_centrality &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -255,13 +255,13 @@
 <dt id="networkx.algorithms.centrality.edge_betweenness_centrality">
 <code class="descname">edge_betweenness_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>k=None</em>, <em>normalized=True</em>, <em>weight=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/betweenness.html#edge_betweenness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.edge_betweenness_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute betweenness centrality for edges.</p>
-<p>Betweenness centrality of an edge <span class="math notranslate">\(e\)</span> is the sum of the
-fraction of all-pairs shortest paths that pass through <span class="math notranslate">\(e\)</span></p>
-<div class="math notranslate">
+<p>Betweenness centrality of an edge <span class="math notranslate nohighlight">\(e\)</span> is the sum of the
+fraction of all-pairs shortest paths that pass through <span class="math notranslate nohighlight">\(e\)</span></p>
+<div class="math notranslate nohighlight">
 \[c_B(e) =\sum_{s,t \in V} \frac{\sigma(s, t|e)}{\sigma(s, t)}\]</div>
-<p>where <span class="math notranslate">\(V\)</span> is the set of nodes, <span class="math notranslate">\(\sigma(s, t)\)</span> is the number of
-shortest <span class="math notranslate">\((s, t)\)</span>-paths, and <span class="math notranslate">\(\sigma(s, t|e)\)</span> is the number of
-those paths passing through edge <span class="math notranslate">\(e\)</span> <a class="footnote-reference" href="#id4" id="id1">[2]</a>.</p>
+<p>where <span class="math notranslate nohighlight">\(V\)</span> is the set of nodes, <span class="math notranslate nohighlight">\(\sigma(s, t)\)</span> is the number of
+shortest <span class="math notranslate nohighlight">\((s, t)\)</span>-paths, and <span class="math notranslate nohighlight">\(\sigma(s, t|e)\)</span> is the number of
+those paths passing through edge <span class="math notranslate nohighlight">\(e\)</span> <a class="footnote-reference" href="#id4" id="id1">[2]</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -271,8 +271,8 @@ those paths passing through edge <span class="math notranslate">\(e\)</span> <a 
 <li><strong>k</strong> (<em>int, optional (default=None)</em>) – If k is not None use k node samples to estimate betweenness.
 The value of k &lt;= n where n is the number of nodes in the graph.
 Higher values give better approximation.</li>
-<li><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate">\(2/(n(n-1))\)</span>
-for graphs, and <span class="math notranslate">\(1/(n(n-1))\)</span> for directed graphs where <span class="math notranslate">\(n\)</span>
+<li><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate nohighlight">\(2/(n(n-1))\)</span>
+for graphs, and <span class="math notranslate nohighlight">\(1/(n(n-1))\)</span> for directed graphs where <span class="math notranslate nohighlight">\(n\)</span>
 is the number of nodes in G.</li>
 <li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
 Otherwise holds the name of the edge attribute used as weight.</li>
@@ -339,7 +339,7 @@ Social Networks 30(2):136-145, 2008.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -361,7 +361,7 @@ Social Networks 30(2):136-145, 2008.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

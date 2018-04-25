@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.betweenness_centrality_subset &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.algorithms.centrality.betweenness_centrality_subset &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -255,14 +255,14 @@
 <dt id="networkx.algorithms.centrality.betweenness_centrality_subset">
 <code class="descname">betweenness_centrality_subset</code><span class="sig-paren">(</span><em>G</em>, <em>sources</em>, <em>targets</em>, <em>normalized=False</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/betweenness_subset.html#betweenness_centrality_subset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.betweenness_centrality_subset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute betweenness centrality for a subset of nodes.</p>
-<div class="math notranslate">
+<div class="math notranslate nohighlight">
 \[c_B(v) =\sum_{s\in S, t \in T} \frac{\sigma(s, t|v)}{\sigma(s, t)}\]</div>
-<p>where <span class="math notranslate">\(S\)</span> is the set of sources, <span class="math notranslate">\(T\)</span> is the set of targets,
-<span class="math notranslate">\(\sigma(s, t)\)</span> is the number of shortest <span class="math notranslate">\((s, t)\)</span>-paths,
-and <span class="math notranslate">\(\sigma(s, t|v)\)</span> is the number of those paths
-passing through some  node <span class="math notranslate">\(v\)</span> other than <span class="math notranslate">\(s, t\)</span>.
-If <span class="math notranslate">\(s = t\)</span>, <span class="math notranslate">\(\sigma(s, t) = 1\)</span>,
-and if <span class="math notranslate">\(v \in {s, t}\)</span>, <span class="math notranslate">\(\sigma(s, t|v) = 0\)</span> <a class="footnote-reference" href="#id4" id="id1">[2]</a>.</p>
+<p>where <span class="math notranslate nohighlight">\(S\)</span> is the set of sources, <span class="math notranslate nohighlight">\(T\)</span> is the set of targets,
+<span class="math notranslate nohighlight">\(\sigma(s, t)\)</span> is the number of shortest <span class="math notranslate nohighlight">\((s, t)\)</span>-paths,
+and <span class="math notranslate nohighlight">\(\sigma(s, t|v)\)</span> is the number of those paths
+passing through some  node <span class="math notranslate nohighlight">\(v\)</span> other than <span class="math notranslate nohighlight">\(s, t\)</span>.
+If <span class="math notranslate nohighlight">\(s = t\)</span>, <span class="math notranslate nohighlight">\(\sigma(s, t) = 1\)</span>,
+and if <span class="math notranslate nohighlight">\(v \in {s, t}\)</span>, <span class="math notranslate nohighlight">\(\sigma(s, t|v) = 0\)</span> <a class="footnote-reference" href="#id4" id="id1">[2]</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -271,8 +271,8 @@ and if <span class="math notranslate">\(v \in {s, t}\)</span>, <span class="math
 <li><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</li>
 <li><strong>sources</strong> (<em>list of nodes</em>) – Nodes to use as sources for shortest paths in betweenness</li>
 <li><strong>targets</strong> (<em>list of nodes</em>) – Nodes to use as targets for shortest paths in betweenness</li>
-<li><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate">\(2/((n-1)(n-2))\)</span>
-for graphs, and <span class="math notranslate">\(1/((n-1)(n-2))\)</span> for directed graphs where <span class="math notranslate">\(n\)</span>
+<li><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate nohighlight">\(2/((n-1)(n-2))\)</span>
+for graphs, and <span class="math notranslate nohighlight">\(1/((n-1)(n-2))\)</span> for directed graphs where <span class="math notranslate nohighlight">\(n\)</span>
 is the number of nodes in G.</li>
 <li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
 Otherwise holds the name of the edge attribute used as weight.</li>
@@ -343,7 +343,7 @@ Social Networks 30(2):136-145, 2008.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -365,7 +365,7 @@ Social Networks 30(2):136-145, 2008.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

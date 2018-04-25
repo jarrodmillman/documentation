@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.random_graphs.watts_strogatz_graph &mdash; NetworkX 2.2rc1.dev20180416222121 documentation</title>
+  <title>networkx.generators.random_graphs.watts_strogatz_graph &mdash; NetworkX 2.2rc1.dev20180425222505 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180416222121 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180425222505 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180416222121
+                2.2rc1.dev_20180425222505
               </div>
             
           
@@ -249,12 +249,12 @@ topology.</li>
 <p class="last"><a class="reference internal" href="networkx.generators.random_graphs.newman_watts_strogatz_graph.html#networkx.generators.random_graphs.newman_watts_strogatz_graph" title="networkx.generators.random_graphs.newman_watts_strogatz_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">newman_watts_strogatz_graph()</span></code></a>, <a class="reference internal" href="networkx.generators.random_graphs.connected_watts_strogatz_graph.html#networkx.generators.random_graphs.connected_watts_strogatz_graph" title="networkx.generators.random_graphs.connected_watts_strogatz_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">connected_watts_strogatz_graph()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>First create a ring over <span class="math notranslate">\(n\)</span> nodes <a class="footnote-reference" href="#id2" id="id1">[1]</a>.  Then each node in the ring is joined
-to its <span class="math notranslate">\(k\)</span> nearest neighbors (or <span class="math notranslate">\(k - 1\)</span> neighbors if <span class="math notranslate">\(k\)</span> is odd).
+<p>First create a ring over <span class="math notranslate nohighlight">\(n\)</span> nodes <a class="footnote-reference" href="#id2" id="id1">[1]</a>.  Then each node in the ring is joined
+to its <span class="math notranslate nohighlight">\(k\)</span> nearest neighbors (or <span class="math notranslate nohighlight">\(k - 1\)</span> neighbors if <span class="math notranslate nohighlight">\(k\)</span> is odd).
 Then shortcuts are created by replacing some edges as follows: for each
-edge <span class="math notranslate">\((u, v)\)</span> in the underlying “<span class="math notranslate">\(n\)</span>-ring with <span class="math notranslate">\(k\)</span> nearest neighbors”
-with probability <span class="math notranslate">\(p\)</span> replace it with a new edge <span class="math notranslate">\((u, w)\)</span> with uniformly
-random choice of existing node <span class="math notranslate">\(w\)</span>.</p>
+edge <span class="math notranslate nohighlight">\((u, v)\)</span> in the underlying “<span class="math notranslate nohighlight">\(n\)</span>-ring with <span class="math notranslate nohighlight">\(k\)</span> nearest neighbors”
+with probability <span class="math notranslate nohighlight">\(p\)</span> replace it with a new edge <span class="math notranslate nohighlight">\((u, w)\)</span> with uniformly
+random choice of existing node <span class="math notranslate nohighlight">\(w\)</span>.</p>
 <p>In contrast with <a class="reference internal" href="networkx.generators.random_graphs.newman_watts_strogatz_graph.html#networkx.generators.random_graphs.newman_watts_strogatz_graph" title="networkx.generators.random_graphs.newman_watts_strogatz_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">newman_watts_strogatz_graph()</span></code></a>, the random rewiring
 does not increase the number of edges. The rewired graph is not guaranteed
 to be connected as in <a class="reference internal" href="networkx.generators.random_graphs.connected_watts_strogatz_graph.html#networkx.generators.random_graphs.connected_watts_strogatz_graph" title="networkx.generators.random_graphs.connected_watts_strogatz_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">connected_watts_strogatz_graph()</span></code></a>.</p>
@@ -292,7 +292,7 @@ Nature, 393, pp. 440–442, 1998.</td></tr>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 16, 2018.
+      Last updated on Apr 25, 2018.
 
     </p>
   </div>
@@ -314,7 +314,7 @@ Nature, 393, pp. 440–442, 1998.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180416222121',
+            VERSION:'2.2rc1.dev20180425222505',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
