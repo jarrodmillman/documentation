@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cluster &mdash; NetworkX 2.2rc1.dev20180427173109 documentation</title>
+  <title>networkx.algorithms.cluster &mdash; NetworkX 2.2rc1.dev20180427174431 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180427173109 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180427174431 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180427173109
+                2.2rc1.dev_20180427174431
               </div>
             
           
@@ -171,6 +171,7 @@
 <span class="sd">&quot;&quot;&quot;Algorithms to characterize the number of triangles in a graph.&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
 
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">combinations</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
 
@@ -285,6 +286,86 @@
         <span class="k">yield</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">inbrs</span><span class="p">),</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">weighted_triangles</span><span class="p">)</span>
 
 
+<span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;multigraph&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_directed_triangles_and_degree_iter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return an iterator of</span>
+<span class="sd">    (node, total_degree, reciprocal_degree, directed_triangles).</span>
+
+<span class="sd">    Used for directed clustering.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nodes_nbrs</span> <span class="o">=</span> <span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">_pred</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">G</span><span class="o">.</span><span class="n">_succ</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nbunch_iter</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">preds</span><span class="p">,</span> <span class="n">succs</span> <span class="ow">in</span> <span class="n">nodes_nbrs</span><span class="p">:</span>
+        <span class="n">ipreds</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="n">i</span><span class="p">}</span>
+        <span class="n">isuccs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">succs</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="n">i</span><span class="p">}</span>
+
+        <span class="n">directed_triangles</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">(</span><span class="n">ipreds</span><span class="p">,</span> <span class="n">isuccs</span><span class="p">):</span>
+            <span class="n">jpreds</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">_pred</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="p">{</span><span class="n">j</span><span class="p">}</span>
+            <span class="n">jsuccs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">_succ</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="p">{</span><span class="n">j</span><span class="p">}</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span>
+                                       <span class="n">chain</span><span class="p">((</span><span class="n">ipreds</span> <span class="o">&amp;</span> <span class="n">jpreds</span><span class="p">),</span>
+                                             <span class="p">(</span><span class="n">ipreds</span> <span class="o">&amp;</span> <span class="n">jsuccs</span><span class="p">),</span>
+                                             <span class="p">(</span><span class="n">isuccs</span> <span class="o">&amp;</span> <span class="n">jpreds</span><span class="p">),</span>
+                                             <span class="p">(</span><span class="n">isuccs</span> <span class="o">&amp;</span> <span class="n">jsuccs</span><span class="p">))))</span>
+        <span class="n">dtotal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ipreds</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">isuccs</span><span class="p">)</span>
+        <span class="n">dbidirectional</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ipreds</span> <span class="o">&amp;</span> <span class="n">isuccs</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">dtotal</span><span class="p">,</span> <span class="n">dbidirectional</span><span class="p">,</span> <span class="n">directed_triangles</span><span class="p">)</span>
+
+
+<span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;multigraph&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_directed_weighted_triangles_and_degree_iter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="s1">&#39;weight&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return an iterator of</span>
+<span class="sd">    (node, total_degree, reciprocal_degree, directed_weighted_triangles).</span>
+
+<span class="sd">    Used for directed weighted clustering.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">max_weight</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">max_weight</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="n">nodes_nbrs</span> <span class="o">=</span> <span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">_pred</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">G</span><span class="o">.</span><span class="n">_succ</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nbunch_iter</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">wt</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">max_weight</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">preds</span><span class="p">,</span> <span class="n">succs</span> <span class="ow">in</span> <span class="n">nodes_nbrs</span><span class="p">:</span>
+        <span class="n">ipreds</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="n">i</span><span class="p">}</span>
+        <span class="n">isuccs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">succs</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="n">i</span><span class="p">}</span>
+
+        <span class="n">directed_triangles</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">ipreds</span><span class="p">:</span>
+            <span class="n">jpreds</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">_pred</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="p">{</span><span class="n">j</span><span class="p">}</span>
+            <span class="n">jsuccs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">_succ</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="p">{</span><span class="n">j</span><span class="p">}</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">wt</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ipreds</span> <span class="o">&amp;</span> <span class="n">jpreds</span><span class="p">)</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">wt</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ipreds</span> <span class="o">&amp;</span> <span class="n">jsuccs</span><span class="p">)</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">wt</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">isuccs</span> <span class="o">&amp;</span> <span class="n">jpreds</span><span class="p">)</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">wt</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">isuccs</span> <span class="o">&amp;</span> <span class="n">jsuccs</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">isuccs</span><span class="p">:</span>
+            <span class="n">jpreds</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">_pred</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="p">{</span><span class="n">j</span><span class="p">}</span>
+            <span class="n">jsuccs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">_succ</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="p">{</span><span class="n">j</span><span class="p">}</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">wt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ipreds</span> <span class="o">&amp;</span> <span class="n">jpreds</span><span class="p">)</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">wt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ipreds</span> <span class="o">&amp;</span> <span class="n">jsuccs</span><span class="p">)</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">wt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">isuccs</span> <span class="o">&amp;</span> <span class="n">jpreds</span><span class="p">)</span>
+            <span class="n">directed_triangles</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">wt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">wt</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">isuccs</span> <span class="o">&amp;</span> <span class="n">jsuccs</span><span class="p">)</span>
+
+        <span class="n">dtotal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ipreds</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">isuccs</span><span class="p">)</span>
+        <span class="n">dbidirectional</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ipreds</span> <span class="o">&amp;</span> <span class="n">isuccs</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">dtotal</span><span class="p">,</span> <span class="n">dbidirectional</span><span class="p">,</span> <span class="n">directed_triangles</span><span class="p">)</span>
+
+
 <div class="viewcode-block" id="average_clustering"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.cluster.average_clustering.html#networkx.algorithms.cluster.average_clustering">[docs]</a><span class="k">def</span> <span class="nf">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">count_zeros</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute the average clustering coefficient for the graph G.</span>
 
@@ -344,8 +425,7 @@
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="clustering"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.cluster.clustering.html#networkx.algorithms.cluster.clustering">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="clustering"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.cluster.clustering.html#networkx.algorithms.cluster.clustering">[docs]</a><span class="k">def</span> <span class="nf">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute the clustering coefficient for nodes.</span>
 
 <span class="sd">    For unweighted graphs, the clustering of a node `u`</span>
@@ -358,18 +438,32 @@
 <span class="sd">    where `T(u)` is the number of triangles through node `u` and</span>
 <span class="sd">    `deg(u)` is the degree of `u`.</span>
 
-<span class="sd">    For weighted graphs, the clustering is defined</span>
-<span class="sd">    as the geometric average of the subgraph edge weights [1]_,</span>
+<span class="sd">    For weighted graphs, there are several ways to define clustering [1]_.</span>
+<span class="sd">    the one used here is defined</span>
+<span class="sd">    as the geometric average of the subgraph edge weights [2]_,</span>
 
 <span class="sd">    .. math::</span>
 
 <span class="sd">       c_u = \frac{1}{deg(u)(deg(u)-1))}</span>
-<span class="sd">            \sum_{uv} (\hat{w}_{uv} \hat{w}_{uw} \hat{w}_{vw})^{1/3}.</span>
+<span class="sd">             \sum_{uv} (\hat{w}_{uv} \hat{w}_{uw} \hat{w}_{vw})^{1/3}.</span>
 
 <span class="sd">    The edge weights `\hat{w}_{uv}` are normalized by the maximum weight in the</span>
 <span class="sd">    network `\hat{w}_{uv} = w_{uv}/\max(w)`.</span>
 
 <span class="sd">    The value of `c_u` is assigned to 0 if `deg(u) &lt; 2`.</span>
+
+<span class="sd">    For directed graphs, the clustering is similarly defined as the fraction</span>
+<span class="sd">    of all possible directed triangles or geometric average of the subgraph</span>
+<span class="sd">    edge weights for unweighted and weighted directed graph respectively [3]_.</span>
+
+<span class="sd">    .. math::</span>
+
+<span class="sd">       c_u = \frac{1}{deg^{tot}(u)(deg^{tot}(u)-1) - 2deg^{\leftrightarrow}(u)}</span>
+<span class="sd">             T(u),</span>
+
+<span class="sd">    where `T(u)` is the number of directed triangles through node `u`,</span>
+<span class="sd">    `deg^{tot}(u)` is the sum of in degree and out degree of `u` and</span>
+<span class="sd">    `deg^{\leftrightarrow}(u)` is the reciprocal degree of `u`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -405,15 +499,31 @@
 <span class="sd">       complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela,</span>
 <span class="sd">       K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).</span>
 <span class="sd">       http://jponnela.com/web_documents/a9.pdf</span>
+<span class="sd">    .. [2] Intensity and coherence of motifs in weighted complex</span>
+<span class="sd">       networks by J. P. Onnela, J. Saramäki, J. Kertész, and K. Kaski,</span>
+<span class="sd">       Physical Review E, 71(6), 065103 (2005).</span>
+<span class="sd">    .. [3] Clustering in complex directed networks by G. Fagiolo,</span>
+<span class="sd">       Physical Review E, 76(2), 026107 (2007).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">td_iter</span> <span class="o">=</span> <span class="n">_weighted_triangles_and_degree_iter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
-        <span class="n">clusterc</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span>
-                    <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">td_iter</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">td_iter</span> <span class="o">=</span> <span class="n">_directed_weighted_triangles_and_degree_iter</span><span class="p">(</span>
+                <span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+            <span class="n">clusterc</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">t</span> <span class="o">/</span> <span class="p">((</span><span class="n">dt</span> <span class="o">*</span> <span class="p">(</span><span class="n">dt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">db</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">td_iter</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">td_iter</span> <span class="o">=</span> <span class="n">_directed_triangles_and_degree_iter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+            <span class="n">clusterc</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">t</span> <span class="o">/</span> <span class="p">((</span><span class="n">dt</span> <span class="o">*</span> <span class="p">(</span><span class="n">dt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">db</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">td_iter</span><span class="p">}</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">td_iter</span> <span class="o">=</span> <span class="n">_triangles_and_degree_iter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
-        <span class="n">clusterc</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span>
-                    <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">td_iter</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">td_iter</span> <span class="o">=</span> <span class="n">_weighted_triangles_and_degree_iter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+            <span class="n">clusterc</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span>
+                        <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">td_iter</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">td_iter</span> <span class="o">=</span> <span class="n">_triangles_and_degree_iter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+            <span class="n">clusterc</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span>
+                        <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">td_iter</span><span class="p">}</span>
     <span class="k">if</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
         <span class="c1"># Return the value of the sole entry in the dictionary.</span>
         <span class="k">return</span> <span class="n">clusterc</span><span class="p">[</span><span class="n">nodes</span><span class="p">]</span>
@@ -622,7 +732,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180427173109',
+            VERSION:'2.2rc1.dev20180427174431',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
