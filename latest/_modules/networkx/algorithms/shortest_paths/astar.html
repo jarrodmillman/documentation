@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.astar &mdash; NetworkX 2.2rc1.dev20180427174431 documentation</title>
+  <title>networkx.algorithms.shortest_paths.astar &mdash; NetworkX 2.2rc1.dev20180503112719 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180427174431 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180503112719 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180427174431
+                2.2rc1.dev_20180503112719
               </div>
             
           
@@ -282,10 +282,10 @@
             <span class="n">ncost</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">+</span> <span class="n">w</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">enqueued</span><span class="p">:</span>
                 <span class="n">qcost</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">enqueued</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span>
-                <span class="c1"># if qcost &lt; ncost, a longer path to neighbor remains</span>
-                <span class="c1"># enqueued. Removing it would need to filter the whole</span>
-                <span class="c1"># queue, it&#39;s better just to leave it there and ignore</span>
-                <span class="c1"># it when we visit the node a second time.</span>
+                <span class="c1"># if qcost &lt;= ncost, a less costly path from the</span>
+                <span class="c1"># neighbor to the source was already determined.</span>
+                <span class="c1"># Therefore, we won&#39;t attempt to push this neighbor</span>
+                <span class="c1"># to the queue</span>
                 <span class="k">if</span> <span class="n">qcost</span> <span class="o">&lt;=</span> <span class="n">ncost</span><span class="p">:</span>
                     <span class="k">continue</span>
             <span class="k">else</span><span class="p">:</span>
@@ -344,7 +344,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Apr 27, 2018.
+      Last updated on May 03, 2018.
 
     </p>
   </div>
@@ -366,7 +366,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180427174431',
+            VERSION:'2.2rc1.dev20180503112719',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -389,9 +389,7 @@
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script> 
 
