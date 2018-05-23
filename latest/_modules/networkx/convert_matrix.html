@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix &mdash; NetworkX 2.2rc1.dev20180504030509 documentation</title>
+  <title>networkx.convert_matrix &mdash; NetworkX 2.2rc1.dev20180522235727 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180504030509 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180522235727 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180504030509
+                2.2rc1.dev_20180522235727
               </div>
             
           
@@ -380,10 +380,10 @@
 <span class="sd">    &gt;&gt;&gt; G = nx.Graph([(&#39;A&#39;, &#39;B&#39;, {&#39;cost&#39;: 1, &#39;weight&#39;: 7}),</span>
 <span class="sd">    ...               (&#39;C&#39;, &#39;E&#39;, {&#39;cost&#39;: 9, &#39;weight&#39;: 10})])</span>
 <span class="sd">    &gt;&gt;&gt; df = nx.to_pandas_edgelist(G, nodelist=[&#39;A&#39;, &#39;C&#39;])</span>
-<span class="sd">    &gt;&gt;&gt; df</span>
-<span class="sd">       cost source target  weight</span>
-<span class="sd">    0     1      A      B       7</span>
-<span class="sd">    1     9      C      E      10</span>
+<span class="sd">    &gt;&gt;&gt; df[[&#39;source&#39;, &#39;target&#39;, &#39;cost&#39;, &#39;weight&#39;]]</span>
+<span class="sd">      source target  cost  weight</span>
+<span class="sd">    0      A      B     1       7</span>
+<span class="sd">    1      C      E     9      10</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -452,7 +452,7 @@
 <span class="sd">    &gt;&gt;&gt; df = pd.DataFrame(ints, columns=[&#39;weight&#39;, &#39;cost&#39;])</span>
 <span class="sd">    &gt;&gt;&gt; df[0] = a</span>
 <span class="sd">    &gt;&gt;&gt; df[&#39;b&#39;] = b</span>
-<span class="sd">    &gt;&gt;&gt; df</span>
+<span class="sd">    &gt;&gt;&gt; df[[&#39;weight&#39;, &#39;cost&#39;, 0, &#39;b&#39;]]</span>
 <span class="sd">       weight  cost  0  b</span>
 <span class="sd">    0       4     7  A  D</span>
 <span class="sd">    1       7     1  B  A</span>
@@ -1417,7 +1417,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on May 04, 2018.
+      Last updated on May 22, 2018.
 
     </p>
   </div>
@@ -1439,7 +1439,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180504030509',
+            VERSION:'2.2rc1.dev20180522235727',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
