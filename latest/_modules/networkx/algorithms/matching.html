@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.matching &mdash; NetworkX 2.2rc1.dev20180525035335 documentation</title>
+  <title>networkx.algorithms.matching &mdash; NetworkX 2.2rc1.dev20180525040614 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180525035335 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180525040614 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180525035335
+                2.2rc1.dev_20180525040614
               </div>
             
           
@@ -175,11 +175,12 @@
 <span class="c1"># All rights reserved.</span>
 <span class="c1"># BSD license.</span>
 <span class="sd">&quot;&quot;&quot;Functions for computing and verifying matchings in a graph.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">combinations</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">repeat</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_matching&#39;</span><span class="p">,</span> <span class="s1">&#39;is_maximal_matching&#39;</span><span class="p">,</span> <span class="s1">&#39;max_weight_matching&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;maximal_matching&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_matching&#39;</span><span class="p">,</span> <span class="s1">&#39;is_maximal_matching&#39;</span><span class="p">,</span> <span class="s1">&#39;is_perfect_matching&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;max_weight_matching&#39;</span><span class="p">,</span> <span class="s1">&#39;maximal_matching&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="maximal_matching"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.matching.maximal_matching.html#networkx.algorithms.matching.maximal_matching">[docs]</a><span class="k">def</span> <span class="nf">maximal_matching</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -309,6 +310,42 @@
     <span class="n">unmatched_edges</span> <span class="o">=</span> <span class="n">all_edges</span> <span class="o">-</span> <span class="n">matched_edges</span>
     <span class="c1"># TODO This is parallelizable.</span>
     <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="ow">not</span> <span class="n">is_matching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">matching</span> <span class="o">|</span> <span class="p">{</span><span class="n">e</span><span class="p">})</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">unmatched_edges</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="is_perfect_matching"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.matching.is_perfect_matching.html#networkx.algorithms.matching.is_perfect_matching">[docs]</a><span class="k">def</span> <span class="nf">is_perfect_matching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">matching</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Decides whether the given set represents a valid perfect matching in</span>
+<span class="sd">    ``G``.</span>
+
+<span class="sd">    A *perfect matching* in a graph is a matching in which exactly one edge</span>
+<span class="sd">    is incident upon each vertex.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX graph</span>
+
+<span class="sd">    matching : dict or set</span>
+<span class="sd">        A dictionary or set representing a matching. If a dictionary, it</span>
+<span class="sd">        must have ``matching[u] == v`` and ``matching[v] == u`` for each</span>
+<span class="sd">        edge ``(u, v)`` in the matching. If a set, it must have elements</span>
+<span class="sd">        of the form ``(u, v)``, where ``(u, v)`` is an edge in the</span>
+<span class="sd">        matching.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Whether the given set or dictionary represents a valid perfect</span>
+<span class="sd">        matching in the graph.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">matching</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">matching</span> <span class="o">=</span> <span class="n">matching_dict_to_set</span><span class="p">(</span><span class="n">matching</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_matching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">matching</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">matching</span><span class="p">,</span> <span class="p">()))</span>
+
+    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="max_weight_matching"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.matching.max_weight_matching.html#networkx.algorithms.matching.max_weight_matching">[docs]</a><span class="k">def</span> <span class="nf">max_weight_matching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">maxcardinality</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
@@ -1127,7 +1164,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180525035335',
+            VERSION:'2.2rc1.dev20180525040614',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
