@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.components.strongly_connected &mdash; NetworkX 2.2rc1.dev20180531212259 documentation</title>
+  <title>networkx.algorithms.components.strongly_connected &mdash; NetworkX 2.2rc1.dev20180602230644 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180531212259 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180602230644 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180531212259
+                2.2rc1.dev_20180602230644
               </div>
             
           
@@ -242,6 +242,7 @@
 <span class="sd">       Information Processing Letters 49(1): 9-14, (1994)..</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nbrs</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">preorder</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">lowlink</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">scc_found</span> <span class="o">=</span> <span class="p">{}</span>
@@ -256,7 +257,9 @@
                     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
                     <span class="n">preorder</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
                 <span class="n">done</span> <span class="o">=</span> <span class="mi">1</span>
-                <span class="n">v_nbrs</span> <span class="o">=</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="p">:</span>
+                    <span class="n">nbrs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+                <span class="n">v_nbrs</span> <span class="o">=</span> <span class="n">nbrs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
                 <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">v_nbrs</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">preorder</span><span class="p">:</span>
                         <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
@@ -264,7 +267,7 @@
                         <span class="k">break</span>
                 <span class="k">if</span> <span class="n">done</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                     <span class="n">lowlink</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">preorder</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
-                    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">v_nbrs</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
                         <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">scc_found</span><span class="p">:</span>
                             <span class="k">if</span> <span class="n">preorder</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">preorder</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
                                 <span class="n">lowlink</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">lowlink</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">lowlink</span><span class="p">[</span><span class="n">w</span><span class="p">]])</span>
@@ -588,7 +591,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on May 31, 2018.
+      Last updated on Jun 02, 2018.
 
     </p>
   </div>
@@ -610,7 +613,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180531212259',
+            VERSION:'2.2rc1.dev20180602230644',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
