@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Directed Graph &mdash; NetworkX 2.2rc1.dev20180602230644 documentation</title>
+  <title>Directed Graph &mdash; NetworkX 2.2rc1.dev20180603022414 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180602230644 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180603022414 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -34,8 +34,8 @@
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Random Geometric Graph" href="plot_random_geometric_graph.html" />
-    <link rel="prev" title="Degree histogram" href="plot_degree_histogram.html" /> 
+    <link rel="next" title="Labels And Colors" href="plot_labels_and_colors.html" />
+    <link rel="prev" title="Weighted Graph" href="plot_weighted_graph.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180602230644
+                2.2rc1.dev_20180603022414
               </div>
             
           
@@ -111,9 +111,9 @@
 <li class="toctree-l3"><a class="reference internal" href="plot_four_grids.html">Four Grids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_ego_graph.html">Ego Graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_degree_histogram.html">Degree histogram</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Directed Graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_random_geometric_graph.html">Random Geometric Graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_weighted_graph.html">Weighted Graph</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Directed Graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_labels_and_colors.html">Labels And Colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_sampson.html">Sampson</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_unix_email.html">Unix Email</a></li>
@@ -206,6 +206,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Rodrigo Dorantes-Gilardi (rodgdor@gmail.com)</span>
 
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
 
@@ -225,12 +226,16 @@
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
     <span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="n">edge_alphas</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
+<span class="n">pc</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">PatchCollection</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span>
+<span class="n">pc</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">edge_colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pc</span><span class="p">)</span>
+
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.167 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.137 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_directed.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_directed.py</span></code></a></div>
@@ -248,10 +253,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="plot_random_geometric_graph.html" class="btn btn-neutral float-right" title="Random Geometric Graph" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="plot_labels_and_colors.html" class="btn btn-neutral float-right" title="Labels And Colors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="plot_degree_histogram.html" class="btn btn-neutral" title="Degree histogram" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="plot_weighted_graph.html" class="btn btn-neutral" title="Weighted Graph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -261,7 +266,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 02, 2018.
+      Last updated on Jun 03, 2018.
 
     </p>
   </div>
@@ -283,7 +288,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180602230644',
+            VERSION:'2.2rc1.dev20180603022414',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
