@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Davis Club &mdash; NetworkX 2.2rc1.dev20180603145444 documentation</title>
+  <title>Davis Club &mdash; NetworkX 2.2rc1.dev20180608152919 documentation</title>
   
 
   
@@ -22,14 +22,13 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180603145444 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180608152919 documentation"
             href="../../_static/opensearch.xml"/>
     
 
   
 
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -64,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180603145444
+                2.2rc1.dev_20180608152919
               </div>
             
           
@@ -182,7 +181,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="davis-club">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-auto-examples-algorithms-plot-davis-club-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="davis-club">
 <span id="sphx-glr-auto-examples-algorithms-plot-davis-club-py"></span><h1>Davis Club<a class="headerlink" href="#davis-club" title="Permalink to this headline">¶</a></h1>
 <p>Davis Southern Club Women</p>
 <p>Shows how to make unipartite projections of the graph and compute the
@@ -190,100 +193,100 @@ properties of those graphs.</p>
 <p>These data were collected by Davis et al. in the 1930s.
 They represent observed attendance at 14 social events by 18 Southern women.
 The graph is bipartite (clubs, women).</p>
-<img alt="../../_images/sphx_glr_plot_davis_club_001.png" class="align-center" src="../../_images/sphx_glr_plot_davis_club_001.png" />
+<img alt="../../_images/sphx_glr_plot_davis_club_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_davis_club_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Biadjacency</span> <span class="n">matrix</span>
-  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>        <span class="mi">1</span>
-  <span class="p">:</span>     <span class="p">:</span>
-  <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>      <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>       <span class="mi">1</span>
-  <span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>      <span class="mi">1</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Biadjacency matrix
+  (0, 0)        1
+  (0, 1)        1
+  (0, 2)        1
+  (0, 3)        1
+  (0, 4)        1
+  (0, 5)        1
+  (0, 7)        1
+  (0, 8)        1
+  (1, 0)        1
+  (1, 1)        1
+  (1, 2)        1
+  (1, 4)        1
+  (1, 5)        1
+  (1, 6)        1
+  (1, 7)        1
+  (2, 1)        1
+  (2, 2)        1
+  (2, 3)        1
+  (2, 4)        1
+  (2, 5)        1
+  (2, 6)        1
+  (2, 7)        1
+  (2, 8)        1
+  (3, 0)        1
+  (3, 2)        1
+  :     :
+  (12, 7)       1
+  (12, 8)       1
+  (12, 9)       1
+  (12, 11)      1
+  (12, 12)      1
+  (12, 13)      1
+  (13, 5)       1
+  (13, 6)       1
+  (13, 8)       1
+  (13, 9)       1
+  (13, 10)      1
+  (13, 11)      1
+  (13, 12)      1
+  (13, 13)      1
+  (14, 6)       1
+  (14, 7)       1
+  (14, 9)       1
+  (14, 10)      1
+  (14, 11)      1
+  (15, 7)       1
+  (15, 8)       1
+  (16, 8)       1
+  (16, 10)      1
+  (17, 8)       1
+  (17, 10)      1
 
-<span class="c1">#Friends, Member</span>
-<span class="mi">17</span> <span class="n">Evelyn</span> <span class="n">Jefferson</span>
-<span class="mi">15</span> <span class="n">Laura</span> <span class="n">Mandeville</span>
-<span class="mi">17</span> <span class="n">Theresa</span> <span class="n">Anderson</span>
-<span class="mi">15</span> <span class="n">Brenda</span> <span class="n">Rogers</span>
-<span class="mi">11</span> <span class="n">Charlotte</span> <span class="n">McDowd</span>
-<span class="mi">15</span> <span class="n">Frances</span> <span class="n">Anderson</span>
-<span class="mi">15</span> <span class="n">Eleanor</span> <span class="n">Nye</span>
-<span class="mi">16</span> <span class="n">Pearl</span> <span class="n">Oglethorpe</span>
-<span class="mi">17</span> <span class="n">Ruth</span> <span class="n">DeSand</span>
-<span class="mi">17</span> <span class="n">Verne</span> <span class="n">Sanderson</span>
-<span class="mi">16</span> <span class="n">Myra</span> <span class="n">Liddel</span>
-<span class="mi">16</span> <span class="n">Katherina</span> <span class="n">Rogers</span>
-<span class="mi">17</span> <span class="n">Sylvia</span> <span class="n">Avondale</span>
-<span class="mi">17</span> <span class="n">Nora</span> <span class="n">Fayette</span>
-<span class="mi">17</span> <span class="n">Helen</span> <span class="n">Lloyd</span>
-<span class="mi">16</span> <span class="n">Dorothy</span> <span class="n">Murchison</span>
-<span class="mi">12</span> <span class="n">Olivia</span> <span class="n">Carleton</span>
-<span class="mi">12</span> <span class="n">Flora</span> <span class="n">Price</span>
+#Friends, Member
+17 Evelyn Jefferson
+15 Laura Mandeville
+17 Theresa Anderson
+15 Brenda Rogers
+11 Charlotte McDowd
+15 Frances Anderson
+15 Eleanor Nye
+16 Pearl Oglethorpe
+17 Ruth DeSand
+17 Verne Sanderson
+16 Myra Liddel
+16 Katherina Rogers
+17 Sylvia Avondale
+17 Nora Fayette
+17 Helen Lloyd
+16 Dorothy Murchison
+12 Olivia Carleton
+12 Flora Price
 
-<span class="c1">#Friend meetings, Member</span>
-<span class="mi">50</span> <span class="n">Evelyn</span> <span class="n">Jefferson</span>
-<span class="mi">45</span> <span class="n">Laura</span> <span class="n">Mandeville</span>
-<span class="mi">57</span> <span class="n">Theresa</span> <span class="n">Anderson</span>
-<span class="mi">46</span> <span class="n">Brenda</span> <span class="n">Rogers</span>
-<span class="mi">24</span> <span class="n">Charlotte</span> <span class="n">McDowd</span>
-<span class="mi">32</span> <span class="n">Frances</span> <span class="n">Anderson</span>
-<span class="mi">36</span> <span class="n">Eleanor</span> <span class="n">Nye</span>
-<span class="mi">31</span> <span class="n">Pearl</span> <span class="n">Oglethorpe</span>
-<span class="mi">40</span> <span class="n">Ruth</span> <span class="n">DeSand</span>
-<span class="mi">38</span> <span class="n">Verne</span> <span class="n">Sanderson</span>
-<span class="mi">33</span> <span class="n">Myra</span> <span class="n">Liddel</span>
-<span class="mi">37</span> <span class="n">Katherina</span> <span class="n">Rogers</span>
-<span class="mi">46</span> <span class="n">Sylvia</span> <span class="n">Avondale</span>
-<span class="mi">43</span> <span class="n">Nora</span> <span class="n">Fayette</span>
-<span class="mi">34</span> <span class="n">Helen</span> <span class="n">Lloyd</span>
-<span class="mi">24</span> <span class="n">Dorothy</span> <span class="n">Murchison</span>
-<span class="mi">14</span> <span class="n">Olivia</span> <span class="n">Carleton</span>
-<span class="mi">14</span> <span class="n">Flora</span> <span class="n">Price</span>
+#Friend meetings, Member
+50 Evelyn Jefferson
+45 Laura Mandeville
+57 Theresa Anderson
+46 Brenda Rogers
+24 Charlotte McDowd
+32 Frances Anderson
+36 Eleanor Nye
+31 Pearl Oglethorpe
+40 Ruth DeSand
+38 Verne Sanderson
+33 Myra Liddel
+37 Katherina Rogers
+46 Sylvia Avondale
+43 Nora Fayette
+34 Helen Lloyd
+24 Dorothy Murchison
+14 Olivia Carleton
+14 Flora Price
 </pre></div>
 </div>
 <div class="line-block">
@@ -319,8 +322,8 @@ The graph is bipartite (clubs, women).</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.034 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.050 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-algorithms-plot-davis-club-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_davis_club.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_davis_club.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -350,7 +353,7 @@ The graph is bipartite (clubs, women).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 03, 2018.
+      Last updated on Jun 08, 2018.
 
     </p>
   </div>
@@ -372,7 +375,7 @@ The graph is bipartite (clubs, women).</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180603145444',
+            VERSION:'2.2rc1.dev20180608152919',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -388,10 +391,7 @@ The graph is bipartite (clubs, women).</p>
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

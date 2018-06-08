@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chess Masters &mdash; NetworkX 2.2rc1.dev20180603145444 documentation</title>
+  <title>Chess Masters &mdash; NetworkX 2.2rc1.dev20180608152919 documentation</title>
   
 
   
@@ -22,14 +22,13 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180603145444 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180608152919 documentation"
             href="../../_static/opensearch.xml"/>
     
 
   
 
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -64,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180603145444
+                2.2rc1.dev_20180608152919
               </div>
             
           
@@ -198,7 +197,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="chess-masters">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-auto-examples-drawing-plot-chess-masters-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="chess-masters">
 <span id="sphx-glr-auto-examples-drawing-plot-chess-masters-py"></span><h1>Chess Masters<a class="headerlink" href="#chess-masters" title="Permalink to this headline">¶</a></h1>
 <p>An example of the MultiDiGraph clas</p>
 <p>The function chess_pgn_graph reads a collection of chess matches stored in the
@@ -217,39 +220,39 @@ to black and contains selected game info.</p>
 </pre></div>
 </div>
 <p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">game_info</span></code> is a <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> describing each game.</p>
-<img alt="../../_images/sphx_glr_plot_chess_masters_001.png" class="align-center" src="../../_images/sphx_glr_plot_chess_masters_001.png" />
+<img alt="../../_images/sphx_glr_plot_chess_masters_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_chess_masters_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Loaded</span> <span class="mi">685</span> <span class="n">chess</span> <span class="n">games</span> <span class="n">between</span> <span class="mi">25</span> <span class="n">players</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loaded 685 chess games between 25 players
 
-<span class="n">Note</span> <span class="n">the</span> <span class="n">disconnected</span> <span class="n">component</span> <span class="n">consisting</span> <span class="n">of</span><span class="p">:</span>
-<span class="p">[</span><span class="sa">u</span><span class="s1">&#39;Karpov, Anatoly&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Korchnoi, Viktor L&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Kasparov, Gary&#39;</span><span class="p">]</span>
+Note the disconnected component consisting of:
+[u&#39;Karpov, Anatoly&#39;, u&#39;Korchnoi, Viktor L&#39;, u&#39;Kasparov, Gary&#39;]
 
-<span class="n">From</span> <span class="n">a</span> <span class="n">total</span> <span class="n">of</span> <span class="mi">237</span> <span class="n">different</span> <span class="n">openings</span><span class="p">,</span>
-<span class="n">the</span> <span class="n">following</span> <span class="n">games</span> <span class="n">used</span> <span class="n">the</span> <span class="n">Sicilian</span> <span class="n">opening</span>
-<span class="k">with</span> <span class="n">the</span> <span class="n">Najdorff</span> <span class="mf">7.</span><span class="o">..</span><span class="n">Qb6</span> <span class="s2">&quot;Poisoned Pawn&quot;</span> <span class="n">variation</span><span class="o">.</span>
+From a total of 237 different openings,
+the following games used the Sicilian opening
+with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.
 
-<span class="p">(</span><span class="sa">u</span><span class="s1">&#39;Spassky, Boris V&#39;</span><span class="p">,</span> <span class="s1">&#39;vs&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Fischer, Robert J&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;ECO&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;B97&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;WhiteElo&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;2660&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Site&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Reykjavik ISL&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;BlackElo&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;2785&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;EventDate&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;1972.07.11&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;1/2-1/2&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;1972.07.25&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Round&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;7&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Event&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;World Championship 28th&#39;</span><span class="p">)</span>
+(u&#39;Spassky, Boris V&#39;, &#39;vs&#39;, u&#39;Fischer, Robert J&#39;)
+(&#39;   &#39;, &#39;ECO&#39;, &#39;: &#39;, u&#39;B97&#39;)
+(&#39;   &#39;, &#39;WhiteElo&#39;, &#39;: &#39;, u&#39;2660&#39;)
+(&#39;   &#39;, &#39;Site&#39;, &#39;: &#39;, u&#39;Reykjavik ISL&#39;)
+(&#39;   &#39;, &#39;BlackElo&#39;, &#39;: &#39;, u&#39;2785&#39;)
+(&#39;   &#39;, &#39;EventDate&#39;, &#39;: &#39;, u&#39;1972.07.11&#39;)
+(&#39;   &#39;, &#39;Result&#39;, &#39;: &#39;, u&#39;1/2-1/2&#39;)
+(&#39;   &#39;, &#39;Date&#39;, &#39;: &#39;, u&#39;1972.07.25&#39;)
+(&#39;   &#39;, &#39;Round&#39;, &#39;: &#39;, u&#39;7&#39;)
+(&#39;   &#39;, &#39;Event&#39;, &#39;: &#39;, u&#39;World Championship 28th&#39;)
 
 
-<span class="p">(</span><span class="sa">u</span><span class="s1">&#39;Spassky, Boris V&#39;</span><span class="p">,</span> <span class="s1">&#39;vs&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Fischer, Robert J&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;ECO&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;B97&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;WhiteElo&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;2660&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Site&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Reykjavik ISL&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;BlackElo&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;2785&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;EventDate&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;1972.07.11&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;1-0&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;1972.08.06&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Round&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;11&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;Event&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;World Championship 28th&#39;</span><span class="p">)</span>
+(u&#39;Spassky, Boris V&#39;, &#39;vs&#39;, u&#39;Fischer, Robert J&#39;)
+(&#39;   &#39;, &#39;ECO&#39;, &#39;: &#39;, u&#39;B97&#39;)
+(&#39;   &#39;, &#39;WhiteElo&#39;, &#39;: &#39;, u&#39;2660&#39;)
+(&#39;   &#39;, &#39;Site&#39;, &#39;: &#39;, u&#39;Reykjavik ISL&#39;)
+(&#39;   &#39;, &#39;BlackElo&#39;, &#39;: &#39;, u&#39;2785&#39;)
+(&#39;   &#39;, &#39;EventDate&#39;, &#39;: &#39;, u&#39;1972.07.11&#39;)
+(&#39;   &#39;, &#39;Result&#39;, &#39;: &#39;, u&#39;1-0&#39;)
+(&#39;   &#39;, &#39;Date&#39;, &#39;: &#39;, u&#39;1972.08.06&#39;)
+(&#39;   &#39;, &#39;Round&#39;, &#39;: &#39;, u&#39;11&#39;)
+(&#39;   &#39;, &#39;Event&#39;, &#39;: &#39;, u&#39;World Championship 28th&#39;)
 </pre></div>
 </div>
 <div class="line-block">
@@ -387,8 +390,8 @@ to black and contains selected game info.</p>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.332 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.337 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-drawing-plot-chess-masters-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_chess_masters.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_chess_masters.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -418,7 +421,7 @@ to black and contains selected game info.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 03, 2018.
+      Last updated on Jun 08, 2018.
 
     </p>
   </div>
@@ -440,7 +443,7 @@ to black and contains selected game info.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180603145444',
+            VERSION:'2.2rc1.dev20180608152919',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -456,10 +459,7 @@ to black and contains selected game info.</p>
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

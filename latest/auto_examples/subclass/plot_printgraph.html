@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Print Graph &mdash; NetworkX 2.2rc1.dev20180603145444 documentation</title>
+  <title>Print Graph &mdash; NetworkX 2.2rc1.dev20180608152919 documentation</title>
   
 
   
@@ -22,14 +22,13 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180603145444 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180608152919 documentation"
             href="../../_static/opensearch.xml"/>
     
 
   
 
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -64,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180603145444
+                2.2rc1.dev_20180608152919
               </div>
             
           
@@ -179,43 +178,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="print-graph">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-auto-examples-subclass-plot-printgraph-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="print-graph">
 <span id="sphx-glr-auto-examples-subclass-plot-printgraph-py"></span><h1>Print Graph<a class="headerlink" href="#print-graph" title="Permalink to this headline">¶</a></h1>
 <p>Example subclass of the Graph class.</p>
-<img alt="../../_images/sphx_glr_plot_printgraph_001.png" class="align-center" src="../../_images/sphx_glr_plot_printgraph_001.png" />
+<img alt="../../_images/sphx_glr_plot_printgraph_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_printgraph_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">node</span><span class="p">:</span> <span class="n">foo</span>
-<span class="n">Add</span> <span class="n">node</span><span class="p">:</span> <span class="n">b</span>
-<span class="n">Add</span> <span class="n">node</span><span class="p">:</span> <span class="n">a</span>
-<span class="n">Add</span> <span class="n">node</span><span class="p">:</span> <span class="n">r</span>
-<span class="n">Remove</span> <span class="n">node</span><span class="p">:</span> <span class="n">b</span>
-<span class="n">Remove</span> <span class="n">node</span><span class="p">:</span> <span class="n">a</span>
-<span class="n">Remove</span> <span class="n">node</span><span class="p">:</span> <span class="n">r</span>
-<span class="p">(</span><span class="s1">&#39;Nodes in G: &#39;</span><span class="p">,</span> <span class="n">NodeDataView</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;attr_dict&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}}))</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">1</span>
-<span class="p">(</span><span class="s1">&#39;Edges in G: &#39;</span><span class="p">,</span> <span class="n">EdgeDataView</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;attr_dict&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})]))</span>
-<span class="n">Remove</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">1</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">1</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">2</span><span class="o">-</span><span class="mi">3</span>
-<span class="p">(</span><span class="s1">&#39;Edges in G: &#39;</span><span class="p">,</span> <span class="n">EdgeDataView</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;attr_dict&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;attr_dict&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;attr_dict&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})]))</span>
-<span class="n">Remove</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">1</span>
-<span class="n">Remove</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span>
-<span class="n">Remove</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">2</span><span class="o">-</span><span class="mi">3</span>
-<span class="p">(</span><span class="s1">&#39;Edges in G: &#39;</span><span class="p">,</span> <span class="n">EdgeDataView</span><span class="p">([]))</span>
-<span class="n">Add</span> <span class="n">node</span><span class="p">:</span> <span class="mi">0</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">1</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">2</span><span class="o">-</span><span class="mi">3</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">3</span><span class="o">-</span><span class="mi">4</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">4</span><span class="o">-</span><span class="mi">5</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">5</span><span class="o">-</span><span class="mi">6</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">6</span><span class="o">-</span><span class="mi">7</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">7</span><span class="o">-</span><span class="mi">8</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">8</span><span class="o">-</span><span class="mi">9</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">9</span><span class="o">-</span><span class="mi">10</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">9</span><span class="o">-</span><span class="mi">11</span>
-<span class="n">Add</span> <span class="n">edge</span><span class="p">:</span> <span class="mi">9</span><span class="o">-</span><span class="mi">12</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Add node: foo
+Add node: b
+Add node: a
+Add node: r
+Remove node: b
+Remove node: a
+Remove node: r
+(&#39;Nodes in G: &#39;, NodeDataView({&#39;foo&#39;: {&#39;attr_dict&#39;: None}}))
+Add edge: 0-1
+(&#39;Edges in G: &#39;, EdgeDataView([(0, 1, {&#39;attr_dict&#39;: None, &#39;weight&#39;: 10})]))
+Remove edge: 0-1
+Add edge: 0-1
+Add edge: 1-2
+Add edge: 2-3
+(&#39;Edges in G: &#39;, EdgeDataView([(0, 1, {&#39;attr_dict&#39;: None, &#39;weight&#39;: 10}), (1, 2, {&#39;attr_dict&#39;: None, &#39;weight&#39;: 10}), (2, 3, {&#39;attr_dict&#39;: None, &#39;weight&#39;: 10})]))
+Remove edge: 0-1
+Remove edge: 1-2
+Remove edge: 2-3
+(&#39;Edges in G: &#39;, EdgeDataView([]))
+Add node: 0
+Add edge: 0-1
+Add edge: 1-2
+Add edge: 2-3
+Add edge: 3-4
+Add edge: 4-5
+Add edge: 5-6
+Add edge: 6-7
+Add edge: 7-8
+Add edge: 8-9
+Add edge: 9-10
+Add edge: 9-11
+Add edge: 9-12
 </pre></div>
 </div>
 <div class="line-block">
@@ -314,8 +317,8 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.036 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.032 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-subclass-plot-printgraph-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_printgraph.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_printgraph.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -345,7 +348,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 03, 2018.
+      Last updated on Jun 08, 2018.
 
     </p>
   </div>
@@ -367,7 +370,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180603145444',
+            VERSION:'2.2rc1.dev20180608152919',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -383,10 +386,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
