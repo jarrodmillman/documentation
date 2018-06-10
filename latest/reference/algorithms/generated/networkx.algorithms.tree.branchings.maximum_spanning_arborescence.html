@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.branchings.maximum_spanning_arborescence &mdash; NetworkX 2.2rc1.dev20180609151502 documentation</title>
+  <title>networkx.algorithms.tree.branchings.maximum_spanning_arborescence &mdash; NetworkX 2.2rc1.dev20180610035008 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180609151502 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180610035008 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180609151502
+                2.2rc1.dev_20180610035008
               </div>
             
           
@@ -247,7 +247,7 @@
 <h1>networkx.algorithms.tree.branchings.maximum_spanning_arborescence<a class="headerlink" href="#networkx-algorithms-tree-branchings-maximum-spanning-arborescence" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.tree.branchings.maximum_spanning_arborescence">
-<code class="descname">maximum_spanning_arborescence</code><span class="sig-paren">(</span><em>G</em>, <em>attr='weight'</em>, <em>default=1</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tree/branchings.html#maximum_spanning_arborescence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tree.branchings.maximum_spanning_arborescence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">maximum_spanning_arborescence</code><span class="sig-paren">(</span><em>G</em>, <em>attr='weight'</em>, <em>default=1</em>, <em>preserve_attrs=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tree/branchings.html#maximum_spanning_arborescence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tree.branchings.maximum_spanning_arborescence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a maximum spanning arborescence from G.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -258,6 +258,8 @@
 <li><strong>attr</strong> (<em>str</em>) – The edge attribute used to in determining optimality.</li>
 <li><strong>default</strong> (<em>float</em>) – The value of the edge attribute used if an edge does not have
 the attribute <code class="xref py py-obj docutils literal notranslate"><span class="pre">attr</span></code>.</li>
+<li><strong>preserve_attrs</strong> (<em>bool</em>) – If True, preserve the other attributes of the original graph (that are not
+passed to <code class="xref py py-obj docutils literal notranslate"><span class="pre">attr</span></code>)</li>
 </ul>
 </td>
 </tr>
@@ -297,7 +299,7 @@ the attribute <code class="xref py py-obj docutils literal notranslate"><span cl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 09, 2018.
+      Last updated on Jun 10, 2018.
 
     </p>
   </div>
@@ -319,7 +321,7 @@ the attribute <code class="xref py py-obj docutils literal notranslate"><span cl
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180609151502',
+            VERSION:'2.2rc1.dev20180610035008',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
