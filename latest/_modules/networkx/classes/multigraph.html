@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.multigraph &mdash; NetworkX 2.2rc1.dev20180617062702 documentation</title>
+  <title>networkx.classes.multigraph &mdash; NetworkX 2.2rc1.dev20180617210317 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180617062702 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617210317 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180617062702
+                2.2rc1.dev_20180617210317
               </div>
             
           
@@ -1244,6 +1244,26 @@
 <span class="sd">        For an inplace reduction of a graph to a subgraph you can remove nodes:</span>
 <span class="sd">        G.remove_nodes_from([n for n in G if n not in set(nodes)])</span>
 
+<span class="sd">        Subgraph views are sometimes NOT what you want. In most cases where</span>
+<span class="sd">        you want to do more than simply look at the induced edges, it makes</span>
+<span class="sd">        more sense to just create the subgraph as its own graph with code like:</span>
+
+<span class="sd">        ::</span>
+
+<span class="sd">            # Create a subgraph SG based on a (possibly multigraph) G</span>
+<span class="sd">            SG = G.fresh_copy()</span>
+<span class="sd">            SG.add_nodes_from((n, G.nodes[n]) for n in largest_wcc)</span>
+<span class="sd">            if SG.is_multigraph:</span>
+<span class="sd">                SG.add_edges_from((n, nbr, key, d)</span>
+<span class="sd">                    for n, nbrs in G.adj.items() if n in largest_wcc</span>
+<span class="sd">                    for nbr, keydict in nbrs.items() if nbr in largest_wcc</span>
+<span class="sd">                    for key, d in keydict.items())</span>
+<span class="sd">            else:</span>
+<span class="sd">                SG.add_edges_from((n, nbr, d)</span>
+<span class="sd">                    for n, nbrs in G.adj.items() if n in largest_wcc</span>
+<span class="sd">                    for nbr, d in nbrs.items() if nbr in largest_wcc)</span>
+<span class="sd">            SG.graph.update(G.graph)</span>
+
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; G = nx.Graph()   # or DiGraph, MultiGraph, MultiDiGraph, etc</span>
@@ -1351,7 +1371,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180617062702',
+            VERSION:'2.2rc1.dev20180617210317',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
