@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.geographical_threshold_graph &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
+  <title>networkx.generators.geometric.geographical_threshold_graph &mdash; NetworkX 2.2rc1.dev20180617061226 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617061226 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180617054307
+                2.2rc1.dev_20180617061226
               </div>
             
           
@@ -259,10 +259,11 @@ used.</p>
 connecting two nodes that are of distance, r, computed by metric.
 The probability density function, <code class="xref py py-obj docutils literal notranslate"><span class="pre">p_dist</span></code>, must
 be any function that takes the metric value as input
-and outputs a single probability value between 0-1. The scipy.stats
-package has many probability distribution functions implemented and tools
-for custom probability distribution definitions [2], and passing the .pdf
-method of scipy.stats distributions can be used here. If the probability
+and outputs a single probability value between 0-1.
+The scipy.stats package has many probability distribution functions
+implemented and tools for custom probability distribution
+definitions [2], and passing the .pdf method of scipy.stats
+distributions can be used here. If the probability
 function, <code class="xref py py-obj docutils literal notranslate"><span class="pre">p_dist</span></code>, is not supplied, the default exponential function
 :math: <code class="xref py py-obj docutils literal notranslate"><span class="pre">r^{-2}</span></code> is used.</p>
 </li>
@@ -309,11 +310,12 @@ uniform distribution.</p>
 <p>Starting in NetworkX 2.1 the parameter <code class="docutils literal notranslate"><span class="pre">alpha</span></code> is deprecated and replaced
 with the customizable <code class="docutils literal notranslate"><span class="pre">p_dist</span></code> function parameter, which defaults to r^-2
 if <code class="docutils literal notranslate"><span class="pre">p_dist</span></code> is not supplied. To reproduce networks of earlier NetworkX
-versions, a custom function needs to be defined and passed as the <code class="docutils literal notranslate"><span class="pre">p_dist</span></code>
-parameter. For example, if the parameter <code class="docutils literal notranslate"><span class="pre">alpha</span></code> = 2 was used in NetworkX 2.0,
-the custom function def custom_dist(r): r**-2 can be passed in versions &gt;=2.1
-as the parameter p_dist = custom_dist to produce an equivalent network. Note the
-change in sign from +2 to -2 in this parameter change.</p>
+versions, a custom function needs to be defined and passed as the
+<code class="docutils literal notranslate"><span class="pre">p_dist</span></code> parameter. For example, if the parameter <code class="docutils literal notranslate"><span class="pre">alpha</span></code> = 2 was used
+in NetworkX 2.0, the custom function def custom_dist(r): r**-2 can be
+passed in versions &gt;=2.1 as the parameter p_dist = custom_dist to
+produce an equivalent network. Note the change in sign from +2 to -2 in
+this parameter change.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -380,7 +382,7 @@ Antony Bonato and Fan Chung (Eds), pp. 209–216, 2007</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180617054307',
+            VERSION:'2.2rc1.dev20180617061226',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

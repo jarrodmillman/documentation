@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.thresholded_random_geometric_graph &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
+  <title>networkx.generators.geometric.thresholded_random_geometric_graph &mdash; NetworkX 2.2rc1.dev20180617061226 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617061226 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180617054307
+                2.2rc1.dev_20180617061226
               </div>
             
           
@@ -216,15 +216,17 @@
 <dl class="function">
 <dt id="networkx.generators.geometric.thresholded_random_geometric_graph">
 <code class="descname">thresholded_random_geometric_graph</code><span class="sig-paren">(</span><em>n</em>, <em>radius</em>, <em>theta</em>, <em>dim=2</em>, <em>pos=None</em>, <em>weight=None</em>, <em>p=2</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#thresholded_random_geometric_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.thresholded_random_geometric_graph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a thresholded random geometric graph in the unit cube of dimensions <code class="xref py py-obj docutils literal notranslate"><span class="pre">dim</span></code>.</p>
-<p>The thresholded random geometric graph [1] model places <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes uniformly at
-random in the unit cube. Each node <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> is assigned a weight
-<span class="math notranslate nohighlight">\(w_u\)</span>. Two nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> are joined by an edge if they are within
-the maximum connection distance, <code class="xref py py-obj docutils literal notranslate"><span class="pre">radius</span></code> computed by the <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code>-Minkowski distance
-and the summation of weights <span class="math notranslate nohighlight">\(w_u\)</span> + <span class="math notranslate nohighlight">\(w_v\)</span> is greater than or equal
+<dd><p>Returns a thresholded random geometric graph in the unit cube.</p>
+<p>The thresholded random geometric graph [1] model places <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes
+uniformly at random in the unit cube of dimensions <code class="xref py py-obj docutils literal notranslate"><span class="pre">dim</span></code>. Each node
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> is assigned a weight <span class="math notranslate nohighlight">\(w_u\)</span>. Two nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> are
+joined by an edge if they are within the maximum connection distance,
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">radius</span></code> computed by the <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code>-Minkowski distance and the summation of
+weights <span class="math notranslate nohighlight">\(w_u\)</span> + <span class="math notranslate nohighlight">\(w_v\)</span> is greater than or equal
 to the threshold parameter <code class="xref py py-obj docutils literal notranslate"><span class="pre">theta</span></code>.</p>
-<p>Edges within <code class="xref py py-obj docutils literal notranslate"><span class="pre">radius</span></code> of each other are determined using a KDTree when SciPy
-is available. This reduces the time complexity from <span class="math notranslate nohighlight">\(O(n^2)\)</span> to <span class="math notranslate nohighlight">\(O(n)\)</span>.</p>
+<p>Edges within <code class="xref py py-obj docutils literal notranslate"><span class="pre">radius</span></code> of each other are determined using a KDTree when
+SciPy is available. This reduces the time complexity from <span class="math notranslate nohighlight">\(O(n^2)\)</span>
+to <span class="math notranslate nohighlight">\(O(n)\)</span>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -244,8 +246,8 @@ is available. This reduces the time complexity from <span class="math notranslat
 </li>
 <li><p class="first"><strong>p</strong> (<em>float, optional</em>) – Which Minkowski distance metric to use.  <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code> has to meet the condition
 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">p</span> <span class="pre">&lt;=</span> <span class="pre">infinity</span></code>.</p>
-<p>If this argument is not specified, the <span class="math notranslate nohighlight">\(L^2\)</span> metric (the Euclidean
-distance metric), p = 2 is used.</p>
+<p>If this argument is not specified, the <span class="math notranslate nohighlight">\(L^2\)</span> metric
+(the Euclidean distance metric), p = 2 is used.</p>
 <p>This should not be confused with the <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code> of an Erdős-Rényi random
 graph, which represents probability.</p>
 </li>
@@ -272,10 +274,10 @@ provided or as generated.</p>
 <p>Default Graph:</p>
 <p>G = nx.thresholded_random_geometric_graph(50, 0.2, 0.1)</p>
 <p>Custom Graph:</p>
-<p>Create a thresholded random geometric graph on 50 uniformly distributed nodes
-where nodes are joined by an edge if their sum weights drawn from a exponential
-distribution with rate = 5 are &gt;= theta = 0.1 and their Euclidean distance
-is at most 0.2.</p>
+<p>Create a thresholded random geometric graph on 50 uniformly distributed
+nodes where nodes are joined by an edge if their sum weights drawn from
+a exponential distribution with rate = 5 are &gt;= theta = 0.1 and their
+Euclidean distance is at most 0.2.</p>
 <p class="rubric">Notes</p>
 <p>This uses a <em>k</em>-d tree to build the graph.</p>
 <p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">pos</span></code> keyword argument can be used to specify node positions so you
@@ -294,7 +296,7 @@ argument:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pos</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">expovariate</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">thresholded_random_geometric_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">thresholded_random_geometric_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">References</p>
@@ -351,7 +353,7 @@ argument:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180617054307',
+            VERSION:'2.2rc1.dev20180617061226',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

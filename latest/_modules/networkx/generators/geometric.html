@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
+  <title>networkx.generators.geometric &mdash; NetworkX 2.2rc1.dev20180617061226 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617061226 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180617054307
+                2.2rc1.dev_20180617061226
               </div>
             
           
@@ -262,7 +262,7 @@
 <span class="sd">        Which Minkowski distance metric to use.  `p` has to meet the condition</span>
 <span class="sd">        ``1 &lt;= p &lt;= infinity``.</span>
 
-<span class="sd">        If this argument is not specified, the :math:`L^2` metric </span>
+<span class="sd">        If this argument is not specified, the :math:`L^2` metric</span>
 <span class="sd">        (the Euclidean distance metric), p = 2 is used.</span>
 <span class="sd">        This should not be confused with the `p` of an Erdős-Rényi random</span>
 <span class="sd">        graph, which represents probability.</span>
@@ -332,16 +332,17 @@
 
 <div class="viewcode-block" id="soft_random_geometric_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.geometric.soft_random_geometric_graph.html#networkx.generators.geometric.soft_random_geometric_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">soft_random_geometric_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">p_dist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns a soft random geometric graph in the unit cube of dimensions `dim`.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a soft random geometric graph in the unit cube.</span>
 
 <span class="sd">    The soft random geometric graph [1] model places `n` nodes uniformly at</span>
-<span class="sd">    random in the unit cube. Two nodes of distance, dist, computed by the `p`-Minkowski</span>
-<span class="sd">    distance metric are joined by an edge with probability `p_dist` if the computed</span>
-<span class="sd">    distance metric value of the nodes is at most `radius`, otherwise </span>
-<span class="sd">    they are not joined.</span>
+<span class="sd">    random in the unit cube in dimension `dim`. Two nodes of distance, `dist`,</span>
+<span class="sd">    computed by the `p`-Minkowski distance metric are joined by an edge with</span>
+<span class="sd">    probability `p_dist` if the computed distance metric value of the nodes</span>
+<span class="sd">    is at most `radius`, otherwise they are not joined.</span>
 
-<span class="sd">    Edges within `radius` of each other are determined using a KDTree when SciPy</span>
-<span class="sd">    is available. This reduces the time complexity from :math:`O(n^2)` to :math:`O(n)`.</span>
+<span class="sd">    Edges within `radius` of each other are determined using a KDTree when</span>
+<span class="sd">    SciPy is available. This reduces the time complexity from :math:`O(n^2)`</span>
+<span class="sd">    to :math:`O(n)`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -354,25 +355,25 @@
 <span class="sd">    pos : dict, optional</span>
 <span class="sd">        A dictionary keyed by node with node positions as values.</span>
 <span class="sd">    p : float, optional</span>
-<span class="sd">        Which Minkowski distance metric to use.  `p` has to meet the condition</span>
-<span class="sd">        ``1 &lt;= p &lt;= infinity``.</span>
+<span class="sd">        Which Minkowski distance metric to use.</span>
+<span class="sd">        `p` has to meet the condition ``1 &lt;= p &lt;= infinity``.</span>
 
-<span class="sd">        If this argument is not specified, the :math:`L^2` metric (the Euclidean</span>
-<span class="sd">        distance metric), p = 2 is used.</span>
+<span class="sd">        If this argument is not specified, the :math:`L^2` metric</span>
+<span class="sd">        (the Euclidean distance metric), p = 2 is used.</span>
 
 <span class="sd">        This should not be confused with the `p` of an Erdős-Rényi random</span>
 <span class="sd">        graph, which represents probability.</span>
 <span class="sd">    p_dist : function, optional</span>
-<span class="sd">        A probability density function computing the probability of </span>
-<span class="sd">        connecting two nodes that are of distance, dist, computed by the </span>
-<span class="sd">        Minkowski distance metric. The probability density function, `p_dist`, must</span>
-<span class="sd">        be any function that takes the metric value as input</span>
+<span class="sd">        A probability density function computing the probability of</span>
+<span class="sd">        connecting two nodes that are of distance, dist, computed by the</span>
+<span class="sd">        Minkowski distance metric. The probability density function, `p_dist`,</span>
+<span class="sd">        must be any function that takes the metric value as input</span>
 <span class="sd">        and outputs a single probability value between 0-1. The scipy.stats</span>
-<span class="sd">        package has many probability distribution functions implemented and tools</span>
-<span class="sd">        for custom probability distribution definitions [2], and passing the .pdf</span>
-<span class="sd">        method of scipy.stats distributions can be used here. If the probability</span>
-<span class="sd">        function, `p_dist`, is not supplied, the default function is an exponential</span>
-<span class="sd">        distribution with rate parameter :math:`\lambda=1`.</span>
+<span class="sd">        package has many probability distribution functions implemented and</span>
+<span class="sd">        tools for custom probability distribution definitions [2], and passing</span>
+<span class="sd">        the .pdf method of scipy.stats distributions can be used here.  If the</span>
+<span class="sd">        probability function, `p_dist`, is not supplied, the default function</span>
+<span class="sd">        is an exponential distribution with rate parameter :math:`\lambda=1`.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -392,9 +393,9 @@
 <span class="sd">    Custom Graph:</span>
 
 <span class="sd">    Create a soft random geometric graph on 100 uniformly distributed nodes</span>
-<span class="sd">    where nodes are joined by an edge with probability computed from an exponential</span>
-<span class="sd">    distribution with rate parameter :math:`\lambda=1` if their Euclidean distance </span>
-<span class="sd">    is at most 0.2.</span>
+<span class="sd">    where nodes are joined by an edge with probability computed from an</span>
+<span class="sd">    exponential distribution with rate parameter :math:`\lambda=1` if their</span>
+<span class="sd">    Euclidean distance is at most 0.2.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -406,7 +407,7 @@
 <span class="sd">    For example, to use a 2D Gaussian distribution of node positions with mean</span>
 <span class="sd">    (0, 0) and standard deviation 2</span>
 
-<span class="sd">    The scipy.stats package can be used to define the probaility distribution</span>
+<span class="sd">    The scipy.stats package can be used to define the probability distribution</span>
 <span class="sd">    with the .pdf method used as `p_dist`.</span>
 
 <span class="sd">    ::</span>
@@ -415,17 +416,17 @@
 <span class="sd">    &gt;&gt;&gt; import math</span>
 <span class="sd">    &gt;&gt;&gt; n = 100</span>
 <span class="sd">    &gt;&gt;&gt; pos = {i: (random.gauss(0, 2), random.gauss(0, 2)) for i in range(n)}</span>
-<span class="sd">    &gt;&gt;&gt; def p_dist(dist): return math.exp(-dist)</span>
+<span class="sd">    &gt;&gt;&gt; p_dist = lambda dist : math.exp(-dist)</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.soft_random_geometric_graph(n, 0.2, pos=pos, p_dist=p_dist)</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
 <span class="sd">    .. [1] Penrose, Mathew D. &quot;Connectivity of soft random geometric graphs.&quot;</span>
 <span class="sd">           The Annals of Applied Probability 26.2 (2016): 986-1028.</span>
-<span class="sd">       [2] scipy.stats - https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html</span>
+<span class="sd">       [2] scipy.stats -</span>
+<span class="sd">           https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">n_name</span><span class="p">,</span> <span class="n">nodes</span> <span class="o">=</span> <span class="n">n</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
     <span class="n">G</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;soft_random_geometric_graph(</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
@@ -447,9 +448,10 @@
         <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">pair</span>
         <span class="n">u_pos</span><span class="p">,</span> <span class="n">v_pos</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
         <span class="n">dist</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="n">p</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">u_pos</span><span class="p">,</span> <span class="n">v_pos</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">p</span><span class="p">)</span>
-        <span class="c1"># Check if dist is &lt;= radius parameter. This check is redundant if scipy</span>
-        <span class="c1"># is available and _fast_edges routine is used, but provides the check in case</span>
-        <span class="c1"># scipy is not available and all edge combinations need to be checked</span>
+        <span class="c1"># Check if dist &lt;= radius parameter. This check is redundant if scipy</span>
+        <span class="c1"># is available and _fast_edges routine is used, but provides the</span>
+        <span class="c1"># check in case scipy is not available and all edge combinations</span>
+        <span class="c1"># need to be checked</span>
         <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;=</span> <span class="n">radius</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p_dist</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -475,7 +477,7 @@
 
 <span class="sd">    .. math::</span>
 
-<span class="sd">       (w_u + w_v)h(r) \ge \theta </span>
+<span class="sd">       (w_u + w_v)h(r) \ge \theta</span>
 
 <span class="sd">    where `r` is the distance between `u` and `v`, h(r) is a probability of</span>
 <span class="sd">    connection as a function of `r`, and :math:`\theta` as the threshold</span>
@@ -511,14 +513,15 @@
 
 <span class="sd">        .. _metric: https://en.wikipedia.org/wiki/Metric_%28mathematics%29</span>
 <span class="sd">    p_dist : function, optional</span>
-<span class="sd">        A probability density function computing the probability of </span>
+<span class="sd">        A probability density function computing the probability of</span>
 <span class="sd">        connecting two nodes that are of distance, r, computed by metric.</span>
 <span class="sd">        The probability density function, `p_dist`, must</span>
 <span class="sd">        be any function that takes the metric value as input</span>
-<span class="sd">        and outputs a single probability value between 0-1. The scipy.stats</span>
-<span class="sd">        package has many probability distribution functions implemented and tools</span>
-<span class="sd">        for custom probability distribution definitions [2], and passing the .pdf</span>
-<span class="sd">        method of scipy.stats distributions can be used here. If the probability</span>
+<span class="sd">        and outputs a single probability value between 0-1.</span>
+<span class="sd">        The scipy.stats package has many probability distribution functions</span>
+<span class="sd">        implemented and tools for custom probability distribution</span>
+<span class="sd">        definitions [2], and passing the .pdf method of scipy.stats</span>
+<span class="sd">        distributions can be used here. If the probability</span>
 <span class="sd">        function, `p_dist`, is not supplied, the default exponential function</span>
 <span class="sd">        :math: `r^{-2}` is used.</span>
 
@@ -564,12 +567,13 @@
 
 <span class="sd">    Starting in NetworkX 2.1 the parameter ``alpha`` is deprecated and replaced</span>
 <span class="sd">    with the customizable ``p_dist`` function parameter, which defaults to r^-2</span>
-<span class="sd">    if ``p_dist`` is not supplied. To reproduce networks of earlier NetworkX </span>
-<span class="sd">    versions, a custom function needs to be defined and passed as the ``p_dist``</span>
-<span class="sd">    parameter. For example, if the parameter ``alpha`` = 2 was used in NetworkX 2.0,</span>
-<span class="sd">    the custom function def custom_dist(r): r**-2 can be passed in versions &gt;=2.1</span>
-<span class="sd">    as the parameter p_dist = custom_dist to produce an equivalent network. Note the</span>
-<span class="sd">    change in sign from +2 to -2 in this parameter change.</span>
+<span class="sd">    if ``p_dist`` is not supplied. To reproduce networks of earlier NetworkX</span>
+<span class="sd">    versions, a custom function needs to be defined and passed as the</span>
+<span class="sd">    ``p_dist`` parameter. For example, if the parameter ``alpha`` = 2 was used</span>
+<span class="sd">    in NetworkX 2.0, the custom function def custom_dist(r): r**-2 can be</span>
+<span class="sd">    passed in versions &gt;=2.1 as the parameter p_dist = custom_dist to</span>
+<span class="sd">    produce an equivalent network. Note the change in sign from +2 to -2 in</span>
+<span class="sd">    this parameter change.</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
@@ -803,18 +807,21 @@
 
 
 <div class="viewcode-block" id="thresholded_random_geometric_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.geometric.thresholded_random_geometric_graph.html#networkx.generators.geometric.thresholded_random_geometric_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">thresholded_random_geometric_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns a thresholded random geometric graph in the unit cube of dimensions `dim`.</span>
+<span class="k">def</span> <span class="nf">thresholded_random_geometric_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                       <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns a thresholded random geometric graph in the unit cube.</span>
 
-<span class="sd">    The thresholded random geometric graph [1] model places `n` nodes uniformly at</span>
-<span class="sd">    random in the unit cube. Each node `u` is assigned a weight</span>
-<span class="sd">    :math:`w_u`. Two nodes `u` and `v` are joined by an edge if they are within</span>
-<span class="sd">    the maximum connection distance, `radius` computed by the `p`-Minkowski distance</span>
-<span class="sd">    and the summation of weights :math:`w_u` + :math:`w_v` is greater than or equal</span>
+<span class="sd">    The thresholded random geometric graph [1] model places `n` nodes</span>
+<span class="sd">    uniformly at random in the unit cube of dimensions `dim`. Each node</span>
+<span class="sd">    `u` is assigned a weight :math:`w_u`. Two nodes `u` and `v` are</span>
+<span class="sd">    joined by an edge if they are within the maximum connection distance,</span>
+<span class="sd">    `radius` computed by the `p`-Minkowski distance and the summation of</span>
+<span class="sd">    weights :math:`w_u` + :math:`w_v` is greater than or equal</span>
 <span class="sd">    to the threshold parameter `theta`.</span>
 
-<span class="sd">    Edges within `radius` of each other are determined using a KDTree when SciPy</span>
-<span class="sd">    is available. This reduces the time complexity from :math:`O(n^2)` to :math:`O(n)`.</span>
+<span class="sd">    Edges within `radius` of each other are determined using a KDTree when</span>
+<span class="sd">    SciPy is available. This reduces the time complexity from :math:`O(n^2)`</span>
+<span class="sd">    to :math:`O(n)`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -834,8 +841,8 @@
 <span class="sd">        Which Minkowski distance metric to use.  `p` has to meet the condition</span>
 <span class="sd">        ``1 &lt;= p &lt;= infinity``.</span>
 
-<span class="sd">        If this argument is not specified, the :math:`L^2` metric (the Euclidean</span>
-<span class="sd">        distance metric), p = 2 is used.</span>
+<span class="sd">        If this argument is not specified, the :math:`L^2` metric</span>
+<span class="sd">        (the Euclidean distance metric), p = 2 is used.</span>
 
 <span class="sd">        This should not be confused with the `p` of an Erdős-Rényi random</span>
 <span class="sd">        graph, which represents probability.</span>
@@ -861,10 +868,10 @@
 
 <span class="sd">    Custom Graph:</span>
 
-<span class="sd">    Create a thresholded random geometric graph on 50 uniformly distributed nodes</span>
-<span class="sd">    where nodes are joined by an edge if their sum weights drawn from a exponential</span>
-<span class="sd">    distribution with rate = 5 are &gt;= theta = 0.1 and their Euclidean distance </span>
-<span class="sd">    is at most 0.2.</span>
+<span class="sd">    Create a thresholded random geometric graph on 50 uniformly distributed</span>
+<span class="sd">    nodes where nodes are joined by an edge if their sum weights drawn from</span>
+<span class="sd">    a exponential distribution with rate = 5 are &gt;= theta = 0.1 and their</span>
+<span class="sd">    Euclidean distance is at most 0.2.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -888,7 +895,7 @@
 <span class="sd">    &gt;&gt;&gt; n = 50</span>
 <span class="sd">    &gt;&gt;&gt; pos = {i: (random.gauss(0, 2), random.gauss(0, 2)) for i in range(n)}</span>
 <span class="sd">    &gt;&gt;&gt; w = {i: random.expovariate(5.0) for i in range(n)}</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.thresholded_random_geometric_graph(n, 0.2, 0.1, pos=pos, weight=w)</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.thresholded_random_geometric_graph(n, 0.2, 0.1, 2, pos, w)</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
@@ -923,9 +930,10 @@
         <span class="n">u_weight</span><span class="p">,</span> <span class="n">v_weight</span> <span class="o">=</span> <span class="n">weight</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">weight</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
         <span class="n">u_pos</span><span class="p">,</span> <span class="n">v_pos</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
         <span class="n">dist</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="n">p</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">u_pos</span><span class="p">,</span> <span class="n">v_pos</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">p</span><span class="p">)</span>
-        <span class="c1"># Check if dist is &lt;= radius parameter. This check is redundant if scipy</span>
-        <span class="c1"># is available and _fast_edges routine is used, but provides the check in case</span>
-        <span class="c1"># scipy is not available and all edge combinations need to be checked</span>
+        <span class="c1"># Check if dist is &lt;= radius parameter. This check is redundant if</span>
+        <span class="c1"># scipy is available and _fast_edges routine is used, but provides</span>
+        <span class="c1"># the check in case scipy is not available and all edge combinations</span>
+        <span class="c1"># need to be checked</span>
         <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;=</span> <span class="n">radius</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">theta</span> <span class="o">&lt;=</span> <span class="n">u_weight</span> <span class="o">+</span> <span class="n">v_weight</span>
         <span class="k">else</span><span class="p">:</span>
@@ -973,7 +981,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180617054307',
+            VERSION:'2.2rc1.dev20180617061226',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
