@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.convert &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -193,23 +193,6 @@
            <span class="s1">&#39;from_edgelist&#39;</span><span class="p">,</span> <span class="s1">&#39;to_edgelist&#39;</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">_prep_create_using</span><span class="p">(</span><span class="n">create_using</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a graph object ready to be populated.</span>
-
-<span class="sd">    If create_using is None return the default (just networkx.Graph())</span>
-<span class="sd">    If create_using.clear() works, assume it returns a graph object.</span>
-<span class="sd">    Otherwise raise an exception because create_using is not a networkx graph.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">create_using</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Input graph is not a networkx graph type&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">create_using</span>
-
-
 <div class="viewcode-block" id="to_networkx_graph"><a class="viewcode-back" href="../../reference/generated/networkx.convert.to_networkx_graph.html#networkx.convert.to_networkx_graph">[docs]</a><span class="k">def</span> <span class="nf">to_networkx_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">multigraph_input</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Make a NetworkX graph from a known data structure.</span>
 
@@ -227,7 +210,7 @@
 <span class="sd">    ----------</span>
 <span class="sd">    data : object to be converted</span>
 
-<span class="sd">       Current known types are:</span>
+<span class="sd">        Current known types are:</span>
 <span class="sd">         any NetworkX graph</span>
 <span class="sd">         dict-of-dicts</span>
 <span class="sd">         dict-of-lists</span>
@@ -238,14 +221,14 @@
 <span class="sd">         scipy sparse matrix</span>
 <span class="sd">         pygraphviz agraph</span>
 
-<span class="sd">    create_using : NetworkX graph</span>
-<span class="sd">       Use specified graph for result.  Otherwise a new graph is created.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">        Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    multigraph_input : bool (default False)</span>
-<span class="sd">      If True and  data is a dict_of_dicts,</span>
-<span class="sd">      try to create a multigraph assuming dict_of_dict_of_lists.</span>
-<span class="sd">      If data and create_using are both multigraphs then create</span>
-<span class="sd">      a multigraph from a multigraph.</span>
+<span class="sd">        If True and  data is a dict_of_dicts,</span>
+<span class="sd">        try to create a multigraph assuming dict_of_dict_of_lists.</span>
+<span class="sd">        If data and create_using are both multigraphs then create</span>
+<span class="sd">        a multigraph from a multigraph.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># NX graph</span>
@@ -372,8 +355,8 @@
 <span class="sd">    d : dictionary of lists</span>
 <span class="sd">      A dictionary of lists adjacency representation.</span>
 
-<span class="sd">    create_using : NetworkX graph</span>
-<span class="sd">       Use specified graph for result.  Otherwise a new graph is created.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">        Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -385,7 +368,7 @@
 <span class="sd">    &gt;&gt;&gt; G = nx.Graph(dol) # use Graph constructor</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">_prep_create_using</span><span class="p">(</span><span class="n">create_using</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="c1"># a dict_of_lists can&#39;t show multiedges.  BUT for undirected graphs,</span>
@@ -451,8 +434,8 @@
 <span class="sd">    d : dictionary of dictionaries</span>
 <span class="sd">      A dictionary of dictionaries adjacency representation.</span>
 
-<span class="sd">    create_using : NetworkX graph</span>
-<span class="sd">       Use specified graph for result.  Otherwise a new graph is created.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">        Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    multigraph_input : bool (default False)</span>
 <span class="sd">       When True, the values of the inner dict are assumed</span>
@@ -469,7 +452,7 @@
 <span class="sd">    &gt;&gt;&gt; G = nx.Graph(dod) # use Graph constructor</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">_prep_create_using</span><span class="p">(</span><span class="n">create_using</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
     <span class="c1"># is dict a MultiGraph or MultiDiGraph?</span>
     <span class="k">if</span> <span class="n">multigraph_input</span><span class="p">:</span>
@@ -547,8 +530,8 @@
 <span class="sd">    edgelist : list or iterator</span>
 <span class="sd">      Edge tuples</span>
 
-<span class="sd">    create_using : NetworkX graph</span>
-<span class="sd">       Use specified graph for result.  Otherwise a new graph is created.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">        Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -560,7 +543,7 @@
 <span class="sd">    &gt;&gt;&gt; G = nx.Graph(edgelist) # use Graph constructor</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">_prep_create_using</span><span class="p">(</span><span class="n">create_using</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edgelist</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">G</span></div>
 </pre></div>
@@ -576,7 +559,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -598,7 +581,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

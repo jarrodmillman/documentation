@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.operators.product &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.algorithms.operators.product &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -278,8 +278,8 @@
 
 <span class="k">def</span> <span class="nf">_init_product_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="o">==</span> <span class="n">H</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;G and H must be both directed or&quot;</span><span class="p">,</span>
-                               <span class="s2">&quot;both undirected&quot;</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;G and H must be both directed or both undirected&quot;</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">()</span> <span class="ow">or</span> <span class="n">H</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="n">GH</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
@@ -388,9 +388,6 @@
 <span class="sd">    Edge attributes and edge keys (for multigraphs) are also copied to the</span>
 <span class="sd">    new product graph</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="o">==</span> <span class="n">H</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;G and H must be both directed or&quot;</span><span class="p">,</span>
-                               <span class="s2">&quot;both undirected&quot;</span><span class="p">)</span>
     <span class="n">GH</span> <span class="o">=</span> <span class="n">_init_product_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
     <span class="n">GH</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">_node_product</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">))</span>
     <span class="n">GH</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">_edges_cross_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">))</span>
@@ -643,7 +640,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -665,7 +662,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

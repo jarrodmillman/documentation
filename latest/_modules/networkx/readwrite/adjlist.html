@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.adjlist &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.readwrite.adjlist &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -315,8 +315,8 @@
 <span class="sd">    lines : list or iterator of strings</span>
 <span class="sd">        Input data in adjlist format</span>
 
-<span class="sd">    create_using: NetworkX graph container</span>
-<span class="sd">       Use given NetworkX graph for holding nodes or edges.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    nodetype : Python type, optional</span>
 <span class="sd">       Convert nodes to this type.</span>
@@ -352,15 +352,7 @@
 <span class="sd">    read_adjlist</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">G</span> <span class="o">=</span> <span class="n">create_using</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Input graph is not a NetworkX graph type&quot;</span><span class="p">)</span>
-
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">comments</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">p</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
@@ -398,8 +390,8 @@
 <span class="sd">       Filename or file handle to read.</span>
 <span class="sd">       Filenames ending in .gz or .bz2 will be uncompressed.</span>
 
-<span class="sd">    create_using: NetworkX graph container</span>
-<span class="sd">       Use given NetworkX graph for holding nodes or edges.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    nodetype : Python type, optional</span>
 <span class="sd">       Convert nodes to this type.</span>
@@ -443,11 +435,11 @@
 <span class="sd">    Since nodes must be hashable, the function nodetype must return hashable</span>
 <span class="sd">    types (e.g. int, float, str, frozenset - or tuples of those, etc.)</span>
 
-<span class="sd">    The optional create_using parameter is a NetworkX graph container.</span>
-<span class="sd">    The default is Graph(), an undirected graph.  To read the data as</span>
-<span class="sd">    a directed graph use</span>
+<span class="sd">    The optional create_using parameter indicates the type of NetworkX graph</span>
+<span class="sd">    created.  The default is `nx.Graph`, an undirected graph.</span>
+<span class="sd">    To read the data as a directed graph use</span>
 
-<span class="sd">    &gt;&gt;&gt; G=nx.read_adjlist(&quot;test.adjlist&quot;, create_using=nx.DiGraph())</span>
+<span class="sd">    &gt;&gt;&gt; G=nx.read_adjlist(&quot;test.adjlist&quot;, create_using=nx.DiGraph)</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -485,7 +477,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -507,7 +499,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

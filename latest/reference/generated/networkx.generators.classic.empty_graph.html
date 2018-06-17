@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.classic.empty_graph &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.generators.classic.empty_graph &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -225,7 +225,7 @@
 <h1>networkx.generators.classic.empty_graph<a class="headerlink" href="#networkx-generators-classic-empty-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.classic.empty_graph">
-<code class="descname">empty_graph</code><span class="sig-paren">(</span><em>n=0</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/classic.html#empty_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.classic.empty_graph" title="Permalink to this definition">¶</a></dt>
+<code class="descname">empty_graph</code><span class="sig-paren">(</span><em>n=0</em>, <em>create_using=None</em>, <em>default=&lt;class 'networkx.classes.graph.Graph'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/classic.html#empty_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.classic.empty_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the empty graph with n nodes and zero edges.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -234,8 +234,15 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>n</strong> (<em>int or iterable container of nodes (default = 0)</em>) – If n is an integer, nodes are from <code class="xref py py-obj docutils literal notranslate"><span class="pre">range(n)</span></code>.
 If n is a container of nodes, those nodes appear in the graph.</li>
-<li><strong>create_using</strong> (<em>Graph, optional (default Graph())</em>) – If provided this graph is cleared of nodes and edges and filled
-with the new graph. Usually used to set the type of the graph.</li>
+<li><strong>create_using</strong> (<em>Graph Instance, Constructor or None</em>) – Indicator of type of graph to return.
+If a Graph-type instance, then clear and use it.
+If None, use the <code class="xref py py-obj docutils literal notranslate"><span class="pre">default</span></code> constructor.
+If a constructor, call it to create an empty graph.</li>
+<li><strong>default</strong> (<em>Graph constructor (optional, default = nx.Graph)</em>) – The constructor to use if create_using is None.
+If None, then nx.Graph is used.
+This is used when passing an unknown <code class="xref py py-obj docutils literal notranslate"><span class="pre">create_using</span></code> value
+through your home-grown function to <a class="reference internal" href="#networkx.generators.classic.empty_graph" title="networkx.generators.classic.empty_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">empty_graph</span></code></a> and
+you want a default constructor other than nx.Graph.</li>
 </ul>
 </td>
 </tr>
@@ -255,16 +262,18 @@ with the new graph. Usually used to set the type of the graph.</li>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>The variable create_using should point to a “graph”-like object that
+<p>The variable create_using should be a Graph Constructor or a
+“graph”-like object. Constructors, e.g. <code class="xref py py-obj docutils literal notranslate"><span class="pre">nx.Graph</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">nx.MultiGraph</span></code>
+will be used to create the returned graph. “graph”-like objects
 will be cleared (nodes and edges will be removed) and refitted as
 an empty “graph” with nodes specified in n. This capability
 is useful for specifying the class-nature of the resulting empty
 “graph” (i.e. Graph, DiGraph, MyWeirdGraphClass, etc.).</p>
-<p>The variable create_using has two main uses:
+<p>The variable create_using has three main uses:
 Firstly, the variable create_using can be used to create an
 empty digraph, multigraph, etc.  For example,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>will create an empty digraph on n nodes.</p>
@@ -273,6 +282,22 @@ etc.) via create_using. For example, if G is an existing graph
 (resp. digraph, multigraph, etc.), then empty_graph(n, create_using=G)
 will empty G (i.e. delete all nodes and edges using G.clear())
 and then add n nodes and zero edges, and return the modified graph.</p>
+<p>Thirdly, when constructing your home-grown graph creation function
+you can use empty_graph to construct the graph by passing a user
+defined create_using to empty_graph. In this case, if you want the
+default constructor to be other than nx.Graph, specify <code class="xref py py-obj docutils literal notranslate"><span class="pre">default</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">mygraph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">G</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
 <p>See also create_empty_copy(G).</p>
 </dd></dl>
 
@@ -299,7 +324,7 @@ and then add n nodes and zero edges, and return the modified graph.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -321,7 +346,7 @@ and then add n nodes and zero edges, and return the modified graph.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

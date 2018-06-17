@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_agraph &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.drawing.nx_agraph &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -203,8 +203,8 @@
 <span class="sd">    A : PyGraphviz AGraph</span>
 <span class="sd">      A graph created with PyGraphviz</span>
 
-<span class="sd">    create_using : NetworkX graph class instance</span>
-<span class="sd">      The output is created using the given graph class instance</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -230,14 +230,14 @@
     <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">is_strict</span><span class="p">():</span>
-                <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+                <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
+                <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">is_strict</span><span class="p">():</span>
-                <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+                <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
+                <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span>
 
     <span class="c1"># assign defaults</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
@@ -636,7 +636,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -658,7 +658,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.2 &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>Announcement: NetworkX 2.2 &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -180,6 +180,11 @@ G.root_graph. It turns out this was an avoidable construct anyway.</p>
 </div>
 <div class="section" id="api-changes">
 <h2>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h2>
+<p>empty_graph has taken over the functionality from
+nx.convert._prep_create_using which was removed.</p>
+<p>create_using should now be a Graph Constructor like nx.Graph or nx.DiGraph.
+It can still be a graph class which will be cleared before use, but the
+preferred use is a constructor.</p>
 </div>
 <div class="section" id="deprecations">
 <h2>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h2>
@@ -206,7 +211,7 @@ G.root_graph. It turns out this was an avoidable construct anyway.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -228,7 +233,7 @@ G.root_graph. It turns out this was an avoidable construct anyway.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

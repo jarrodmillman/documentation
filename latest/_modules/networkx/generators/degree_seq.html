@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.degree_seq &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.generators.degree_seq &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -243,8 +243,7 @@
 <span class="sd">    ``deg_sequence`` is a list of nonnegative integers representing the</span>
 <span class="sd">    degree of the node whose label is the index of the list element.</span>
 
-<span class="sd">    ``create_using`` is a NetworkX graph instance. For more information</span>
-<span class="sd">    on this keyword argument, see :func:`~networkx.empty_graph`.</span>
+<span class="sd">    ``create_using`` see :func:`~networkx.empty_graph`.</span>
 
 <span class="sd">    ``directed`` and ``in_deg_sequence`` are required if you want the</span>
 <span class="sd">    returned graph to be generated using the directed configuration</span>
@@ -272,7 +271,7 @@
     <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">)</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">create_using</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="c1"># If empty, return the null graph immediately.</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">G</span>
@@ -317,8 +316,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    deg_sequence :  list of nonnegative integers</span>
 <span class="sd">        Each list entry corresponds to the degree of a node.</span>
-<span class="sd">    create_using : graph, optional (default MultiGraph)</span>
-<span class="sd">       Return graph of this type. The instance will be cleared.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default MultiGraph)</span>
+<span class="sd">        Graph type to create. If graph instance, then cleared before populated.</span>
 <span class="sd">    seed : hashable object, optional</span>
 <span class="sd">        Seed for random number generator.</span>
 
@@ -397,12 +396,11 @@
         <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Invalid degree sequence: sum of degrees must be even, not odd&#39;</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNotImplemented</span><span class="p">(</span><span class="s1">&#39;not implemented for directed graphs&#39;</span><span class="p">)</span>
 
-    <span class="n">G</span> <span class="o">=</span> <span class="n">_configuration_model</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">_configuration_model</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">G</span></div>
 
@@ -422,8 +420,8 @@
 <span class="sd">       Each list entry corresponds to the in-degree of a node.</span>
 <span class="sd">    out_degree_sequence :  list of nonnegative integers</span>
 <span class="sd">       Each list entry corresponds to the out-degree of a node.</span>
-<span class="sd">    create_using : graph, optional (default MultiDiGraph)</span>
-<span class="sd">       Return graph of this type. The instance will be cleared.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default MultiDiGraph)</span>
+<span class="sd">        Graph type to create. If graph instance, then cleared before populated.</span>
 <span class="sd">    seed : hashable object, optional</span>
 <span class="sd">        Seed for random number generator.</span>
 
@@ -493,7 +491,7 @@
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">()</span>
+        <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span>
 
     <span class="n">G</span> <span class="o">=</span> <span class="n">_configuration_model</span><span class="p">(</span><span class="n">out_degree_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                              <span class="n">in_deg_sequence</span><span class="o">=</span><span class="n">in_degree_sequence</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
@@ -619,8 +617,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    deg_sequence: list of integers</span>
 <span class="sd">        Each integer corresponds to the degree of a node (need not be sorted).</span>
-<span class="sd">    create_using : graph, optional (default Graph)</span>
-<span class="sd">        Return graph of this type. The instance will be cleared.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">        Graph type to create. If graph instance, then cleared before populated.</span>
 <span class="sd">        Directed graphs are not allowed.</span>
 
 <span class="sd">    Raises</span>
@@ -652,11 +650,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_graphical</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Invalid degree sequence&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed graphs are not supported&quot;</span><span class="p">)</span>
 
     <span class="n">p</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">)</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed graphs are not supported&quot;</span><span class="p">)</span>
     <span class="n">num_degs</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span>
     <span class="n">dmax</span><span class="p">,</span> <span class="n">dsum</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">deg_sequence</span><span class="p">:</span>
@@ -711,11 +709,11 @@
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    in_deg_sequence :  list of integers</span>
-<span class="sd">       Each list entry corresponds to the in-degree of a node.</span>
+<span class="sd">        Each list entry corresponds to the in-degree of a node.</span>
 <span class="sd">    out_deg_sequence : list of integers</span>
-<span class="sd">       Each list entry corresponds to the out-degree of a node.</span>
-<span class="sd">    create_using : graph, optional (default DiGraph)</span>
-<span class="sd">       Return graph of this type. The instance will be cleared.</span>
+<span class="sd">        Each list entry corresponds to the out-degree of a node.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default DiGraph)</span>
+<span class="sd">        Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -746,15 +744,12 @@
     <span class="k">assert</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">is_list_of_ints</span><span class="p">(</span><span class="n">in_deg_sequence</span><span class="p">))</span>
     <span class="k">assert</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">is_list_of_ints</span><span class="p">(</span><span class="n">out_deg_sequence</span><span class="p">))</span>
 
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
-
     <span class="c1"># Process the sequences and form two heaps to store degree pairs with</span>
     <span class="c1"># either zero or nonzero out degrees</span>
     <span class="n">sumin</span><span class="p">,</span> <span class="n">sumout</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="n">nin</span><span class="p">,</span> <span class="n">nout</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_deg_sequence</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">out_deg_sequence</span><span class="p">)</span>
     <span class="n">maxn</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nin</span><span class="p">,</span> <span class="n">nout</span><span class="p">)</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="n">maxn</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="n">maxn</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">maxn</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">G</span>
     <span class="n">maxin</span> <span class="o">=</span> <span class="mi">0</span>
@@ -833,7 +828,8 @@
         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Invalid degree sequence: tree must have number of nodes equal&#39;</span>
                <span class="s1">&#39; to one less than the number of edges&#39;</span><span class="p">)</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
 
     <span class="c1"># Sort all degrees greater than 1 in decreasing order.</span>
@@ -843,7 +839,7 @@
 
     <span class="c1"># make path graph as backbone</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">add_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
     <span class="n">last</span> <span class="o">=</span> <span class="n">n</span>
 
     <span class="c1"># add the leaves</span>
@@ -1042,7 +1038,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -1064,7 +1060,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

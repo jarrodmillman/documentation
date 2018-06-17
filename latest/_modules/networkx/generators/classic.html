@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.classic &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.generators.classic &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -245,9 +245,8 @@
 <span class="sd">        branching factor of the tree</span>
 <span class="sd">    n : int</span>
 <span class="sd">        Number of nodes in the tree</span>
-<span class="sd">    create_using : Graph, optional (default None)</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -276,9 +275,8 @@
 <span class="sd">    h : int</span>
 <span class="sd">        Height of the tree.</span>
 
-<span class="sd">    create_using : Graph, optional (default None)</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -331,8 +329,6 @@
 <span class="sd">    and Jim Fill&#39;s e-text on Random Walks on Graphs.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">m1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span>
             <span class="s2">&quot;Invalid graph description, m1 should be &gt;=2&quot;</span><span class="p">)</span>
@@ -342,6 +338,8 @@
 
     <span class="c1"># left barbell</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">complete_graph</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
 
     <span class="c1"># connecting path</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
@@ -366,9 +364,8 @@
 <span class="sd">    n : int or iterable container of nodes</span>
 <span class="sd">        If n is an integer, nodes are from range(n).</span>
 <span class="sd">        If n is a container of nodes, those nodes appear in the graph.</span>
-<span class="sd">    create_using : Graph, optional (default None)</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -426,9 +423,8 @@
 <span class="sd">        The number of vertices the generated graph is to contain.</span>
 <span class="sd">    offsets : list of integers</span>
 <span class="sd">        A list of vertex offsets, $x_1$ up to $x_m$, as described above.</span>
-<span class="sd">    create_using : Graph, optional (default None)</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -476,9 +472,8 @@
 <span class="sd">    n : int or iterable container of nodes</span>
 <span class="sd">        If n is an integer, nodes are from `range(n)`.</span>
 <span class="sd">        If n is a container of nodes, those nodes appear in the graph.</span>
-<span class="sd">    create_using : Graph, optional (default Graph())</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -499,12 +494,12 @@
 <span class="sd">    See: arXiv:/cond-mat/0112143 by Dorogovtsev, Goltsev and Mendes.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-            <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
-            <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Multigraph not supported&quot;</span><span class="p">)</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Multigraph not supported&quot;</span><span class="p">)</span>
+
     <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">G</span>
@@ -520,7 +515,7 @@
 
 
 <div class="viewcode-block" id="empty_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.empty_graph.html#networkx.generators.classic.empty_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">empty_graph</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">empty_graph</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return the empty graph with n nodes and zero edges.</span>
 
 <span class="sd">    Parameters</span>
@@ -528,9 +523,17 @@
 <span class="sd">    n : int or iterable container of nodes (default = 0)</span>
 <span class="sd">        If n is an integer, nodes are from `range(n)`.</span>
 <span class="sd">        If n is a container of nodes, those nodes appear in the graph.</span>
-<span class="sd">    create_using : Graph, optional (default Graph())</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : Graph Instance, Constructor or None</span>
+<span class="sd">        Indicator of type of graph to return.</span>
+<span class="sd">        If a Graph-type instance, then clear and use it.</span>
+<span class="sd">        If None, use the `default` constructor.</span>
+<span class="sd">        If a constructor, call it to create an empty graph.</span>
+<span class="sd">    default : Graph constructor (optional, default = nx.Graph)</span>
+<span class="sd">        The constructor to use if create_using is None.</span>
+<span class="sd">        If None, then nx.Graph is used.</span>
+<span class="sd">        This is used when passing an unknown `create_using` value</span>
+<span class="sd">        through your home-grown function to `empty_graph` and</span>
+<span class="sd">        you want a default constructor other than nx.Graph.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -547,18 +550,20 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The variable create_using should point to a &quot;graph&quot;-like object that</span>
+<span class="sd">    The variable create_using should be a Graph Constructor or a</span>
+<span class="sd">    &quot;graph&quot;-like object. Constructors, e.g. `nx.Graph` or `nx.MultiGraph`</span>
+<span class="sd">    will be used to create the returned graph. &quot;graph&quot;-like objects</span>
 <span class="sd">    will be cleared (nodes and edges will be removed) and refitted as</span>
 <span class="sd">    an empty &quot;graph&quot; with nodes specified in n. This capability</span>
 <span class="sd">    is useful for specifying the class-nature of the resulting empty</span>
 <span class="sd">    &quot;graph&quot; (i.e. Graph, DiGraph, MyWeirdGraphClass, etc.).</span>
 
-<span class="sd">    The variable create_using has two main uses:</span>
+<span class="sd">    The variable create_using has three main uses:</span>
 <span class="sd">    Firstly, the variable create_using can be used to create an</span>
 <span class="sd">    empty digraph, multigraph, etc.  For example,</span>
 
 <span class="sd">    &gt;&gt;&gt; n = 10</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.empty_graph(n, create_using=nx.DiGraph())</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.empty_graph(n, create_using=nx.DiGraph)</span>
 
 <span class="sd">    will create an empty digraph on n nodes.</span>
 
@@ -568,15 +573,34 @@
 <span class="sd">    will empty G (i.e. delete all nodes and edges using G.clear())</span>
 <span class="sd">    and then add n nodes and zero edges, and return the modified graph.</span>
 
+<span class="sd">    Thirdly, when constructing your home-grown graph creation function</span>
+<span class="sd">    you can use empty_graph to construct the graph by passing a user</span>
+<span class="sd">    defined create_using to empty_graph. In this case, if you want the</span>
+<span class="sd">    default constructor to be other than nx.Graph, specify `default`.</span>
+
+<span class="sd">    &gt;&gt;&gt; def mygraph(n, create_using=None):</span>
+<span class="sd">    ...     G = nx.empty_graph(n, create_using, nx.MultiGraph)</span>
+<span class="sd">    ...     G.add_edges_from([(0, 1), (0, 1)])</span>
+<span class="sd">    ...     return G</span>
+<span class="sd">    &gt;&gt;&gt; G = mygraph(3)</span>
+<span class="sd">    &gt;&gt;&gt; G.is_multigraph()</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; G = mygraph(3, nx.Graph)</span>
+<span class="sd">    &gt;&gt;&gt; G.is_multigraph()</span>
+<span class="sd">    False</span>
+
 <span class="sd">    See also create_empty_copy(G).</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="c1"># default empty graph is a simple graph</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">default</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">create_using</span><span class="p">,</span> <span class="s1">&#39;_adj&#39;</span><span class="p">):</span>
+        <span class="c1"># create_using is a NetworkX style Graph</span>
+        <span class="n">create_using</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="n">G</span> <span class="o">=</span> <span class="n">create_using</span>
-        <span class="n">G</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># try create_using as constructor</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">create_using</span><span class="p">()</span>
 
     <span class="n">n_name</span><span class="p">,</span> <span class="n">nodes</span> <span class="o">=</span> <span class="n">n</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
@@ -592,9 +616,9 @@
 <span class="sd">    Node labels are the integers 0 to 2*n - 1.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">)))</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
@@ -615,9 +639,8 @@
 
 <span class="sd">        The nodes for m appear in the complete graph $K_m$ and the nodes</span>
 <span class="sd">        for n appear in the path $P_n$</span>
-<span class="sd">    create_using : Graph, optional (default Graph())</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -634,8 +657,6 @@
     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_nodes</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
         <span class="n">n_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">m_nodes</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n_nodes</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">M</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span>
             <span class="s2">&quot;Invalid graph description, m should be &gt;=2&quot;</span><span class="p">)</span>
@@ -645,6 +666,8 @@
 
     <span class="c1"># the ball</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">complete_graph</span><span class="p">(</span><span class="n">m_nodes</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Directed Graph not supported&quot;</span><span class="p">)</span>
     <span class="c1"># the stick</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">n_nodes</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -674,9 +697,8 @@
 <span class="sd">    n : int or iterable</span>
 <span class="sd">        If an integer, node labels are 0 to n with center 0.</span>
 <span class="sd">        If an iterable of nodes, the center is the first.</span>
-<span class="sd">    create_using : Graph, optional (default Graph())</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">n_name</span><span class="p">,</span> <span class="n">nodes</span> <span class="o">=</span> <span class="n">n</span>
@@ -696,9 +718,8 @@
 <span class="sd">    n : int or iterable</span>
 <span class="sd">        If an integer, node labels are 0 to n with center 0.</span>
 <span class="sd">        If an iterable of nodes, the center is the first.</span>
-<span class="sd">    create_using : Graph, optional (default Graph())</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -768,15 +789,14 @@
 <span class="sd">    n : int or iterable</span>
 <span class="sd">        If an integer, node labels are 0 to n with center 0.</span>
 <span class="sd">        If an iterable of nodes, the center is the first.</span>
-<span class="sd">    create_using : Graph, optional (default Graph())</span>
-<span class="sd">        If provided this graph is cleared of nodes and edges and filled</span>
-<span class="sd">        with the new graph. Usually used to set the type of the graph.</span>
-<span class="sd">    Node labels are the integers 0 to n - 1.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
+<span class="sd">    Node labels are the integers 0 to n - 1.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">n_name</span><span class="p">,</span> <span class="n">nodes</span> <span class="o">=</span> <span class="n">n</span>
     <span class="k">if</span> <span class="n">n_name</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">create_using</span><span class="p">)</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">G</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">star_graph</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
@@ -880,7 +900,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -902,7 +922,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

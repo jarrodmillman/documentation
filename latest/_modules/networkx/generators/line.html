@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.line &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.generators.line &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -200,6 +200,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    G : graph</span>
 <span class="sd">        A NetworkX Graph, DiGraph, MultiGraph, or MultiDigraph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -331,14 +333,12 @@
 <span class="sd">    ----------</span>
 <span class="sd">    G : digraph</span>
 <span class="sd">        A directed graph or directed multigraph.</span>
-<span class="sd">    create_using : None</span>
-<span class="sd">        A digraph instance used to populate the line graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
+<span class="sd">       Default is to use the same graph class as `G`.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">L</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">L</span> <span class="o">=</span> <span class="n">create_using</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">)</span>
 
     <span class="c1"># Create a graph specific edge function.</span>
     <span class="n">get_edges</span> <span class="o">=</span> <span class="n">_edge_func</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -367,8 +367,8 @@
 <span class="sd">    selfloops : bool</span>
 <span class="sd">        If `True`, then self-loops are included in the line graph. If `False`,</span>
 <span class="sd">        they are excluded.</span>
-<span class="sd">    create_using : None</span>
-<span class="sd">        A graph instance used to populate the line graph.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -376,10 +376,7 @@
 <span class="sd">    produce self-loops.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">L</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">L</span> <span class="o">=</span> <span class="n">create_using</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">)</span>
 
     <span class="c1"># Graph specific functions for edges and sorted nodes.</span>
     <span class="n">get_edges</span> <span class="o">=</span> <span class="n">_edge_func</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -677,7 +674,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -699,7 +696,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

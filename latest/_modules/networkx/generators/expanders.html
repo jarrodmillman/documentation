@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.expanders &mdash; NetworkX 2.2rc1.dev20180616174251 documentation</title>
+  <title>networkx.generators.expanders &mdash; NetworkX 2.2rc1.dev20180617054307 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180616174251 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180617054307 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180616174251
+                2.2rc1.dev_20180617054307
               </div>
             
           
@@ -215,9 +215,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    n : int</span>
 <span class="sd">        Determines the number of nodes in the graph: `n^2`.</span>
-<span class="sd">    create_using : graph-like</span>
-<span class="sd">        A graph-like object that receives the constructed edges. If None,</span>
-<span class="sd">        then a :class:`~networkx.MultiGraph` instance is used.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default MultiGraph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -230,14 +229,11 @@
 <span class="sd">        If the graph is directed or not a multigraph.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;`create_using` must be an undirected multigraph.&quot;</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-    <span class="n">G</span> <span class="o">=</span> <span class="n">create_using</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(((</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">%</span> <span class="n">n</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
                        <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">%</span> <span class="n">n</span><span class="p">)):</span>
@@ -262,9 +258,8 @@
 <span class="sd">        The number of vertices in the graph. This also indicates where the</span>
 <span class="sd">        chordal edges in the cycle will be created.</span>
 
-<span class="sd">    create_using : graph-like</span>
-<span class="sd">        A graph-like object that receives the constructed edges. If None,</span>
-<span class="sd">        then a :class:`~networkx.MultiGraph` instance is used.</span>
+<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
+<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -275,8 +270,7 @@
 <span class="sd">    ------</span>
 <span class="sd">    NetworkXError</span>
 
-<span class="sd">        If the graph provided in `create_using` is directed or not a</span>
-<span class="sd">        multigraph.</span>
+<span class="sd">        If `create_using` indicates directed or not a multigraph.</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
@@ -286,13 +280,11 @@
 <span class="sd">           Birkhäuser Verlag, Basel, 1994.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">create_using</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">create_using</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">empty_graph</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">create_using</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;`create_using` must be an undirected multigraph.&quot;</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">create_using</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
         <span class="n">left</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span>
         <span class="n">right</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span>
@@ -324,7 +316,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 16, 2018.
+      Last updated on Jun 17, 2018.
 
     </p>
   </div>
@@ -346,7 +338,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180616174251',
+            VERSION:'2.2rc1.dev20180617054307',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
