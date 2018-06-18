@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pydot &mdash; NetworkX 2.2rc1.dev20180617211933 documentation</title>
+  <title>networkx.drawing.nx_pydot &mdash; NetworkX 2.2rc1.dev20180618135116 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180617211933 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180618135116 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180617211933
+                2.2rc1.dev_20180618135116
               </div>
             
           
@@ -390,7 +390,8 @@
 
     <span class="k">if</span> <span class="n">N</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">edgedata</span> <span class="ow">in</span> <span class="n">N</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-            <span class="n">str_edgedata</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">edgedata</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;key&#39;</span><span class="p">)</span>
+            <span class="n">str_edgedata</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">edgedata</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                                <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;key&#39;</span><span class="p">)</span>
             <span class="n">edge</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">make_str</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">),</span>
                               <span class="n">key</span><span class="o">=</span><span class="n">make_str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="o">**</span><span class="n">str_edgedata</span><span class="p">)</span>
             <span class="n">P</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
@@ -422,8 +423,8 @@
 
 
 <span class="c1"># FIXME: Document the &quot;root&quot; parameter.</span>
-<span class="c1"># FIXME: Why does this function accept a variadic dictionary of keyword arguments</span>
-<span class="c1"># (i.e., &quot;**kwds&quot;) but fail to do anything with those arguments? This is probably</span>
+<span class="c1"># FIXME: Why does this function accept a variadic dict of keyword arguments</span>
+<span class="c1"># (i.e., &quot;**kwds&quot;) but fail to do anything with them? This is probably</span>
 <span class="c1"># wrong, as unrecognized keyword arguments will be silently ignored.</span>
 <div class="viewcode-block" id="pydot_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pydot.pydot_layout.html#networkx.drawing.nx_pydot.pydot_layout">[docs]</a><span class="k">def</span> <span class="nf">pydot_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;neato&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Create node positions using :mod:`pydot` and Graphviz.</span>
@@ -434,7 +435,7 @@
 <span class="sd">        NetworkX graph to be laid out.</span>
 <span class="sd">    prog : optional[str]</span>
 <span class="sd">        Basename of the GraphViz command with which to layout this graph.</span>
-<span class="sd">        Defaults to `neato`, the default GraphViz command for undirected graphs.</span>
+<span class="sd">        Defaults to `neato`: default GraphViz command for undirected graphs.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    --------</span>
@@ -446,6 +447,19 @@
 <span class="sd">    &gt;&gt;&gt; G = nx.complete_graph(4)</span>
 <span class="sd">    &gt;&gt;&gt; pos = nx.nx_pydot.pydot_layout(G)</span>
 <span class="sd">    &gt;&gt;&gt; pos = nx.nx_pydot.pydot_layout(G, prog=&#39;dot&#39;)</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    If you use complex node objects, they may have the same string</span>
+<span class="sd">    representation and GraphViz could treat them as the same node.</span>
+<span class="sd">    The layout may assign both nodes a single location. See Issue #1568</span>
+<span class="sd">    If this occurs in your case, consider relabeling the nodes just</span>
+<span class="sd">    for the layout computation using something similar to:</span>
+
+<span class="sd">        H = nx.convert_node_labels_to_integers(G, label_attribute=&#39;node_label&#39;)</span>
+<span class="sd">        H_layout = nx.nx_pydot.pydot_layout(G, prog=&#39;dot&#39;)</span>
+<span class="sd">        G_layout = {H.nodes[n][&#39;node_label&#39;]: p for n, p in H_layout.items()}</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">pydot</span> <span class="o">=</span> <span class="n">_import_pydot</span><span class="p">()</span>
     <span class="n">P</span> <span class="o">=</span> <span class="n">to_pydot</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -456,7 +470,7 @@
     <span class="c1"># from the passed graph with the passed external GraphViz command.</span>
     <span class="n">D_bytes</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">create_dot</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="n">prog</span><span class="p">)</span>
 
-    <span class="c1"># Unique string decoded from these bytes with the preferred locale encoding.</span>
+    <span class="c1"># Unique string decoded from these bytes with the preferred locale encoding</span>
     <span class="n">D</span> <span class="o">=</span> <span class="n">unicode</span><span class="p">(</span><span class="n">D_bytes</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">getpreferredencoding</span><span class="p">())</span>
 
     <span class="k">if</span> <span class="n">D</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>  <span class="c1"># no data returned</span>
@@ -540,7 +554,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 17, 2018.
+      Last updated on Jun 18, 2018.
 
     </p>
   </div>
@@ -562,7 +576,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180617211933',
+            VERSION:'2.2rc1.dev20180618135116',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

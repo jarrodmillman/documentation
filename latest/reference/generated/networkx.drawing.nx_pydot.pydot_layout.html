@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pydot.pydot_layout &mdash; NetworkX 2.2rc1.dev20180617211933 documentation</title>
+  <title>networkx.drawing.nx_pydot.pydot_layout &mdash; NetworkX 2.2rc1.dev20180618135116 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180617211933 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180618135116 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180617211933
+                2.2rc1.dev_20180618135116
               </div>
             
           
@@ -207,7 +207,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>G</strong> (<em>Graph</em>) – NetworkX graph to be laid out.</li>
 <li><strong>prog</strong> (<em>optional[str]</em>) – Basename of the GraphViz command with which to layout this graph.
-Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">neato</span></code>, the default GraphViz command for undirected graphs.</li>
+Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">neato</span></code>: default GraphViz command for undirected graphs.</li>
 </ul>
 </td>
 </tr>
@@ -225,6 +225,16 @@ Defaults to <code class="xref py py-obj docutils literal notranslate"><span clas
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">nx_pydot</span><span class="o">.</span><span class="n">pydot_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;dot&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="rubric">Notes</p>
+<p>If you use complex node objects, they may have the same string
+representation and GraphViz could treat them as the same node.
+The layout may assign both nodes a single location. See Issue #1568
+If this occurs in your case, consider relabeling the nodes just
+for the layout computation using something similar to:</p>
+<blockquote>
+<div>H = nx.convert_node_labels_to_integers(G, label_attribute=’node_label’)
+H_layout = nx.nx_pydot.pydot_layout(G, prog=’dot’)
+G_layout = {H.nodes[n][‘node_label’]: p for n, p in H_layout.items()}</div></blockquote>
 </dd></dl>
 
 </div>
@@ -250,7 +260,7 @@ Defaults to <code class="xref py py-obj docutils literal notranslate"><span clas
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 17, 2018.
+      Last updated on Jun 18, 2018.
 
     </p>
   </div>
@@ -272,7 +282,7 @@ Defaults to <code class="xref py py-obj docutils literal notranslate"><span clas
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180617211933',
+            VERSION:'2.2rc1.dev20180618135116',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
