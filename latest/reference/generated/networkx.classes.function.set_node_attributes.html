@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.function.set_node_attributes &mdash; NetworkX 2.2rc1.dev20180618135116 documentation</title>
+  <title>networkx.classes.function.set_node_attributes &mdash; NetworkX 2.2rc1.dev20180620020958 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180618135116 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180620020958 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180618135116
+                2.2rc1.dev_20180620020958
               </div>
             
           
@@ -215,10 +215,11 @@ switched between v1.x &amp; v2.x.</p>
 not a dictionary, then it is treated as a single attribute value
 that is then applied to every node in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.  This means that if
 you provide a mutable object, like a list, updates to that object
-will be reflected in the node attribute for each edge.  The attribute
-name will be <code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code> is a dict or a dict of dict, the corresponding node’s
-attributes will be updated to <code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code>.</p>
+will be reflected in the node attribute for every node.
+The attribute name will be <code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code> is a dict or a dict of dict, it should be keyed
+by node to either an attribute value or a dict of attribute key/value
+pairs used to update the node’s attributes.</p>
 </li>
 <li><p class="first"><strong>name</strong> (<em>string (optional, default=None)</em>) – Name of the node attribute to set if values is a scalar.</p>
 </li>
@@ -255,7 +256,8 @@ will be reflected in the node attribute for each node:</p>
 </pre></div>
 </div>
 <p>If you provide a dictionary of dictionaries as the second argument,
-the entire dictionary will be used to update node attributes:</p>
+the outer dictionary is assumed to be keyed by node to an inner
+dictionary of node attributes for that node:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;attr1&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;attr2&#39;</span><span class="p">:</span> <span class="s1">&#39;nothing&#39;</span><span class="p">},</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;attr2&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
@@ -294,7 +296,7 @@ the entire dictionary will be used to update node attributes:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 18, 2018.
+      Last updated on Jun 20, 2018.
 
     </p>
   </div>
@@ -316,7 +318,7 @@ the entire dictionary will be used to update node attributes:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180618135116',
+            VERSION:'2.2rc1.dev20180620020958',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

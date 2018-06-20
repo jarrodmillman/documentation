@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.graph &mdash; NetworkX 2.2rc1.dev20180618135116 documentation</title>
+  <title>networkx.classes.graph &mdash; NetworkX 2.2rc1.dev20180620020958 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180618135116 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180620020958 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180618135116
+                2.2rc1.dev_20180620020958
               </div>
             
           
@@ -1485,9 +1485,9 @@
 <div class="viewcode-block" id="Graph.copy"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.copy.html#networkx.Graph.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy of the graph.</span>
 
-<span class="sd">        The copy method by default returns a shallow copy of the graph</span>
-<span class="sd">        and attributes. That is, if an attribute is a container, that</span>
-<span class="sd">        container is shared by the original an the copy.</span>
+<span class="sd">        The copy method by default returns an independent shallow copy</span>
+<span class="sd">        of the graph and attributes. That is, if an attribute is a</span>
+<span class="sd">        container, that container is shared by the original an the copy.</span>
 <span class="sd">        Use Python&#39;s `copy.deepcopy` for new containers.</span>
 
 <span class="sd">        If `as_view` is True then a view is returned instead of a copy.</span>
@@ -1498,11 +1498,10 @@
 <span class="sd">        may be handled in different ways. There are four types of copies</span>
 <span class="sd">        of a graph that people might want.</span>
 
-<span class="sd">        Deepcopy -- The default behavior is a &quot;deepcopy&quot; where the graph</span>
-<span class="sd">        structure as well as all data attributes and any objects they might</span>
-<span class="sd">        contain are copied. The entire graph object is new so that changes</span>
-<span class="sd">        in the copy do not affect the original object. (see Python&#39;s</span>
-<span class="sd">        copy.deepcopy)</span>
+<span class="sd">        Deepcopy -- A &quot;deepcopy&quot; copies the graph structure as well as</span>
+<span class="sd">        all data attributes and any objects they might contain.</span>
+<span class="sd">        The entire graph object is new so that changes in the copy</span>
+<span class="sd">        do not affect the original object. (see Python&#39;s copy.deepcopy)</span>
 
 <span class="sd">        Data Reference (Shallow) -- For a shallow copy the graph structure</span>
 <span class="sd">        is copied but the edge, node and graph attribute dicts are</span>
@@ -1954,7 +1953,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 18, 2018.
+      Last updated on Jun 20, 2018.
 
     </p>
   </div>
@@ -1976,7 +1975,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180618135116',
+            VERSION:'2.2rc1.dev20180620020958',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

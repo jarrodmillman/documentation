@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.community.asyn_fluidc &mdash; NetworkX 2.2rc1.dev20180618135116 documentation</title>
+  <title>networkx.algorithms.community.asyn_fluidc &mdash; NetworkX 2.2rc1.dev20180620020958 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180618135116 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180620020958 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180618135116
+                2.2rc1.dev_20180620020958
               </div>
             
           
@@ -227,14 +227,13 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Initial checks</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;k muts be an integer.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;k must be an integer.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;k muts be greater than 0.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;k must be greater than 0.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Fluid Communities can only be run on connected</span><span class="se">\</span>
-<span class="s2">        Graphs.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Fluid Communities require connected Graphs.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;k must be greater than graph size.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;k cannot be bigger than the number of nodes.&quot;</span><span class="p">)</span>
     <span class="c1"># Initialization</span>
     <span class="n">max_density</span> <span class="o">=</span> <span class="mf">1.0</span>
     <span class="n">vertices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -318,7 +317,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 18, 2018.
+      Last updated on Jun 20, 2018.
 
     </p>
   </div>
@@ -340,7 +339,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180618135116',
+            VERSION:'2.2rc1.dev20180620020958',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.function &mdash; NetworkX 2.2rc1.dev20180618135116 documentation</title>
+  <title>networkx.classes.function &mdash; NetworkX 2.2rc1.dev20180620020958 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180618135116 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180620020958 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180618135116
+                2.2rc1.dev_20180620020958
               </div>
             
           
@@ -666,6 +666,8 @@
     <span class="sd">&quot;&quot;&quot;Return a directed view of the graph `graph`.</span>
 
 <span class="sd">    Identical to graph.to_directed(as_view=True)</span>
+<span class="sd">    Note that graph.to_directed defaults to `as_view=False`</span>
+<span class="sd">    while this function always provides a view.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">MultiDiGraphView</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
@@ -676,6 +678,8 @@
     <span class="sd">&quot;&quot;&quot;Return an undirected view of the graph `graph`.</span>
 
 <span class="sd">    Identical to graph.to_undirected(as_view=True)</span>
+<span class="sd">    Note that graph.to_undirected defaults to `as_view=False`</span>
+<span class="sd">    while this function always provides a view.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">MultiGraphView</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
@@ -758,11 +762,12 @@
 <span class="sd">        not a dictionary, then it is treated as a single attribute value</span>
 <span class="sd">        that is then applied to every node in `G`.  This means that if</span>
 <span class="sd">        you provide a mutable object, like a list, updates to that object</span>
-<span class="sd">        will be reflected in the node attribute for each edge.  The attribute</span>
-<span class="sd">        name will be `name`.</span>
+<span class="sd">        will be reflected in the node attribute for every node.</span>
+<span class="sd">        The attribute name will be `name`.</span>
 
-<span class="sd">        If `values` is a dict or a dict of dict, the corresponding node&#39;s</span>
-<span class="sd">        attributes will be updated to `values`.</span>
+<span class="sd">        If `values` is a dict or a dict of dict, it should be keyed</span>
+<span class="sd">        by node to either an attribute value or a dict of attribute key/value</span>
+<span class="sd">        pairs used to update the node&#39;s attributes.</span>
 
 <span class="sd">    name : string (optional, default=None)</span>
 <span class="sd">        Name of the node attribute to set if values is a scalar.</span>
@@ -796,7 +801,8 @@
 <span class="sd">        [&#39;foo&#39;]</span>
 
 <span class="sd">    If you provide a dictionary of dictionaries as the second argument,</span>
-<span class="sd">    the entire dictionary will be used to update node attributes::</span>
+<span class="sd">    the outer dictionary is assumed to be keyed by node to an inner</span>
+<span class="sd">    dictionary of node attributes for that node::</span>
 
 <span class="sd">        &gt;&gt;&gt; G = nx.path_graph(3)</span>
 <span class="sd">        &gt;&gt;&gt; attrs = {0: {&#39;attr1&#39;: 20, &#39;attr2&#39;: &#39;nothing&#39;}, 1: {&#39;attr2&#39;: 3}}</span>
@@ -873,11 +879,12 @@
 <span class="sd">        will be reflected in the edge attribute for each edge.  The attribute</span>
 <span class="sd">        name will be `name`.</span>
 
-<span class="sd">        If `values` is a dict or a dict of dict, the corresponding edge&#39;</span>
-<span class="sd">        attributes will be updated to `values`.  For multigraphs, the tuples</span>
-<span class="sd">        must be of the form ``(u, v, key)``, where `u` and `v` are nodes</span>
-<span class="sd">        and `key` is the key corresponding to the edge.  For non-multigraphs,</span>
-<span class="sd">        the keys must be tuples of the form ``(u, v)``.</span>
+<span class="sd">        If `values` is a dict or a dict of dict, it should be keyed</span>
+<span class="sd">        by edge tuple to either an attribute value or a dict of attribute</span>
+<span class="sd">        key/value pairs used to update the edge&#39;s attributes.</span>
+<span class="sd">        For multigraphs, the edge tuples must be of the form ``(u, v, key)``,</span>
+<span class="sd">        where `u` and `v` are nodes and `key` is the edge key.</span>
+<span class="sd">        For non-multigraphs, the keys must be tuples of the form ``(u, v)``.</span>
 
 <span class="sd">    name : string (optional, default=None)</span>
 <span class="sd">        Name of the edge attribute to set if values is a scalar.</span>
@@ -1367,7 +1374,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 18, 2018.
+      Last updated on Jun 20, 2018.
 
     </p>
   </div>
@@ -1389,7 +1396,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180618135116',
+            VERSION:'2.2rc1.dev20180620020958',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

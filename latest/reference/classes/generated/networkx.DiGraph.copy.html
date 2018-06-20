@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.DiGraph.copy &mdash; NetworkX 2.2rc1.dev20180618135116 documentation</title>
+  <title>networkx.DiGraph.copy &mdash; NetworkX 2.2rc1.dev20180620020958 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180618135116 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180620020958 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180618135116
+                2.2rc1.dev_20180620020958
               </div>
             
           
@@ -198,20 +198,19 @@
 <dt id="networkx.DiGraph.copy">
 <code class="descclassname">DiGraph.</code><code class="descname">copy</code><span class="sig-paren">(</span><em>as_view=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/classes/digraph.html#DiGraph.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.DiGraph.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a copy of the graph.</p>
-<p>The copy method by default returns a shallow copy of the graph
-and attributes. That is, if an attribute is a container, that
-container is shared by the original an the copy.
+<p>The copy method by default returns an independent shallow copy
+of the graph and attributes. That is, if an attribute is a
+container, that container is shared by the original an the copy.
 Use Python’s <a class="reference external" href="https://docs.python.org/2/library/copy.html#copy.deepcopy" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy.deepcopy</span></code></a> for new containers.</p>
 <p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">as_view</span></code> is True then a view is returned instead of a copy.</p>
 <p class="rubric">Notes</p>
 <p>All copies reproduce the graph structure, but data attributes
 may be handled in different ways. There are four types of copies
 of a graph that people might want.</p>
-<p>Deepcopy – The default behavior is a “deepcopy” where the graph
-structure as well as all data attributes and any objects they might
-contain are copied. The entire graph object is new so that changes
-in the copy do not affect the original object. (see Python’s
-copy.deepcopy)</p>
+<p>Deepcopy – A “deepcopy” copies the graph structure as well as
+all data attributes and any objects they might contain.
+The entire graph object is new so that changes in the copy
+do not affect the original object. (see Python’s copy.deepcopy)</p>
 <p>Data Reference (Shallow) – For a shallow copy the graph structure
 is copied but the edge, node and graph attribute dicts are
 references to those in the original graph. This saves
@@ -294,7 +293,7 @@ of the original graph without actually copying any data.</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 18, 2018.
+      Last updated on Jun 20, 2018.
 
     </p>
   </div>
@@ -316,7 +315,7 @@ of the original graph without actually copying any data.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180618135116',
+            VERSION:'2.2rc1.dev20180620020958',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
