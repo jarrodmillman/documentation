@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Approximations and Heuristics &mdash; NetworkX 2.2rc1.dev20180620020958 documentation</title>
+  <title>Approximations and Heuristics &mdash; NetworkX 2.2rc1.dev20180628021444 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180620020958 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180628021444 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180620020958
+                2.2rc1.dev_20180628021444
               </div>
             
           
@@ -104,6 +104,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.approximation.matching">Matching</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.approximation.ramsey">Ramsey</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.approximation.steinertree">Steiner Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.approximation.treewidth">Treewidth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.approximation.vertex_cover">Vertex Cover</a></li>
 </ul>
 </li>
@@ -437,6 +438,59 @@ edges; that is, no two edges share a common vertex.</p>
 </tbody>
 </table>
 </div>
+<div class="section" id="module-networkx.algorithms.approximation.treewidth">
+<span id="treewidth"></span><h2>Treewidth<a class="headerlink" href="#module-networkx.algorithms.approximation.treewidth" title="Permalink to this headline">¶</a></h2>
+<p>Functions for computing treewidth decomposition.</p>
+<p>Treewidth of an undirected graph is a number associated with the graph.
+It can be defined as the size of the largest vertex set (bag) in a tree
+decomposition of the graph minus one.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Treewidth">Wikipedia: Treewidth</a></p>
+<p>The notions of treewidth and tree decomposition have gained their
+attractiveness partly because many graph and network problems that are
+intractable (e.g., NP-hard) on arbitrary graphs become efficiently
+solvable (e.g., with a linear time algorithm) when the treewidth of the
+input graphs is bounded by a constant <a class="footnote-reference" href="#id4" id="id2">[1]</a> <a class="footnote-reference" href="#id5" id="id3">[2]</a>.</p>
+<p>There are two different functions for computing a tree decomposition:
+<a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_degree.html#networkx.algorithms.approximation.treewidth.treewidth_min_degree" title="networkx.algorithms.approximation.treewidth.treewidth_min_degree"><code class="xref py py-func docutils literal notranslate"><span class="pre">treewidth_min_degree()</span></code></a> and <a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_fill_in.html#networkx.algorithms.approximation.treewidth.treewidth_min_fill_in" title="networkx.algorithms.approximation.treewidth.treewidth_min_fill_in"><code class="xref py py-func docutils literal notranslate"><span class="pre">treewidth_min_fill_in()</span></code></a>.</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Hans L. Bodlaender and Arie M. C. A. Koster. 2010. “Treewidth
+computations I.Upper bounds”. Inf. Comput. 208, 3 (March 2010),259-275.
+<a class="reference external" href="http://dx.doi.org/10.1016/j.ic.2009.03.008">http://dx.doi.org/10.1016/j.ic.2009.03.008</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Hand L. Bodlaender. “Discovering Treewidth”. Institute of Information
+and Computing Sciences, Utrecht University.
+Technical Report UU-CS-2005-018.
+<a class="reference external" href="http://www.cs.uu.nl">http://www.cs.uu.nl</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>K. Wang, Z. Lu, and J. Hicks <em>Treewidth</em>.
+<a class="reference external" href="http://web.eecs.utk.edu/~cphillip/cs594_spring2015_projects/treewidth.pdf">http://web.eecs.utk.edu/~cphillip/cs594_spring2015_projects/treewidth.pdf</a></td></tr>
+</tbody>
+</table>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_degree.html#networkx.algorithms.approximation.treewidth.treewidth_min_degree" title="networkx.algorithms.approximation.treewidth.treewidth_min_degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">treewidth_min_degree</span></code></a>(G)</td>
+<td>Returns a treewidth decomposition using the Minimum Degree heuristic.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_fill_in.html#networkx.algorithms.approximation.treewidth.treewidth_min_fill_in" title="networkx.algorithms.approximation.treewidth.treewidth_min_fill_in"><code class="xref py py-obj docutils literal notranslate"><span class="pre">treewidth_min_fill_in</span></code></a>(G)</td>
+<td>Returns a treewidth decomposition using the Minimum Fill-in heuristic.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="module-networkx.algorithms.approximation.vertex_cover">
 <span id="vertex-cover"></span><h2>Vertex Cover<a class="headerlink" href="#module-networkx.algorithms.approximation.vertex_cover" title="Permalink to this headline">¶</a></h2>
 <p>Functions for computing an approximate minimum weight vertex cover.</p>
@@ -477,7 +531,7 @@ is incident to at least one node in the subset.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 20, 2018.
+      Last updated on Jun 28, 2018.
 
     </p>
   </div>
@@ -499,7 +553,7 @@ is incident to at least one node in the subset.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180620020958',
+            VERSION:'2.2rc1.dev20180628021444',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
