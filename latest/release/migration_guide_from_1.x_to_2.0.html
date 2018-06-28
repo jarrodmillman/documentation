@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Migration guide from 1.X to 2.0 &mdash; NetworkX 2.2rc1.dev20180628061245 documentation</title>
+  <title>Migration guide from 1.X to 2.0 &mdash; NetworkX 2.2rc1.dev20180628203223 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180628061245 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180628203223 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180628061245
+                2.2rc1.dev_20180628203223
               </div>
             
           
@@ -378,12 +378,11 @@ because it may be a different graph type (directed/undirected) than the view.</p
 <p><code class="docutils literal notranslate"><span class="pre">topolgical_sort</span></code>  no longer accepts <code class="docutils literal notranslate"><span class="pre">reverse</span></code> or <code class="docutils literal notranslate"><span class="pre">nbunch</span></code> arguments.
 If <code class="docutils literal notranslate"><span class="pre">nbunch</span></code> was a single node source, then the same effect can now be achieved
 using the <code class="docutils literal notranslate"><span class="pre">subgraph</span></code> operator:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">topological_sort</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">descendants</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="p">)))</span>
-</pre></div>
-</div>
+<blockquote>
+<div>nx.topological_sort(G.subgraph(nx.descendants(G, nbunch)))</div></blockquote>
 <p>To achieve a reverse topological sort, the output should be converted to a list:</p>
 <blockquote>
-<div>&gt;&gt;&gt;&gt; reversed(list(nx.topological_sort(G)))</div></blockquote>
+<div>reversed(list(nx.topological_sort(G)))</div></blockquote>
 <hr class="docutils" />
 <div class="section" id="writing-code-that-works-for-both-versions">
 <h2>Writing code that works for both versions<a class="headerlink" href="#writing-code-that-works-for-both-versions" title="Permalink to this headline">¶</a></h2>
@@ -493,7 +492,7 @@ and edges to a fresh graph. Try something similar to this:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180628061245',
+            VERSION:'2.2rc1.dev20180628203223',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
