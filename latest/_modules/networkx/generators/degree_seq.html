@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.degree_seq &mdash; NetworkX 2.2rc1.dev20180628052010 documentation</title>
+  <title>networkx.generators.degree_seq &mdash; NetworkX 2.2rc1.dev20180628053121 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180628052010 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180628053121 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180628052010
+                2.2rc1.dev_20180628053121
               </div>
             
           
@@ -277,7 +277,7 @@
         <span class="k">return</span> <span class="n">G</span>
     <span class="c1"># Build a list of available degree-repeated nodes.  For example,</span>
     <span class="c1"># for degree sequence [3, 2, 1, 1, 1], the &quot;stub list&quot; is</span>
-    <span class="c1"># initially [1, 1, 1, 2, 2, 3, 4, 5], that is, node 1 has degree</span>
+    <span class="c1"># initially [0, 0, 0, 1, 1, 2, 3, 4], that is, node 0 has degree</span>
     <span class="c1"># 3 and thus is repeated 3 times, etc.</span>
     <span class="c1">#</span>
     <span class="c1"># Also, shuffle the stub list in order to get a random sequence of</span>
@@ -998,7 +998,6 @@
     <span class="k">def</span> <span class="nf">phase2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># choose remaining nodes uniformly at random and use rejection sampling</span>
         <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">remaining_degree</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dmax</span><span class="p">:</span>
-            <span class="n">norm</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">remaining_degree</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span><span class="o">**</span><span class="mi">2</span>
             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
                 <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">remaining_degree</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
@@ -1060,7 +1059,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180628052010',
+            VERSION:'2.2rc1.dev20180628053121',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
