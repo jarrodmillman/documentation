@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.graphml &mdash; NetworkX 2.2rc1.dev20180628203223 documentation</title>
+  <title>networkx.readwrite.graphml &mdash; NetworkX 2.2rc1.dev20180629134531 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180628203223 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180629134531 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180628203223
+                2.2rc1.dev_20180629134531
               </div>
             
           
@@ -494,6 +494,23 @@
              <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="s2">&quot;long&quot;</span><span class="p">),</span>
              <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="s2">&quot;double&quot;</span><span class="p">),</span>
              <span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">)]</span>
+
+    <span class="c1"># These additions to types allow writing numpy types</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># prepend so that python types are created upon read (last entry wins)</span>
+        <span class="n">types</span> <span class="o">=</span> <span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intc</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                <span class="p">]</span> <span class="o">+</span> <span class="n">types</span>
 
     <span class="n">xml_type</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">types</span><span class="p">)</span>
     <span class="n">python_type</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">types</span><span class="p">)</span>
@@ -1082,7 +1099,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 28, 2018.
+      Last updated on Jun 29, 2018.
 
     </p>
   </div>
@@ -1104,7 +1121,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180628203223',
+            VERSION:'2.2rc1.dev20180629134531',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

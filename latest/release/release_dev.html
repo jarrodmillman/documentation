@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.2 &mdash; NetworkX 2.2rc1.dev20180628203223 documentation</title>
+  <title>Announcement: NetworkX 2.2 &mdash; NetworkX 2.2rc1.dev20180629134531 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180628203223 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180629134531 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180628203223
+                2.2rc1.dev_20180629134531
               </div>
             
           
@@ -177,6 +177,10 @@ X contributors. Highlights include:</p>
 subclassing without memory leaks. Graphs no longer hold references to view.</p>
 <p>Cyclic references between a graph and itself have been removed by eliminating
 G.root_graph. It turns out this was an avoidable construct anyway.</p>
+<p>GraphML can now be written with attributes using numpy numeric types.
+In particular, np.float64 and np.int64 no longer need to convert to Python
+float and int to be written. They are still written as generic floats so
+reading them back in will not make the numpy values.</p>
 </div>
 <div class="section" id="api-changes">
 <h2>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h2>
@@ -217,7 +221,7 @@ Otherwise the first argument is treated as a list of edges.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jun 28, 2018.
+      Last updated on Jun 29, 2018.
 
     </p>
   </div>
@@ -239,7 +243,7 @@ Otherwise the first argument is treated as a list of edges.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180628203223',
+            VERSION:'2.2rc1.dev20180629134531',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
