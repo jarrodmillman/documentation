@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cycles.find_cycle &mdash; NetworkX 2.2rc1.dev20180702190234 documentation</title>
+  <title>networkx.algorithms.cycles.find_cycle &mdash; NetworkX 2.2rc1.dev20180702191644 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180702190234 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180702191644 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180702190234
+                2.2rc1.dev_20180702191644
               </div>
             
           
@@ -247,8 +247,10 @@
 <h1>networkx.algorithms.cycles.find_cycle<a class="headerlink" href="#networkx-algorithms-cycles-find-cycle" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.cycles.find_cycle">
-<code class="descname">find_cycle</code><span class="sig-paren">(</span><em>G</em>, <em>source=None</em>, <em>orientation='original'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/cycles.html#find_cycle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.cycles.find_cycle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the edges of a cycle found via a directed, depth-first traversal.</p>
+<code class="descname">find_cycle</code><span class="sig-paren">(</span><em>G</em>, <em>source=None</em>, <em>orientation=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/cycles.html#find_cycle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.cycles.find_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a cycle found via depth-first traversal.</p>
+<p>The cycle is a list of edges indicating the cyclic path.
+Orientation of directed edges is controlled by <code class="xref py py-obj docutils literal notranslate"><span class="pre">orientation</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -258,28 +260,27 @@
 <li><strong>source</strong> (<em>node, list of nodes</em>) – The node from which the traversal begins. If None, then a source
 is chosen arbitrarily and repeatedly until all edges from each node in
 the graph are searched.</li>
-<li><strong>orientation</strong> (<em>‘original’ | ‘reverse’ | ‘ignore’</em>) – For directed graphs and directed multigraphs, edge traversals need not
-respect the original orientation of the edges. When set to ‘reverse’,
-then every edge will be traversed in the reverse direction. When set to
-‘ignore’, then each directed edge is treated as a single undirected
-edge that can be traversed in either direction. For undirected graphs
-and undirected multigraphs, this parameter is meaningless and is not
-consulted by the algorithm.</li>
+<li><strong>orientation</strong> (<em>None | ‘original’ | ‘reverse’ | ‘ignore’ (default: None)</em>) – For directed graphs and directed multigraphs, edge traversals need not
+respect the original orientation of the edges.
+When set to ‘reverse’ every edge is traversed in the reverse direction.
+When set to ‘ignore’, every edge is treated as undirected.
+When set to ‘original’, every edge is treated as directed.
+In all three cases, the yielded edge tuples add a last entry to
+indicate the direction in which that edge was traversed.
+If orientation is None, the yielded edge has no direction indicated.
+The direction is respected, but not reported.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>edges</strong> – A list of directed edges indicating the path taken for the loop. If
-no cycle is found, then an exception is raised. For graphs, an
-edge is of the form <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> where <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> are the tail and head
-of the edge as determined by the traversal. For multigraphs, an edge is
-of the form <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">key)</span></code>, where <code class="xref py py-obj docutils literal notranslate"><span class="pre">key</span></code> is the key of the edge. When the
-graph is directed, then <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> are always in the order of the
-actual directed edge. If orientation is ‘ignore’, then an edge takes
-the form <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">key,</span> <span class="pre">direction)</span></code> where direction indicates if the edge
-was followed in the forward (tail to head) or reverse (head to tail)
-direction. When the direction is forward, the value of <code class="xref py py-obj docutils literal notranslate"><span class="pre">direction</span></code>
-is ‘forward’. When the direction is reverse, the value of <code class="xref py py-obj docutils literal notranslate"><span class="pre">direction</span></code>
-is ‘reverse’.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>edges</strong> – A list of directed edges indicating the path taken for the loop.
+If no cycle is found, then an exception is raised.
+For graphs, an edge is of the form <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> where <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>
+are the tail and head of the edge as determined by the traversal.
+For multigraphs, an edge is of the form <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">key)</span></code>, where <code class="xref py py-obj docutils literal notranslate"><span class="pre">key</span></code> is
+the key of the edge. When the graph is directed, then <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>
+are always in the order of the actual directed edge.
+If orientation is not None then the edge tuple is extended to include
+the direction of traversal (‘forward’ or ‘reverse’) on that edge.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">directed edges</p>
@@ -356,7 +357,7 @@ is also known as a polytree).</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180702190234',
+            VERSION:'2.2rc1.dev20180702191644',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

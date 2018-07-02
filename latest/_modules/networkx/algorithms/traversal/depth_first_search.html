@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.traversal.depth_first_search &mdash; NetworkX 2.2rc1.dev20180702190234 documentation</title>
+  <title>networkx.algorithms.traversal.depth_first_search &mdash; NetworkX 2.2rc1.dev20180702191644 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180702190234 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180702191644 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180702190234
+                2.2rc1.dev_20180702191644
               </div>
             
           
@@ -183,6 +183,9 @@
 <div class="viewcode-block" id="dfs_edges"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.traversal.depth_first_search.dfs_edges.html#networkx.algorithms.traversal.depth_first_search.dfs_edges">[docs]</a><span class="k">def</span> <span class="nf">dfs_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth_limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Iterate over edges in a depth-first-search (DFS).</span>
 
+<span class="sd">    Perform a depth-first-search over the nodes of G and yield</span>
+<span class="sd">    the edges in order. This may not generate all edges in G (see edge_dfs).</span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    G : NetworkX graph</span>
@@ -225,6 +228,7 @@
 <span class="sd">    dfs_preorder_nodes</span>
 <span class="sd">    dfs_postorder_nodes</span>
 <span class="sd">    dfs_labeled_edges</span>
+<span class="sd">    edge_dfs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># edges for all components</span>
@@ -611,7 +615,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180702190234',
+            VERSION:'2.2rc1.dev20180702191644',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
