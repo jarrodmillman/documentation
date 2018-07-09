@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.connectivity.edge_augmentation &mdash; NetworkX 2.2rc1.dev20180707205915 documentation</title>
+  <title>networkx.algorithms.connectivity.edge_augmentation &mdash; NetworkX 2.2rc1.dev20180709011618 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180707205915 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180709011618 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180707205915
+                2.2rc1.dev_20180709011618
               </div>
             
           
@@ -974,7 +974,10 @@
         <span class="n">A2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">leafs</span><span class="p">)]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># Choose an arbitrary non-leaf root</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">T</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">T</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>  <span class="c1"># no nodes found with degree &gt; 1</span>
+            <span class="k">return</span>
         <span class="c1"># order the leaves of C by (induced directed) preorder</span>
         <span class="n">v2</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">dfs_preorder_nodes</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span> <span class="k">if</span> <span class="n">T</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
         <span class="c1"># connecting first half of the leafs in pre-order to the second</span>
@@ -1115,7 +1118,10 @@
     <span class="c1">#     nx.least_common_ancestor on the reversed Tree.</span>
 
     <span class="c1"># Pick an arbitrary leaf from C as the root</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">C</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span> <span class="k">if</span> <span class="n">C</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">C</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>  <span class="c1"># no nodes found with degree == 1</span>
+        <span class="k">return</span>
     <span class="c1"># Root C into a tree TR by directing all edges away from the root</span>
     <span class="c1"># Note in their paper T directs edges towards the root</span>
     <span class="n">TR</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dfs_tree</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
@@ -1391,7 +1397,7 @@
 
     <span class="n">done</span> <span class="o">=</span> <span class="n">is_k_edge_connected</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">StopIteration</span><span class="p">()</span>
+        <span class="k">return</span>
     <span class="k">if</span> <span class="n">avail</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># all edges are available</span>
         <span class="n">avail_uv</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">complement_edges</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
@@ -1454,7 +1460,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 07, 2018.
+      Last updated on Jul 09, 2018.
 
     </p>
   </div>
@@ -1476,7 +1482,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180707205915',
+            VERSION:'2.2rc1.dev20180709011618',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

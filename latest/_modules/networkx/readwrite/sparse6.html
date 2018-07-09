@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.sparse6 &mdash; NetworkX 2.2rc1.dev20180707205915 documentation</title>
+  <title>networkx.readwrite.sparse6 &mdash; NetworkX 2.2rc1.dev20180709011618 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180707205915 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180709011618 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180707205915
+                2.2rc1.dev_20180709011618
               </div>
             
           
@@ -324,7 +324,10 @@
 
         <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">dLen</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">d</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+                    <span class="k">return</span>
                 <span class="n">dLen</span> <span class="o">=</span> <span class="mi">6</span>
             <span class="n">dLen</span> <span class="o">-=</span> <span class="mi">1</span>
             <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span> <span class="o">&gt;&gt;</span> <span class="n">dLen</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>  <span class="c1"># grab top remaining bit</span>
@@ -332,7 +335,10 @@
             <span class="n">x</span> <span class="o">=</span> <span class="n">d</span> <span class="o">&amp;</span> <span class="p">((</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">dLen</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># partially built up value of x</span>
             <span class="n">xLen</span> <span class="o">=</span> <span class="n">dLen</span>		<span class="c1"># how many bits included so far in x</span>
             <span class="k">while</span> <span class="n">xLen</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>  <span class="c1"># now grab full chunks until we have enough</span>
-                <span class="n">d</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+                    <span class="k">return</span>
                 <span class="n">dLen</span> <span class="o">=</span> <span class="mi">6</span>
                 <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span>
                 <span class="n">xLen</span> <span class="o">+=</span> <span class="mi">6</span>
@@ -550,7 +556,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 07, 2018.
+      Last updated on Jul 09, 2018.
 
     </p>
   </div>
@@ -572,7 +578,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180707205915',
+            VERSION:'2.2rc1.dev20180709011618',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
