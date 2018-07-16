@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.layout.circular_layout &mdash; NetworkX 2.2rc1.dev20180711200030 documentation</title>
+  <title>networkx.drawing.layout.circular_layout &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180711200030 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180711200030
+                2.2rc1.dev_20180716164953
               </div>
             
           
@@ -211,14 +211,18 @@
 <li><strong>center</strong> (<em>array-like or None</em>) – Coordinate pair around which to center the layout.</li>
 <li><strong>dim</strong> (<em>int</em>) – Dimension of layout.
 If dim&gt;2, the remaining dimensions are set to zero
-in the returned positions.</li>
+in the returned positions.
+If dim&lt;2, a ValueError is raised.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pos</strong> – A dictionary of positions keyed by node</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If dim &lt; 2</p>
 </td>
 </tr>
 </tbody>
@@ -256,7 +260,7 @@ try to minimize edge crossings.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 11, 2018.
+      Last updated on Jul 16, 2018.
 
     </p>
   </div>
@@ -278,7 +282,7 @@ try to minimize edge crossings.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180711200030',
+            VERSION:'2.2rc1.dev20180716164953',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

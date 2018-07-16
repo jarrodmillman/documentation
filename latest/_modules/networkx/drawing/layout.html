@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.layout &mdash; NetworkX 2.2rc1.dev20180711200030 documentation</title>
+  <title>networkx.drawing.layout &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180711200030 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180711200030
+                2.2rc1.dev_20180716164953
               </div>
             
           
@@ -291,11 +291,17 @@
 <span class="sd">        Dimension of layout.</span>
 <span class="sd">        If dim&gt;2, the remaining dimensions are set to zero</span>
 <span class="sd">        in the returned positions.</span>
+<span class="sd">        If dim&lt;2, a ValueError is raised.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    pos : dict</span>
 <span class="sd">        A dictionary of positions keyed by node</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    -------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If dim &lt; 2</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -309,6 +315,9 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+    <span class="k">if</span> <span class="n">dim</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;cannot handle dimensions &lt; 2&#39;</span><span class="p">)</span>
 
     <span class="n">G</span><span class="p">,</span> <span class="n">center</span> <span class="o">=</span> <span class="n">_process_params</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
 
@@ -349,11 +358,17 @@
 
 <span class="sd">    dim : int</span>
 <span class="sd">        Dimension of layout, currently only dim=2 is supported.</span>
+<span class="sd">        Other dimension values result in a ValueError.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    pos : dict</span>
 <span class="sd">        A dictionary of positions keyed by node</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    -------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If dim != 2</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -368,6 +383,9 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+    <span class="k">if</span> <span class="n">dim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;can only handle 2 dimensions&#39;</span><span class="p">)</span>
 
     <span class="n">G</span><span class="p">,</span> <span class="n">center</span> <span class="o">=</span> <span class="n">_process_params</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
 
@@ -782,7 +800,7 @@
 <span class="sd">    pos : dict or None  optional (default=None)</span>
 <span class="sd">        Initial positions for nodes as a dictionary with node as keys</span>
 <span class="sd">        and values as a coordinate list or tuple.  If None, then use</span>
-<span class="sd">        circular_layout().</span>
+<span class="sd">        circular_layout() for dim &gt;= 2 and a linear layout for dim == 1.</span>
 
 <span class="sd">    weight : string or None   optional (default=&#39;weight&#39;)</span>
 <span class="sd">        The edge attribute that holds the numerical value used for</span>
@@ -825,7 +843,10 @@
             <span class="n">dist_mtx</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">rdist</span><span class="p">[</span><span class="n">nc</span><span class="p">]</span>
 
     <span class="k">if</span> <span class="n">pos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">pos</span> <span class="o">=</span> <span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dim</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">pt</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">pt</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)))}</span>
     <span class="n">pos_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pos</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
 
     <span class="n">pos</span> <span class="o">=</span> <span class="n">_kamada_kawai_solve</span><span class="p">(</span><span class="n">dist_mtx</span><span class="p">,</span> <span class="n">pos_arr</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
@@ -1066,7 +1087,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 11, 2018.
+      Last updated on Jul 16, 2018.
 
     </p>
   </div>
@@ -1088,7 +1109,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180711200030',
+            VERSION:'2.2rc1.dev20180716164953',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

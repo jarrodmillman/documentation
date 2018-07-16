@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.layout.kamada_kawai_layout &mdash; NetworkX 2.2rc1.dev20180711200030 documentation</title>
+  <title>networkx.drawing.layout.kamada_kawai_layout &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180711200030 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180711200030
+                2.2rc1.dev_20180716164953
               </div>
             
           
@@ -212,7 +212,7 @@ indexed by source and destination node.
 If None, the distance is computed using shortest_path_length().</li>
 <li><strong>pos</strong> (<em>dict or None  optional (default=None)</em>) – Initial positions for nodes as a dictionary with node as keys
 and values as a coordinate list or tuple.  If None, then use
-circular_layout().</li>
+circular_layout() for dim &gt;= 2 and a linear layout for dim == 1.</li>
 <li><strong>weight</strong> (<em>string or None   optional (default=’weight’)</em>) – The edge attribute that holds the numerical value used for
 the edge weight.  If None, then all edge weights are 1.</li>
 <li><strong>scale</strong> (<em>number (default: 1)</em>) – Scale factor for positions.</li>
@@ -259,7 +259,7 @@ the edge weight.  If None, then all edge weights are 1.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 11, 2018.
+      Last updated on Jul 16, 2018.
 
     </p>
   </div>
@@ -281,7 +281,7 @@ the edge weight.  If None, then all edge weights are 1.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180711200030',
+            VERSION:'2.2rc1.dev20180716164953',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
