@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.community.kernighan_lin &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.algorithms.community.kernighan_lin &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -177,10 +177,9 @@
 <span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">islice</span>
 <span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">itemgetter</span>
-<span class="kn">import</span> <span class="nn">random</span>
 
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">not_implemented_for</span>
+<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">not_implemented_for</span><span class="p">,</span> <span class="n">py_random_state</span>
 <span class="kn">from</span> <span class="nn">networkx.algorithms.community.community_utils</span> <span class="k">import</span> <span class="n">is_partition</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;kernighan_lin_bisection&#39;</span><span class="p">]</span>
@@ -253,8 +252,10 @@
     <span class="k">return</span> <span class="n">gains</span>
 
 
-<div class="viewcode-block" id="kernighan_lin_bisection"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.community.kernighan_lin.kernighan_lin_bisection.html#networkx.algorithms.community.kernighan_lin.kernighan_lin_bisection">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">kernighan_lin_bisection</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="kernighan_lin_bisection"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.community.kernighan_lin.kernighan_lin_bisection.html#networkx.algorithms.community.kernighan_lin.kernighan_lin_bisection">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">kernighan_lin_bisection</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span>
+                            <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Partition a graph into two blocks using the Kernighan–Lin</span>
 <span class="sd">    algorithm.</span>
 
@@ -276,6 +277,11 @@
 <span class="sd">    weight : key</span>
 <span class="sd">        Edge data key to use as weight. If None, the weights are all</span>
 <span class="sd">        set to one.</span>
+
+<span class="sd">    seed : integer, random_state, or None (default)</span>
+<span class="sd">        Indicator of random number generation state.</span>
+<span class="sd">        See :ref:`Randomness&lt;randomness&gt;`.</span>
+<span class="sd">        Only used if partition is None</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -299,7 +305,7 @@
     <span class="c1"># balanced partition.</span>
     <span class="k">if</span> <span class="n">partition</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="n">seed</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
         <span class="n">h</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
         <span class="n">partition</span> <span class="o">=</span> <span class="p">(</span><span class="n">nodes</span><span class="p">[:</span><span class="n">h</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">h</span><span class="p">:])</span>
     <span class="c1"># Make a copy of the partition as a pair of sets.</span>
@@ -363,7 +369,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

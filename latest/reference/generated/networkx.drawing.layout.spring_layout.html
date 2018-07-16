@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.layout.spring_layout &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.drawing.layout.spring_layout &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -117,6 +117,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
@@ -199,7 +200,7 @@
 <h1>networkx.drawing.layout.spring_layout<a class="headerlink" href="#networkx-drawing-layout-spring-layout" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.layout.spring_layout">
-<code class="descname">spring_layout</code><span class="sig-paren">(</span><em>G</em>, <em>k=None</em>, <em>pos=None</em>, <em>fixed=None</em>, <em>iterations=50</em>, <em>threshold=0.0001</em>, <em>weight='weight'</em>, <em>scale=1</em>, <em>center=None</em>, <em>dim=2</em>, <em>random_state=None</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.drawing.layout.spring_layout" title="Permalink to this definition">¶</a></dt>
+<code class="descname">spring_layout</code><span class="sig-paren">(</span><em>G</em>, <em>k=None</em>, <em>pos=None</em>, <em>fixed=None</em>, <em>iterations=50</em>, <em>threshold=0.0001</em>, <em>weight='weight'</em>, <em>scale=1</em>, <em>center=None</em>, <em>dim=2</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.drawing.layout.spring_layout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Position nodes using Fruchterman-Reingold force-directed algorithm.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -223,9 +224,9 @@ the edge weight.  If None, then all edge weights are 1.</li>
 <li><strong>center</strong> (<em>array-like or None</em>) – Coordinate pair around which to center the layout.
 Not used unless <code class="xref py py-obj docutils literal notranslate"><span class="pre">fixed</span> <span class="pre">is</span> <span class="pre">None</span></code>.</li>
 <li><strong>dim</strong> (<em>int</em>) – Dimension of layout.</li>
-<li><strong>random_state</strong> (<em>int, RandomState instance or None  optional (default=None)</em>) – Set the random state for deterministic node layouts.
-If int, <code class="xref py py-obj docutils literal notranslate"><span class="pre">random_state</span></code> is the seed used by the random number generator,
-if numpy.random.RandomState instance, <code class="xref py py-obj docutils literal notranslate"><span class="pre">random_state</span></code> is the random
+<li><strong>seed</strong> (<em>int, RandomState instance or None  optional (default=None)</em>) – Set the random state for deterministic node layouts.
+If int, <code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code> is the seed used by the random number generator,
+if numpy.random.RandomState instance, <code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code> is the random
 number generator,
 if None, the random number generator is the RandomState instance used
 by numpy.random.</li>
@@ -294,7 +295,7 @@ by numpy.random.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

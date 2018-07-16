@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.intersection.general_random_intersection_graph &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.generators.intersection.general_random_intersection_graph &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -130,6 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../relabel.html">Relabeling nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../readwrite/index.html">Reading and writing graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
@@ -212,7 +213,7 @@
 <h1>networkx.generators.intersection.general_random_intersection_graph<a class="headerlink" href="#networkx-generators-intersection-general-random-intersection-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.intersection.general_random_intersection_graph">
-<code class="descname">general_random_intersection_graph</code><span class="sig-paren">(</span><em>n</em>, <em>m</em>, <em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/intersection.html#general_random_intersection_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.intersection.general_random_intersection_graph" title="Permalink to this definition">¶</a></dt>
+<code class="descname">general_random_intersection_graph</code><span class="sig-paren">(</span><em>n</em>, <em>m</em>, <em>p</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/intersection.html#general_random_intersection_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.intersection.general_random_intersection_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a random intersection graph with independent probabilities
 for connections between node and attribute sets.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -223,7 +224,8 @@ for connections between node and attribute sets.</p>
 <li><strong>n</strong> (<em>int</em>) – The number of nodes in the first bipartite set (nodes)</li>
 <li><strong>m</strong> (<em>int</em>) – The number of nodes in the second bipartite set (attributes)</li>
 <li><strong>p</strong> (<em>list of floats of length m</em>) – Probabilities for connecting nodes to each attribute</li>
-<li><strong>seed</strong> (<em>int, optional</em>) – Seed for random number generator (default=None).</li>
+<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -291,7 +293,7 @@ of Lecture Notes in Computer Science, Springer, pp. 1029–1040.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

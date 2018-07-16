@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.community.planted_partition_graph &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.generators.community.planted_partition_graph &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -135,6 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../relabel.html">Relabeling nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../readwrite/index.html">Reading and writing graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
@@ -232,7 +233,8 @@ of different groups are linked with probability p_out.</p>
 <li><strong>k</strong> (<em>int</em>) – Number of vertices in each group</li>
 <li><strong>p_in</strong> (<em>float</em>) – probability of connecting vertices within a group</li>
 <li><strong>p_out</strong> (<em>float</em>) – probability of connected vertices between groups</li>
-<li><strong>seed</strong> (<em>int,optional</em>) – Seed for random number generator(default=None)</li>
+<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
 <li><strong>directed</strong> (<em>bool,optional (default=False)</em>) – If True return a directed graph</li>
 </ul>
 </td>
@@ -249,7 +251,7 @@ of different groups are linked with probability p_out.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">planted_partition_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">planted_partition_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -319,7 +321,7 @@ Volume 486, Issue 3-5 p. 75-174. <a class="reference external" href="https://arx
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

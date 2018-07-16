@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.approximate_current_flow_betweenness_centrality &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.algorithms.centrality.approximate_current_flow_betweenness_centrality &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -169,6 +169,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../relabel.html">Relabeling nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../readwrite/index.html">Reading and writing graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
@@ -253,7 +254,7 @@
 <h1>networkx.algorithms.centrality.approximate_current_flow_betweenness_centrality<a class="headerlink" href="#networkx-algorithms-centrality-approximate-current-flow-betweenness-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.approximate_current_flow_betweenness_centrality">
-<code class="descname">approximate_current_flow_betweenness_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>normalized=True</em>, <em>weight=None</em>, <em>dtype=&lt;type 'float'&gt;</em>, <em>solver='full'</em>, <em>epsilon=0.5</em>, <em>kmax=10000</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/current_flow_betweenness.html#approximate_current_flow_betweenness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.approximate_current_flow_betweenness_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="descname">approximate_current_flow_betweenness_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>normalized=True</em>, <em>weight=None</em>, <em>dtype=&lt;type 'float'&gt;</em>, <em>solver='full'</em>, <em>epsilon=0.5</em>, <em>kmax=10000</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/current_flow_betweenness.html#approximate_current_flow_betweenness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.approximate_current_flow_betweenness_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the approximate current-flow betweenness centrality for nodes.</p>
 <p>Approximates the current-flow betweenness centrality within absolute
 error of epsilon with high probability <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
@@ -274,6 +275,8 @@ Options are “full” (uses most memory), “lu” (recommended), and
 “cg” (uses least memory).</li>
 <li><strong>epsilon</strong> (<em>float</em>) – Absolute error tolerance.</li>
 <li><strong>kmax</strong> (<em>int</em>) – Maximum number of sample node pairs to use for approximation.</li>
+<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -352,7 +355,7 @@ LNCS 3404, pp. 533-544. Springer-Verlag, 2005.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

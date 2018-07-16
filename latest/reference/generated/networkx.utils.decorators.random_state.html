@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.utils.decorators.random_state &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.utils.decorators.random_state &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -101,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../relabel.html">Relabeling nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../readwrite/index.html">Reading and writing graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../utils.html">Utilities</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#module-networkx.utils.misc">Helper Functions</a></li>
@@ -200,7 +201,8 @@
 <dt id="networkx.utils.decorators.random_state">
 <code class="descname">random_state</code><span class="sig-paren">(</span><em>random_state_index</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/utils/decorators.html#random_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.utils.decorators.random_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator to generate a numpy.random.RandomState instance.</p>
-<p>Argument position <code class="xref py py-obj docutils literal notranslate"><span class="pre">random_state_index</span></code> is processed by create_random_state.</p>
+<p>Argument position <code class="xref py py-obj docutils literal notranslate"><span class="pre">random_state_index</span></code> is processed by create_random_state.
+The result is a numpy.random.RandomState instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -218,14 +220,18 @@ its index as a positional argument.</td>
 </table>
 <p class="rubric">Examples</p>
 <p>Decorate functions like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@random_state</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@np_random_state</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">random_float</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">random_state</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
 
-<span class="nd">@random_state</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nd">@np_random_state</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">random_array</span><span class="p">(</span><span class="n">dims</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">random_state</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="o">*</span><span class="n">dims</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">py_random_state()</span></code></p>
 </div>
 </dd></dl>
 
@@ -274,7 +280,7 @@ its index as a positional argument.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

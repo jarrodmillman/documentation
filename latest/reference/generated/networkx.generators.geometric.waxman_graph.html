@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.waxman_graph &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.generators.geometric.waxman_graph &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -133,6 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../relabel.html">Relabeling nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../readwrite/index.html">Reading and writing graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
@@ -215,7 +216,7 @@
 <h1>networkx.generators.geometric.waxman_graph<a class="headerlink" href="#networkx-generators-geometric-waxman-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.geometric.waxman_graph">
-<code class="descname">waxman_graph</code><span class="sig-paren">(</span><em>n</em>, <em>beta=0.4</em>, <em>alpha=0.1</em>, <em>L=None</em>, <em>domain=(0</em>, <em>0</em>, <em>1</em>, <em>1)</em>, <em>metric=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#waxman_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.waxman_graph" title="Permalink to this definition">¶</a></dt>
+<code class="descname">waxman_graph</code><span class="sig-paren">(</span><em>n</em>, <em>beta=0.4</em>, <em>alpha=0.1</em>, <em>L=None</em>, <em>domain=(0</em>, <em>0</em>, <em>1</em>, <em>1)</em>, <em>metric=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#waxman_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.waxman_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a Waxman random graph.</p>
 <p>The Waxman random graph model places <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes uniformly at random
 in a rectangular domain. Each pair of nodes at distance <code class="xref py py-obj docutils literal notranslate"><span class="pre">d</span></code> is
@@ -261,6 +262,9 @@ and <span class="math notranslate nohighlight">\(z\)</span> are vectors in the g
 </ol>
 <p>If this argument is not specified, the Euclidean distance metric is
 used.</p>
+</li>
+<li><p class="first"><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p>
 </li>
 </ul>
 </td>
@@ -343,7 +347,7 @@ IEEE J. Select. Areas Commun. 6(9),(1988) 1617–1622.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

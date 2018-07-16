@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.random_clustered &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.generators.random_clustered &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -170,14 +170,14 @@
 <span class="c1">#          Joel Miller (joel.c.miller.research@gmail.com)</span>
 <span class="sd">&quot;&quot;&quot;Generate graphs with given degree and triangle sequence.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">py_random_state</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;random_clustered_graph&#39;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="random_clustered_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_clustered.random_clustered_graph.html#networkx.generators.random_clustered.random_clustered_graph">[docs]</a><span class="k">def</span> <span class="nf">random_clustered_graph</span><span class="p">(</span><span class="n">joint_degree_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                           <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="random_clustered_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.random_clustered.random_clustered_graph.html#networkx.generators.random_clustered.random_clustered_graph">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">random_clustered_graph</span><span class="p">(</span><span class="n">joint_degree_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Generate a random graph with the given joint independent edge degree and</span>
 <span class="sd">    triangle degree sequence.</span>
 
@@ -198,8 +198,9 @@
 <span class="sd">        triangle degree of a node.</span>
 <span class="sd">    create_using : NetworkX graph constructor, optional (default MultiGraph)</span>
 <span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
-<span class="sd">    seed : hashable object, optional</span>
-<span class="sd">        The seed for the random number generator.</span>
+<span class="sd">    seed : integer, random_state, or None (default)</span>
+<span class="sd">        Indicator of random number generation state.</span>
+<span class="sd">        See :ref:`Randomness&lt;randomness&gt;`.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -253,9 +254,6 @@
 <span class="sd">    &gt;&gt;&gt; G.remove_edges_from(nx.selfloop_edges(G))</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-
     <span class="c1"># In Python 3, zip() returns an iterator. Make this into a list.</span>
     <span class="n">joint_degree_sequence</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">joint_degree_sequence</span><span class="p">)</span>
 
@@ -276,8 +274,8 @@
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ilist</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Invalid degree sequence&#39;</span><span class="p">)</span>
 
-    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ilist</span><span class="p">)</span>
-    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span>
+    <span class="n">seed</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ilist</span><span class="p">)</span>
+    <span class="n">seed</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span>
     <span class="k">while</span> <span class="n">ilist</span><span class="p">:</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">ilist</span><span class="o">.</span><span class="n">pop</span><span class="p">(),</span> <span class="n">ilist</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
     <span class="k">while</span> <span class="n">tlist</span><span class="p">:</span>
@@ -321,7 +319,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.mis.maximal_independent_set &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.algorithms.mis.maximal_independent_set &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -159,6 +159,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../relabel.html">Relabeling nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../readwrite/index.html">Reading and writing graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
@@ -243,7 +244,7 @@
 <h1>networkx.algorithms.mis.maximal_independent_set<a class="headerlink" href="#networkx-algorithms-mis-maximal-independent-set" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.mis.maximal_independent_set">
-<code class="descname">maximal_independent_set</code><span class="sig-paren">(</span><em>G</em>, <em>nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/mis.html#maximal_independent_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.mis.maximal_independent_set" title="Permalink to this definition">¶</a></dt>
+<code class="descname">maximal_independent_set</code><span class="sig-paren">(</span><em>G</em>, <em>nodes=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/mis.html#maximal_independent_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.mis.maximal_independent_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a random maximal independent set guaranteed to contain
 a given set of nodes.</p>
 <p>An independent set is a set of nodes such that the subgraph
@@ -258,6 +259,8 @@ to add a new node and still get an independent set.</p>
 <li><strong>G</strong> (<em>NetworkX graph</em>)</li>
 <li><strong>nodes</strong> (<em>list or iterable</em>) – Nodes that must be part of the independent set. This set of nodes
 must be independent.</li>
+<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -333,7 +336,7 @@ do not form an independent set, an exception is raised.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

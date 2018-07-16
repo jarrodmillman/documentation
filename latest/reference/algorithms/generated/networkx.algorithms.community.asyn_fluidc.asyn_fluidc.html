@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.community.asyn_fluidc.asyn_fluidc &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.algorithms.community.asyn_fluidc.asyn_fluidc &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -167,6 +167,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../relabel.html">Relabeling nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../readwrite/index.html">Reading and writing graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
@@ -251,7 +252,7 @@
 <h1>networkx.algorithms.community.asyn_fluidc.asyn_fluidc<a class="headerlink" href="#networkx-algorithms-community-asyn-fluidc-asyn-fluidc" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.community.asyn_fluidc.asyn_fluidc">
-<code class="descname">asyn_fluidc</code><span class="sig-paren">(</span><em>G</em>, <em>k</em>, <em>max_iter=100</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/community/asyn_fluidc.html#asyn_fluidc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.community.asyn_fluidc.asyn_fluidc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">asyn_fluidc</code><span class="sig-paren">(</span><em>G</em>, <em>k</em>, <em>max_iter=100</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/community/asyn_fluidc.html#asyn_fluidc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.community.asyn_fluidc.asyn_fluidc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns communities in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> as detected by Fluid Communities algorithm.</p>
 <p>The asynchronous fluid communities algorithm is described in
 <a class="footnote-reference" href="#id3" id="id1">[1]</a>. The algorithm is based on the simple idea of fluids interacting
@@ -278,6 +279,8 @@ Unfortunately, it does not support weighted graphs yet.</p>
 <li><strong>G</strong> (<em>Graph</em>)</li>
 <li><strong>k</strong> (<em>integer</em>) – The number of communities to be found.</li>
 <li><strong>max_iter</strong> (<em>integer</em>) – The number of maximum iterations allowed. By default 15.</li>
+<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -347,7 +350,7 @@ Competitive and Highly Scalable Community Detection Algorithm”.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

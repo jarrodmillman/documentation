@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.joint_degree_seq &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.generators.joint_degree_seq &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -167,9 +167,8 @@
 <span class="sd">&quot;&quot;&quot;Generate graphs with a given joint degree &quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
 
-<span class="kn">import</span> <span class="nn">random</span>
-
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">py_random_state</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_valid_joint_degree&#39;</span><span class="p">,</span>
            <span class="s1">&#39;joint_degree_graph&#39;</span><span class="p">]</span>
@@ -307,7 +306,8 @@
         <span class="n">unsat</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">w_prime</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="joint_degree_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.joint_degree_seq.joint_degree_graph.html#networkx.generators.joint_degree_seq.joint_degree_graph">[docs]</a><span class="k">def</span> <span class="nf">joint_degree_graph</span><span class="p">(</span><span class="n">joint_degrees</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="joint_degree_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.joint_degree_seq.joint_degree_graph.html#networkx.generators.joint_degree_seq.joint_degree_graph">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">joint_degree_graph</span><span class="p">(</span><span class="n">joint_degrees</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Generates a random simple graph with the given joint degree dictionary.</span>
 
 <span class="sd">    Parameters</span>
@@ -315,8 +315,9 @@
 <span class="sd">    joint_degrees :  dictionary of dictionary of integers</span>
 <span class="sd">        A joint degree dictionary in which entry ``joint_degrees[k][l]`` is the</span>
 <span class="sd">        number of edges joining nodes of degree *k* with nodes of degree *l*.</span>
-<span class="sd">    seed : hashable object, optional</span>
-<span class="sd">        Seed for random number generator.</span>
+<span class="sd">    seed : integer, random_state, or None (default)</span>
+<span class="sd">        Indicator of random number generation state.</span>
+<span class="sd">        See :ref:`Randomness&lt;randomness&gt;`.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -365,9 +366,6 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_valid_joint_degree</span><span class="p">(</span><span class="n">joint_degrees</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Input joint degree dict not realizable as a simple graph&#39;</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
 
     <span class="c1"># compute degree count from joint_degrees</span>
     <span class="n">degree_count</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">//</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">joint_degrees</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">}</span>
@@ -422,8 +420,8 @@
                 <span class="k">while</span> <span class="n">n_edges_add</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 
                     <span class="c1"># randomly pick nodes v and w that have degrees k and l</span>
-                    <span class="n">v</span> <span class="o">=</span> <span class="n">k_nodes</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">k_size</span><span class="p">)]</span>
-                    <span class="n">w</span> <span class="o">=</span> <span class="n">l_nodes</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">l_size</span><span class="p">)]</span>
+                    <span class="n">v</span> <span class="o">=</span> <span class="n">k_nodes</span><span class="p">[</span><span class="n">seed</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">k_size</span><span class="p">)]</span>
+                    <span class="n">w</span> <span class="o">=</span> <span class="n">l_nodes</span><span class="p">[</span><span class="n">seed</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">l_size</span><span class="p">)]</span>
 
                     <span class="c1"># if nodes v and w are disconnected then attempt to connect</span>
                     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span> <span class="o">!=</span> <span class="n">w</span><span class="p">):</span>
@@ -486,7 +484,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.swap &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.algorithms.swap &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -171,7 +171,7 @@
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
 
 <span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">py_random_state</span>
 
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
@@ -185,7 +185,8 @@
            <span class="s1">&#39;connected_double_edge_swap&#39;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="double_edge_swap"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.swap.double_edge_swap.html#networkx.algorithms.swap.double_edge_swap">[docs]</a><span class="k">def</span> <span class="nf">double_edge_swap</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nswap</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_tries</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<div class="viewcode-block" id="double_edge_swap"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.swap.double_edge_swap.html#networkx.algorithms.swap.double_edge_swap">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">double_edge_swap</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nswap</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_tries</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Swap two edges in the graph while keeping the node degrees fixed.</span>
 
 <span class="sd">    A double-edge swap removes two randomly chosen edges u-v and x-y</span>
@@ -208,6 +209,10 @@
 
 <span class="sd">    max_tries : integer (optional)</span>
 <span class="sd">       Maximum number of attempts to swap edges</span>
+
+<span class="sd">    seed : integer, random_state, or None (default)</span>
+<span class="sd">        Indicator of random number generation state.</span>
+<span class="sd">        See :ref:`Randomness&lt;randomness&gt;`.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -234,18 +239,19 @@
     <span class="n">swapcount</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">keys</span><span class="p">,</span> <span class="n">degrees</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>  <span class="c1"># keys, degree</span>
     <span class="n">cdf</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">cumulative_distribution</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span>  <span class="c1"># cdf of degree</span>
+    <span class="n">discrete_sequence</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">discrete_sequence</span>
     <span class="k">while</span> <span class="n">swapcount</span> <span class="o">&lt;</span> <span class="n">nswap</span><span class="p">:</span>
         <span class="c1">#        if random.random() &lt; 0.5: continue # trick to avoid periodicities?</span>
         <span class="c1"># pick two random edges without creating edge list</span>
         <span class="c1"># choose source node indices from discrete distribution</span>
-        <span class="p">(</span><span class="n">ui</span><span class="p">,</span> <span class="n">xi</span><span class="p">)</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">discrete_sequence</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">cdistribution</span><span class="o">=</span><span class="n">cdf</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">ui</span><span class="p">,</span> <span class="n">xi</span><span class="p">)</span> <span class="o">=</span> <span class="n">discrete_sequence</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">cdistribution</span><span class="o">=</span><span class="n">cdf</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ui</span> <span class="o">==</span> <span class="n">xi</span><span class="p">:</span>
             <span class="k">continue</span>  <span class="c1"># same source, skip</span>
         <span class="n">u</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="n">ui</span><span class="p">]</span>  <span class="c1"># convert index to label</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span>
         <span class="c1"># choose target uniformly from neighbors</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]))</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">x</span><span class="p">]))</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">x</span><span class="p">]))</span>
         <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
             <span class="k">continue</span>  <span class="c1"># same target, skip</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">y</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]):</span>  <span class="c1"># don&#39;t create parallel edges</span>
@@ -262,7 +268,8 @@
     <span class="k">return</span> <span class="n">G</span></div>
 
 
-<div class="viewcode-block" id="connected_double_edge_swap"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.swap.connected_double_edge_swap.html#networkx.algorithms.swap.connected_double_edge_swap">[docs]</a><span class="k">def</span> <span class="nf">connected_double_edge_swap</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nswap</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">_window_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<div class="viewcode-block" id="connected_double_edge_swap"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.swap.connected_double_edge_swap.html#networkx.algorithms.swap.connected_double_edge_swap">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">connected_double_edge_swap</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nswap</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">_window_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Attempts the specified number of double-edge swaps in the graph `G`.</span>
 
 <span class="sd">    A double-edge swap removes two randomly chosen edges `(u, v)` and `(x,</span>
@@ -300,6 +307,10 @@
 <span class="sd">       size is above this threshold, then the algorithm performs do all the</span>
 <span class="sd">       swaps in the window and only then check if the graph is still connected.</span>
 
+<span class="sd">    seed : integer, random_state, or None (default)</span>
+<span class="sd">        Indicator of random number generation state.</span>
+<span class="sd">        See :ref:`Randomness&lt;randomness&gt;`.</span>
+
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    int</span>
@@ -336,6 +347,7 @@
     <span class="c1"># Label key for nodes</span>
     <span class="n">dk</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>
     <span class="n">cdf</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">cumulative_distribution</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()))</span>
+    <span class="n">discrete_sequence</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">discrete_sequence</span>
     <span class="n">window</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">nswap</span><span class="p">:</span>
         <span class="n">wcount</span> <span class="o">=</span> <span class="mi">0</span>
@@ -349,7 +361,7 @@
             <span class="k">while</span> <span class="n">wcount</span> <span class="o">&lt;</span> <span class="n">window</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">nswap</span><span class="p">:</span>
                 <span class="c1"># Pick two random edges without creating the edge list. Choose</span>
                 <span class="c1"># source nodes from the discrete degree distribution.</span>
-                <span class="p">(</span><span class="n">ui</span><span class="p">,</span> <span class="n">xi</span><span class="p">)</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">discrete_sequence</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">cdistribution</span><span class="o">=</span><span class="n">cdf</span><span class="p">)</span>
+                <span class="p">(</span><span class="n">ui</span><span class="p">,</span> <span class="n">xi</span><span class="p">)</span> <span class="o">=</span> <span class="n">discrete_sequence</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">cdistribution</span><span class="o">=</span><span class="n">cdf</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
                 <span class="c1"># If the source nodes are the same, skip this pair.</span>
                 <span class="k">if</span> <span class="n">ui</span> <span class="o">==</span> <span class="n">xi</span><span class="p">:</span>
                     <span class="k">continue</span>
@@ -357,8 +369,8 @@
                 <span class="n">u</span> <span class="o">=</span> <span class="n">dk</span><span class="p">[</span><span class="n">ui</span><span class="p">]</span>
                 <span class="n">x</span> <span class="o">=</span> <span class="n">dk</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span>
                 <span class="c1"># Choose targets uniformly from neighbors.</span>
-                <span class="n">v</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
-                <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
                 <span class="c1"># If the target nodes are the same, skip this pair.</span>
                 <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
                     <span class="k">continue</span>
@@ -401,8 +413,8 @@
                 <span class="n">u</span> <span class="o">=</span> <span class="n">dk</span><span class="p">[</span><span class="n">ui</span><span class="p">]</span>
                 <span class="n">x</span> <span class="o">=</span> <span class="n">dk</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span>
                 <span class="c1"># Choose targets uniformly from neighbors.</span>
-                <span class="n">v</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
-                <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
                 <span class="c1"># If the target nodes are the same, skip this pair.</span>
                 <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
                     <span class="k">continue</span>
@@ -465,7 +477,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

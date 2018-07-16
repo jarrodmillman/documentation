@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.swap.double_edge_swap &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.algorithms.swap.double_edge_swap &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -160,6 +160,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../relabel.html">Relabeling nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../readwrite/index.html">Reading and writing graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../randomness.html">Randomness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
@@ -244,7 +245,7 @@
 <h1>networkx.algorithms.swap.double_edge_swap<a class="headerlink" href="#networkx-algorithms-swap-double-edge-swap" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.swap.double_edge_swap">
-<code class="descname">double_edge_swap</code><span class="sig-paren">(</span><em>G</em>, <em>nswap=1</em>, <em>max_tries=100</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/swap.html#double_edge_swap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.swap.double_edge_swap" title="Permalink to this definition">¶</a></dt>
+<code class="descname">double_edge_swap</code><span class="sig-paren">(</span><em>G</em>, <em>nswap=1</em>, <em>max_tries=100</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/swap.html#double_edge_swap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.swap.double_edge_swap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Swap two edges in the graph while keeping the node degrees fixed.</p>
 <p>A double-edge swap removes two randomly chosen edges u-v and x-y
 and creates the new edges u-x and v-y:</p>
@@ -263,6 +264,8 @@ and another attempt is made to find a suitable edge pair.</p>
 <li><strong>G</strong> (<em>graph</em>) – An undirected graph</li>
 <li><strong>nswap</strong> (<em>integer (optional, default=1)</em>) – Number of double-edge swaps to perform</li>
 <li><strong>max_tries</strong> (<em>integer (optional)</em>) – Maximum number of attempts to swap edges</li>
+<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -324,7 +327,7 @@ and another attempt is made to find a suitable edge pair.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.chordal &mdash; NetworkX 2.2rc1.dev20180716164953 documentation</title>
+  <title>networkx.algorithms.chordal &mdash; NetworkX 2.2rc1.dev20180716170602 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716164953 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180716170602 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716164953
+                2.2rc1.dev_20180716170602
               </div>
             
           
@@ -167,9 +167,9 @@
 <span class="sd">(an edge joining two nodes not adjacent in the cycle).</span>
 <span class="sd">https://en.wikipedia.org/wiki/Chordal_graph</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">arbitrary_element</span>
 
 <span class="n">__authors__</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;Jesus Cerquides &lt;cerquide@iiia.csic.es&gt;&#39;</span><span class="p">])</span>
 <span class="c1">#    Copyright (C) 2010 by</span>
@@ -444,7 +444,7 @@
 
 <span class="k">def</span> <span class="nf">_find_chordality_breaker</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">treewidth_bound</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Given a graph G, starts a max cardinality search</span>
-<span class="sd">    (starting from s if s is given and from a random node otherwise)</span>
+<span class="sd">    (starting from s if s is given and from an arbitrary node otherwise)</span>
 <span class="sd">    trying to find a non-chordal cycle.</span>
 
 <span class="sd">    If it does find one, it returns (u,v,w) where u,v,w are the three</span>
@@ -453,7 +453,7 @@
 
     <span class="n">unnumbered</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">s</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">unnumbered</span><span class="p">))</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">arbitrary_element</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">unnumbered</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
     <span class="n">numbered</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">s</span><span class="p">])</span>
 <span class="c1">#    current_treewidth = None</span>
@@ -486,7 +486,7 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">cliques</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="n">unnumbered</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">unnumbered</span><span class="p">))</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">arbitrary_element</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
         <span class="n">unnumbered</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
         <span class="n">numbered</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">v</span><span class="p">])</span>
         <span class="n">clique_wanna_be</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">v</span><span class="p">])</span>
@@ -540,7 +540,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180716164953',
+            VERSION:'2.2rc1.dev20180716170602',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
