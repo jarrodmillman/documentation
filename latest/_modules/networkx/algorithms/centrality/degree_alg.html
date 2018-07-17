@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.degree_alg &mdash; NetworkX 2.2rc1.dev20180716203441 documentation</title>
+  <title>networkx.algorithms.centrality.degree_alg &mdash; NetworkX 2.2rc1.dev20180717161330 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180716203441 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180717161330 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180716203441
+                2.2rc1.dev_20180717161330
               </div>
             
           
@@ -207,7 +207,9 @@
 <span class="sd">    be higher than n-1 and values of degree centrality greater than 1</span>
 <span class="sd">    are possible.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">centrality</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
+
     <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
     <span class="n">centrality</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">d</span> <span class="o">*</span> <span class="n">s</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()}</span>
     <span class="k">return</span> <span class="n">centrality</span></div>
@@ -248,7 +250,9 @@
 <span class="sd">    be higher than n-1 and values of degree centrality greater than 1</span>
 <span class="sd">    are possible.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">centrality</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
+
     <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
     <span class="n">centrality</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">d</span> <span class="o">*</span> <span class="n">s</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">in_degree</span><span class="p">()}</span>
     <span class="k">return</span> <span class="n">centrality</span></div>
@@ -289,7 +293,9 @@
 <span class="sd">    be higher than n-1 and values of degree centrality greater than 1</span>
 <span class="sd">    are possible.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">centrality</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
+
     <span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
     <span class="n">centrality</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">d</span> <span class="o">*</span> <span class="n">s</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">()}</span>
     <span class="k">return</span> <span class="n">centrality</span></div>
@@ -306,7 +312,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 16, 2018.
+      Last updated on Jul 17, 2018.
 
     </p>
   </div>
@@ -328,7 +334,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180716203441',
+            VERSION:'2.2rc1.dev20180717161330',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
