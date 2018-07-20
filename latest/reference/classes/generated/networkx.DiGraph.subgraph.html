@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.DiGraph.subgraph &mdash; NetworkX 2.2rc1.dev20180719235719 documentation</title>
+  <title>networkx.DiGraph.subgraph &mdash; NetworkX 2.2rc1.dev20180720045654 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180719235719 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180720045654 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180719235719
+                2.2rc1.dev_20180720045654
               </div>
             
           
@@ -197,7 +197,7 @@
 <h1>networkx.DiGraph.subgraph<a class="headerlink" href="#networkx-digraph-subgraph" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="networkx.DiGraph.subgraph">
-<code class="descclassname">DiGraph.</code><code class="descname">subgraph</code><span class="sig-paren">(</span><em>nodes</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/classes/digraph.html#DiGraph.subgraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.DiGraph.subgraph" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">DiGraph.</code><code class="descname">subgraph</code><span class="sig-paren">(</span><em>nodes</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.DiGraph.subgraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a SubGraph view of the subgraph induced on <a class="reference internal" href="networkx.DiGraph.nodes.html#networkx.DiGraph.nodes" title="networkx.DiGraph.nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code></a>.</p>
 <p>The induced subgraph of the graph contains the nodes in <a class="reference internal" href="networkx.DiGraph.nodes.html#networkx.DiGraph.nodes" title="networkx.DiGraph.nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code></a>
 and the edges between those nodes.</p>
@@ -227,7 +227,7 @@ G.remove_nodes_from([n for n in G if n not in set(nodes)])</p>
 you want to do more than simply look at the induced edges, it makes
 more sense to just create the subgraph as its own graph with code like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a subgraph SG based on a (possibly multigraph) G</span>
-<span class="n">SG</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
+<span class="n">SG</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
 <span class="n">SG</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">largest_wcc</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">SG</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">:</span>
     <span class="n">SG</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">nbr</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
@@ -295,7 +295,7 @@ more sense to just create the subgraph as its own graph with code like:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180719235719',
+            VERSION:'2.2rc1.dev20180720045654',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.function &mdash; NetworkX 2.2rc1.dev20180719235719 documentation</title>
+  <title>networkx.classes.function &mdash; NetworkX 2.2rc1.dev20180720045654 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180719235719 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180720045654 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180719235719
+                2.2rc1.dev_20180720045654
               </div>
             
           
@@ -344,6 +344,7 @@
     <span class="n">G</span><span class="o">.</span><span class="n">remove_nodes_from</span> <span class="o">=</span> <span class="n">frozen</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span> <span class="o">=</span> <span class="n">frozen</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span> <span class="o">=</span> <span class="n">frozen</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_weighted_edges_from</span> <span class="o">=</span> <span class="n">frozen</span>
     <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span> <span class="o">=</span> <span class="n">frozen</span>
     <span class="n">G</span><span class="o">.</span><span class="n">remove_edges_from</span> <span class="o">=</span> <span class="n">frozen</span>
     <span class="n">G</span><span class="o">.</span><span class="n">clear</span> <span class="o">=</span> <span class="n">frozen</span>
@@ -523,13 +524,7 @@
 <span class="sd">    [(0, 1), (1, 2)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">induced_nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">show_nodes</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nbunch_iter</span><span class="p">(</span><span class="n">nbunch</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-            <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">SubMultiDiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">SubMultiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">SubDiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">SubGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">edge_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
@@ -574,7 +569,6 @@
 <span class="sd">    [(0, 1), (3, 4)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">nxf</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">filters</span>
-    <span class="n">nxg</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span>
     <span class="n">edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
     <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
@@ -583,14 +577,14 @@
     <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
             <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_multidiedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">nxg</span><span class="o">.</span><span class="n">SubMultiDiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="n">induced_edges</span><span class="p">)</span>
-        <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_multiedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">nxg</span><span class="o">.</span><span class="n">SubMultiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="n">induced_edges</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_diedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">nxg</span><span class="o">.</span><span class="n">SubDiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="n">induced_edges</span><span class="p">)</span>
-    <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">nxg</span><span class="o">.</span><span class="n">SubGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="n">induced_edges</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_multiedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+            <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_diedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="n">induced_edges</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">restricted_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
@@ -636,19 +630,18 @@
 <span class="sd">    [(2, 3)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">nxf</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">filters</span>
-    <span class="n">nxg</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span>
-    <span class="n">h_nodes</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_nodes</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="n">hide_nodes</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_nodes</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-            <span class="n">h_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_multidiedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">nxg</span><span class="o">.</span><span class="n">SubMultiDiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">h_nodes</span><span class="p">,</span> <span class="n">h_edges</span><span class="p">)</span>
-        <span class="n">h_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_multiedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">nxg</span><span class="o">.</span><span class="n">SubMultiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">h_nodes</span><span class="p">,</span> <span class="n">h_edges</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="n">h_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_diedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">nxg</span><span class="o">.</span><span class="n">SubDiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">h_nodes</span><span class="p">,</span> <span class="n">h_edges</span><span class="p">)</span>
-    <span class="n">h_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">nxg</span><span class="o">.</span><span class="n">SubGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">h_nodes</span><span class="p">,</span> <span class="n">h_edges</span><span class="p">)</span>
+            <span class="n">hide_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_multidiedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">hide_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_multiedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+            <span class="n">hide_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_diedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">hide_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">hide_nodes</span><span class="p">,</span> <span class="n">hide_edges</span><span class="p">)</span>
 
 
 <span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -657,9 +650,7 @@
 
 <span class="sd">    Identical to digraph.reverse(copy=False)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">digraph</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">MultiReverseView</span><span class="p">(</span><span class="n">digraph</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">ReverseView</span><span class="p">(</span><span class="n">digraph</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">reverse_view</span><span class="p">(</span><span class="n">digraph</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">to_directed</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
@@ -669,9 +660,7 @@
 <span class="sd">    Note that graph.to_directed defaults to `as_view=False`</span>
 <span class="sd">    while this function always provides a view.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">MultiDiGraphView</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">DiGraphView</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph</span><span class="o">.</span><span class="n">to_directed</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">to_undirected</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
@@ -681,9 +670,7 @@
 <span class="sd">    Note that graph.to_undirected defaults to `as_view=False`</span>
 <span class="sd">    while this function always provides a view.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">MultiGraphView</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">GraphView</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph</span><span class="o">.</span><span class="n">to_undirected</span><span class="p">(</span><span class="n">as_view</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="create_empty_copy"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.create_empty_copy.html#networkx.classes.function.create_empty_copy">[docs]</a><span class="k">def</span> <span class="nf">create_empty_copy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -1396,7 +1383,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180719235719',
+            VERSION:'2.2rc1.dev20180720045654',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

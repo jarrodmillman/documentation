@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.multigraph &mdash; NetworkX 2.2rc1.dev20180719235719 documentation</title>
+  <title>networkx.classes.multigraph &mdash; NetworkX 2.2rc1.dev20180720045654 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180719235719 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180720045654 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180719235719
+                2.2rc1.dev_20180720045654
               </div>
             
           
@@ -392,6 +392,20 @@
 <span class="sd">        dict which holds attrbute values keyed by attribute name.</span>
 <span class="sd">        It should require no arguments and return a dict-like object.</span>
 
+<span class="sd">    Typically, if your extension doesn&#39;t impact the data structure all</span>
+<span class="sd">    methods will inherited without issue except: `to_directed/to_undirected`.</span>
+<span class="sd">    By default these methods create a DiGraph/Graph class and you probably</span>
+<span class="sd">    want them to create your extension of a DiGraph/Graph. To facilitate</span>
+<span class="sd">    this we define two class variables that you can set in your subclass.</span>
+
+<span class="sd">    to_directed_class : callable, (default: DiGraph or MultiDiGraph)</span>
+<span class="sd">        Class to create a new graph structure in the `to_directed` method.</span>
+<span class="sd">        If `None`, a NetworkX class (DiGraph or MultiDiGraph) is used.</span>
+
+<span class="sd">    to_undirected_class : callable, (default: Graph or MultiGraph)</span>
+<span class="sd">        Class to create a new graph structure in the `to_undirected` method.</span>
+<span class="sd">        If `None`, a NetworkX class (Graph or MultiGraph) is used.</span>
+
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 
@@ -404,6 +418,22 @@
     <span class="c1"># adjlist_inner_dict_factory = dict</span>
     <span class="n">edge_key_dict_factory</span> <span class="o">=</span> <span class="nb">dict</span>
     <span class="c1"># edge_attr_dict_factory = dict</span>
+
+    <span class="k">def</span> <span class="nf">to_directed_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the class to use for empty directed copies.</span>
+
+<span class="sd">        If you subclass the base classes, use this to designate</span>
+<span class="sd">        what directed class to use for `to_directed()` copies.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span>
+
+    <span class="k">def</span> <span class="nf">to_undirected_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the class to use for empty undirected copies.</span>
+
+<span class="sd">        If you subclass the base classes, use this to designate</span>
+<span class="sd">        what directed class to use for `to_directed()` copies.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">MultiGraph</span>
 
 <div class="viewcode-block" id="MultiGraph.__init__"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.__init__.html#networkx.MultiGraph.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incoming_graph_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize a graph with edges, name, or graph attributes.</span>
@@ -1006,20 +1036,6 @@
         <span class="sd">&quot;&quot;&quot;Return True if graph is directed, False otherwise.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="MultiGraph.fresh_copy"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.fresh_copy.html#networkx.MultiGraph.fresh_copy">[docs]</a>    <span class="k">def</span> <span class="nf">fresh_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a fresh copy graph with the same data structure.</span>
-
-<span class="sd">        A fresh copy has no nodes, edges or graph attributes. It is</span>
-<span class="sd">        the same data structure as the current graph. This method is</span>
-<span class="sd">        typically used to create an empty version of the graph.</span>
-
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        If you subclass the base class you should overwrite this method</span>
-<span class="sd">        to return your class of graph.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">MultiGraph</span><span class="p">()</span></div>
-
 <div class="viewcode-block" id="MultiGraph.copy"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.copy.html#networkx.MultiGraph.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy of the graph.</span>
 
@@ -1058,14 +1074,14 @@
 <span class="sd">            &gt;&gt;&gt; H = G.copy()</span>
 <span class="sd">            &gt;&gt;&gt; H = G.copy(as_view=False)</span>
 <span class="sd">            &gt;&gt;&gt; H = nx.Graph(G)</span>
-<span class="sd">            &gt;&gt;&gt; H = G.fresh_copy().__class__(G)</span>
+<span class="sd">            &gt;&gt;&gt; H = G.__class__(G)</span>
 
 <span class="sd">        Fresh Data -- For fresh data, the graph structure is copied while</span>
 <span class="sd">        new empty data attribute dicts are created. The resulting graph</span>
 <span class="sd">        is independent of the original and it has no edge, node or graph</span>
 <span class="sd">        attributes. Fresh copies are not enabled. Instead use:</span>
 
-<span class="sd">            &gt;&gt;&gt; H = G.fresh_copy()</span>
+<span class="sd">            &gt;&gt;&gt; H = G.__class__()</span>
 <span class="sd">            &gt;&gt;&gt; H.add_nodes_from(G)</span>
 <span class="sd">            &gt;&gt;&gt; H.add_edges_from(G.edges)</span>
 
@@ -1098,8 +1114,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">as_view</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">MultiGraphView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">generic_graph_view</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
         <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
@@ -1150,11 +1166,11 @@
 <span class="sd">        &gt;&gt;&gt; list(H.edges)</span>
 <span class="sd">        [(0, 1)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">graph_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_directed_class</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">as_view</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">MultiDiGraphView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">generic_graph_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph_class</span><span class="p">)</span>
         <span class="c1"># deepcopy when not a view</span>
-        <span class="kn">from</span> <span class="nn">networkx.classes.multidigraph</span> <span class="k">import</span> <span class="n">MultiDiGraph</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="n">MultiDiGraph</span><span class="p">()</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">graph_class</span><span class="p">()</span>
         <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">))</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">datadict</span><span class="p">))</span>
@@ -1201,10 +1217,11 @@
 <span class="sd">        &gt;&gt;&gt; list(G2.edges)</span>
 <span class="sd">        [(0, 1)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">graph_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_undirected_class</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">as_view</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">MultiGraphView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">generic_graph_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph_class</span><span class="p">)</span>
         <span class="c1"># deepcopy when not a view</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="n">MultiGraph</span><span class="p">()</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">graph_class</span><span class="p">()</span>
         <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">))</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">datadict</span><span class="p">))</span>
@@ -1212,71 +1229,6 @@
                          <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">keydict</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
                          <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">datadict</span> <span class="ow">in</span> <span class="n">keydict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">G</span></div>
-
-<div class="viewcode-block" id="MultiGraph.subgraph"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.subgraph.html#networkx.MultiGraph.subgraph">[docs]</a>    <span class="k">def</span> <span class="nf">subgraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a SubGraph view of the subgraph induced on nodes in `nodes`.</span>
-
-<span class="sd">        The induced subgraph of the graph contains the nodes in `nodes`</span>
-<span class="sd">        and the edges between those nodes.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        nodes : list, iterable</span>
-<span class="sd">            A container of nodes which will be iterated through once.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        G : SubGraph View</span>
-<span class="sd">            A subgraph view of the graph. The graph structure cannot be</span>
-<span class="sd">            changed but node/edge attributes can and are shared with the</span>
-<span class="sd">            original graph.</span>
-
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        The graph, edge and node attributes are shared with the original graph.</span>
-<span class="sd">        Changes to the graph structure is ruled out by the view, but changes</span>
-<span class="sd">        to attributes are reflected in the original graph.</span>
-
-<span class="sd">        To create a subgraph with its own copy of the edge/node attributes use:</span>
-<span class="sd">        G.subgraph(nodes).copy()</span>
-
-<span class="sd">        For an inplace reduction of a graph to a subgraph you can remove nodes:</span>
-<span class="sd">        G.remove_nodes_from([n for n in G if n not in set(nodes)])</span>
-
-<span class="sd">        Subgraph views are sometimes NOT what you want. In most cases where</span>
-<span class="sd">        you want to do more than simply look at the induced edges, it makes</span>
-<span class="sd">        more sense to just create the subgraph as its own graph with code like:</span>
-
-<span class="sd">        ::</span>
-
-<span class="sd">            # Create a subgraph SG based on a (possibly multigraph) G</span>
-<span class="sd">            SG = G.fresh_copy()</span>
-<span class="sd">            SG.add_nodes_from((n, G.nodes[n]) for n in largest_wcc)</span>
-<span class="sd">            if SG.is_multigraph:</span>
-<span class="sd">                SG.add_edges_from((n, nbr, key, d)</span>
-<span class="sd">                    for n, nbrs in G.adj.items() if n in largest_wcc</span>
-<span class="sd">                    for nbr, keydict in nbrs.items() if nbr in largest_wcc</span>
-<span class="sd">                    for key, d in keydict.items())</span>
-<span class="sd">            else:</span>
-<span class="sd">                SG.add_edges_from((n, nbr, d)</span>
-<span class="sd">                    for n, nbrs in G.adj.items() if n in largest_wcc</span>
-<span class="sd">                    for nbr, d in nbrs.items() if nbr in largest_wcc)</span>
-<span class="sd">            SG.graph.update(G.graph)</span>
-
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; G = nx.Graph()   # or DiGraph, MultiGraph, MultiDiGraph, etc</span>
-<span class="sd">        &gt;&gt;&gt; nx.add_path(G, [0, 1, 2, 3])</span>
-<span class="sd">        &gt;&gt;&gt; H = G.subgraph([0, 1, 2])</span>
-<span class="sd">        &gt;&gt;&gt; list(H.edges)</span>
-<span class="sd">        [(0, 1), (1, 2)]</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">induced_nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">show_nodes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nbunch_iter</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
-        <span class="n">SubGraph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">SubMultiGraph</span>
-        <span class="c1"># if already a subgraph, don&#39;t make a chain</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_NODE_OK&#39;</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">SubGraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_EDGE_OK</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">SubGraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MultiGraph.number_of_edges"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.number_of_edges.html#networkx.MultiGraph.number_of_edges">[docs]</a>    <span class="k">def</span> <span class="nf">number_of_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the number of edges between two nodes.</span>
@@ -1370,7 +1322,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180719235719',
+            VERSION:'2.2rc1.dev20180720045654',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.branchings &mdash; NetworkX 2.2rc1.dev20180719235719 documentation</title>
+  <title>networkx.algorithms.tree.branchings &mdash; NetworkX 2.2rc1.dev20180720045654 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180719235719 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180720045654 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180719235719
+                2.2rc1.dev_20180720045654
               </div>
             
           
@@ -360,10 +360,6 @@
     <span class="k">def</span> <span class="nf">remove_nodes_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nbunch</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nbunch</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">fresh_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Needed to make .copy() work</span>
-        <span class="k">return</span> <span class="n">MultiDiGraph_EdgeKey</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u_for_edge</span><span class="p">,</span> <span class="n">v_for_edge</span><span class="p">,</span> <span class="n">key_for_edge</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -705,7 +701,7 @@
 
         <span class="c1"># (I3) Branch construction.</span>
         <span class="c1"># print(self.level)</span>
-        <span class="n">H</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G_original</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G_original</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
 
         <span class="k">def</span> <span class="nf">is_root</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">edgekeys</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;</span>
@@ -911,7 +907,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180719235719',
+            VERSION:'2.2rc1.dev20180720045654',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MultiDiGraph—Directed graphs with self loops and parallel edges &mdash; NetworkX 2.2rc1.dev20180719235719 documentation</title>
+  <title>MultiDiGraph—Directed graphs with self loops and parallel edges &mdash; NetworkX 2.2rc1.dev20180720045654 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180719235719 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180720045654 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -34,7 +34,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="networkx.MultiDiGraph.__init__" href="generated/networkx.MultiDiGraph.__init__.html" />
-    <link rel="prev" title="networkx.MultiGraph.fresh_copy" href="generated/networkx.MultiGraph.fresh_copy.html" /> 
+    <link rel="prev" title="networkx.MultiGraph.edge_subgraph" href="generated/networkx.MultiGraph.edge_subgraph.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180719235719
+                2.2rc1.dev_20180720045654
               </div>
             
           
@@ -388,6 +388,19 @@ It should require no arguments and return a dict-like object.</dd>
 dict which holds attrbute values keyed by attribute name.
 It should require no arguments and return a dict-like object.</dd>
 </dl>
+<p>Typically, if your extension doesn’t impact the data structure all
+methods will inherited without issue except: <code class="xref py py-obj docutils literal notranslate"><span class="pre">to_directed/to_undirected</span></code>.
+By default these methods create a DiGraph/Graph class and you probably
+want them to create your extension of a DiGraph/Graph. To facilitate
+this we define two class variables that you can set in your subclass.</p>
+<dl class="docutils">
+<dt>to_directed_class <span class="classifier-delimiter">:</span> <span class="classifier">callable, (default: DiGraph or MultiDiGraph)</span></dt>
+<dd>Class to create a new graph structure in the <a class="reference internal" href="generated/networkx.MultiDiGraph.to_directed.html#networkx.MultiDiGraph.to_directed" title="networkx.MultiDiGraph.to_directed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_directed</span></code></a> method.
+If <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, a NetworkX class (DiGraph or MultiDiGraph) is used.</dd>
+<dt>to_undirected_class <span class="classifier-delimiter">:</span> <span class="classifier">callable, (default: Graph or MultiGraph)</span></dt>
+<dd>Class to create a new graph structure in the <a class="reference internal" href="generated/networkx.MultiDiGraph.to_undirected.html#networkx.MultiDiGraph.to_undirected" title="networkx.MultiDiGraph.to_undirected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_undirected</span></code></a> method.
+If <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, a NetworkX class (Graph or MultiGraph) is used.</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>Please see <a class="reference internal" href="ordered.html#module-networkx.classes.ordered" title="networkx.classes.ordered"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ordered</span></code></a> for examples of
 creating graph subclasses by overwriting the base class <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> with
@@ -565,16 +578,13 @@ a dictionary-like object.</p>
 <td>Return a directed representation of the graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.subgraph.html#networkx.MultiDiGraph.subgraph" title="networkx.MultiDiGraph.subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.subgraph</span></code></a>(nodes)</td>
-<td>Return a SubGraph view of the subgraph induced on nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>.</td>
+<td>Return a SubGraph view of the subgraph induced on <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.edge_subgraph.html#networkx.MultiDiGraph.edge_subgraph" title="networkx.MultiDiGraph.edge_subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.edge_subgraph</span></code></a>(edges)</td>
 <td>Returns the subgraph induced by the specified edges.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.reverse.html#networkx.MultiDiGraph.reverse" title="networkx.MultiDiGraph.reverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.reverse</span></code></a>([copy])</td>
 <td>Return the reverse of the graph.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.fresh_copy.html#networkx.MultiDiGraph.fresh_copy" title="networkx.MultiDiGraph.fresh_copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.fresh_copy</span></code></a>()</td>
-<td>Return a fresh copy graph with the same data structure.</td>
 </tr>
 </tbody>
 </table>
@@ -593,7 +603,7 @@ a dictionary-like object.</p>
         <a href="generated/networkx.MultiDiGraph.__init__.html" class="btn btn-neutral float-right" title="networkx.MultiDiGraph.__init__" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/networkx.MultiGraph.fresh_copy.html" class="btn btn-neutral" title="networkx.MultiGraph.fresh_copy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/networkx.MultiGraph.edge_subgraph.html" class="btn btn-neutral" title="networkx.MultiGraph.edge_subgraph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -625,7 +635,7 @@ a dictionary-like object.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180719235719',
+            VERSION:'2.2rc1.dev20180720045654',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

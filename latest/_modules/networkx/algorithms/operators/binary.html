@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.operators.binary &mdash; NetworkX 2.2rc1.dev20180719235719 documentation</title>
+  <title>networkx.algorithms.operators.binary &mdash; NetworkX 2.2rc1.dev20180720045654 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180719235719 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180720045654 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180719235719
+                2.2rc1.dev_20180720045654
               </div>
             
           
@@ -215,7 +215,7 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">()</span> <span class="o">==</span> <span class="n">H</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;G and H must both be graphs or multigraphs.&#39;</span><span class="p">)</span>
     <span class="c1"># Union is the same type as G</span>
-    <span class="n">R</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
     <span class="c1"># add graph attributes, H attributes take precedent over G attributes</span>
     <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
     <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
@@ -473,7 +473,7 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">()</span> <span class="o">==</span> <span class="n">H</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;G and H must both be graphs or multigraphs.&#39;</span><span class="p">)</span>
 
-    <span class="n">R</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">fresh_copy</span><span class="p">()</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
     <span class="c1"># add graph attributes, H attributes take precedent over G attributes</span>
     <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
     <span class="n">R</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
@@ -525,7 +525,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180719235719',
+            VERSION:'2.2rc1.dev20180720045654',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
