@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.2 &mdash; NetworkX 2.2rc1.dev20180720045654 documentation</title>
+  <title>Announcement: NetworkX 2.2 &mdash; NetworkX 2.2rc1.dev20180720164843 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180720045654 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180720164843 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180720045654
+                2.2rc1.dev_20180720164843
               </div>
             
           
@@ -173,20 +173,40 @@ X contributors. Highlights include:</p>
 </div>
 <div class="section" id="improvements">
 <h2>Improvements<a class="headerlink" href="#improvements" title="Permalink to this headline">¶</a></h2>
+<p>Each function that uses random numbers now uses a <code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code> argument to control
+the random number generation (RNG). By default the global default RNG is
+used. More precisely, the <a class="reference external" href="https://docs.python.org/2/library/random.html#module-random" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a> package’s default RNG or the numpy.random
+default RNG. You can also create your own RNG and pass it into the <code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code>
+argument. Finally, you can use an integer to indicate the state to set for
+the RNG. In this case a local RNG is created leaving the global RNG untouched.
+Some functions use <a class="reference external" href="https://docs.python.org/2/library/random.html#module-random" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a> and some use <code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random</span></code>, but we have written
+a translater so that all functions CAN take a <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.RandomState.html#numpy.random.RandomState" title="(in NumPy v1.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code></a>
+object. So a single RNG can be used for the entire package.</p>
 <p>Cyclic references between graph classes and views have been removed to ease
-subclassing without memory leaks. Graphs no longer hold references to view.</p>
+subclassing without memory leaks. Graphs no longer hold references to views.</p>
 <p>Cyclic references between a graph and itself have been removed by eliminating
 G.root_graph. It turns out this was an avoidable construct anyway.</p>
+<p>GraphViews have been reformulated as functions removing much of the subclass
+trouble with the copy/to_directed/subgraph methods. It also simplifies the
+graph view code base and API. There are now three function that create
+graph views: generic_graph_view(graph, create_using), reverse_view(digraph)
+and subgraph_view(graph, node_filter, edge_filter).</p>
 <p>GraphML can now be written with attributes using numpy numeric types.
 In particular, np.float64 and np.int64 no longer need to convert to Python
 float and int to be written. They are still written as generic floats so
 reading them back in will not make the numpy values.</p>
+<p>A generator following the Stochastic Block Model is now available.</p>
+<p>New function <code class="xref py py-obj docutils literal notranslate"><span class="pre">all_topolgical_sort</span></code> to generate all possible top_sorts.</p>
+<p>New functions for tree width and tree decompositions.</p>
+<p>Functions for Clauset-Newman-Moore modularity-max community detection.</p>
+<p>Functions for small world analysis, directed clustering and perfect matchings.</p>
 </div>
 <div class="section" id="api-changes">
 <h2>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h2>
 <p>empty_graph has taken over the functionality from
 nx.convert._prep_create_using which was removed.</p>
-<p>create_using should now be a Graph Constructor like nx.Graph or nx.DiGraph.
+<p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">create_using</span></code> argument (used in many functions) should now be a
+Graph Constructor like nx.Graph or nx.DiGraph.
 It can still be a graph instance which will be cleared before use, but the
 preferred use is a constructor.</p>
 <p>New Base Class Method: update
@@ -198,6 +218,13 @@ Otherwise the first argument is treated as a list of edges.</p>
 </div>
 <div class="section" id="deprecations">
 <h2>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h2>
+<p>Graph class method <code class="xref py py-obj docutils literal notranslate"><span class="pre">fresh_copy</span></code> - simply use <code class="xref py py-obj docutils literal notranslate"><span class="pre">__class__</span></code>.
+The GraphView classes are deprecated in preference to the function
+interface. Specifically, <code class="xref py py-obj docutils literal notranslate"><span class="pre">ReverseView</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">ReverseMultiView</span></code> are
+replaced by <code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse_view</span></code>. <code class="xref py py-obj docutils literal notranslate"><span class="pre">SubGraph</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">SubDiGraph</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">SubMultiGraph</span></code>
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">SubMultiDiGraph</span></code> are replaced by <code class="xref py py-obj docutils literal notranslate"><span class="pre">subgraph_view</span></code>.
+And <code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphView</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">DiGraphView</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiGraphView</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraphView</span></code>
+are derecated in favor of <code class="xref py py-obj docutils literal notranslate"><span class="pre">generic_graph_view(graph,</span> <span class="pre">create_using)</span></code>.</p>
 </div>
 <div class="section" id="contributors-to-this-release">
 <h2>Contributors to this release<a class="headerlink" href="#contributors-to-this-release" title="Permalink to this headline">¶</a></h2>
@@ -243,7 +270,7 @@ Otherwise the first argument is treated as a list of edges.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180720045654',
+            VERSION:'2.2rc1.dev20180720164843',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
