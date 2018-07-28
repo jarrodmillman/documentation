@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.unweighted &mdash; NetworkX 2.2rc1.dev20180727154350 documentation</title>
+  <title>networkx.algorithms.shortest_paths.unweighted &mdash; NetworkX 2.2rc1.dev20180728025007 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180727154350 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180728025007 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180727154350
+                2.2rc1.dev_20180728025007
               </div>
             
           
@@ -256,7 +256,7 @@
     <span class="k">del</span> <span class="n">seen</span>
 
 
-<span class="k">def</span> <span class="nf">single_target_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="single_target_shortest_path_length"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.unweighted.single_target_shortest_path_length.html#networkx.algorithms.shortest_paths.unweighted.single_target_shortest_path_length">[docs]</a><span class="k">def</span> <span class="nf">single_target_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compute the shortest path lengths to target from all reachable nodes.</span>
 
 <span class="sd">    Parameters</span>
@@ -300,7 +300,7 @@
     <span class="c1"># handle either directed or undirected</span>
     <span class="n">adj</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">pred</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="k">else</span> <span class="n">G</span><span class="o">.</span><span class="n">adj</span>
     <span class="n">nextlevel</span> <span class="o">=</span> <span class="p">{</span><span class="n">target</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-    <span class="k">return</span> <span class="n">_single_shortest_path_length</span><span class="p">(</span><span class="n">adj</span><span class="p">,</span> <span class="n">nextlevel</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_single_shortest_path_length</span><span class="p">(</span><span class="n">adj</span><span class="p">,</span> <span class="n">nextlevel</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="all_pairs_shortest_path_length"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.unweighted.all_pairs_shortest_path_length.html#networkx.algorithms.shortest_paths.unweighted.all_pairs_shortest_path_length">[docs]</a><span class="k">def</span> <span class="nf">all_pairs_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -347,7 +347,7 @@
         <span class="k">yield</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">))</span></div>
 
 
-<span class="k">def</span> <span class="nf">bidirectional_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+<div class="viewcode-block" id="bidirectional_shortest_path"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.unweighted.bidirectional_shortest_path.html#networkx.algorithms.shortest_paths.unweighted.bidirectional_shortest_path">[docs]</a><span class="k">def</span> <span class="nf">bidirectional_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a list of nodes in a shortest path between source and target.</span>
 
 <span class="sd">    Parameters</span>
@@ -400,7 +400,7 @@
         <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">succ</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">path</span>
+    <span class="k">return</span> <span class="n">path</span></div>
 
 
 <span class="k">def</span> <span class="nf">_bidirectional_pred_succ</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
@@ -537,7 +537,7 @@
     <span class="k">return</span> <span class="n">paths</span>
 
 
-<span class="k">def</span> <span class="nf">single_target_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="single_target_shortest_path"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.unweighted.single_target_shortest_path.html#networkx.algorithms.shortest_paths.unweighted.single_target_shortest_path">[docs]</a><span class="k">def</span> <span class="nf">single_target_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compute shortest path to target from all nodes that reach target.</span>
 
 <span class="sd">    Parameters</span>
@@ -584,7 +584,7 @@
         <span class="n">cutoff</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
     <span class="n">nextlevel</span> <span class="o">=</span> <span class="p">{</span><span class="n">target</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>     <span class="c1"># list of nodes to check at next level</span>
     <span class="n">paths</span> <span class="o">=</span> <span class="p">{</span><span class="n">target</span><span class="p">:</span> <span class="p">[</span><span class="n">target</span><span class="p">]}</span>  <span class="c1"># paths dictionary  (paths to key from source)</span>
-    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">_single_shortest_path</span><span class="p">(</span><span class="n">adj</span><span class="p">,</span> <span class="n">nextlevel</span><span class="p">,</span> <span class="n">paths</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">,</span> <span class="n">join</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">_single_shortest_path</span><span class="p">(</span><span class="n">adj</span><span class="p">,</span> <span class="n">nextlevel</span><span class="p">,</span> <span class="n">paths</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">,</span> <span class="n">join</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="all_pairs_shortest_path"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.unweighted.all_pairs_shortest_path.html#networkx.algorithms.shortest_paths.unweighted.all_pairs_shortest_path">[docs]</a><span class="k">def</span> <span class="nf">all_pairs_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -702,7 +702,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 27, 2018.
+      Last updated on Jul 28, 2018.
 
     </p>
   </div>
@@ -724,7 +724,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180727154350',
+            VERSION:'2.2rc1.dev20180728025007',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

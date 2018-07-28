@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.classic &mdash; NetworkX 2.2rc1.dev20180727154350 documentation</title>
+  <title>networkx.generators.classic &mdash; NetworkX 2.2rc1.dev20180728025007 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180727154350 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180728025007 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180727154350
+                2.2rc1.dev_20180728025007
               </div>
             
           
@@ -232,7 +232,7 @@
                 <span class="k">break</span>
 
 
-<span class="k">def</span> <span class="nf">full_rary_tree</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="full_rary_tree"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.full_rary_tree.html#networkx.generators.classic.full_rary_tree">[docs]</a><span class="k">def</span> <span class="nf">full_rary_tree</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Creates a full r-ary tree of n vertices.</span>
 
 <span class="sd">    Sometimes called a k-ary, n-ary, or m-ary tree.</span>
@@ -262,7 +262,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">empty_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">create_using</span><span class="p">)</span>
     <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">_tree_edges</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="balanced_tree"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.balanced_tree.html#networkx.generators.classic.balanced_tree">[docs]</a><span class="k">def</span> <span class="nf">balanced_tree</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -410,7 +410,7 @@
     <span class="k">return</span> <span class="n">G</span></div>
 
 
-<span class="k">def</span> <span class="nf">circulant_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="circulant_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.circulant_graph.html#networkx.generators.classic.circulant_graph">[docs]</a><span class="k">def</span> <span class="nf">circulant_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Generates the circulant graph $Ci_n(x_1, x_2, ..., x_m)$ with $n$ vertices.</span>
 
 <span class="sd">    Returns</span>
@@ -460,7 +460,7 @@
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">offsets</span><span class="p">:</span>
             <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span>
             <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">G</span>
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="cycle_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.classic.cycle_graph.html#networkx.generators.classic.cycle_graph">[docs]</a><span class="nd">@nodes_or_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -902,7 +902,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 27, 2018.
+      Last updated on Jul 28, 2018.
 
     </p>
   </div>
@@ -924,7 +924,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180727154350',
+            VERSION:'2.2rc1.dev20180728025007',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

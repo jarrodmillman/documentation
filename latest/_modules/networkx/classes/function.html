@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.function &mdash; NetworkX 2.2rc1.dev20180727154350 documentation</title>
+  <title>networkx.classes.function &mdash; NetworkX 2.2rc1.dev20180728025007 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180727154350 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180728025007 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180727154350
+                2.2rc1.dev_20180728025007
               </div>
             
           
@@ -220,9 +220,9 @@
     <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">nbunch</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">neighbors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="viewcode-block" id="neighbors"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.neighbors.html#networkx.classes.function.neighbors">[docs]</a><span class="k">def</span> <span class="nf">neighbors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a list of nodes connected to node n. &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="number_of_nodes"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.number_of_nodes.html#networkx.classes.function.number_of_nodes">[docs]</a><span class="k">def</span> <span class="nf">number_of_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -459,7 +459,7 @@
     <span class="n">G_to_add_to</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">nodes_for_cycle</span><span class="p">,</span> <span class="n">cyclic</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="o">**</span><span class="n">attr</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="p">):</span>
+<div class="viewcode-block" id="subgraph"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.subgraph.html#networkx.classes.function.subgraph">[docs]</a><span class="k">def</span> <span class="nf">subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return the subgraph induced on nodes in nbunch.</span>
 
 <span class="sd">    Parameters</span>
@@ -479,10 +479,10 @@
 <span class="sd">    -----</span>
 <span class="sd">    subgraph(G) calls G.subgraph()</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">nbunch</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">nbunch</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">induced_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="p">):</span>
+<div class="viewcode-block" id="induced_subgraph"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.induced_subgraph.html#networkx.classes.function.induced_subgraph">[docs]</a><span class="k">def</span> <span class="nf">induced_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nbunch</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a SubGraph view of `G` showing only nodes in nbunch.</span>
 
 <span class="sd">    The induced subgraph of a graph on a set of nodes N is the</span>
@@ -524,10 +524,10 @@
 <span class="sd">    [(0, 1), (1, 2)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">induced_nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">show_nodes</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nbunch_iter</span><span class="p">(</span><span class="n">nbunch</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">edge_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
+<div class="viewcode-block" id="edge_subgraph"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.edge_subgraph.html#networkx.classes.function.edge_subgraph">[docs]</a><span class="k">def</span> <span class="nf">edge_subgraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns a view of the subgraph induced by the specified edges.</span>
 
 <span class="sd">    The induced subgraph contains each edge in `edges` and each</span>
@@ -584,10 +584,10 @@
             <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_diedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">induced_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">show_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="n">induced_edges</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">induced_nodes</span><span class="p">,</span> <span class="n">induced_edges</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">restricted_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
+<div class="viewcode-block" id="restricted_view"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.restricted_view.html#networkx.classes.function.restricted_view">[docs]</a><span class="k">def</span> <span class="nf">restricted_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns a view of `G` with hidden nodes and edges.</span>
 
 <span class="sd">    The resulting subgraph filters out node `nodes` and edges `edges`.</span>
@@ -641,36 +641,36 @@
             <span class="n">hide_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_diedges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">hide_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">hide_nodes</span><span class="p">,</span> <span class="n">hide_edges</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">hide_nodes</span><span class="p">,</span> <span class="n">hide_edges</span><span class="p">)</span></div>
 
 
-<span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="reverse_view"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.reverse_view.html#networkx.classes.function.reverse_view">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">reverse_view</span><span class="p">(</span><span class="n">digraph</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Provide a reverse view of the digraph with edges reversed.</span>
 
 <span class="sd">    Identical to digraph.reverse(copy=False)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">reverse_view</span><span class="p">(</span><span class="n">digraph</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">reverse_view</span><span class="p">(</span><span class="n">digraph</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">to_directed</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+<div class="viewcode-block" id="to_directed"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.to_directed.html#networkx.classes.function.to_directed">[docs]</a><span class="k">def</span> <span class="nf">to_directed</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a directed view of the graph `graph`.</span>
 
 <span class="sd">    Identical to graph.to_directed(as_view=True)</span>
 <span class="sd">    Note that graph.to_directed defaults to `as_view=False`</span>
 <span class="sd">    while this function always provides a view.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">graph</span><span class="o">.</span><span class="n">to_directed</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">graph</span><span class="o">.</span><span class="n">to_directed</span><span class="p">()</span></div>
 
 
-<span class="k">def</span> <span class="nf">to_undirected</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+<div class="viewcode-block" id="to_undirected"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.to_undirected.html#networkx.classes.function.to_undirected">[docs]</a><span class="k">def</span> <span class="nf">to_undirected</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return an undirected view of the graph `graph`.</span>
 
 <span class="sd">    Identical to graph.to_undirected(as_view=True)</span>
 <span class="sd">    Note that graph.to_undirected defaults to `as_view=False`</span>
 <span class="sd">    while this function always provides a view.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">graph</span><span class="o">.</span><span class="n">to_undirected</span><span class="p">(</span><span class="n">as_view</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph</span><span class="o">.</span><span class="n">to_undirected</span><span class="p">(</span><span class="n">as_view</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="create_empty_copy"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.create_empty_copy.html#networkx.classes.function.create_empty_copy">[docs]</a><span class="k">def</span> <span class="nf">create_empty_copy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -1089,7 +1089,7 @@
     <span class="k">return</span> <span class="p">(</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="ow">and</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span></div>
 
 
-<span class="k">def</span> <span class="nf">is_weighted</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="is_weighted"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.is_weighted.html#networkx.classes.function.is_weighted">[docs]</a><span class="k">def</span> <span class="nf">is_weighted</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns True if `G` has weighted edges.</span>
 
 <span class="sd">    Parameters</span>
@@ -1139,10 +1139,10 @@
         <span class="c1"># Special handling required since: all([]) == True</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">weight</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">weight</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
 
 
-<span class="k">def</span> <span class="nf">is_negatively_weighted</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="is_negatively_weighted"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.is_negatively_weighted.html#networkx.classes.function.is_negatively_weighted">[docs]</a><span class="k">def</span> <span class="nf">is_negatively_weighted</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns True if `G` has negatively weighted edges.</span>
 
 <span class="sd">    Parameters</span>
@@ -1193,10 +1193,10 @@
         <span class="k">return</span> <span class="n">weight</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="n">weight</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span>
 
     <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">weight</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="n">weight</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span>
-               <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+               <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
 
 
-<span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+<div class="viewcode-block" id="is_empty"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.is_empty.html#networkx.classes.function.is_empty">[docs]</a><span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns True if `G` has no edges.</span>
 
 <span class="sd">    Parameters</span>
@@ -1216,7 +1216,7 @@
 <span class="sd">    is the number of nodes in the graph.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
 
 
 <div class="viewcode-block" id="nodes_with_selfloops"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.nodes_with_selfloops.html#networkx.classes.function.nodes_with_selfloops">[docs]</a><span class="k">def</span> <span class="nf">nodes_with_selfloops</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -1361,7 +1361,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 27, 2018.
+      Last updated on Jul 28, 2018.
 
     </p>
   </div>
@@ -1383,7 +1383,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180727154350',
+            VERSION:'2.2rc1.dev20180728025007',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

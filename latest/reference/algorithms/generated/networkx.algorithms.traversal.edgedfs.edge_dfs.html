@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.traversal.edgedfs.edge_dfs &mdash; NetworkX 2.2rc1.dev20180727154350 documentation</title>
+  <title>networkx.algorithms.traversal.edgedfs.edge_dfs &mdash; NetworkX 2.2rc1.dev20180728025007 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180727154350 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180728025007 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Tree" href="../tree.html" />
+    <link rel="next" title="networkx.algorithms.traversal.edgebfs.edge_bfs" href="networkx.algorithms.traversal.edgebfs.edge_bfs.html" />
     <link rel="prev" title="networkx.algorithms.traversal.beamsearch.bfs_beam_edges" href="networkx.algorithms.traversal.beamsearch.bfs_beam_edges.html" /> 
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180727154350
+                2.2rc1.dev_20180728025007
               </div>
             
           
@@ -129,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../isomorphism.html">Isomorphism</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../link_analysis.html">Link Analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../link_prediction.html">Link Prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lowest_common_ancestors.html">Lowest Common Ancestor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../matching.html">Matching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../minors.html">Minors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mis.html">Maximal independent set</a></li>
@@ -137,7 +138,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../reciprocity.html">Reciprocity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../rich_club.html">Rich Club</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shortest_paths.html">Shortest Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../similarity.html">Similarity Measures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../simple_paths.html">Simple Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smallworld.html">Similarity Measures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smetric.html">s metric</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../structuralholes.html">Structural holes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../swap.html">Swap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tournament.html">Tournament</a></li>
@@ -146,6 +150,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.breadth_first_search">Breadth First Search</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.beamsearch">Beam search</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.edgedfs">Depth First Search on Edges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../traversal.html#id3">Depth First Search on Edges</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tree.html">Tree</a></li>
@@ -337,7 +342,7 @@ if not for the functionality provided by this function.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tree.html" class="btn btn-neutral float-right" title="Tree" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="networkx.algorithms.traversal.edgebfs.edge_bfs.html" class="btn btn-neutral float-right" title="networkx.algorithms.traversal.edgebfs.edge_bfs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="networkx.algorithms.traversal.beamsearch.bfs_beam_edges.html" class="btn btn-neutral" title="networkx.algorithms.traversal.beamsearch.bfs_beam_edges" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -350,7 +355,7 @@ if not for the functionality provided by this function.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 27, 2018.
+      Last updated on Jul 28, 2018.
 
     </p>
   </div>
@@ -372,7 +377,7 @@ if not for the functionality provided by this function.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180727154350',
+            VERSION:'2.2rc1.dev20180728025007',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

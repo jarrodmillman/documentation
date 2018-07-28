@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Drawing &mdash; NetworkX 2.2rc1.dev20180727154350 documentation</title>
+  <title>Drawing &mdash; NetworkX 2.2rc1.dev20180728025007 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180727154350 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180728025007 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180727154350
+                2.2rc1.dev_20180728025007
               </div>
             
           
@@ -139,6 +139,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.drawing.layout">Graph Layout</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#layout">Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.bipartite_layout.html">networkx.drawing.layout.bipartite_layout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.circular_layout.html">networkx.drawing.layout.circular_layout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.kamada_kawai_layout.html">networkx.drawing.layout.kamada_kawai_layout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.random_layout.html">networkx.drawing.layout.random_layout</a></li>
@@ -413,25 +414,28 @@ Changing <code class="xref py py-obj docutils literal notranslate"><span class="
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.circular_layout.html#networkx.drawing.layout.circular_layout" title="networkx.drawing.layout.circular_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circular_layout</span></code></a>(G[,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.bipartite_layout.html#networkx.drawing.layout.bipartite_layout" title="networkx.drawing.layout.bipartite_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bipartite_layout</span></code></a>(G,&nbsp;nodes[,&nbsp;align,&nbsp;scale,&nbsp;…])</td>
+<td>Position nodes in two straight lines.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.circular_layout.html#networkx.drawing.layout.circular_layout" title="networkx.drawing.layout.circular_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circular_layout</span></code></a>(G[,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
 <td>Position nodes on a circle.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.kamada_kawai_layout.html#networkx.drawing.layout.kamada_kawai_layout" title="networkx.drawing.layout.kamada_kawai_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kamada_kawai_layout</span></code></a>(G[,&nbsp;dist,&nbsp;pos,&nbsp;weight,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.kamada_kawai_layout.html#networkx.drawing.layout.kamada_kawai_layout" title="networkx.drawing.layout.kamada_kawai_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kamada_kawai_layout</span></code></a>(G[,&nbsp;dist,&nbsp;pos,&nbsp;weight,&nbsp;…])</td>
 <td>Position nodes using Kamada-Kawai path-length cost-function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.random_layout.html#networkx.drawing.layout.random_layout" title="networkx.drawing.layout.random_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_layout</span></code></a>(G[,&nbsp;center,&nbsp;dim,&nbsp;seed])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.random_layout.html#networkx.drawing.layout.random_layout" title="networkx.drawing.layout.random_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_layout</span></code></a>(G[,&nbsp;center,&nbsp;dim,&nbsp;seed])</td>
 <td>Position nodes uniformly at random in the unit square.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.rescale_layout.html#networkx.drawing.layout.rescale_layout" title="networkx.drawing.layout.rescale_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale_layout</span></code></a>(pos[,&nbsp;scale])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.rescale_layout.html#networkx.drawing.layout.rescale_layout" title="networkx.drawing.layout.rescale_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale_layout</span></code></a>(pos[,&nbsp;scale])</td>
 <td>Return scaled position array to (-scale, scale) in all axes.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.shell_layout.html#networkx.drawing.layout.shell_layout" title="networkx.drawing.layout.shell_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shell_layout</span></code></a>(G[,&nbsp;nlist,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.shell_layout.html#networkx.drawing.layout.shell_layout" title="networkx.drawing.layout.shell_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shell_layout</span></code></a>(G[,&nbsp;nlist,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
 <td>Position nodes in concentric circles.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.spring_layout.html#networkx.drawing.layout.spring_layout" title="networkx.drawing.layout.spring_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spring_layout</span></code></a>(G[,&nbsp;k,&nbsp;pos,&nbsp;fixed,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.spring_layout.html#networkx.drawing.layout.spring_layout" title="networkx.drawing.layout.spring_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spring_layout</span></code></a>(G[,&nbsp;k,&nbsp;pos,&nbsp;fixed,&nbsp;…])</td>
 <td>Position nodes using Fruchterman-Reingold force-directed algorithm.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.spectral_layout.html#networkx.drawing.layout.spectral_layout" title="networkx.drawing.layout.spectral_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectral_layout</span></code></a>(G[,&nbsp;weight,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.spectral_layout.html#networkx.drawing.layout.spectral_layout" title="networkx.drawing.layout.spectral_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectral_layout</span></code></a>(G[,&nbsp;weight,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
 <td>Position nodes using the eigenvectors of the graph Laplacian.</td>
 </tr>
 </tbody>
@@ -460,7 +464,7 @@ Changing <code class="xref py py-obj docutils literal notranslate"><span class="
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 27, 2018.
+      Last updated on Jul 28, 2018.
 
     </p>
   </div>
@@ -482,7 +486,7 @@ Changing <code class="xref py py-obj docutils literal notranslate"><span class="
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180727154350',
+            VERSION:'2.2rc1.dev20180728025007',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Centrality &mdash; NetworkX 2.2rc1.dev20180727154350 documentation</title>
+  <title>Centrality &mdash; NetworkX 2.2rc1.dev20180728025007 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180727154350 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180728025007 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -34,7 +34,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="networkx.algorithms.centrality.degree_centrality" href="generated/networkx.algorithms.centrality.degree_centrality.html" />
-    <link rel="prev" title="networkx.algorithms.bridges.has_bridges" href="generated/networkx.algorithms.bridges.has_bridges.html" /> 
+    <link rel="prev" title="networkx.algorithms.bridges.local_bridges" href="generated/networkx.algorithms.bridges.local_bridges.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180727154350
+                2.2rc1.dev_20180728025007
               </div>
             
           
@@ -142,6 +142,7 @@
 <li class="toctree-l3"><a class="reference internal" href="isomorphism.html">Isomorphism</a></li>
 <li class="toctree-l3"><a class="reference internal" href="link_analysis.html">Link Analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="link_prediction.html">Link Prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowest_common_ancestors.html">Lowest Common Ancestor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="matching.html">Matching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="minors.html">Minors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mis.html">Maximal independent set</a></li>
@@ -150,7 +151,10 @@
 <li class="toctree-l3"><a class="reference internal" href="reciprocity.html">Reciprocity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rich_club.html">Rich Club</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shortest_paths.html">Shortest Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="similarity.html">Similarity Measures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="simple_paths.html">Simple Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smallworld.html">Similarity Measures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smetric.html">s metric</a></li>
 <li class="toctree-l3"><a class="reference internal" href="structuralholes.html">Structural holes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swap.html">Swap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tournament.html">Tournament</a></li>
@@ -318,6 +322,9 @@
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.centrality.current_flow_closeness_centrality.html#networkx.algorithms.centrality.current_flow_closeness_centrality" title="networkx.algorithms.centrality.current_flow_closeness_centrality"><code class="xref py py-obj docutils literal notranslate"><span class="pre">current_flow_closeness_centrality</span></code></a>(G[,&nbsp;…])</td>
 <td>Compute current-flow closeness centrality for nodes.</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.centrality.information_centrality.html#networkx.algorithms.centrality.information_centrality" title="networkx.algorithms.centrality.information_centrality"><code class="xref py py-obj docutils literal notranslate"><span class="pre">information_centrality</span></code></a>(G[,&nbsp;weight,&nbsp;dtype,&nbsp;…])</td>
+<td>Compute current-flow closeness centrality for nodes.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -465,7 +472,7 @@
         <a href="generated/networkx.algorithms.centrality.degree_centrality.html" class="btn btn-neutral float-right" title="networkx.algorithms.centrality.degree_centrality" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/networkx.algorithms.bridges.has_bridges.html" class="btn btn-neutral" title="networkx.algorithms.bridges.has_bridges" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/networkx.algorithms.bridges.local_bridges.html" class="btn btn-neutral" title="networkx.algorithms.bridges.local_bridges" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -475,7 +482,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 27, 2018.
+      Last updated on Jul 28, 2018.
 
     </p>
   </div>
@@ -497,7 +504,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc1.dev20180727154350',
+            VERSION:'2.2rc1.dev20180728025007',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Converting to and from other data formats &mdash; NetworkX 2.2rc1.dev20180727154350 documentation</title>
+  <title>Converting to and from other data formats &mdash; NetworkX 2.2rc1.dev20180728025007 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180727154350 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180728025007 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -34,7 +34,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="networkx.convert.to_networkx_graph" href="generated/networkx.convert.to_networkx_graph.html" />
-    <link rel="prev" title="networkx.linalg.attrmatrix.attr_sparse_matrix" href="generated/networkx.linalg.attrmatrix.attr_sparse_matrix.html" /> 
+    <link rel="prev" title="networkx.linalg.modularitymatrix.directed_modularity_matrix" href="generated/networkx.linalg.modularitymatrix.directed_modularity_matrix.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180727154350
+                2.2rc1.dev_20180728025007
               </div>
             
           
@@ -116,8 +116,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.convert_matrix">Numpy</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_matrix.html">networkx.convert_matrix.to_numpy_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_array.html">networkx.convert_matrix.to_numpy_array</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_recarray.html">networkx.convert_matrix.to_numpy_recarray</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_matrix.html">networkx.convert_matrix.from_numpy_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_array.html">networkx.convert_matrix.from_numpy_array</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#scipy">Scipy</a><ul>
@@ -314,11 +316,17 @@ which attempts to guess the input type and convert it automatically.</p>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_matrix.html#networkx.convert_matrix.to_numpy_matrix" title="networkx.convert_matrix.to_numpy_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_matrix</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;order,&nbsp;…])</td>
 <td>Return the graph adjacency matrix as a NumPy matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray" title="networkx.convert_matrix.to_numpy_recarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_recarray</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;order])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_array.html#networkx.convert_matrix.to_numpy_array" title="networkx.convert_matrix.to_numpy_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_array</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;order,&nbsp;…])</td>
+<td>Return the graph adjacency matrix as a NumPy array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray" title="networkx.convert_matrix.to_numpy_recarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_recarray</span></code></a>(G[,&nbsp;nodelist,&nbsp;dtype,&nbsp;order])</td>
 <td>Return the graph adjacency matrix as a NumPy recarray.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_matrix.html#networkx.convert_matrix.from_numpy_matrix" title="networkx.convert_matrix.from_numpy_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_numpy_matrix</span></code></a>(A[,&nbsp;parallel_edges,&nbsp;…])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_matrix.html#networkx.convert_matrix.from_numpy_matrix" title="networkx.convert_matrix.from_numpy_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_numpy_matrix</span></code></a>(A[,&nbsp;parallel_edges,&nbsp;…])</td>
 <td>Return a graph from numpy matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_array.html#networkx.convert_matrix.from_numpy_array" title="networkx.convert_matrix.from_numpy_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_numpy_array</span></code></a>(A[,&nbsp;parallel_edges,&nbsp;…])</td>
+<td>Return a graph from NumPy array.</td>
 </tr>
 </tbody>
 </table>
@@ -376,7 +384,7 @@ which attempts to guess the input type and convert it automatically.</p>
         <a href="generated/networkx.convert.to_networkx_graph.html" class="btn btn-neutral float-right" title="networkx.convert.to_networkx_graph" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/networkx.linalg.attrmatrix.attr_sparse_matrix.html" class="btn btn-neutral" title="networkx.linalg.attrmatrix.attr_sparse_matrix" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/networkx.linalg.modularitymatrix.directed_modularity_matrix.html" class="btn btn-neutral" title="networkx.linalg.modularitymatrix.directed_modularity_matrix" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -386,7 +394,7 @@ which attempts to guess the input type and convert it automatically.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 27, 2018.
+      Last updated on Jul 28, 2018.
 
     </p>
   </div>
@@ -408,7 +416,7 @@ which attempts to guess the input type and convert it automatically.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc1.dev20180727154350',
+            VERSION:'2.2rc1.dev20180728025007',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

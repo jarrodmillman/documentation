@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted &mdash; NetworkX 2.2rc1.dev20180727154350 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted &mdash; NetworkX 2.2rc1.dev20180728025007 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180727154350 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180728025007 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180727154350
+                2.2rc1.dev_20180728025007
               </div>
             
           
@@ -760,7 +760,7 @@
     <span class="k">return</span> <span class="n">_dijkstra_multisource</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">multi_source_dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="multi_source_dijkstra"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.weighted.multi_source_dijkstra.html#networkx.algorithms.shortest_paths.weighted.multi_source_dijkstra">[docs]</a><span class="k">def</span> <span class="nf">multi_source_dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                           <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Find shortest weighted paths and lengths from a given set of</span>
 <span class="sd">    source nodes.</span>
@@ -870,7 +870,7 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">target</span><span class="p">],</span> <span class="n">paths</span><span class="p">[</span><span class="n">target</span><span class="p">])</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNoPath</span><span class="p">(</span><span class="s2">&quot;No path to </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNoPath</span><span class="p">(</span><span class="s2">&quot;No path to </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target</span><span class="p">))</span></div>
 
 
 <span class="k">def</span> <span class="nf">_dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">paths</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1048,7 +1048,7 @@
     <span class="k">return</span> <span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">_dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="n">pred</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">))</span></div>
 
 
-<span class="k">def</span> <span class="nf">all_pairs_dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="all_pairs_dijkstra"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.weighted.all_pairs_dijkstra.html#networkx.algorithms.shortest_paths.weighted.all_pairs_dijkstra">[docs]</a><span class="k">def</span> <span class="nf">all_pairs_dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Find shortest weighted paths and lengths between all nodes.</span>
 
 <span class="sd">    Parameters</span>
@@ -1112,7 +1112,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
         <span class="n">dist</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">single_source_dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
+        <span class="k">yield</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="all_pairs_dijkstra_path_length"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.weighted.all_pairs_dijkstra_path_length.html#networkx.algorithms.shortest_paths.weighted.all_pairs_dijkstra_path_length">[docs]</a><span class="k">def</span> <span class="nf">all_pairs_dijkstra_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
@@ -1802,7 +1802,7 @@
         <span class="k">yield</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">))</span></div>
 
 
-<span class="k">def</span> <span class="nf">goldberg_radzik</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="goldberg_radzik"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.weighted.goldberg_radzik.html#networkx.algorithms.shortest_paths.weighted.goldberg_radzik">[docs]</a><span class="k">def</span> <span class="nf">goldberg_radzik</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compute shortest path lengths and predecessors on shortest paths</span>
 <span class="sd">    in weighted graphs.</span>
 
@@ -1977,7 +1977,7 @@
         <span class="n">relabeled</span> <span class="o">=</span> <span class="n">relax</span><span class="p">(</span><span class="n">to_scan</span><span class="p">)</span>
 
     <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">u</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">pred</span><span class="p">}</span>
-    <span class="k">return</span> <span class="n">pred</span><span class="p">,</span> <span class="n">d</span>
+    <span class="k">return</span> <span class="n">pred</span><span class="p">,</span> <span class="n">d</span></div>
 
 
 <div class="viewcode-block" id="negative_edge_cycle"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.weighted.negative_edge_cycle.html#networkx.algorithms.shortest_paths.weighted.negative_edge_cycle">[docs]</a><span class="k">def</span> <span class="nf">negative_edge_cycle</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
@@ -2287,7 +2287,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 27, 2018.
+      Last updated on Jul 28, 2018.
 
     </p>
   </div>
@@ -2309,7 +2309,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180727154350',
+            VERSION:'2.2rc1.dev20180728025007',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
