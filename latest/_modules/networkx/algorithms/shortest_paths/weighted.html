@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted &mdash; NetworkX 2.2rc1.dev20180728032123 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted &mdash; NetworkX 2.2rc1.dev20180730155050 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180728032123 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180730155050 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180728032123
+                2.2rc1.dev_20180730155050
               </div>
             
           
@@ -1276,13 +1276,13 @@
 <span class="sd">    &gt;&gt;&gt; G = nx.path_graph(5, create_using = nx.DiGraph())</span>
 <span class="sd">    &gt;&gt;&gt; pred, dist = nx.bellman_ford_predecessor_and_distance(G, 0)</span>
 <span class="sd">    &gt;&gt;&gt; sorted(pred.items())</span>
-<span class="sd">    [(0, [None]), (1, [0]), (2, [1]), (3, [2]), (4, [3])]</span>
+<span class="sd">    [(0, []), (1, [0]), (2, [1]), (3, [2]), (4, [3])]</span>
 <span class="sd">    &gt;&gt;&gt; sorted(dist.items())</span>
 <span class="sd">    [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]</span>
 
 <span class="sd">    &gt;&gt;&gt; pred, dist = nx.bellman_ford_predecessor_and_distance(G, 0, 1)</span>
 <span class="sd">    &gt;&gt;&gt; sorted(pred.items())</span>
-<span class="sd">    [(0, [None]), (1, [0])]</span>
+<span class="sd">    [(0, []), (1, [0])]</span>
 <span class="sd">    &gt;&gt;&gt; sorted(dist.items())</span>
 <span class="sd">    [(0, 0), (1, 1)]</span>
 
@@ -1304,6 +1304,8 @@
 <span class="sd">    not containing the source contains a negative cost (di)cycle, it</span>
 <span class="sd">    will not be detected.</span>
 
+<span class="sd">    In NetworkX v2.1 and prior, the source node had predecessor `[None]`.</span>
+<span class="sd">    In NetworkX v2.2 this changed to the source node having predecessor `[]`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">source</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NodeNotFound</span><span class="p">(</span><span class="s2">&quot;Node </span><span class="si">%s</span><span class="s2"> is not found in the graph&quot;</span> <span class="o">%</span> <span class="n">source</span><span class="p">)</span>
@@ -1312,7 +1314,7 @@
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXUnbounded</span><span class="p">(</span><span class="s2">&quot;Negative cost cycle detected.&quot;</span><span class="p">)</span>
 
     <span class="n">dist</span> <span class="o">=</span> <span class="p">{</span><span class="n">source</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-    <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">source</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]}</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">source</span><span class="p">:</span> <span class="p">[]}</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pred</span><span class="p">,</span> <span class="n">dist</span>
@@ -1376,7 +1378,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">pred</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">source</span><span class="p">}</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">source</span><span class="p">}</span>
 
     <span class="k">if</span> <span class="n">dist</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">dist</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">source</span><span class="p">}</span>
@@ -1428,7 +1430,7 @@
             <span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">dst</span><span class="p">]</span>
             <span class="n">cur</span> <span class="o">=</span> <span class="n">dst</span>
 
-            <span class="k">while</span> <span class="n">pred</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">pred</span><span class="p">[</span><span class="n">cur</span><span class="p">]:</span>
                 <span class="n">cur</span> <span class="o">=</span> <span class="n">pred</span><span class="p">[</span><span class="n">cur</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
                 <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
 
@@ -2257,7 +2259,7 @@
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Graph is not weighted.&#39;</span><span class="p">)</span>
 
     <span class="n">dist</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
-    <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
     <span class="n">weight</span> <span class="o">=</span> <span class="n">_weight_function</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
 
     <span class="c1"># Calculate distance of shortest paths</span>
@@ -2287,7 +2289,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 28, 2018.
+      Last updated on Jul 30, 2018.
 
     </p>
   </div>
@@ -2309,7 +2311,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180728032123',
+            VERSION:'2.2rc1.dev20180730155050',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
