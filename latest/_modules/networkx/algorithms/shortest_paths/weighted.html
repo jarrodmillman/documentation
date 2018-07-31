@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted &mdash; NetworkX 2.2rc1.dev20180730161157 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted &mdash; NetworkX 2.2rc1.dev20180731182540 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180730161157 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180731182540 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180730161157
+                2.2rc1.dev_20180731182540
               </div>
             
           
@@ -284,6 +284,9 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
+
 <span class="sd">    NetworkXNoPath</span>
 <span class="sd">       If no path exists between source and target.</span>
 
@@ -358,6 +361,9 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
+
 <span class="sd">    NetworkXNoPath</span>
 <span class="sd">        If no path exists between source and target.</span>
 
@@ -426,6 +432,11 @@
 <span class="sd">    paths : dictionary</span>
 <span class="sd">       Dictionary of shortest path lengths keyed by target.</span>
 
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
+
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; G=nx.path_graph(5)</span>
@@ -485,6 +496,11 @@
 <span class="sd">    -------</span>
 <span class="sd">    length : dict</span>
 <span class="sd">        Dict keyed by node to shortest path length from source.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -565,6 +581,10 @@
 <span class="sd">       distance is the distance from source to target and path is a list</span>
 <span class="sd">       representing the path from source to target.</span>
 
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -673,6 +693,8 @@
 <span class="sd">    ------</span>
 <span class="sd">    ValueError</span>
 <span class="sd">        If `sources` is empty.</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If any of `sources` is not in `G`.</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
@@ -748,6 +770,8 @@
 <span class="sd">    ------</span>
 <span class="sd">    ValueError</span>
 <span class="sd">        If `sources` is empty.</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If any of `sources` is not in `G`.</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
@@ -850,6 +874,8 @@
 <span class="sd">    ------</span>
 <span class="sd">    ValueError</span>
 <span class="sd">        If `sources` is empty.</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If any of `sources` is not in `G`.</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
@@ -925,6 +951,11 @@
 <span class="sd">        A mapping from node to shortest distance to that node from one</span>
 <span class="sd">        of the source nodes.</span>
 
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If any of `sources` is not in `G`.</span>
+
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    The optional predecessor and path dictionaries can be accessed by</span>
@@ -943,6 +974,8 @@
     <span class="n">c</span> <span class="o">=</span> <span class="n">count</span><span class="p">()</span>
     <span class="n">fringe</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">source</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NodeNotFound</span><span class="p">(</span><span class="s2">&quot;Source </span><span class="si">{}</span><span class="s2"> not in G&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">source</span><span class="p">))</span>
         <span class="n">seen</span><span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">push</span><span class="p">(</span><span class="n">fringe</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="n">source</span><span class="p">))</span>
     <span class="k">while</span> <span class="n">fringe</span><span class="p">:</span>
@@ -1017,6 +1050,11 @@
 <span class="sd">       of a node and the distance to each node.</span>
 <span class="sd">       Warning: If target is specified, the dicts are incomplete as they</span>
 <span class="sd">       only contain information for the nodes along a path to target.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -1264,6 +1302,9 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
+
 <span class="sd">    NetworkXUnbounded</span>
 <span class="sd">       If the (di)graph contains a negative cost (di)cycle, the</span>
 <span class="sd">       algorithm raises an exception to indicate the presence of the</span>
@@ -1370,12 +1411,18 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If any of `source` is not in `G`.</span>
+
 <span class="sd">    NetworkXUnbounded</span>
 <span class="sd">       If the (di)graph contains a negative cost (di)cycle, the</span>
 <span class="sd">       algorithm raises an exception to indicate the presence of the</span>
 <span class="sd">       negative cost (di)cycle.  Note: any negative weight edge in an</span>
 <span class="sd">       undirected graph is a negative cost cycle</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">source</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NodeNotFound</span><span class="p">(</span><span class="s2">&quot;Source </span><span class="si">{}</span><span class="s2"> not in G&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
 
     <span class="k">if</span> <span class="n">pred</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">source</span><span class="p">}</span>
@@ -1463,6 +1510,9 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
+
 <span class="sd">    NetworkXNoPath</span>
 <span class="sd">       If no path exists between source and target.</span>
 
@@ -1510,6 +1560,9 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
+
 <span class="sd">    NetworkXNoPath</span>
 <span class="sd">        If no path exists between source and target.</span>
 
@@ -1564,6 +1617,11 @@
 <span class="sd">    paths : dictionary</span>
 <span class="sd">       Dictionary of shortest path lengths keyed by target.</span>
 
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
+
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; G=nx.path_graph(5)</span>
@@ -1608,6 +1666,11 @@
 <span class="sd">    -------</span>
 <span class="sd">    length : iterator</span>
 <span class="sd">        (target, shortest path length) iterator</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -1666,6 +1729,10 @@
 <span class="sd">       distance is the distance from source to target and path is a list</span>
 <span class="sd">       representing the path from source to target.</span>
 
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -1842,6 +1909,9 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If `source` is not in `G`.</span>
+
 <span class="sd">    NetworkXUnbounded</span>
 <span class="sd">       If the (di)graph contains a negative cost (di)cycle, the</span>
 <span class="sd">       algorithm raises an exception to indicate the presence of the</span>
@@ -2073,6 +2143,9 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
+<span class="sd">    NodeNotFound</span>
+<span class="sd">        If either `source` or `target` is not in `G`.</span>
+
 <span class="sd">    NetworkXNoPath</span>
 <span class="sd">        If no path exists between source and target.</span>
 
@@ -2289,7 +2362,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Jul 30, 2018.
+      Last updated on Jul 31, 2018.
 
     </p>
   </div>
@@ -2311,7 +2384,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180730161157',
+            VERSION:'2.2rc1.dev20180731182540',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
