@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.generic.average_shortest_path_length &mdash; NetworkX 2.2rc1.dev20180801030102 documentation</title>
+  <title>networkx.algorithms.shortest_paths.generic.average_shortest_path_length &mdash; NetworkX 2.2rc1.dev20180801032724 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180801030102 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180801032724 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180801030102
+                2.2rc1.dev_20180801032724
               </div>
             
           
@@ -255,7 +255,7 @@
 <h1>networkx.algorithms.shortest_paths.generic.average_shortest_path_length<a class="headerlink" href="#networkx-algorithms-shortest-paths-generic-average-shortest-path-length" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.shortest_paths.generic.average_shortest_path_length">
-<code class="descname">average_shortest_path_length</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/shortest_paths/generic.html#average_shortest_path_length"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.shortest_paths.generic.average_shortest_path_length" title="Permalink to this definition">¶</a></dt>
+<code class="descname">average_shortest_path_length</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em>, <em>method='dijkstra'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/shortest_paths/generic.html#average_shortest_path_length"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.shortest_paths.generic.average_shortest_path_length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the average shortest path length.</p>
 <p>The average shortest path length is</p>
 <div class="math notranslate nohighlight">
@@ -272,6 +272,11 @@ and <code class="xref py py-obj docutils literal notranslate"><span class="pre">
 <li><strong>weight</strong> (<em>None or string, optional (default = None)</em>) – If None, every edge has weight/distance/cost 1.
 If a string, use this edge attribute as the edge weight.
 Any edge attribute not present defaults to 1.</li>
+<li><strong>method</strong> (<em>string, optional (default = ‘dijkstra’)</em>) – The algorithm to use to compute the path lengths.
+Supported options: ‘dijkstra’, ‘bellman-ford’.
+Other inputs produce a ValueError.
+If <code class="xref py py-obj docutils literal notranslate"><span class="pre">weight</span></code> is None, unweighted graph methods are used, and this
+suggestion is ignored.</li>
 </ul>
 </td>
 </tr>
@@ -279,6 +284,7 @@ Any edge attribute not present defaults to 1.</li>
 <li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXPointlessConcept</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is the null graph (that is, the graph on zero nodes).</li>
 <li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not connected (or not weakly connected, in the case
 of a directed graph).</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">method</span></code> is not among the supported options.</li>
 </ul>
 </td>
 </tr>
@@ -346,7 +352,7 @@ length for each component</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180801030102',
+            VERSION:'2.2rc1.dev20180801032724',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
