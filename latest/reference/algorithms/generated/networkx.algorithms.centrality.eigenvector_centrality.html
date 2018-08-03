@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.eigenvector_centrality &mdash; NetworkX 2.2rc1.dev20180803182249 documentation</title>
+  <title>networkx.algorithms.centrality.eigenvector_centrality &mdash; NetworkX 2.2rc1.dev20180803202945 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180803182249 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180803202945 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180803182249
+                2.2rc1.dev_20180803202945
               </div>
             
           
@@ -262,14 +262,14 @@
 <code class="descname">eigenvector_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>max_iter=100</em>, <em>tol=1e-06</em>, <em>nstart=None</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/eigenvector.html#eigenvector_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.eigenvector_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the eigenvector centrality for the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>Eigenvector centrality computes the centrality for a node based on the
-centrality of its neighbors. The eigenvector centrality for node <span class="math notranslate nohighlight">\(i\)</span> is</p>
+centrality of its neighbors. The eigenvector centrality for node <span class="math notranslate nohighlight">\(i\)</span> is
+the <span class="math notranslate nohighlight">\(i\)</span>-th element of the vector <span class="math notranslate nohighlight">\(x\)</span> defined by the equation</p>
 <div class="math notranslate nohighlight">
 \[Ax = \lambda x\]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> is the adjacency matrix of the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> with eigenvalue
-<span class="math notranslate nohighlight">\(\lambda\)</span>. By virtue of the Perron–Frobenius theorem, there is
-a unique and positive solution if <span class="math notranslate nohighlight">\(\lambda\)</span> is the largest
-eigenvalue associated with the eigenvector of the adjacency matrix
-<span class="math notranslate nohighlight">\(A\)</span> (<a class="footnote-reference" href="#id5" id="id1">[2]</a>).</p>
+<span class="math notranslate nohighlight">\(\lambda\)</span>. By virtue of the Perron–Frobenius theorem, there is a unique
+solution <span class="math notranslate nohighlight">\(x\)</span>, all of whose entries are positive, if <span class="math notranslate nohighlight">\(\lambda\)</span> is the
+largest eigenvalue of the adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> (<a class="footnote-reference" href="#id5" id="id1">[2]</a>).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -396,7 +396,7 @@ Oxford University Press, USA, 2010, pp. 169.</td></tr>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180803182249',
+            VERSION:'2.2rc1.dev20180803202945',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

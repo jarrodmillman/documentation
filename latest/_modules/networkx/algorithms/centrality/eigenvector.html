@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.eigenvector &mdash; NetworkX 2.2rc1.dev20180803182249 documentation</title>
+  <title>networkx.algorithms.centrality.eigenvector &mdash; NetworkX 2.2rc1.dev20180803202945 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180803182249 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180803202945 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180803182249
+                2.2rc1.dev_20180803202945
               </div>
             
           
@@ -189,16 +189,16 @@
 
 <span class="sd">    Eigenvector centrality computes the centrality for a node based on the</span>
 <span class="sd">    centrality of its neighbors. The eigenvector centrality for node $i$ is</span>
+<span class="sd">    the $i$-th element of the vector $x$ defined by the equation</span>
 
 <span class="sd">    .. math::</span>
 
 <span class="sd">        Ax = \lambda x</span>
 
 <span class="sd">    where $A$ is the adjacency matrix of the graph `G` with eigenvalue</span>
-<span class="sd">    $\lambda$. By virtue of the Perron–Frobenius theorem, there is</span>
-<span class="sd">    a unique and positive solution if $\lambda$ is the largest</span>
-<span class="sd">    eigenvalue associated with the eigenvector of the adjacency matrix</span>
-<span class="sd">    $A$ ([2]_).</span>
+<span class="sd">    $\lambda$. By virtue of the Perron–Frobenius theorem, there is a unique</span>
+<span class="sd">    solution $x$, all of whose entries are positive, if $\lambda$ is the</span>
+<span class="sd">    largest eigenvalue of the adjacency matrix $A$ ([2]_).</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -440,7 +440,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc1.dev20180803182249',
+            VERSION:'2.2rc1.dev20180803202945',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
