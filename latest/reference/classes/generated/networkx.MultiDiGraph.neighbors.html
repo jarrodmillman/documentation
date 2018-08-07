@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.MultiDiGraph.neighbors &mdash; NetworkX 2.2rc1.dev20180807134548 documentation</title>
+  <title>networkx.MultiDiGraph.neighbors &mdash; NetworkX 2.2rc1.dev20180807140629 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180807134548 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180807140629 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180807134548
+                2.2rc1.dev_20180807140629
               </div>
             
           
@@ -200,6 +200,23 @@
 <dt id="networkx.MultiDiGraph.neighbors">
 <code class="descclassname">MultiDiGraph.</code><code class="descname">neighbors</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.MultiDiGraph.neighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an iterator over successor nodes of n.</p>
+<p>A successor of n is a node m such that there exists a directed
+edge from n to m.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>node</em>) – A node in the graph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code></a> – If n is not in the graph.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="networkx.MultiDiGraph.predecessors.html#networkx.MultiDiGraph.predecessors" title="networkx.MultiDiGraph.predecessors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">predecessors()</span></code></a></p>
+</div>
+<p class="rubric">Notes</p>
 <p>neighbors() and successors() are the same.</p>
 </dd></dl>
 
@@ -248,7 +265,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180807134548',
+            VERSION:'2.2rc1.dev20180807140629',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
