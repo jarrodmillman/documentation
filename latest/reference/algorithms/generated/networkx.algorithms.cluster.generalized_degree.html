@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cluster.generalized_degree &mdash; NetworkX 2.2rc1.dev20180906201408 documentation</title>
+  <title>networkx.algorithms.cluster.generalized_degree &mdash; NetworkX 2.2rc1.dev20180906203201 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc1.dev20180906201408 documentation"
+            title="Search within NetworkX 2.2rc1.dev20180906203201 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc1.dev_20180906201408
+                2.2rc1.dev_20180906203201
               </div>
             
           
@@ -260,9 +260,10 @@
 <p>For each node, the generalized degree shows how many edges of given
 triangle multiplicity the node is connected to. The triangle multiplicity
 of an edge is the number of triangles an edge participates in. The
-generalized degree of node <code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code> can be written as a vector
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">mathbf{k}_i=(k_i^{(0)},</span> <span class="pre">dotsc,</span> <span class="pre">k_i^{(N-2)})</span></code> where <code class="xref py py-obj docutils literal notranslate"><span class="pre">k_i^{(j)}</span></code> is the
-number of edges attached to node <code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code> that participate in <code class="xref py py-obj docutils literal notranslate"><span class="pre">j</span></code> triangles.</p>
+generalized degree of node <span class="math notranslate nohighlight">\(i\)</span> can be written as a vector
+<span class="math notranslate nohighlight">\(\mathbf{k}_i=(k_i^{(0)}, \dotsc, k_i^{(N-2)})\)</span> where
+<span class="math notranslate nohighlight">\(k_i^{(j)}\)</span> is the number of edges attached to node <span class="math notranslate nohighlight">\(i\)</span> that
+participate in <span class="math notranslate nohighlight">\(j\)</span> triangles.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -301,9 +302,9 @@ triangle multiplicity.</p>
 is N-2.</p>
 <p>The return value does not include a <code class="xref py py-obj docutils literal notranslate"><span class="pre">zero</span></code> entry if no edges of a
 particular triangle multiplicity are present.</p>
-<p>The number of triangles node <code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code> is attached to can be recovered from
-the generalized degree <code class="xref py py-obj docutils literal notranslate"><span class="pre">mathbf{k}_i=(k_i^{(0)},</span> <span class="pre">dotsc,</span> <span class="pre">k_i^{(N-2)})</span></code> by
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">(k_i^{(1)}+2k_i^{(2)}+dotsc</span> <span class="pre">+(N-2)k_i^{(N-2)})/2</span></code>.</p>
+<p>The number of triangles node <span class="math notranslate nohighlight">\(i\)</span> is attached to can be recovered from
+the generalized degree <span class="math notranslate nohighlight">\(\mathbf{k}_i=(k_i^{(0)}, \dotsc,
+k_i^{(N-2)})\)</span> by <span class="math notranslate nohighlight">\((k_i^{(1)}+2k_i^{(2)}+\dotsc +(N-2)k_i^{(N-2)})/2\)</span>.</p>
 <p class="rubric">References</p>
 <table class="docutils footnote" frame="void" id="id1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -361,7 +362,7 @@ Volume 97, Number 2 (2012).
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc1.dev20180906201408',
+            VERSION:'2.2rc1.dev20180906203201',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
