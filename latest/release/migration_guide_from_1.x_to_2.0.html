@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Migration guide from 1.X to 2.0 &mdash; NetworkX 2.2rc2.dev20180911011743 documentation</title>
+  <title>Migration guide from 1.X to 2.0 &mdash; NetworkX 2.2rc2.dev20180912235141 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc2.dev20180911011743 documentation"
+            title="Search within NetworkX 2.2rc2.dev20180912235141 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc2.dev_20180911011743
+                2.2rc2.dev_20180912235141
               </div>
             
           
@@ -347,8 +347,8 @@ be omitted in favor of passing a dictionary of dictionaries to <code class="docu
 specify the keyword argument names. This method is backwards compatible and
 ensures the correct arguments are passed, regardless of the order. For example the old code</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">})</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="p">{(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="s1">&#39;path1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span> <span class="s1">&#39;path2&#39;</span><span class="p">})</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">})</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="p">{(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="s1">&#39;path1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span> <span class="s1">&#39;path2&#39;</span><span class="p">})</span>  <span class="c1"># doctest: +SKIP</span>
 </pre></div>
 </div>
 <p>Will cause <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">unhashable</span> <span class="pre">type:</span> <span class="pre">'dict'</span></code> in the new version. The code
@@ -417,7 +417,7 @@ We envision removing <code class="docutils literal notranslate"><span class="pre
 <p>Copying node attribute dicts directly from one graph to another can corrupt
 the node data structure if not done correctly. Code such as the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># dangerous in v1.x, not allowed in v2.x</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>  <span class="c1"># doctest: +SKIP</span>
 </pre></div>
 </div>
 <p>used to work, even though it could cause errors if <code class="docutils literal notranslate"><span class="pre">n</span></code> was not a node in <code class="docutils literal notranslate"><span class="pre">G</span></code>.
@@ -447,12 +447,12 @@ to you, read it in with v1 installed and write a file with the node and edge
 information. You can read that into a config with v2 installed and then add those nodes
 and edges to a fresh graph. Try something similar to this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># in v1.x</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span> <span class="n">file</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span> <span class="n">file</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># then in v2.x</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 </pre></div>
 </div>
 </div>
@@ -470,7 +470,7 @@ and edges to a fresh graph. Try something similar to this:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 11, 2018.
+      Last updated on Sep 12, 2018.
 
     </p>
   </div>
@@ -492,7 +492,7 @@ and edges to a fresh graph. Try something similar to this:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc2.dev20180911011743',
+            VERSION:'2.2rc2.dev20180912235141',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

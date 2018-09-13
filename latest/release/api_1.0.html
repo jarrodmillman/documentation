@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version 1.0 notes and API changes &mdash; NetworkX 2.2rc2.dev20180911011743 documentation</title>
+  <title>Version 1.0 notes and API changes &mdash; NetworkX 2.2rc2.dev20180912235141 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc2.dev20180911011743 documentation"
+            title="Search within NetworkX 2.2rc2.dev20180912235141 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc2.dev_20180911011743
+                2.2rc2.dev_20180912235141
               </div>
             
           
@@ -205,10 +205,10 @@ Adding attributes to nodes is optional.</p>
 <p>Add node attributes using add_node(), add_nodes_from() or G.node</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s1">&#39;5pm&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">3</span><span class="p">],</span> <span class="n">time</span><span class="o">=</span><span class="s1">&#39;2pm&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="go">{&#39;time&#39;: &#39;5pm&#39;}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;room&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">714</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;room&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">714</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="go">[(1, {&#39;room&#39;: 714, &#39;time&#39;: &#39;5pm&#39;}), (3, {&#39;time&#39;: &#39;2pm&#39;})]</span>
 </pre></div>
 </div>
@@ -228,7 +228,7 @@ notation, or G.edge.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;blue&#39;</span><span class="p">}),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">})])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.7</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># doctest: +SKIP</span>
 </pre></div>
 </div>
 </div>
@@ -288,7 +288,7 @@ attributes applied to all affected edges.</p>
 <div><p>New keyword data=True|False keyword determines whether to return
 two-tuples (n,dict) (True) with node attribution dictionary</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="go">[(1, {}), (2, {}), (3, {}), (4, {})]</span>
 </pre></div>
 </div>
@@ -338,7 +338,7 @@ initializer to make a shallow copy:</p>
 <div><p>Now take optional keyword=value attributes or a dictionary of
 attributes which are applied to all edges affected by the method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">3.2</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">3.2</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -482,7 +482,7 @@ weight key is</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 11, 2018.
+      Last updated on Sep 12, 2018.
 
     </p>
   </div>
@@ -504,7 +504,7 @@ weight key is</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc2.dev20180911011743',
+            VERSION:'2.2rc2.dev20180912235141',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

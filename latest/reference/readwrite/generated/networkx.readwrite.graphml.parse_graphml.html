@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.graphml.parse_graphml &mdash; NetworkX 2.2rc2.dev20180911011743 documentation</title>
+  <title>networkx.readwrite.graphml.parse_graphml &mdash; NetworkX 2.2rc2.dev20180912235141 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc2.dev20180911011743 documentation"
+            title="Search within NetworkX 2.2rc2.dev20180912235141 documentation"
             href="../../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc2.dev_20180911011743
+                2.2rc2.dev_20180912235141
               </div>
             
           
@@ -243,12 +243,12 @@ Otherwise a MultiGraph or MultiDiGraph is returned.</p>
 <p>Default node and edge attributes are not propagated to each node and edge.
 They can be obtained from <code class="xref py py-obj docutils literal notranslate"><span class="pre">G.graph</span></code> and applied to node and edge attributes
 if desired using something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">default_color</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;node_default&#39;</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">default_color</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;node_default&#39;</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="gp">... </span>   <span class="k">if</span> <span class="s1">&#39;color&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
 <span class="gp">... </span>       <span class="n">data</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">default_color</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">default_color</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;edge_default&#39;</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">default_color</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;edge_default&#39;</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="gp">... </span>   <span class="k">if</span> <span class="s1">&#39;color&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
 <span class="gp">... </span>       <span class="n">data</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">default_color</span>
 </pre></div>
@@ -284,7 +284,7 @@ will be provided.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 11, 2018.
+      Last updated on Sep 12, 2018.
 
     </p>
   </div>
@@ -306,7 +306,7 @@ will be provided.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'2.2rc2.dev20180911011743',
+            VERSION:'2.2rc2.dev20180912235141',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

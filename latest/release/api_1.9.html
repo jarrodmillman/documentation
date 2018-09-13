@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version 1.9 notes and API changes &mdash; NetworkX 2.2rc2.dev20180911011743 documentation</title>
+  <title>Version 1.9 notes and API changes &mdash; NetworkX 2.2rc2.dev20180912235141 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc2.dev20180911011743 documentation"
+            title="Search within NetworkX 2.2rc2.dev20180912235141 documentation"
             href="../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc2.dev_20180911011743
+                2.2rc2.dev_20180912235141
               </div>
             
           
@@ -211,7 +211,7 @@ the removed <code class="samp docutils literal notranslate"><span class="pre">mi
 have to explicitly import them from the flow package:</li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms.flow</span> <span class="k">import</span> <span class="p">(</span><span class="n">ford_fulkerson</span><span class="p">,</span> <span class="n">preflow_push</span><span class="p">,</span>
-<span class="gp">... </span>       <span class="n">edmonds_karp</span><span class="p">,</span> <span class="n">shortest_augmenting_path</span><span class="p">)</span>  
+<span class="gp">... </span>       <span class="n">edmonds_karp</span><span class="p">,</span> <span class="n">shortest_augmenting_path</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
@@ -230,30 +230,30 @@ NetworkX 1.8.1 using the new interface to flow algorithms introduced in 1.9:</p>
 </pre></div>
 </div>
 <p>With NetworkX 1.8:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">max_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cut_value</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">min_cut</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span> <span class="o">==</span> <span class="n">cut_value</span>  
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">max_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cut_value</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">min_cut</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span> <span class="o">==</span> <span class="n">cut_value</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">ford_fulkerson</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">ford_fulkerson</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 </pre></div>
 </div>
 <p>With NetworkX 1.9:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms.flow</span> <span class="k">import</span> <span class="p">(</span><span class="n">ford_fulkerson</span><span class="p">,</span> <span class="n">preflow_push</span><span class="p">,</span>
-<span class="gp">... </span>       <span class="n">edmonds_karp</span><span class="p">,</span> <span class="n">shortest_augmenting_path</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow_value</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cut_value</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">minimum_cut_value</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span> <span class="o">==</span> <span class="n">cut_value</span>  
+<span class="gp">... </span>       <span class="n">edmonds_karp</span><span class="p">,</span> <span class="n">shortest_augmenting_path</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow_value</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cut_value</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">minimum_cut_value</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span> <span class="o">==</span> <span class="n">cut_value</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Legacy: this returns the exact same output than ford_fulkerson in 1.8.1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">ford_fulkerson</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">ford_fulkerson</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We strongly recommend to use the new algorithms:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># If no flow_func is passed as argument, the default flow_func</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># (preflow-push) is used. Therefore this is the same than:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">preflow_push</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">preflow_push</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># You can also use alternative maximum flow algorithms:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">shortest_augmenting_path</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">edmonds_karp</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">shortest_augmenting_path</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_value</span><span class="p">,</span> <span class="n">flow_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">maximum_flow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">edmonds_karp</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
 </pre></div>
 </div>
 </div>
@@ -369,7 +369,7 @@ IronPython 2.7, although they remain not officially supported.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 11, 2018.
+      Last updated on Sep 12, 2018.
 
     </p>
   </div>
@@ -391,7 +391,7 @@ IronPython 2.7, although they remain not officially supported.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.2rc2.dev20180911011743',
+            VERSION:'2.2rc2.dev20180912235141',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
