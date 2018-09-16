@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>VF2 Algorithm &mdash; NetworkX 2.2rc2.dev20180912235141 documentation</title>
+  <title>VF2 Algorithm &mdash; NetworkX 2.2rc2.dev20180916030048 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc2.dev20180912235141 documentation"
+            title="Search within NetworkX 2.2rc2.dev20180916030048 documentation"
             href="../../_static/opensearch.xml"/>
     
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.2rc2.dev_20180912235141
+                2.2rc2.dev_20180916030048
               </div>
             
           
@@ -351,20 +351,7 @@ pp. 149-159, 2001.
 </div>
 <p class="rubric">Notes</p>
 <p>The implementation handles both directed and undirected graphs as well
-as multigraphs. However, it does require that nodes in the graph are
-orderable (in addition to the general NetworkX requirement that nodes
-are hashable). If the nodes in your graph are not orderable, you can
-convert them to an orderable type (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, for example) by using the
-<a class="reference internal" href="../relabel.html#module-networkx.relabel" title="networkx.relabel"><code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.relabel()</span></code></a> function. You can store the dictionary of
-old-to-new node labels to retrieve the original node labels after
-running the isomorphism algorithm:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span> <span class="o">=</span> <span class="nb">object</span><span class="p">(),</span> <span class="nb">object</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">G</span><span class="p">)}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">relabel_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">mapping</span><span class="p">)</span>
-</pre></div>
-</div>
+as multigraphs.</p>
 <p>In general, the subgraph isomorphism problem is NP-complete whereas the
 graph isomorphism problem is most likely not NP-complete (although no
 polynomial-time algorithm is known to exist).</p>
@@ -513,7 +500,7 @@ polynomial-time algorithm is known to exist).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 12, 2018.
+      Last updated on Sep 16, 2018.
 
     </p>
   </div>
@@ -535,7 +522,7 @@ polynomial-time algorithm is known to exist).</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.2rc2.dev20180912235141',
+            VERSION:'2.2rc2.dev20180916030048',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

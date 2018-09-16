@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.isomorphism.isomorphvf2 &mdash; NetworkX 2.2rc2.dev20180912235141 documentation</title>
+  <title>networkx.algorithms.isomorphism.isomorphvf2 &mdash; NetworkX 2.2rc2.dev20180916030048 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
     
       <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2rc2.dev20180912235141 documentation"
+            title="Search within NetworkX 2.2rc2.dev20180916030048 documentation"
             href="../../../../_static/opensearch.xml"/>
     
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2.2rc2.dev_20180912235141
+                2.2rc2.dev_20180916030048
               </div>
             
           
@@ -281,19 +281,7 @@
 <span class="sd">-----</span>
 
 <span class="sd">The implementation handles both directed and undirected graphs as well</span>
-<span class="sd">as multigraphs. However, it does require that nodes in the graph are</span>
-<span class="sd">orderable (in addition to the general NetworkX requirement that nodes</span>
-<span class="sd">are hashable). If the nodes in your graph are not orderable, you can</span>
-<span class="sd">convert them to an orderable type (`int`, for example) by using the</span>
-<span class="sd">:func:`networkx.relabel` function. You can store the dictionary of</span>
-<span class="sd">old-to-new node labels to retrieve the original node labels after</span>
-<span class="sd">running the isomorphism algorithm::</span>
-
-<span class="sd">    &gt;&gt;&gt; G = nx.Graph()</span>
-<span class="sd">    &gt;&gt;&gt; node1, node2 = object(), object()</span>
-<span class="sd">    &gt;&gt;&gt; G.add_nodes_from([node1, node2])</span>
-<span class="sd">    &gt;&gt;&gt; mapping = {k: v for v, k in enumerate(G)}</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.relabel_nodes(G, mapping)</span>
+<span class="sd">as multigraphs.</span>
 
 <span class="sd">In general, the subgraph isomorphism problem is NP-complete whereas the</span>
 <span class="sd">graph isomorphism problem is most likely not NP-complete (although no</span>
@@ -344,6 +332,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">G2</span> <span class="o">=</span> <span class="n">G2</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">G1_nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G1</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">G2_nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G2</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G2_node_order</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">G2</span><span class="p">)}</span>
 
         <span class="c1"># Set recursion limit.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">old_recursion_limit</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">getrecursionlimit</span><span class="p">()</span>
@@ -378,16 +367,18 @@
 
         <span class="n">G1_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G1_nodes</span>
         <span class="n">G2_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G2_nodes</span>
+        <span class="n">min_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G2_node_order</span><span class="o">.</span><span class="fm">__getitem__</span>
 
         <span class="c1"># First we compute the inout-terminal sets.</span>
-        <span class="n">T1_inout</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G1_nodes</span> <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inout_1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">)]</span>
-        <span class="n">T2_inout</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G2_nodes</span> <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inout_2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">)]</span>
+        <span class="n">T1_inout</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inout_1</span> <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">]</span>
+        <span class="n">T2_inout</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inout_2</span> <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">]</span>
 
         <span class="c1"># If T1_inout and T2_inout are both nonempty.</span>
         <span class="c1"># P(s) = T1_inout x {min T2_inout}</span>
         <span class="k">if</span> <span class="n">T1_inout</span> <span class="ow">and</span> <span class="n">T2_inout</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">T1_inout</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">node</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">T2_inout</span><span class="p">)</span>
+            <span class="n">node_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">T2_inout</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">min_key</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">node_1</span> <span class="ow">in</span> <span class="n">T1_inout</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">node_1</span><span class="p">,</span> <span class="n">node_2</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># If T1_inout and T2_inout were both empty....</span>
@@ -395,7 +386,7 @@
             <span class="c1"># if not (T1_inout or T2_inout):       # as suggested by  [2], incorrect</span>
             <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>                                  <span class="c1"># as inferred from [1], correct</span>
                 <span class="c1"># First we determine the candidate node for G2</span>
-                <span class="n">other_node</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">G2_nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">))</span>
+                <span class="n">other_node</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">G2_nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">min_key</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">G1</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">:</span>
                         <span class="k">yield</span> <span class="n">node</span><span class="p">,</span> <span class="n">other_node</span></div>
@@ -678,15 +669,16 @@
 
         <span class="n">G1_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G1_nodes</span>
         <span class="n">G2_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G2_nodes</span>
+        <span class="n">min_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G2_node_order</span><span class="o">.</span><span class="fm">__getitem__</span>
 
         <span class="c1"># First we compute the out-terminal sets.</span>
-        <span class="n">T1_out</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G1_nodes</span> <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">)]</span>
-        <span class="n">T2_out</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G2_nodes</span> <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">)]</span>
+        <span class="n">T1_out</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_1</span> <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">]</span>
+        <span class="n">T2_out</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_2</span> <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">]</span>
 
         <span class="c1"># If T1_out and T2_out are both nonempty.</span>
         <span class="c1"># P(s) = T1_out x {min T2_out}</span>
         <span class="k">if</span> <span class="n">T1_out</span> <span class="ow">and</span> <span class="n">T2_out</span><span class="p">:</span>
-            <span class="n">node_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">T2_out</span><span class="p">)</span>
+            <span class="n">node_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">T2_out</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">min_key</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">node_1</span> <span class="ow">in</span> <span class="n">T1_out</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="n">node_1</span><span class="p">,</span> <span class="n">node_2</span>
 
@@ -695,13 +687,13 @@
 
         <span class="c1"># elif not (T1_out or T2_out):   # as suggested by [2], incorrect</span>
         <span class="k">else</span><span class="p">:</span>                            <span class="c1"># as suggested by [1], correct</span>
-            <span class="n">T1_in</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G1_nodes</span> <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">)]</span>
-            <span class="n">T2_in</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G2_nodes</span> <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">)]</span>
+            <span class="n">T1_in</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_1</span> <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">]</span>
+            <span class="n">T2_in</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_2</span> <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">]</span>
 
             <span class="c1"># If T1_in and T2_in are both nonempty.</span>
             <span class="c1"># P(s) = T1_out x {min T2_out}</span>
             <span class="k">if</span> <span class="n">T1_in</span> <span class="ow">and</span> <span class="n">T2_in</span><span class="p">:</span>
-                <span class="n">node_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">T2_in</span><span class="p">)</span>
+                <span class="n">node_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">T2_in</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">min_key</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">node_1</span> <span class="ow">in</span> <span class="n">T1_in</span><span class="p">:</span>
                     <span class="k">yield</span> <span class="n">node_1</span><span class="p">,</span> <span class="n">node_2</span>
 
@@ -710,7 +702,7 @@
 
             <span class="c1"># elif not (T1_in or T2_in):   # as suggested by  [2], incorrect</span>
             <span class="k">else</span><span class="p">:</span>                          <span class="c1"># as inferred from [1], correct</span>
-                <span class="n">node_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">G2_nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">))</span>
+                <span class="n">node_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">G2_nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core_2</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">min_key</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">node_1</span> <span class="ow">in</span> <span class="n">G1_nodes</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">node_1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">core_1</span><span class="p">:</span>
                         <span class="k">yield</span> <span class="n">node_1</span><span class="p">,</span> <span class="n">node_2</span></div>
@@ -1147,7 +1139,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 12, 2018.
+      Last updated on Sep 16, 2018.
 
     </p>
   </div>
@@ -1169,7 +1161,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'2.2rc2.dev20180912235141',
+            VERSION:'2.2rc2.dev20180916030048',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
