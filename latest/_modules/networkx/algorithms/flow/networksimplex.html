@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.networksimplex &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.algorithms.flow.networksimplex &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
-
-  
-  <script src="../../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -454,7 +457,7 @@
     <span class="c1">###########################################################################</span>
 
     <span class="k">def</span> <span class="nf">reduced_cost</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the reduced cost of an edge i.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the reduced cost of an edge i.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">pi</span><span class="p">[</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">pi</span><span class="p">[</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
         <span class="k">return</span> <span class="n">c</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">c</span>
@@ -525,7 +528,7 @@
                     <span class="k">return</span> <span class="n">p</span>
 
     <span class="k">def</span> <span class="nf">trace_path</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the nodes and edges on the path from node p to its ancestor</span>
+        <span class="sd">&quot;&quot;&quot;Returns the nodes and edges on the path from node p to its ancestor</span>
 <span class="sd">        w.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">Wn</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="p">]</span>
@@ -537,7 +540,7 @@
         <span class="k">return</span> <span class="n">Wn</span><span class="p">,</span> <span class="n">We</span>
 
     <span class="k">def</span> <span class="nf">find_cycle</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the nodes and edges on the cycle containing edge i == (p, q)</span>
+        <span class="sd">&quot;&quot;&quot;Returns the nodes and edges on the cycle containing edge i == (p, q)</span>
 <span class="sd">        when the latter is added to the spanning tree.</span>
 
 <span class="sd">        The cycle is oriented in the direction from p to q.</span>
@@ -555,13 +558,13 @@
         <span class="k">return</span> <span class="n">Wn</span><span class="p">,</span> <span class="n">We</span>
 
     <span class="k">def</span> <span class="nf">residual_capacity</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the residual capacity of an edge i in the direction away</span>
+        <span class="sd">&quot;&quot;&quot;Returns the residual capacity of an edge i in the direction away</span>
 <span class="sd">        from its endpoint p.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">U</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span> <span class="k">else</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">find_leaving_edge</span><span class="p">(</span><span class="n">Wn</span><span class="p">,</span> <span class="n">We</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the leaving edge in a cycle represented by Wn and We.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the leaving edge in a cycle represented by Wn and We.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">We</span><span class="p">),</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">Wn</span><span class="p">)),</span>
                    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i_p</span><span class="p">:</span> <span class="n">residual_capacity</span><span class="p">(</span><span class="o">*</span><span class="n">i_p</span><span class="p">))</span>
@@ -769,8 +772,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -787,34 +792,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

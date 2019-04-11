@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.dag &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.algorithms.dag &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -160,7 +163,7 @@
             
   <h1>Source code for networkx.algorithms.dag</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="c1">#    Copyright (C) 2006-2018 by</span>
+<span class="c1">#    Copyright (C) 2006-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
@@ -214,7 +217,7 @@
 
 
 <div class="viewcode-block" id="descendants"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.descendants.html#networkx.algorithms.dag.descendants">[docs]</a><span class="k">def</span> <span class="nf">descendants</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return all nodes reachable from `source` in `G`.</span>
+    <span class="sd">&quot;&quot;&quot;Returns all nodes reachable from `source` in `G`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -234,7 +237,7 @@
 
 
 <div class="viewcode-block" id="ancestors"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.ancestors.html#networkx.algorithms.dag.ancestors">[docs]</a><span class="k">def</span> <span class="nf">ancestors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return all nodes having a path to `source` in `G`.</span>
+    <span class="sd">&quot;&quot;&quot;Returns all nodes having a path to `source` in `G`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -264,7 +267,7 @@
 
 
 <div class="viewcode-block" id="is_directed_acyclic_graph"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.is_directed_acyclic_graph.html#networkx.algorithms.dag.is_directed_acyclic_graph">[docs]</a><span class="k">def</span> <span class="nf">is_directed_acyclic_graph</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return True if the graph `G` is a directed acyclic graph (DAG) or</span>
+    <span class="sd">&quot;&quot;&quot;Returns True if the graph `G` is a directed acyclic graph (DAG) or</span>
 <span class="sd">    False if not.</span>
 
 <span class="sd">    Parameters</span>
@@ -280,7 +283,7 @@
 
 
 <div class="viewcode-block" id="topological_sort"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.topological_sort.html#networkx.algorithms.dag.topological_sort">[docs]</a><span class="k">def</span> <span class="nf">topological_sort</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a generator of nodes in topologically sorted order.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a generator of nodes in topologically sorted order.</span>
 
 <span class="sd">    A topological sort is a nonunique permutation of the nodes such that an</span>
 <span class="sd">    edge from u to v implies that u appears before v in the topological sort</span>
@@ -371,7 +374,7 @@
 
 
 <div class="viewcode-block" id="lexicographical_topological_sort"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.lexicographical_topological_sort.html#networkx.algorithms.dag.lexicographical_topological_sort">[docs]</a><span class="k">def</span> <span class="nf">lexicographical_topological_sort</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a generator of nodes in lexicographically topologically sorted</span>
+    <span class="sd">&quot;&quot;&quot;Returns a generator of nodes in lexicographically topologically sorted</span>
 <span class="sd">    order.</span>
 
 <span class="sd">    A topological sort is a nonunique permutation of the nodes such that an</span>
@@ -577,7 +580,7 @@
 
 
 <div class="viewcode-block" id="is_aperiodic"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.is_aperiodic.html#networkx.algorithms.dag.is_aperiodic">[docs]</a><span class="k">def</span> <span class="nf">is_aperiodic</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return True if `G` is aperiodic.</span>
+    <span class="sd">&quot;&quot;&quot;Returns True if `G` is aperiodic.</span>
 
 <span class="sd">    A directed graph is aperiodic if there is no integer k &gt; 1 that</span>
 <span class="sd">    divides the length of every cycle in the graph.</span>
@@ -992,8 +995,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -1010,34 +1015,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

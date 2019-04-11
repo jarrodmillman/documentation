@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release Log &mdash; NetworkX 2.2 documentation</title>
+  <title>Release Log &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="License" href="license.html" />
     <link rel="prev" title="git resources" href="developer/gitwash/git_resources.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -93,16 +96,20 @@
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release Log</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#networkx-2-2">NetworkX 2.2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#networkx-2-3">NetworkX 2.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#release-notes">Release notes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#networkx-2-1">NetworkX 2.1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#networkx-2-2">NetworkX 2.2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Release notes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#networkx-2-0">NetworkX 2.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#networkx-2-1">NetworkX 2.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Release notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#networkx-2-0">NetworkX 2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Release notes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-11">NetworkX 1.11</a><ul>
@@ -110,172 +117,172 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-10">NetworkX 1.10</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Highlights</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#api-changes">API changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-9-1">NetworkX 1.9.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-9">NetworkX 1.9</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Highlights</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">API changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">API changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-8-1">NetworkX 1.8.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-8">NetworkX 1.8</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Highlights</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">API changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">API changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-7">NetworkX 1.7</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Highlights</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">API changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">API changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-6">NetworkX 1.6</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Highlights</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">API changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">API changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-5">NetworkX 1.5</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Highlights</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">API changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">API changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-4">NetworkX 1.4</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id15">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">API changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id17">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">API changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-3">NetworkX 1.3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id18">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id19">API changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id20">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">API changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-2">NetworkX 1.2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id21">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">New features</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-1">NetworkX 1.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id22">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id23">API changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id23">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">API changes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#returning-dictionaries">Returning dictionaries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-nodes">Adding nodes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id24">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-0-1">NetworkX 1.0.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-1-0">NetworkX 1.0</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id25">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id26">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-99">NetworkX 0.99</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id27">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id28">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id29">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-37">NetworkX 0.37</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id30">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id31">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id32">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id32">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-36">NetworkX 0.36</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id33">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id34">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id34">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id35">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-35-1">NetworkX 0.35.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-35">NetworkX 0.35</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id35">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id36">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id37">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-34">NetworkX 0.34</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id37">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id38">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id38">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id39">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-33">NetworkX 0.33</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id39">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id40">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id41">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id40">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id42">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-32">NetworkX 0.32</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id42">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id43">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id44">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id44">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id45">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-31">NetworkX 0.31</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id45">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id46">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id47">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id46">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id47">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id48">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-30">NetworkX 0.30</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id48">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id49">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id50">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id49">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id50">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-29">NetworkX 0.29</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id51">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id52">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id52">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-28">NetworkX 0.28</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id53">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id54">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id55">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id54">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id55">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id56">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-27">NetworkX 0.27</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id56">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id57">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id58">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id57">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id58">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id59">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-26">NetworkX 0.26</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id59">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id60">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id61">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id60">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id61">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id62">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-25">NetworkX 0.25</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id62">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id63">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id63">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id64">Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id64">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id65">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-24">NetworkX 0.24</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id65">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id66">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-23">NetworkX 0.23</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#important-change">Important Change</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id66">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id67">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id68">Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id69">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id67">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id68">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id69">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id70">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#networkx-0-22">NetworkX 0.22</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id70">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id71">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id72">Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id73">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id71">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id72">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id73">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id74">Bug fixes</a></li>
 </ul>
 </li>
 </ul>
@@ -349,13 +356,23 @@
             
   <div class="section" id="release-log">
 <h1>Release Log<a class="headerlink" href="#release-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="networkx-2-3">
+<h2>NetworkX 2.3<a class="headerlink" href="#networkx-2-3" title="Permalink to this headline">¶</a></h2>
+<p>Release date: 11 April 2019</p>
+<p>Supports Python 3.5, 3.6 and 3.7.
+This is our first Python 3 only release.</p>
+<div class="section" id="release-notes">
+<h3>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="release/release_2.3.html"><span class="doc">Announcement: NetworkX 2.3</span></a>.</p>
+</div>
+</div>
 <div class="section" id="networkx-2-2">
 <h2>NetworkX 2.2<a class="headerlink" href="#networkx-2-2" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 19 September 2018</p>
 <p>Supports Python 2.7, 3.5, 3.6 and 3.7.
 This is the last release to support Python 2.</p>
-<div class="section" id="release-notes">
-<h3>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Release notes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="release/release_2.2.html"><span class="doc">Announcement: NetworkX 2.2</span></a>.</p>
 </div>
 </div>
@@ -363,8 +380,8 @@ This is the last release to support Python 2.</p>
 <h2>NetworkX 2.1<a class="headerlink" href="#networkx-2-1" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 22 January 2018</p>
 <p>Supports Python 2.7, 3.4, 3.5, and 3.6.</p>
-<div class="section" id="id1">
-<h3>Release notes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Release notes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="release/release_2.1.html"><span class="doc">Announcement: NetworkX 2.1</span></a>.</p>
 </div>
 </div>
@@ -373,8 +390,8 @@ This is the last release to support Python 2.</p>
 <p>Release date: 20 September 2017</p>
 <p>Support for Python 3.6 added, drop support for Python 3.3.</p>
 <p>See <a class="reference internal" href="release/migration_guide_from_1.x_to_2.0.html"><span class="doc">Migration guide from 1.X to 2.0</span></a>.</p>
-<div class="section" id="id2">
-<h3>Release notes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Release notes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="release/release_2.0.html"><span class="doc">Announcement: NetworkX 2.0</span></a>.</p>
 </div>
 </div>
@@ -395,8 +412,8 @@ Docs can now build using autosummary on readthedocs.org.</p>
 <h2>NetworkX 1.10<a class="headerlink" href="#networkx-1-10" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 2 August 2015</p>
 <p>Support for Python 2.6 is dropped in this release.</p>
-<div class="section" id="id3">
-<h3>Highlights<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Highlights<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Connected components now return generators</li>
 <li>new functions including<ul>
@@ -440,8 +457,8 @@ circulant graphs</li>
 <h2>NetworkX 1.9<a class="headerlink" href="#networkx-1-9" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 21 June 2014</p>
 <p>Support for Python 3.1 is dropped in this release.</p>
-<div class="section" id="id4">
-<h3>Highlights<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Highlights<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Completely rewritten maximum flow and flow-based connectivity algorithms with
 backwards incompatible interfaces</li>
@@ -455,8 +472,8 @@ backwards incompatible interfaces</li>
 <li>Semiconnected graph and tree recognition algorithms</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>API changes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>API changes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="release/api_1.9.html"><span class="doc">Version 1.9 notes and API changes</span></a>.</p>
 </div>
 </div>
@@ -468,8 +485,8 @@ backwards incompatible interfaces</li>
 <div class="section" id="networkx-1-8">
 <h2>NetworkX 1.8<a class="headerlink" href="#networkx-1-8" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  28 July 2013</p>
-<div class="section" id="id6">
-<h3>Highlights<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Highlights<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Faster (linear-time) graphicality tests and Havel-Hakimi graph generators</li>
 <li>Directed Laplacian matrix generator</li>
@@ -489,16 +506,16 @@ backwards incompatible interfaces</li>
 </ul>
 <p>For full details of the issues closed for this release (added features and bug fixes) see: <a class="reference external" href="https://github.com/networkx/networkx/issues?milestone=1&amp;page=1&amp;state=closed">https://github.com/networkx/networkx/issues?milestone=1&amp;page=1&amp;state=closed</a></p>
 </div>
-<div class="section" id="id7">
-<h3>API changes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>API changes<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="release/api_1.8.html"><span class="doc">Version 1.8 notes and API changes</span></a></p>
 </div>
 </div>
 <div class="section" id="networkx-1-7">
 <h2>NetworkX 1.7<a class="headerlink" href="#networkx-1-7" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  4 July 2012</p>
-<div class="section" id="id8">
-<h3>Highlights<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>Highlights<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>New functions for k-clique community finding, flow hierarchy,
 union, disjoint union, compose, and intersection operators that work on
@@ -510,16 +527,16 @@ independent set, max clique, and min-weighted vertex cover.</li>
 <p>For full details of the tickets closed for this release (added features and bug fixes) see:
 <a class="reference external" href="https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.7">https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.7</a></p>
 </div>
-<div class="section" id="id9">
-<h3>API changes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>API changes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="release/api_1.7.html"><span class="doc">Version 1.7 notes and API changes</span></a></p>
 </div>
 </div>
 <div class="section" id="networkx-1-6">
 <h2>NetworkX 1.6<a class="headerlink" href="#networkx-1-6" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  20 November 2011</p>
-<div class="section" id="id10">
-<h3>Highlights<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>Highlights<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>New functions for finding articulation points, generating random bipartite graphs, constructing adjacency matrix representations, forming graph products, computing assortativity coefficients, measuring subgraph centrality and communicability, finding k-clique communities, and writing JSON format output.</p>
 <p>New examples for drawing with D3 Javascript library, and ordering matrices with the Cuthill-McKee algorithm.</p>
 <p>More memory efficient implementation of current-flow betweenness and new approximation algorithms for current-flow betweenness and shortest-path betweenness.</p>
@@ -528,8 +545,8 @@ independent set, max clique, and min-weighted vertex cover.</li>
 <p>For full details of the tickets closed for this release (added features and bug fixes) see:
 <a class="reference external" href="https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.6">https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.6</a></p>
 </div>
-<div class="section" id="id11">
-<h3>API changes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>API changes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="release/api_1.6.html"><span class="doc">Version 1.6 notes and API changes</span></a></p>
 </div>
 </div>
@@ -538,8 +555,8 @@ independent set, max clique, and min-weighted vertex cover.</li>
 <p>Release date:  4 June 2011</p>
 <p>For full details of the tickets closed for this release see:
 <a class="reference external" href="https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.5">https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.5</a></p>
-<div class="section" id="id12">
-<h3>Highlights<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>Highlights<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="new-features">
 <h3>New features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
@@ -569,12 +586,12 @@ specified edge attribute (default=’weight’)
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id13">
-<h3>API changes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>API changes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="release/api_1.5.html"><span class="doc">Version 1.5 notes and API changes</span></a></p>
 </div>
-<div class="section" id="id14">
-<h3>Bug fixes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>Bug fixes<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Fix edge handling for multigraphs in networkx/graphviz interface
@@ -612,8 +629,8 @@ specified edge attribute (default=’weight’)
 <div class="section" id="networkx-1-4">
 <h2>NetworkX 1.4<a class="headerlink" href="#networkx-1-4" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  23 January 2011</p>
-<div class="section" id="id15">
-<h3>New features<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>New features<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="reference/algorithms/core.html#module-networkx.algorithms.core" title="networkx.algorithms.core"><code class="xref py py-mod docutils literal notranslate"><span class="pre">k-shell,k-crust,k-corona</span></code></a></li>
@@ -632,8 +649,8 @@ specified edge attribute (default=’weight’)
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id16">
-<h3>API changes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>API changes<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="reference/generators.html#module-networkx.generators.random_graphs" title="networkx.generators.random_graphs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gnp_random_graph()</span></code></a> now takes a
@@ -643,8 +660,8 @@ directed=True|False keyword instead of create_using</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id17">
-<h3>Bug fixes<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>Bug fixes<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>see  <a class="reference external" href="https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.4">https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.4</a></li>
@@ -656,8 +673,8 @@ directed=True|False keyword instead of create_using</li>
 <h2>NetworkX 1.3<a class="headerlink" href="#networkx-1-3" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  28 August 2010</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id18">
-<h3>New features<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3>New features<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Works with Python versions 2.6, 2.7, 3.1, and 3.2 (but not 2.4 and 2.5).</li>
@@ -670,16 +687,16 @@ directed=True|False keyword instead of create_using</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id19">
-<h3>API changes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h3>API changes<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">minimum_spanning_tree()</span> <span class="pre">now</span> <span class="pre">returns</span> <span class="pre">a</span> <span class="pre">NetworkX</span> <span class="pre">Graph</span> <span class="pre">(a</span> <span class="pre">tree</span> <span class="pre">or</span> <span class="pre">forest)</span></code></li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id20">
-<h3>Bug fixes<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h3>Bug fixes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>see  <a class="reference external" href="https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.3">https://networkx.lanl.gov/trac/query?status=closed&amp;group=milestone&amp;milestone=networkx-1.3</a></li>
@@ -691,8 +708,8 @@ directed=True|False keyword instead of create_using</li>
 <h2>NetworkX 1.2<a class="headerlink" href="#networkx-1-2" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  28 July 2010</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id21">
-<h3>New features<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h3>New features<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="reference/algorithms/flow.html#module-networkx.algorithms.flow" title="networkx.algorithms.flow"><code class="xref py py-mod docutils literal notranslate"><span class="pre">Ford-Fulkerson</span> <span class="pre">max</span> <span class="pre">flow</span> <span class="pre">and</span> <span class="pre">min</span> <span class="pre">cut</span></code></a></li>
@@ -713,8 +730,8 @@ entire package and skips tests with missing optional packages</li>
 <h2>NetworkX 1.1<a class="headerlink" href="#networkx-1-1" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  21 April 2010</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id22">
-<h3>New features<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>New features<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="reference/algorithms/cycles.html#module-networkx.algorithms.cycles" title="networkx.algorithms.cycles"><code class="xref py py-mod docutils literal notranslate"><span class="pre">Algorithm</span> <span class="pre">for</span> <span class="pre">finding</span> <span class="pre">a</span> <span class="pre">basis</span> <span class="pre">for</span> <span class="pre">graph</span> <span class="pre">cycles</span></code></a></li>
@@ -740,8 +757,8 @@ and  <a class="reference internal" href="reference/generators.html#module-networ
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id23">
-<h3>API changes<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h3>API changes<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="returning-dictionaries">
 <h4>Returning dictionaries<a class="headerlink" href="#returning-dictionaries" title="Permalink to this headline">¶</a></h4>
 <p>Several of the algorithms and the degree() method now return dictionaries
@@ -806,8 +823,8 @@ and the with_labels keyword has been removed:</p>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id24">
-<h3>Bug fixes<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id25">
+<h3>Bug fixes<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Support graph attributes with union, intersection, and other graph operations</li>
@@ -832,8 +849,8 @@ connected_components_subgraphs())</li>
 <h2>NetworkX 1.0<a class="headerlink" href="#networkx-1-0" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  8 Jan 2010</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id25">
-<h3>New features<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id26">
+<h3>New features<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
 <p>This release has significant changes to parts of the graph API
 to allow graph, node, and edge attributes.
 See <a class="reference external" href="http://networkx.lanl.gov/reference/api_changes.html">http://networkx.lanl.gov/reference/api_changes.html</a></p>
@@ -857,8 +874,8 @@ See <a class="reference external" href="http://networkx.lanl.gov/reference/api_c
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id26">
-<h3>Examples<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h3>Examples<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Update to work with networkx-1.0 API</li>
@@ -871,8 +888,8 @@ See <a class="reference external" href="http://networkx.lanl.gov/reference/api_c
 <h2>NetworkX 0.99<a class="headerlink" href="#networkx-0-99" title="Permalink to this headline">¶</a></h2>
 <p>Release date:  18 November 2008</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id27">
-<h3>New features<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id28">
+<h3>New features<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
 <p>This release has significant changes to parts of the graph API.
 See <a class="reference external" href="http://networkx.lanl.gov/reference/api_changes.html">http://networkx.lanl.gov/reference/api_changes.html</a></p>
 <blockquote>
@@ -887,16 +904,16 @@ Change in API for performance and code simplicity.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id28">
-<h3>Bug fixes<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id29">
+<h3>Bug fixes<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>handle root= option to draw_graphviz correctly</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id29">
-<h3>Examples<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h3>Examples<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Update to work with networkx-0.99 API</li>
@@ -912,8 +929,8 @@ Change in API for performance and code simplicity.</li>
 <p>Release date: 17 August 2008</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
 <p>NetworkX now requires Python 2.4 or later for full functionality.</p>
-<div class="section" id="id30">
-<h3>New features<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id31">
+<h3>New features<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Edge coloring and node line widths with Matplotlib drawings</li>
@@ -926,8 +943,8 @@ Change in API for performance and code simplicity.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id31">
-<h3>Bug fixes<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id32">
+<h3>Bug fixes<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Better edge data handling with GML writer</li>
@@ -943,8 +960,8 @@ and edges</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id32">
-<h3>Examples<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id33">
+<h3>Examples<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Ubigraph examples showing 3D drawing</li>
@@ -956,8 +973,8 @@ and edges</li>
 <h2>NetworkX 0.36<a class="headerlink" href="#networkx-0-36" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 13 January 2008</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id33">
-<h3>New features<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id34">
+<h3>New features<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>GML format graph reader, tests, and example (football.py)</li>
@@ -965,8 +982,8 @@ and edges</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id34">
-<h3>Bug fixes<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id35">
+<h3>Bug fixes<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>remove obsolete parts of pygraphviz interface</li>
@@ -991,8 +1008,8 @@ compatibility.</p>
 <h2>NetworkX 0.35<a class="headerlink" href="#networkx-0-35" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 22 July 2007</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id35">
-<h3>New features<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id36">
+<h3>New features<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>algorithms for strongly connected components.</li>
@@ -1004,8 +1021,8 @@ compatibility.</p>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id36">
-<h3>Bug fixes<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id37">
+<h3>Bug fixes<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>more detailed installation instructions</li>
@@ -1022,8 +1039,8 @@ compatibility.</p>
 <h2>NetworkX 0.34<a class="headerlink" href="#networkx-0-34" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 12 April 2007</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id37">
-<h3>New features<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id38">
+<h3>New features<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>benchmarks for graph classes</li>
@@ -1037,8 +1054,8 @@ else use python -c “import networkx; networkx.test()”</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id38">
-<h3>Bug fixes<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id39">
+<h3>Bug fixes<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>speedups of neighbors()</li>
@@ -1064,8 +1081,8 @@ in edges_* and degree_*</li>
 <h2>NetworkX 0.33<a class="headerlink" href="#networkx-0-33" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 27 November 2006</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id39">
-<h3>New features<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id40">
+<h3>New features<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul>
 <li><p class="first">draw edges with specified colormap</p>
@@ -1090,8 +1107,8 @@ in edges_* and degree_*</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id40">
-<h3>Bug fixes<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id41">
+<h3>Bug fixes<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>read_gpickle now works correctly with Windows</li>
@@ -1103,8 +1120,8 @@ in edges_* and degree_*</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id41">
-<h3>Examples<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id42">
+<h3>Examples<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Draw edges with colormap</li>
@@ -1116,8 +1133,8 @@ in edges_* and degree_*</li>
 <h2>NetworkX 0.32<a class="headerlink" href="#networkx-0-32" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 29 September 2006</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id42">
-<h3>New features<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id43">
+<h3>New features<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Update to work with numpy-1.0x</li>
@@ -1129,8 +1146,8 @@ in edges_* and degree_*</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id43">
-<h3>Bug fixes<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id44">
+<h3>Bug fixes<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Handle special cases correctly in triangles function</li>
@@ -1141,8 +1158,8 @@ allow cutoff parameter for maximum depth to search</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id44">
-<h3>Examples<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id45">
+<h3>Examples<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Expected degree sequence</li>
@@ -1155,8 +1172,8 @@ allow cutoff parameter for maximum depth to search</li>
 <h2>NetworkX 0.31<a class="headerlink" href="#networkx-0-31" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 20 July 2006</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id45">
-<h3>New features<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id46">
+<h3>New features<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>arbitrary node relabeling (use relabel_nodes)</li>
@@ -1166,8 +1183,8 @@ numpy matrix or array types, and scipy_sparse_matrix types</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id46">
-<h3>Bug fixes<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id47">
+<h3>Bug fixes<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Allow drawing graphs with no edges using pylab</li>
@@ -1176,8 +1193,8 @@ numpy matrix or array types, and scipy_sparse_matrix types</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id47">
-<h3>Examples<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id48">
+<h3>Examples<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>update drawing examples</li>
@@ -1189,8 +1206,8 @@ numpy matrix or array types, and scipy_sparse_matrix types</li>
 <h2>NetworkX 0.30<a class="headerlink" href="#networkx-0-30" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 23 June 2006</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id48">
-<h3>New features<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id49">
+<h3>New features<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>update to work with Python 2.5</li>
@@ -1204,8 +1221,8 @@ numpy matrix or array types, and scipy_sparse_matrix types</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id49">
-<h3>Bug fixes<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id50">
+<h3>Bug fixes<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>speed improvements (faster version of subgraph, is_connected)</li>
@@ -1222,8 +1239,8 @@ exception if an nbunch isn’t a node or iterable</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id50">
-<h3>Examples<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id51">
+<h3>Examples<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>unicode node labels</li>
@@ -1235,8 +1252,8 @@ exception if an nbunch isn’t a node or iterable</li>
 <h2>NetworkX 0.29<a class="headerlink" href="#networkx-0-29" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 28 April 2006</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id51">
-<h3>New features<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id52">
+<h3>New features<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Algorithms for betweenness, eigenvalues, eigenvectors, and
@@ -1251,8 +1268,8 @@ functions for manipulating labels.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id52">
-<h3>Bug fixes<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id53">
+<h3>Bug fixes<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Betweenness centrality now correctly uses Brandes definition and
@@ -1270,8 +1287,8 @@ periodic=True</li>
 <h2>NetworkX 0.28<a class="headerlink" href="#networkx-0-28" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 13 March 2006</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id53">
-<h3>New features<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id54">
+<h3>New features<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Option to construct Laplacian with rows and columns in specified order</li>
@@ -1283,8 +1300,8 @@ starting at node n.
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id54">
-<h3>Examples<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id55">
+<h3>Examples<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Formation of giant component in binomial_graph:</li>
@@ -1293,8 +1310,8 @@ starting at node n.
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id55">
-<h3>Bug fixes<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id56">
+<h3>Bug fixes<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><dl class="first docutils">
@@ -1325,8 +1342,8 @@ calling sequence</li>
 <h2>NetworkX 0.27<a class="headerlink" href="#networkx-0-27" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 5 February 2006</p>
 <p>See: <a class="reference external" href="https://networkx.lanl.gov/trac/timeline">https://networkx.lanl.gov/trac/timeline</a></p>
-<div class="section" id="id56">
-<h3>New features<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id57">
+<h3>New features<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>sparse_binomial_graph: faster graph generator for sparse random graphs</li>
@@ -1344,16 +1361,16 @@ and in_neighbors for digraphs.  For digraphs edges=out_edges.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id57">
-<h3>Examples<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id58">
+<h3>Examples<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Minard’s data for Napoleon’s Russian campaign</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id58">
-<h3>Bug fixes<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id59">
+<h3>Bug fixes<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>XGraph(multiedges=True) returns a copy of the list of edges
@@ -1365,8 +1382,8 @@ for get_edge()</li>
 <div class="section" id="networkx-0-26">
 <h2>NetworkX 0.26<a class="headerlink" href="#networkx-0-26" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 6 January 2006</p>
-<div class="section" id="id59">
-<h3>New features<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id60">
+<h3>New features<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Simpler interface to drawing with pylab</li>
@@ -1379,8 +1396,8 @@ rows/columns in matrix</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id60">
-<h3>Examples<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id61">
+<h3>Examples<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Several new examples showing how draw to graphs with various
@@ -1388,8 +1405,8 @@ properties of nodes, edges, and labels</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id61">
-<h3>Bug fixes<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id62">
+<h3>Bug fixes<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Default data type for all graphs is now None (was the integer 1)</li>
@@ -1403,8 +1420,8 @@ properties of nodes, edges, and labels</li>
 <div class="section" id="networkx-0-25">
 <h2>NetworkX 0.25<a class="headerlink" href="#networkx-0-25" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 5 December 2005</p>
-<div class="section" id="id62">
-<h3>New features<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id63">
+<h3>New features<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Uses setuptools for installation <a class="reference external" href="http://peak.telecommunity.com/DevCenter/setuptools">http://peak.telecommunity.com/DevCenter/setuptools</a></li>
@@ -1415,8 +1432,8 @@ properties of nodes, edges, and labels</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id63">
-<h3>Examples<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id64">
+<h3>Examples<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Email example shows how to use XDiGraph with Python objects as
@@ -1432,8 +1449,8 @@ edge data</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id64">
-<h3>Bug fixes<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id65">
+<h3>Bug fixes<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>use create_using= instead of result= keywords for graph types
@@ -1450,8 +1467,8 @@ degree sequence as input sequence</li>
 <div class="section" id="networkx-0-24">
 <h2>NetworkX 0.24<a class="headerlink" href="#networkx-0-24" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 20 August 2005</p>
-<div class="section" id="id65">
-<h3>Bug fixes<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id66">
+<h3>Bug fixes<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Update of Dijkstra algorithm code</li>
@@ -1485,8 +1502,8 @@ The package name “NX” is now “networkx”.</p>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id66">
-<h3>New features<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id67">
+<h3>New features<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>DiGraph reverse</li>
@@ -1502,11 +1519,11 @@ The package name “NX” is now “networkx”.</p>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id67">
-<h3>Examples<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
-</div>
 <div class="section" id="id68">
-<h3>Documentation<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+<h3>Examples<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id69">
+<h3>Documentation<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Changed to reflect NX-networkx change</li>
@@ -1514,8 +1531,8 @@ The package name “NX” is now “networkx”.</p>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id69">
-<h3>Bug fixes<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id70">
+<h3>Bug fixes<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Fixed logic in io.py for reading DiGraphs.</li>
@@ -1530,8 +1547,8 @@ considered separately.</li>
 <div class="section" id="networkx-0-22">
 <h2>NetworkX 0.22<a class="headerlink" href="#networkx-0-22" title="Permalink to this headline">¶</a></h2>
 <p>Release date: 17 June 2005</p>
-<div class="section" id="id70">
-<h3>New features<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id71">
+<h3>New features<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Topological sort, testing for directed acyclic graphs (DAGs)</li>
@@ -1550,8 +1567,8 @@ considered separately.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id71">
-<h3>Examples<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id72">
+<h3>Examples<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Kevin Bacon movie actor graph: Examples/kevin_bacon.py</li>
@@ -1560,8 +1577,8 @@ considered separately.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id72">
-<h3>Documentation<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id73">
+<h3>Documentation<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Rewrite of setup scripts to install documentation and
@@ -1569,8 +1586,8 @@ tests in documentation directory specified</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id73">
-<h3>Bug fixes<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id74">
+<h3>Bug fixes<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Handle calls to edges() with non-node, non-iterable items.</li>
@@ -1599,7 +1616,7 @@ protect name-spaces</li>
         <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="developer/gitwash/git_resources.html" class="btn btn-neutral" title="git resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="developer/gitwash/git_resources.html" class="btn btn-neutral float-left" title="git resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1608,8 +1625,10 @@ protect name-spaces</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -1626,34 +1645,16 @@ protect name-spaces</li>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

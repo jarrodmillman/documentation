@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bipartite &mdash; NetworkX 2.2 documentation</title>
+  <title>Bipartite &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="networkx.algorithms.bipartite.basic.is_bipartite" href="generated/networkx.algorithms.bipartite.basic.is_bipartite.html" />
     <link rel="prev" title="networkx.algorithms.assortativity.mixing_dict" href="generated/networkx.algorithms.assortativity.mixing_dict.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -145,9 +148,11 @@
 <li class="toctree-l3"><a class="reference internal" href="matching.html">Matching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="minors.html">Minors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mis.html">Maximal independent set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moral.html">Moral</a></li>
 <li class="toctree-l3"><a class="reference internal" href="node_classification.html">Node Classification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operators.html">Operators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="planarity.html">Planarity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="planar_drawing.html">Planar Drawing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reciprocity.html">Reciprocity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rich_club.html">Rich Club</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shortest_paths.html">Shortest Paths</a></li>
@@ -349,10 +354,10 @@ container with all nodes that belong to one node set:</p>
 <td>Returns a two-coloring of the graph.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.basic.density.html#networkx.algorithms.bipartite.basic.density" title="networkx.algorithms.bipartite.basic.density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">density</span></code></a>(B,&nbsp;nodes)</td>
-<td>Return density of bipartite graph B.</td>
+<td>Returns density of bipartite graph B.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.basic.degrees.html#networkx.algorithms.bipartite.basic.degrees" title="networkx.algorithms.bipartite.basic.degrees"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees</span></code></a>(B,&nbsp;nodes[,&nbsp;weight])</td>
-<td>Return the degrees of the two node sets in the bipartite graph B.</td>
+<td>Returns the degrees of the two node sets in the bipartite graph B.</td>
 </tr>
 </tbody>
 </table>
@@ -409,7 +414,7 @@ vertices in both the left and right vertex sets.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.matrix.biadjacency_matrix.html#networkx.algorithms.bipartite.matrix.biadjacency_matrix" title="networkx.algorithms.bipartite.matrix.biadjacency_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">biadjacency_matrix</span></code></a>(G,&nbsp;row_order[,&nbsp;…])</td>
-<td>Return the biadjacency matrix of the bipartite graph G.</td>
+<td>Returns the biadjacency matrix of the bipartite graph G.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.matrix.from_biadjacency_matrix.html#networkx.algorithms.bipartite.matrix.from_biadjacency_matrix" title="networkx.algorithms.bipartite.matrix.from_biadjacency_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_biadjacency_matrix</span></code></a>(A[,&nbsp;create_using,&nbsp;…])</td>
 <td>Creates a new bipartite graph from a biadjacency matrix given as a SciPy sparse matrix.</td>
@@ -527,28 +532,28 @@ vertices in both the left and right vertex sets.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.generators.complete_bipartite_graph.html#networkx.algorithms.bipartite.generators.complete_bipartite_graph" title="networkx.algorithms.bipartite.generators.complete_bipartite_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complete_bipartite_graph</span></code></a>(n1,&nbsp;n2[,&nbsp;create_using])</td>
-<td>Return the complete bipartite graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">K_{n_1,n_2}</span></code>.</td>
+<td>Returns the complete bipartite graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">K_{n_1,n_2}</span></code>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.generators.configuration_model.html#networkx.algorithms.bipartite.generators.configuration_model" title="networkx.algorithms.bipartite.generators.configuration_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configuration_model</span></code></a>(aseq,&nbsp;bseq[,&nbsp;…])</td>
-<td>Return a random bipartite graph from two given degree sequences.</td>
+<td>Returns a random bipartite graph from two given degree sequences.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.generators.havel_hakimi_graph.html#networkx.algorithms.bipartite.generators.havel_hakimi_graph" title="networkx.algorithms.bipartite.generators.havel_hakimi_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">havel_hakimi_graph</span></code></a>(aseq,&nbsp;bseq[,&nbsp;create_using])</td>
-<td>Return a bipartite graph from two given degree sequences using a Havel-Hakimi style construction.</td>
+<td>Returns a bipartite graph from two given degree sequences using a Havel-Hakimi style construction.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.generators.reverse_havel_hakimi_graph.html#networkx.algorithms.bipartite.generators.reverse_havel_hakimi_graph" title="networkx.algorithms.bipartite.generators.reverse_havel_hakimi_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse_havel_hakimi_graph</span></code></a>(aseq,&nbsp;bseq[,&nbsp;…])</td>
-<td>Return a bipartite graph from two given degree sequences using a Havel-Hakimi style construction.</td>
+<td>Returns a bipartite graph from two given degree sequences using a Havel-Hakimi style construction.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.generators.alternating_havel_hakimi_graph.html#networkx.algorithms.bipartite.generators.alternating_havel_hakimi_graph" title="networkx.algorithms.bipartite.generators.alternating_havel_hakimi_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alternating_havel_hakimi_graph</span></code></a>(aseq,&nbsp;bseq[,&nbsp;…])</td>
-<td>Return a bipartite graph from two given degree sequences using an alternating Havel-Hakimi style construction.</td>
+<td>Returns a bipartite graph from two given degree sequences using an alternating Havel-Hakimi style construction.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.generators.preferential_attachment_graph.html#networkx.algorithms.bipartite.generators.preferential_attachment_graph" title="networkx.algorithms.bipartite.generators.preferential_attachment_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">preferential_attachment_graph</span></code></a>(aseq,&nbsp;p[,&nbsp;…])</td>
 <td>Create a bipartite graph with a preferential attachment model from a given single degree sequence.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.generators.random_graph.html#networkx.algorithms.bipartite.generators.random_graph" title="networkx.algorithms.bipartite.generators.random_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_graph</span></code></a>(n,&nbsp;m,&nbsp;p[,&nbsp;seed,&nbsp;directed])</td>
-<td>Return a bipartite random graph.</td>
+<td>Returns a bipartite random graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.bipartite.generators.gnmk_random_graph.html#networkx.algorithms.bipartite.generators.gnmk_random_graph" title="networkx.algorithms.bipartite.generators.gnmk_random_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gnmk_random_graph</span></code></a>(n,&nbsp;m,&nbsp;k[,&nbsp;seed,&nbsp;directed])</td>
-<td>Return a random bipartite graph G_{n,m,k}.</td>
+<td>Returns a random bipartite graph G_{n,m,k}.</td>
 </tr>
 </tbody>
 </table>
@@ -581,7 +586,7 @@ vertices in both the left and right vertex sets.</p>
         <a href="generated/networkx.algorithms.bipartite.basic.is_bipartite.html" class="btn btn-neutral float-right" title="networkx.algorithms.bipartite.basic.is_bipartite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/networkx.algorithms.assortativity.mixing_dict.html" class="btn btn-neutral" title="networkx.algorithms.assortativity.mixing_dict" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/networkx.algorithms.assortativity.mixing_dict.html" class="btn btn-neutral float-left" title="networkx.algorithms.assortativity.mixing_dict" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -590,8 +595,10 @@ vertices in both the left and right vertex sets.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -608,34 +615,16 @@ vertices in both the left and right vertex sets.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

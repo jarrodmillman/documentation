@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.components.connected &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.algorithms.components.connected &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
-
-  
-  <script src="../../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -160,7 +163,7 @@
             
   <h1>Source code for networkx.algorithms.components.connected</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="c1">#    Copyright (C) 2004-2018 by</span>
+<span class="c1">#    Copyright (C) 2004-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
@@ -253,7 +256,7 @@
 
 
 <div class="viewcode-block" id="number_connected_components"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.components.number_connected_components.html#networkx.algorithms.components.number_connected_components">[docs]</a><span class="k">def</span> <span class="nf">number_connected_components</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the number of connected components.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the number of connected components.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -281,7 +284,7 @@
 
 <div class="viewcode-block" id="is_connected"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.components.is_connected.html#networkx.algorithms.components.is_connected">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return True if the graph is connected, False otherwise.</span>
+    <span class="sd">&quot;&quot;&quot;Returns True if the graph is connected, False otherwise.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -325,7 +328,7 @@
 
 <div class="viewcode-block" id="node_connected_component"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.components.node_connected_component.html#networkx.algorithms.components.node_connected_component">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">node_connected_component</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the set of nodes in the component of graph containing node n.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the set of nodes in the component of graph containing node n.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -382,8 +385,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -400,34 +405,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

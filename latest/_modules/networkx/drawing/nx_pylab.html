@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.drawing.nx_pylab &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -159,7 +162,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for networkx.drawing.nx_pylab</h1><div class="highlight"><pre>
-<span></span><span class="c1">#    Copyright (C) 2004-2018 by</span>
+<span></span><span class="c1">#    Copyright (C) 2004-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
@@ -182,11 +185,12 @@
 <span class="sd">pygraphviz:     http://pygraphviz.github.io/</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">numbers</span> <span class="k">import</span> <span class="n">Number</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">is_string_like</span>
 <span class="kn">from</span> <span class="nn">networkx.drawing.layout</span> <span class="k">import</span> <span class="n">shell_layout</span><span class="p">,</span> \
     <span class="n">circular_layout</span><span class="p">,</span> <span class="n">kamada_kawai_layout</span><span class="p">,</span> <span class="n">spectral_layout</span><span class="p">,</span> \
-    <span class="n">spring_layout</span><span class="p">,</span> <span class="n">random_layout</span>
+    <span class="n">spring_layout</span><span class="p">,</span> <span class="n">random_layout</span><span class="p">,</span> <span class="n">planar_layout</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;draw&#39;</span><span class="p">,</span>
            <span class="s1">&#39;draw_networkx&#39;</span><span class="p">,</span>
@@ -199,6 +203,7 @@
            <span class="s1">&#39;draw_random&#39;</span><span class="p">,</span>
            <span class="s1">&#39;draw_spectral&#39;</span><span class="p">,</span>
            <span class="s1">&#39;draw_spring&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;draw_planar&#39;</span><span class="p">,</span>
            <span class="s1">&#39;draw_shell&#39;</span><span class="p">]</span>
 
 
@@ -340,7 +345,7 @@
 <span class="sd">       Size of nodes.  If an array is specified it must be the</span>
 <span class="sd">       same length as nodelist.</span>
 
-<span class="sd">    node_color : color string, or array of floats, (default=&#39;r&#39;)</span>
+<span class="sd">    node_color : color string, or array of floats, (default=&#39;#1f78b4&#39;)</span>
 <span class="sd">       Node color. Can be a single color format string,</span>
 <span class="sd">       or a  sequence of colors with the same length as nodelist.</span>
 <span class="sd">       If numeric values are specified they will be mapped to</span>
@@ -445,7 +450,7 @@
 <div class="viewcode-block" id="draw_networkx_nodes"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_networkx_nodes.html#networkx.drawing.nx_pylab.draw_networkx_nodes">[docs]</a><span class="k">def</span> <span class="nf">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span>
                         <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                         <span class="n">node_size</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
-                        <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
+                        <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;#1f78b4&#39;</span><span class="p">,</span>
                         <span class="n">node_shape</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
                         <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
                         <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -480,7 +485,7 @@
 <span class="sd">       same length as nodelist.</span>
 
 <span class="sd">    node_color : color string, or array of floats</span>
-<span class="sd">       Node color. Can be a single color format string (default=&#39;r&#39;),</span>
+<span class="sd">       Node color. Can be a single color format string (default=&#39;#1f78b4&#39;),</span>
 <span class="sd">       or a  sequence of colors with the same length as nodelist.</span>
 <span class="sd">       If numeric values are specified they will be mapped to</span>
 <span class="sd">       colors using the cmap and vmin,vmax parameters.  See</span>
@@ -573,6 +578,13 @@
                                  <span class="n">linewidths</span><span class="o">=</span><span class="n">linewidths</span><span class="p">,</span>
                                  <span class="n">edgecolors</span><span class="o">=</span><span class="n">edgecolors</span><span class="p">,</span>
                                  <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
+        <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span>
+        <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="n">node_collection</span><span class="o">.</span><span class="n">set_zorder</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">node_collection</span></div>
@@ -595,6 +607,7 @@
                         <span class="n">node_size</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
                         <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                         <span class="n">node_shape</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+                        <span class="n">connectionstyle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                         <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Draw the edges of the graph G.</span>
 
@@ -649,6 +662,12 @@
 <span class="sd">       For directed graphs, choose the size of the arrow head head&#39;s length and</span>
 <span class="sd">       width. See :py:class: `matplotlib.patches.FancyArrowPatch` for attribute</span>
 <span class="sd">       `mutation_scale` for more info.</span>
+
+<span class="sd">    connectionstyle : str, optional (default=None)</span>
+<span class="sd">       Pass the connectionstyle parameter to create curved arc of rounding</span>
+<span class="sd">       radius rad. For example, connectionstyle=&#39;arc3,rad=0.2&#39;.</span>
+<span class="sd">       See :py:class: `matplotlib.patches.ConnectionStyle` and</span>
+<span class="sd">       :py:class: `matplotlib.patches.FancyArrowPatch` for more info.</span>
 
 <span class="sd">    label : [None| string]</span>
 <span class="sd">       Label for legend</span>
@@ -769,7 +788,7 @@
         <span class="c1"># r7184 and r7189 (June 6 2009). We should then not set the alpha</span>
         <span class="c1"># value globally, since the user can instead provide per-edge alphas</span>
         <span class="c1"># now.  Only set it globally if provided as a scalar.</span>
-        <span class="k">if</span> <span class="n">cb</span><span class="o">.</span><span class="n">is_numlike</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
             <span class="n">edge_collection</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">edge_colors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -819,7 +838,7 @@
             <span class="n">shrink_source</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># space from source to tail</span>
             <span class="n">shrink_target</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># space from  head to target</span>
             <span class="k">if</span> <span class="n">cb</span><span class="o">.</span><span class="n">iterable</span><span class="p">(</span><span class="n">node_size</span><span class="p">):</span>  <span class="c1"># many node sizes</span>
-                <span class="n">src_node</span><span class="p">,</span> <span class="n">dst_node</span> <span class="o">=</span> <span class="n">edgelist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">src_node</span><span class="p">,</span> <span class="n">dst_node</span> <span class="o">=</span> <span class="n">edgelist</span><span class="p">[</span><span class="n">i</span><span class="p">][:</span><span class="mi">2</span><span class="p">]</span>
                 <span class="n">index_node</span> <span class="o">=</span> <span class="n">nodelist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dst_node</span><span class="p">)</span>
                 <span class="n">marker_size</span> <span class="o">=</span> <span class="n">node_size</span><span class="p">[</span><span class="n">index_node</span><span class="p">]</span>
                 <span class="n">shrink_target</span> <span class="o">=</span> <span class="n">to_marker_edge</span><span class="p">(</span><span class="n">marker_size</span><span class="p">,</span> <span class="n">node_shape</span><span class="p">)</span>
@@ -842,6 +861,7 @@
                                     <span class="n">mutation_scale</span><span class="o">=</span><span class="n">mutation_scale</span><span class="p">,</span>
                                     <span class="n">color</span><span class="o">=</span><span class="n">arrow_color</span><span class="p">,</span>
                                     <span class="n">linewidth</span><span class="o">=</span><span class="n">line_width</span><span class="p">,</span>
+                                    <span class="n">connectionstyle</span><span class="o">=</span><span class="n">connectionstyle</span><span class="p">,</span>
                                     <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># arrows go behind nodes</span>
 
             <span class="c1"># There seems to be a bug in matplotlib to make collections of</span>
@@ -862,6 +882,14 @@
     <span class="n">corners</span> <span class="o">=</span> <span class="p">(</span><span class="n">minx</span> <span class="o">-</span> <span class="n">padx</span><span class="p">,</span> <span class="n">miny</span> <span class="o">-</span> <span class="n">pady</span><span class="p">),</span> <span class="p">(</span><span class="n">maxx</span> <span class="o">+</span> <span class="n">padx</span><span class="p">,</span> <span class="n">maxy</span> <span class="o">+</span> <span class="n">pady</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">update_datalim</span><span class="p">(</span><span class="n">corners</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">autoscale_view</span><span class="p">()</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
+        <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span>
+        <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">arrow_collection</span></div>
 
@@ -969,6 +997,14 @@
                     <span class="n">clip_on</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                     <span class="p">)</span>
         <span class="n">text_items</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+        
+    <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
+        <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span>
+        <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">text_items</span></div>
 
@@ -1115,6 +1151,14 @@
                     <span class="p">)</span>
         <span class="n">text_items</span><span class="p">[(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">t</span>
 
+    <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
+        <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span>
+        <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">text_items</span></div>
 
 
@@ -1167,7 +1211,12 @@
 
 
 <div class="viewcode-block" id="draw_spectral"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_spectral.html#networkx.drawing.nx_pylab.draw_spectral">[docs]</a><span class="k">def</span> <span class="nf">draw_spectral</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Draw the graph G with a spectral layout.</span>
+    <span class="sd">&quot;&quot;&quot;Draw the graph G with a spectral 2D layout.</span>
+
+<span class="sd">    Using the unnormalized Laplacion, the layout shows possible clusters of</span>
+<span class="sd">    nodes which are an approximation of the ratio cut. The positions are the</span>
+<span class="sd">    entries of the second and third eigenvectors corresponding to the</span>
+<span class="sd">    ascending eigenvalues starting from the second one.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1217,6 +1266,22 @@
     <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">shell_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nlist</span><span class="o">=</span><span class="n">nlist</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="draw_planar"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pylab.draw_planar.html#networkx.drawing.nx_pylab.draw_planar">[docs]</a><span class="k">def</span> <span class="nf">draw_planar</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Draw a planar networkx graph with planar layout.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : graph</span>
+<span class="sd">       A planar networkx graph</span>
+
+<span class="sd">    kwargs : optional keywords</span>
+<span class="sd">       See networkx.draw_networkx() for a description of optional keywords,</span>
+<span class="sd">       with the exception of the pos parameter which is not used by this</span>
+<span class="sd">       function.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">planar_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
 <span class="k">def</span> <span class="nf">apply_alpha</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">elem_list</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Apply an alpha (or list of alphas) to the colors provided.</span>
 
@@ -1255,7 +1320,6 @@
 <span class="sd">        Array containing RGBA format values for each of the node colours.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">numbers</span>
     <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">islice</span><span class="p">,</span> <span class="n">cycle</span>
 
     <span class="k">try</span><span class="p">:</span>
@@ -1267,7 +1331,7 @@
 
     <span class="c1"># If we have been provided with a list of numbers as long as elem_list,</span>
     <span class="c1"># apply the color mapping.</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">elem_list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">numbers</span><span class="o">.</span><span class="n">Number</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">elem_list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Number</span><span class="p">):</span>
         <span class="n">mapper</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
         <span class="n">mapper</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">)</span>
         <span class="n">rgba_colors</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="n">to_rgba</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
@@ -1287,7 +1351,7 @@
         <span class="c1"># rgba_colors) is the same as the number of elements, resize the array,</span>
         <span class="c1"># to avoid it being interpreted as a colormap by scatter()</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">rgba_colors</span><span class="p">)</span> <span class="ow">or</span> <span class="n">rgba_colors</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">elem_list</span><span class="p">):</span>
-            <span class="n">rgba_colors</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">elem_list</span><span class="p">),</span> <span class="mi">4</span><span class="p">))</span>
+            <span class="n">rgba_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">rgba_colors</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elem_list</span><span class="p">),</span> <span class="mi">4</span><span class="p">))</span>
             <span class="n">rgba_colors</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">rgba_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
             <span class="n">rgba_colors</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rgba_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
             <span class="n">rgba_colors</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">rgba_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -1319,8 +1383,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -1337,34 +1403,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

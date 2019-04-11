@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.multigraph &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.classes.multigraph &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -159,7 +162,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for networkx.classes.multigraph</h1><div class="highlight"><pre>
-<span></span><span class="c1">#    Copyright (C) 2004-2018 by</span>
+<span></span><span class="c1">#    Copyright (C) 2004-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
@@ -364,12 +367,18 @@
 <span class="sd">    extra features can be added. To replace one of the dicts create</span>
 <span class="sd">    a new graph class by changing the class(!) variable holding the</span>
 <span class="sd">    factory for that dict-like structure. The variable names are</span>
-<span class="sd">    node_dict_factory, adjlist_inner_dict_factory, adjlist_outer_dict_factory,</span>
-<span class="sd">    and edge_attr_dict_factory.</span>
+<span class="sd">    node_dict_factory, node_attr_dict_factory, adjlist_inner_dict_factory,</span>
+<span class="sd">    adjlist_outer_dict_factory, edge_key_dict_factory, edge_attr_dict_factory</span>
+<span class="sd">    and graph_attr_dict_factory.</span>
 
 <span class="sd">    node_dict_factory : function, (default: dict)</span>
 <span class="sd">        Factory function to be used to create the dict containing node</span>
 <span class="sd">        attributes, keyed by node id.</span>
+<span class="sd">        It should require no arguments and return a dict-like object</span>
+
+<span class="sd">    node_attr_dict_factory: function, (default: dict)</span>
+<span class="sd">        Factory function to be used to create the node attribute</span>
+<span class="sd">        dict which holds attribute values keyed by attribute name.</span>
 <span class="sd">        It should require no arguments and return a dict-like object</span>
 
 <span class="sd">    adjlist_outer_dict_factory : function, (default: dict)</span>
@@ -389,7 +398,12 @@
 
 <span class="sd">    edge_attr_dict_factory : function, (default: dict)</span>
 <span class="sd">        Factory function to be used to create the edge attribute</span>
-<span class="sd">        dict which holds attrbute values keyed by attribute name.</span>
+<span class="sd">        dict which holds attribute values keyed by attribute name.</span>
+<span class="sd">        It should require no arguments and return a dict-like object.</span>
+
+<span class="sd">    graph_attr_dict_factory : function, (default: dict)</span>
+<span class="sd">        Factory function to be used to create the graph attribute</span>
+<span class="sd">        dict which holds attribute values keyed by attribute name.</span>
 <span class="sd">        It should require no arguments and return a dict-like object.</span>
 
 <span class="sd">    Typically, if your extension doesn&#39;t impact the data structure all</span>
@@ -491,7 +505,7 @@
         <span class="k">return</span> <span class="n">MultiAdjacencyView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">)</span>
 
 <div class="viewcode-block" id="MultiGraph.new_edge_key"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.new_edge_key.html#networkx.MultiGraph.new_edge_key">[docs]</a>    <span class="k">def</span> <span class="nf">new_edge_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return an unused key for edges between nodes `u` and `v`.</span>
+        <span class="sd">&quot;&quot;&quot;Returns an unused key for edges between nodes `u` and `v`.</span>
 
 <span class="sd">        The nodes `u` and `v` do not need to be already in the graph.</span>
 
@@ -589,10 +603,10 @@
         <span class="c1"># add nodes</span>
         <span class="k">if</span> <span class="n">u</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_edge_key</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
@@ -800,7 +814,7 @@
                 <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="MultiGraph.has_edge"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.has_edge.html#networkx.MultiGraph.has_edge">[docs]</a>    <span class="k">def</span> <span class="nf">has_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return True if the graph has an edge between nodes u and v.</span>
+        <span class="sd">&quot;&quot;&quot;Returns True if the graph has an edge between nodes u and v.</span>
 
 <span class="sd">        This is the same as `v in G[u] or key in G[u][v]`</span>
 <span class="sd">        without KeyError exceptions.</span>
@@ -857,7 +871,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return an iterator over the edges.</span>
+        <span class="sd">&quot;&quot;&quot;Returns an iterator over the edges.</span>
 
 <span class="sd">        edges(self, nbunch=None, data=False, keys=False, default=None)</span>
 
@@ -924,7 +938,7 @@
         <span class="k">return</span> <span class="n">MultiEdgeView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <div class="viewcode-block" id="MultiGraph.get_edge_data"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.get_edge_data.html#networkx.MultiGraph.get_edge_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_edge_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the attribute dictionary associated with edge (u, v).</span>
+        <span class="sd">&quot;&quot;&quot;Returns the attribute dictionary associated with edge (u, v).</span>
 
 <span class="sd">        This is identical to `G[u][v][key]` except the default is returned</span>
 <span class="sd">        instead of an exception is the edge doesn&#39;t exist.</span>
@@ -1029,15 +1043,15 @@
         <span class="k">return</span> <span class="n">MultiDegreeView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">is_multigraph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return True if graph is a multigraph, False otherwise.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Returns True if graph is a multigraph, False otherwise.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">is_directed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return True if graph is directed, False otherwise.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Returns True if graph is directed, False otherwise.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">False</span>
 
 <div class="viewcode-block" id="MultiGraph.copy"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.copy.html#networkx.MultiGraph.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a copy of the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns a copy of the graph.</span>
 
 <span class="sd">        The copy method by default returns an independent shallow copy</span>
 <span class="sd">        of the graph and attributes. That is, if an attribute is a</span>
@@ -1125,7 +1139,7 @@
         <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="MultiGraph.to_directed"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.to_directed.html#networkx.MultiGraph.to_directed">[docs]</a>    <span class="k">def</span> <span class="nf">to_directed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a directed representation of the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns a directed representation of the graph.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1180,7 +1194,7 @@
         <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="MultiGraph.to_undirected"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.to_undirected.html#networkx.MultiGraph.to_undirected">[docs]</a>    <span class="k">def</span> <span class="nf">to_undirected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return an undirected copy of the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns an undirected copy of the graph.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1231,7 +1245,7 @@
         <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="MultiGraph.number_of_edges"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.MultiGraph.number_of_edges.html#networkx.MultiGraph.number_of_edges">[docs]</a>    <span class="k">def</span> <span class="nf">number_of_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the number of edges between two nodes.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the number of edges between two nodes.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1299,8 +1313,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -1317,34 +1333,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

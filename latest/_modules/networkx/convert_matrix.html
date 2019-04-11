@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.convert_matrix &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -159,7 +162,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for networkx.convert_matrix</h1><div class="highlight"><pre>
-<span></span><span class="c1">#    Copyright (C) 2006-2018 by</span>
+<span></span><span class="c1">#    Copyright (C) 2006-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
@@ -202,7 +205,7 @@
 
 <div class="viewcode-block" id="to_pandas_adjacency"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_pandas_adjacency.html#networkx.convert_matrix.to_pandas_adjacency">[docs]</a><span class="k">def</span> <span class="nf">to_pandas_adjacency</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                         <span class="n">multigraph_weight</span><span class="o">=</span><span class="nb">sum</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">nonedge</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the graph adjacency matrix as a Pandas DataFrame.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a Pandas DataFrame.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -291,7 +294,7 @@
 
 
 <div class="viewcode-block" id="from_pandas_adjacency"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.from_pandas_adjacency.html#networkx.convert_matrix.from_pandas_adjacency">[docs]</a><span class="k">def</span> <span class="nf">from_pandas_adjacency</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return a graph from Pandas DataFrame.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Returns a graph from Pandas DataFrame.</span>
 
 <span class="sd">    The Pandas DataFrame is interpreted as an adjacency matrix for the graph.</span>
 
@@ -354,7 +357,7 @@
 
 <div class="viewcode-block" id="to_pandas_edgelist"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_pandas_edgelist.html#networkx.convert_matrix.to_pandas_edgelist">[docs]</a><span class="k">def</span> <span class="nf">to_pandas_edgelist</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                        <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the graph edge list as a Pandas DataFrame.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the graph edge list as a Pandas DataFrame.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -362,11 +365,11 @@
 <span class="sd">        The NetworkX graph used to construct the Pandas DataFrame.</span>
 
 <span class="sd">    source : str or int, optional</span>
-<span class="sd">        A valid column name (string or iteger) for the source nodes (for the</span>
+<span class="sd">        A valid column name (string or integer) for the source nodes (for the</span>
 <span class="sd">        directed case).</span>
 
 <span class="sd">    target : str or int, optional</span>
-<span class="sd">        A valid column name (string or iteger) for the target nodes (for the</span>
+<span class="sd">        A valid column name (string or integer) for the target nodes (for the</span>
 <span class="sd">        directed case).</span>
 
 <span class="sd">    nodelist : list, optional</span>
@@ -405,7 +408,7 @@
 
 <div class="viewcode-block" id="from_pandas_edgelist"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.from_pandas_edgelist.html#networkx.convert_matrix.from_pandas_edgelist">[docs]</a><span class="k">def</span> <span class="nf">from_pandas_edgelist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="n">edge_attr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                          <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a graph from Pandas DataFrame containing an edge list.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a graph from Pandas DataFrame containing an edge list.</span>
 
 <span class="sd">    The Pandas DataFrame should contain at least two columns of node names and</span>
 <span class="sd">    zero or more columns of edge attributes. Each row will be processed as one</span>
@@ -423,11 +426,11 @@
 <span class="sd">        An edge list representation of a graph</span>
 
 <span class="sd">    source : str or int</span>
-<span class="sd">        A valid column name (string or iteger) for the source nodes (for the</span>
+<span class="sd">        A valid column name (string or integer) for the source nodes (for the</span>
 <span class="sd">        directed case).</span>
 
 <span class="sd">    target : str or int</span>
-<span class="sd">        A valid column name (string or iteger) for the target nodes (for the</span>
+<span class="sd">        A valid column name (string or integer) for the target nodes (for the</span>
 <span class="sd">        directed case).</span>
 
 <span class="sd">    edge_attr : str or int, iterable, True</span>
@@ -509,7 +512,7 @@
 
 <div class="viewcode-block" id="to_numpy_matrix"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_numpy_matrix.html#networkx.convert_matrix.to_numpy_matrix">[docs]</a><span class="k">def</span> <span class="nf">to_numpy_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                     <span class="n">multigraph_weight</span><span class="o">=</span><span class="nb">sum</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">nonedge</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the graph adjacency matrix as a NumPy matrix.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a NumPy matrix.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -573,17 +576,13 @@
 <span class="sd">    resulting Numpy matrix can be modified as follows:</span>
 
 <span class="sd">    &gt;&gt;&gt; import numpy as np</span>
-<span class="sd">    &gt;&gt;&gt; try:</span>
-<span class="sd">    ...    np.set_printoptions(legacy=&quot;1.13&quot;)</span>
-<span class="sd">    ... except TypeError:</span>
-<span class="sd">    ...    pass</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.Graph([(1, 1)])</span>
 <span class="sd">    &gt;&gt;&gt; A = nx.to_numpy_matrix(G)</span>
 <span class="sd">    &gt;&gt;&gt; A</span>
-<span class="sd">    matrix([[ 1.]])</span>
+<span class="sd">    matrix([[1.]])</span>
 <span class="sd">    &gt;&gt;&gt; A.A[np.diag_indices_from(A)] *= 2</span>
 <span class="sd">    &gt;&gt;&gt; A</span>
-<span class="sd">    matrix([[ 2.]])</span>
+<span class="sd">    matrix([[2.]])</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -597,9 +596,9 @@
 <span class="sd">    &gt;&gt;&gt; G.add_edge(2, 2)</span>
 <span class="sd">    1</span>
 <span class="sd">    &gt;&gt;&gt; nx.to_numpy_matrix(G, nodelist=[0, 1, 2])</span>
-<span class="sd">    matrix([[ 0.,  2.,  0.],</span>
-<span class="sd">            [ 1.,  0.,  0.],</span>
-<span class="sd">            [ 0.,  0.,  4.]])</span>
+<span class="sd">    matrix([[0., 2., 0.],</span>
+<span class="sd">            [1., 0., 0.],</span>
+<span class="sd">            [0., 0., 4.]])</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -612,7 +611,7 @@
 
 
 <div class="viewcode-block" id="from_numpy_matrix"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.from_numpy_matrix.html#networkx.convert_matrix.from_numpy_matrix">[docs]</a><span class="k">def</span> <span class="nf">from_numpy_matrix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">parallel_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a graph from numpy matrix.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a graph from numpy matrix.</span>
 
 <span class="sd">    The numpy matrix is interpreted as an adjacency matrix for the graph.</span>
 
@@ -766,7 +765,7 @@
 
 <div class="viewcode-block" id="to_numpy_recarray"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;multigraph&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">to_numpy_recarray</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the graph adjacency matrix as a NumPy recarray.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a NumPy recarray.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -803,8 +802,8 @@
 <span class="sd">    &gt;&gt;&gt; G.add_edge(1, 2, weight=7.0, cost=5)</span>
 <span class="sd">    &gt;&gt;&gt; A = nx.to_numpy_recarray(G, dtype=[(&#39;weight&#39;, float), (&#39;cost&#39;, int)])</span>
 <span class="sd">    &gt;&gt;&gt; print(A.weight)</span>
-<span class="sd">    [[ 0.  7.]</span>
-<span class="sd">     [ 7.  0.]]</span>
+<span class="sd">    [[0. 7.]</span>
+<span class="sd">     [7. 0.]]</span>
 <span class="sd">    &gt;&gt;&gt; print(A.cost)</span>
 <span class="sd">    [[0 5]</span>
 <span class="sd">     [5 0]]</span>
@@ -838,7 +837,7 @@
 
 <div class="viewcode-block" id="to_scipy_sparse_matrix"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_scipy_sparse_matrix.html#networkx.convert_matrix.to_scipy_sparse_matrix">[docs]</a><span class="k">def</span> <span class="nf">to_scipy_sparse_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                            <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;csr&#39;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the graph adjacency matrix as a SciPy sparse matrix.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a SciPy sparse matrix.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1128,7 +1127,7 @@
 
 <div class="viewcode-block" id="to_numpy_array"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_numpy_array.html#networkx.convert_matrix.to_numpy_array">[docs]</a><span class="k">def</span> <span class="nf">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                    <span class="n">multigraph_weight</span><span class="o">=</span><span class="nb">sum</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">nonedge</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the graph adjacency matrix as a NumPy array.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a NumPy array.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1192,17 +1191,13 @@
 <span class="sd">    resulting NumPy array can be modified as follows:</span>
 
 <span class="sd">    &gt;&gt;&gt; import numpy as np</span>
-<span class="sd">    &gt;&gt;&gt; try:</span>
-<span class="sd">    ...    np.set_printoptions(legacy=&quot;1.13&quot;)</span>
-<span class="sd">    ... except TypeError:</span>
-<span class="sd">    ...    pass</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.Graph([(1, 1)])</span>
 <span class="sd">    &gt;&gt;&gt; A = nx.to_numpy_array(G)</span>
 <span class="sd">    &gt;&gt;&gt; A</span>
-<span class="sd">    array([[ 1.]])</span>
+<span class="sd">    array([[1.]])</span>
 <span class="sd">    &gt;&gt;&gt; A[np.diag_indices_from(A)] *= 2</span>
 <span class="sd">    &gt;&gt;&gt; A</span>
-<span class="sd">    array([[ 2.]])</span>
+<span class="sd">    array([[2.]])</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -1216,9 +1211,9 @@
 <span class="sd">    &gt;&gt;&gt; G.add_edge(2, 2)</span>
 <span class="sd">    1</span>
 <span class="sd">    &gt;&gt;&gt; nx.to_numpy_array(G, nodelist=[0, 1, 2])</span>
-<span class="sd">    array([[ 0.,  2.,  0.],</span>
-<span class="sd">           [ 1.,  0.,  0.],</span>
-<span class="sd">           [ 0.,  0.,  4.]])</span>
+<span class="sd">    array([[0., 2., 0.],</span>
+<span class="sd">           [1., 0., 0.],</span>
+<span class="sd">           [0., 0., 4.]])</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1301,7 +1296,7 @@
 
 
 <div class="viewcode-block" id="from_numpy_array"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.from_numpy_array.html#networkx.convert_matrix.from_numpy_array">[docs]</a><span class="k">def</span> <span class="nf">from_numpy_array</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">parallel_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a graph from NumPy array.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a graph from NumPy array.</span>
 
 <span class="sd">    The NumPy array is interpreted as an adjacency matrix for the graph.</span>
 
@@ -1415,8 +1410,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -1433,34 +1430,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

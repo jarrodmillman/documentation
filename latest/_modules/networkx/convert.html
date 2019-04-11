@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.convert &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -240,7 +243,11 @@
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;graph&#39;</span><span class="p">):</span>  <span class="c1"># data.graph should be dict-like</span>
                 <span class="n">result</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;nodes&#39;</span><span class="p">):</span>  <span class="c1"># data.nodes should be dict-like</span>
-                <span class="n">result</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">dd</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">dd</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+                <span class="c1"># result.add_node_from(data.nodes.items()) possible but</span>
+                <span class="c1"># for custom node_attr_dict_factory which may be hashable</span>
+                <span class="c1"># will be unexpected behavior</span>
+                <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">dd</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">result</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Input is not a correct NetworkX graph.&quot;</span><span class="p">)</span>
@@ -323,7 +330,7 @@
 
 
 <div class="viewcode-block" id="to_dict_of_lists"><a class="viewcode-back" href="../../reference/generated/networkx.convert.to_dict_of_lists.html#networkx.convert.to_dict_of_lists">[docs]</a><span class="k">def</span> <span class="nf">to_dict_of_lists</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return adjacency representation of graph as a dictionary of lists.</span>
+    <span class="sd">&quot;&quot;&quot;Returns adjacency representation of graph as a dictionary of lists.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -348,7 +355,7 @@
 
 
 <div class="viewcode-block" id="from_dict_of_lists"><a class="viewcode-back" href="../../reference/generated/networkx.convert.from_dict_of_lists.html#networkx.convert.from_dict_of_lists">[docs]</a><span class="k">def</span> <span class="nf">from_dict_of_lists</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a graph from a dictionary of lists.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a graph from a dictionary of lists.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -387,7 +394,7 @@
 
 
 <div class="viewcode-block" id="to_dict_of_dicts"><a class="viewcode-back" href="../../reference/generated/networkx.convert.to_dict_of_dicts.html#networkx.convert.to_dict_of_dicts">[docs]</a><span class="k">def</span> <span class="nf">to_dict_of_dicts</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edge_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return adjacency representation of graph as a dictionary of dictionaries.</span>
+    <span class="sd">&quot;&quot;&quot;Returns adjacency representation of graph as a dictionary of dictionaries.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -427,7 +434,7 @@
 
 
 <div class="viewcode-block" id="from_dict_of_dicts"><a class="viewcode-back" href="../../reference/generated/networkx.convert.from_dict_of_dicts.html#networkx.convert.from_dict_of_dicts">[docs]</a><span class="k">def</span> <span class="nf">from_dict_of_dicts</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">multigraph_input</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a graph from a dictionary of dictionaries.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a graph from a dictionary of dictionaries.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -506,7 +513,7 @@
 
 
 <div class="viewcode-block" id="to_edgelist"><a class="viewcode-back" href="../../reference/generated/networkx.convert.to_edgelist.html#networkx.convert.to_edgelist">[docs]</a><span class="k">def</span> <span class="nf">to_edgelist</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a list of edges in the graph.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a list of edges in the graph.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -523,7 +530,7 @@
 
 
 <div class="viewcode-block" id="from_edgelist"><a class="viewcode-back" href="../../reference/generated/networkx.convert.from_edgelist.html#networkx.convert.from_edgelist">[docs]</a><span class="k">def</span> <span class="nf">from_edgelist</span><span class="p">(</span><span class="n">edgelist</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a graph from a list of edges.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a graph from a list of edges.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -558,8 +565,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -576,34 +585,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

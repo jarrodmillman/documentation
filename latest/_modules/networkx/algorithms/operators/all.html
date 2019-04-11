@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.operators.all &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.algorithms.operators.all &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
-
-  
-  <script src="../../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -181,7 +184,7 @@
 
 
 <div class="viewcode-block" id="union_all"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.operators.all.union_all.html#networkx.algorithms.operators.all.union_all">[docs]</a><span class="k">def</span> <span class="nf">union_all</span><span class="p">(</span><span class="n">graphs</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,)):</span>
-    <span class="sd">&quot;&quot;&quot;Return the union of all graphs.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the union of all graphs.</span>
 
 <span class="sd">    The graphs must be disjoint, otherwise an exception is raised.</span>
 
@@ -229,7 +232,7 @@
 
 
 <div class="viewcode-block" id="disjoint_union_all"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.operators.all.disjoint_union_all.html#networkx.algorithms.operators.all.disjoint_union_all">[docs]</a><span class="k">def</span> <span class="nf">disjoint_union_all</span><span class="p">(</span><span class="n">graphs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the disjoint union of all graphs.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the disjoint union of all graphs.</span>
 
 <span class="sd">    This operation forces distinct integer node labels starting with 0</span>
 <span class="sd">    for the first graph in the list and numbering consecutively.</span>
@@ -266,7 +269,7 @@
 
 
 <div class="viewcode-block" id="compose_all"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.operators.all.compose_all.html#networkx.algorithms.operators.all.compose_all">[docs]</a><span class="k">def</span> <span class="nf">compose_all</span><span class="p">(</span><span class="n">graphs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the composition of all graphs.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the composition of all graphs.</span>
 
 <span class="sd">    Composition is the simple union of the node sets and edge sets.</span>
 <span class="sd">    The node sets of the supplied graphs need not be disjoint.</span>
@@ -304,7 +307,7 @@
 
 
 <div class="viewcode-block" id="intersection_all"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.operators.all.intersection_all.html#networkx.algorithms.operators.all.intersection_all">[docs]</a><span class="k">def</span> <span class="nf">intersection_all</span><span class="p">(</span><span class="n">graphs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a new graph that contains only the edges that exist in</span>
+    <span class="sd">&quot;&quot;&quot;Returns a new graph that contains only the edges that exist in</span>
 <span class="sd">    all graphs.</span>
 
 <span class="sd">    All supplied graphs must have the same node set.</span>
@@ -347,8 +350,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -365,34 +370,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

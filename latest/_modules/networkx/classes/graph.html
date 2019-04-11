@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.graph &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.classes.graph &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -159,7 +162,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for networkx.classes.graph</h1><div class="highlight"><pre>
-<span></span><span class="c1">#    Copyright (C) 2004-2018 by</span>
+<span></span><span class="c1">#    Copyright (C) 2004-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
@@ -181,7 +184,7 @@
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">copy</span> <span class="k">import</span> <span class="n">deepcopy</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Mapping</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="k">import</span> <span class="n">Mapping</span>
 
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">from</span> <span class="nn">networkx.classes.coreviews</span> <span class="k">import</span> <span class="n">AtlasView</span><span class="p">,</span> <span class="n">AdjacencyView</span>
@@ -365,12 +368,17 @@
 <span class="sd">    maintained but extra features can be added. To replace one of the</span>
 <span class="sd">    dicts create a new graph class by changing the class(!) variable</span>
 <span class="sd">    holding the factory for that dict-like structure. The variable names are</span>
-<span class="sd">    node_dict_factory, adjlist_inner_dict_factory, adjlist_outer_dict_factory,</span>
-<span class="sd">    and edge_attr_dict_factory.</span>
+<span class="sd">    node_dict_factory, node_attr_dict_factory, adjlist_inner_dict_factory,</span>
+<span class="sd">    adjlist_outer_dict_factory, edge_attr_dict_factory and graph_attr_dict_factory.</span>
 
 <span class="sd">    node_dict_factory : function, (default: dict)</span>
 <span class="sd">        Factory function to be used to create the dict containing node</span>
 <span class="sd">        attributes, keyed by node id.</span>
+<span class="sd">        It should require no arguments and return a dict-like object</span>
+
+<span class="sd">    node_attr_dict_factory: function, (default: dict)</span>
+<span class="sd">        Factory function to be used to create the node attribute</span>
+<span class="sd">        dict which holds attribute values keyed by attribute name.</span>
 <span class="sd">        It should require no arguments and return a dict-like object</span>
 
 <span class="sd">    adjlist_outer_dict_factory : function, (default: dict)</span>
@@ -385,7 +393,12 @@
 
 <span class="sd">    edge_attr_dict_factory : function, (default: dict)</span>
 <span class="sd">        Factory function to be used to create the edge attribute</span>
-<span class="sd">        dict which holds attrbute values keyed by attribute name.</span>
+<span class="sd">        dict which holds attribute values keyed by attribute name.</span>
+<span class="sd">        It should require no arguments and return a dict-like object.</span>
+
+<span class="sd">    graph_attr_dict_factory : function, (default: dict)</span>
+<span class="sd">        Factory function to be used to create the graph attribute</span>
+<span class="sd">        dict which holds attribute values keyed by attribute name.</span>
 <span class="sd">        It should require no arguments and return a dict-like object.</span>
 
 <span class="sd">    Typically, if your extension doesn&#39;t impact the data structure all</span>
@@ -427,9 +440,11 @@
 <span class="sd">    a dictionary-like object.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">node_dict_factory</span> <span class="o">=</span> <span class="nb">dict</span>
+    <span class="n">node_attr_dict_factory</span> <span class="o">=</span> <span class="nb">dict</span>
     <span class="n">adjlist_outer_dict_factory</span> <span class="o">=</span> <span class="nb">dict</span>
     <span class="n">adjlist_inner_dict_factory</span> <span class="o">=</span> <span class="nb">dict</span>
     <span class="n">edge_attr_dict_factory</span> <span class="o">=</span> <span class="nb">dict</span>
+    <span class="n">graph_attr_dict_factory</span> <span class="o">=</span> <span class="nb">dict</span>
 
     <span class="k">def</span> <span class="nf">to_directed_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the class to use for empty directed copies.</span>
@@ -480,13 +495,15 @@
 <span class="sd">        {&#39;day&#39;: &#39;Friday&#39;}</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">node_dict_factory</span> <span class="o">=</span> <span class="n">ndf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_dict_factory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph_attr_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_attr_dict_factory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_dict_factory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_outer_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_outer_dict_factory</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="p">{}</span>   <span class="c1"># dictionary for graph attributes</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="o">=</span> <span class="n">ndf</span><span class="p">()</span>  <span class="c1"># empty node attribute dict</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_attr_dict_factory</span><span class="p">()</span>   <span class="c1"># dictionary for graph attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_dict_factory</span><span class="p">()</span>  <span class="c1"># empty node attribute dict</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_outer_dict_factory</span><span class="p">()</span>  <span class="c1"># empty adjacency dict</span>
         <span class="c1"># attempt to load graph with data</span>
         <span class="k">if</span> <span class="n">incoming_graph_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -528,7 +545,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the graph name.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the graph name.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -562,7 +579,7 @@
         <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Graph.__contains__"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.__contains__.html#networkx.Graph.__contains__">[docs]</a>    <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return True if n is a node, False otherwise. Use: &#39;n in G&#39;.</span>
+        <span class="sd">&quot;&quot;&quot;Returns True if n is a node, False otherwise. Use: &#39;n in G&#39;.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -576,7 +593,7 @@
             <span class="k">return</span> <span class="kc">False</span></div>
 
 <div class="viewcode-block" id="Graph.__len__"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.__len__.html#networkx.Graph.__len__">[docs]</a>    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the number of nodes. Use: &#39;len(G)&#39;.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the number of nodes. Use: &#39;len(G)&#39;.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -593,7 +610,7 @@
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Graph.__getitem__"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.__getitem__.html#networkx.Graph.__getitem__">[docs]</a>    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a dict of neighbors of node n.  Use: &#39;G[n]&#39;.</span>
+        <span class="sd">&quot;&quot;&quot;Returns a dict of neighbors of node n.  Use: &#39;G[n]&#39;.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -659,7 +676,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">node_for_adding</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">node_for_adding</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">node_for_adding</span><span class="p">]</span> <span class="o">=</span> <span class="n">attr</span>
+            <span class="n">attr_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">node_for_adding</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
+            <span class="n">attr_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>  <span class="c1"># update attr even if node already exists</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">node_for_adding</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span></div>
 
@@ -714,7 +732,8 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">attr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                    <span class="n">attr_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
+                    <span class="n">attr_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
@@ -723,7 +742,8 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
                     <span class="n">newdict</span> <span class="o">=</span> <span class="n">attr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
                     <span class="n">newdict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ndict</span><span class="p">)</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span> <span class="o">=</span> <span class="n">newdict</span>
+                    <span class="n">attr_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
+                    <span class="n">attr_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">newdict</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">olddict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span>
                     <span class="n">olddict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
@@ -935,11 +955,11 @@
     <span class="k">def</span> <span class="nf">selfloop_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;selfloop_edges is deprecated. Use nx.selfloop_edges instead.&quot;</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">selfloop_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">selfloop_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
     <span class="c1"># Done with backward compatibility methods for 1.x</span>
 
 <div class="viewcode-block" id="Graph.number_of_nodes"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.number_of_nodes.html#networkx.Graph.number_of_nodes">[docs]</a>    <span class="k">def</span> <span class="nf">number_of_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the number of nodes in the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the number of nodes in the graph.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -959,7 +979,7 @@
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Graph.order"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.order.html#networkx.Graph.order">[docs]</a>    <span class="k">def</span> <span class="nf">order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the number of nodes in the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the number of nodes in the graph.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -974,7 +994,7 @@
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Graph.has_node"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.has_node.html#networkx.Graph.has_node">[docs]</a>    <span class="k">def</span> <span class="nf">has_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return True if the graph contains the node n.</span>
+        <span class="sd">&quot;&quot;&quot;Returns True if the graph contains the node n.</span>
 
 <span class="sd">        Identical to `n in G`</span>
 
@@ -1053,10 +1073,10 @@
         <span class="c1"># add nodes</span>
         <span class="k">if</span> <span class="n">u</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
         <span class="c1"># add the edge</span>
         <span class="n">datadict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span><span class="p">())</span>
         <span class="n">datadict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
@@ -1113,10 +1133,10 @@
                     <span class="s2">&quot;Edge tuple </span><span class="si">%s</span><span class="s2"> must be a 2-tuple or 3-tuple.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="p">,))</span>
             <span class="k">if</span> <span class="n">u</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span><span class="p">()</span>
             <span class="n">datadict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span><span class="p">())</span>
             <span class="n">datadict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
             <span class="n">datadict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span>
@@ -1327,7 +1347,7 @@
             <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;update needs nodes or edges input&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Graph.has_edge"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.has_edge.html#networkx.Graph.has_edge">[docs]</a>    <span class="k">def</span> <span class="nf">has_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return True if the edge (u, v) is in the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns True if the edge (u, v) is in the graph.</span>
 
 <span class="sd">        This is the same as `v in G[u]` without KeyError exceptions.</span>
 
@@ -1368,7 +1388,7 @@
             <span class="k">return</span> <span class="kc">False</span></div>
 
 <div class="viewcode-block" id="Graph.neighbors"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.neighbors.html#networkx.Graph.neighbors">[docs]</a>    <span class="k">def</span> <span class="nf">neighbors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return an iterator over all neighbors of node n.</span>
+        <span class="sd">&quot;&quot;&quot;Returns an iterator over all neighbors of node n.</span>
 
 <span class="sd">        This is identical to `iter(G[n])`</span>
 
@@ -1469,7 +1489,7 @@
         <span class="k">return</span> <span class="n">EdgeView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Graph.get_edge_data"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.get_edge_data.html#networkx.Graph.get_edge_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_edge_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the attribute dictionary associated with edge (u, v).</span>
+        <span class="sd">&quot;&quot;&quot;Returns the attribute dictionary associated with edge (u, v).</span>
 
 <span class="sd">        This is identical to `G[u][v]` except the default is returned</span>
 <span class="sd">        instead of an exception is the edge doesn&#39;t exist.</span>
@@ -1515,7 +1535,7 @@
             <span class="k">return</span> <span class="n">default</span></div>
 
 <div class="viewcode-block" id="Graph.adjacency"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.adjacency.html#networkx.Graph.adjacency">[docs]</a>    <span class="k">def</span> <span class="nf">adjacency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return an iterator over (node, adjacency dict) tuples for all nodes.</span>
+        <span class="sd">&quot;&quot;&quot;Returns an iterator over (node, adjacency dict) tuples for all nodes.</span>
 
 <span class="sd">        For directed graphs, only outgoing neighbors/adjacencies are included.</span>
 
@@ -1594,11 +1614,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">is_multigraph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return True if graph is a multigraph, False otherwise.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Returns True if graph is a multigraph, False otherwise.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">is_directed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return True if graph is directed, False otherwise.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Returns True if graph is directed, False otherwise.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">fresh_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1608,7 +1628,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
 
 <div class="viewcode-block" id="Graph.copy"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.copy.html#networkx.Graph.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a copy of the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns a copy of the graph.</span>
 
 <span class="sd">        The copy method by default returns an independent shallow copy</span>
 <span class="sd">        of the graph and attributes. That is, if an attribute is a</span>
@@ -1695,7 +1715,7 @@
         <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="Graph.to_directed"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.to_directed.html#networkx.Graph.to_directed">[docs]</a>    <span class="k">def</span> <span class="nf">to_directed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a directed representation of the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns a directed representation of the graph.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1749,7 +1769,7 @@
         <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="Graph.to_undirected"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.to_undirected.html#networkx.Graph.to_undirected">[docs]</a>    <span class="k">def</span> <span class="nf">to_undirected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_view</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return an undirected copy of the graph.</span>
+        <span class="sd">&quot;&quot;&quot;Returns an undirected copy of the graph.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1804,7 +1824,7 @@
         <span class="k">return</span> <span class="n">G</span></div>
 
 <div class="viewcode-block" id="Graph.subgraph"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.subgraph.html#networkx.Graph.subgraph">[docs]</a>    <span class="k">def</span> <span class="nf">subgraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a SubGraph view of the subgraph induced on `nodes`.</span>
+        <span class="sd">&quot;&quot;&quot;Returns a SubGraph view of the subgraph induced on `nodes`.</span>
 
 <span class="sd">        The induced subgraph of the graph contains the nodes in `nodes`</span>
 <span class="sd">        and the edges between those nodes.</span>
@@ -1908,7 +1928,7 @@
         <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">edge_subgraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">edges</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Graph.size"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.size.html#networkx.Graph.size">[docs]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the number of edges or total of all edge weights.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the number of edges or total of all edge weights.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1951,7 +1971,7 @@
         <span class="k">return</span> <span class="n">s</span> <span class="o">//</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">s</span> <span class="o">/</span> <span class="mi">2</span></div>
 
 <div class="viewcode-block" id="Graph.number_of_edges"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.number_of_edges.html#networkx.Graph.number_of_edges">[docs]</a>    <span class="k">def</span> <span class="nf">number_of_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the number of edges between two nodes.</span>
+        <span class="sd">&quot;&quot;&quot;Returns the number of edges between two nodes.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -2003,7 +2023,7 @@
         <span class="k">return</span> <span class="mi">0</span></div>
 
 <div class="viewcode-block" id="Graph.nbunch_iter"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.Graph.nbunch_iter.html#networkx.Graph.nbunch_iter">[docs]</a>    <span class="k">def</span> <span class="nf">nbunch_iter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nbunch</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return an iterator over nodes contained in nbunch that are</span>
+        <span class="sd">&quot;&quot;&quot;Returns an iterator over nodes contained in nbunch that are</span>
 <span class="sd">        also in the graph.</span>
 
 <span class="sd">        The nodes in nbunch are checked for membership in the graph</span>
@@ -2078,8 +2098,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -2096,34 +2118,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

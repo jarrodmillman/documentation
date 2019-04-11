@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab.draw_networkx_edges &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.drawing.nx_pylab.draw_networkx_edges &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="networkx.drawing.nx_pylab.draw_networkx_labels" href="networkx.drawing.nx_pylab.draw_networkx_labels.html" />
     <link rel="prev" title="networkx.drawing.nx_pylab.draw_networkx_nodes" href="networkx.drawing.nx_pylab.draw_networkx_nodes.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -111,6 +114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edge_labels.html">networkx.drawing.nx_pylab.draw_networkx_edge_labels</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networkx.drawing.nx_pylab.draw_circular.html">networkx.drawing.nx_pylab.draw_circular</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networkx.drawing.nx_pylab.draw_kamada_kawai.html">networkx.drawing.nx_pylab.draw_kamada_kawai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="networkx.drawing.nx_pylab.draw_planar.html">networkx.drawing.nx_pylab.draw_planar</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networkx.drawing.nx_pylab.draw_random.html">networkx.drawing.nx_pylab.draw_random</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networkx.drawing.nx_pylab.draw_spectral.html">networkx.drawing.nx_pylab.draw_spectral</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networkx.drawing.nx_pylab.draw_spring.html">networkx.drawing.nx_pylab.draw_spring</a></li>
@@ -205,7 +209,7 @@
 <h1>networkx.drawing.nx_pylab.draw_networkx_edges<a class="headerlink" href="#networkx-drawing-nx-pylab-draw-networkx-edges" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pylab.draw_networkx_edges">
-<code class="descname">draw_networkx_edges</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>edgelist=None</em>, <em>width=1.0</em>, <em>edge_color='k'</em>, <em>style='solid'</em>, <em>alpha=1.0</em>, <em>arrowstyle='-|&gt;'</em>, <em>arrowsize=10</em>, <em>edge_cmap=None</em>, <em>edge_vmin=None</em>, <em>edge_vmax=None</em>, <em>ax=None</em>, <em>arrows=True</em>, <em>label=None</em>, <em>node_size=300</em>, <em>nodelist=None</em>, <em>node_shape='o'</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edges" title="Permalink to this definition">¶</a></dt>
+<code class="descname">draw_networkx_edges</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>edgelist=None</em>, <em>width=1.0</em>, <em>edge_color='k'</em>, <em>style='solid'</em>, <em>alpha=1.0</em>, <em>arrowstyle='-|&gt;'</em>, <em>arrowsize=10</em>, <em>edge_cmap=None</em>, <em>edge_vmin=None</em>, <em>edge_vmax=None</em>, <em>ax=None</em>, <em>arrows=True</em>, <em>label=None</em>, <em>node_size=300</em>, <em>nodelist=None</em>, <em>node_shape='o'</em>, <em>connectionstyle=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the edges of the graph G.</p>
 <p>This draws only the edges of the graph G.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -235,6 +239,10 @@ options.</li>
 <li><strong>arrowsize</strong> (<em>int, optional (default=10)</em>) – For directed graphs, choose the size of the arrow head head’s length and
 width. See :py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.FancyArrowPatch</span></code> for attribute
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">mutation_scale</span></code> for more info.</li>
+<li><strong>connectionstyle</strong> (<em>str, optional (default=None)</em>) – Pass the connectionstyle parameter to create curved arc of rounding
+radius rad. For example, connectionstyle=’arc3,rad=0.2’.
+See :py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.ConnectionStyle</span></code> and
+:py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.FancyArrowPatch</span></code> for more info.</li>
 <li><strong>label</strong> (<em>[None| string]</em>) – Label for legend</li>
 </ul>
 </td>
@@ -287,7 +295,7 @@ keyword argument; arrows are drawn considering the size of nodes.</p>
         <a href="networkx.drawing.nx_pylab.draw_networkx_labels.html" class="btn btn-neutral float-right" title="networkx.drawing.nx_pylab.draw_networkx_labels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="networkx.drawing.nx_pylab.draw_networkx_nodes.html" class="btn btn-neutral" title="networkx.drawing.nx_pylab.draw_networkx_nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="networkx.drawing.nx_pylab.draw_networkx_nodes.html" class="btn btn-neutral float-left" title="networkx.drawing.nx_pylab.draw_networkx_nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -296,8 +304,10 @@ keyword argument; arrows are drawn considering the size of nodes.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -314,34 +324,16 @@ keyword argument; arrows are drawn considering the size of nodes.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

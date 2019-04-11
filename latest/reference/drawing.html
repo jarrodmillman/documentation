@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Drawing &mdash; NetworkX 2.2 documentation</title>
+  <title>Drawing &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="networkx.drawing.nx_pylab.draw" href="generated/networkx.drawing.nx_pylab.draw.html" />
     <link rel="prev" title="networkx.readwrite.nx_shp.write_shp" href="readwrite/generated/networkx.readwrite.nx_shp.write_shp.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -111,6 +114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_networkx_edge_labels.html">networkx.drawing.nx_pylab.draw_networkx_edge_labels</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_circular.html">networkx.drawing.nx_pylab.draw_circular</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_kamada_kawai.html">networkx.drawing.nx_pylab.draw_kamada_kawai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_planar.html">networkx.drawing.nx_pylab.draw_planar</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_random.html">networkx.drawing.nx_pylab.draw_random</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_spectral.html">networkx.drawing.nx_pylab.draw_spectral</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_spring.html">networkx.drawing.nx_pylab.draw_spring</a></li>
@@ -142,6 +146,7 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.bipartite_layout.html">networkx.drawing.layout.bipartite_layout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.circular_layout.html">networkx.drawing.layout.circular_layout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.kamada_kawai_layout.html">networkx.drawing.layout.kamada_kawai_layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.planar_layout.html">networkx.drawing.layout.planar_layout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.random_layout.html">networkx.drawing.layout.random_layout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.rescale_layout.html">networkx.drawing.layout.rescale_layout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.drawing.layout.shell_layout.html">networkx.drawing.layout.shell_layout</a></li>
@@ -291,16 +296,19 @@ choice.</p>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_kamada_kawai.html#networkx.drawing.nx_pylab.draw_kamada_kawai" title="networkx.drawing.nx_pylab.draw_kamada_kawai"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_kamada_kawai</span></code></a>(G,&nbsp;**kwargs)</td>
 <td>Draw the graph G with a Kamada-Kawai force-directed layout.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_random.html#networkx.drawing.nx_pylab.draw_random" title="networkx.drawing.nx_pylab.draw_random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_random</span></code></a>(G,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_planar.html#networkx.drawing.nx_pylab.draw_planar" title="networkx.drawing.nx_pylab.draw_planar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_planar</span></code></a>(G,&nbsp;**kwargs)</td>
+<td>Draw a planar networkx graph with planar layout.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_random.html#networkx.drawing.nx_pylab.draw_random" title="networkx.drawing.nx_pylab.draw_random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_random</span></code></a>(G,&nbsp;**kwargs)</td>
 <td>Draw the graph G with a random layout.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_spectral.html#networkx.drawing.nx_pylab.draw_spectral" title="networkx.drawing.nx_pylab.draw_spectral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_spectral</span></code></a>(G,&nbsp;**kwargs)</td>
-<td>Draw the graph G with a spectral layout.</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_spectral.html#networkx.drawing.nx_pylab.draw_spectral" title="networkx.drawing.nx_pylab.draw_spectral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_spectral</span></code></a>(G,&nbsp;**kwargs)</td>
+<td>Draw the graph G with a spectral 2D layout.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_spring.html#networkx.drawing.nx_pylab.draw_spring" title="networkx.drawing.nx_pylab.draw_spring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_spring</span></code></a>(G,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_spring.html#networkx.drawing.nx_pylab.draw_spring" title="networkx.drawing.nx_pylab.draw_spring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_spring</span></code></a>(G,&nbsp;**kwargs)</td>
 <td>Draw the graph G with a spring layout.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_shell.html#networkx.drawing.nx_pylab.draw_shell" title="networkx.drawing.nx_pylab.draw_shell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_shell</span></code></a>(G,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_pylab.draw_shell.html#networkx.drawing.nx_pylab.draw_shell" title="networkx.drawing.nx_pylab.draw_shell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_shell</span></code></a>(G,&nbsp;**kwargs)</td>
 <td>Draw networkx graph with shell layout.</td>
 </tr>
 </tbody>
@@ -332,16 +340,16 @@ choice.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_agraph.from_agraph.html#networkx.drawing.nx_agraph.from_agraph" title="networkx.drawing.nx_agraph.from_agraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_agraph</span></code></a>(A[,&nbsp;create_using])</td>
-<td>Return a NetworkX Graph or DiGraph from a PyGraphviz graph.</td>
+<td>Returns a NetworkX Graph or DiGraph from a PyGraphviz graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_agraph.to_agraph.html#networkx.drawing.nx_agraph.to_agraph" title="networkx.drawing.nx_agraph.to_agraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_agraph</span></code></a>(N)</td>
-<td>Return a pygraphviz graph from a NetworkX graph N.</td>
+<td>Returns a pygraphviz graph from a NetworkX graph N.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_agraph.write_dot.html#networkx.drawing.nx_agraph.write_dot" title="networkx.drawing.nx_agraph.write_dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_dot</span></code></a>(G,&nbsp;path)</td>
 <td>Write NetworkX graph G to Graphviz dot format on path.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_agraph.read_dot.html#networkx.drawing.nx_agraph.read_dot" title="networkx.drawing.nx_agraph.read_dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_dot</span></code></a>(path)</td>
-<td>Return a NetworkX graph from a dot file on path.</td>
+<td>Returns a NetworkX graph from a dot file on path.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_agraph.graphviz_layout.html#networkx.drawing.nx_agraph.graphviz_layout" title="networkx.drawing.nx_agraph.graphviz_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graphviz_layout</span></code></a>(G[,&nbsp;prog,&nbsp;root,&nbsp;args])</td>
 <td>Create node positions for G using Graphviz.</td>
@@ -364,7 +372,7 @@ choice.</p>
 <dt><code class="xref py py-mod docutils literal notranslate"><span class="pre">pydot</span></code></dt>
 <dd><a class="reference external" href="https://github.com/erocarrera/pydot">https://github.com/erocarrera/pydot</a></dd>
 <dt><code class="xref py py-mod docutils literal notranslate"><span class="pre">Graphviz</span></code></dt>
-<dd><a class="reference external" href="http://www.research.att.com/sw/tools/graphviz/">http://www.research.att.com/sw/tools/graphviz/</a></dd>
+<dd><a class="reference external" href="https://www.graphviz.org">https://www.graphviz.org</a></dd>
 </dl>
 <p class="last"><code class="xref py py-mod docutils literal notranslate"><span class="pre">DOT</span></code></p>
 </div>
@@ -376,16 +384,16 @@ choice.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_pydot.from_pydot.html#networkx.drawing.nx_pydot.from_pydot" title="networkx.drawing.nx_pydot.from_pydot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pydot</span></code></a>(P)</td>
-<td>Return a NetworkX graph from a Pydot graph.</td>
+<td>Returns a NetworkX graph from a Pydot graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_pydot.to_pydot.html#networkx.drawing.nx_pydot.to_pydot" title="networkx.drawing.nx_pydot.to_pydot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pydot</span></code></a>(N)</td>
-<td>Return a pydot graph from a NetworkX graph N.</td>
+<td>Returns a pydot graph from a NetworkX graph N.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_pydot.write_dot.html#networkx.drawing.nx_pydot.write_dot" title="networkx.drawing.nx_pydot.write_dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_dot</span></code></a>(G,&nbsp;path)</td>
 <td>Write NetworkX graph G to Graphviz dot format on path.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.nx_pydot.read_dot.html#networkx.drawing.nx_pydot.read_dot" title="networkx.drawing.nx_pydot.read_dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_dot</span></code></a>(path)</td>
-<td>Return a NetworkX <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiGraph</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDiGraph</span></code> from the dot file with the passed path.</td>
+<td>Returns a NetworkX <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiGraph</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDiGraph</span></code> from the dot file with the passed path.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.nx_pydot.graphviz_layout.html#networkx.drawing.nx_pydot.graphviz_layout" title="networkx.drawing.nx_pydot.graphviz_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graphviz_layout</span></code></a>(G[,&nbsp;prog,&nbsp;root])</td>
 <td>Create node positions using Pydot and Graphviz.</td>
@@ -423,19 +431,22 @@ Changing <code class="xref py py-obj docutils literal notranslate"><span class="
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.kamada_kawai_layout.html#networkx.drawing.layout.kamada_kawai_layout" title="networkx.drawing.layout.kamada_kawai_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kamada_kawai_layout</span></code></a>(G[,&nbsp;dist,&nbsp;pos,&nbsp;weight,&nbsp;…])</td>
 <td>Position nodes using Kamada-Kawai path-length cost-function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.random_layout.html#networkx.drawing.layout.random_layout" title="networkx.drawing.layout.random_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_layout</span></code></a>(G[,&nbsp;center,&nbsp;dim,&nbsp;seed])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.planar_layout.html#networkx.drawing.layout.planar_layout" title="networkx.drawing.layout.planar_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">planar_layout</span></code></a>(G[,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
+<td>Position nodes without edge intersections.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.random_layout.html#networkx.drawing.layout.random_layout" title="networkx.drawing.layout.random_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_layout</span></code></a>(G[,&nbsp;center,&nbsp;dim,&nbsp;seed])</td>
 <td>Position nodes uniformly at random in the unit square.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.rescale_layout.html#networkx.drawing.layout.rescale_layout" title="networkx.drawing.layout.rescale_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale_layout</span></code></a>(pos[,&nbsp;scale])</td>
-<td>Return scaled position array to (-scale, scale) in all axes.</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.rescale_layout.html#networkx.drawing.layout.rescale_layout" title="networkx.drawing.layout.rescale_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale_layout</span></code></a>(pos[,&nbsp;scale])</td>
+<td>Returns scaled position array to (-scale, scale) in all axes.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.shell_layout.html#networkx.drawing.layout.shell_layout" title="networkx.drawing.layout.shell_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shell_layout</span></code></a>(G[,&nbsp;nlist,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.shell_layout.html#networkx.drawing.layout.shell_layout" title="networkx.drawing.layout.shell_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shell_layout</span></code></a>(G[,&nbsp;nlist,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
 <td>Position nodes in concentric circles.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.spring_layout.html#networkx.drawing.layout.spring_layout" title="networkx.drawing.layout.spring_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spring_layout</span></code></a>(G[,&nbsp;k,&nbsp;pos,&nbsp;fixed,&nbsp;…])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.spring_layout.html#networkx.drawing.layout.spring_layout" title="networkx.drawing.layout.spring_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spring_layout</span></code></a>(G[,&nbsp;k,&nbsp;pos,&nbsp;fixed,&nbsp;…])</td>
 <td>Position nodes using Fruchterman-Reingold force-directed algorithm.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.drawing.layout.spectral_layout.html#networkx.drawing.layout.spectral_layout" title="networkx.drawing.layout.spectral_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectral_layout</span></code></a>(G[,&nbsp;weight,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.drawing.layout.spectral_layout.html#networkx.drawing.layout.spectral_layout" title="networkx.drawing.layout.spectral_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectral_layout</span></code></a>(G[,&nbsp;weight,&nbsp;scale,&nbsp;center,&nbsp;dim])</td>
 <td>Position nodes using the eigenvectors of the graph Laplacian.</td>
 </tr>
 </tbody>
@@ -454,7 +465,7 @@ Changing <code class="xref py py-obj docutils literal notranslate"><span class="
         <a href="generated/networkx.drawing.nx_pylab.draw.html" class="btn btn-neutral float-right" title="networkx.drawing.nx_pylab.draw" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="readwrite/generated/networkx.readwrite.nx_shp.write_shp.html" class="btn btn-neutral" title="networkx.readwrite.nx_shp.write_shp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="readwrite/generated/networkx.readwrite.nx_shp.write_shp.html" class="btn btn-neutral float-left" title="networkx.readwrite.nx_shp.write_shp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -463,8 +474,10 @@ Changing <code class="xref py py-obj docutils literal notranslate"><span class="
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -481,34 +494,16 @@ Changing <code class="xref py py-obj docutils literal notranslate"><span class="
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

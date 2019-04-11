@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.degree_seq &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.generators.degree_seq &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -160,7 +163,7 @@
             
   <h1>Source code for networkx.generators.degree_seq</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="c1">#    Copyright (C) 2004-2018 by</span>
+<span class="c1">#    Copyright (C) 2004-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
@@ -304,7 +307,7 @@
 
 <div class="viewcode-block" id="configuration_model"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.configuration_model.html#networkx.generators.degree_seq.configuration_model">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">configuration_model</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a random graph with the given degree sequence.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a random graph with the given degree sequence.</span>
 
 <span class="sd">    The configuration model generates a random pseudograph (graph with</span>
 <span class="sd">    parallel edges and self loops) by randomly assigning edges to</span>
@@ -408,7 +411,7 @@
 <span class="k">def</span> <span class="nf">directed_configuration_model</span><span class="p">(</span><span class="n">in_degree_sequence</span><span class="p">,</span>
                                  <span class="n">out_degree_sequence</span><span class="p">,</span>
                                  <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a directed_random graph with the given degree sequences.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a directed_random graph with the given degree sequences.</span>
 
 <span class="sd">    The configuration model generates a random directed pseudograph</span>
 <span class="sd">    (graph with parallel edges and self loops) by randomly assigning</span>
@@ -503,7 +506,7 @@
 
 <div class="viewcode-block" id="expected_degree_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.expected_degree_graph.html#networkx.generators.degree_seq.expected_degree_graph">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">expected_degree_graph</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selfloops</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return a random graph with given expected degrees.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Returns a random graph with given expected degrees.</span>
 
 <span class="sd">    Given a sequence of expected degrees $W=(w_0,w_1,\ldots,w_{n-1})$</span>
 <span class="sd">    of length $n$ this algorithm assigns an edge between node $u$ and</span>
@@ -611,7 +614,7 @@
 
 
 <div class="viewcode-block" id="havel_hakimi_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.havel_hakimi_graph.html#networkx.generators.degree_seq.havel_hakimi_graph">[docs]</a><span class="k">def</span> <span class="nf">havel_hakimi_graph</span><span class="p">(</span><span class="n">deg_sequence</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a simple graph with given degree sequence constructed</span>
+    <span class="sd">&quot;&quot;&quot;Returns a simple graph with given degree sequence constructed</span>
 <span class="sd">    using the Havel-Hakimi algorithm.</span>
 
 <span class="sd">    Parameters</span>
@@ -705,7 +708,7 @@
 <div class="viewcode-block" id="directed_havel_hakimi_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.directed_havel_hakimi_graph.html#networkx.generators.degree_seq.directed_havel_hakimi_graph">[docs]</a><span class="k">def</span> <span class="nf">directed_havel_hakimi_graph</span><span class="p">(</span><span class="n">in_deg_sequence</span><span class="p">,</span>
                                 <span class="n">out_deg_sequence</span><span class="p">,</span>
                                 <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a directed graph with the given degree sequences.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a directed graph with the given degree sequences.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -858,7 +861,7 @@
 
 <div class="viewcode-block" id="random_degree_sequence_graph"><a class="viewcode-back" href="../../../reference/generated/networkx.generators.degree_seq.random_degree_sequence_graph.html#networkx.generators.degree_seq.random_degree_sequence_graph">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">random_degree_sequence_graph</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tries</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return a simple random graph with the given degree sequence.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Returns a simple random graph with the given degree sequence.</span>
 
 <span class="sd">    If the maximum degree $d_m$ in the sequence is $O(m^{1/4})$ then the</span>
 <span class="sd">    algorithm produces almost uniform random graphs in $O(m d_m)$ time</span>
@@ -1042,8 +1045,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -1060,34 +1065,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

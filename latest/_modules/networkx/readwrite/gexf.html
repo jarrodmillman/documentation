@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.gexf &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.readwrite.gexf &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -159,7 +162,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for networkx.readwrite.gexf</h1><div class="highlight"><pre>
-<span></span><span class="c1"># Copyright (C) 2013-2018 by</span>
+<span></span><span class="c1"># Copyright (C) 2013-2019 by</span>
 <span class="c1">#</span>
 <span class="c1"># Authors: Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#          Dan Schult &lt;dschult@colgate.edu&gt;</span>
@@ -363,24 +366,28 @@
              <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="s2">&quot;double&quot;</span><span class="p">),</span>
              <span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">),</span>
              <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">),</span>
-             <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">)]</span>
+             <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">),</span>
+             <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;long&quot;</span><span class="p">),</span>
+             <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;liststring&quot;</span><span class="p">),</span>
+             <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;anyURI&quot;</span><span class="p">),</span>
+             <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">)]</span>
 
-    <span class="k">try</span><span class="p">:</span>  <span class="c1"># Python 3.x</span>
-        <span class="n">blurb</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">1245</span><span class="p">)</span>  <span class="c1"># just to trigger the exception</span>
-        <span class="n">types</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-            <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;long&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;liststring&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;anyURI&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">)])</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>  <span class="c1"># Python 2.6+</span>
-        <span class="n">types</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-            <span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="s2">&quot;long&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;liststring&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;anyURI&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="n">unicode</span><span class="p">,</span> <span class="s2">&quot;liststring&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="n">unicode</span><span class="p">,</span> <span class="s2">&quot;anyURI&quot;</span><span class="p">),</span>
-            <span class="p">(</span><span class="n">unicode</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">)])</span>
+    <span class="c1"># These additions to types allow writing numpy types</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># prepend so that python types are created upon read (last entry wins)</span>
+        <span class="n">types</span> <span class="o">=</span> <span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intc</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
+                <span class="p">]</span> <span class="o">+</span> <span class="n">types</span>
 
     <span class="n">xml_type</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">types</span><span class="p">)</span>
     <span class="n">python_type</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">types</span><span class="p">)</span>
@@ -429,6 +436,7 @@
         <span class="c1"># counters for edge and attribute identifiers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">edge_id</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">attr_id</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">all_edge_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="c1"># default attributes are stored in dictionaries</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">attr</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -448,6 +456,11 @@
         <span class="k">return</span> <span class="n">s</span>
 
     <span class="k">def</span> <span class="nf">add_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">):</span>
+        <span class="c1"># first pass through G collecting edge ids</span>
+        <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">dd</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">eid</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">eid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">all_edge_ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">make_str</span><span class="p">(</span><span class="n">eid</span><span class="p">))</span>
         <span class="c1"># set graph attributes</span>
         <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mode&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;dynamic&#39;</span><span class="p">:</span>
             <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;dynamic&#39;</span>
@@ -524,6 +537,9 @@
                     <span class="n">edge_id</span> <span class="o">=</span> <span class="n">edge_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">edge_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="n">edge_id</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_id</span><span class="p">)</span>
+                        <span class="k">while</span> <span class="n">make_str</span><span class="p">(</span><span class="n">edge_id</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_edge_ids</span><span class="p">:</span>
+                            <span class="n">edge_id</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_id</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">all_edge_ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">make_str</span><span class="p">(</span><span class="n">edge_id</span><span class="p">))</span>
                     <span class="k">yield</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">edge_id</span><span class="p">,</span> <span class="n">edge_data</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -531,6 +547,9 @@
                     <span class="n">edge_id</span> <span class="o">=</span> <span class="n">edge_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">edge_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="n">edge_id</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_id</span><span class="p">)</span>
+                        <span class="k">while</span> <span class="n">make_str</span><span class="p">(</span><span class="n">edge_id</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_edge_ids</span><span class="p">:</span>
+                            <span class="n">edge_id</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_id</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">all_edge_ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">make_str</span><span class="p">(</span><span class="n">edge_id</span><span class="p">))</span>
                     <span class="k">yield</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">edge_id</span><span class="p">,</span> <span class="n">edge_data</span>
         <span class="n">edges_element</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;edges&#39;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">edge_data</span> <span class="ow">in</span> <span class="n">edge_key_data</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -583,6 +602,8 @@
             <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span>
                 <span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;networkx_key&#39;</span>
             <span class="n">val_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">val_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">xml_type</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;attribute value type is not allowed: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">val_type</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
                 <span class="c1"># dynamic data</span>
                 <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
@@ -1181,8 +1202,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -1199,34 +1222,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

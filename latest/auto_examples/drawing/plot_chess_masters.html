@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chess Masters &mdash; NetworkX 2.2 documentation</title>
+  <title>Chess Masters &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Karate Club" href="../graph/plot_karate_club.html" />
     <link rel="prev" title="Atlas" href="plot_atlas.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -130,6 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../index.html#pygraphviz">Pygraphviz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#javascript">Javascript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#jit">JIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#applications">Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#subclass">Subclass</a></li>
 </ul>
 </li>
@@ -225,48 +229,48 @@ to black and contains selected game info.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loaded 685 chess games between 25 players
 
 Note the disconnected component consisting of:
-[u&#39;Karpov, Anatoly&#39;, u&#39;Korchnoi, Viktor L&#39;, u&#39;Kasparov, Gary&#39;]
+[&#39;Korchnoi, Viktor L&#39;, &#39;Karpov, Anatoly&#39;, &#39;Kasparov, Gary&#39;]
 
 From a total of 237 different openings,
 the following games used the Sicilian opening
 with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.
 
-(u&#39;Spassky, Boris V&#39;, &#39;vs&#39;, u&#39;Fischer, Robert J&#39;)
-(&#39;   &#39;, &#39;ECO&#39;, &#39;: &#39;, u&#39;B97&#39;)
-(&#39;   &#39;, &#39;WhiteElo&#39;, &#39;: &#39;, u&#39;2660&#39;)
-(&#39;   &#39;, &#39;Site&#39;, &#39;: &#39;, u&#39;Reykjavik ISL&#39;)
-(&#39;   &#39;, &#39;BlackElo&#39;, &#39;: &#39;, u&#39;2785&#39;)
-(&#39;   &#39;, &#39;EventDate&#39;, &#39;: &#39;, u&#39;1972.07.11&#39;)
-(&#39;   &#39;, &#39;Result&#39;, &#39;: &#39;, u&#39;1/2-1/2&#39;)
-(&#39;   &#39;, &#39;Date&#39;, &#39;: &#39;, u&#39;1972.07.25&#39;)
-(&#39;   &#39;, &#39;Round&#39;, &#39;: &#39;, u&#39;7&#39;)
-(&#39;   &#39;, &#39;Event&#39;, &#39;: &#39;, u&#39;World Championship 28th&#39;)
+Spassky, Boris V vs Fischer, Robert J
+    Event :  World Championship 28th
+    Site :  Reykjavik ISL
+    Date :  1972.07.25
+    Round :  7
+    Result :  1/2-1/2
+    WhiteElo :  2660
+    BlackElo :  2785
+    ECO :  B97
+    EventDate :  1972.07.11
 
 
-(u&#39;Spassky, Boris V&#39;, &#39;vs&#39;, u&#39;Fischer, Robert J&#39;)
-(&#39;   &#39;, &#39;ECO&#39;, &#39;: &#39;, u&#39;B97&#39;)
-(&#39;   &#39;, &#39;WhiteElo&#39;, &#39;: &#39;, u&#39;2660&#39;)
-(&#39;   &#39;, &#39;Site&#39;, &#39;: &#39;, u&#39;Reykjavik ISL&#39;)
-(&#39;   &#39;, &#39;BlackElo&#39;, &#39;: &#39;, u&#39;2785&#39;)
-(&#39;   &#39;, &#39;EventDate&#39;, &#39;: &#39;, u&#39;1972.07.11&#39;)
-(&#39;   &#39;, &#39;Result&#39;, &#39;: &#39;, u&#39;1-0&#39;)
-(&#39;   &#39;, &#39;Date&#39;, &#39;: &#39;, u&#39;1972.08.06&#39;)
-(&#39;   &#39;, &#39;Round&#39;, &#39;: &#39;, u&#39;11&#39;)
-(&#39;   &#39;, &#39;Event&#39;, &#39;: &#39;, u&#39;World Championship 28th&#39;)
+Spassky, Boris V vs Fischer, Robert J
+    Event :  World Championship 28th
+    Site :  Reykjavik ISL
+    Date :  1972.08.06
+    Round :  11
+    Result :  1-0
+    WhiteElo :  2660
+    BlackElo :  2785
+    ECO :  B97
+    EventDate :  1972.07.11
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#    Copyright (C) 2006-2018 by</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#    Copyright (C) 2006-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
 <span class="c1">#    All rights reserved.</span>
 <span class="c1">#    BSD license.</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
 <span class="c1"># tag names specifying what game info should be</span>
 <span class="c1"># stored in the dict on each digraph edge</span>
@@ -312,41 +316,41 @@ with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.
     <span class="n">ngames</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
     <span class="n">nplayers</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Loaded </span><span class="si">%d</span><span class="s2"> chess games between </span><span class="si">%d</span><span class="s2"> players</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loaded </span><span class="si">%d</span><span class="s2"> chess games between </span><span class="si">%d</span><span class="s2"> players</span><span class="se">\n</span><span class="s2">&quot;</span>
           <span class="o">%</span> <span class="p">(</span><span class="n">ngames</span><span class="p">,</span> <span class="n">nplayers</span><span class="p">))</span>
 
     <span class="c1"># identify connected components</span>
     <span class="c1"># of the undirected version</span>
     <span class="n">Gcc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">connected_component_subgraphs</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">to_undirected</span><span class="p">()))</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Gcc</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Note the disconnected component consisting of:&quot;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">Gcc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Note the disconnected component consisting of:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">Gcc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
 
     <span class="c1"># find all games with B97 opening (as described in ECO)</span>
     <span class="n">openings</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">game_info</span><span class="p">[</span><span class="s1">&#39;ECO&#39;</span><span class="p">]</span>
-                    <span class="k">for</span> <span class="p">(</span><span class="n">white</span><span class="p">,</span> <span class="n">black</span><span class="p">,</span> <span class="n">game_info</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">True</span><span class="p">)])</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">From a total of </span><span class="si">%d</span><span class="s2"> different openings,&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">openings</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;the following games used the Sicilian opening&#39;</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="n">white</span><span class="p">,</span> <span class="n">black</span><span class="p">,</span> <span class="n">game_info</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">From a total of </span><span class="si">%d</span><span class="s2"> different openings,&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">openings</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the following games used the Sicilian opening&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="n">white</span><span class="p">,</span> <span class="n">black</span><span class="p">,</span> <span class="n">game_info</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">white</span><span class="p">,</span> <span class="n">black</span><span class="p">,</span> <span class="n">game_info</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">game_info</span><span class="p">[</span><span class="s1">&#39;ECO&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;B97&#39;</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">white</span><span class="p">,</span> <span class="s2">&quot;vs&quot;</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">white</span><span class="p">,</span> <span class="s2">&quot;vs&quot;</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">game_info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="k">print</span><span class="p">(</span><span class="s2">&quot;   &quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   &quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="c1"># make new undirected graph H without multi-edges</span>
     <span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 
     <span class="c1"># edge width is proportional number of games played</span>
     <span class="n">edgewidth</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="ow">in</span> <span class="n">H</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="ow">in</span> <span class="n">H</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="n">edgewidth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">get_edge_data</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)))</span>
 
     <span class="c1"># node size is proportional to number of games won</span>
     <span class="n">wins</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(),</span> <span class="mf">0.0</span><span class="p">)</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;Result&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
             <span class="n">wins</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">1.0</span>
@@ -360,7 +364,7 @@ with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.
     <span class="k">except</span><span class="p">:</span>
         <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">edgewidth</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
     <span class="n">nodesize</span> <span class="o">=</span> <span class="p">[</span><span class="n">wins</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">*</span> <span class="mi">50</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">H</span><span class="p">]</span>
@@ -390,7 +394,7 @@ with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.338 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.387 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-drawing-plot-chess-masters-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../../_downloads/4d050ee9822488cdfe6660dba2ea0dfa/plot_chess_masters.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_chess_masters.py</span></code></a></div>
@@ -411,7 +415,7 @@ with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.
         <a href="../graph/plot_karate_club.html" class="btn btn-neutral float-right" title="Karate Club" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="plot_atlas.html" class="btn btn-neutral" title="Atlas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="plot_atlas.html" class="btn btn-neutral float-left" title="Atlas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -420,8 +424,10 @@ with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -438,34 +444,16 @@ with the Najdorff 7...Qb6 &quot;Poisoned Pawn&quot; variation.
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

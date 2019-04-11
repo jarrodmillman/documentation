@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.planarity.check_planarity &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.algorithms.planarity.check_planarity &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,39 +17,42 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Reciprocity" href="../reciprocity.html" />
+    <link rel="next" title="Planar Drawing" href="../planar_drawing.html" />
     <link rel="prev" title="Planarity" href="../planarity.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -133,12 +136,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../matching.html">Matching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../minors.html">Minors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mis.html">Maximal independent set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../moral.html">Moral</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../node_classification.html">Node Classification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../operators.html">Operators</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../planarity.html">Planarity</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">networkx.algorithms.planarity.check_planarity</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../planar_drawing.html">Planar Drawing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reciprocity.html">Reciprocity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../rich_club.html">Rich Club</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shortest_paths.html">Shortest Paths</a></li>
@@ -315,10 +320,10 @@ Lecture Notes Series on Computing: Volume 12
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../reciprocity.html" class="btn btn-neutral float-right" title="Reciprocity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../planar_drawing.html" class="btn btn-neutral float-right" title="Planar Drawing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../planarity.html" class="btn btn-neutral" title="Planarity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../planarity.html" class="btn btn-neutral float-left" title="Planarity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -327,8 +332,10 @@ Lecture Notes Series on Computing: Volume 12
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -345,34 +352,16 @@ Lecture Notes Series on Computing: Volume 12
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

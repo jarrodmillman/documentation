@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MultiDiGraph—Directed graphs with self loops and parallel edges &mdash; NetworkX 2.2 documentation</title>
+  <title>MultiDiGraph—Directed graphs with self loops and parallel edges &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="networkx.MultiDiGraph.__init__" href="generated/networkx.MultiDiGraph.__init__.html" />
     <link rel="prev" title="networkx.MultiGraph.edge_subgraph" href="generated/networkx.MultiGraph.edge_subgraph.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -365,12 +368,17 @@ In general, the dict-like features should be maintained but
 extra features can be added. To replace one of the dicts create
 a new graph class by changing the class(!) variable holding the
 factory for that dict-like structure. The variable names are
-node_dict_factory, adjlist_inner_dict_factory, adjlist_outer_dict_factory,
-and edge_attr_dict_factory.</p>
+node_dict_factory, node_attr_dict_factory, adjlist_inner_dict_factory,
+adjlist_outer_dict_factory, edge_key_dict_factory, edge_attr_dict_factory
+and graph_attr_dict_factory.</p>
 <dl class="docutils">
 <dt>node_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
 <dd>Factory function to be used to create the dict containing node
 attributes, keyed by node id.
+It should require no arguments and return a dict-like object</dd>
+<dt>node_attr_dict_factory: function, (default: dict)</dt>
+<dd>Factory function to be used to create the node attribute
+dict which holds attribute values keyed by attribute name.
 It should require no arguments and return a dict-like object</dd>
 <dt>adjlist_outer_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
 <dd>Factory function to be used to create the outer-most dict
@@ -386,7 +394,11 @@ which holds edge data keyed by edge key.
 It should require no arguments and return a dict-like object.</dd>
 <dt>edge_attr_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
 <dd>Factory function to be used to create the edge attribute
-dict which holds attrbute values keyed by attribute name.
+dict which holds attribute values keyed by attribute name.
+It should require no arguments and return a dict-like object.</dd>
+<dt>graph_attr_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
+<dd>Factory function to be used to create the graph attribute
+dict which holds attribute values keyed by attribute name.
 It should require no arguments and return a dict-like object.</dd>
 </dl>
 <p>Typically, if your extension doesn’t impact the data structure all
@@ -444,7 +456,7 @@ a dictionary-like object.</p>
 <td>Add weighted edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">ebunch_to_add</span></code> with specified weight attr</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.new_edge_key.html#networkx.MultiDiGraph.new_edge_key" title="networkx.MultiDiGraph.new_edge_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.new_edge_key</span></code></a>(u,&nbsp;v)</td>
-<td>Return an unused key for edges between nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>.</td>
+<td>Returns an unused key for edges between nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.remove_edge.html#networkx.MultiDiGraph.remove_edge" title="networkx.MultiDiGraph.remove_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.remove_edge</span></code></a>(u,&nbsp;v[,&nbsp;key])</td>
 <td>Remove an edge between u and v.</td>
@@ -476,10 +488,10 @@ a dictionary-like object.</p>
 <td>Iterate over the nodes.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.has_node.html#networkx.MultiDiGraph.has_node" title="networkx.MultiDiGraph.has_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.has_node</span></code></a>(n)</td>
-<td>Return True if the graph contains the node n.</td>
+<td>Returns True if the graph contains the node n.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.__contains__.html#networkx.MultiDiGraph.__contains__" title="networkx.MultiDiGraph.__contains__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.__contains__</span></code></a>(n)</td>
-<td>Return True if n is a node, False otherwise.</td>
+<td>Returns True if n is a node, False otherwise.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.edges.html#networkx.MultiDiGraph.edges" title="networkx.MultiDiGraph.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.edges</span></code></a></td>
 <td>An OutMultiEdgeView of the Graph as G.edges or G.edges().</td>
@@ -491,37 +503,37 @@ a dictionary-like object.</p>
 <td>An InMultiEdgeView of the Graph as G.in_edges or G.in_edges().</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.has_edge.html#networkx.MultiDiGraph.has_edge" title="networkx.MultiDiGraph.has_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.has_edge</span></code></a>(u,&nbsp;v[,&nbsp;key])</td>
-<td>Return True if the graph has an edge between nodes u and v.</td>
+<td>Returns True if the graph has an edge between nodes u and v.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.get_edge_data.html#networkx.MultiDiGraph.get_edge_data" title="networkx.MultiDiGraph.get_edge_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.get_edge_data</span></code></a>(u,&nbsp;v[,&nbsp;key,&nbsp;default])</td>
-<td>Return the attribute dictionary associated with edge (u, v).</td>
+<td>Returns the attribute dictionary associated with edge (u, v).</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.neighbors.html#networkx.MultiDiGraph.neighbors" title="networkx.MultiDiGraph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.neighbors</span></code></a>(n)</td>
-<td>Return an iterator over successor nodes of n.</td>
+<td>Returns an iterator over successor nodes of n.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.adj.html#networkx.MultiDiGraph.adj" title="networkx.MultiDiGraph.adj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.adj</span></code></a></td>
 <td>Graph adjacency object holding the neighbors of each node.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.__getitem__.html#networkx.MultiDiGraph.__getitem__" title="networkx.MultiDiGraph.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.__getitem__</span></code></a>(n)</td>
-<td>Return a dict of neighbors of node n.</td>
+<td>Returns a dict of neighbors of node n.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.successors.html#networkx.MultiDiGraph.successors" title="networkx.MultiDiGraph.successors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.successors</span></code></a>(n)</td>
-<td>Return an iterator over successor nodes of n.</td>
+<td>Returns an iterator over successor nodes of n.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.succ.html#networkx.MultiDiGraph.succ" title="networkx.MultiDiGraph.succ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.succ</span></code></a></td>
 <td>Graph adjacency object holding the successors of each node.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.predecessors.html#networkx.MultiDiGraph.predecessors" title="networkx.MultiDiGraph.predecessors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.predecessors</span></code></a>(n)</td>
-<td>Return an iterator over predecessor nodes of n.</td>
+<td>Returns an iterator over predecessor nodes of n.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.succ.html#networkx.MultiDiGraph.succ" title="networkx.MultiDiGraph.succ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.succ</span></code></a></td>
 <td>Graph adjacency object holding the successors of each node.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.adjacency.html#networkx.MultiDiGraph.adjacency" title="networkx.MultiDiGraph.adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.adjacency</span></code></a>()</td>
-<td>Return an iterator over (node, adjacency dict) tuples for all nodes.</td>
+<td>Returns an iterator over (node, adjacency dict) tuples for all nodes.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.nbunch_iter.html#networkx.MultiDiGraph.nbunch_iter" title="networkx.MultiDiGraph.nbunch_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.nbunch_iter</span></code></a>([nbunch])</td>
-<td>Return an iterator over nodes contained in nbunch that are also in the graph.</td>
+<td>Returns an iterator over nodes contained in nbunch that are also in the graph.</td>
 </tr>
 </tbody>
 </table>
@@ -535,13 +547,13 @@ a dictionary-like object.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.order.html#networkx.MultiDiGraph.order" title="networkx.MultiDiGraph.order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.order</span></code></a>()</td>
-<td>Return the number of nodes in the graph.</td>
+<td>Returns the number of nodes in the graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.number_of_nodes.html#networkx.MultiDiGraph.number_of_nodes" title="networkx.MultiDiGraph.number_of_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.number_of_nodes</span></code></a>()</td>
-<td>Return the number of nodes in the graph.</td>
+<td>Returns the number of nodes in the graph.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.__len__.html#networkx.MultiDiGraph.__len__" title="networkx.MultiDiGraph.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.__len__</span></code></a>()</td>
-<td>Return the number of nodes.</td>
+<td>Returns the number of nodes.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.degree.html#networkx.MultiDiGraph.degree" title="networkx.MultiDiGraph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.degree</span></code></a></td>
 <td>A DegreeView for the Graph as G.degree or G.degree().</td>
@@ -550,13 +562,13 @@ a dictionary-like object.</p>
 <td>A DegreeView for (node, in_degree) or in_degree for single node.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.out_degree.html#networkx.MultiDiGraph.out_degree" title="networkx.MultiDiGraph.out_degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.out_degree</span></code></a></td>
-<td>Return an iterator for (node, out-degree) or out-degree for single node.</td>
+<td>Returns an iterator for (node, out-degree) or out-degree for single node.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.size.html#networkx.MultiDiGraph.size" title="networkx.MultiDiGraph.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.size</span></code></a>([weight])</td>
-<td>Return the number of edges or total of all edge weights.</td>
+<td>Returns the number of edges or total of all edge weights.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.number_of_edges.html#networkx.MultiDiGraph.number_of_edges" title="networkx.MultiDiGraph.number_of_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.number_of_edges</span></code></a>([u,&nbsp;v])</td>
-<td>Return the number of edges between two nodes.</td>
+<td>Returns the number of edges between two nodes.</td>
 </tr>
 </tbody>
 </table>
@@ -570,22 +582,22 @@ a dictionary-like object.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.copy.html#networkx.MultiDiGraph.copy" title="networkx.MultiDiGraph.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.copy</span></code></a>([as_view])</td>
-<td>Return a copy of the graph.</td>
+<td>Returns a copy of the graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.to_undirected.html#networkx.MultiDiGraph.to_undirected" title="networkx.MultiDiGraph.to_undirected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.to_undirected</span></code></a>([reciprocal,&nbsp;as_view])</td>
-<td>Return an undirected representation of the digraph.</td>
+<td>Returns an undirected representation of the digraph.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.to_directed.html#networkx.MultiDiGraph.to_directed" title="networkx.MultiDiGraph.to_directed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.to_directed</span></code></a>([as_view])</td>
-<td>Return a directed representation of the graph.</td>
+<td>Returns a directed representation of the graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.subgraph.html#networkx.MultiDiGraph.subgraph" title="networkx.MultiDiGraph.subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.subgraph</span></code></a>(nodes)</td>
-<td>Return a SubGraph view of the subgraph induced on <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>.</td>
+<td>Returns a SubGraph view of the subgraph induced on <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.edge_subgraph.html#networkx.MultiDiGraph.edge_subgraph" title="networkx.MultiDiGraph.edge_subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.edge_subgraph</span></code></a>(edges)</td>
 <td>Returns the subgraph induced by the specified edges.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.MultiDiGraph.reverse.html#networkx.MultiDiGraph.reverse" title="networkx.MultiDiGraph.reverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiDiGraph.reverse</span></code></a>([copy])</td>
-<td>Return the reverse of the graph.</td>
+<td>Returns the reverse of the graph.</td>
 </tr>
 </tbody>
 </table>
@@ -604,7 +616,7 @@ a dictionary-like object.</p>
         <a href="generated/networkx.MultiDiGraph.__init__.html" class="btn btn-neutral float-right" title="networkx.MultiDiGraph.__init__" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/networkx.MultiGraph.edge_subgraph.html" class="btn btn-neutral" title="networkx.MultiGraph.edge_subgraph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/networkx.MultiGraph.edge_subgraph.html" class="btn btn-neutral float-left" title="networkx.MultiGraph.edge_subgraph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -613,8 +625,10 @@ a dictionary-like object.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -631,34 +645,16 @@ a dictionary-like object.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pydot.graphviz_layout &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.drawing.nx_pydot.graphviz_layout &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="networkx.drawing.nx_pydot.pydot_layout" href="networkx.drawing.nx_pydot.pydot_layout.html" />
     <link rel="prev" title="networkx.drawing.nx_pydot.read_dot" href="networkx.drawing.nx_pydot.read_dot.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -199,9 +202,30 @@
 <h1>networkx.drawing.nx_pydot.graphviz_layout<a class="headerlink" href="#networkx-drawing-nx-pydot-graphviz-layout" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pydot.graphviz_layout">
-<code class="descname">graphviz_layout</code><span class="sig-paren">(</span><em>G</em>, <em>prog='neato'</em>, <em>root=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pydot.html#graphviz_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pydot.graphviz_layout" title="Permalink to this definition">¶</a></dt>
+<code class="descname">graphviz_layout</code><span class="sig-paren">(</span><em>G</em>, <em>prog='neato'</em>, <em>root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pydot.html#graphviz_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pydot.graphviz_layout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create node positions using Pydot and Graphviz.</p>
 <p>Returns a dictionary of positions keyed by node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>G</strong> (<em>NetworkX Graph</em>) – The graph for which the layout is computed.</li>
+<li><strong>prog</strong> (<em>string (default: ‘neato’)</em>) – The name of the GraphViz program to use for layout.
+Options depend on GraphViz version but may include:
+‘dot’, ‘twopi’, ‘fdp’, ‘sfdp’, ‘circo’</li>
+<li><strong>root</strong> (<em>Node from G or None (default: None)</em>) – The node of G from which to start some layout algorithms.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dictionary of (x, y) positions keyed by node.</p>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">nx_pydot</span><span class="o">.</span><span class="n">graphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -225,7 +249,7 @@
         <a href="networkx.drawing.nx_pydot.pydot_layout.html" class="btn btn-neutral float-right" title="networkx.drawing.nx_pydot.pydot_layout" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="networkx.drawing.nx_pydot.read_dot.html" class="btn btn-neutral" title="networkx.drawing.nx_pydot.read_dot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="networkx.drawing.nx_pydot.read_dot.html" class="btn btn-neutral float-left" title="networkx.drawing.nx_pydot.read_dot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -234,8 +258,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -252,34 +278,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pydot &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.drawing.nx_pydot &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,37 +17,40 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -171,12 +174,12 @@
 <span class="sd">See Also</span>
 <span class="sd">--------</span>
 <span class="sd">pydot:         https://github.com/erocarrera/pydot</span>
-<span class="sd">Graphviz:      http://www.research.att.com/sw/tools/graphviz/</span>
+<span class="sd">Graphviz:      https://www.graphviz.org</span>
 <span class="sd">DOT Language:  http://www.graphviz.org/doc/info/lang.html</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="c1"># Author: Aric Hagberg (aric.hagberg@gmail.com)</span>
 
-<span class="c1">#    Copyright (C) 2004-2018 by</span>
+<span class="c1">#    Copyright (C) 2004-2019 by</span>
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
@@ -185,18 +188,10 @@
 <span class="c1">#    BSD license.</span>
 <span class="kn">from</span> <span class="nn">locale</span> <span class="k">import</span> <span class="n">getpreferredencoding</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">open_file</span><span class="p">,</span> <span class="n">make_str</span>
-<span class="kn">from</span> <span class="nn">pkg_resources</span> <span class="k">import</span> <span class="n">parse_version</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;write_dot&#39;</span><span class="p">,</span> <span class="s1">&#39;read_dot&#39;</span><span class="p">,</span> <span class="s1">&#39;graphviz_layout&#39;</span><span class="p">,</span> <span class="s1">&#39;pydot_layout&#39;</span><span class="p">,</span>
            <span class="s1">&#39;to_pydot&#39;</span><span class="p">,</span> <span class="s1">&#39;from_pydot&#39;</span><span class="p">]</span>
-
-<span class="c1"># Minimum required version of pydot, which broke backwards API compatibility in</span>
-<span class="c1"># non-trivial ways and is thus a hard NetworkX requirement. Note that, although</span>
-<span class="c1"># pydot 1.2.0 was the first to do so, pydot 1.2.3 resolves a critical long-</span>
-<span class="c1"># standing Python 2.x issue required for sane NetworkX operation. See also:</span>
-<span class="c1">#     https://github.com/erocarrera/pydot/blob/master/ChangeLog</span>
-<span class="n">PYDOT_VERSION_MIN</span> <span class="o">=</span> <span class="s1">&#39;1.2.3&#39;</span>
 
 <span class="c1"># 2.x/3.x compatibility</span>
 <span class="k">try</span><span class="p">:</span>
@@ -219,7 +214,7 @@
 
 <div class="viewcode-block" id="read_dot"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pydot.read_dot.html#networkx.drawing.nx_pydot.read_dot">[docs]</a><span class="nd">@open_file</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">read_dot</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a NetworkX :class:`MultiGraph` or :class:`MultiDiGraph` from the</span>
+    <span class="sd">&quot;&quot;&quot;Returns a NetworkX :class:`MultiGraph` or :class:`MultiDiGraph` from the</span>
 <span class="sd">    dot file with the passed path.</span>
 
 <span class="sd">    If this file contains multiple graphs, only the first such graph is</span>
@@ -251,7 +246,7 @@
 
 
 <div class="viewcode-block" id="from_pydot"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pydot.from_pydot.html#networkx.drawing.nx_pydot.from_pydot">[docs]</a><span class="k">def</span> <span class="nf">from_pydot</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a NetworkX graph from a Pydot graph.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a NetworkX graph from a Pydot graph.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -341,7 +336,7 @@
 
 
 <div class="viewcode-block" id="to_pydot"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pydot.to_pydot.html#networkx.drawing.nx_pydot.to_pydot">[docs]</a><span class="k">def</span> <span class="nf">to_pydot</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a pydot graph from a NetworkX graph N.</span>
+    <span class="sd">&quot;&quot;&quot;Returns a pydot graph from a NetworkX graph N.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -404,10 +399,25 @@
     <span class="k">return</span> <span class="n">P</span></div>
 
 
-<div class="viewcode-block" id="graphviz_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pydot.graphviz_layout.html#networkx.drawing.nx_pydot.graphviz_layout">[docs]</a><span class="k">def</span> <span class="nf">graphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;neato&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+<div class="viewcode-block" id="graphviz_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pydot.graphviz_layout.html#networkx.drawing.nx_pydot.graphviz_layout">[docs]</a><span class="k">def</span> <span class="nf">graphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;neato&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Create node positions using Pydot and Graphviz.</span>
 
 <span class="sd">    Returns a dictionary of positions keyed by node.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX Graph</span>
+<span class="sd">        The graph for which the layout is computed.</span>
+<span class="sd">    prog : string (default: &#39;neato&#39;)</span>
+<span class="sd">        The name of the GraphViz program to use for layout.</span>
+<span class="sd">        Options depend on GraphViz version but may include:</span>
+<span class="sd">        &#39;dot&#39;, &#39;twopi&#39;, &#39;fdp&#39;, &#39;sfdp&#39;, &#39;circo&#39;</span>
+<span class="sd">    root : Node from G or None (default: None)</span>
+<span class="sd">        The node of G from which to start some layout algorithms.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">      Dictionary of (x, y) positions keyed by node.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -419,23 +429,22 @@
 <span class="sd">    -----</span>
 <span class="sd">    This is a wrapper for pydot_layout.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">pydot_layout</span><span class="p">(</span><span class="n">G</span><span class="o">=</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="n">prog</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">pydot_layout</span><span class="p">(</span><span class="n">G</span><span class="o">=</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="n">prog</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">)</span></div>
 
 
-<span class="c1"># FIXME: Document the &quot;root&quot; parameter.</span>
-<span class="c1"># FIXME: Why does this function accept a variadic dict of keyword arguments</span>
-<span class="c1"># (i.e., &quot;**kwds&quot;) but fail to do anything with them? This is probably</span>
-<span class="c1"># wrong, as unrecognized keyword arguments will be silently ignored.</span>
-<div class="viewcode-block" id="pydot_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pydot.pydot_layout.html#networkx.drawing.nx_pydot.pydot_layout">[docs]</a><span class="k">def</span> <span class="nf">pydot_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;neato&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+<div class="viewcode-block" id="pydot_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.nx_pydot.pydot_layout.html#networkx.drawing.nx_pydot.pydot_layout">[docs]</a><span class="k">def</span> <span class="nf">pydot_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;neato&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Create node positions using :mod:`pydot` and Graphviz.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    --------</span>
 <span class="sd">    G : Graph</span>
 <span class="sd">        NetworkX graph to be laid out.</span>
-<span class="sd">    prog : optional[str]</span>
-<span class="sd">        Basename of the GraphViz command with which to layout this graph.</span>
-<span class="sd">        Defaults to `neato`: default GraphViz command for undirected graphs.</span>
+<span class="sd">    prog : string  (default: &#39;neato&#39;)</span>
+<span class="sd">        Name of the GraphViz command to use for layout.</span>
+<span class="sd">        Options depend on GraphViz version but may include:</span>
+<span class="sd">        &#39;dot&#39;, &#39;twopi&#39;, &#39;fdp&#39;, &#39;sfdp&#39;, &#39;circo&#39;</span>
+<span class="sd">    root : Node from G or None (default: None)</span>
+<span class="sd">        The node of G from which to start some layout algorithms.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    --------</span>
@@ -516,20 +525,10 @@
 <span class="sd">    Raises</span>
 <span class="sd">    --------</span>
 <span class="sd">    ImportError</span>
-<span class="sd">        If the `pydot` module is either unimportable _or_ importable but of</span>
-<span class="sd">        insufficient version.</span>
+<span class="sd">        If the `pydot` module is unimportable.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="kn">import</span> <span class="nn">pydot</span>
-
-    <span class="c1"># If the currently installed version of pydot is older than this minimum,</span>
-    <span class="c1"># raise an exception. The pkg_resources.parse_version() function bundled</span>
-    <span class="c1"># with setuptools is commonly regarded to be the most robust means of</span>
-    <span class="c1"># comparing version strings. (Your mileage may vary.)</span>
-    <span class="k">if</span> <span class="n">parse_version</span><span class="p">(</span><span class="n">pydot</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">parse_version</span><span class="p">(</span><span class="n">PYDOT_VERSION_MIN</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-            <span class="s1">&#39;pydot </span><span class="si">%s</span><span class="s1"> &lt; </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pydot</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">PYDOT_VERSION_MIN</span><span class="p">))</span>
-
     <span class="k">return</span> <span class="n">pydot</span>
 
 <span class="c1"># fixture for nose tests</span>
@@ -553,8 +552,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -571,34 +572,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

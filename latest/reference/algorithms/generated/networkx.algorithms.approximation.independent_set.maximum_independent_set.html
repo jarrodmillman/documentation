@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.approximation.independent_set.maximum_independent_set &mdash; NetworkX 2.2 documentation</title>
+  <title>networkx.algorithms.approximation.independent_set.maximum_independent_set &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="networkx.algorithms.approximation.matching.min_maximal_matching" href="networkx.algorithms.approximation.matching.min_maximal_matching.html" />
     <link rel="prev" title="networkx.algorithms.approximation.dominating_set.min_edge_dominating_set" href="networkx.algorithms.approximation.dominating_set.min_edge_dominating_set.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -146,9 +149,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../matching.html">Matching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../minors.html">Minors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mis.html">Maximal independent set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../moral.html">Moral</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../node_classification.html">Node Classification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../operators.html">Operators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../planarity.html">Planarity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../planar_drawing.html">Planar Drawing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reciprocity.html">Reciprocity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../rich_club.html">Rich Club</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shortest_paths.html">Shortest Paths</a></li>
@@ -261,7 +266,7 @@
 <dl class="function">
 <dt id="networkx.algorithms.approximation.independent_set.maximum_independent_set">
 <code class="descname">maximum_independent_set</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/independent_set.html#maximum_independent_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.independent_set.maximum_independent_set" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return an approximate maximum independent set.</p>
+<dd><p>Returns an approximate maximum independent set.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -300,7 +305,7 @@ BIT Numerical Mathematics, 32(2), 180–196. Springer.</td></tr>
         <a href="networkx.algorithms.approximation.matching.min_maximal_matching.html" class="btn btn-neutral float-right" title="networkx.algorithms.approximation.matching.min_maximal_matching" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="networkx.algorithms.approximation.dominating_set.min_edge_dominating_set.html" class="btn btn-neutral" title="networkx.algorithms.approximation.dominating_set.min_edge_dominating_set" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="networkx.algorithms.approximation.dominating_set.min_edge_dominating_set.html" class="btn btn-neutral float-left" title="networkx.algorithms.approximation.dominating_set.min_edge_dominating_set" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -309,8 +314,10 @@ BIT Numerical Mathematics, 32(2), 180–196. Springer.</td></tr>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -327,34 +334,16 @@ BIT Numerical Mathematics, 32(2), 180–196. Springer.</td></tr>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

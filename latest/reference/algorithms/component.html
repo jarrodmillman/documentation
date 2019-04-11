@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Components &mdash; NetworkX 2.2 documentation</title>
+  <title>Components &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="networkx.algorithms.components.is_connected" href="generated/networkx.algorithms.components.is_connected.html" />
     <link rel="prev" title="networkx.algorithms.community.community_utils.is_partition" href="generated/networkx.algorithms.community.community_utils.is_partition.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -141,9 +144,11 @@
 <li class="toctree-l3"><a class="reference internal" href="matching.html">Matching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="minors.html">Minors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mis.html">Maximal independent set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moral.html">Moral</a></li>
 <li class="toctree-l3"><a class="reference internal" href="node_classification.html">Node Classification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operators.html">Operators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="planarity.html">Planarity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="planar_drawing.html">Planar Drawing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reciprocity.html">Reciprocity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rich_club.html">Rich Club</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shortest_paths.html">Shortest Paths</a></li>
@@ -260,10 +265,10 @@
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.components.is_connected.html#networkx.algorithms.components.is_connected" title="networkx.algorithms.components.is_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code></a>(G)</td>
-<td>Return True if the graph is connected, False otherwise.</td>
+<td>Returns True if the graph is connected, False otherwise.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.components.number_connected_components.html#networkx.algorithms.components.number_connected_components" title="networkx.algorithms.components.number_connected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_connected_components</span></code></a>(G)</td>
-<td>Return the number of connected components.</td>
+<td>Returns the number of connected components.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.components.connected_components.html#networkx.algorithms.components.connected_components" title="networkx.algorithms.components.connected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connected_components</span></code></a>(G)</td>
 <td>Generate connected components.</td>
@@ -272,7 +277,7 @@
 <td>DEPRECATED: Use <code class="docutils literal notranslate"><span class="pre">(G.subgraph(c)</span> <span class="pre">for</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">connected_components(G))</span></code></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.components.node_connected_component.html#networkx.algorithms.components.node_connected_component" title="networkx.algorithms.components.node_connected_component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_connected_component</span></code></a>(G,&nbsp;n)</td>
-<td>Return the set of nodes in the component of graph containing node n.</td>
+<td>Returns the set of nodes in the component of graph containing node n.</td>
 </tr>
 </tbody>
 </table>
@@ -289,7 +294,7 @@
 <td>Test directed graph for strong connectivity.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.components.number_strongly_connected_components.html#networkx.algorithms.components.number_strongly_connected_components" title="networkx.algorithms.components.number_strongly_connected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_strongly_connected_components</span></code></a>(G)</td>
-<td>Return number of strongly connected components in graph.</td>
+<td>Returns number of strongly connected components in graph.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.components.strongly_connected_components.html#networkx.algorithms.components.strongly_connected_components" title="networkx.algorithms.components.strongly_connected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strongly_connected_components</span></code></a>(G)</td>
 <td>Generate nodes in strongly connected components of graph.</td>
@@ -321,7 +326,7 @@
 <td>Test directed graph for weak connectivity.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.components.number_weakly_connected_components.html#networkx.algorithms.components.number_weakly_connected_components" title="networkx.algorithms.components.number_weakly_connected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_weakly_connected_components</span></code></a>(G)</td>
-<td>Return the number of weakly connected components in G.</td>
+<td>Returns the number of weakly connected components in G.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.components.weakly_connected_components.html#networkx.algorithms.components.weakly_connected_components" title="networkx.algorithms.components.weakly_connected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weakly_connected_components</span></code></a>(G)</td>
 <td>Generate weakly connected components of G.</td>
@@ -364,13 +369,13 @@
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.components.is_biconnected.html#networkx.algorithms.components.is_biconnected" title="networkx.algorithms.components.is_biconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_biconnected</span></code></a>(G)</td>
-<td>Return True if the graph is biconnected, False otherwise.</td>
+<td>Returns True if the graph is biconnected, False otherwise.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.components.biconnected_components.html#networkx.algorithms.components.biconnected_components" title="networkx.algorithms.components.biconnected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">biconnected_components</span></code></a>(G)</td>
-<td>Return a generator of sets of nodes, one set for each biconnected component of the graph</td>
+<td>Returns a generator of sets of nodes, one set for each biconnected component of the graph</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.components.biconnected_component_edges.html#networkx.algorithms.components.biconnected_component_edges" title="networkx.algorithms.components.biconnected_component_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">biconnected_component_edges</span></code></a>(G)</td>
-<td>Return a generator of lists of edges, one list for each biconnected component of the input graph.</td>
+<td>Returns a generator of lists of edges, one list for each biconnected component of the input graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.components.biconnected_component_subgraphs.html#networkx.algorithms.components.biconnected_component_subgraphs" title="networkx.algorithms.components.biconnected_component_subgraphs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">biconnected_component_subgraphs</span></code></a>(G[,&nbsp;copy])</td>
 <td>DEPRECATED: Use <code class="docutils literal notranslate"><span class="pre">(G.subgraph(c)</span> <span class="pre">for</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">biconnected_components(G))</span></code></td>
@@ -390,7 +395,7 @@
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.components.is_semiconnected.html#networkx.algorithms.components.is_semiconnected" title="networkx.algorithms.components.is_semiconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_semiconnected</span></code></a>(G)</td>
-<td>Return True if the graph is semiconnected, False otherwise.</td>
+<td>Returns True if the graph is semiconnected, False otherwise.</td>
 </tr>
 </tbody>
 </table>
@@ -408,7 +413,7 @@
         <a href="generated/networkx.algorithms.components.is_connected.html" class="btn btn-neutral float-right" title="networkx.algorithms.components.is_connected" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/networkx.algorithms.community.community_utils.is_partition.html" class="btn btn-neutral" title="networkx.algorithms.community.community_utils.is_partition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/networkx.algorithms.community.community_utils.is_partition.html" class="btn btn-neutral float-left" title="networkx.algorithms.community.community_utils.is_partition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -417,8 +422,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -435,34 +442,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph—Undirected graphs with self loops &mdash; NetworkX 2.2 documentation</title>
+  <title>Graph—Undirected graphs with self loops &mdash; NetworkX 2.4rc1.dev20190411215153 documentation</title>
   
 
   
@@ -17,17 +17,25 @@
   
 
   
-
-  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
-      <link rel="search" type="application/opensearchdescription+xml"
-            title="Search within NetworkX 2.2 documentation"
-            href="../../_static/opensearch.xml"/>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190411215153 documentation"
+          href="../../_static/opensearch.xml"/>
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
@@ -35,21 +43,16 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="networkx.Graph.__init__" href="generated/networkx.Graph.__init__.html" />
     <link rel="prev" title="Graph types" href="index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                2.2
+                2.4rc1.dev_20190411215153
               </div>
             
           
@@ -353,12 +356,16 @@ dict-like object. In general, the dict-like features should be
 maintained but extra features can be added. To replace one of the
 dicts create a new graph class by changing the class(!) variable
 holding the factory for that dict-like structure. The variable names are
-node_dict_factory, adjlist_inner_dict_factory, adjlist_outer_dict_factory,
-and edge_attr_dict_factory.</p>
+node_dict_factory, node_attr_dict_factory, adjlist_inner_dict_factory,
+adjlist_outer_dict_factory, edge_attr_dict_factory and graph_attr_dict_factory.</p>
 <dl class="docutils">
 <dt>node_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
 <dd>Factory function to be used to create the dict containing node
 attributes, keyed by node id.
+It should require no arguments and return a dict-like object</dd>
+<dt>node_attr_dict_factory: function, (default: dict)</dt>
+<dd>Factory function to be used to create the node attribute
+dict which holds attribute values keyed by attribute name.
 It should require no arguments and return a dict-like object</dd>
 <dt>adjlist_outer_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
 <dd>Factory function to be used to create the outer-most dict
@@ -370,7 +377,11 @@ dict which holds edge data keyed by neighbor.
 It should require no arguments and return a dict-like object</dd>
 <dt>edge_attr_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
 <dd>Factory function to be used to create the edge attribute
-dict which holds attrbute values keyed by attribute name.
+dict which holds attribute values keyed by attribute name.
+It should require no arguments and return a dict-like object.</dd>
+<dt>graph_attr_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
+<dd>Factory function to be used to create the graph attribute
+dict which holds attribute values keyed by attribute name.
 It should require no arguments and return a dict-like object.</dd>
 </dl>
 <p>Typically, if your extension doesn’t impact the data structure all
@@ -474,34 +485,34 @@ a dictionary-like object.</p>
 <td>Iterate over the nodes.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.has_node.html#networkx.Graph.has_node" title="networkx.Graph.has_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.has_node</span></code></a>(n)</td>
-<td>Return True if the graph contains the node n.</td>
+<td>Returns True if the graph contains the node n.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.__contains__.html#networkx.Graph.__contains__" title="networkx.Graph.__contains__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__contains__</span></code></a>(n)</td>
-<td>Return True if n is a node, False otherwise.</td>
+<td>Returns True if n is a node, False otherwise.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.edges.html#networkx.Graph.edges" title="networkx.Graph.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.edges</span></code></a></td>
 <td>An EdgeView of the Graph as G.edges or G.edges().</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.has_edge.html#networkx.Graph.has_edge" title="networkx.Graph.has_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.has_edge</span></code></a>(u,&nbsp;v)</td>
-<td>Return True if the edge (u, v) is in the graph.</td>
+<td>Returns True if the edge (u, v) is in the graph.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.get_edge_data.html#networkx.Graph.get_edge_data" title="networkx.Graph.get_edge_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.get_edge_data</span></code></a>(u,&nbsp;v[,&nbsp;default])</td>
-<td>Return the attribute dictionary associated with edge (u, v).</td>
+<td>Returns the attribute dictionary associated with edge (u, v).</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.neighbors.html#networkx.Graph.neighbors" title="networkx.Graph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.neighbors</span></code></a>(n)</td>
-<td>Return an iterator over all neighbors of node n.</td>
+<td>Returns an iterator over all neighbors of node n.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.adj.html#networkx.Graph.adj" title="networkx.Graph.adj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.adj</span></code></a></td>
 <td>Graph adjacency object holding the neighbors of each node.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.__getitem__.html#networkx.Graph.__getitem__" title="networkx.Graph.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__getitem__</span></code></a>(n)</td>
-<td>Return a dict of neighbors of node n.</td>
+<td>Returns a dict of neighbors of node n.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.adjacency.html#networkx.Graph.adjacency" title="networkx.Graph.adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.adjacency</span></code></a>()</td>
-<td>Return an iterator over (node, adjacency dict) tuples for all nodes.</td>
+<td>Returns an iterator over (node, adjacency dict) tuples for all nodes.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.nbunch_iter.html#networkx.Graph.nbunch_iter" title="networkx.Graph.nbunch_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.nbunch_iter</span></code></a>([nbunch])</td>
-<td>Return an iterator over nodes contained in nbunch that are also in the graph.</td>
+<td>Returns an iterator over nodes contained in nbunch that are also in the graph.</td>
 </tr>
 </tbody>
 </table>
@@ -515,22 +526,22 @@ a dictionary-like object.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.order.html#networkx.Graph.order" title="networkx.Graph.order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.order</span></code></a>()</td>
-<td>Return the number of nodes in the graph.</td>
+<td>Returns the number of nodes in the graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.number_of_nodes.html#networkx.Graph.number_of_nodes" title="networkx.Graph.number_of_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.number_of_nodes</span></code></a>()</td>
-<td>Return the number of nodes in the graph.</td>
+<td>Returns the number of nodes in the graph.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.__len__.html#networkx.Graph.__len__" title="networkx.Graph.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__len__</span></code></a>()</td>
-<td>Return the number of nodes.</td>
+<td>Returns the number of nodes.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.degree.html#networkx.Graph.degree" title="networkx.Graph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.degree</span></code></a></td>
 <td>A DegreeView for the Graph as G.degree or G.degree().</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.size.html#networkx.Graph.size" title="networkx.Graph.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.size</span></code></a>([weight])</td>
-<td>Return the number of edges or total of all edge weights.</td>
+<td>Returns the number of edges or total of all edge weights.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.number_of_edges.html#networkx.Graph.number_of_edges" title="networkx.Graph.number_of_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.number_of_edges</span></code></a>([u,&nbsp;v])</td>
-<td>Return the number of edges between two nodes.</td>
+<td>Returns the number of edges between two nodes.</td>
 </tr>
 </tbody>
 </table>
@@ -544,16 +555,16 @@ a dictionary-like object.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.copy.html#networkx.Graph.copy" title="networkx.Graph.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.copy</span></code></a>([as_view])</td>
-<td>Return a copy of the graph.</td>
+<td>Returns a copy of the graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.to_undirected.html#networkx.Graph.to_undirected" title="networkx.Graph.to_undirected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.to_undirected</span></code></a>([as_view])</td>
-<td>Return an undirected copy of the graph.</td>
+<td>Returns an undirected copy of the graph.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.to_directed.html#networkx.Graph.to_directed" title="networkx.Graph.to_directed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.to_directed</span></code></a>([as_view])</td>
-<td>Return a directed representation of the graph.</td>
+<td>Returns a directed representation of the graph.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.subgraph.html#networkx.Graph.subgraph" title="networkx.Graph.subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.subgraph</span></code></a>(nodes)</td>
-<td>Return a SubGraph view of the subgraph induced on <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>.</td>
+<td>Returns a SubGraph view of the subgraph induced on <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.edge_subgraph.html#networkx.Graph.edge_subgraph" title="networkx.Graph.edge_subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.edge_subgraph</span></code></a>(edges)</td>
 <td>Returns the subgraph induced by the specified edges.</td>
@@ -575,7 +586,7 @@ a dictionary-like object.</p>
         <a href="generated/networkx.Graph.__init__.html" class="btn btn-neutral float-right" title="networkx.Graph.__init__" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Graph types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Graph types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -584,8 +595,10 @@ a dictionary-like object.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004-2018, NetworkX Developers.
-      Last updated on Sep 19, 2018.
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Apr 11, 2019.
+      </span>
 
     </p>
   </div>
@@ -602,34 +615,16 @@ a dictionary-like object.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'2.2',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/copybutton.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
