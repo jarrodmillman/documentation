@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190425105453 documentation</title>
+  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190427120227 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190425105453 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190427120227 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190425105453
+                2.4rc1.dev_20190427120227
               </div>
             
           
@@ -288,6 +288,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.generators.mycielski">Mycielski</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.mycielski.mycielskian.html">networkx.generators.mycielski.mycielskian</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.mycielski.mycielski_graph.html">networkx.generators.mycielski.mycielski_graph</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-networkx.generators.harary_graph">Harary Graph</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.harary_graph.hnm_harary_graph.html">networkx.generators.harary_graph.hnm_harary_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.harary_graph.hkn_harary_graph.html">networkx.generators.harary_graph.hkn_harary_graph</a></li>
 </ul>
 </li>
 </ul>
@@ -1042,6 +1047,39 @@ of graphs.</p>
 </tbody>
 </table>
 </div>
+<div class="section" id="module-networkx.generators.harary_graph">
+<span id="harary-graph"></span><h2>Harary Graph<a class="headerlink" href="#module-networkx.generators.harary_graph" title="Permalink to this headline">¶</a></h2>
+<p>Generators for Harary graphs</p>
+<p>This module gives two generators for the Harary graph, which was
+introduced by the famous mathematician Frank Harary in his 1962 work <a class="footnote-reference" href="#id2" id="id1">[1]</a>.
+The first generator gives the Harary graph that maximizes the node
+connectivity with given number of nodes and given number of edges.
+The second generator gives the Harary graph that minimizes
+the number of edges in the graph with given node connectivity and
+number of nodes.</p>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Harary, F. “The Maximum Connectivity of a Graph.”
+Proc. Nat. Acad. Sci. USA 48, 1142-1146, 1962.</td></tr>
+</tbody>
+</table>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.harary_graph.hnm_harary_graph.html#networkx.generators.harary_graph.hnm_harary_graph" title="networkx.generators.harary_graph.hnm_harary_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hnm_harary_graph</span></code></a>(n,&nbsp;m[,&nbsp;create_using])</td>
+<td>Returns the Harary graph with given numbers of nodes and edges.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.harary_graph.hkn_harary_graph.html#networkx.generators.harary_graph.hkn_harary_graph" title="networkx.generators.harary_graph.hkn_harary_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hkn_harary_graph</span></code></a>(k,&nbsp;n[,&nbsp;create_using])</td>
+<td>Returns the Harary graph with given node connectivity and node number.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -1066,7 +1104,7 @@ of graphs.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Apr 25, 2019.
+        Last updated on Apr 27, 2019.
       </span>
 
     </p>
