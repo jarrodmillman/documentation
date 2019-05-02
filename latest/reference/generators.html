@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190502230725 documentation</title>
+  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190502231912 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190502230725 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190502231912 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190502230725
+                2.4rc1.dev_20190502231912
               </div>
             
           
@@ -107,6 +107,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.generators.classic">Classic</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.classic.balanced_tree.html">networkx.generators.classic.balanced_tree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.classic.barbell_graph.html">networkx.generators.classic.barbell_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.classic.binomial_tree.html">networkx.generators.classic.binomial_tree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.classic.complete_graph.html">networkx.generators.classic.complete_graph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.classic.complete_multipartite_graph.html">networkx.generators.classic.complete_multipartite_graph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.classic.circular_ladder_graph.html">networkx.generators.classic.circular_ladder_graph</a></li>
@@ -422,52 +423,55 @@ in this module return a Graph class (i.e. a simple, undirected graph).</p>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.barbell_graph.html#networkx.generators.classic.barbell_graph" title="networkx.generators.classic.barbell_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">barbell_graph</span></code></a>(m1,&nbsp;m2[,&nbsp;create_using])</td>
 <td>Returns the Barbell Graph: two complete graphs connected by a path.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.complete_graph.html#networkx.generators.classic.complete_graph" title="networkx.generators.classic.complete_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complete_graph</span></code></a>(n[,&nbsp;create_using])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.binomial_tree.html#networkx.generators.classic.binomial_tree" title="networkx.generators.classic.binomial_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">binomial_tree</span></code></a>(n)</td>
+<td>Returns the Binomial Tree of order n.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.complete_graph.html#networkx.generators.classic.complete_graph" title="networkx.generators.classic.complete_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complete_graph</span></code></a>(n[,&nbsp;create_using])</td>
 <td>Return the complete graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">K_n</span></code> with n nodes.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.complete_multipartite_graph.html#networkx.generators.classic.complete_multipartite_graph" title="networkx.generators.classic.complete_multipartite_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complete_multipartite_graph</span></code></a>(*subset_sizes)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.complete_multipartite_graph.html#networkx.generators.classic.complete_multipartite_graph" title="networkx.generators.classic.complete_multipartite_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complete_multipartite_graph</span></code></a>(*subset_sizes)</td>
 <td>Returns the complete multipartite graph with the specified subset sizes.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.circular_ladder_graph.html#networkx.generators.classic.circular_ladder_graph" title="networkx.generators.classic.circular_ladder_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circular_ladder_graph</span></code></a>(n[,&nbsp;create_using])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.circular_ladder_graph.html#networkx.generators.classic.circular_ladder_graph" title="networkx.generators.classic.circular_ladder_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circular_ladder_graph</span></code></a>(n[,&nbsp;create_using])</td>
 <td>Returns the circular ladder graph <span class="math notranslate nohighlight">\(CL_n\)</span> of length n.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.circulant_graph.html#networkx.generators.classic.circulant_graph" title="networkx.generators.classic.circulant_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circulant_graph</span></code></a>(n,&nbsp;offsets[,&nbsp;create_using])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.circulant_graph.html#networkx.generators.classic.circulant_graph" title="networkx.generators.classic.circulant_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circulant_graph</span></code></a>(n,&nbsp;offsets[,&nbsp;create_using])</td>
 <td>Generates the circulant graph <span class="math notranslate nohighlight">\(Ci_n(x_1, x_2, ..., x_m)\)</span> with <span class="math notranslate nohighlight">\(n\)</span> vertices.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.cycle_graph.html#networkx.generators.classic.cycle_graph" title="networkx.generators.classic.cycle_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cycle_graph</span></code></a>(n[,&nbsp;create_using])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.cycle_graph.html#networkx.generators.classic.cycle_graph" title="networkx.generators.classic.cycle_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cycle_graph</span></code></a>(n[,&nbsp;create_using])</td>
 <td>Returns the cycle graph <span class="math notranslate nohighlight">\(C_n\)</span> of cyclically connected nodes.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.dorogovtsev_goltsev_mendes_graph.html#networkx.generators.classic.dorogovtsev_goltsev_mendes_graph" title="networkx.generators.classic.dorogovtsev_goltsev_mendes_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dorogovtsev_goltsev_mendes_graph</span></code></a>(n[,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.dorogovtsev_goltsev_mendes_graph.html#networkx.generators.classic.dorogovtsev_goltsev_mendes_graph" title="networkx.generators.classic.dorogovtsev_goltsev_mendes_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dorogovtsev_goltsev_mendes_graph</span></code></a>(n[,&nbsp;…])</td>
 <td>Returns the hierarchically constructed Dorogovtsev-Goltsev-Mendes graph.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.empty_graph.html#networkx.generators.classic.empty_graph" title="networkx.generators.classic.empty_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">empty_graph</span></code></a>([n,&nbsp;create_using,&nbsp;default])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.empty_graph.html#networkx.generators.classic.empty_graph" title="networkx.generators.classic.empty_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">empty_graph</span></code></a>([n,&nbsp;create_using,&nbsp;default])</td>
 <td>Returns the empty graph with n nodes and zero edges.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.full_rary_tree.html#networkx.generators.classic.full_rary_tree" title="networkx.generators.classic.full_rary_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full_rary_tree</span></code></a>(r,&nbsp;n[,&nbsp;create_using])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.full_rary_tree.html#networkx.generators.classic.full_rary_tree" title="networkx.generators.classic.full_rary_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full_rary_tree</span></code></a>(r,&nbsp;n[,&nbsp;create_using])</td>
 <td>Creates a full r-ary tree of n vertices.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.ladder_graph.html#networkx.generators.classic.ladder_graph" title="networkx.generators.classic.ladder_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ladder_graph</span></code></a>(n[,&nbsp;create_using])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.ladder_graph.html#networkx.generators.classic.ladder_graph" title="networkx.generators.classic.ladder_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ladder_graph</span></code></a>(n[,&nbsp;create_using])</td>
 <td>Returns the Ladder graph of length n.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.lollipop_graph.html#networkx.generators.classic.lollipop_graph" title="networkx.generators.classic.lollipop_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lollipop_graph</span></code></a>(m,&nbsp;n[,&nbsp;create_using])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.lollipop_graph.html#networkx.generators.classic.lollipop_graph" title="networkx.generators.classic.lollipop_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lollipop_graph</span></code></a>(m,&nbsp;n[,&nbsp;create_using])</td>
 <td>Returns the Lollipop Graph; <code class="xref py py-obj docutils literal notranslate"><span class="pre">K_m</span></code> connected to <code class="xref py py-obj docutils literal notranslate"><span class="pre">P_n</span></code>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.null_graph.html#networkx.generators.classic.null_graph" title="networkx.generators.classic.null_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">null_graph</span></code></a>([create_using])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.null_graph.html#networkx.generators.classic.null_graph" title="networkx.generators.classic.null_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">null_graph</span></code></a>([create_using])</td>
 <td>Returns the Null graph with no nodes or edges.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.path_graph.html#networkx.generators.classic.path_graph" title="networkx.generators.classic.path_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_graph</span></code></a>(n[,&nbsp;create_using])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.path_graph.html#networkx.generators.classic.path_graph" title="networkx.generators.classic.path_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_graph</span></code></a>(n[,&nbsp;create_using])</td>
 <td>Returns the Path graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">P_n</span></code> of linearly connected nodes.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.star_graph.html#networkx.generators.classic.star_graph" title="networkx.generators.classic.star_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">star_graph</span></code></a>(n[,&nbsp;create_using])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.star_graph.html#networkx.generators.classic.star_graph" title="networkx.generators.classic.star_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">star_graph</span></code></a>(n[,&nbsp;create_using])</td>
 <td>Return the star graph</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.trivial_graph.html#networkx.generators.classic.trivial_graph" title="networkx.generators.classic.trivial_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trivial_graph</span></code></a>([create_using])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.trivial_graph.html#networkx.generators.classic.trivial_graph" title="networkx.generators.classic.trivial_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trivial_graph</span></code></a>([create_using])</td>
 <td>Return the Trivial graph with one node (with label 0) and no edges.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.turan_graph.html#networkx.generators.classic.turan_graph" title="networkx.generators.classic.turan_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">turan_graph</span></code></a>(n,&nbsp;r)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.turan_graph.html#networkx.generators.classic.turan_graph" title="networkx.generators.classic.turan_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">turan_graph</span></code></a>(n,&nbsp;r)</td>
 <td>Return the Turan Graph</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.classic.wheel_graph.html#networkx.generators.classic.wheel_graph" title="networkx.generators.classic.wheel_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wheel_graph</span></code></a>(n[,&nbsp;create_using])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.classic.wheel_graph.html#networkx.generators.classic.wheel_graph" title="networkx.generators.classic.wheel_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wheel_graph</span></code></a>(n[,&nbsp;create_using])</td>
 <td>Return the wheel graph</td>
 </tr>
 </tbody>
