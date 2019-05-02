@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190502112150 documentation</title>
+  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190502115336 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190502112150 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190502115336 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190502112150
+                2.4rc1.dev_20190502115336
               </div>
             
           
@@ -253,10 +253,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.generators.community">Community</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.caveman_graph.html">networkx.generators.community.caveman_graph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.connected_caveman_graph.html">networkx.generators.community.connected_caveman_graph</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.relaxed_caveman_graph.html">networkx.generators.community.relaxed_caveman_graph</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.random_partition_graph.html">networkx.generators.community.random_partition_graph</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.planted_partition_graph.html">networkx.generators.community.planted_partition_graph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.gaussian_random_partition_graph.html">networkx.generators.community.gaussian_random_partition_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.LFR_benchmark_graph.html">networkx.generators.community.LFR_benchmark_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.planted_partition_graph.html">networkx.generators.community.planted_partition_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.random_partition_graph.html">networkx.generators.community.random_partition_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.relaxed_caveman_graph.html">networkx.generators.community.relaxed_caveman_graph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.ring_of_cliques.html">networkx.generators.community.ring_of_cliques</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.stochastic_block_model.html">networkx.generators.community.stochastic_block_model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.community.windmill_graph.html">networkx.generators.community.windmill_graph</a></li>
@@ -915,25 +916,28 @@ graph.</p>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.community.connected_caveman_graph.html#networkx.generators.community.connected_caveman_graph" title="networkx.generators.community.connected_caveman_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connected_caveman_graph</span></code></a>(l,&nbsp;k)</td>
 <td>Returns a connected caveman graph of <code class="xref py py-obj docutils literal notranslate"><span class="pre">l</span></code> cliques of size <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.community.relaxed_caveman_graph.html#networkx.generators.community.relaxed_caveman_graph" title="networkx.generators.community.relaxed_caveman_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relaxed_caveman_graph</span></code></a>(l,&nbsp;k,&nbsp;p[,&nbsp;seed])</td>
-<td>Returns a relaxed caveman graph.</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.community.gaussian_random_partition_graph.html#networkx.generators.community.gaussian_random_partition_graph" title="networkx.generators.community.gaussian_random_partition_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gaussian_random_partition_graph</span></code></a>(n,&nbsp;s,&nbsp;v,&nbsp;…)</td>
+<td>Generate a Gaussian random partition graph.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.community.random_partition_graph.html#networkx.generators.community.random_partition_graph" title="networkx.generators.community.random_partition_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_partition_graph</span></code></a>(sizes,&nbsp;p_in,&nbsp;p_out[,&nbsp;…])</td>
-<td>Returns the random partition graph with a partition of sizes.</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.community.LFR_benchmark_graph.html#networkx.generators.community.LFR_benchmark_graph" title="networkx.generators.community.LFR_benchmark_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LFR_benchmark_graph</span></code></a>(n,&nbsp;tau1,&nbsp;tau2,&nbsp;mu[,&nbsp;…])</td>
+<td>Returns the LFR benchmark graph.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.community.planted_partition_graph.html#networkx.generators.community.planted_partition_graph" title="networkx.generators.community.planted_partition_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">planted_partition_graph</span></code></a>(l,&nbsp;k,&nbsp;p_in,&nbsp;p_out[,&nbsp;…])</td>
 <td>Returns the planted l-partition graph.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.community.gaussian_random_partition_graph.html#networkx.generators.community.gaussian_random_partition_graph" title="networkx.generators.community.gaussian_random_partition_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gaussian_random_partition_graph</span></code></a>(n,&nbsp;s,&nbsp;v,&nbsp;…)</td>
-<td>Generate a Gaussian random partition graph.</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.community.random_partition_graph.html#networkx.generators.community.random_partition_graph" title="networkx.generators.community.random_partition_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_partition_graph</span></code></a>(sizes,&nbsp;p_in,&nbsp;p_out[,&nbsp;…])</td>
+<td>Returns the random partition graph with a partition of sizes.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.community.ring_of_cliques.html#networkx.generators.community.ring_of_cliques" title="networkx.generators.community.ring_of_cliques"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ring_of_cliques</span></code></a>(num_cliques,&nbsp;clique_size)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.community.relaxed_caveman_graph.html#networkx.generators.community.relaxed_caveman_graph" title="networkx.generators.community.relaxed_caveman_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relaxed_caveman_graph</span></code></a>(l,&nbsp;k,&nbsp;p[,&nbsp;seed])</td>
+<td>Returns a relaxed caveman graph.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.community.ring_of_cliques.html#networkx.generators.community.ring_of_cliques" title="networkx.generators.community.ring_of_cliques"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ring_of_cliques</span></code></a>(num_cliques,&nbsp;clique_size)</td>
 <td>Defines a “ring of cliques” graph.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.community.stochastic_block_model.html#networkx.generators.community.stochastic_block_model" title="networkx.generators.community.stochastic_block_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stochastic_block_model</span></code></a>(sizes,&nbsp;p[,&nbsp;nodelist,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.community.stochastic_block_model.html#networkx.generators.community.stochastic_block_model" title="networkx.generators.community.stochastic_block_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stochastic_block_model</span></code></a>(sizes,&nbsp;p[,&nbsp;nodelist,&nbsp;…])</td>
 <td>Returns a stochastic block model graph.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.community.windmill_graph.html#networkx.generators.community.windmill_graph" title="networkx.generators.community.windmill_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">windmill_graph</span></code></a>(n,&nbsp;k)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.community.windmill_graph.html#networkx.generators.community.windmill_graph" title="networkx.generators.community.windmill_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">windmill_graph</span></code></a>(n,&nbsp;k)</td>
 <td>Generate a windmill graph.</td>
 </tr>
 </tbody>
