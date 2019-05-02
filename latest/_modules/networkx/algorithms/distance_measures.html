@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.distance_measures &mdash; NetworkX 2.4rc1.dev20190502115336 documentation</title>
+  <title>networkx.algorithms.distance_measures &mdash; NetworkX 2.4rc1.dev20190502140614 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190502115336 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190502140614 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190502115336
+                2.4rc1.dev_20190502140614
               </div>
             
           
@@ -167,6 +167,7 @@
 <span class="c1">#    Aric Hagberg &lt;hagberg@lanl.gov&gt;</span>
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
+<span class="c1">#    William Schwartz &lt;wkschwartz@gmail.com&gt;</span>
 <span class="c1">#    All rights reserved.</span>
 <span class="c1">#    BSD license.</span>
 <span class="c1">#</span>
@@ -176,7 +177,7 @@
 <span class="kn">import</span> <span class="nn">networkx</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;extrema_bounding&#39;</span><span class="p">,</span> <span class="s1">&#39;eccentricity&#39;</span><span class="p">,</span> <span class="s1">&#39;diameter&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;radius&#39;</span><span class="p">,</span> <span class="s1">&#39;periphery&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">]</span>
+           <span class="s1">&#39;radius&#39;</span><span class="p">,</span> <span class="s1">&#39;periphery&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="s1">&#39;barycenter&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="extrema_bounding"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.extrema_bounding.html#networkx.algorithms.distance_measures.extrema_bounding">[docs]</a><span class="k">def</span> <span class="nf">extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;diameter&quot;</span><span class="p">):</span>
@@ -458,6 +459,11 @@
 <span class="sd">    -------</span>
 <span class="sd">    p : list</span>
 <span class="sd">       List of nodes in periphery</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    barycenter</span>
+<span class="sd">    center</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">usebounds</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">e</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;periphery&quot;</span><span class="p">)</span>
@@ -510,6 +516,11 @@
 <span class="sd">    -------</span>
 <span class="sd">    c : list</span>
 <span class="sd">       List of nodes in center</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    barycenter</span>
+<span class="sd">    periphery</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">usebounds</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">e</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
@@ -518,6 +529,77 @@
     <span class="n">radius</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
     <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">e</span> <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="n">radius</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">p</span></div>
+
+
+<div class="viewcode-block" id="barycenter"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.barycenter.html#networkx.algorithms.distance_measures.barycenter">[docs]</a><span class="k">def</span> <span class="nf">barycenter</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sp</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Calculate barycenter of a connected graph, optionally with edge weights.</span>
+
+<span class="sd">    The :dfn:`barycenter` a</span>
+<span class="sd">    :func:`connected &lt;networkx.algorithms.components.is_connected&gt;` graph</span>
+<span class="sd">    :math:`G` is the subgraph induced by the set of its nodes :math:`v`</span>
+<span class="sd">    minimizing the objective function</span>
+
+<span class="sd">    .. math::</span>
+
+<span class="sd">        \sum_{u \in V(G)} d_G(u, v),</span>
+
+<span class="sd">    where :math:`d_G` is the (possibly weighted) :func:`path length</span>
+<span class="sd">    &lt;networkx.algorithms.shortest_paths.generic.shortest_path_length&gt;`.</span>
+<span class="sd">    The barycenter is also called the :dfn:`median`. See [West01]_, p. 78.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : :class:`networkx.Graph`</span>
+<span class="sd">        The connected graph :math:`G`.</span>
+<span class="sd">    weight : :class:`str`, optional</span>
+<span class="sd">        Passed through to</span>
+<span class="sd">        :func:`~networkx.algorithms.shortest_paths.generic.shortest_path_length`.</span>
+<span class="sd">    attr : :class:`str`, optional</span>
+<span class="sd">        If given, write the value of the objective function to each node&#39;s</span>
+<span class="sd">        `attr` attribute. Otherwise do not store the value.</span>
+<span class="sd">    sp : dict of dicts, optional</span>
+<span class="sd">       All pairs shortest path lengths as a dictionary of dictionaries</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    :class:`list`</span>
+<span class="sd">        Nodes of `G` that induce the barycenter of `G`.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    :exc:`networkx.NetworkXNoPath`</span>
+<span class="sd">        If `G` is disconnected. `G` may appear disconnected to</span>
+<span class="sd">        :func:`barycenter` if `sp` is given but is missing shortest path</span>
+<span class="sd">        lengths for any pairs.</span>
+<span class="sd">    :exc:`ValueError`</span>
+<span class="sd">        If `sp` and `weight` are both given.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    center</span>
+<span class="sd">    periphery</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">sp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">sp</span> <span class="o">=</span> <span class="n">networkx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot use both sp, weight arguments together&#39;</span><span class="p">)</span>
+    <span class="n">smallest</span><span class="p">,</span> <span class="n">barycenter_vertices</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">),</span> <span class="p">[],</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">dists</span> <span class="ow">in</span> <span class="n">sp</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dists</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">networkx</span><span class="o">.</span><span class="n">NetworkXNoPath</span><span class="p">(</span>
+                <span class="p">(</span><span class="s2">&quot;Input graph </span><span class="si">%r</span><span class="s2"> is disconnected, so every induced subgraph &quot;</span>
+                 <span class="s2">&quot;has infinite barycentricity.&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">G</span><span class="p">)</span>
+        <span class="n">barycentricity</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dists</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">attr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">attr</span><span class="p">]</span> <span class="o">=</span> <span class="n">barycentricity</span>
+        <span class="k">if</span> <span class="n">barycentricity</span> <span class="o">&lt;</span> <span class="n">smallest</span><span class="p">:</span>
+            <span class="n">smallest</span> <span class="o">=</span> <span class="n">barycentricity</span>
+            <span class="n">barycenter_vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">barycentricity</span> <span class="o">==</span> <span class="n">smallest</span><span class="p">:</span>
+            <span class="n">barycenter_vertices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">barycenter_vertices</span></div>
 </pre></div>
 
            </div>
