@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.linalg.spectrum &mdash; NetworkX 2.4rc1.dev20190502140614 documentation</title>
+  <title>networkx.linalg.spectrum &mdash; NetworkX 2.4rc1.dev20190502230725 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190502140614 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190502230725 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190502140614
+                2.4rc1.dev_20190502230725
               </div>
             
           
@@ -178,7 +178,7 @@
                         <span class="s1">&#39;Jean-Gabriel Young (jean.gabriel.young@gmail.com)&#39;</span><span class="p">])</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;laplacian_spectrum&#39;</span><span class="p">,</span> <span class="s1">&#39;adjacency_spectrum&#39;</span><span class="p">,</span> <span class="s1">&#39;modularity_spectrum&#39;</span><span class="p">,</span> 
-   <span class="s1">&#39;normalized_laplacian_spectrum&#39;</span><span class="p">]</span>
+   <span class="s1">&#39;normalized_laplacian_spectrum&#39;</span><span class="p">,</span> <span class="s1">&#39;bethe_hessian_spectrum&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="laplacian_spectrum"><a class="viewcode-back" href="../../../reference/generated/networkx.linalg.spectrum.laplacian_spectrum.html#networkx.linalg.spectrum.laplacian_spectrum">[docs]</a><span class="k">def</span> <span class="nf">laplacian_spectrum</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
@@ -299,6 +299,36 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">eigvals</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">modularity_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">))</span></div>
 
+
+<div class="viewcode-block" id="bethe_hessian_spectrum"><a class="viewcode-back" href="../../../reference/generated/networkx.linalg.spectrum.bethe_hessian_spectrum.html#networkx.linalg.spectrum.bethe_hessian_spectrum">[docs]</a><span class="k">def</span> <span class="nf">bethe_hessian_spectrum</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns eigenvalues of the Bethe Hessian matrix of G.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : Graph</span>
+<span class="sd">       A NetworkX Graph or DiGraph</span>
+
+<span class="sd">    r : float</span>
+<span class="sd">       Regularizer parameter</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    evals : NumPy array</span>
+<span class="sd">      Eigenvalues</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    bethe_hessian_matrix</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] A. Saade, F. Krzakala and L. Zdeborová</span>
+<span class="sd">      &quot;Spectral clustering of graphs with the bethe hessian&quot;,</span>
+<span class="sd">       Advances in Neural Information Processing Systems. 2014.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="k">import</span> <span class="n">eigvalsh</span>
+    <span class="k">return</span> <span class="n">eigvalsh</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">bethe_hessian_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span></div>
+ 
 <span class="c1"># fixture for nose tests</span>
 
 
