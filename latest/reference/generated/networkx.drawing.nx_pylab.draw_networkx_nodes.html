@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab.draw_networkx_nodes &mdash; NetworkX 2.4rc1.dev20190502231912 documentation</title>
+  <title>networkx.drawing.nx_pylab.draw_networkx_nodes &mdash; NetworkX 2.4rc1.dev20190503010653 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190502231912 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190503010653 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190502231912
+                2.4rc1.dev_20190503010653
               </div>
             
           
@@ -209,7 +209,7 @@
 <h1>networkx.drawing.nx_pylab.draw_networkx_nodes<a class="headerlink" href="#networkx-drawing-nx-pylab-draw-networkx-nodes" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pylab.draw_networkx_nodes">
-<code class="descname">draw_networkx_nodes</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>nodelist=None</em>, <em>node_size=300</em>, <em>node_color='#1f78b4'</em>, <em>node_shape='o'</em>, <em>alpha=1.0</em>, <em>cmap=None</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>ax=None</em>, <em>linewidths=None</em>, <em>edgecolors=None</em>, <em>label=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_nodes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">draw_networkx_nodes</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>nodelist=None</em>, <em>node_size=300</em>, <em>node_color='#1f78b4'</em>, <em>node_shape='o'</em>, <em>alpha=None</em>, <em>cmap=None</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>ax=None</em>, <em>linewidths=None</em>, <em>edgecolors=None</em>, <em>label=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the nodes of the graph G.</p>
 <p>This draws only the nodes of the graph G.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -224,14 +224,14 @@ Positions should be sequences of length 2.</li>
 <li><strong>nodelist</strong> (<em>list, optional</em>) – Draw only specified nodes (default G.nodes())</li>
 <li><strong>node_size</strong> (<em>scalar or array</em>) – Size of nodes (default=300).  If an array is specified it must be the
 same length as nodelist.</li>
-<li><strong>node_color</strong> (<em>color string, or array of floats</em>) – Node color. Can be a single color format string (default=’#1f78b4’),
-or a  sequence of colors with the same length as nodelist.
-If numeric values are specified they will be mapped to
-colors using the cmap and vmin,vmax parameters.  See
+<li><strong>node_color</strong> (<em>color or array of colors (default=’#1f78b4’)</em>) – Node color. Can be a single color or a sequence of colors with the same
+length as nodelist. Color can be string, or rgb (or rgba) tuple of
+floats from 0-1. If numeric values are specified they will be
+mapped to colors using the cmap and vmin,vmax parameters. See
 matplotlib.scatter for more details.</li>
 <li><strong>node_shape</strong> (<em>string</em>) – The shape of the node.  Specification is as matplotlib.scatter
 marker, one of ‘so^&gt;v&lt;dph8’ (default=’o’).</li>
-<li><strong>alpha</strong> (<em>float or array of floats</em>) – The node transparency.  This can be a single alpha value (default=1.0),
+<li><strong>alpha</strong> (<em>float or array of floats</em>) – The node transparency.  This can be a single alpha value (default=None),
 in which case it will be applied to all the nodes of color. Otherwise,
 if it is an array, the elements of alpha will be applied to the colors
 in order (cycling through alpha multiple times if necessary).</li>
@@ -288,7 +288,7 @@ in order (cycling through alpha multiple times if necessary).</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on May 02, 2019.
+        Last updated on May 03, 2019.
       </span>
 
     </p>

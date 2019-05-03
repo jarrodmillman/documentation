@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab.draw_networkx_edges &mdash; NetworkX 2.4rc1.dev20190502231912 documentation</title>
+  <title>networkx.drawing.nx_pylab.draw_networkx_edges &mdash; NetworkX 2.4rc1.dev20190503010653 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190502231912 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190503010653 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190502231912
+                2.4rc1.dev_20190503010653
               </div>
             
           
@@ -209,7 +209,7 @@
 <h1>networkx.drawing.nx_pylab.draw_networkx_edges<a class="headerlink" href="#networkx-drawing-nx-pylab-draw-networkx-edges" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pylab.draw_networkx_edges">
-<code class="descname">draw_networkx_edges</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>edgelist=None</em>, <em>width=1.0</em>, <em>edge_color='k'</em>, <em>style='solid'</em>, <em>alpha=1.0</em>, <em>arrowstyle='-|&gt;'</em>, <em>arrowsize=10</em>, <em>edge_cmap=None</em>, <em>edge_vmin=None</em>, <em>edge_vmax=None</em>, <em>ax=None</em>, <em>arrows=True</em>, <em>label=None</em>, <em>node_size=300</em>, <em>nodelist=None</em>, <em>node_shape='o'</em>, <em>connectionstyle=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edges" title="Permalink to this definition">¶</a></dt>
+<code class="descname">draw_networkx_edges</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>edgelist=None</em>, <em>width=1.0</em>, <em>edge_color='k'</em>, <em>style='solid'</em>, <em>alpha=None</em>, <em>arrowstyle='-|&gt;'</em>, <em>arrowsize=10</em>, <em>edge_cmap=None</em>, <em>edge_vmin=None</em>, <em>edge_vmax=None</em>, <em>ax=None</em>, <em>arrows=True</em>, <em>label=None</em>, <em>node_size=300</em>, <em>nodelist=None</em>, <em>node_shape='o'</em>, <em>connectionstyle=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the edges of the graph G.</p>
 <p>This draws only the edges of the graph G.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -222,12 +222,12 @@
 Positions should be sequences of length 2.</li>
 <li><strong>edgelist</strong> (<em>collection of edge tuples</em>) – Draw only specified edges(default=G.edges())</li>
 <li><strong>width</strong> (<em>float, or array of floats</em>) – Line width of edges (default=1.0)</li>
-<li><strong>edge_color</strong> (<em>color string, or array of floats</em>) – Edge color. Can be a single color format string (default=’r’),
-or a sequence of colors with the same length as edgelist.
-If numeric values are specified they will be mapped to
-colors using the edge_cmap and edge_vmin,edge_vmax parameters.</li>
+<li><strong>edge_color</strong> (<em>color or array of colors (default=’k’)</em>) – Edge color. Can be a single color or a sequence of colors with the same
+length as edgelist. Color can be string, or rgb (or rgba) tuple of
+floats from 0-1. If numeric values are specified they will be
+mapped to colors using the edge_cmap and edge_vmin,edge_vmax parameters.</li>
 <li><strong>style</strong> (<em>string</em>) – Edge line style (default=’solid’) (solid|dashed|dotted,dashdot)</li>
-<li><strong>alpha</strong> (<em>float</em>) – The edge transparency (default=1.0)</li>
+<li><strong>alpha</strong> (<em>float</em>) – The edge transparency (default=None)</li>
 <li><strong>edge_ cmap</strong> (<em>Matplotlib colormap</em>) – Colormap for mapping intensities of edges (default=None)</li>
 <li><strong>edge_vmin,edge_vmax</strong> (<em>floats</em>) – Minimum and maximum for edge colormap scaling (default=None)</li>
 <li><strong>ax</strong> (<em>Matplotlib Axes object, optional</em>) – Draw the graph in the specified Matplotlib axes.</li>
@@ -306,7 +306,7 @@ keyword argument; arrows are drawn considering the size of nodes.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on May 02, 2019.
+        Last updated on May 03, 2019.
       </span>
 
     </p>

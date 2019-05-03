@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab.draw_networkx_edge_labels &mdash; NetworkX 2.4rc1.dev20190502231912 documentation</title>
+  <title>networkx.drawing.nx_pylab.draw_networkx_edge_labels &mdash; NetworkX 2.4rc1.dev20190503010653 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190502231912 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190503010653 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190502231912
+                2.4rc1.dev_20190503010653
               </div>
             
           
@@ -209,7 +209,7 @@
 <h1>networkx.drawing.nx_pylab.draw_networkx_edge_labels<a class="headerlink" href="#networkx-drawing-nx-pylab-draw-networkx-edge-labels" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pylab.draw_networkx_edge_labels">
-<code class="descname">draw_networkx_edge_labels</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>edge_labels=None</em>, <em>label_pos=0.5</em>, <em>font_size=10</em>, <em>font_color='k'</em>, <em>font_family='sans-serif'</em>, <em>font_weight='normal'</em>, <em>alpha=1.0</em>, <em>bbox=None</em>, <em>ax=None</em>, <em>rotate=True</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edge_labels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edge_labels" title="Permalink to this definition">¶</a></dt>
+<code class="descname">draw_networkx_edge_labels</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>edge_labels=None</em>, <em>label_pos=0.5</em>, <em>font_size=10</em>, <em>font_color='k'</em>, <em>font_family='sans-serif'</em>, <em>font_weight='normal'</em>, <em>alpha=None</em>, <em>bbox=None</em>, <em>ax=None</em>, <em>rotate=True</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edge_labels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edge_labels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw edge labels.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -220,7 +220,7 @@
 <li><strong>pos</strong> (<em>dictionary</em>) – A dictionary with nodes as keys and positions as values.
 Positions should be sequences of length 2.</li>
 <li><strong>ax</strong> (<em>Matplotlib Axes object, optional</em>) – Draw the graph in the specified Matplotlib axes.</li>
-<li><strong>alpha</strong> (<em>float</em>) – The text transparency (default=1.0)</li>
+<li><strong>alpha</strong> (<em>float or None</em>) – The text transparency (default=None)</li>
 <li><strong>edge_labels</strong> (<em>dictionary</em>) – Edge labels in a dictionary keyed by edge two-tuple of text
 labels (default=None). Only labels for the keys in the dictionary
 are drawn.</li>
@@ -279,7 +279,7 @@ are drawn.</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on May 02, 2019.
+        Last updated on May 03, 2019.
       </span>
 
     </p>
