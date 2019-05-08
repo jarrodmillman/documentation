@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.link_prediction.adamic_adar_index &mdash; NetworkX 2.4rc1.dev20190506225237 documentation</title>
+  <title>networkx.algorithms.link_prediction.adamic_adar_index &mdash; NetworkX 2.4rc1.dev20190508134217 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190506225237 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190508134217 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190506225237
+                2.4rc1.dev_20190508134217
               </div>
             
           
@@ -266,7 +266,9 @@
 <p>Adamic-Adar index of <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> is defined as</p>
 <div class="math notranslate nohighlight">
 \[\sum_{w \in \Gamma(u) \cap \Gamma(v)} \frac{1}{\log |\Gamma(w)|}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\Gamma(u)\)</span> denotes the set of neighbors of <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\Gamma(u)\)</span> denotes the set of neighbors of <span class="math notranslate nohighlight">\(u\)</span>.
+This index leads to zero-division for nodes only connected via self-loops.
+It is intended to be used when no self-loops are present.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -336,7 +338,7 @@ The Link Prediction Problem for Social Networks (2004).
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on May 06, 2019.
+        Last updated on May 08, 2019.
       </span>
 
     </p>
