@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.similarity &mdash; NetworkX 2.4rc1.dev20190509233205 documentation</title>
+  <title>networkx.algorithms.similarity &mdash; NetworkX 2.4rc1.dev20190509234259 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190509233205 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190509234259 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190509233205
+                2.4rc1.dev_20190509234259
               </div>
             
           
@@ -185,7 +185,8 @@
 <span class="sd">At the same time, I encourage capable people to investigate</span>
 <span class="sd">alternative GED algorithms, in order to improve the choices available.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">product</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="o">*</span>
@@ -197,7 +198,9 @@
     <span class="s1">&#39;graph_edit_distance&#39;</span><span class="p">,</span>
     <span class="s1">&#39;optimal_edit_paths&#39;</span><span class="p">,</span>
     <span class="s1">&#39;optimize_graph_edit_distance&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;optimize_edit_paths&#39;</span>
+    <span class="s1">&#39;optimize_edit_paths&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;simrank_similarity&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;simrank_similarity_numpy&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 
 
@@ -1169,6 +1172,246 @@
         <span class="c1">#print(vertex_path, edge_path, cost, file = sys.stderr)</span>
         <span class="c1">#assert cost == maxcost.value</span>
         <span class="k">yield</span> <span class="nb">list</span><span class="p">(</span><span class="n">vertex_path</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">edge_path</span><span class="p">),</span> <span class="n">cost</span></div>
+
+
+<span class="k">def</span> <span class="nf">_is_close</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">atolerance</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rtolerance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Determines whether two adjacency matrices are within</span>
+<span class="sd">    a provided tolerance.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    d1 : dict</span>
+<span class="sd">        Adjacency dictionary</span>
+<span class="sd">    </span>
+<span class="sd">    d2 : dict</span>
+<span class="sd">        Adjacency dictionary</span>
+<span class="sd">    </span>
+<span class="sd">    atolerance : float</span>
+<span class="sd">        Some scalar tolerance value to determine closeness</span>
+<span class="sd">    </span>
+<span class="sd">    rtolerance : float</span>
+<span class="sd">        A scalar tolerance value that will be some proportion</span>
+<span class="sd">        of ``d2``&#39;s value</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    closeness : bool</span>
+<span class="sd">        If all of the nodes within ``d1`` and ``d2`` are within</span>
+<span class="sd">        a predefined tolerance, they are considered &quot;close&quot; and</span>
+<span class="sd">        this method will return True. Otherwise, this method will</span>
+<span class="sd">        return False.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Pre-condition: d1 and d2 have the same keys at each level if they</span>
+    <span class="c1"># are dictionaries.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">d1</span> <span class="o">-</span> <span class="n">d2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">atolerance</span> <span class="o">+</span> <span class="n">rtolerance</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">_is_close</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">],</span> <span class="n">d2</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">])</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d1</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">d1</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="simrank_similarity"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.similarity.simrank_similarity.html#networkx.algorithms.similarity.simrank_similarity">[docs]</a><span class="k">def</span> <span class="nf">simrank_similarity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">importance_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+                       <span class="n">max_iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the SimRank similarity of nodes in the graph ``G``.</span>
+
+<span class="sd">    SimRank is a similarity metric that says &quot;two objects are considered</span>
+<span class="sd">    to be similar if they are referenced by similar objects.&quot; [1]_.</span>
+<span class="sd">    </span>
+<span class="sd">    The pseudo-code definition from the paper is:</span>
+
+<span class="sd">        def simrank(G, u, v):</span>
+<span class="sd">            in_neighbors_u = G.predecessors(u)</span>
+<span class="sd">            in_neighbors_v = G.predecessors(v)</span>
+<span class="sd">            scale = C / (len(in_neighbors_u) * len(in_neighbors_v))</span>
+<span class="sd">            return scale * sum(simrank(G, w, x)</span>
+<span class="sd">                               for w, x in product(in_neighbors_u,</span>
+<span class="sd">                                                   in_neighbors_v))</span>
+<span class="sd">    </span>
+<span class="sd">    where ``G`` is the graph, ``u`` is the source, ``v`` is the target,</span>
+<span class="sd">    and ``C`` is a float decay or importance factor between 0 and 1.</span>
+<span class="sd">    </span>
+<span class="sd">    The SimRank algorithm for determining node similarity is defined in</span>
+<span class="sd">    [2]_.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX graph</span>
+<span class="sd">        A NetworkX graph</span>
+
+<span class="sd">    source : node</span>
+<span class="sd">        If this is specified, the returned dictionary maps each node</span>
+<span class="sd">        ``v`` in the graph to the similarity between ``source`` and</span>
+<span class="sd">        ``v``.</span>
+
+<span class="sd">    target : node</span>
+<span class="sd">        If both ``source`` and ``target`` are specified, the similarity</span>
+<span class="sd">        value between ``source`` and ``target`` is returned. If</span>
+<span class="sd">        ``target`` is specified but ``source`` is not, this argument is</span>
+<span class="sd">        ignored.</span>
+
+<span class="sd">    importance_factor : float</span>
+<span class="sd">        The relative importance of indirect neighbors with respect to</span>
+<span class="sd">        direct neighbors.</span>
+
+<span class="sd">    max_iterations : integer</span>
+<span class="sd">        Maximum number of iterations.</span>
+
+<span class="sd">    tolerance : float</span>
+<span class="sd">        Error tolerance used to check convergence. When an iteration of</span>
+<span class="sd">        the algorithm finds that no similarity value changes more than</span>
+<span class="sd">        this amount, the algorithm halts.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    similarity : dictionary or float</span>
+<span class="sd">        If ``source`` and ``target`` are both ``None``, this returns a</span>
+<span class="sd">        dictionary of dictionaries, where keys are node pairs and value</span>
+<span class="sd">        are similarity of the pair of nodes.</span>
+
+<span class="sd">        If ``source`` is not ``None`` but ``target`` is, this returns a</span>
+<span class="sd">        dictionary mapping node to the similarity of ``source`` and that</span>
+<span class="sd">        node.</span>
+
+<span class="sd">        If neither ``source`` nor ``target`` is ``None``, this returns</span>
+<span class="sd">        the similarity value for the given pair of nodes.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    If the nodes of the graph are numbered from zero to *n - 1*, where *n*</span>
+<span class="sd">    is the number of nodes in the graph, you can create a SimRank matrix</span>
+<span class="sd">    from the return value of this function where the node numbers are</span>
+<span class="sd">    the row and column indices of the matrix::</span>
+
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from numpy import array</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.cycle_graph(4)</span>
+<span class="sd">        &gt;&gt;&gt; sim = nx.simrank_similarity(G)</span>
+<span class="sd">        &gt;&gt;&gt; lol = [[sim[u][v] for v in sorted(sim[u])] for u in sorted(sim)]</span>
+<span class="sd">        &gt;&gt;&gt; sim_array = array(lol)</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] https://en.wikipedia.org/wiki/SimRank</span>
+<span class="sd">    .. [2] G. Jeh and J. Widom.</span>
+<span class="sd">           &quot;SimRank: a measure of structural-context similarity&quot;,</span>
+<span class="sd">           In KDD&#39;02: Proceedings of the Eighth ACM SIGKDD</span>
+<span class="sd">           International Conference on Knowledge Discovery and Data Mining,</span>
+<span class="sd">           pp. 538--543. ACM Press, 2002.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">prevsim</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># build up our similarity adjacency dictionary output</span>
+    <span class="n">newsim</span> <span class="o">=</span> <span class="p">{</span><span class="n">u</span><span class="p">:</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">v</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
+
+    <span class="c1"># These functions compute the update to the similarity value of the nodes</span>
+    <span class="c1"># `u` and `v` with respect to the previous similarity values.</span>
+    <span class="n">avg_sim</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">newsim</span><span class="p">[</span><span class="n">w</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">sim</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="n">importance_factor</span> <span class="o">*</span> <span class="n">avg_sim</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])))</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">prevsim</span> <span class="ow">and</span> <span class="n">_is_close</span><span class="p">(</span><span class="n">prevsim</span><span class="p">,</span> <span class="n">newsim</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+            <span class="k">break</span>
+        <span class="n">prevsim</span> <span class="o">=</span> <span class="n">newsim</span>
+        <span class="n">newsim</span> <span class="o">=</span> <span class="p">{</span><span class="n">u</span><span class="p">:</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">sim</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">if</span> <span class="n">u</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">v</span> <span class="k">else</span> <span class="mi">1</span>
+                      <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">newsim</span><span class="p">[</span><span class="n">u</span><span class="p">]}</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">newsim</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">newsim</span><span class="p">[</span><span class="n">source</span><span class="p">][</span><span class="n">target</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">newsim</span><span class="p">[</span><span class="n">source</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">newsim</span></div>
+
+
+<div class="viewcode-block" id="simrank_similarity_numpy"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.similarity.simrank_similarity_numpy.html#networkx.algorithms.similarity.simrank_similarity_numpy">[docs]</a><span class="k">def</span> <span class="nf">simrank_similarity_numpy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">importance_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+                             <span class="n">max_iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate SimRank of nodes in ``G`` using matrices with ``numpy``.</span>
+
+<span class="sd">    The SimRank algorithm for determining node similarity is defined in</span>
+<span class="sd">    [1]_.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX graph</span>
+<span class="sd">        A NetworkX graph</span>
+
+<span class="sd">    source : node</span>
+<span class="sd">        If this is specified, the returned dictionary maps each node</span>
+<span class="sd">        ``v`` in the graph to the similarity between ``source`` and</span>
+<span class="sd">        ``v``.</span>
+
+<span class="sd">    target : node</span>
+<span class="sd">        If both ``source`` and ``target`` are specified, the similarity</span>
+<span class="sd">        value between ``source`` and ``target`` is returned. If</span>
+<span class="sd">        ``target`` is specified but ``source`` is not, this argument is</span>
+<span class="sd">        ignored.</span>
+
+<span class="sd">    importance_factor : float</span>
+<span class="sd">        The relative importance of indirect neighbors with respect to</span>
+<span class="sd">        direct neighbors.</span>
+
+<span class="sd">    max_iterations : integer</span>
+<span class="sd">        Maximum number of iterations.</span>
+
+<span class="sd">    tolerance : float</span>
+<span class="sd">        Error tolerance used to check convergence. When an iteration of</span>
+<span class="sd">        the algorithm finds that no similarity value changes more than</span>
+<span class="sd">        this amount, the algorithm halts.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    similarity : dictionary or float</span>
+<span class="sd">        If ``source`` and ``target`` are both ``None``, this returns a</span>
+<span class="sd">        dictionary of dictionaries, where keys are node pairs and value</span>
+<span class="sd">        are similarity of the pair of nodes.</span>
+
+<span class="sd">        If ``source`` is not ``None`` but ``target`` is, this returns a</span>
+<span class="sd">        dictionary mapping node to the similarity of ``source`` and that</span>
+<span class="sd">        node.</span>
+
+<span class="sd">        If neither ``source`` nor ``target`` is ``None``, this returns</span>
+<span class="sd">        the similarity value for the given pair of nodes.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from numpy import array</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.cycle_graph(4)</span>
+<span class="sd">        &gt;&gt;&gt; sim = nx.simrank_similarity_numpy(G)</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] G. Jeh and J. Widom.</span>
+<span class="sd">           &quot;SimRank: a measure of structural-context similarity&quot;,</span>
+<span class="sd">           In KDD&#39;02: Proceedings of the Eighth ACM SIGKDD</span>
+<span class="sd">           International Conference on Knowledge Discovery and Data Mining,</span>
+<span class="sd">           pp. 538--543. ACM Press, 2002.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># This algorithm follows roughly</span>
+    <span class="c1">#</span>
+    <span class="c1">#     S = max{C * (A.T * S * A), I}</span>
+    <span class="c1">#</span>
+    <span class="c1"># where C is the importance factor, A is the column normalized</span>
+    <span class="c1"># adjacency matrix, and I is the identity matrix.</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="n">adjacency_matrix</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+    <span class="c1"># column-normalize the ``adjacency_matrix``</span>
+    <span class="n">adjacency_matrix</span> <span class="o">/=</span> <span class="n">adjacency_matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">newsim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
+        <span class="n">prevsim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">newsim</span><span class="p">)</span>
+        <span class="n">newsim</span> <span class="o">=</span> <span class="n">importance_factor</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">prevsim</span><span class="p">),</span> <span class="n">adjacency_matrix</span><span class="p">)</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">newsim</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">prevsim</span><span class="p">,</span> <span class="n">newsim</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">tolerance</span><span class="p">):</span>
+            <span class="k">break</span>
+
+    <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">newsim</span><span class="p">[</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">newsim</span><span class="p">[</span><span class="n">source</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">newsim</span></div>
 
 
 <span class="k">def</span> <span class="nf">setup_module</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
