@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Linear algebra &mdash; NetworkX 2.4rc1.dev20190511132451 documentation</title>
+  <title>Linear algebra &mdash; NetworkX 2.4rc1.dev20190513024930 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190511132451 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190513024930 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190511132451
+                2.4rc1.dev_20190513024930
               </div>
             
           
@@ -115,13 +115,6 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.bethehessianmatrix.bethe_hessian_matrix.html">networkx.linalg.bethehessianmatrix.bethe_hessian_matrix</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-networkx.linalg.spectrum">Spectrum</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.laplacian_spectrum.html">networkx.linalg.spectrum.laplacian_spectrum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.bethe_hessian_spectrum.html">networkx.linalg.spectrum.bethe_hessian_spectrum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.adjacency_spectrum.html">networkx.linalg.spectrum.adjacency_spectrum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.modularity_spectrum.html">networkx.linalg.spectrum.modularity_spectrum</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.linalg.algebraicconnectivity">Algebraic Connectivity</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.algebraicconnectivity.algebraic_connectivity.html">networkx.linalg.algebraicconnectivity.algebraic_connectivity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.algebraicconnectivity.fiedler_vector.html">networkx.linalg.algebraicconnectivity.fiedler_vector</a></li>
@@ -136,6 +129,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.linalg.modularitymatrix">Modularity Matrices</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.modularitymatrix.modularity_matrix.html">networkx.linalg.modularitymatrix.modularity_matrix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.modularitymatrix.directed_modularity_matrix.html">networkx.linalg.modularitymatrix.directed_modularity_matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-networkx.linalg.spectrum">Spectrum</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.adjacency_spectrum.html">networkx.linalg.spectrum.adjacency_spectrum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.laplacian_spectrum.html">networkx.linalg.spectrum.laplacian_spectrum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.bethe_hessian_spectrum.html">networkx.linalg.spectrum.bethe_hessian_spectrum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.normalized_laplacian_spectrum.html">networkx.linalg.spectrum.normalized_laplacian_spectrum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.linalg.spectrum.modularity_spectrum.html">networkx.linalg.spectrum.modularity_spectrum</a></li>
 </ul>
 </li>
 </ul>
@@ -277,30 +278,6 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="module-networkx.linalg.spectrum">
-<span id="spectrum"></span><h2>Spectrum<a class="headerlink" href="#module-networkx.linalg.spectrum" title="Permalink to this headline">¶</a></h2>
-<p>Eigenvalue spectrum of graphs.</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.laplacian_spectrum.html#networkx.linalg.spectrum.laplacian_spectrum" title="networkx.linalg.spectrum.laplacian_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplacian_spectrum</span></code></a>(G[,&nbsp;weight])</td>
-<td>Returns eigenvalues of the Laplacian of G</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.bethe_hessian_spectrum.html#networkx.linalg.spectrum.bethe_hessian_spectrum" title="networkx.linalg.spectrum.bethe_hessian_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bethe_hessian_spectrum</span></code></a>(G[,&nbsp;r])</td>
-<td>Returns eigenvalues of the Bethe Hessian matrix of G.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.adjacency_spectrum.html#networkx.linalg.spectrum.adjacency_spectrum" title="networkx.linalg.spectrum.adjacency_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency_spectrum</span></code></a>(G[,&nbsp;weight])</td>
-<td>Returns eigenvalues of the adjacency matrix of G.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.modularity_spectrum.html#networkx.linalg.spectrum.modularity_spectrum" title="networkx.linalg.spectrum.modularity_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modularity_spectrum</span></code></a>(G)</td>
-<td>Returns eigenvalues of the modularity matrix of G.</td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="section" id="module-networkx.linalg.algebraicconnectivity">
 <span id="algebraic-connectivity"></span><h2>Algebraic Connectivity<a class="headerlink" href="#module-networkx.linalg.algebraicconnectivity" title="Permalink to this headline">¶</a></h2>
 <p>Algebraic connectivity and Fiedler vectors of undirected graphs.</p>
@@ -358,6 +335,33 @@
 </tbody>
 </table>
 </div>
+<div class="section" id="module-networkx.linalg.spectrum">
+<span id="spectrum"></span><h2>Spectrum<a class="headerlink" href="#module-networkx.linalg.spectrum" title="Permalink to this headline">¶</a></h2>
+<p>Eigenvalue spectrum of graphs.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.adjacency_spectrum.html#networkx.linalg.spectrum.adjacency_spectrum" title="networkx.linalg.spectrum.adjacency_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency_spectrum</span></code></a>(G[,&nbsp;weight])</td>
+<td>Returns eigenvalues of the adjacency matrix of G.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.laplacian_spectrum.html#networkx.linalg.spectrum.laplacian_spectrum" title="networkx.linalg.spectrum.laplacian_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplacian_spectrum</span></code></a>(G[,&nbsp;weight])</td>
+<td>Returns eigenvalues of the Laplacian of G</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.bethe_hessian_spectrum.html#networkx.linalg.spectrum.bethe_hessian_spectrum" title="networkx.linalg.spectrum.bethe_hessian_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bethe_hessian_spectrum</span></code></a>(G[,&nbsp;r])</td>
+<td>Returns eigenvalues of the Bethe Hessian matrix of G.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.normalized_laplacian_spectrum.html#networkx.linalg.spectrum.normalized_laplacian_spectrum" title="networkx.linalg.spectrum.normalized_laplacian_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalized_laplacian_spectrum</span></code></a>(G[,&nbsp;weight])</td>
+<td>Return eigenvalues of the normalized Laplacian of G</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.linalg.spectrum.modularity_spectrum.html#networkx.linalg.spectrum.modularity_spectrum" title="networkx.linalg.spectrum.modularity_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modularity_spectrum</span></code></a>(G)</td>
+<td>Returns eigenvalues of the modularity matrix of G.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -382,7 +386,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on May 11, 2019.
+        Last updated on May 13, 2019.
       </span>
 
     </p>
