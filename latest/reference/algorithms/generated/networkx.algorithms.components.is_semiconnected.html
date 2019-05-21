@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.components.is_semiconnected &mdash; NetworkX 2.4rc1.dev20190513024930 documentation</title>
+  <title>networkx.algorithms.components.is_semiconnected &mdash; NetworkX 2.4rc1.dev20190521135427 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190513024930 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190521135427 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190513024930
+                2.4rc1.dev_20190521135427
               </div>
             
           
@@ -260,7 +260,7 @@
 <h1>networkx.algorithms.components.is_semiconnected<a class="headerlink" href="#networkx-algorithms-components-is-semiconnected" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.components.is_semiconnected">
-<code class="descname">is_semiconnected</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/components/semiconnected.html#is_semiconnected"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.components.is_semiconnected" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_semiconnected</code><span class="sig-paren">(</span><em>G</em>, <em>topo_order=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/components/semiconnected.html#is_semiconnected"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.components.is_semiconnected" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the graph is semiconnected, False otherwise.</p>
 <p>A graph is semiconnected if, and only if, for any pair of nodes, either one
 is reachable from the other, or they are mutually reachable.</p>
@@ -268,7 +268,10 @@ is reachable from the other, or they are mutually reachable.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>G</strong> (<em>NetworkX graph</em>) – A directed graph.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>G</strong> (<em>NetworkX graph</em>) – A directed graph.</li>
+<li><strong>topo_order</strong> (<em>list or tuple, optional</em>) – A topological order for G (if None, the function will compute one)</li>
+</ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>semiconnected</strong> – True if the graph is semiconnected, False otherwise.</p>
@@ -324,7 +327,7 @@ is reachable from the other, or they are mutually reachable.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on May 13, 2019.
+        Last updated on May 21, 2019.
       </span>
 
     </p>
