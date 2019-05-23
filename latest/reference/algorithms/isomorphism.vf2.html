@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>VF2 Algorithm &mdash; NetworkX 2.4rc1.dev20190521135427 documentation</title>
+  <title>VF2 Algorithm &mdash; NetworkX 2.4rc1.dev20190523003627 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190521135427 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190523003627 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190521135427
+                2.4rc1.dev_20190523003627
               </div>
             
           
@@ -308,7 +308,7 @@ graphs. Verification is as follows:</p>
 </div>
 <div class="section" id="subgraph-isomorphism">
 <h3>Subgraph Isomorphism<a class="headerlink" href="#subgraph-isomorphism" title="Permalink to this headline">¶</a></h3>
-<p>Graph theory literature can be ambiguious about the meaning of the
+<p>Graph theory literature can be ambiguous about the meaning of the
 above statement, and we seek to clarify it now.</p>
 <p>In the VF2 literature, a mapping M is said to be a graph-subgraph
 isomorphism iff M is an isomorphism between G2 and a subgraph of G1.
@@ -323,8 +323,7 @@ context, ‘subgraph’ always means a ‘node-induced subgraph’. Edge-induced
 subgraph isomorphisms are not directly supported, but one should be
 able to perform the check by making use of nx.line_graph(). For
 subgraphs which are not induced, the term ‘monomorphism’ is preferred
-over ‘isomorphism’. Currently, it is not possible to check for
-monomorphisms.</p>
+over ‘isomorphism’.</p>
 <p>Let G=(N,E) be a graph with a set of nodes N and set of edges E.</p>
 <dl class="docutils">
 <dt>If G’=(N’,E’) is a subgraph, then:</dt>
@@ -336,7 +335,13 @@ E’ is the subset of edges in E relating nodes in N’</dd>
 <dt>If G’=(N’,E’) is an edge-induced subgraph, then:</dt>
 <dd>N’ is the subset of nodes in N related by edges in E’
 E’ is a subset of E</dd>
+<dt>If G’=(N’,E’) is a monomorphism, then:</dt>
+<dd>N’ is a subset of N
+E’ is a subset of the set of edges in E relating nodes in N’</dd>
 </dl>
+<p>Note that if G’ is a node-induced subgraph of G, then it is always a
+subgraph monomorphism of G, but the opposite is not always true, as a
+monomorphism can have fewer edges.</p>
 <p class="rubric">References</p>
 <dl class="docutils">
 <dt>[1]   Luigi P. Cordella, Pasquale Foggia, Carlo Sansone, Mario Vento,</dt>
@@ -506,7 +511,7 @@ polynomial-time algorithm is known to exist).</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on May 21, 2019.
+        Last updated on May 23, 2019.
       </span>
 
     </p>

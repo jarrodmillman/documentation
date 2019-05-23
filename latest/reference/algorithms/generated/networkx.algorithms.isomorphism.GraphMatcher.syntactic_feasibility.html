@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility &mdash; NetworkX 2.4rc1.dev20190521135427 documentation</title>
+  <title>networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility &mdash; NetworkX 2.4rc1.dev20190523003627 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190521135427 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190523003627 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190521135427
+                2.4rc1.dev_20190523003627
               </div>
             
           
@@ -264,9 +264,9 @@
 <code class="descclassname">GraphMatcher.</code><code class="descname">syntactic_feasibility</code><span class="sig-paren">(</span><em>G1_node</em>, <em>G2_node</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/isomorphism/isomorphvf2.html#GraphMatcher.syntactic_feasibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.isomorphism.GraphMatcher.syntactic_feasibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if adding (G1_node, G2_node) is syntactically feasible.</p>
 <p>This function returns True if it is adding the candidate pair
-to the current partial isomorphism mapping is allowable.  The addition
-is allowable if the inclusion of the candidate pair does not make it
-impossible for an isomorphism to be found.</p>
+to the current partial isomorphism/monomorphism mapping is allowable.
+The addition is allowable if the inclusion of the candidate pair does
+not make it impossible for an isomorphism/monomorphism to be found.</p>
 </dd></dl>
 
 </div>
@@ -293,7 +293,7 @@ impossible for an isomorphism to be found.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on May 21, 2019.
+        Last updated on May 23, 2019.
       </span>
 
     </p>
