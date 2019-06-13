@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.distance_measures &mdash; NetworkX 2.4rc1.dev20190611231249 documentation</title>
+  <title>networkx.algorithms.distance_measures &mdash; NetworkX 2.4rc1.dev20190613214358 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190611231249 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190613214358 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190611231249
+                2.4rc1.dev_20190613214358
               </div>
             
           
@@ -173,11 +173,15 @@
 <span class="c1">#</span>
 <span class="c1"># Authors: Aric Hagberg (hagberg@lanl.gov)</span>
 <span class="c1">#          Dan Schult (dschult@colgate.edu)</span>
+<span class="c1">#          Brian Kiefer (bkiefer@asu.edu)</span>
 <span class="sd">&quot;&quot;&quot;Graph diameter, radius, eccentricity and other properties.&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">networkx</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">not_implemented_for</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;extrema_bounding&#39;</span><span class="p">,</span> <span class="s1">&#39;eccentricity&#39;</span><span class="p">,</span> <span class="s1">&#39;diameter&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;radius&#39;</span><span class="p">,</span> <span class="s1">&#39;periphery&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="s1">&#39;barycenter&#39;</span><span class="p">]</span>
+           <span class="s1">&#39;radius&#39;</span><span class="p">,</span> <span class="s1">&#39;periphery&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="s1">&#39;barycenter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;resistance_distance&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="extrema_bounding"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.extrema_bounding.html#networkx.algorithms.distance_measures.extrema_bounding">[docs]</a><span class="k">def</span> <span class="nf">extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;diameter&quot;</span><span class="p">):</span>
@@ -254,10 +258,10 @@
         <span class="n">high</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">high</span>
 
         <span class="c1"># get distances from/to current node and derive eccentricity</span>
-        <span class="n">dist</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">networkx</span><span class="o">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">current</span><span class="p">))</span>
+        <span class="n">dist</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">current</span><span class="p">))</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span> <span class="o">!=</span> <span class="n">N</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Cannot compute metric because graph is not connected.&#39;</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">networkx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
         <span class="n">current_ecc</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
         <span class="c1"># print status update</span>
@@ -388,14 +392,14 @@
     <span class="n">e</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nbunch_iter</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">sp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">length</span> <span class="o">=</span> <span class="n">networkx</span><span class="o">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
             <span class="n">L</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">length</span> <span class="o">=</span> <span class="n">sp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
                 <span class="n">L</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">networkx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Format of &quot;sp&quot; is invalid.&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Format of &quot;sp&quot; is invalid.&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">L</span> <span class="o">!=</span> <span class="n">order</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Found infinite path length because the digraph is not&#39;</span>
@@ -403,7 +407,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Found infinite path length because the graph is not&#39;</span>
                        <span class="s1">&#39; connected&#39;</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">networkx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
         <span class="n">e</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">length</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
@@ -580,7 +584,7 @@
 <span class="sd">    periphery</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">sp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">sp</span> <span class="o">=</span> <span class="n">networkx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+        <span class="n">sp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">sp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -588,7 +592,7 @@
     <span class="n">smallest</span><span class="p">,</span> <span class="n">barycenter_vertices</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">),</span> <span class="p">[],</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">dists</span> <span class="ow">in</span> <span class="n">sp</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dists</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">networkx</span><span class="o">.</span><span class="n">NetworkXNoPath</span><span class="p">(</span>
+            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNoPath</span><span class="p">(</span>
                 <span class="p">(</span><span class="s2">&quot;Input graph </span><span class="si">%r</span><span class="s2"> is disconnected, so every induced subgraph &quot;</span>
                  <span class="s2">&quot;has infinite barycentricity.&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="n">G</span><span class="p">)</span>
         <span class="n">barycentricity</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dists</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -600,6 +604,154 @@
         <span class="k">elif</span> <span class="n">barycentricity</span> <span class="o">==</span> <span class="n">smallest</span><span class="p">:</span>
             <span class="n">barycenter_vertices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">barycenter_vertices</span></div>
+
+
+<span class="k">def</span> <span class="nf">_laplacian_submatrix</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">mat</span><span class="p">,</span> <span class="n">node_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Removes row/col from a sparse matrix and returns the submatrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">node_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">node_list</span><span class="p">)))</span>
+    <span class="n">n</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;Matrix must be square&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_list</span><span class="p">)</span> <span class="o">!=</span> <span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Node list length does not match matrix dimentions&quot;</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">tocsr</span><span class="p">()</span>
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">mat</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">tocsc</span><span class="p">()</span>
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">mat</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span>
+
+    <span class="n">node_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mat</span><span class="p">,</span> <span class="n">node_list</span>
+
+
+<span class="k">def</span> <span class="nf">_count_lu_permutations</span><span class="p">(</span><span class="n">perm_array</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Counts the number of permutations in SuperLU perm_c or perm_r</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">perm_cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">perm_array</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">perm_cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+
+    <span class="k">return</span> <span class="n">perm_cnt</span>
+
+
+<div class="viewcode-block" id="resistance_distance"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.resistance_distance.html#networkx.algorithms.distance_measures.resistance_distance">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">resistance_distance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodeA</span><span class="p">,</span> <span class="n">nodeB</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">invert_weight</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the resistance distance between node A and node B on graph G.</span>
+
+<span class="sd">    The resistance distance between two nodes of a graph is akin to treating</span>
+<span class="sd">    the graph as a grid of resistorses with a resistance equal to the provided</span>
+<span class="sd">    weight.</span>
+
+<span class="sd">    If weight is not provided, then a weight of 1 is used for all edges.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX graph</span>
+<span class="sd">       A graph</span>
+
+<span class="sd">    nodeA : node</span>
+<span class="sd">      A node within graph G.</span>
+
+<span class="sd">    nodeB : node</span>
+<span class="sd">      A node within graph G, exclusive of Node A.</span>
+
+<span class="sd">    weight : string or None, optional (default=None)</span>
+<span class="sd">       The edge data key used to compute the resistance distance.</span>
+<span class="sd">       If None, then each edge has weight 1.</span>
+
+<span class="sd">    invert_weight : boolean (default=True)</span>
+<span class="sd">        Proper calculation of resistance distance requires building the</span>
+<span class="sd">        Laplacian matrix with the reciprocal of the weight. Not required</span>
+<span class="sd">        if the weight is already inverted. Weight cannot be zero.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    rd : float</span>
+<span class="sd">       Value of effective resistance distance</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Overview discussion:</span>
+<span class="sd">    * https://en.wikipedia.org/wiki/Resistance_distance</span>
+<span class="sd">    * http://mathworld.wolfram.com/ResistanceDistance.html</span>
+
+<span class="sd">    Additional details:</span>
+<span class="sd">    Vaya Sapobi Samui Vos, “Methods for determining the effective resistance,” M.S.,</span>
+<span class="sd">    Mathematisch Instituut, Universiteit Leiden, Leiden, Netherlands, 2016</span>
+<span class="sd">    Available: `Link to thesis &lt;https://www.universiteitleiden.nl/binaries/content/assets/science/mi/scripties/master/vos_vaya_master.pdf&gt;`_</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">scipy.sparse</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Graph G must be strongly connected.&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">nodeA</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Node A is not in graph G.&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">nodeB</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Node B is not in graph G.&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">nodeA</span> <span class="o">==</span> <span class="n">nodeB</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Node A and Node B cannot be the same.&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="n">G</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">node_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">invert_weight</span> <span class="ow">and</span> <span class="n">weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">weight</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="n">weight</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+           <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+               <span class="n">d</span><span class="p">[</span><span class="n">weight</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="n">weight</span><span class="p">]</span>
+    <span class="c1"># Replace with collapsing topology or approximated zero?</span>
+
+    <span class="c1"># Using determinants to compute the effective resistance is more memory</span>
+    <span class="c1"># efficent than directly calculating the psuedo-inverse</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_list</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+
+    <span class="n">Lsub_a</span><span class="p">,</span> <span class="n">node_list_a</span> <span class="o">=</span> <span class="n">_laplacian_submatrix</span><span class="p">(</span><span class="n">nodeA</span><span class="p">,</span> <span class="n">L</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                                               <span class="n">node_list</span><span class="p">[:])</span>
+    <span class="n">Lsub_ab</span><span class="p">,</span> <span class="n">node_list_ab</span> <span class="o">=</span> <span class="n">_laplacian_submatrix</span><span class="p">(</span><span class="n">nodeB</span><span class="p">,</span> <span class="n">Lsub_a</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                                                 <span class="n">node_list_a</span><span class="p">[:])</span>
+
+    <span class="c1"># Factorize Laplacian submatrixes and extract diagonals</span>
+    <span class="c1"># Order the diagonals to minimize the likelihood over overflows</span>
+    <span class="c1"># during computing the determinant</span>
+    <span class="n">lu_a</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">splu</span><span class="p">(</span><span class="n">Lsub_a</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">SymmetricMode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">LdiagA</span> <span class="o">=</span> <span class="n">lu_a</span><span class="o">.</span><span class="n">U</span><span class="o">.</span><span class="n">diagonal</span><span class="p">()</span>
+    <span class="n">LdiagA_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">LdiagA</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">lu_a</span><span class="o">.</span><span class="n">L</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())</span>
+    <span class="n">LdiagA_s</span> <span class="o">*=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">_count_lu_permutations</span><span class="p">(</span><span class="n">lu_a</span><span class="o">.</span><span class="n">perm_r</span><span class="p">)</span>
+    <span class="n">LdiagA_s</span> <span class="o">*=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">_count_lu_permutations</span><span class="p">(</span><span class="n">lu_a</span><span class="o">.</span><span class="n">perm_c</span><span class="p">)</span>
+    <span class="n">LdiagA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">LdiagA</span><span class="p">)</span>
+    <span class="n">LdiagA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">LdiagA</span><span class="p">)</span>
+
+    <span class="n">lu_ab</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">splu</span><span class="p">(</span><span class="n">Lsub_ab</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">SymmetricMode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">LdiagAB</span> <span class="o">=</span> <span class="n">lu_ab</span><span class="o">.</span><span class="n">U</span><span class="o">.</span><span class="n">diagonal</span><span class="p">()</span>
+    <span class="n">LdiagAB_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">LdiagAB</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">lu_ab</span><span class="o">.</span><span class="n">L</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())</span>
+    <span class="n">LdiagAB_s</span> <span class="o">*=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">_count_lu_permutations</span><span class="p">(</span><span class="n">lu_ab</span><span class="o">.</span><span class="n">perm_r</span><span class="p">)</span>
+    <span class="n">LdiagAB_s</span> <span class="o">*=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">_count_lu_permutations</span><span class="p">(</span><span class="n">lu_ab</span><span class="o">.</span><span class="n">perm_c</span><span class="p">)</span>
+    <span class="n">LdiagAB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">LdiagAB</span><span class="p">)</span>
+    <span class="n">LdiagAB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">LdiagAB</span><span class="p">)</span>
+
+    <span class="c1"># Calculate the ratio of determinant, rd = det(Lsub_ab)/det(Lsub_a)</span>
+    <span class="n">Ldet</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LdiagAB</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">LdiagA</span><span class="p">))</span>
+    <span class="n">rd</span> <span class="o">=</span> <span class="n">Ldet</span> <span class="o">*</span> <span class="n">LdiagAB_s</span> <span class="o">/</span> <span class="n">LdiagA_s</span>
+
+    <span class="k">return</span> <span class="n">rd</span></div>
 </pre></div>
 
            </div>
@@ -614,7 +766,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Jun 11, 2019.
+        Last updated on Jun 13, 2019.
       </span>
 
     </p>
