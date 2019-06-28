@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.group_betweenness_centrality &mdash; NetworkX 2.4rc1.dev20190625065812 documentation</title>
+  <title>networkx.algorithms.centrality.group_betweenness_centrality &mdash; NetworkX 2.4rc1.dev20190628073405 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190625065812 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190628073405 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="networkx.algorithms.centrality.load_centrality" href="networkx.algorithms.centrality.load_centrality.html" />
+    <link rel="next" title="networkx.algorithms.centrality.group_closeness_centrality" href="networkx.algorithms.centrality.group_closeness_centrality.html" />
     <link rel="prev" title="networkx.algorithms.centrality.communicability_betweenness_centrality" href="networkx.algorithms.centrality.communicability_betweenness_centrality.html" /> 
 </head>
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190625065812
+                2.4rc1.dev_20190628073405
               </div>
             
           
@@ -274,8 +274,7 @@
 <p>Group betweenness centrality of a group of nodes <span class="math notranslate nohighlight">\(C\)</span> is the sum of the
 fraction of all-pairs shortest paths that pass through any vertex in <span class="math notranslate nohighlight">\(C\)</span></p>
 <div class="math notranslate nohighlight">
-\[\]</div>
-<p>c_B(C) =sum_{s,t in V-C; s&lt;t} frac{sigma(s, t|C)}{sigma(s, t)}</p>
+\[c_B(C) =\sum_{s,t \in V-C; s&lt;t} \frac{\sigma(s, t|C)}{\sigma(s, t)}\]</div>
 <p>where <span class="math notranslate nohighlight">\(V\)</span> is the set of nodes, <span class="math notranslate nohighlight">\(\sigma(s, t)\)</span> is the number of
 shortest <span class="math notranslate nohighlight">\((s, t)\)</span>-paths, and <span class="math notranslate nohighlight">\(\sigma(s, t|C)\)</span> is the number of
 those paths passing through some node in group <span class="math notranslate nohighlight">\(C\)</span>. Note that
@@ -297,10 +296,13 @@ Otherwise holds the name of the edge attribute used as weight.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>betweenness</strong> – Group betweenness centrality of the group C.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NodeNotFound</span></code> – If node(s) in C are not present in G.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>betweenness</strong> – Group betweenness centrality of the group C.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
 </td>
 </tr>
 </tbody>
@@ -337,7 +339,7 @@ Journal of Mathematical Sociology. 23(3): 181-201. 1999.
 On Variants of Shortest-Path Betweenness
 Centrality and their Generic Computation.
 Social Networks 30(2):136-145, 2008.
-<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf</a></td></tr>
+<a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9610&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9610&amp;rep=rep1&amp;type=pdf</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id6" rules="none">
@@ -361,7 +363,7 @@ SIAM International Conference on Data Mining, SDM 2018, 126–134.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="networkx.algorithms.centrality.load_centrality.html" class="btn btn-neutral float-right" title="networkx.algorithms.centrality.load_centrality" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="networkx.algorithms.centrality.group_closeness_centrality.html" class="btn btn-neutral float-right" title="networkx.algorithms.centrality.group_closeness_centrality" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="networkx.algorithms.centrality.communicability_betweenness_centrality.html" class="btn btn-neutral float-left" title="networkx.algorithms.centrality.communicability_betweenness_centrality" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -375,7 +377,7 @@ SIAM International Conference on Data Mining, SDM 2018, 126–134.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Jun 25, 2019.
+        Last updated on Jun 28, 2019.
       </span>
 
     </p>
