@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>networkx.algorithms.asteroidal.find_asteroidal_triple &mdash; NetworkX 2.4rc1.dev20190629230231 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within NetworkX 2.4rc1.dev20190629230231 documentation"
+          href="../../../_static/opensearch.xml"/>
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> NetworkX
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4rc1.dev_20190629230231
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">Release Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../citing.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../auto_examples/index.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">NetworkX</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>networkx.algorithms.asteroidal.find_asteroidal_triple</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="networkx-algorithms-asteroidal-find-asteroidal-triple">
+<h1>networkx.algorithms.asteroidal.find_asteroidal_triple<a class="headerlink" href="#networkx-algorithms-asteroidal-find-asteroidal-triple" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="networkx.algorithms.asteroidal.find_asteroidal_triple">
+<code class="descname">find_asteroidal_triple</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/asteroidal.html#find_asteroidal_triple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.asteroidal.find_asteroidal_triple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find an asteroidal triple in the given graph.</p>
+<p>An asteroidal triple is a triple of non-adjacent vertices such that
+there exists a path between any two of them which avoids the closed
+neighborhood of the third. It checks all independent triples of vertices
+and whether they are an asteroidal triple or not. This is done with the
+help of a data structure called a component structure.
+A component structure encodes information about which vertices belongs to
+the same connected component when the closed neighborhood of a given vertex
+is removed from the graph. The algorithm used to check is the trivial
+one, outlined in <a class="footnote-reference" href="#id3" id="id1">[1]</a>, which has a runtime of
+<span class="math notranslate nohighlight">\(O(|V||\overline{E} + |V||E|)\)</span>, where the second term is the
+creation of the component structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX Graph</em>) – The graph to check whether is AT-free or not</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An asteroidal triple is returned as a list of nodes. If no asteroidal
+triple exists, i.e. the graph is AT-free, then None is returned.
+The returned value depends on the certificate parameter. The default
+option is a bool which is True if the graph is AT-free, i.e. the
+given graph contains no asteroidal triples, and False otherwise, i.e.
+if the graph contains at least one asteroidal triple.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list or <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The component structure and the algorithm is described in <a class="footnote-reference" href="#id3" id="id2">[1]</a>. The current
+implementation implements the trivial algorithm for simple graphs.</p>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Ekkehard Köhler,
+“Recognizing Graphs without asteroidal triples”,
+Journal of Discrete Algorithms 2, pages 439-452, 2004.
+<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S157086670400019X">https://www.sciencedirect.com/science/article/pii/S157086670400019X</a></td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2004-2019, NetworkX Developers
+      <span class="lastupdated">
+        Last updated on Jun 29, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
