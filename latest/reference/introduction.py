@@ -254,7 +254,7 @@ G = nx.cubical_graph()
 plt.subplot(121)
 nx.draw(G)   # default spring_layout
 plt.subplot(122)
-nx.draw(G, pos=nx.circular_layout(G), nodecolor='r', edge_color='b')
+nx.draw(G, pos=nx.circular_layout(G), node_color='r', edge_color='b')
 
 # See the examples for more ideas.
 #
