@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190710225245 documentation</title>
+  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190719021005 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190710225245 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190719021005 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190710225245
+                2.4rc1.dev_20190719021005
               </div>
             
           
@@ -295,6 +295,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.generators.harary_graph">Harary Graph</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.harary_graph.hnm_harary_graph.html">networkx.generators.harary_graph.hnm_harary_graph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.harary_graph.hkn_harary_graph.html">networkx.generators.harary_graph.hkn_harary_graph</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-networkx.generators.cographs">Cographs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.cographs.random_cograph.html">networkx.generators.cographs.random_cograph</a></li>
 </ul>
 </li>
 </ul>
@@ -1059,7 +1063,7 @@ of graphs.</p>
 <span id="harary-graph"></span><h2>Harary Graph<a class="headerlink" href="#module-networkx.generators.harary_graph" title="Permalink to this headline">¶</a></h2>
 <p>Generators for Harary graphs</p>
 <p>This module gives two generators for the Harary graph, which was
-introduced by the famous mathematician Frank Harary in his 1962 work <a class="footnote-reference" href="#id2" id="id1">[1]</a>.
+introduced by the famous mathematician Frank Harary in his 1962 work <a href="#id4"><span class="problematic" id="id1">[1]_</span></a>.
 The first generator gives the Harary graph that maximizes the node
 connectivity with given number of nodes and given number of edges.
 The second generator gives the Harary graph that minimizes
@@ -1069,7 +1073,7 @@ number of nodes.</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Harary, F. “The Maximum Connectivity of a Graph.”
+<tr><td class="label">[1]</td><td>Harary, F. “The Maximum Connectivity of a Graph.”
 Proc. Nat. Acad. Sci. USA 48, 1142-1146, 1962.</td></tr>
 </tbody>
 </table>
@@ -1084,6 +1088,37 @@ Proc. Nat. Acad. Sci. USA 48, 1142-1146, 1962.</td></tr>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.harary_graph.hkn_harary_graph.html#networkx.generators.harary_graph.hkn_harary_graph" title="networkx.generators.harary_graph.hkn_harary_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hkn_harary_graph</span></code></a>(k,&nbsp;n[,&nbsp;create_using])</td>
 <td>Returns the Harary graph with given node connectivity and node number.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-networkx.generators.cographs">
+<span id="cographs"></span><h2>Cographs<a class="headerlink" href="#module-networkx.generators.cographs" title="Permalink to this headline">¶</a></h2>
+<p>Generators for cographs</p>
+<p>A cograph is a graph containing no path on four vertices.
+Cographs or <span class="math notranslate nohighlight">\(P_4\)</span>-free graphs can be obtained from a single vertex
+by disjoint union and complementation operations.</p>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><dl class="first docutils">
+<dt>D.G. Corneil, H. Lerchs, L.Stewart Burlingham,</dt>
+<dd>“Complement reducible graphs”,</dd>
+</dl>
+<p class="last">Discrete Applied Mathematics, Volume 3, Issue 3, 1981, Pages 163-174,
+ISSN 0166-218X.</p>
+</td></tr>
+</tbody>
+</table>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.cographs.random_cograph.html#networkx.generators.cographs.random_cograph" title="networkx.generators.cographs.random_cograph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_cograph</span></code></a>(n[,&nbsp;seed])</td>
+<td>Returns a random cograph with <span class="math notranslate nohighlight">\(2 ^ n\)</span> nodes.</td>
 </tr>
 </tbody>
 </table>
@@ -1112,7 +1147,7 @@ Proc. Nat. Acad. Sci. USA 48, 1142-1146, 1962.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Jul 10, 2019.
+        Last updated on Jul 19, 2019.
       </span>
 
     </p>

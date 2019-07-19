@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.operators.binary &mdash; NetworkX 2.4rc1.dev20190710225245 documentation</title>
+  <title>networkx.algorithms.operators.binary &mdash; NetworkX 2.4rc1.dev20190719021005 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190710225245 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190719021005 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190710225245
+                2.4rc1.dev_20190719021005
               </div>
             
           
@@ -177,7 +177,7 @@
                             <span class="s1">&#39;Pieter Swart (swart@lanl.gov)&#39;</span><span class="p">,</span>
                             <span class="s1">&#39;Dan Schult(dschult@colgate.edu)&#39;</span><span class="p">])</span>
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;union&#39;</span><span class="p">,</span> <span class="s1">&#39;compose&#39;</span><span class="p">,</span> <span class="s1">&#39;disjoint_union&#39;</span><span class="p">,</span> <span class="s1">&#39;intersection&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;difference&#39;</span><span class="p">,</span> <span class="s1">&#39;symmetric_difference&#39;</span><span class="p">]</span>
+           <span class="s1">&#39;difference&#39;</span><span class="p">,</span> <span class="s1">&#39;symmetric_difference&#39;</span><span class="p">,</span> <span class="s1">&#39;full_join&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="union"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.operators.binary.union.html#networkx.algorithms.operators.binary.union">[docs]</a><span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -493,6 +493,76 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">R</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">R</span></div>
+
+
+<div class="viewcode-block" id="full_join"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.operators.binary.full_join.html#networkx.algorithms.operators.binary.full_join">[docs]</a><span class="k">def</span> <span class="nf">full_join</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the full join of graphs G and H.</span>
+
+<span class="sd">    Full join is the union of G and H in which all edges between</span>
+<span class="sd">    G and H are added.</span>
+<span class="sd">    The node sets of G and H must be disjoint,</span>
+<span class="sd">    otherwise an exception is raised.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G, H : graph</span>
+<span class="sd">       A NetworkX graph</span>
+
+<span class="sd">    rename : bool , default=(None, None)</span>
+<span class="sd">       Node names of G and H can be changed by specifying the tuple</span>
+<span class="sd">       rename=(&#39;G-&#39;,&#39;H-&#39;) (for example).  Node &quot;u&quot; in G is then renamed</span>
+<span class="sd">       &quot;G-u&quot; and &quot;v&quot; in H is renamed &quot;H-v&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    U : The full join graph with the same type as G.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    It is recommended that G and H be either both directed or both undirected.</span>
+
+<span class="sd">    If G is directed, then edges from G to H are added as well as from H to G.</span>
+
+<span class="sd">    Note that full_join() does not produce parallel edges for MultiGraphs.</span>
+
+<span class="sd">    The full join operation of graphs G and H is the same as getting</span>
+<span class="sd">    their complement, performing a disjoint union, and finally getting</span>
+<span class="sd">    the complement of the resulting graph.</span>
+
+<span class="sd">    Graph, edge, and node attributes are propagated from G and H</span>
+<span class="sd">    to the union graph.  If a graph attribute is present in both</span>
+<span class="sd">    G and H the value from H is used.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    union</span>
+<span class="sd">    disjoint_union</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">union</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">rename</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_prefix</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">prefix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">graph</span>
+
+        <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">is_string_like</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="n">x</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">relabel_nodes</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">add_prefix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rename</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">add_prefix</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">rename</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">H</span><span class="p">:</span>
+            <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">R</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">H</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+                <span class="n">R</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">R</span></div>
 </pre></div>
 
            </div>
@@ -507,7 +577,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Jul 10, 2019.
+        Last updated on Jul 19, 2019.
       </span>
 
     </p>
