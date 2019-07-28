@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.2 &mdash; NetworkX 2.4rc1.dev20190725151855 documentation</title>
+  <title>Announcement: NetworkX 2.2 &mdash; NetworkX 2.4rc1.dev20190728123617 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190725151855 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190728123617 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190725151855
+                2.4rc1.dev_20190728123617
               </div>
             
           
@@ -190,8 +190,8 @@ used. More precisely, the <a class="reference external" href="https://docs.pytho
 default RNG. You can also create your own RNG and pass it into the <code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code>
 argument. Finally, you can use an integer to indicate the state to set for
 the RNG. In this case a local RNG is created leaving the global RNG untouched.
-Some functions use <a class="reference external" href="https://docs.python.org/2/library/random.html#module-random" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a> and some use <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.random.html#module-numpy.random" title="(in NumPy v1.16)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random</span></code></a>, but we have written
-a translater so that all functions CAN take a <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.RandomState.html#numpy.random.RandomState" title="(in NumPy v1.16)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code></a>
+Some functions use <a class="reference external" href="https://docs.python.org/2/library/random.html#module-random" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a> and some use <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/index.html#module-numpy.random" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random</span></code></a>, but we have written
+a translater so that all functions CAN take a <code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code>
 object. So a single RNG can be used for the entire package.</p>
 <p>Cyclic references between graph classes and views have been removed to ease
 subclassing without memory leaks. Graphs no longer hold references to views.</p>
@@ -322,7 +322,7 @@ are derecated in favor of <code class="xref py py-obj docutils literal notransla
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Jul 25, 2019.
+        Last updated on Jul 28, 2019.
       </span>
 
     </p>
