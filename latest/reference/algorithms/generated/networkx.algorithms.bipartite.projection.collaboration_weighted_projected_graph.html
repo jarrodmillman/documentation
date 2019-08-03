@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph &mdash; NetworkX 2.4rc1.dev20190728123617 documentation</title>
+  <title>networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph &mdash; NetworkX 2.4rc1.dev20190803010455 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190728123617 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190803010455 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190728123617
+                2.4rc1.dev_20190803010455
               </div>
             
           
@@ -305,7 +305,7 @@ graph.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">collaboration_weighted_projected_graph</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="go">[0, 2, 4, 5]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)):</span> <span class="nb">print</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">(0, 2, {&#39;weight&#39;: 0.5})</span>
 <span class="go">(0, 5, {&#39;weight&#39;: 0.5})</span>
@@ -357,7 +357,7 @@ M. E. J. Newman, Phys. Rev. E 64, 016132 (2001).</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Jul 28, 2019.
+        Last updated on Aug 03, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.chordal.find_induced_nodes &mdash; NetworkX 2.4rc1.dev20190728123617 documentation</title>
+  <title>networkx.algorithms.chordal.find_induced_nodes &mdash; NetworkX 2.4rc1.dev20190803010455 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190728123617 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190803010455 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190728123617
+                2.4rc1.dev_20190803010455
               </div>
             
           
@@ -294,7 +294,7 @@ the input graph is found to be non-chordal, a <code class="xref py py-exc docuti
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">classic</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">I</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">find_induced_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">I</span><span class="p">))</span>
 <span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
 </pre></div>
 </div>
@@ -339,7 +339,7 @@ Gal Elidan, Stephen Gould; JMLR, 9(Dec):2699–2731, 2008.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Jul 28, 2019.
+        Last updated on Aug 03, 2019.
       </span>
 
     </p>
