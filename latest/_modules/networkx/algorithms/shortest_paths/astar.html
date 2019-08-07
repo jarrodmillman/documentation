@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.astar &mdash; NetworkX 2.4rc1.dev20190807194515 documentation</title>
+  <title>networkx.algorithms.shortest_paths.astar &mdash; NetworkX 2.4rc1.dev20190807233101 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190807194515 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190807233101 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190807194515
+                2.4rc1.dev_20190807233101
               </div>
             
           
@@ -274,13 +274,18 @@
             <span class="k">return</span> <span class="n">path</span>
 
         <span class="k">if</span> <span class="n">curnode</span> <span class="ow">in</span> <span class="n">explored</span><span class="p">:</span>
-            <span class="k">continue</span>
+            <span class="c1"># Do not override the parent of starting node</span>
+            <span class="k">if</span> <span class="n">explored</span><span class="p">[</span><span class="n">curnode</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Skip bad paths that were enqueued before finding a better one</span>
+            <span class="n">qcost</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">enqueued</span><span class="p">[</span><span class="n">curnode</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">qcost</span> <span class="o">&lt;</span> <span class="n">dist</span><span class="p">:</span>
+                <span class="k">continue</span>
 
         <span class="n">explored</span><span class="p">[</span><span class="n">curnode</span><span class="p">]</span> <span class="o">=</span> <span class="n">parent</span>
 
         <span class="k">for</span> <span class="n">neighbor</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">curnode</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">explored</span><span class="p">:</span>
-                <span class="k">continue</span>
             <span class="n">ncost</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">+</span> <span class="n">w</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">enqueued</span><span class="p">:</span>
                 <span class="n">qcost</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">enqueued</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span>
