@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.line.inverse_line_graph &mdash; NetworkX 2.4rc1.dev20190806175305 documentation</title>
+  <title>networkx.generators.line.inverse_line_graph &mdash; NetworkX 2.4rc1.dev20190807194515 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190806175305 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190807194515 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190806175305
+                2.4rc1.dev_20190807194515
               </div>
             
           
@@ -247,6 +247,18 @@ In these cases this generator returns a NetworkXError.</p>
 </table>
 <p class="rubric">Notes</p>
 <p>This is an implementation of the Roussopoulos algorithm.</p>
+<p>If G consists of multiple components, then the algorithm doesn’t work.
+You should invert every component seperately:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">K5</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P4</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">K5</span><span class="p">,</span> <span class="n">P4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root_graphs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">root_graphs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">inverse_line_graph</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">comp</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">root_graphs</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
 <p class="rubric">References</p>
 <ul class="simple">
 <li>Roussopolous, N, “A max {m, n} algorithm for determining the graph H from
@@ -278,7 +290,7 @@ its line graph G”, Information Processing Letters 2, (1973), 108–112.</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Aug 06, 2019.
+        Last updated on Aug 07, 2019.
       </span>
 
     </p>
