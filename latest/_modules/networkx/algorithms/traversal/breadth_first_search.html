@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.traversal.breadth_first_search &mdash; NetworkX 2.4rc1.dev20190808114944 documentation</title>
+  <title>networkx.algorithms.traversal.breadth_first_search &mdash; NetworkX 2.4rc1.dev20190809145137 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190808114944 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190809145137 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190808114944
+                2.4rc1.dev_20190809145137
               </div>
             
           
@@ -181,7 +181,10 @@
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">deque</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bfs_edges&#39;</span><span class="p">,</span> <span class="s1">&#39;bfs_tree&#39;</span><span class="p">,</span> <span class="s1">&#39;bfs_predecessors&#39;</span><span class="p">,</span> <span class="s1">&#39;bfs_successors&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;bfs_edges&#39;</span><span class="p">,</span> <span class="s1">&#39;bfs_tree&#39;</span><span class="p">,</span> <span class="s1">&#39;bfs_predecessors&#39;</span><span class="p">,</span> <span class="s1">&#39;bfs_successors&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;descendants_at_distance&#39;</span>
+<span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">generic_bfs_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">neighbors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth_limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -463,6 +466,47 @@
         <span class="n">children</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">]</span>
         <span class="n">parent</span> <span class="o">=</span> <span class="n">p</span>
     <span class="k">yield</span> <span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">children</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">descendants_at_distance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns all nodes at a fixed `distance` from `source` in `G`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX DiGraph</span>
+<span class="sd">        A directed graph</span>
+<span class="sd">    source : node in `G`</span>
+<span class="sd">    distance : the distance of the wanted nodes from `source`</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    set()</span>
+<span class="sd">        The descendants of `source` in `G` at the given `distance` from `source`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;The node </span><span class="si">%s</span><span class="s2"> is not in the graph.&quot;</span> <span class="o">%</span> <span class="n">source</span><span class="p">)</span>
+    <span class="n">current_distance</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="p">{</span><span class="n">source</span><span class="p">}</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">source</span><span class="p">}</span>
+
+    <span class="c1"># this is basically BFS, except that the queue only stores the nodes at</span>
+    <span class="c1"># current_distance from source at each iteration</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">current_distance</span> <span class="o">==</span> <span class="n">distance</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">queue</span>
+
+        <span class="n">current_distance</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">next_vertices</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="n">queue</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">vertex</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">child</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                    <span class="n">next_vertices</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+        <span class="n">queue</span> <span class="o">=</span> <span class="n">next_vertices</span>
+
+    <span class="k">return</span> <span class="nb">set</span><span class="p">()</span>
 </pre></div>
 
            </div>
@@ -477,7 +521,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Aug 08, 2019.
+        Last updated on Aug 09, 2019.
       </span>
 
     </p>

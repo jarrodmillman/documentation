@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.dag &mdash; NetworkX 2.4rc1.dev20190808114944 documentation</title>
+  <title>networkx.algorithms.dag &mdash; NetworkX 2.4rc1.dev20190809145137 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190808114944 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190809145137 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190808114944
+                2.4rc1.dev_20190809145137
               </div>
             
           
@@ -192,11 +192,12 @@
 <span class="kn">import</span> <span class="nn">heapq</span>
 
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">networkx.algorithms.traversal.breadth_first_search</span> <span class="k">import</span> \
+    <span class="n">descendants_at_distance</span>
 <span class="kn">from</span> <span class="nn">networkx.generators.trees</span> <span class="k">import</span> <span class="n">NIL</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">arbitrary_element</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">consume</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">pairwise</span>
-<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">generate_unique_node</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">not_implemented_for</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;descendants&#39;</span><span class="p">,</span>
@@ -207,6 +208,7 @@
            <span class="s1">&#39;is_directed_acyclic_graph&#39;</span><span class="p">,</span>
            <span class="s1">&#39;is_aperiodic&#39;</span><span class="p">,</span>
            <span class="s1">&#39;transitive_closure&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;transitive_closure_dag&#39;</span><span class="p">,</span>
            <span class="s1">&#39;transitive_reduction&#39;</span><span class="p">,</span>
            <span class="s1">&#39;antichains&#39;</span><span class="p">,</span>
            <span class="s1">&#39;dag_longest_path&#39;</span><span class="p">,</span>
@@ -669,12 +671,63 @@
 <span class="sd">    ----------</span>
 <span class="sd">    .. [1] http://www.ics.uci.edu/~eppstein/PADS/PartialOrder.py</span>
 
+<span class="sd">    TODO this function applies to all directed graphs and is probably misplaced</span>
+<span class="sd">         here in dag.py</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">TC</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
         <span class="n">TC</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">dfs_preorder_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
                           <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="n">u</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">TC</span></div>
+
+
+<span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">transitive_closure_dag</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">topo_order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Returns the transitive closure of a directed acyclic graph.</span>
+
+<span class="sd">    This function is faster than the function `transitive_closure`, but fails</span>
+<span class="sd">    if the graph has a cycle.</span>
+
+<span class="sd">    The transitive closure of G = (V,E) is a graph G+ = (V,E+) such that</span>
+<span class="sd">    for all v,w in V there is an edge (v,w) in E+ if and only if there</span>
+<span class="sd">    is a non-null path from v to w in G.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX DiGraph</span>
+<span class="sd">        A directed acyclic graph (DAG)</span>
+
+<span class="sd">    topo_order: list or tuple, optional</span>
+<span class="sd">        A topological order for G (if None, the function will compute one)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    NetworkX DiGraph</span>
+<span class="sd">        The transitive closure of `G`</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NetworkXNotImplemented</span>
+<span class="sd">        If `G` is not directed</span>
+<span class="sd">    NetworkXUnfeasible</span>
+<span class="sd">        If `G` has a cycle</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This algorithm is probably simple enough to be well-known but I didn&#39;t find</span>
+<span class="sd">    a mention in the literature.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">topo_order</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">topo_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">topological_sort</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+
+    <span class="n">TC</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># idea: traverse vertices following a reverse topological order, connecting</span>
+    <span class="c1"># each vertex to its descendants at distance 2 as we go</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">topo_order</span><span class="p">):</span>
+        <span class="n">TC</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">descendants_at_distance</span><span class="p">(</span><span class="n">TC</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">TC</span>
 
 
 <div class="viewcode-block" id="transitive_reduction"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.dag.transitive_reduction.html#networkx.algorithms.dag.transitive_reduction">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
@@ -769,10 +822,11 @@
 <span class="sd">       AMS, Vol 42, 1995, p. 226.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">topo_order</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">topo_order</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">topological_sort</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+        <span class="n">topo_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">topological_sort</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
 
-    <span class="n">TC</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">transitive_closure</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="n">antichains_stacks</span> <span class="o">=</span> <span class="p">[([],</span> <span class="nb">list</span><span class="p">(</span><span class="n">topo_order</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
+    <span class="n">TC</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">transitive_closure_dag</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">topo_order</span><span class="p">)</span>
+    <span class="n">antichains_stacks</span> <span class="o">=</span> <span class="p">[([],</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">topo_order</span><span class="p">)))]</span>
+
     <span class="k">while</span> <span class="n">antichains_stacks</span><span class="p">:</span>
         <span class="p">(</span><span class="n">antichain</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span> <span class="o">=</span> <span class="n">antichains_stacks</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
         <span class="c1"># Invariant:</span>
@@ -1016,7 +1070,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Aug 08, 2019.
+        Last updated on Aug 09, 2019.
       </span>
 
     </p>
