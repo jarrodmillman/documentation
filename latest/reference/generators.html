@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190822192220 documentation</title>
+  <title>Graph generators &mdash; NetworkX 2.4rc1.dev20190822214627 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190822192220 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190822214627 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190822192220
+                2.4rc1.dev_20190822214627
               </div>
             
           
@@ -285,6 +285,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.generators.joint_degree_seq">Joint Degree Sequence</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.joint_degree_seq.is_valid_joint_degree.html">networkx.generators.joint_degree_seq.is_valid_joint_degree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.joint_degree_seq.joint_degree_graph.html">networkx.generators.joint_degree_seq.joint_degree_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.joint_degree_seq.is_valid_directed_joint_degree.html">networkx.generators.joint_degree_seq.is_valid_directed_joint_degree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.generators.joint_degree_seq.directed_joint_degree_graph.html">networkx.generators.joint_degree_seq.directed_joint_degree_graph</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-networkx.generators.mycielski">Mycielski</a><ul>
@@ -1024,7 +1026,7 @@ digraphs on three nodes.</p>
 </div>
 <div class="section" id="module-networkx.generators.joint_degree_seq">
 <span id="joint-degree-sequence"></span><h2>Joint Degree Sequence<a class="headerlink" href="#module-networkx.generators.joint_degree_seq" title="Permalink to this headline">¶</a></h2>
-<p>Generate graphs with a given joint degree</p>
+<p>Generate graphs with a given joint degree and directed joint degree</p>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -1032,10 +1034,16 @@ digraphs on three nodes.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.joint_degree_seq.is_valid_joint_degree.html#networkx.generators.joint_degree_seq.is_valid_joint_degree" title="networkx.generators.joint_degree_seq.is_valid_joint_degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_joint_degree</span></code></a>(joint_degrees)</td>
-<td>Checks whether the given joint degree dictionary is realizable as a simple graph.</td>
+<td>Checks whether the given joint degree dictionary is realizable.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.joint_degree_seq.joint_degree_graph.html#networkx.generators.joint_degree_seq.joint_degree_graph" title="networkx.generators.joint_degree_seq.joint_degree_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">joint_degree_graph</span></code></a>(joint_degrees[,&nbsp;seed])</td>
 <td>Generates a random simple graph with the given joint degree dictionary.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.generators.joint_degree_seq.is_valid_directed_joint_degree.html#networkx.generators.joint_degree_seq.is_valid_directed_joint_degree" title="networkx.generators.joint_degree_seq.is_valid_directed_joint_degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_directed_joint_degree</span></code></a>(in_degrees,&nbsp;…)</td>
+<td>Checks whether the given directed joint degree input is realizable</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/networkx.generators.joint_degree_seq.directed_joint_degree_graph.html#networkx.generators.joint_degree_seq.directed_joint_degree_graph" title="networkx.generators.joint_degree_seq.directed_joint_degree_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">directed_joint_degree_graph</span></code></a>(in_degrees,&nbsp;…)</td>
+<td>Generates a random simple directed graph with the joint degree.</td>
 </tr>
 </tbody>
 </table>
