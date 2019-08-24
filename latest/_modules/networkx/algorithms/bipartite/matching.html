@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.matching &mdash; NetworkX 2.4rc1.dev20190823203606 documentation</title>
+  <title>networkx.algorithms.bipartite.matching &mdash; NetworkX 2.4rc1.dev20190824131131 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190823203606 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190824131131 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190823203606
+                2.4rc1.dev_20190824131131
               </div>
             
           
@@ -651,8 +651,8 @@
 <span class="n">maximum_matching</span> <span class="o">=</span> <span class="n">hopcroft_karp_matching</span>
 
 
-<span class="k">def</span> <span class="nf">minimum_weight_full_matching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">top_nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the minimum weight full matching of the bipartite graph `G`.</span>
+<div class="viewcode-block" id="minimum_weight_full_matching"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.bipartite.matching.minimum_weight_full_matching.html#networkx.algorithms.bipartite.matching.minimum_weight_full_matching">[docs]</a><span class="k">def</span> <span class="nf">minimum_weight_full_matching</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">top_nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Returns the minimum weight full matching of the bipartite graph `G`.</span>
 
 <span class="sd">    Let :math:`G = ((U, V), E)` be a complete weighted bipartite graph with</span>
 <span class="sd">    real weights :math:`w : E \to \mathbb{R}`. This function then produces</span>
@@ -668,7 +668,7 @@
 <span class="sd">    When :math:`\lvert U \rvert = \lvert V \rvert`, this is commonly</span>
 <span class="sd">    referred to as a perfect matching; here, since we allow</span>
 <span class="sd">    :math:`\lvert U \rvert` and :math:`\lvert V \rvert` to differ, we</span>
-<span class="sd">    follow Karp[1]_ and refer to the matching as *full*.</span>
+<span class="sd">    follow Karp [1]_ and refer to the matching as *full*.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -741,7 +741,7 @@
     <span class="c1"># d will contain the matching from edges in left to right; we need to</span>
     <span class="c1"># add the ones from right to left as well.</span>
     <span class="n">d</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">v</span><span class="p">:</span> <span class="n">u</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
-    <span class="k">return</span> <span class="n">d</span>
+    <span class="k">return</span> <span class="n">d</span></div>
 </pre></div>
 
            </div>
@@ -756,7 +756,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Aug 23, 2019.
+        Last updated on Aug 24, 2019.
       </span>
 
     </p>
