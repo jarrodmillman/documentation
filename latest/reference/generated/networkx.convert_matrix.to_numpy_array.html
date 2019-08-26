@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix.to_numpy_array &mdash; NetworkX 2.4rc1.dev20190824131131 documentation</title>
+  <title>networkx.convert_matrix.to_numpy_array &mdash; NetworkX 2.4rc1.dev20190826054811 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190824131131 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190826054811 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190824131131
+                2.4rc1.dev_20190826054811
               </div>
             
           
@@ -244,6 +244,7 @@ one might prefer nonedges to have some other value, such as nan.</li>
 <p class="last"><a class="reference internal" href="networkx.convert_matrix.from_numpy_array.html#networkx.convert_matrix.from_numpy_array" title="networkx.convert_matrix.from_numpy_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_numpy_array()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
+<p>For directed graphs, entry i,j corresponds to an edge from i to j.</p>
 <p>Entries in the adjacency matrix are assigned to the weight edge attribute.
 When an edge does not have a weight attribute, the value of the entry is
 set to the number 1.  For multiple (parallel) edges, the values of the
@@ -308,7 +309,7 @@ resulting NumPy array can be modified as follows:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Aug 24, 2019.
+        Last updated on Aug 26, 2019.
       </span>
 
     </p>

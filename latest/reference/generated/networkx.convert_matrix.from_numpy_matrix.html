@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix.from_numpy_matrix &mdash; NetworkX 2.4rc1.dev20190824131131 documentation</title>
+  <title>networkx.convert_matrix.from_numpy_matrix &mdash; NetworkX 2.4rc1.dev20190826054811 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190824131131 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190826054811 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190824131131
+                2.4rc1.dev_20190826054811
               </div>
             
           
@@ -223,6 +223,8 @@ the weight of a single edge joining the vertices.</li>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
+<p>For directed graphs, explicitly mention create_using=nx.Digraph,
+and entry i,j of A corresponds to an edge from i to j.</p>
 <p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">create_using</span></code> is <a class="reference internal" href="../classes/multigraph.html#networkx.MultiGraph" title="networkx.MultiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">networkx.MultiGraph</span></code></a> or
 <a class="reference internal" href="../classes/multidigraph.html#networkx.MultiDiGraph" title="networkx.MultiDiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">networkx.MultiDiGraph</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_edges</span></code> is True, and the
 entries of <code class="xref py py-obj docutils literal notranslate"><span class="pre">A</span></code> are of type <a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, then this function returns a
@@ -303,7 +305,7 @@ as the number of parallel edges joining those two vertices:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Aug 24, 2019.
+        Last updated on Aug 26, 2019.
       </span>
 
     </p>
