@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.layout &mdash; NetworkX 2.4rc1.dev20190905014754 documentation</title>
+  <title>networkx.drawing.layout &mdash; NetworkX 2.4rc1.dev20190905183308 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190905014754 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190905183308 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190905014754
+                2.4rc1.dev_20190905183308
               </div>
             
           
@@ -167,6 +167,8 @@
 <span class="c1">#    Dan Schult &lt;dschult@colgate.edu&gt;</span>
 <span class="c1">#    Pieter Swart &lt;swart@lanl.gov&gt;</span>
 <span class="c1">#    Richard Penney &lt;rwpenney@users.sourceforge.net&gt;</span>
+<span class="c1">#    Michael Fedell &lt;mfedell@jpl.nasa.gov&gt;</span>
+<span class="c1">#    Valentino Constantinou &lt;vconstan@jpl.nasa.gov&gt;</span>
 <span class="c1">#    All rights reserved.</span>
 <span class="c1">#    BSD license.</span>
 <span class="c1">#</span>
@@ -202,7 +204,8 @@
            <span class="s1">&#39;spring_layout&#39;</span><span class="p">,</span>
            <span class="s1">&#39;spectral_layout&#39;</span><span class="p">,</span>
            <span class="s1">&#39;planar_layout&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;fruchterman_reingold_layout&#39;</span><span class="p">]</span>
+           <span class="s1">&#39;fruchterman_reingold_layout&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;spiral_layout&#39;</span><span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">_process_params</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
@@ -1095,6 +1098,86 @@
     <span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="n">rescale_layout</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="n">center</span>
     <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">node_list</span><span class="p">,</span> <span class="n">pos</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="spiral_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.layout.spiral_layout.html#networkx.drawing.layout.spiral_layout">[docs]</a><span class="k">def</span> <span class="nf">spiral_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                  <span class="n">resolution</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">equidistant</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Position nodes in a spiral layout.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX graph or list of nodes</span>
+<span class="sd">        A position will be assigned to every node in G.</span>
+<span class="sd">    scale : number (default: 1)</span>
+<span class="sd">        Scale factor for positions.</span>
+<span class="sd">    center : array-like or None</span>
+<span class="sd">        Coordinate pair around which to center the layout.</span>
+<span class="sd">    dim : int</span>
+<span class="sd">        Dimension of layout, currently only dim=2 is supported.</span>
+<span class="sd">        Other dimension values result in a ValueError.</span>
+<span class="sd">    resolution : float</span>
+<span class="sd">        The compactness of the spiral layout returned.</span>
+<span class="sd">        Lower values result in more compressed spiral layouts.</span>
+<span class="sd">    equidistant : bool</span>
+<span class="sd">        If True, nodes will be plotted equidistant from each other.</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pos : dict</span>
+<span class="sd">        A dictionary of positions keyed by node</span>
+<span class="sd">    Raises</span>
+<span class="sd">    -------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If dim != 2</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.path_graph(4)</span>
+<span class="sd">    &gt;&gt;&gt; pos = nx.spiral_layout(G)</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This algorithm currently only works in two dimensions.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+    <span class="k">if</span> <span class="n">dim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;can only handle 2 dimensions&#39;</span><span class="p">)</span>
+
+    <span class="n">G</span><span class="p">,</span> <span class="n">center</span> <span class="o">=</span> <span class="n">_process_params</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">arbitrary_element</span><span class="p">(</span><span class="n">G</span><span class="p">):</span> <span class="n">center</span><span class="p">}</span>
+
+    <span class="n">pos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">equidistant</span><span class="p">:</span>
+        <span class="n">chord</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">resolution</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">step</span> <span class="o">*</span> <span class="n">theta</span>
+            <span class="n">theta</span> <span class="o">+=</span> <span class="n">chord</span> <span class="o">/</span> <span class="n">r</span>
+            <span class="n">pos</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">])</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># set the starting angle and step</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">dist</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="c1"># set the radius for the spiral to the number of nodes in the graph</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="n">dist</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">radius</span><span class="p">:</span>
+            <span class="n">pos</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">dist</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">dist</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)])</span>
+            <span class="n">dist</span> <span class="o">+=</span> <span class="n">step</span>
+            <span class="n">angle</span> <span class="o">+=</span> <span class="n">resolution</span>
+
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">rescale_layout</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pos</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="n">center</span>
+
+    <span class="n">pos</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">pos</span></div>
 
 
 <div class="viewcode-block" id="rescale_layout"><a class="viewcode-back" href="../../../reference/generated/networkx.drawing.layout.rescale_layout.html#networkx.drawing.layout.rescale_layout">[docs]</a><span class="k">def</span> <span class="nf">rescale_layout</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
