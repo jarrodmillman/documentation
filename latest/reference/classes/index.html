@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph types &mdash; NetworkX 2.4rc1.dev20190904171858 documentation</title>
+  <title>Graph types &mdash; NetworkX 2.4rc1.dev20190905014754 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190904171858 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190905014754 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190904171858
+                2.4rc1.dev_20190905014754
               </div>
             
           
@@ -209,26 +209,38 @@ graph you want to represent.</p>
 <h2>Which graph class should I use?<a class="headerlink" href="#which-graph-class-should-i-use" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="44%" />
-<col width="56%" />
+<col width="22%" />
+<col width="17%" />
+<col width="28%" />
+<col width="33%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Graph Type</th>
-<th class="head">NetworkX Class</th>
+<tr class="row-odd"><th class="head">Networkx Class</th>
+<th class="head">Type</th>
+<th class="head">Self-loops allowed</th>
+<th class="head">Parallel edges allowed</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Undirected Simple</td>
-<td>Graph</td>
+<tr class="row-even"><td>Graph</td>
+<td>undirected</td>
+<td>Yes</td>
+<td>No</td>
 </tr>
-<tr class="row-odd"><td>Directed Simple</td>
-<td>DiGraph</td>
+<tr class="row-odd"><td>DiGraph</td>
+<td>directed</td>
+<td>Yes</td>
+<td>No</td>
 </tr>
-<tr class="row-even"><td>With Self-loops</td>
-<td>Graph, DiGraph</td>
+<tr class="row-even"><td>MultiGraph</td>
+<td>undirected</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
-<tr class="row-odd"><td>With Parallel edges</td>
-<td>MultiGraph, MultiDiGraph</td>
+<tr class="row-odd"><td>MultiDiGraph</td>
+<td>directed</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 </tbody>
 </table>
@@ -337,7 +349,7 @@ Often it is easiest to use .copy() to avoid chains.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 04, 2019.
+        Last updated on Sep 05, 2019.
       </span>
 
     </p>
