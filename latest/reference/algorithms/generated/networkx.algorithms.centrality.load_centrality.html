@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.load_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.load_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,59 +271,51 @@
 <h1>networkx.algorithms.centrality.load_centrality<a class="headerlink" href="#networkx-algorithms-centrality-load-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.load_centrality">
-<code class="descname">load_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>v=None</em>, <em>cutoff=None</em>, <em>normalized=True</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.algorithms.centrality.load_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">v=None</em>, <em class="sig-param">cutoff=None</em>, <em class="sig-param">normalized=True</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.algorithms.centrality.load_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute load centrality for nodes.</p>
 <p>The load centrality of a node is the fraction of all shortest
 paths that pass through that node.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A networkx graph.</li>
-<li><strong>normalized</strong> (<em>bool, optional (default=True)</em>) – If True the betweenness values are normalized by b=b/(n-1)(n-2) where
-n is the number of nodes in G.</li>
-<li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, edge weights are ignored.
-Otherwise holds the name of the edge attribute used as weight.</li>
-<li><strong>cutoff</strong> (<em>bool, optional (default=None)</em>) – If specified, only consider paths of length &lt;= cutoff.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A networkx graph.</p></li>
+<li><p><strong>normalized</strong> (<em>bool, optional (default=True)</em>) – If True the betweenness values are normalized by b=b/(n-1)(n-2) where
+n is the number of nodes in G.</p></li>
+<li><p><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, edge weights are ignored.
+Otherwise holds the name of the edge attribute used as weight.</p></li>
+<li><p><strong>cutoff</strong> (<em>bool, optional (default=None)</em>) – If specified, only consider paths of length &lt;= cutoff.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>nodes</strong> – Dictionary of nodes with centrality as the value.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nodes</strong> – Dictionary of nodes with centrality as the value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>Load centrality is slightly different than betweenness. It was originally
-introduced by <a class="footnote-reference" href="#id4" id="id1">[2]</a>. For this load algorithm see <a class="footnote-reference" href="#id3" id="id2">[1]</a>.</p>
+introduced by <a class="footnote-reference brackets" href="#id4" id="id1">2</a>. For this load algorithm see <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Mark E. J. Newman:
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Mark E. J. Newman:
 Scientific collaboration networks. II.
 Shortest paths, weighted networks, and centrality.
 Physical Review E 64, 016132, 2001.
-<a class="reference external" href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.64.016132">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.64.016132</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[2]</a></td><td>Kwang-Il Goh, Byungnam Kahng and Doochul Kim
+<a class="reference external" href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.64.016132">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.64.016132</a></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>Kwang-Il Goh, Byungnam Kahng and Doochul Kim
 Universal behavior of Load Distribution in Scale-Free Networks.
 Physical Review Letters 87(27):1–4, 2001.
-<a class="reference external" href="http://phya.snu.ac.kr/~dkim/PRL87278701.pdf">http://phya.snu.ac.kr/~dkim/PRL87278701.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://phya.snu.ac.kr/~dkim/PRL87278701.pdf">http://phya.snu.ac.kr/~dkim/PRL87278701.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -349,7 +342,7 @@ Physical Review Letters 87(27):1–4, 2001.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

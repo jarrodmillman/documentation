@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.soft_random_geometric_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.geometric.soft_random_geometric_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -222,7 +222,7 @@
 <h1>networkx.generators.geometric.soft_random_geometric_graph<a class="headerlink" href="#networkx-generators-geometric-soft-random-geometric-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.geometric.soft_random_geometric_graph">
-<code class="descname">soft_random_geometric_graph</code><span class="sig-paren">(</span><em>n</em>, <em>radius</em>, <em>dim=2</em>, <em>pos=None</em>, <em>p=2</em>, <em>p_dist=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#soft_random_geometric_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.soft_random_geometric_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">soft_random_geometric_graph</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">radius</em>, <em class="sig-param">dim=2</em>, <em class="sig-param">pos=None</em>, <em class="sig-param">p=2</em>, <em class="sig-param">p_dist=None</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#soft_random_geometric_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.soft_random_geometric_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a soft random geometric graph in the unit cube.</p>
 <p>The soft random geometric graph [1] model places <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes uniformly at
 random in the unit cube in dimension <code class="xref py py-obj docutils literal notranslate"><span class="pre">dim</span></code>. Two nodes of distance, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dist</span></code>,
@@ -232,27 +232,21 @@ is at most <code class="xref py py-obj docutils literal notranslate"><span class
 <p>Edges within <code class="xref py py-obj docutils literal notranslate"><span class="pre">radius</span></code> of each other are determined using a KDTree when
 SciPy is available. This reduces the time complexity from <span class="math notranslate nohighlight">\(O(n^2)\)</span>
 to <span class="math notranslate nohighlight">\(O(n)\)</span>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first">
-<li><p class="first"><strong>n</strong> (<em>int or iterable</em>) – Number of nodes or iterable of nodes</p>
-</li>
-<li><p class="first"><strong>radius</strong> (<em>float</em>) – Distance threshold value</p>
-</li>
-<li><p class="first"><strong>dim</strong> (<em>int, optional</em>) – Dimension of graph</p>
-</li>
-<li><p class="first"><strong>pos</strong> (<em>dict, optional</em>) – A dictionary keyed by node with node positions as values.</p>
-</li>
-<li><p class="first"><strong>p</strong> (<em>float, optional</em>) – Which Minkowski distance metric to use.
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul>
+<li><p><strong>n</strong> (<em>int or iterable</em>) – Number of nodes or iterable of nodes</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – Distance threshold value</p></li>
+<li><p><strong>dim</strong> (<em>int, optional</em>) – Dimension of graph</p></li>
+<li><p><strong>pos</strong> (<em>dict, optional</em>) – A dictionary keyed by node with node positions as values.</p></li>
+<li><p><strong>p</strong> (<em>float, optional</em>) – Which Minkowski distance metric to use.
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code> has to meet the condition <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">p</span> <span class="pre">&lt;=</span> <span class="pre">infinity</span></code>.</p>
 <p>If this argument is not specified, the <span class="math notranslate nohighlight">\(L^2\)</span> metric
 (the Euclidean distance metric), p = 2 is used.</p>
 <p>This should not be confused with the <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code> of an Erdős-Rényi random
 graph, which represents probability.</p>
 </li>
-<li><p class="first"><strong>p_dist</strong> (<em>function, optional</em>) – A probability density function computing the probability of
+<li><p><strong>p_dist</strong> (<em>function, optional</em>) – A probability density function computing the probability of
 connecting two nodes that are of distance, dist, computed by the
 Minkowski distance metric. The probability density function, <code class="xref py py-obj docutils literal notranslate"><span class="pre">p_dist</span></code>,
 must be any function that takes the metric value as input
@@ -261,26 +255,22 @@ package has many probability distribution functions implemented and
 tools for custom probability distribution definitions [2], and passing
 the .pdf method of scipy.stats distributions can be used here.  If the
 probability function, <code class="xref py py-obj docutils literal notranslate"><span class="pre">p_dist</span></code>, is not supplied, the default function
-is an exponential distribution with rate parameter <span class="math notranslate nohighlight">\(\lambda=1\)</span>.</p>
-</li>
-<li><p class="first"><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p>
-</li>
+is an exponential distribution with rate parameter <span class="math notranslate nohighlight">\(\lambda=1\)</span>.</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A soft random geometric graph, undirected and without self-loops.
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A soft random geometric graph, undirected and without self-loops.
 Each node has a node attribute <code class="docutils literal notranslate"><span class="pre">'pos'</span></code> that stores the
 position of that node in Euclidean space as provided by the
 <code class="docutils literal notranslate"><span class="pre">pos</span></code> keyword argument or, if <code class="docutils literal notranslate"><span class="pre">pos</span></code> was not provided, as
 generated by this function.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>Default Graph:</p>
 <p>G = nx.soft_random_geometric_graph(50, 0.2)</p>
@@ -306,18 +296,16 @@ with the .pdf method used as <code class="xref py py-obj docutils literal notran
 </pre></div>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><dl class="first last docutils">
-<dt>Penrose, Mathew D. “Connectivity of soft random geometric graphs.”</dt>
-<dd>The Annals of Applied Probability 26.2 (2016): 986-1028.</dd>
-<dt>[2] scipy.stats -</dt>
-<dd><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html">https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html</a></dd>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><dl class="simple">
+<dt>Penrose, Mathew D. “Connectivity of soft random geometric graphs.”</dt><dd><p>The Annals of Applied Probability 26.2 (2016): 986-1028.</p>
+</dd>
+<dt>[2] scipy.stats -</dt><dd><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html">https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html</a></p>
+</dd>
 </dl>
-</td></tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -344,7 +332,7 @@ with the .pdf method used as <code class="xref py py-obj docutils literal notran
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

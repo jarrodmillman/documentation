@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version 1.0 notes and API changes &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Version 1.0 notes and API changes &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -208,10 +208,10 @@ Adding attributes to nodes is optional.</p>
 <p>Add node attributes using add_node(), add_nodes_from() or G.node</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s1">&#39;5pm&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">3</span><span class="p">],</span> <span class="n">time</span><span class="o">=</span><span class="s1">&#39;2pm&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  
 <span class="go">{&#39;time&#39;: &#39;5pm&#39;}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;room&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">714</span>  <span class="c1"># doctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;room&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">714</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
 <span class="go">[(1, {&#39;room&#39;: 714, &#39;time&#39;: &#39;5pm&#39;}), (3, {&#39;time&#39;: &#39;2pm&#39;})]</span>
 </pre></div>
 </div>
@@ -231,7 +231,7 @@ notation, or G.edge.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;blue&#39;</span><span class="p">}),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">})])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.7</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  
 </pre></div>
 </div>
 </div>
@@ -291,7 +291,7 @@ attributes applied to all affected edges.</p>
 <div><p>New keyword data=True|False keyword determines whether to return
 two-tuples (n,dict) (True) with node attribution dictionary</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
 <span class="go">[(1, {}), (2, {}), (3, {}), (4, {})]</span>
 </pre></div>
 </div>
@@ -341,7 +341,7 @@ initializer to make a shallow copy:</p>
 <div><p>Now take optional keyword=value attributes or a dictionary of
 attributes which are applied to all edges affected by the method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">3.2</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">3.2</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div></blockquote>
@@ -352,27 +352,32 @@ attributes which are applied to all edges affected by the method.</p>
 <div class="section" id="delete-node">
 <h4>delete_node()<a class="headerlink" href="#delete-node" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>The preferred name is now remove_node().</div></blockquote>
+<div><p>The preferred name is now remove_node().</p>
+</div></blockquote>
 </div>
 <div class="section" id="delete-nodes-from">
 <h4>delete_nodes_from()<a class="headerlink" href="#delete-nodes-from" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>No longer raises an exception on an attempt to delete a node not in
-the graph.  The preferred name is now remove_nodes_from().</div></blockquote>
+<div><p>No longer raises an exception on an attempt to delete a node not in
+the graph.  The preferred name is now remove_nodes_from().</p>
+</div></blockquote>
 </div>
 <div class="section" id="delete-edge">
 <h4>delete_edge()<a class="headerlink" href="#delete-edge" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>Now raises an exception on an attempt to delete an edge not in the graph.
-The preferred name is now remove_edge().</div></blockquote>
+<div><p>Now raises an exception on an attempt to delete an edge not in the graph.
+The preferred name is now remove_edge().</p>
+</div></blockquote>
 </div>
 <div class="section" id="delete-edges-from">
 <h4>delete_edges_from()<a class="headerlink" href="#delete-edges-from" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>The preferred name is now remove_edges_from().</div></blockquote>
+<div><p>The preferred name is now remove_edges_from().</p>
+</div></blockquote>
 <p>has_neighbor():</p>
 <blockquote>
-<div>Use has_edge()</div></blockquote>
+<div><p>Use has_edge()</p>
+</div></blockquote>
 </div>
 <div class="section" id="get-edge">
 <h4>get_edge()<a class="headerlink" href="#get-edge" title="Permalink to this headline">¶</a></h4>
@@ -388,9 +393,10 @@ instead of G.get_edge_data(u,v)</p>
 <div class="section" id="directed-multigraph-weighted">
 <h4>directed, multigraph, weighted<a class="headerlink" href="#directed-multigraph-weighted" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>Use methods G.is_directed() and G.is_multigraph().
+<div><p>Use methods G.is_directed() and G.is_multigraph().
 All graphs are weighted graphs now if they have numeric
-values in the ‘weight’ edge attribute.</div></blockquote>
+values in the ‘weight’ edge attribute.</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="methods-added">
@@ -398,8 +404,9 @@ values in the ‘weight’ edge attribute.</div></blockquote>
 <div class="section" id="add-weighted-edges-from">
 <h4>add_weighted edges_from()<a class="headerlink" href="#add-weighted-edges-from" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>Convenience method to add weighted edges to graph using a list of
-3-tuples (u,v,weight).</div></blockquote>
+<div><p>Convenience method to add weighted edges to graph using a list of
+3-tuples (u,v,weight).</p>
+</div></blockquote>
 </div>
 <div class="section" id="get-edge-data">
 <h4>get_edge_data()<a class="headerlink" href="#get-edge-data" title="Permalink to this headline">¶</a></h4>
@@ -412,12 +419,14 @@ instead of G.get_edge_data(u,v)</p>
 <div class="section" id="is-directed">
 <h4>is_directed()<a class="headerlink" href="#is-directed" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>replaces member G.directed</div></blockquote>
+<div><p>replaces member G.directed</p>
+</div></blockquote>
 </div>
 <div class="section" id="is-multigraph">
 <h4>is_multigraph()<a class="headerlink" href="#is-multigraph" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>replaces member G.multigraph</div></blockquote>
+<div><p>replaces member G.multigraph</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="classes-removed">
@@ -425,12 +434,14 @@ instead of G.get_edge_data(u,v)</p>
 <div class="section" id="labeledgraph-labeleddigraph">
 <h4>LabeledGraph, LabeledDiGraph<a class="headerlink" href="#labeledgraph-labeleddigraph" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>These classes have been folded into the regular classes.</div></blockquote>
+<div><p>These classes have been folded into the regular classes.</p>
+</div></blockquote>
 </div>
 <div class="section" id="ubigraph">
 <h4>UbiGraph<a class="headerlink" href="#ubigraph" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>Removed as the ubigraph platform is no longer being supported.</div></blockquote>
+<div><p>Removed as the ubigraph platform is no longer being supported.</p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -486,7 +497,7 @@ weight key is</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

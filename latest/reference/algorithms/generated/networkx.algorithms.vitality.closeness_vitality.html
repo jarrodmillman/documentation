@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.vitality.closeness_vitality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.vitality.closeness_vitality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,45 +257,40 @@
 <h1>networkx.algorithms.vitality.closeness_vitality<a class="headerlink" href="#networkx-algorithms-vitality-closeness-vitality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.vitality.closeness_vitality">
-<code class="descname">closeness_vitality</code><span class="sig-paren">(</span><em>G</em>, <em>node=None</em>, <em>weight=None</em>, <em>wiener_index=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/vitality.html#closeness_vitality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.vitality.closeness_vitality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">closeness_vitality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">node=None</em>, <em class="sig-param">weight=None</em>, <em class="sig-param">wiener_index=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/vitality.html#closeness_vitality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.vitality.closeness_vitality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the closeness vitality for nodes in the graph.</p>
 <p>The <em>closeness vitality</em> of a node, defined in Section 3.6.2 of [1],
 is the change in the sum of distances between all node pairs when
 excluding that node.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – A strongly-connected graph.</li>
-<li><strong>weight</strong> (<em>string</em>) – The name of the edge attribute used as weight. This is passed
-directly to the <code class="xref py py-func docutils literal notranslate"><span class="pre">wiener_index()</span></code> function.</li>
-<li><strong>node</strong> (<em>object</em>) – If specified, only the closeness vitality for this node will be
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – A strongly-connected graph.</p></li>
+<li><p><strong>weight</strong> (<em>string</em>) – The name of the edge attribute used as weight. This is passed
+directly to the <code class="xref py py-func docutils literal notranslate"><span class="pre">wiener_index()</span></code> function.</p></li>
+<li><p><strong>node</strong> (<em>object</em>) – If specified, only the closeness vitality for this node will be
 returned. Otherwise, a dictionary mapping each node to its
-closeness vitality will be returned.</li>
+closeness vitality will be returned.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><strong>wiener_index</strong> (<em>number</em>) – If you have already computed the Wiener index of the graph
+</dd>
+<dt class="field-even">Other Parameters</dt>
+<dd class="field-even"><p><strong>wiener_index</strong> (<em>number</em>) – If you have already computed the Wiener index of the graph
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, you can provide that value here. Otherwise, it will be
 computed for you.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span></code> is None, this function returns a dictionary
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span></code> is None, this function returns a dictionary
 with nodes as keys and closeness vitality as the
 value. Otherwise, it returns only the closeness vitality for the
 specified <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span></code>.</p>
 <p>The closeness vitality of a node may be negative infinity if
 removing that node would disconnect the graph.</p>
 </p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary or <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dictionary or <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_vitality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -302,19 +298,18 @@ removing that node would disconnect the graph.</p>
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">closeness_centrality()</span></code></p>
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">closeness_centrality()</span></code></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Ulrik Brandes, Thomas Erlebach (eds.).
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Ulrik Brandes, Thomas Erlebach (eds.).
 <em>Network Analysis: Methodological Foundations</em>.
 Springer, 2005.
-&lt;<a class="reference external" href="http://books.google.com/books?id=TTNhSm7HYrIC">http://books.google.com/books?id=TTNhSm7HYrIC</a>&gt;</td></tr>
-</tbody>
-</table>
+&lt;<a class="reference external" href="http://books.google.com/books?id=TTNhSm7HYrIC">http://books.google.com/books?id=TTNhSm7HYrIC</a>&gt;</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -341,7 +336,7 @@ Springer, 2005.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

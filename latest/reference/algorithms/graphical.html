@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graphical degree sequence &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Graphical degree sequence &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -258,29 +259,29 @@
   <div class="section" id="module-networkx.algorithms.graphical">
 <span id="graphical-degree-sequence"></span><h1>Graphical degree sequence<a class="headerlink" href="#module-networkx.algorithms.graphical" title="Permalink to this headline">¶</a></h1>
 <p>Test sequences for graphiness.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.graphical.is_graphical.html#networkx.algorithms.graphical.is_graphical" title="networkx.algorithms.graphical.is_graphical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_graphical</span></code></a>(sequence[,&nbsp;method])</td>
-<td>Returns True if sequence is a valid degree sequence.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.graphical.is_graphical.html#networkx.algorithms.graphical.is_graphical" title="networkx.algorithms.graphical.is_graphical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_graphical</span></code></a>(sequence[, method])</p></td>
+<td><p>Returns True if sequence is a valid degree sequence.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.graphical.is_digraphical.html#networkx.algorithms.graphical.is_digraphical" title="networkx.algorithms.graphical.is_digraphical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_digraphical</span></code></a>(in_sequence,&nbsp;out_sequence)</td>
-<td>Returns True if some directed graph can realize the in- and out-degree sequences.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.graphical.is_digraphical.html#networkx.algorithms.graphical.is_digraphical" title="networkx.algorithms.graphical.is_digraphical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_digraphical</span></code></a>(in_sequence, out_sequence)</p></td>
+<td><p>Returns True if some directed graph can realize the in- and out-degree sequences.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.graphical.is_multigraphical.html#networkx.algorithms.graphical.is_multigraphical" title="networkx.algorithms.graphical.is_multigraphical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_multigraphical</span></code></a>(sequence)</td>
-<td>Returns True if some multigraph can realize the sequence.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.graphical.is_multigraphical.html#networkx.algorithms.graphical.is_multigraphical" title="networkx.algorithms.graphical.is_multigraphical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_multigraphical</span></code></a>(sequence)</p></td>
+<td><p>Returns True if some multigraph can realize the sequence.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.graphical.is_pseudographical.html#networkx.algorithms.graphical.is_pseudographical" title="networkx.algorithms.graphical.is_pseudographical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_pseudographical</span></code></a>(sequence)</td>
-<td>Returns True if some pseudograph can realize the sequence.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.graphical.is_pseudographical.html#networkx.algorithms.graphical.is_pseudographical" title="networkx.algorithms.graphical.is_pseudographical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_pseudographical</span></code></a>(sequence)</p></td>
+<td><p>Returns True if some pseudograph can realize the sequence.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.graphical.is_valid_degree_sequence_havel_hakimi.html#networkx.algorithms.graphical.is_valid_degree_sequence_havel_hakimi" title="networkx.algorithms.graphical.is_valid_degree_sequence_havel_hakimi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_degree_sequence_havel_hakimi</span></code></a>(…)</td>
-<td>Returns True if deg_sequence can be realized by a simple graph.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.graphical.is_valid_degree_sequence_havel_hakimi.html#networkx.algorithms.graphical.is_valid_degree_sequence_havel_hakimi" title="networkx.algorithms.graphical.is_valid_degree_sequence_havel_hakimi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_degree_sequence_havel_hakimi</span></code></a>(…)</p></td>
+<td><p>Returns True if deg_sequence can be realized by a simple graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai.html#networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai" title="networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_degree_sequence_erdos_gallai</span></code></a>(…)</td>
-<td>Returns True if deg_sequence can be realized by a simple graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai.html#networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai" title="networkx.algorithms.graphical.is_valid_degree_sequence_erdos_gallai"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_degree_sequence_erdos_gallai</span></code></a>(…)</p></td>
+<td><p>Returns True if deg_sequence can be realized by a simple graph.</p></td>
 </tr>
 </tbody>
 </table>
@@ -308,7 +309,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

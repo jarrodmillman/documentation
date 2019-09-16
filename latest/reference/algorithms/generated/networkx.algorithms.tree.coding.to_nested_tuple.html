@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.coding.to_nested_tuple &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.tree.coding.to_nested_tuple &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -261,42 +262,38 @@
 <h1>networkx.algorithms.tree.coding.to_nested_tuple<a class="headerlink" href="#networkx-algorithms-tree-coding-to-nested-tuple" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.tree.coding.to_nested_tuple">
-<code class="descname">to_nested_tuple</code><span class="sig-paren">(</span><em>T</em>, <em>root</em>, <em>canonical_form=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tree/coding.html#to_nested_tuple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tree.coding.to_nested_tuple" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_nested_tuple</code><span class="sig-paren">(</span><em class="sig-param">T</em>, <em class="sig-param">root</em>, <em class="sig-param">canonical_form=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tree/coding.html#to_nested_tuple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tree.coding.to_nested_tuple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a nested tuple representation of the given tree.</p>
 <p>The nested tuple representation of a tree is defined
 recursively. The tree with one node and no edges is represented by
 the empty tuple, <code class="docutils literal notranslate"><span class="pre">()</span></code>. A tree with <code class="docutils literal notranslate"><span class="pre">k</span></code> subtrees is represented
 by a tuple of length <code class="docutils literal notranslate"><span class="pre">k</span></code> in which each element is the nested tuple
 representation of a subtree.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>T</strong> (<em>NetworkX graph</em>) – An undirected graph object representing a tree.</li>
-<li><strong>root</strong> (<em>node</em>) – The node in <code class="docutils literal notranslate"><span class="pre">T</span></code> to interpret as the root of the tree.</li>
-<li><strong>canonical_form</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, each tuple is sorted so that the function returns
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>NetworkX graph</em>) – An undirected graph object representing a tree.</p></li>
+<li><p><strong>root</strong> (<em>node</em>) – The node in <code class="docutils literal notranslate"><span class="pre">T</span></code> to interpret as the root of the tree.</p></li>
+<li><p><strong>canonical_form</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, each tuple is sorted so that the function returns
 a canonical form for rooted trees. This means “lighter” subtrees
 will appear as nested tuples before “heavier” subtrees. In this
 way, each isomorphic rooted tree has the same nested tuple
-representation.</li>
+representation.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A nested tuple representation of the tree.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A nested tuple representation of the tree.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This function is <em>not</em> the inverse of <a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_nested_tuple()</span></code></a>; the
 only guarantee is that the rooted trees are isomorphic.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_nested_tuple()</span></code></a>, <a class="reference internal" href="networkx.algorithms.tree.coding.to_prufer_sequence.html#networkx.algorithms.tree.coding.to_prufer_sequence" title="networkx.algorithms.tree.coding.to_prufer_sequence"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_prufer_sequence()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.tree.coding.from_nested_tuple.html#networkx.algorithms.tree.coding.from_nested_tuple" title="networkx.algorithms.tree.coding.from_nested_tuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_nested_tuple()</span></code></a>, <a class="reference internal" href="networkx.algorithms.tree.coding.to_prufer_sequence.html#networkx.algorithms.tree.coding.to_prufer_sequence" title="networkx.algorithms.tree.coding.to_prufer_sequence"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_prufer_sequence()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <p>The tree need not be a balanced binary tree:</p>
@@ -348,7 +345,7 @@ nested tuples will be sorted:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.isomorphism.is_isomorphic &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.isomorphism.is_isomorphic &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -260,16 +261,13 @@
 <h1>networkx.algorithms.isomorphism.is_isomorphic<a class="headerlink" href="#networkx-algorithms-isomorphism-is-isomorphic" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.isomorphism.is_isomorphic">
-<code class="descname">is_isomorphic</code><span class="sig-paren">(</span><em>G1</em>, <em>G2</em>, <em>node_match=None</em>, <em>edge_match=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/isomorphism/isomorph.html#is_isomorphic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.isomorphism.is_isomorphic" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_isomorphic</code><span class="sig-paren">(</span><em class="sig-param">G1</em>, <em class="sig-param">G2</em>, <em class="sig-param">node_match=None</em>, <em class="sig-param">edge_match=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/isomorphism/isomorph.html#is_isomorphic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.isomorphism.is_isomorphic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the graphs G1 and G2 are isomorphic and False otherwise.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last">
-<li><p class="first"><strong>G1, G2</strong> (<em>graphs</em>) – The two graphs G1 and G2 must be the same type.</p>
-</li>
-<li><p class="first"><strong>node_match</strong> (<em>callable</em>) – A function that returns True if node n1 in G1 and n2 in G2 should
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul>
+<li><p><strong>G1, G2</strong> (<em>graphs</em>) – The two graphs G1 and G2 must be the same type.</p></li>
+<li><p><strong>node_match</strong> (<em>callable</em>) – A function that returns True if node n1 in G1 and n2 in G2 should
 be considered equal during the isomorphism test.
 If node_match is not specified then node attributes are not considered.</p>
 <p>The function will be called like</p>
@@ -279,7 +277,7 @@ If node_match is not specified then node attributes are not considered.</p>
 <p>That is, the function will receive the node attribute dictionaries
 for n1 and n2 as inputs.</p>
 </li>
-<li><p class="first"><strong>edge_match</strong> (<em>callable</em>) – A function that returns True if the edge attribute dictionary
+<li><p><strong>edge_match</strong> (<em>callable</em>) – A function that returns True if the edge attribute dictionary
 for the pair of nodes (u1, v1) in G1 and (u2, v2) in G2 should
 be considered equal during the isomorphism test.  If edge_match is
 not specified then edge attributes are not considered.</p>
@@ -291,12 +289,10 @@ not specified then edge attributes are not considered.</p>
 of the edges under consideration.</p>
 </li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
-<p>Uses the vf2 algorithm <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
+<p>Uses the vf2 algorithm <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx.algorithms.isomorphism</span> <span class="k">as</span> <span class="nn">iso</span>
 </pre></div>
@@ -345,20 +341,19 @@ default value ‘red’.</p>
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.isomorphism.numerical_node_match.html#networkx.algorithms.isomorphism.numerical_node_match" title="networkx.algorithms.isomorphism.numerical_node_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_node_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.numerical_edge_match.html#networkx.algorithms.isomorphism.numerical_edge_match" title="networkx.algorithms.isomorphism.numerical_edge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_edge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.numerical_multiedge_match.html#networkx.algorithms.isomorphism.numerical_multiedge_match" title="networkx.algorithms.isomorphism.numerical_multiedge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_multiedge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_node_match.html#networkx.algorithms.isomorphism.categorical_node_match" title="networkx.algorithms.isomorphism.categorical_node_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_node_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_edge_match.html#networkx.algorithms.isomorphism.categorical_edge_match" title="networkx.algorithms.isomorphism.categorical_edge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_edge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_multiedge_match.html#networkx.algorithms.isomorphism.categorical_multiedge_match" title="networkx.algorithms.isomorphism.categorical_multiedge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_multiedge_match()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.isomorphism.numerical_node_match.html#networkx.algorithms.isomorphism.numerical_node_match" title="networkx.algorithms.isomorphism.numerical_node_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_node_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.numerical_edge_match.html#networkx.algorithms.isomorphism.numerical_edge_match" title="networkx.algorithms.isomorphism.numerical_edge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_edge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.numerical_multiedge_match.html#networkx.algorithms.isomorphism.numerical_multiedge_match" title="networkx.algorithms.isomorphism.numerical_multiedge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">numerical_multiedge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_node_match.html#networkx.algorithms.isomorphism.categorical_node_match" title="networkx.algorithms.isomorphism.categorical_node_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_node_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_edge_match.html#networkx.algorithms.isomorphism.categorical_edge_match" title="networkx.algorithms.isomorphism.categorical_edge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_edge_match()</span></code></a>, <a class="reference internal" href="networkx.algorithms.isomorphism.categorical_multiedge_match.html#networkx.algorithms.isomorphism.categorical_multiedge_match" title="networkx.algorithms.isomorphism.categorical_multiedge_match"><code class="xref py py-func docutils literal notranslate"><span class="pre">categorical_multiedge_match()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>L. P. Cordella, P. Foggia, C. Sansone, M. Vento,
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>L. P. Cordella, P. Foggia, C. Sansone, M. Vento,
 “An Improved Algorithm for Matching Large Graphs”,
 3rd IAPR-TC15 Workshop  on Graph-based Representations in
 Pattern Recognition, Cuen, pp. 149-159, 2001.
-<a class="reference external" href="http://amalfi.dis.unina.it/graph/db/papers/vf-algorithm.pdf">http://amalfi.dis.unina.it/graph/db/papers/vf-algorithm.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://amalfi.dis.unina.it/graph/db/papers/vf-algorithm.pdf">http://amalfi.dis.unina.it/graph/db/papers/vf-algorithm.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -385,7 +380,7 @@ Pattern Recognition, Cuen, pp. 149-159, 2001.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

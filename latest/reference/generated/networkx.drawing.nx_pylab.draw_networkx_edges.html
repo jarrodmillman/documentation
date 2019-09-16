@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab.draw_networkx_edges &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.drawing.nx_pylab.draw_networkx_edges &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -209,54 +209,50 @@
 <h1>networkx.drawing.nx_pylab.draw_networkx_edges<a class="headerlink" href="#networkx-drawing-nx-pylab-draw-networkx-edges" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pylab.draw_networkx_edges">
-<code class="descname">draw_networkx_edges</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>edgelist=None</em>, <em>width=1.0</em>, <em>edge_color='k'</em>, <em>style='solid'</em>, <em>alpha=None</em>, <em>arrowstyle='-|&gt;'</em>, <em>arrowsize=10</em>, <em>edge_cmap=None</em>, <em>edge_vmin=None</em>, <em>edge_vmax=None</em>, <em>ax=None</em>, <em>arrows=True</em>, <em>label=None</em>, <em>node_size=300</em>, <em>nodelist=None</em>, <em>node_shape='o'</em>, <em>connectionstyle=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edges" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw_networkx_edges</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">pos</em>, <em class="sig-param">edgelist=None</em>, <em class="sig-param">width=1.0</em>, <em class="sig-param">edge_color='k'</em>, <em class="sig-param">style='solid'</em>, <em class="sig-param">alpha=None</em>, <em class="sig-param">arrowstyle='-|&gt;'</em>, <em class="sig-param">arrowsize=10</em>, <em class="sig-param">edge_cmap=None</em>, <em class="sig-param">edge_vmin=None</em>, <em class="sig-param">edge_vmax=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">arrows=True</em>, <em class="sig-param">label=None</em>, <em class="sig-param">node_size=300</em>, <em class="sig-param">nodelist=None</em>, <em class="sig-param">node_shape='o'</em>, <em class="sig-param">connectionstyle=None</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the edges of the graph G.</p>
 <p>This draws only the edges of the graph G.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A networkx graph</li>
-<li><strong>pos</strong> (<em>dictionary</em>) – A dictionary with nodes as keys and positions as values.
-Positions should be sequences of length 2.</li>
-<li><strong>edgelist</strong> (<em>collection of edge tuples</em>) – Draw only specified edges(default=G.edges())</li>
-<li><strong>width</strong> (<em>float, or array of floats</em>) – Line width of edges (default=1.0)</li>
-<li><strong>edge_color</strong> (<em>color or array of colors (default=’k’)</em>) – Edge color. Can be a single color or a sequence of colors with the same
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A networkx graph</p></li>
+<li><p><strong>pos</strong> (<em>dictionary</em>) – A dictionary with nodes as keys and positions as values.
+Positions should be sequences of length 2.</p></li>
+<li><p><strong>edgelist</strong> (<em>collection of edge tuples</em>) – Draw only specified edges(default=G.edges())</p></li>
+<li><p><strong>width</strong> (<em>float, or array of floats</em>) – Line width of edges (default=1.0)</p></li>
+<li><p><strong>edge_color</strong> (<em>color or array of colors (default=’k’)</em>) – Edge color. Can be a single color or a sequence of colors with the same
 length as edgelist. Color can be string, or rgb (or rgba) tuple of
 floats from 0-1. If numeric values are specified they will be
-mapped to colors using the edge_cmap and edge_vmin,edge_vmax parameters.</li>
-<li><strong>style</strong> (<em>string</em>) – Edge line style (default=’solid’) (solid|dashed|dotted,dashdot)</li>
-<li><strong>alpha</strong> (<em>float</em>) – The edge transparency (default=None)</li>
-<li><strong>edge_ cmap</strong> (<em>Matplotlib colormap</em>) – Colormap for mapping intensities of edges (default=None)</li>
-<li><strong>edge_vmin,edge_vmax</strong> (<em>floats</em>) – Minimum and maximum for edge colormap scaling (default=None)</li>
-<li><strong>ax</strong> (<em>Matplotlib Axes object, optional</em>) – Draw the graph in the specified Matplotlib axes.</li>
-<li><strong>arrows</strong> (<em>bool, optional (default=True)</em>) – For directed graphs, if True draw arrowheads.
-Note: Arrows will be the same color as edges.</li>
-<li><strong>arrowstyle</strong> (<em>str, optional (default=’-|&gt;’)</em>) – For directed graphs, choose the style of the arrow heads.
+mapped to colors using the edge_cmap and edge_vmin,edge_vmax parameters.</p></li>
+<li><p><strong>style</strong> (<em>string</em>) – Edge line style (default=’solid’) (solid|dashed|dotted,dashdot)</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – The edge transparency (default=None)</p></li>
+<li><p><strong>edge_ cmap</strong> (<em>Matplotlib colormap</em>) – Colormap for mapping intensities of edges (default=None)</p></li>
+<li><p><strong>edge_vmin,edge_vmax</strong> (<em>floats</em>) – Minimum and maximum for edge colormap scaling (default=None)</p></li>
+<li><p><strong>ax</strong> (<em>Matplotlib Axes object, optional</em>) – Draw the graph in the specified Matplotlib axes.</p></li>
+<li><p><strong>arrows</strong> (<em>bool, optional (default=True)</em>) – For directed graphs, if True draw arrowheads.
+Note: Arrows will be the same color as edges.</p></li>
+<li><p><strong>arrowstyle</strong> (<em>str, optional (default=’-|&gt;’)</em>) – For directed graphs, choose the style of the arrow heads.
 See :py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.ArrowStyle</span></code> for more
-options.</li>
-<li><strong>arrowsize</strong> (<em>int, optional (default=10)</em>) – For directed graphs, choose the size of the arrow head head’s length and
+options.</p></li>
+<li><p><strong>arrowsize</strong> (<em>int, optional (default=10)</em>) – For directed graphs, choose the size of the arrow head head’s length and
 width. See :py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.FancyArrowPatch</span></code> for attribute
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">mutation_scale</span></code> for more info.</li>
-<li><strong>connectionstyle</strong> (<em>str, optional (default=None)</em>) – Pass the connectionstyle parameter to create curved arc of rounding
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">mutation_scale</span></code> for more info.</p></li>
+<li><p><strong>connectionstyle</strong> (<em>str, optional (default=None)</em>) – Pass the connectionstyle parameter to create curved arc of rounding
 radius rad. For example, connectionstyle=’arc3,rad=0.2’.
 See :py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.ConnectionStyle</span></code> and
-:py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.FancyArrowPatch</span></code> for more info.</li>
-<li><strong>label</strong> (<em>[None| string]</em>) – Label for legend</li>
+:py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.FancyArrowPatch</span></code> for more info.</p></li>
+<li><p><strong>label</strong> (<em>[None| string]</em>) – Label for legend</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
-<li><em>matplotlib.collection.LineCollection</em> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">LineCollection</span></code> of the edges</li>
-<li><em>list of matplotlib.patches.FancyArrowPatch</em> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">FancyArrowPatch</span></code> instances of the directed edges</li>
-<li><em>Depending whether the drawing includes arrows or not.</em></li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>matplotlib.collection.LineCollection</em> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">LineCollection</span></code> of the edges</p></li>
+<li><p><em>list of matplotlib.patches.FancyArrowPatch</em> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">FancyArrowPatch</span></code> instances of the directed edges</p></li>
+<li><p><em>Depending whether the drawing includes arrows or not.</em></p></li>
 </ul>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>For directed graphs, arrows are drawn at the head end.  Arrows can be
 turned off with keyword arrows=False. Be sure to include <code class="xref py py-obj docutils literal notranslate"><span class="pre">node_size</span></code> as a
@@ -277,8 +273,8 @@ keyword argument; arrows are drawn considering the size of nodes.</p>
 <p>Also see the NetworkX drawing examples at
 <a class="reference external" href="https://networkx.github.io/documentation/latest/auto_examples/index.html">https://networkx.github.io/documentation/latest/auto_examples/index.html</a></p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.drawing.nx_pylab.draw.html#networkx.drawing.nx_pylab.draw" title="networkx.drawing.nx_pylab.draw"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx" title="networkx.drawing.nx_pylab.draw_networkx"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_nodes.html#networkx.drawing.nx_pylab.draw_networkx_nodes" title="networkx.drawing.nx_pylab.draw_networkx_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_nodes()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_labels.html#networkx.drawing.nx_pylab.draw_networkx_labels" title="networkx.drawing.nx_pylab.draw_networkx_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_labels()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edge_labels.html#networkx.drawing.nx_pylab.draw_networkx_edge_labels" title="networkx.drawing.nx_pylab.draw_networkx_edge_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_edge_labels()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.drawing.nx_pylab.draw.html#networkx.drawing.nx_pylab.draw" title="networkx.drawing.nx_pylab.draw"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx" title="networkx.drawing.nx_pylab.draw_networkx"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_nodes.html#networkx.drawing.nx_pylab.draw_networkx_nodes" title="networkx.drawing.nx_pylab.draw_networkx_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_nodes()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_labels.html#networkx.drawing.nx_pylab.draw_networkx_labels" title="networkx.drawing.nx_pylab.draw_networkx_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_labels()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edge_labels.html#networkx.drawing.nx_pylab.draw_networkx_edge_labels" title="networkx.drawing.nx_pylab.draw_networkx_edge_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_edge_labels()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -306,7 +302,7 @@ keyword argument; arrows are drawn considering the size of nodes.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.mst.maximum_spanning_tree &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.tree.mst.maximum_spanning_tree &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -261,32 +262,28 @@
 <h1>networkx.algorithms.tree.mst.maximum_spanning_tree<a class="headerlink" href="#networkx-algorithms-tree-mst-maximum-spanning-tree" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.tree.mst.maximum_spanning_tree">
-<code class="descname">maximum_spanning_tree</code><span class="sig-paren">(</span><em>G</em>, <em>weight='weight'</em>, <em>algorithm='kruskal'</em>, <em>ignore_nan=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tree/mst.html#maximum_spanning_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tree.mst.maximum_spanning_tree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">maximum_spanning_tree</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">weight='weight'</em>, <em class="sig-param">algorithm='kruskal'</em>, <em class="sig-param">ignore_nan=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tree/mst.html#maximum_spanning_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tree.mst.maximum_spanning_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a maximum spanning tree or forest on an undirected graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>undirected graph</em>) – An undirected graph. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is connected, then the algorithm finds a
-spanning tree. Otherwise, a spanning forest is found.</li>
-<li><strong>weight</strong> (<em>str</em>) – Data key to use for edge weights.</li>
-<li><strong>algorithm</strong> (<em>string</em>) – The algorithm to use when finding a maximum spanning tree. Valid
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>undirected graph</em>) – An undirected graph. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is connected, then the algorithm finds a
+spanning tree. Otherwise, a spanning forest is found.</p></li>
+<li><p><strong>weight</strong> (<em>str</em>) – Data key to use for edge weights.</p></li>
+<li><p><strong>algorithm</strong> (<em>string</em>) – The algorithm to use when finding a maximum spanning tree. Valid
 choices are ‘kruskal’, ‘prim’, or ‘boruvka’. The default is
-‘kruskal’.</li>
-<li><strong>ignore_nan</strong> (<em>bool (default: False)</em>) – If a NaN is found as an edge weight normally an exception is raised.
-If <code class="xref py py-obj docutils literal notranslate"><span class="pre">ignore_nan</span> <span class="pre">is</span> <span class="pre">True</span></code> then that edge is ignored instead.</li>
+‘kruskal’.</p></li>
+<li><p><strong>ignore_nan</strong> (<em>bool (default: False)</em>) – If a NaN is found as an edge weight normally an exception is raised.
+If <code class="xref py py-obj docutils literal notranslate"><span class="pre">ignore_nan</span> <span class="pre">is</span> <span class="pre">True</span></code> then that edge is ignored instead.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>G</strong> – A maximum spanning tree or forest.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">NetworkX Graph</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>G</strong> – A maximum spanning tree or forest.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX Graph</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -329,7 +326,7 @@ See <code class="xref py py-mod docutils literal notranslate"><span class="pre">
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

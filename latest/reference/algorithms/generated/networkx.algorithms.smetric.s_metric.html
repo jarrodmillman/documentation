@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.smetric.s_metric &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.smetric.s_metric &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,40 +257,35 @@
 <h1>networkx.algorithms.smetric.s_metric<a class="headerlink" href="#networkx-algorithms-smetric-s-metric" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.smetric.s_metric">
-<code class="descname">s_metric</code><span class="sig-paren">(</span><em>G</em>, <em>normalized=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/smetric.html#s_metric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.smetric.s_metric" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">s_metric</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">normalized=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/smetric.html#s_metric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.smetric.s_metric" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the s-metric of graph.</p>
 <p>The s-metric is defined as the sum of the products deg(u)*deg(v)
 for every edge (u,v) in G. If norm is provided construct the
 s-max graph and compute it’s s_metric, and return the normalized
 s value</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – The graph used to compute the s-metric.</li>
-<li><strong>normalized</strong> (<em>bool (optional)</em>) – Normalize the value.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – The graph used to compute the s-metric.</p></li>
+<li><p><strong>normalized</strong> (<em>bool (optional)</em>) – Normalize the value.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>s</strong> – The s-metric of the graph.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>s</strong> – The s-metric of the graph.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Lun Li, David Alderson, John C. Doyle, and Walter Willinger,
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Lun Li, David Alderson, John C. Doyle, and Walter Willinger,
 Towards a Theory of Scale-Free Graphs:
 Definition, Properties, and  Implications (Extended Version), 2005.
-<a class="reference external" href="https://arxiv.org/abs/cond-mat/0501169">https://arxiv.org/abs/cond-mat/0501169</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="https://arxiv.org/abs/cond-mat/0501169">https://arxiv.org/abs/cond-mat/0501169</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -316,7 +312,7 @@ Definition, Properties, and  Implications (Extended Version), 2005.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.cluster.robins_alexander_clustering &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.cluster.robins_alexander_clustering &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bipartite.html">Bipartite</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.basic">Basic functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.matching">Matching</a></li>
@@ -265,25 +266,24 @@
 <h1>networkx.algorithms.bipartite.cluster.robins_alexander_clustering<a class="headerlink" href="#networkx-algorithms-bipartite-cluster-robins-alexander-clustering" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.cluster.robins_alexander_clustering">
-<code class="descname">robins_alexander_clustering</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/cluster.html#robins_alexander_clustering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.cluster.robins_alexander_clustering" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">robins_alexander_clustering</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/cluster.html#robins_alexander_clustering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.cluster.robins_alexander_clustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the bipartite clustering of G.</p>
-<p>Robins and Alexander <a class="footnote-reference" href="#id2" id="id1">[1]</a> defined bipartite clustering coefficient as
+<p>Robins and Alexander <a class="footnote-reference brackets" href="#id2" id="id1">1</a> defined bipartite clustering coefficient as
 four times the number of four cycles <code class="xref py py-obj docutils literal notranslate"><span class="pre">C_4</span></code> divided by the number of
 three paths <code class="xref py py-obj docutils literal notranslate"><span class="pre">L_3</span></code> in a bipartite graph:</p>
 <div class="math notranslate nohighlight">
 \[CC_4 = \frac{4 * C_4}{L_3}\]</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>graph</em>) – a bipartite graph</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>clustering</strong> – The Robins and Alexander bipartite clustering for the input graph.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>graph</em>) – a bipartite graph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>clustering</strong> – The Robins and Alexander bipartite clustering for the input graph.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">davis_southern_women_graph</span><span class="p">()</span>
@@ -292,18 +292,17 @@ three paths <code class="xref py py-obj docutils literal notranslate"><span clas
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.bipartite.cluster.latapy_clustering.html#networkx.algorithms.bipartite.cluster.latapy_clustering" title="networkx.algorithms.bipartite.cluster.latapy_clustering"><code class="xref py py-func docutils literal notranslate"><span class="pre">latapy_clustering()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">square_clustering()</span></code></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.bipartite.cluster.latapy_clustering.html#networkx.algorithms.bipartite.cluster.latapy_clustering" title="networkx.algorithms.bipartite.cluster.latapy_clustering"><code class="xref py py-func docutils literal notranslate"><span class="pre">latapy_clustering()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">square_clustering()</span></code></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Robins, G. and M. Alexander (2004). Small worlds among interlocking
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Robins, G. and M. Alexander (2004). Small worlds among interlocking
 directors: Network structure and distance in bipartite graphs.
-Computational &amp; Mathematical Organization Theory 10(1), 69–94.</td></tr>
-</tbody>
-</table>
+Computational &amp; Mathematical Organization Theory 10(1), 69–94.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -330,7 +329,7 @@ Computational &amp; Mathematical Organization Theory 10(1), 69–94.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

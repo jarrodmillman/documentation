@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.dag.dag_to_branching &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.dag.dag_to_branching &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -268,7 +269,7 @@
 <h1>networkx.algorithms.dag.dag_to_branching<a class="headerlink" href="#networkx-algorithms-dag-dag-to-branching" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.dag.dag_to_branching">
-<code class="descname">dag_to_branching</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/dag.html#dag_to_branching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.dag.dag_to_branching" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">dag_to_branching</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/dag.html#dag_to_branching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.dag.dag_to_branching" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a branching representing all (overlapping) paths from
 root nodes to leaf nodes in the given directed acyclic graph.</p>
 <p>As described in <a class="reference internal" href="../tree.html#module-networkx.algorithms.tree.recognition" title="networkx.algorithms.tree.recognition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">networkx.algorithms.tree.recognition</span></code></a>, a
@@ -282,14 +283,12 @@ in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G
 the returned branching, one for each parent, and the sub-DAG rooted
 at <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> is duplicated for each copy. The algorithm then recurses on
 the children of each copy of <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>G</strong> (<em>NetworkX graph</em>) – A directed acyclic graph.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>The branching in which there is a bijection between root-to-leaf
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX graph</em>) – A directed acyclic graph.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>The branching in which there is a bijection between root-to-leaf
 paths in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> (in which multiple paths may share the same leaf)
 and root-to-leaf paths in the branching (in which there is a
 unique path from a root to a leaf).</p>
@@ -297,19 +296,17 @@ unique path from a root to a leaf).</p>
 node to which this node corresponds. No other graph, node, or
 edge attributes are copied into this new graph.</p>
 </p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="../../classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph">DiGraph</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not directed, or if <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is a multigraph.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">HasACycle</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not acyclic.</li>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph">DiGraph</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXNotImplemented" title="networkx.NetworkXNotImplemented"><strong>NetworkXNotImplemented</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not directed, or if <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is a multigraph.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.HasACycle" title="networkx.HasACycle"><strong>HasACycle</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not acyclic.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>To examine which nodes in the returned branching were produced by
 which original node in the directed acyclic graph, we can collect
@@ -374,7 +371,7 @@ that function.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

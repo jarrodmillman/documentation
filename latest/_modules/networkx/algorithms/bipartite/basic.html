@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.basic &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.basic &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -319,31 +319,28 @@
 <span class="sd">    G : NetworkX graph</span>
 
 <span class="sd">    top_nodes : container</span>
-
 <span class="sd">      Container with all nodes in one bipartite node set. If not supplied</span>
 <span class="sd">      it will be computed. But if more than one solution exists an exception</span>
 <span class="sd">      will be raised.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    (X,Y) : two-tuple of sets</span>
-<span class="sd">       One set of nodes for each part of the bipartite graph.</span>
+<span class="sd">    X, Y : two-tuple of sets</span>
+<span class="sd">      One set of nodes for each part of the bipartite graph.</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
 <span class="sd">    AmbiguousSolution : Exception</span>
-
 <span class="sd">      Raised if the input bipartite graph is disconnected and no container</span>
 <span class="sd">      with all nodes in one bipartite set is provided. When determining</span>
 <span class="sd">      the nodes in each bipartite set more than one valid solution is</span>
 <span class="sd">      possible if the input graph is disconnected.</span>
-
 <span class="sd">    NetworkXError: Exception</span>
-
 <span class="sd">      Raised if the input graph is not bipartite.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+
 <span class="sd">    &gt;&gt;&gt; from networkx.algorithms import bipartite</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.path_graph(4)</span>
 <span class="sd">    &gt;&gt;&gt; X, Y = bipartite.sets(G)</span>
@@ -484,7 +481,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.lattice.hexagonal_lattice_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.lattice.hexagonal_lattice_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -221,7 +221,7 @@
 <h1>networkx.generators.lattice.hexagonal_lattice_graph<a class="headerlink" href="#networkx-generators-lattice-hexagonal-lattice-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.lattice.hexagonal_lattice_graph">
-<code class="descname">hexagonal_lattice_graph</code><span class="sig-paren">(</span><em>m</em>, <em>n</em>, <em>periodic=False</em>, <em>with_positions=True</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/lattice.html#hexagonal_lattice_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.lattice.hexagonal_lattice_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">hexagonal_lattice_graph</code><span class="sig-paren">(</span><em class="sig-param">m</em>, <em class="sig-param">n</em>, <em class="sig-param">periodic=False</em>, <em class="sig-param">with_positions=True</em>, <em class="sig-param">create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/lattice.html#hexagonal_lattice_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.lattice.hexagonal_lattice_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> by <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> hexagonal lattice graph.</p>
 <p>The <em>hexagonal lattice graph</em> is a graph whose nodes and edges are
 the <a class="reference external" href="https://en.wikipedia.org/wiki/Hexagonal_tiling">hexagonal tiling</a> of the plane.</p>
@@ -231,35 +231,31 @@ the <a class="reference external" href="https://en.wikipedia.org/wiki/Hexagonal_
 Node positions creating the standard embedding in the plane
 with sidelength 1 and are stored in the node attribute ‘pos’.
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.get_node_attributes(G,</span> <span class="pre">'pos')</span></code> creates a dict ready for drawing.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> (<em>int</em>) – The number of rows of hexagons in the lattice.</li>
-<li><strong>n</strong> (<em>int</em>) – The number of columns of hexagons in the lattice.</li>
-<li><strong>periodic</strong> (<em>bool</em>) – Whether to make a periodic grid by joining the boundary vertices.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> (<em>int</em>) – The number of rows of hexagons in the lattice.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The number of columns of hexagons in the lattice.</p></li>
+<li><p><strong>periodic</strong> (<em>bool</em>) – Whether to make a periodic grid by joining the boundary vertices.
 For this to work <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> must be odd and both <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>.
 The periodic connections create another row and column of hexagons
-so these graphs have fewer nodes as boundary nodes are identified.</li>
-<li><strong>with_positions</strong> (<em>bool (default: True)</em>) – Store the coordinates of each node in the graph node attribute ‘pos’.
+so these graphs have fewer nodes as boundary nodes are identified.</p></li>
+<li><p><strong>with_positions</strong> (<em>bool (default: True)</em>) – Store the coordinates of each node in the graph node attribute ‘pos’.
 The coordinates provide a lattice with vertical columns of hexagons
 offset to interleave and cover the plane.
 Periodic positions shift the nodes vertically in a nonlinear way so
-the edges don’t overlap so much.</li>
-<li><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.
-If graph is directed, edges will point up or right.</li>
+the edges don’t overlap so much.</p></li>
+<li><p><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.
+If graph is directed, edges will point up or right.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The <em>m</em> by <em>n</em> hexagonal lattice graph.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">NetworkX graph</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The <em>m</em> by <em>n</em> hexagonal lattice graph.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX graph</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -286,7 +282,7 @@ If graph is directed, edges will point up or right.</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

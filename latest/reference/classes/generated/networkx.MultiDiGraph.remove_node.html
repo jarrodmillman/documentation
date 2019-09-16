@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.MultiDiGraph.remove_node &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.MultiDiGraph.remove_node &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -201,23 +201,21 @@
 <h1>networkx.MultiDiGraph.remove_node<a class="headerlink" href="#networkx-multidigraph-remove-node" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="networkx.MultiDiGraph.remove_node">
-<code class="descclassname">MultiDiGraph.</code><code class="descname">remove_node</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.MultiDiGraph.remove_node" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">MultiDiGraph.</code><code class="sig-name descname">remove_node</code><span class="sig-paren">(</span><em class="sig-param">n</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.MultiDiGraph.remove_node" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove node n.</p>
 <p>Removes the node n and all adjacent edges.
 Attempting to remove a non-existent node will raise an exception.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>node</em>) – A node in the graph</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code></a> – If n is not in the graph.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>node</em>) – A node in the graph</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If n is not in the graph.</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.MultiDiGraph.remove_nodes_from.html#networkx.MultiDiGraph.remove_nodes_from" title="networkx.MultiDiGraph.remove_nodes_from"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_nodes_from()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.MultiDiGraph.remove_nodes_from.html#networkx.MultiDiGraph.remove_nodes_from" title="networkx.MultiDiGraph.remove_nodes_from"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_nodes_from()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
@@ -254,7 +252,7 @@ Attempting to remove a non-existent node will raise an exception.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

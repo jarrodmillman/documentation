@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.Graph.to_directed &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.Graph.to_directed &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -201,20 +201,18 @@
 <h1>networkx.Graph.to_directed<a class="headerlink" href="#networkx-graph-to-directed" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="networkx.Graph.to_directed">
-<code class="descclassname">Graph.</code><code class="descname">to_directed</code><span class="sig-paren">(</span><em>as_view=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/classes/graph.html#Graph.to_directed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.Graph.to_directed" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Graph.</code><code class="sig-name descname">to_directed</code><span class="sig-paren">(</span><em class="sig-param">as_view=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/classes/graph.html#Graph.to_directed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.Graph.to_directed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a directed representation of the graph.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>G</strong> – A directed graph with the same name, same nodes, and with
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>G</strong> – A directed graph with the same name, same nodes, and with
 each edge (u, v, data) replaced by two directed edges
-(u, v, data) and (v, u, data).</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../digraph.html#networkx.DiGraph" title="networkx.DiGraph">DiGraph</a></td>
-</tr>
-</tbody>
-</table>
+(u, v, data) and (v, u, data).</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../digraph.html#networkx.DiGraph" title="networkx.DiGraph">DiGraph</a></p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This returns a “deepcopy” of the edge, node, and
 graph attributes which attempts to completely copy
@@ -268,7 +266,7 @@ DiGraph created by this method.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

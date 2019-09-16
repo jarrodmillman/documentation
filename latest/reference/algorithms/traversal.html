@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Traversal &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Traversal &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -158,7 +159,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.traversal.breadth_first_search">Breadth First Search</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.traversal.beamsearch">Beam search</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.traversal.edgedfs">Depth First Search on Edges</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breadth-first-search-on-edges">Breadth First Search on Edges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-networkx.algorithms.traversal.edgebfs">Breadth First Search on Edges</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="tree.html">Tree</a></li>
@@ -261,32 +262,32 @@
 <div class="section" id="module-networkx.algorithms.traversal.depth_first_search">
 <span id="depth-first-search"></span><h2>Depth First Search<a class="headerlink" href="#module-networkx.algorithms.traversal.depth_first_search" title="Permalink to this headline">¶</a></h2>
 <p>Basic algorithms for depth-first searching the nodes of a graph.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_edges.html#networkx.algorithms.traversal.depth_first_search.dfs_edges" title="networkx.algorithms.traversal.depth_first_search.dfs_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_edges</span></code></a>(G[,&nbsp;source,&nbsp;depth_limit])</td>
-<td>Iterate over edges in a depth-first-search (DFS).</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_edges.html#networkx.algorithms.traversal.depth_first_search.dfs_edges" title="networkx.algorithms.traversal.depth_first_search.dfs_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_edges</span></code></a>(G[, source, depth_limit])</p></td>
+<td><p>Iterate over edges in a depth-first-search (DFS).</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_tree.html#networkx.algorithms.traversal.depth_first_search.dfs_tree" title="networkx.algorithms.traversal.depth_first_search.dfs_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_tree</span></code></a>(G[,&nbsp;source,&nbsp;depth_limit])</td>
-<td>Returns oriented tree constructed from a depth-first-search from source.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_tree.html#networkx.algorithms.traversal.depth_first_search.dfs_tree" title="networkx.algorithms.traversal.depth_first_search.dfs_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_tree</span></code></a>(G[, source, depth_limit])</p></td>
+<td><p>Returns oriented tree constructed from a depth-first-search from source.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_predecessors.html#networkx.algorithms.traversal.depth_first_search.dfs_predecessors" title="networkx.algorithms.traversal.depth_first_search.dfs_predecessors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_predecessors</span></code></a>(G[,&nbsp;source,&nbsp;depth_limit])</td>
-<td>Returns dictionary of predecessors in depth-first-search from source.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_predecessors.html#networkx.algorithms.traversal.depth_first_search.dfs_predecessors" title="networkx.algorithms.traversal.depth_first_search.dfs_predecessors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_predecessors</span></code></a>(G[, source, depth_limit])</p></td>
+<td><p>Returns dictionary of predecessors in depth-first-search from source.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_successors.html#networkx.algorithms.traversal.depth_first_search.dfs_successors" title="networkx.algorithms.traversal.depth_first_search.dfs_successors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_successors</span></code></a>(G[,&nbsp;source,&nbsp;depth_limit])</td>
-<td>Returns dictionary of successors in depth-first-search from source.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_successors.html#networkx.algorithms.traversal.depth_first_search.dfs_successors" title="networkx.algorithms.traversal.depth_first_search.dfs_successors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_successors</span></code></a>(G[, source, depth_limit])</p></td>
+<td><p>Returns dictionary of successors in depth-first-search from source.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_preorder_nodes.html#networkx.algorithms.traversal.depth_first_search.dfs_preorder_nodes" title="networkx.algorithms.traversal.depth_first_search.dfs_preorder_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_preorder_nodes</span></code></a>(G[,&nbsp;source,&nbsp;depth_limit])</td>
-<td>Generate nodes in a depth-first-search pre-ordering starting at source.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_preorder_nodes.html#networkx.algorithms.traversal.depth_first_search.dfs_preorder_nodes" title="networkx.algorithms.traversal.depth_first_search.dfs_preorder_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_preorder_nodes</span></code></a>(G[, source, depth_limit])</p></td>
+<td><p>Generate nodes in a depth-first-search pre-ordering starting at source.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_postorder_nodes.html#networkx.algorithms.traversal.depth_first_search.dfs_postorder_nodes" title="networkx.algorithms.traversal.depth_first_search.dfs_postorder_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_postorder_nodes</span></code></a>(G[,&nbsp;source,&nbsp;depth_limit])</td>
-<td>Generate nodes in a depth-first-search post-ordering starting at source.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_postorder_nodes.html#networkx.algorithms.traversal.depth_first_search.dfs_postorder_nodes" title="networkx.algorithms.traversal.depth_first_search.dfs_postorder_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_postorder_nodes</span></code></a>(G[, source, depth_limit])</p></td>
+<td><p>Generate nodes in a depth-first-search post-ordering starting at source.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_labeled_edges.html#networkx.algorithms.traversal.depth_first_search.dfs_labeled_edges" title="networkx.algorithms.traversal.depth_first_search.dfs_labeled_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_labeled_edges</span></code></a>(G[,&nbsp;source,&nbsp;depth_limit])</td>
-<td>Iterate over edges in a depth-first-search (DFS) labeled by type.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.depth_first_search.dfs_labeled_edges.html#networkx.algorithms.traversal.depth_first_search.dfs_labeled_edges" title="networkx.algorithms.traversal.depth_first_search.dfs_labeled_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dfs_labeled_edges</span></code></a>(G[, source, depth_limit])</p></td>
+<td><p>Iterate over edges in a depth-first-search (DFS) labeled by type.</p></td>
 </tr>
 </tbody>
 </table>
@@ -294,23 +295,23 @@
 <div class="section" id="module-networkx.algorithms.traversal.breadth_first_search">
 <span id="breadth-first-search"></span><h2>Breadth First Search<a class="headerlink" href="#module-networkx.algorithms.traversal.breadth_first_search" title="Permalink to this headline">¶</a></h2>
 <p>Basic algorithms for breadth-first searching the nodes of a graph.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.breadth_first_search.bfs_edges.html#networkx.algorithms.traversal.breadth_first_search.bfs_edges" title="networkx.algorithms.traversal.breadth_first_search.bfs_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_edges</span></code></a>(G,&nbsp;source[,&nbsp;reverse,&nbsp;depth_limit])</td>
-<td>Iterate over edges in a breadth-first-search starting at source.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.breadth_first_search.bfs_edges.html#networkx.algorithms.traversal.breadth_first_search.bfs_edges" title="networkx.algorithms.traversal.breadth_first_search.bfs_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_edges</span></code></a>(G, source[, reverse, depth_limit])</p></td>
+<td><p>Iterate over edges in a breadth-first-search starting at source.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.breadth_first_search.bfs_tree.html#networkx.algorithms.traversal.breadth_first_search.bfs_tree" title="networkx.algorithms.traversal.breadth_first_search.bfs_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_tree</span></code></a>(G,&nbsp;source[,&nbsp;reverse,&nbsp;depth_limit])</td>
-<td>Returns an oriented tree constructed from of a breadth-first-search starting at source.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.breadth_first_search.bfs_tree.html#networkx.algorithms.traversal.breadth_first_search.bfs_tree" title="networkx.algorithms.traversal.breadth_first_search.bfs_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_tree</span></code></a>(G, source[, reverse, depth_limit])</p></td>
+<td><p>Returns an oriented tree constructed from of a breadth-first-search starting at source.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.breadth_first_search.bfs_predecessors.html#networkx.algorithms.traversal.breadth_first_search.bfs_predecessors" title="networkx.algorithms.traversal.breadth_first_search.bfs_predecessors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_predecessors</span></code></a>(G,&nbsp;source[,&nbsp;depth_limit])</td>
-<td>Returns an iterator of predecessors in breadth-first-search from source.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.breadth_first_search.bfs_predecessors.html#networkx.algorithms.traversal.breadth_first_search.bfs_predecessors" title="networkx.algorithms.traversal.breadth_first_search.bfs_predecessors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_predecessors</span></code></a>(G, source[, depth_limit])</p></td>
+<td><p>Returns an iterator of predecessors in breadth-first-search from source.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.breadth_first_search.bfs_successors.html#networkx.algorithms.traversal.breadth_first_search.bfs_successors" title="networkx.algorithms.traversal.breadth_first_search.bfs_successors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_successors</span></code></a>(G,&nbsp;source[,&nbsp;depth_limit])</td>
-<td>Returns an iterator of successors in breadth-first-search from source.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.breadth_first_search.bfs_successors.html#networkx.algorithms.traversal.breadth_first_search.bfs_successors" title="networkx.algorithms.traversal.breadth_first_search.bfs_successors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_successors</span></code></a>(G, source[, depth_limit])</p></td>
+<td><p>Returns an iterator of successors in breadth-first-search from source.</p></td>
 </tr>
 </tbody>
 </table>
@@ -318,14 +319,14 @@
 <div class="section" id="module-networkx.algorithms.traversal.beamsearch">
 <span id="beam-search"></span><h2>Beam search<a class="headerlink" href="#module-networkx.algorithms.traversal.beamsearch" title="Permalink to this headline">¶</a></h2>
 <p>Basic algorithms for breadth-first searching the nodes of a graph.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.beamsearch.bfs_beam_edges.html#networkx.algorithms.traversal.beamsearch.bfs_beam_edges" title="networkx.algorithms.traversal.beamsearch.bfs_beam_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_beam_edges</span></code></a>(G,&nbsp;source,&nbsp;value[,&nbsp;width])</td>
-<td>Iterates over edges in a beam search.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.beamsearch.bfs_beam_edges.html#networkx.algorithms.traversal.beamsearch.bfs_beam_edges" title="networkx.algorithms.traversal.beamsearch.bfs_beam_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfs_beam_edges</span></code></a>(G, source, value[, width])</p></td>
+<td><p>Iterates over edges in a beam search.</p></td>
 </tr>
 </tbody>
 </table>
@@ -336,32 +337,32 @@
 <h3>Depth First Search on Edges<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Algorithms for a depth-first traversal of edges in a graph.</p>
 </div>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.edgedfs.edge_dfs.html#networkx.algorithms.traversal.edgedfs.edge_dfs" title="networkx.algorithms.traversal.edgedfs.edge_dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_dfs</span></code></a>(G[,&nbsp;source,&nbsp;orientation])</td>
-<td>A directed, depth-first-search of edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, beginning at <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code>.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.edgedfs.edge_dfs.html#networkx.algorithms.traversal.edgedfs.edge_dfs" title="networkx.algorithms.traversal.edgedfs.edge_dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_dfs</span></code></a>(G[, source, orientation])</p></td>
+<td><p>A directed, depth-first-search of edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, beginning at <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="breadth-first-search-on-edges">
-<h2>Breadth First Search on Edges<a class="headerlink" href="#breadth-first-search-on-edges" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-networkx.algorithms.traversal.edgebfs"></span><div class="section" id="id3">
+<div class="section" id="module-networkx.algorithms.traversal.edgebfs">
+<span id="breadth-first-search-on-edges"></span><h2>Breadth First Search on Edges<a class="headerlink" href="#module-networkx.algorithms.traversal.edgebfs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
 <h3>Breadth First Search on Edges<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Algorithms for a breadth-first traversal of edges in a graph.</p>
 </div>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.traversal.edgebfs.edge_bfs.html#networkx.algorithms.traversal.edgebfs.edge_bfs" title="networkx.algorithms.traversal.edgebfs.edge_bfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_bfs</span></code></a>(G[,&nbsp;source,&nbsp;orientation])</td>
-<td>A directed, breadth-first-search of edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, beginning at <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code>.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.traversal.edgebfs.edge_bfs.html#networkx.algorithms.traversal.edgebfs.edge_bfs" title="networkx.algorithms.traversal.edgebfs.edge_bfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_bfs</span></code></a>(G[, source, orientation])</p></td>
+<td><p>A directed, breadth-first-search of edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, beginning at <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -390,7 +391,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

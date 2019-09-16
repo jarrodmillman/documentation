@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.graphml.parse_graphml &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.readwrite.graphml.parse_graphml &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -211,28 +211,24 @@
 <h1>networkx.readwrite.graphml.parse_graphml<a class="headerlink" href="#networkx-readwrite-graphml-parse-graphml" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.readwrite.graphml.parse_graphml">
-<code class="descname">parse_graphml</code><span class="sig-paren">(</span><em>graphml_string</em>, <em>node_type=&lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/graphml.html#parse_graphml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.graphml.parse_graphml" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">parse_graphml</code><span class="sig-paren">(</span><em class="sig-param">graphml_string</em>, <em class="sig-param">node_type=&lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/graphml.html#parse_graphml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.graphml.parse_graphml" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read graph in GraphML format from string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>graphml_string</strong> (<em>string</em>) – String containing graphml information
-(e.g., contents of a graphml file).</li>
-<li><strong>node_type</strong> (<em>Python type (default: str)</em>) – Convert node ids to this type</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graphml_string</strong> (<em>string</em>) – String containing graphml information
+(e.g., contents of a graphml file).</p></li>
+<li><p><strong>node_type</strong> (<em>Python type (default: str)</em>) – Convert node ids to this type</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> – If no parallel edges are found a Graph or DiGraph is returned.
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>graph</strong> – If no parallel edges are found a Graph or DiGraph is returned.
 Otherwise a MultiGraph or MultiDiGraph is returned.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">NetworkX graph</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX graph</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">linefeed</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># linefeed =</span>
@@ -246,12 +242,12 @@ Otherwise a MultiGraph or MultiDiGraph is returned.</p>
 <p>Default node and edge attributes are not propagated to each node and edge.
 They can be obtained from <code class="xref py py-obj docutils literal notranslate"><span class="pre">G.graph</span></code> and applied to node and edge attributes
 if desired using something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">default_color</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;node_default&#39;</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>  <span class="c1"># doctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  <span class="c1"># doctest: +SKIP</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">default_color</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;node_default&#39;</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  
 <span class="gp">... </span>   <span class="k">if</span> <span class="s1">&#39;color&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
 <span class="gp">... </span>       <span class="n">data</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">default_color</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">default_color</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;edge_default&#39;</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>  <span class="c1"># doctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">default_color</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;edge_default&#39;</span><span class="p">][</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  
 <span class="gp">... </span>   <span class="k">if</span> <span class="s1">&#39;color&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
 <span class="gp">... </span>       <span class="n">data</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">default_color</span>
 </pre></div>
@@ -288,7 +284,7 @@ will be provided.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

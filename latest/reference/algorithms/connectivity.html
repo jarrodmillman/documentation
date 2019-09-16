@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Connectivity &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Connectivity &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -270,28 +271,28 @@ unless k or more edges are removed.  Typically, the goal is to find the
 augmentation with minimum weight.  In general, it is not guaranteed that a
 k-edge-augmentation exists.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><code class="xref py py-mod docutils literal notranslate"><span class="pre">edge_kcomponents</span></code></dt>
-<dd>algorithms for finding k-edge-connected components</dd>
-<dt><code class="xref py py-mod docutils literal notranslate"><span class="pre">connectivity</span></code></dt>
-<dd>algorithms for determening edge connectivity.</dd>
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-mod docutils literal notranslate"><span class="pre">edge_kcomponents</span></code></dt><dd><p>algorithms for finding k-edge-connected components</p>
+</dd>
+<dt><code class="xref py py-mod docutils literal notranslate"><span class="pre">connectivity</span></code></dt><dd><p>algorithms for determening edge connectivity.</p>
+</dd>
 </dl>
 </div>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_augmentation.k_edge_augmentation.html#networkx.algorithms.connectivity.edge_augmentation.k_edge_augmentation" title="networkx.algorithms.connectivity.edge_augmentation.k_edge_augmentation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_augmentation</span></code></a>(G,&nbsp;k[,&nbsp;avail,&nbsp;weight,&nbsp;…])</td>
-<td>Finds set of edges to k-edge-connect G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_augmentation.k_edge_augmentation.html#networkx.algorithms.connectivity.edge_augmentation.k_edge_augmentation" title="networkx.algorithms.connectivity.edge_augmentation.k_edge_augmentation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_augmentation</span></code></a>(G, k[, avail, weight, …])</p></td>
+<td><p>Finds set of edges to k-edge-connect G.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_augmentation.is_k_edge_connected.html#networkx.algorithms.connectivity.edge_augmentation.is_k_edge_connected" title="networkx.algorithms.connectivity.edge_augmentation.is_k_edge_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_k_edge_connected</span></code></a>(G,&nbsp;k)</td>
-<td>Tests to see if a graph is k-edge-connected.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_augmentation.is_k_edge_connected.html#networkx.algorithms.connectivity.edge_augmentation.is_k_edge_connected" title="networkx.algorithms.connectivity.edge_augmentation.is_k_edge_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_k_edge_connected</span></code></a>(G, k)</p></td>
+<td><p>Tests to see if a graph is k-edge-connected.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_augmentation.is_locally_k_edge_connected.html#networkx.algorithms.connectivity.edge_augmentation.is_locally_k_edge_connected" title="networkx.algorithms.connectivity.edge_augmentation.is_locally_k_edge_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_locally_k_edge_connected</span></code></a>(G,&nbsp;s,&nbsp;t,&nbsp;k)</td>
-<td>Tests to see if an edge in a graph is locally k-edge-connected.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_augmentation.is_locally_k_edge_connected.html#networkx.algorithms.connectivity.edge_augmentation.is_locally_k_edge_connected" title="networkx.algorithms.connectivity.edge_augmentation.is_locally_k_edge_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_locally_k_edge_connected</span></code></a>(G, s, t, k)</p></td>
+<td><p>Tests to see if an edge in a graph is locally k-edge-connected.</p></td>
 </tr>
 </tbody>
 </table>
@@ -304,23 +305,23 @@ that all pairs of node have an edge-connectivity of at least k.</p>
 <p>A k-edge-connected subgraph (k-edge-subgraph) is a maximal set of nodes in G,
 such that the subgraph of G defined by the nodes has an edge-connectivity at
 least k.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_kcomponents.k_edge_components.html#networkx.algorithms.connectivity.edge_kcomponents.k_edge_components" title="networkx.algorithms.connectivity.edge_kcomponents.k_edge_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_components</span></code></a>(G,&nbsp;k)</td>
-<td>Generates nodes in each maximal k-edge-connected component in G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_kcomponents.k_edge_components.html#networkx.algorithms.connectivity.edge_kcomponents.k_edge_components" title="networkx.algorithms.connectivity.edge_kcomponents.k_edge_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_components</span></code></a>(G, k)</p></td>
+<td><p>Generates nodes in each maximal k-edge-connected component in G.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_kcomponents.k_edge_subgraphs.html#networkx.algorithms.connectivity.edge_kcomponents.k_edge_subgraphs" title="networkx.algorithms.connectivity.edge_kcomponents.k_edge_subgraphs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_subgraphs</span></code></a>(G,&nbsp;k)</td>
-<td>Generates nodes in each maximal k-edge-connected subgraph in G.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_kcomponents.k_edge_subgraphs.html#networkx.algorithms.connectivity.edge_kcomponents.k_edge_subgraphs" title="networkx.algorithms.connectivity.edge_kcomponents.k_edge_subgraphs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_subgraphs</span></code></a>(G, k)</p></td>
+<td><p>Generates nodes in each maximal k-edge-connected subgraph in G.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_kcomponents.bridge_components.html#networkx.algorithms.connectivity.edge_kcomponents.bridge_components" title="networkx.algorithms.connectivity.edge_kcomponents.bridge_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bridge_components</span></code></a>(G)</td>
-<td>Finds all bridge-connected components G.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_kcomponents.bridge_components.html#networkx.algorithms.connectivity.edge_kcomponents.bridge_components" title="networkx.algorithms.connectivity.edge_kcomponents.bridge_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bridge_components</span></code></a>(G)</p></td>
+<td><p>Finds all bridge-connected components G.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph.html#networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph" title="networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EdgeComponentAuxGraph</span></code></a></td>
-<td>A simple algorithm to find all k-edge-connected components in a graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph.html#networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph" title="networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EdgeComponentAuxGraph</span></code></a></p></td>
+<td><p>A simple algorithm to find all k-edge-connected components in a graph.</p></td>
 </tr>
 </tbody>
 </table>
@@ -328,14 +329,14 @@ least k.</p>
 <div class="section" id="module-networkx.algorithms.connectivity.kcomponents">
 <span id="k-node-components"></span><h2>K-node-components<a class="headerlink" href="#module-networkx.algorithms.connectivity.kcomponents" title="Permalink to this headline">¶</a></h2>
 <p>Moody and White algorithm for k-components</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.kcomponents.k_components.html#networkx.algorithms.connectivity.kcomponents.k_components" title="networkx.algorithms.connectivity.kcomponents.k_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_components</span></code></a>(G[,&nbsp;flow_func])</td>
-<td>Returns the k-component structure of a graph G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.kcomponents.k_components.html#networkx.algorithms.connectivity.kcomponents.k_components" title="networkx.algorithms.connectivity.kcomponents.k_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_components</span></code></a>(G[, flow_func])</p></td>
+<td><p>Returns the k-component structure of a graph G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -343,14 +344,14 @@ least k.</p>
 <div class="section" id="module-networkx.algorithms.connectivity.kcutsets">
 <span id="k-node-cutsets"></span><h2>K-node-cutsets<a class="headerlink" href="#module-networkx.algorithms.connectivity.kcutsets" title="Permalink to this headline">¶</a></h2>
 <p>Kanevsky all minimum node k cutsets algorithm.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.kcutsets.all_node_cuts.html#networkx.algorithms.connectivity.kcutsets.all_node_cuts" title="networkx.algorithms.connectivity.kcutsets.all_node_cuts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_node_cuts</span></code></a>(G[,&nbsp;k,&nbsp;flow_func])</td>
-<td>Returns all minimum k cutsets of an undirected graph G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.kcutsets.all_node_cuts.html#networkx.algorithms.connectivity.kcutsets.all_node_cuts" title="networkx.algorithms.connectivity.kcutsets.all_node_cuts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_node_cuts</span></code></a>(G[, k, flow_func])</p></td>
+<td><p>Returns all minimum k cutsets of an undirected graph G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -358,17 +359,17 @@ least k.</p>
 <div class="section" id="module-networkx.algorithms.connectivity.disjoint_paths">
 <span id="flow-based-disjoint-paths"></span><h2>Flow-based disjoint paths<a class="headerlink" href="#module-networkx.algorithms.connectivity.disjoint_paths" title="Permalink to this headline">¶</a></h2>
 <p>Flow based node and edge disjoint paths.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.disjoint_paths.edge_disjoint_paths.html#networkx.algorithms.connectivity.disjoint_paths.edge_disjoint_paths" title="networkx.algorithms.connectivity.disjoint_paths.edge_disjoint_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_disjoint_paths</span></code></a>(G,&nbsp;s,&nbsp;t[,&nbsp;flow_func,&nbsp;…])</td>
-<td>Returns the edges disjoint paths between source and target.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.disjoint_paths.edge_disjoint_paths.html#networkx.algorithms.connectivity.disjoint_paths.edge_disjoint_paths" title="networkx.algorithms.connectivity.disjoint_paths.edge_disjoint_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_disjoint_paths</span></code></a>(G, s, t[, flow_func, …])</p></td>
+<td><p>Returns the edges disjoint paths between source and target.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.disjoint_paths.node_disjoint_paths.html#networkx.algorithms.connectivity.disjoint_paths.node_disjoint_paths" title="networkx.algorithms.connectivity.disjoint_paths.node_disjoint_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_disjoint_paths</span></code></a>(G,&nbsp;s,&nbsp;t[,&nbsp;flow_func,&nbsp;…])</td>
-<td>Computes node disjoint paths between source and target.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.disjoint_paths.node_disjoint_paths.html#networkx.algorithms.connectivity.disjoint_paths.node_disjoint_paths" title="networkx.algorithms.connectivity.disjoint_paths.node_disjoint_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_disjoint_paths</span></code></a>(G, s, t[, flow_func, …])</p></td>
+<td><p>Computes node disjoint paths between source and target.</p></td>
 </tr>
 </tbody>
 </table>
@@ -376,29 +377,29 @@ least k.</p>
 <div class="section" id="module-networkx.algorithms.connectivity.connectivity">
 <span id="flow-based-connectivity"></span><h2>Flow-based Connectivity<a class="headerlink" href="#module-networkx.algorithms.connectivity.connectivity" title="Permalink to this headline">¶</a></h2>
 <p>Flow based connectivity algorithms</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.average_node_connectivity.html#networkx.algorithms.connectivity.connectivity.average_node_connectivity" title="networkx.algorithms.connectivity.connectivity.average_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">average_node_connectivity</span></code></a>(G[,&nbsp;flow_func])</td>
-<td>Returns the average connectivity of a graph G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.average_node_connectivity.html#networkx.algorithms.connectivity.connectivity.average_node_connectivity" title="networkx.algorithms.connectivity.connectivity.average_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">average_node_connectivity</span></code></a>(G[, flow_func])</p></td>
+<td><p>Returns the average connectivity of a graph G.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.all_pairs_node_connectivity.html#networkx.algorithms.connectivity.connectivity.all_pairs_node_connectivity" title="networkx.algorithms.connectivity.connectivity.all_pairs_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_pairs_node_connectivity</span></code></a>(G[,&nbsp;nbunch,&nbsp;…])</td>
-<td>Compute node connectivity between all pairs of nodes of G.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.all_pairs_node_connectivity.html#networkx.algorithms.connectivity.connectivity.all_pairs_node_connectivity" title="networkx.algorithms.connectivity.connectivity.all_pairs_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_pairs_node_connectivity</span></code></a>(G[, nbunch, …])</p></td>
+<td><p>Compute node connectivity between all pairs of nodes of G.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.edge_connectivity.html#networkx.algorithms.connectivity.connectivity.edge_connectivity" title="networkx.algorithms.connectivity.connectivity.edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_connectivity</span></code></a>(G[,&nbsp;s,&nbsp;t,&nbsp;flow_func,&nbsp;cutoff])</td>
-<td>Returns the edge connectivity of the graph or digraph G.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.edge_connectivity.html#networkx.algorithms.connectivity.connectivity.edge_connectivity" title="networkx.algorithms.connectivity.connectivity.edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_connectivity</span></code></a>(G[, s, t, flow_func, cutoff])</p></td>
+<td><p>Returns the edge connectivity of the graph or digraph G.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.local_edge_connectivity.html#networkx.algorithms.connectivity.connectivity.local_edge_connectivity" title="networkx.algorithms.connectivity.connectivity.local_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_edge_connectivity</span></code></a>(G,&nbsp;s,&nbsp;t[,&nbsp;…])</td>
-<td>Returns local edge connectivity for nodes s and t in G.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.local_edge_connectivity.html#networkx.algorithms.connectivity.connectivity.local_edge_connectivity" title="networkx.algorithms.connectivity.connectivity.local_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_edge_connectivity</span></code></a>(G, s, t[, …])</p></td>
+<td><p>Returns local edge connectivity for nodes s and t in G.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.local_node_connectivity.html#networkx.algorithms.connectivity.connectivity.local_node_connectivity" title="networkx.algorithms.connectivity.connectivity.local_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_node_connectivity</span></code></a>(G,&nbsp;s,&nbsp;t[,&nbsp;…])</td>
-<td>Computes local node connectivity for nodes s and t.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.local_node_connectivity.html#networkx.algorithms.connectivity.connectivity.local_node_connectivity" title="networkx.algorithms.connectivity.connectivity.local_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_node_connectivity</span></code></a>(G, s, t[, …])</p></td>
+<td><p>Computes local node connectivity for nodes s and t.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.node_connectivity.html#networkx.algorithms.connectivity.connectivity.node_connectivity" title="networkx.algorithms.connectivity.connectivity.node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_connectivity</span></code></a>(G[,&nbsp;s,&nbsp;t,&nbsp;flow_func])</td>
-<td>Returns node connectivity for a graph or digraph G.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.connectivity.node_connectivity.html#networkx.algorithms.connectivity.connectivity.node_connectivity" title="networkx.algorithms.connectivity.connectivity.node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_connectivity</span></code></a>(G[, s, t, flow_func])</p></td>
+<td><p>Returns node connectivity for a graph or digraph G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -406,23 +407,23 @@ least k.</p>
 <div class="section" id="module-networkx.algorithms.connectivity.cuts">
 <span id="flow-based-minimum-cuts"></span><h2>Flow-based Minimum Cuts<a class="headerlink" href="#module-networkx.algorithms.connectivity.cuts" title="Permalink to this headline">¶</a></h2>
 <p>Flow based cut algorithms</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.cuts.minimum_edge_cut.html#networkx.algorithms.connectivity.cuts.minimum_edge_cut" title="networkx.algorithms.connectivity.cuts.minimum_edge_cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum_edge_cut</span></code></a>(G[,&nbsp;s,&nbsp;t,&nbsp;flow_func])</td>
-<td>Returns a set of edges of minimum cardinality that disconnects G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.cuts.minimum_edge_cut.html#networkx.algorithms.connectivity.cuts.minimum_edge_cut" title="networkx.algorithms.connectivity.cuts.minimum_edge_cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum_edge_cut</span></code></a>(G[, s, t, flow_func])</p></td>
+<td><p>Returns a set of edges of minimum cardinality that disconnects G.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.cuts.minimum_node_cut.html#networkx.algorithms.connectivity.cuts.minimum_node_cut" title="networkx.algorithms.connectivity.cuts.minimum_node_cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum_node_cut</span></code></a>(G[,&nbsp;s,&nbsp;t,&nbsp;flow_func])</td>
-<td>Returns a set of nodes of minimum cardinality that disconnects G.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.cuts.minimum_node_cut.html#networkx.algorithms.connectivity.cuts.minimum_node_cut" title="networkx.algorithms.connectivity.cuts.minimum_node_cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum_node_cut</span></code></a>(G[, s, t, flow_func])</p></td>
+<td><p>Returns a set of nodes of minimum cardinality that disconnects G.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.cuts.minimum_st_edge_cut.html#networkx.algorithms.connectivity.cuts.minimum_st_edge_cut" title="networkx.algorithms.connectivity.cuts.minimum_st_edge_cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum_st_edge_cut</span></code></a>(G,&nbsp;s,&nbsp;t[,&nbsp;flow_func,&nbsp;…])</td>
-<td>Returns the edges of the cut-set of a minimum (s, t)-cut.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.cuts.minimum_st_edge_cut.html#networkx.algorithms.connectivity.cuts.minimum_st_edge_cut" title="networkx.algorithms.connectivity.cuts.minimum_st_edge_cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum_st_edge_cut</span></code></a>(G, s, t[, flow_func, …])</p></td>
+<td><p>Returns the edges of the cut-set of a minimum (s, t)-cut.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.cuts.minimum_st_node_cut.html#networkx.algorithms.connectivity.cuts.minimum_st_node_cut" title="networkx.algorithms.connectivity.cuts.minimum_st_node_cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum_st_node_cut</span></code></a>(G,&nbsp;s,&nbsp;t[,&nbsp;flow_func,&nbsp;…])</td>
-<td>Returns a set of nodes of minimum cardinality that disconnect source from target in G.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.cuts.minimum_st_node_cut.html#networkx.algorithms.connectivity.cuts.minimum_st_node_cut" title="networkx.algorithms.connectivity.cuts.minimum_st_node_cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum_st_node_cut</span></code></a>(G, s, t[, flow_func, …])</p></td>
+<td><p>Returns a set of nodes of minimum cardinality that disconnect source from target in G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -430,14 +431,14 @@ least k.</p>
 <div class="section" id="module-networkx.algorithms.connectivity.stoerwagner">
 <span id="stoer-wagner-minimum-cut"></span><h2>Stoer-Wagner minimum cut<a class="headerlink" href="#module-networkx.algorithms.connectivity.stoerwagner" title="Permalink to this headline">¶</a></h2>
 <p>Stoer-Wagner minimum cut algorithm.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.stoerwagner.stoer_wagner.html#networkx.algorithms.connectivity.stoerwagner.stoer_wagner" title="networkx.algorithms.connectivity.stoerwagner.stoer_wagner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stoer_wagner</span></code></a>(G[,&nbsp;weight,&nbsp;heap])</td>
-<td>Returns the weighted minimum edge cut using the Stoer-Wagner algorithm.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.stoerwagner.stoer_wagner.html#networkx.algorithms.connectivity.stoerwagner.stoer_wagner" title="networkx.algorithms.connectivity.stoerwagner.stoer_wagner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stoer_wagner</span></code></a>(G[, weight, heap])</p></td>
+<td><p>Returns the weighted minimum edge cut using the Stoer-Wagner algorithm.</p></td>
 </tr>
 </tbody>
 </table>
@@ -445,17 +446,17 @@ least k.</p>
 <div class="section" id="module-networkx.algorithms.connectivity.utils">
 <span id="utils-for-flow-based-connectivity"></span><h2>Utils for flow-based connectivity<a class="headerlink" href="#module-networkx.algorithms.connectivity.utils" title="Permalink to this headline">¶</a></h2>
 <p>Utilities for connectivity package</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.utils.build_auxiliary_edge_connectivity.html#networkx.algorithms.connectivity.utils.build_auxiliary_edge_connectivity" title="networkx.algorithms.connectivity.utils.build_auxiliary_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_auxiliary_edge_connectivity</span></code></a>(G)</td>
-<td>Auxiliary digraph for computing flow based edge connectivity</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.utils.build_auxiliary_edge_connectivity.html#networkx.algorithms.connectivity.utils.build_auxiliary_edge_connectivity" title="networkx.algorithms.connectivity.utils.build_auxiliary_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_auxiliary_edge_connectivity</span></code></a>(G)</p></td>
+<td><p>Auxiliary digraph for computing flow based edge connectivity</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity.html#networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity" title="networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_auxiliary_node_connectivity</span></code></a>(G)</td>
-<td>Creates a directed graph D from an undirected graph G to compute flow based node connectivity.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity.html#networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity" title="networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_auxiliary_node_connectivity</span></code></a>(G)</p></td>
+<td><p>Creates a directed graph D from an undirected graph G to compute flow based node connectivity.</p></td>
 </tr>
 </tbody>
 </table>
@@ -484,7 +485,7 @@ least k.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

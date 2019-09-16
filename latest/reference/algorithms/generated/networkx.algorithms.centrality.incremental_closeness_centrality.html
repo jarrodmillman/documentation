@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.incremental_closeness_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.incremental_closeness_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,7 +271,7 @@
 <h1>networkx.algorithms.centrality.incremental_closeness_centrality<a class="headerlink" href="#networkx-algorithms-centrality-incremental-closeness-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.incremental_closeness_centrality">
-<code class="descname">incremental_closeness_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>edge</em>, <em>prev_cc=None</em>, <em>insertion=True</em>, <em>wf_improved=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/closeness.html#incremental_closeness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.incremental_closeness_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">incremental_closeness_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">edge</em>, <em class="sig-param">prev_cc=None</em>, <em class="sig-param">insertion=True</em>, <em class="sig-param">wf_improved=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/closeness.html#incremental_closeness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.incremental_closeness_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Incremental closeness centrality for nodes.</p>
 <p>Compute closeness centrality for nodes using level-based work filtering
 as described in Incremental Algorithms for Closeness Centrality by Sariyuce et al.</p>
@@ -293,7 +294,7 @@ we compute the shortest path lengths after the edge is removed. Then we
 apply Theorem 1 to use previously computed closeness centrality for nodes
 where <span class="math notranslate nohighlight">\(\left|dG(s, u) - dG(s, v)\right| \leq 1\)</span>. This works only for
 undirected, unweighted graphs; the distance argument is not supported.</p>
-<p>Closeness centrality <a class="footnote-reference" href="#id2" id="id1">[1]</a> of a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> is the reciprocal of the
+<p>Closeness centrality <a class="footnote-reference brackets" href="#id2" id="id1">1</a> of a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> is the reciprocal of the
 sum of the shortest path distances from <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> to all <code class="xref py py-obj docutils literal notranslate"><span class="pre">n-1</span></code> other nodes.
 Since the sum of distances depends on the number of nodes in the
 graph, closeness is normalized by the sum of minimum possible
@@ -303,32 +304,28 @@ distances <code class="xref py py-obj docutils literal notranslate"><span class=
 <p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">d(v,</span> <span class="pre">u)</span></code> is the shortest-path distance between <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code>,
 and <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> is the number of nodes in the graph.</p>
 <p>Notice that higher values of closeness indicate higher centrality.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph</li>
-<li><strong>edge</strong> (<em>tuple</em>) – The modified edge (u, v) in the graph.</li>
-<li><strong>prev_cc</strong> (<em>dictionary</em>) – The previous closeness centrality for all nodes in the graph.</li>
-<li><strong>insertion</strong> (<em>bool, optional</em>) – If True (default) the edge was inserted, otherwise it was deleted from the graph.</li>
-<li><strong>wf_improved</strong> (<em>bool, optional (default=True)</em>) – If True, scale by the fraction of nodes reachable. This gives the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph</p></li>
+<li><p><strong>edge</strong> (<em>tuple</em>) – The modified edge (u, v) in the graph.</p></li>
+<li><p><strong>prev_cc</strong> (<em>dictionary</em>) – The previous closeness centrality for all nodes in the graph.</p></li>
+<li><p><strong>insertion</strong> (<em>bool, optional</em>) – If True (default) the edge was inserted, otherwise it was deleted from the graph.</p></li>
+<li><p><strong>wf_improved</strong> (<em>bool, optional (default=True)</em>) – If True, scale by the fraction of nodes reachable. This gives the
 Wasserman and Faust improved formula. For single component graphs
-it is the same as the original formula.</li>
+it is the same as the original formula.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>nodes</strong> – Dictionary of nodes with closeness centrality as the value.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nodes</strong> – Dictionary of nodes with closeness centrality as the value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.load_centrality.html#networkx.algorithms.centrality.load_centrality" title="networkx.algorithms.centrality.load_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality" title="networkx.algorithms.centrality.eigenvector_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality" title="networkx.algorithms.centrality.degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">degree_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.closeness_centrality.html#networkx.algorithms.centrality.closeness_centrality" title="networkx.algorithms.centrality.closeness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">closeness_centrality()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.load_centrality.html#networkx.algorithms.centrality.load_centrality" title="networkx.algorithms.centrality.load_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality" title="networkx.algorithms.centrality.eigenvector_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality" title="networkx.algorithms.centrality.degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">degree_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.closeness_centrality.html#networkx.algorithms.centrality.closeness_centrality" title="networkx.algorithms.centrality.closeness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">closeness_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The closeness centrality is normalized to <code class="xref py py-obj docutils literal notranslate"><span class="pre">(n-1)/(|G|-1)</span></code> where
@@ -337,22 +334,18 @@ containing the node.  If the graph is not completely connected,
 this algorithm computes the closeness centrality for each
 connected part separately.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Freeman, L.C., 1979. Centrality in networks: I.
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Freeman, L.C., 1979. Centrality in networks: I.
 Conceptual clarification.  Social Networks 1, 215–239.
-<a class="reference external" href="http://www.soc.ucsb.edu/faculty/friedkin/Syllabi/Soc146/Freeman78.PDF">http://www.soc.ucsb.edu/faculty/friedkin/Syllabi/Soc146/Freeman78.PDF</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td>Sariyuce, A.E. ; Kaya, K. ; Saule, E. ; Catalyiirek, U.V. Incremental
+<a class="reference external" href="http://www.soc.ucsb.edu/faculty/friedkin/Syllabi/Soc146/Freeman78.PDF">http://www.soc.ucsb.edu/faculty/friedkin/Syllabi/Soc146/Freeman78.PDF</a></p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">2</span></dt>
+<dd><p>Sariyuce, A.E. ; Kaya, K. ; Saule, E. ; Catalyiirek, U.V. Incremental
 Algorithms for Closeness Centrality. 2013 IEEE International Conference on Big Data
-<a class="reference external" href="http://sariyuce.com/papers/bigdata13.pdf">http://sariyuce.com/papers/bigdata13.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://sariyuce.com/papers/bigdata13.pdf">http://sariyuce.com/papers/bigdata13.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -379,7 +372,7 @@ Algorithms for Closeness Centrality. 2013 IEEE International Conference on Big D
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

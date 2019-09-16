@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.graphical.is_graphical &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.graphical.is_graphical &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -261,29 +262,25 @@
 <h1>networkx.algorithms.graphical.is_graphical<a class="headerlink" href="#networkx-algorithms-graphical-is-graphical" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.graphical.is_graphical">
-<code class="descname">is_graphical</code><span class="sig-paren">(</span><em>sequence</em>, <em>method='eg'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/graphical.html#is_graphical"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.graphical.is_graphical" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_graphical</code><span class="sig-paren">(</span><em class="sig-param">sequence</em>, <em class="sig-param">method='eg'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/graphical.html#is_graphical"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.graphical.is_graphical" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if sequence is a valid degree sequence.</p>
 <p>A degree sequence is valid if some graph can realize it.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>sequence</strong> (<em>list or iterable container</em>) – A sequence of integer node degrees</li>
-<li><strong>method</strong> (<em>“eg” | “hh”  (default: ‘eg’)</em>) – The method used to validate the degree sequence.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequence</strong> (<em>list or iterable container</em>) – A sequence of integer node degrees</p></li>
+<li><p><strong>method</strong> (<em>“eg” | “hh”  (default: ‘eg’)</em>) – The method used to validate the degree sequence.
 “eg” corresponds to the Erdős-Gallai algorithm, and
-“hh” to the Havel-Hakimi algorithm.</li>
+“hh” to the Havel-Hakimi algorithm.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>valid</strong> – True if the sequence is a valid degree sequence and False if not.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>valid</strong> – True if the sequence is a valid degree sequence and False if not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sequence</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>
@@ -292,11 +289,11 @@
 </pre></div>
 </div>
 <p class="rubric">References</p>
-<dl class="docutils">
-<dt>Erdős-Gallai</dt>
-<dd><a class="reference internal" href="../../../bibliography.html#eg1960" id="id1">[EG1960]</a>, <a class="reference internal" href="../../../bibliography.html#choudum1986" id="id2">[choudum1986]</a></dd>
-<dt>Havel-Hakimi</dt>
-<dd><a class="reference internal" href="../../../bibliography.html#havel1955" id="id3">[havel1955]</a>, <a class="reference internal" href="../../../bibliography.html#hakimi1962" id="id4">[hakimi1962]</a>, <a class="reference internal" href="../../../bibliography.html#cl1996" id="id5">[CL1996]</a></dd>
+<dl class="simple">
+<dt>Erdős-Gallai</dt><dd><p><a class="reference internal" href="../../../bibliography.html#eg1960" id="id1"><span>[EG1960]</span></a>, <a class="reference internal" href="../../../bibliography.html#choudum1986" id="id2"><span>[choudum1986]</span></a></p>
+</dd>
+<dt>Havel-Hakimi</dt><dd><p><a class="reference internal" href="../../../bibliography.html#havel1955" id="id3"><span>[havel1955]</span></a>, <a class="reference internal" href="../../../bibliography.html#hakimi1962" id="id4"><span>[hakimi1962]</span></a>, <a class="reference internal" href="../../../bibliography.html#cl1996" id="id5"><span>[CL1996]</span></a></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -324,7 +321,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

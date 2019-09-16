@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Small-world &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Small-world &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -262,30 +263,29 @@ and a large clustering coefficient.</p>
 <p>Both coefficients compare the average clustering coefficient and shortest path
 length of a given graph against the same quantities for an equivalent random
 or lattice graph.</p>
-<p>For more information, see the Wikipedia article on small-world network <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Small-world network:: <a class="reference external" href="https://en.wikipedia.org/wiki/Small-world_network">https://en.wikipedia.org/wiki/Small-world_network</a></td></tr>
-</tbody>
-</table>
-<table border="1" class="longtable docutils">
+<p>For more information, see the Wikipedia article on small-world network <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Small-world network:: <a class="reference external" href="https://en.wikipedia.org/wiki/Small-world_network">https://en.wikipedia.org/wiki/Small-world_network</a></p>
+</dd>
+</dl>
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.smallworld.random_reference.html#networkx.algorithms.smallworld.random_reference" title="networkx.algorithms.smallworld.random_reference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_reference</span></code></a>(G[,&nbsp;niter,&nbsp;connectivity,&nbsp;seed])</td>
-<td>Compute a random graph by swapping edges of a given graph.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.smallworld.random_reference.html#networkx.algorithms.smallworld.random_reference" title="networkx.algorithms.smallworld.random_reference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_reference</span></code></a>(G[, niter, connectivity, seed])</p></td>
+<td><p>Compute a random graph by swapping edges of a given graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.smallworld.lattice_reference.html#networkx.algorithms.smallworld.lattice_reference" title="networkx.algorithms.smallworld.lattice_reference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lattice_reference</span></code></a>(G[,&nbsp;niter,&nbsp;D,&nbsp;…])</td>
-<td>Latticize the given graph by swapping edges.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.smallworld.lattice_reference.html#networkx.algorithms.smallworld.lattice_reference" title="networkx.algorithms.smallworld.lattice_reference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lattice_reference</span></code></a>(G[, niter, D, …])</p></td>
+<td><p>Latticize the given graph by swapping edges.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.smallworld.sigma.html#networkx.algorithms.smallworld.sigma" title="networkx.algorithms.smallworld.sigma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigma</span></code></a>(G[,&nbsp;niter,&nbsp;nrand,&nbsp;seed])</td>
-<td>Returns the small-world coefficient (sigma) of the given graph.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.smallworld.sigma.html#networkx.algorithms.smallworld.sigma" title="networkx.algorithms.smallworld.sigma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigma</span></code></a>(G[, niter, nrand, seed])</p></td>
+<td><p>Returns the small-world coefficient (sigma) of the given graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.smallworld.omega.html#networkx.algorithms.smallworld.omega" title="networkx.algorithms.smallworld.omega"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omega</span></code></a>(G[,&nbsp;niter,&nbsp;nrand,&nbsp;seed])</td>
-<td>Returns the small-world coefficient (omega) of a graph</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.smallworld.omega.html#networkx.algorithms.smallworld.omega" title="networkx.algorithms.smallworld.omega"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omega</span></code></a>(G[, niter, nrand, seed])</p></td>
+<td><p>Returns the small-world coefficient (omega) of a graph</p></td>
 </tr>
 </tbody>
 </table>
@@ -313,7 +313,7 @@ or lattice graph.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

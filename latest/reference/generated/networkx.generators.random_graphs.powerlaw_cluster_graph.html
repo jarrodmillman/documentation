@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.random_graphs.powerlaw_cluster_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.random_graphs.powerlaw_cluster_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -236,24 +236,20 @@
 <h1>networkx.generators.random_graphs.powerlaw_cluster_graph<a class="headerlink" href="#networkx-generators-random-graphs-powerlaw-cluster-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.random_graphs.powerlaw_cluster_graph">
-<code class="descname">powerlaw_cluster_graph</code><span class="sig-paren">(</span><em>n</em>, <em>m</em>, <em>p</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/random_graphs.html#powerlaw_cluster_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.random_graphs.powerlaw_cluster_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">powerlaw_cluster_graph</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">m</em>, <em class="sig-param">p</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/random_graphs.html#powerlaw_cluster_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.random_graphs.powerlaw_cluster_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Holme and Kim algorithm for growing graphs with powerlaw
 degree distribution and approximate average clustering.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>n</strong> (<em>int</em>) – the number of nodes</li>
-<li><strong>m</strong> (<em>int</em>) – the number of random edges to add for each new node</li>
-<li><strong>p</strong> (<em>float,</em>) – Probability of adding a triangle after adding a random edge</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – the number of nodes</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – the number of random edges to add for each new node</p></li>
+<li><p><strong>p</strong> (<em>float,</em>) – Probability of adding a triangle after adding a random edge</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>The average clustering has a hard time getting above a certain
 cutoff that depends on <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code>.  This cutoff is often quite low.  The
@@ -267,24 +263,20 @@ higher average clustering to be attained if desired.</p>
 <p>It seems possible to have a disconnected graph with this algorithm
 since the initial <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> nodes may not be all linked to a new node
 on the first iteration like the BA model.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> does not satisfy <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">m</span> <span class="pre">&lt;=</span> <span class="pre">n</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code> does not
-satisfy <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">p</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> does not satisfy <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">m</span> <span class="pre">&lt;=</span> <span class="pre">n</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code> does not
+satisfy <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">p</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code>.</p>
+</dd>
+</dl>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>P. Holme and B. J. Kim,
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>P. Holme and B. J. Kim,
 “Growing scale-free networks with tunable clustering”,
-Phys. Rev. E, 65, 026107, 2002.</td></tr>
-</tbody>
-</table>
+Phys. Rev. E, 65, 026107, 2002.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -311,7 +303,7 @@ Phys. Rev. E, 65, 026107, 2002.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

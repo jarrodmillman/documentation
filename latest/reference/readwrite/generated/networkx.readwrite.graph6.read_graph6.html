@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.graph6.read_graph6 &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.readwrite.graph6.read_graph6 &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -208,22 +208,22 @@
 <h1>networkx.readwrite.graph6.read_graph6<a class="headerlink" href="#networkx-readwrite-graph6-read-graph6" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.readwrite.graph6.read_graph6">
-<code class="descname">read_graph6</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/graph6.html#read_graph6"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.graph6.read_graph6" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">read_graph6</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/graph6.html#read_graph6"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.graph6.read_graph6" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read simple undirected graphs in graph6 format from path.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<em>file or string</em>) – File or filename to write.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>G</strong> – If the file contains multiple lines then a list of graphs is returned</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="../../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a> or list of Graphs</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the string is unable to be parsed in graph6 format</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>file or string</em>) – File or filename to write.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>G</strong> – If the file contains multiple lines then a list of graphs is returned</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a> or list of Graphs</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If the string is unable to be parsed in graph6 format</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>You can read a graph6 file by giving the path to the file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tempfile</span>
@@ -246,17 +246,16 @@
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.readwrite.graph6.from_graph6_bytes.html#networkx.readwrite.graph6.from_graph6_bytes" title="networkx.readwrite.graph6.from_graph6_bytes"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_graph6_bytes()</span></code></a>, <a class="reference internal" href="networkx.readwrite.graph6.write_graph6.html#networkx.readwrite.graph6.write_graph6" title="networkx.readwrite.graph6.write_graph6"><code class="xref py py-func docutils literal notranslate"><span class="pre">write_graph6()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.readwrite.graph6.from_graph6_bytes.html#networkx.readwrite.graph6.from_graph6_bytes" title="networkx.readwrite.graph6.from_graph6_bytes"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_graph6_bytes()</span></code></a>, <a class="reference internal" href="networkx.readwrite.graph6.write_graph6.html#networkx.readwrite.graph6.write_graph6" title="networkx.readwrite.graph6.write_graph6"><code class="xref py py-func docutils literal notranslate"><span class="pre">write_graph6()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Graph6 specification
-&lt;<a class="reference external" href="http://users.cecs.anu.edu.au/~bdm/data/formats.html">http://users.cecs.anu.edu.au/~bdm/data/formats.html</a>&gt;</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Graph6 specification
+&lt;<a class="reference external" href="http://users.cecs.anu.edu.au/~bdm/data/formats.html">http://users.cecs.anu.edu.au/~bdm/data/formats.html</a>&gt;</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -283,7 +282,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

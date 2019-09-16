@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.asteroidal.is_at_free &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.asteroidal.is_at_free &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -40,7 +40,9 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="networkx.algorithms.asteroidal.find_asteroidal_triple" href="networkx.algorithms.asteroidal.find_asteroidal_triple.html" />
+    <link rel="prev" title="Asteroidal" href="../asteroidal.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -64,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -88,10 +90,95 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/index.html">Graph types</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../asteroidal.html">Asteroidal</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">networkx.algorithms.asteroidal.is_at_free</a></li>
+<li class="toctree-l4"><a class="reference internal" href="networkx.algorithms.asteroidal.find_asteroidal_triple.html">networkx.algorithms.asteroidal.find_asteroidal_triple</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../centrality.html">Centrality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chains.html">Chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chordal.html">Chordal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clique.html">Clique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clustering.html">Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../coloring.html">Coloring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../communicability_alg.html">Communicability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community.html">Communities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../component.html">Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectivity.html">Connectivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../core.html">Cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../covering.html">Covering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cycles.html">Cycles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cuts.html">Cuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dag.html">Directed Acyclic Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dispersion.html">Dispersion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../distance_measures.html">Distance Measures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../distance_regular.html">Distance-Regular Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dominance.html">Dominance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dominating.html">Dominating Sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../efficiency.html">Efficiency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../euler.html">Eulerian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow.html">Flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../graphical.html">Graphical degree sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hierarchy.html">Hierarchy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hybrid.html">Hybrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../isolates.html">Isolates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../isomorphism.html">Isomorphism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../link_analysis.html">Link Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../link_prediction.html">Link Prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lowest_common_ancestors.html">Lowest Common Ancestor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../matching.html">Matching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../minors.html">Minors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mis.html">Maximal independent set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../non_randomness.html">non-randomness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../moral.html">Moral</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node_classification.html">Node Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operators.html">Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../planarity.html">Planarity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../planar_drawing.html">Planar Drawing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reciprocity.html">Reciprocity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rich_club.html">Rich Club</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shortest_paths.html">Shortest Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../similarity.html">Similarity Measures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../simple_paths.html">Simple Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smallworld.html">Small-world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smetric.html">s metric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sparsifiers.html">Sparsifiers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structuralholes.html">Structural holes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../swap.html">Swap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tournament.html">Tournament</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../traversal.html">Traversal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tree.html">Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../triads.html">Triads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vitality.html">Vitality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../voronoi.html">Voronoi cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wiener.html">Wiener index</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generators.html">Graph generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg.html">Linear algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../convert.html">Converting to and from other data formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../relabel.html">Relabeling nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../readwrite/index.html">Reading and writing graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../randomness.html">Randomness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../news.html">Release Log</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a></li>
@@ -144,6 +231,12 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="../../index.html">Reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Algorithms</a> &raquo;</li>
+        
+          <li><a href="../asteroidal.html">Asteroidal</a> &raquo;</li>
+        
       <li>networkx.algorithms.asteroidal.is_at_free</li>
     
     
@@ -165,24 +258,23 @@
 <h1>networkx.algorithms.asteroidal.is_at_free<a class="headerlink" href="#networkx-algorithms-asteroidal-is-at-free" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.asteroidal.is_at_free">
-<code class="descname">is_at_free</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/asteroidal.html#is_at_free"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.asteroidal.is_at_free" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_at_free</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/asteroidal.html#is_at_free"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.asteroidal.is_at_free" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a graph is AT-free.</p>
 <p>The method uses the <a class="reference internal" href="networkx.algorithms.asteroidal.find_asteroidal_triple.html#networkx.algorithms.asteroidal.find_asteroidal_triple" title="networkx.algorithms.asteroidal.find_asteroidal_triple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_asteroidal_triple</span></code></a> method to recognize
 an AT-free graph. If no asteroidal triple is found the graph is
 AT-free and True is returned. If at least one asteroidal triple is
 found the graph is not AT-free and False is returned.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX Graph</em>) – The graph to check whether is AT-free or not.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if G is AT-free and False otherwise.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX Graph</em>) – The graph to check whether is AT-free or not.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if G is AT-free and False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">is_at_free</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -204,6 +296,15 @@ found the graph is not AT-free and False is returned.</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="networkx.algorithms.asteroidal.find_asteroidal_triple.html" class="btn btn-neutral float-right" title="networkx.algorithms.asteroidal.find_asteroidal_triple" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../asteroidal.html" class="btn btn-neutral float-left" title="Asteroidal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -211,7 +312,7 @@ found the graph is not AT-free and False is returned.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

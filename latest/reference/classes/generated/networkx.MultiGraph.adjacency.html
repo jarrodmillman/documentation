@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.MultiGraph.adjacency &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.MultiGraph.adjacency &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -201,20 +201,18 @@
 <h1>networkx.MultiGraph.adjacency<a class="headerlink" href="#networkx-multigraph-adjacency" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="networkx.MultiGraph.adjacency">
-<code class="descclassname">MultiGraph.</code><code class="descname">adjacency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#networkx.MultiGraph.adjacency" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">MultiGraph.</code><code class="sig-name descname">adjacency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#networkx.MultiGraph.adjacency" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator over (node, adjacency dict) tuples for all nodes.</p>
 <p>For directed graphs, only outgoing neighbors/adjacencies are included.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>adj_iter</strong> – An iterator over (node, adjacency dictionary) for all nodes in
-the graph.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">iterator</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>adj_iter</strong> – An iterator over (node, adjacency dictionary) for all nodes in
+the graph.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>iterator</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">n</span><span class="p">,</span> <span class="n">nbrdict</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">nbrdict</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">adjacency</span><span class="p">()]</span>
@@ -247,7 +245,7 @@ the graph.</td>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

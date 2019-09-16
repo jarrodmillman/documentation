@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.assortativity.numeric_assortativity_coefficient &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.assortativity.numeric_assortativity_coefficient &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -105,6 +105,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../assortativity.html#mixing">Mixing</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -259,32 +260,28 @@
 <h1>networkx.algorithms.assortativity.numeric_assortativity_coefficient<a class="headerlink" href="#networkx-algorithms-assortativity-numeric-assortativity-coefficient" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.assortativity.numeric_assortativity_coefficient">
-<code class="descname">numeric_assortativity_coefficient</code><span class="sig-paren">(</span><em>G</em>, <em>attribute</em>, <em>nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/assortativity/correlation.html#numeric_assortativity_coefficient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.assortativity.numeric_assortativity_coefficient" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">numeric_assortativity_coefficient</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">attribute</em>, <em class="sig-param">nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/assortativity/correlation.html#numeric_assortativity_coefficient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.assortativity.numeric_assortativity_coefficient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute assortativity for numerical node attributes.</p>
 <p>Assortativity measures the similarity of connections
 in the graph with respect to the given numeric attribute.
 The numeric attribute must be an integer.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>attribute</strong> (<em>string</em>) – Node attribute key.  The corresponding attribute value must be an
-integer.</li>
-<li><strong>nodes</strong> (<em>list or iterable (optional)</em>) – Compute numeric assortativity only for attributes of nodes in
-container. The default is all nodes.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>attribute</strong> (<em>string</em>) – Node attribute key.  The corresponding attribute value must be an
+integer.</p></li>
+<li><p><strong>nodes</strong> (<em>list or iterable (optional)</em>) – Compute numeric assortativity only for attributes of nodes in
+container. The default is all nodes.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>r</strong> – Assortativity of graph for given attribute</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>r</strong> – Assortativity of graph for given attribute</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -295,16 +292,15 @@ container. The default is all nodes.</li>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>This computes Eq. (21) in Ref. <a class="footnote-reference" href="#id2" id="id1">[1]</a> , for the mixing matrix of
+<p>This computes Eq. (21) in Ref. <a class="footnote-reference brackets" href="#id2" id="id1">1</a> , for the mixing matrix of
 of the specified attribute.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>M. E. J. Newman, Mixing patterns in networks
-Physical Review E, 67 026126, 2003</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>M. E. J. Newman, Mixing patterns in networks
+Physical Review E, 67 026126, 2003</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -331,7 +327,7 @@ Physical Review E, 67 026126, 2003</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

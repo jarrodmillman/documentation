@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cluster.clustering &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.cluster.clustering &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -261,7 +262,7 @@
 <h1>networkx.algorithms.cluster.clustering<a class="headerlink" href="#networkx-algorithms-cluster-clustering" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.cluster.clustering">
-<code class="descname">clustering</code><span class="sig-paren">(</span><em>G</em>, <em>nodes=None</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/cluster.html#clustering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.cluster.clustering" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">clustering</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">nodes=None</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/cluster.html#clustering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.cluster.clustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the clustering coefficient for nodes.</p>
 <p>For unweighted graphs, the clustering of a node <span class="math notranslate nohighlight">\(u\)</span>
 is the fraction of possible triangles through that node that exist,</p>
@@ -269,9 +270,9 @@ is the fraction of possible triangles through that node that exist,</p>
 \[c_u = \frac{2 T(u)}{deg(u)(deg(u)-1)},\]</div>
 <p>where <span class="math notranslate nohighlight">\(T(u)\)</span> is the number of triangles through node <span class="math notranslate nohighlight">\(u\)</span> and
 <span class="math notranslate nohighlight">\(deg(u)\)</span> is the degree of <span class="math notranslate nohighlight">\(u\)</span>.</p>
-<p>For weighted graphs, there are several ways to define clustering <a class="footnote-reference" href="#id4" id="id1">[1]</a>.
+<p>For weighted graphs, there are several ways to define clustering <a class="footnote-reference brackets" href="#id4" id="id1">1</a>.
 the one used here is defined
-as the geometric average of the subgraph edge weights <a class="footnote-reference" href="#id5" id="id2">[2]</a>,</p>
+as the geometric average of the subgraph edge weights <a class="footnote-reference brackets" href="#id5" id="id2">2</a>,</p>
 <div class="math notranslate nohighlight">
 \[c_u = \frac{1}{deg(u)(deg(u)-1))}
       \sum_{vw} (\hat{w}_{uv} \hat{w}_{uw} \hat{w}_{vw})^{1/3}.\]</div>
@@ -280,7 +281,7 @@ in the network <span class="math notranslate nohighlight">\(\hat{w}_{uv} = w_{uv
 <p>The value of <span class="math notranslate nohighlight">\(c_u\)</span> is assigned to 0 if <span class="math notranslate nohighlight">\(deg(u) &lt; 2\)</span>.</p>
 <p>For directed graphs, the clustering is similarly defined as the fraction
 of all possible directed triangles or geometric average of the subgraph
-edge weights for unweighted and weighted directed graph respectively <a class="footnote-reference" href="#id6" id="id3">[3]</a>.</p>
+edge weights for unweighted and weighted directed graph respectively <a class="footnote-reference brackets" href="#id6" id="id3">3</a>.</p>
 <div class="math notranslate nohighlight">
 \[c_u = \frac{1}{deg^{tot}(u)(deg^{tot}(u)-1) - 2deg^{\leftrightarrow}(u)}
       T(u),\]</div>
@@ -288,26 +289,22 @@ edge weights for unweighted and weighted directed graph respectively <a class="f
 <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(deg^{tot}(u)\)</span> is the sum of in degree and out degree of
 <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(deg^{\leftrightarrow}(u)\)</span> is the reciprocal degree of
 <span class="math notranslate nohighlight">\(u\)</span>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>)</li>
-<li><strong>nodes</strong> (<em>container of nodes, optional (default=all nodes in G)</em>) – Compute clustering for nodes in this container.</li>
-<li><strong>weight</strong> (<em>string or None, optional (default=None)</em>) – The edge attribute that holds the numerical value used as a weight.
-If None, then each edge has weight 1.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>)</p></li>
+<li><p><strong>nodes</strong> (<em>container of nodes, optional (default=all nodes in G)</em>) – Compute clustering for nodes in this container.</p></li>
+<li><p><strong>weight</strong> (<em>string or None, optional (default=None)</em>) – The edge attribute that holds the numerical value used as a weight.
+If None, then each edge has weight 1.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> – Clustering coefficient at specified nodes</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a>, or dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>out</strong> – Clustering coefficient at specified nodes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a>, or dictionary</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -319,30 +316,23 @@ If None, then each edge has weight 1.</li>
 <p class="rubric">Notes</p>
 <p>Self loops are ignored.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Generalizations of the clustering coefficient to weighted
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Generalizations of the clustering coefficient to weighted
 complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela,
 K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).
-<a class="reference external" href="http://jponnela.com/web_documents/a9.pdf">http://jponnela.com/web_documents/a9.pdf</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Intensity and coherence of motifs in weighted complex
+<a class="reference external" href="http://jponnela.com/web_documents/a9.pdf">http://jponnela.com/web_documents/a9.pdf</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Intensity and coherence of motifs in weighted complex
 networks by J. P. Onnela, J. Saramäki, J. Kertész, and K. Kaski,
-Physical Review E, 71(6), 065103 (2005).</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>Clustering in complex directed networks by G. Fagiolo,
-Physical Review E, 76(2), 026107 (2007).</td></tr>
-</tbody>
-</table>
+Physical Review E, 71(6), 065103 (2005).</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Clustering in complex directed networks by G. Fagiolo,
+Physical Review E, 76(2), 026107 (2007).</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -369,7 +359,7 @@ Physical Review E, 76(2), 026107 (2007).</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab.draw &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.drawing.nx_pylab.draw &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -209,29 +209,25 @@
 <h1>networkx.drawing.nx_pylab.draw<a class="headerlink" href="#networkx-drawing-nx-pylab-draw" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pylab.draw">
-<code class="descname">draw</code><span class="sig-paren">(</span><em>G</em>, <em>pos=None</em>, <em>ax=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">pos=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the graph G with Matplotlib.</p>
 <p>Draw the graph as a simple representation with no node
 labels or edge labels and using the full Matplotlib figure area
 and no axis labels by default.  See draw_networkx() for more
 full-featured drawing that allows title, axis labels etc.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>G</strong> (<em>graph</em>) – A networkx graph</li>
-<li><strong>pos</strong> (<em>dictionary, optional</em>) – A dictionary with nodes as keys and positions as values.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A networkx graph</p></li>
+<li><p><strong>pos</strong> (<em>dictionary, optional</em>) – A dictionary with nodes as keys and positions as values.
 If not specified a spring layout positioning will be computed.
 See <a class="reference internal" href="../drawing.html#module-networkx.drawing.layout" title="networkx.drawing.layout"><code class="xref py py-mod docutils literal notranslate"><span class="pre">networkx.drawing.layout</span></code></a> for functions that
-compute node positions.</li>
-<li><strong>ax</strong> (<em>Matplotlib Axes object, optional</em>) – Draw the graph in specified Matplotlib axes.</li>
-<li><strong>kwds</strong> (<em>optional keywords</em>) – See networkx.draw_networkx() for a description of optional keywords.</li>
+compute node positions.</p></li>
+<li><p><strong>ax</strong> (<em>Matplotlib Axes object, optional</em>) – Draw the graph in specified Matplotlib axes.</p></li>
+<li><p><strong>kwds</strong> (<em>optional keywords</em>) – See networkx.draw_networkx() for a description of optional keywords.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dodecahedral_graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -239,8 +235,8 @@ compute node positions.</li>
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx" title="networkx.drawing.nx_pylab.draw_networkx"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_nodes.html#networkx.drawing.nx_pylab.draw_networkx_nodes" title="networkx.drawing.nx_pylab.draw_networkx_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_nodes()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edges.html#networkx.drawing.nx_pylab.draw_networkx_edges" title="networkx.drawing.nx_pylab.draw_networkx_edges"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_edges()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_labels.html#networkx.drawing.nx_pylab.draw_networkx_labels" title="networkx.drawing.nx_pylab.draw_networkx_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_labels()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edge_labels.html#networkx.drawing.nx_pylab.draw_networkx_edge_labels" title="networkx.drawing.nx_pylab.draw_networkx_edge_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_edge_labels()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx" title="networkx.drawing.nx_pylab.draw_networkx"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_nodes.html#networkx.drawing.nx_pylab.draw_networkx_nodes" title="networkx.drawing.nx_pylab.draw_networkx_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_nodes()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edges.html#networkx.drawing.nx_pylab.draw_networkx_edges" title="networkx.drawing.nx_pylab.draw_networkx_edges"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_edges()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_labels.html#networkx.drawing.nx_pylab.draw_networkx_labels" title="networkx.drawing.nx_pylab.draw_networkx_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_labels()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edge_labels.html#networkx.drawing.nx_pylab.draw_networkx_edge_labels" title="networkx.drawing.nx_pylab.draw_networkx_edge_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_edge_labels()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This function has the same name as pylab.draw and pyplot.draw
@@ -285,7 +281,7 @@ so beware when using</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

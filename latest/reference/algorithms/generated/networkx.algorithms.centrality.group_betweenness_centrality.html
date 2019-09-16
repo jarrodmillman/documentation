@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.group_betweenness_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.group_betweenness_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,7 +271,7 @@
 <h1>networkx.algorithms.centrality.group_betweenness_centrality<a class="headerlink" href="#networkx-algorithms-centrality-group-betweenness-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.group_betweenness_centrality">
-<code class="descname">group_betweenness_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>C</em>, <em>normalized=True</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/group.html#group_betweenness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.group_betweenness_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">group_betweenness_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">C</em>, <em class="sig-param">normalized=True</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/group.html#group_betweenness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.group_betweenness_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the group betweenness centrality for a group of nodes.</p>
 <p>Group betweenness centrality of a group of nodes <span class="math notranslate nohighlight">\(C\)</span> is the sum of the
 fraction of all-pairs shortest paths that pass through any vertex in <span class="math notranslate nohighlight">\(C\)</span></p>
@@ -281,77 +282,66 @@ shortest <span class="math notranslate nohighlight">\((s, t)\)</span>-paths, and
 those paths passing through some node in group <span class="math notranslate nohighlight">\(C\)</span>. Note that
 <span class="math notranslate nohighlight">\((s, t)\)</span> are not members of the group (<span class="math notranslate nohighlight">\(V-C\)</span> is the set of nodes
 in <span class="math notranslate nohighlight">\(V\)</span> that are not in <span class="math notranslate nohighlight">\(C\)</span>).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</li>
-<li><strong>C</strong> (<em>list or set</em>) – C is a group of nodes which belong to G, for which group betweenness
-centrality is to be calculated.</li>
-<li><strong>normalized</strong> (<em>bool, optional</em>) – If True, group betweenness is normalized by <code class="xref py py-obj docutils literal notranslate"><span class="pre">2/((|V|-|C|)(|V|-|C|-1))</span></code>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</p></li>
+<li><p><strong>C</strong> (<em>list or set</em>) – C is a group of nodes which belong to G, for which group betweenness
+centrality is to be calculated.</p></li>
+<li><p><strong>normalized</strong> (<em>bool, optional</em>) – If True, group betweenness is normalized by <code class="xref py py-obj docutils literal notranslate"><span class="pre">2/((|V|-|C|)(|V|-|C|-1))</span></code>
 for graphs and <code class="xref py py-obj docutils literal notranslate"><span class="pre">1/((|V|-|C|)(|V|-|C|-1))</span></code> for directed graphs where <code class="xref py py-obj docutils literal notranslate"><span class="pre">|V|</span></code>
-is the number of nodes in G and <code class="xref py py-obj docutils literal notranslate"><span class="pre">|C|</span></code> is the number of nodes in C.</li>
-<li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
-Otherwise holds the name of the edge attribute used as weight.</li>
+is the number of nodes in G and <code class="xref py py-obj docutils literal notranslate"><span class="pre">|C|</span></code> is the number of nodes in C.</p></li>
+<li><p><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
+Otherwise holds the name of the edge attribute used as weight.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NodeNotFound</span></code> – If node(s) in C are not present in G.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>betweenness</strong> – Group betweenness centrality of the group C.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NodeNotFound" title="networkx.NodeNotFound"><strong>NodeNotFound</strong></a> – If node(s) in C are not present in G.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>betweenness</strong> – Group betweenness centrality of the group C.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The measure is described in <a class="footnote-reference" href="#id4" id="id1">[1]</a>.
+<p>The measure is described in <a class="footnote-reference brackets" href="#id4" id="id1">1</a>.
 The algorithm is an extension of the one proposed by Ulrik Brandes for
 betweenness centrality of nodes. Group betweenness is also mentioned in
-his paper <a class="footnote-reference" href="#id5" id="id2">[2]</a> along with the algorithm. The importance of the measure is
-discussed in <a class="footnote-reference" href="#id6" id="id3">[3]</a>.</p>
+his paper <a class="footnote-reference brackets" href="#id5" id="id2">2</a> along with the algorithm. The importance of the measure is
+discussed in <a class="footnote-reference brackets" href="#id6" id="id3">3</a>.</p>
 <p>The number of nodes in the group must be a maximum of n - 2 where <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code>
 is the total number of nodes in the graph.</p>
 <p>For weighted graphs the edge weights must be greater than zero.
 Zero edge weights can produce an infinite number of equal length
 paths between pairs of nodes.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>M G Everett and S P Borgatti:
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>M G Everett and S P Borgatti:
 The Centrality of Groups and Classes.
 Journal of Mathematical Sociology. 23(3): 181-201. 1999.
-<a class="reference external" href="http://www.analytictech.com/borgatti/group_centrality.htm">http://www.analytictech.com/borgatti/group_centrality.htm</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Ulrik Brandes:
+<a class="reference external" href="http://www.analytictech.com/borgatti/group_centrality.htm">http://www.analytictech.com/borgatti/group_centrality.htm</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Ulrik Brandes:
 On Variants of Shortest-Path Betweenness
 Centrality and their Generic Computation.
 Social Networks 30(2):136-145, 2008.
-<a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9610&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9610&amp;rep=rep1&amp;type=pdf</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>Sourav Medya et. al.:
+<a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9610&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9610&amp;rep=rep1&amp;type=pdf</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Sourav Medya et. al.:
 Group Centrality Maximization via Network Design.
 SIAM International Conference on Data Mining, SDM 2018, 126–134.
-<a class="reference external" href="https://sites.cs.ucsb.edu/~arlei/pubs/sdm18.pdf">https://sites.cs.ucsb.edu/~arlei/pubs/sdm18.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="https://sites.cs.ucsb.edu/~arlei/pubs/sdm18.pdf">https://sites.cs.ucsb.edu/~arlei/pubs/sdm18.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -378,7 +368,7 @@ SIAM International Conference on Data Mining, SDM 2018, 126–134.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

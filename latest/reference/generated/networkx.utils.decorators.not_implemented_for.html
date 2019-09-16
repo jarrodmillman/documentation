@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.utils.decorators.not_implemented_for &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.utils.decorators.not_implemented_for &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -202,29 +202,25 @@
 <h1>networkx.utils.decorators.not_implemented_for<a class="headerlink" href="#networkx-utils-decorators-not-implemented-for" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.utils.decorators.not_implemented_for">
-<code class="descname">not_implemented_for</code><span class="sig-paren">(</span><em>*graph_types</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/utils/decorators.html#not_implemented_for"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.utils.decorators.not_implemented_for" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">not_implemented_for</code><span class="sig-paren">(</span><em class="sig-param">*graph_types</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/utils/decorators.html#not_implemented_for"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.utils.decorators.not_implemented_for" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator to mark algorithms as not implemented</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>graph_types</strong> (<em>container of strings</em>) – Entries must be one of ‘directed’,’undirected’, ‘multigraph’, ‘graph’.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>_require</strong> – The decorated function.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">function</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code></li>
-<li>If any of the packages cannot be imported</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph_types</strong> (<em>container of strings</em>) – Entries must be one of ‘directed’,’undirected’, ‘multigraph’, ‘graph’.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>_require</strong> – The decorated function.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../exceptions.html#networkx.NetworkXNotImplemented" title="networkx.NetworkXNotImplemented"><strong>NetworkXNotImplemented</strong></a> – </p></li>
+<li><p><strong>If any of the packages cannot be imported</strong> – </p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Multiple types are joined logically with “and”.
 For “or” use multiple &#64;not_implemented_for() lines.</p>
@@ -265,7 +261,7 @@ For “or” use multiple &#64;not_implemented_for() lines.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

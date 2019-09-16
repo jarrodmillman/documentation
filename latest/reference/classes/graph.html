@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph—Undirected graphs with self loops &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Graph—Undirected graphs with self loops &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -201,7 +201,7 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="networkx.Graph">
-<em class="property">class </em><code class="descname">Graph</code><span class="sig-paren">(</span><em>incoming_graph_data=None</em>, <em>**attr</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/classes/graph.html#Graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.Graph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param">incoming_graph_data=None</em>, <em class="sig-param">**attr</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/classes/graph.html#Graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.Graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for undirected graphs.</p>
 <p>A Graph stores nodes and edges with optional data, or attributes.</p>
 <p>Graphs hold undirected edges.  Self loops are allowed but multiple
@@ -210,25 +210,21 @@
 key/value attributes. By convention <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> is not used as a node.</p>
 <p>Edges are represented as links between nodes with optional
 key/value attributes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>incoming_graph_data</strong> (<em>input graph (optional, default: None)</em>) – Data to initialize graph. If None (default) an empty
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>incoming_graph_data</strong> (<em>input graph (optional, default: None)</em>) – Data to initialize graph. If None (default) an empty
 graph is created.  The data can be any format that is supported
 by the to_networkx_graph() function, currently including edge list,
 dict of dicts, dict of lists, NetworkX graph, NumPy matrix
-or 2d ndarray, SciPy sparse matrix, or PyGraphviz graph.</li>
-<li><strong>attr</strong> (<em>keyword arguments, optional (default= no attributes)</em>) – Attributes to add to graph as key=value pairs.</li>
+or 2d ndarray, SciPy sparse matrix, or PyGraphviz graph.</p></li>
+<li><p><strong>attr</strong> (<em>keyword arguments, optional (default= no attributes)</em>) – Attributes to add to graph as key=value pairs.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="digraph.html#networkx.DiGraph" title="networkx.DiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiGraph</span></code></a>, <a class="reference internal" href="multigraph.html#networkx.MultiGraph" title="networkx.MultiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiGraph</span></code></a>, <a class="reference internal" href="multidigraph.html#networkx.MultiDiGraph" title="networkx.MultiDiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDiGraph</span></code></a>, <a class="reference internal" href="ordered.html#networkx.OrderedGraph" title="networkx.OrderedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedGraph</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="digraph.html#networkx.DiGraph" title="networkx.DiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiGraph</span></code></a>, <a class="reference internal" href="multigraph.html#networkx.MultiGraph" title="networkx.MultiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiGraph</span></code></a>, <a class="reference internal" href="multidigraph.html#networkx.MultiDiGraph" title="networkx.MultiDiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDiGraph</span></code></a>, <a class="reference internal" href="ordered.html#networkx.OrderedGraph" title="networkx.OrderedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedGraph</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <p>Create an empty graph structure (a “null graph”) with no nodes and
@@ -358,44 +354,44 @@ dicts create a new graph class by changing the class(!) variable
 holding the factory for that dict-like structure. The variable names are
 node_dict_factory, node_attr_dict_factory, adjlist_inner_dict_factory,
 adjlist_outer_dict_factory, edge_attr_dict_factory and graph_attr_dict_factory.</p>
-<dl class="docutils">
-<dt>node_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
-<dd>Factory function to be used to create the dict containing node
+<dl class="simple">
+<dt>node_dict_factory<span class="classifier">function, (default: dict)</span></dt><dd><p>Factory function to be used to create the dict containing node
 attributes, keyed by node id.
-It should require no arguments and return a dict-like object</dd>
-<dt>node_attr_dict_factory: function, (default: dict)</dt>
-<dd>Factory function to be used to create the node attribute
+It should require no arguments and return a dict-like object</p>
+</dd>
+<dt>node_attr_dict_factory: function, (default: dict)</dt><dd><p>Factory function to be used to create the node attribute
 dict which holds attribute values keyed by attribute name.
-It should require no arguments and return a dict-like object</dd>
-<dt>adjlist_outer_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
-<dd>Factory function to be used to create the outer-most dict
+It should require no arguments and return a dict-like object</p>
+</dd>
+<dt>adjlist_outer_dict_factory<span class="classifier">function, (default: dict)</span></dt><dd><p>Factory function to be used to create the outer-most dict
 in the data structure that holds adjacency info keyed by node.
-It should require no arguments and return a dict-like object.</dd>
-<dt>adjlist_inner_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
-<dd>Factory function to be used to create the adjacency list
+It should require no arguments and return a dict-like object.</p>
+</dd>
+<dt>adjlist_inner_dict_factory<span class="classifier">function, (default: dict)</span></dt><dd><p>Factory function to be used to create the adjacency list
 dict which holds edge data keyed by neighbor.
-It should require no arguments and return a dict-like object</dd>
-<dt>edge_attr_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
-<dd>Factory function to be used to create the edge attribute
+It should require no arguments and return a dict-like object</p>
+</dd>
+<dt>edge_attr_dict_factory<span class="classifier">function, (default: dict)</span></dt><dd><p>Factory function to be used to create the edge attribute
 dict which holds attribute values keyed by attribute name.
-It should require no arguments and return a dict-like object.</dd>
-<dt>graph_attr_dict_factory <span class="classifier-delimiter">:</span> <span class="classifier">function, (default: dict)</span></dt>
-<dd>Factory function to be used to create the graph attribute
+It should require no arguments and return a dict-like object.</p>
+</dd>
+<dt>graph_attr_dict_factory<span class="classifier">function, (default: dict)</span></dt><dd><p>Factory function to be used to create the graph attribute
 dict which holds attribute values keyed by attribute name.
-It should require no arguments and return a dict-like object.</dd>
+It should require no arguments and return a dict-like object.</p>
+</dd>
 </dl>
 <p>Typically, if your extension doesn’t impact the data structure all
 methods will inherit without issue except: <code class="xref py py-obj docutils literal notranslate"><span class="pre">to_directed/to_undirected</span></code>.
 By default these methods create a DiGraph/Graph class and you probably
 want them to create your extension of a DiGraph/Graph. To facilitate
 this we define two class variables that you can set in your subclass.</p>
-<dl class="docutils">
-<dt>to_directed_class <span class="classifier-delimiter">:</span> <span class="classifier">callable, (default: DiGraph or MultiDiGraph)</span></dt>
-<dd>Class to create a new graph structure in the <a class="reference internal" href="generated/networkx.Graph.to_directed.html#networkx.Graph.to_directed" title="networkx.Graph.to_directed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_directed</span></code></a> method.
-If <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, a NetworkX class (DiGraph or MultiDiGraph) is used.</dd>
-<dt>to_undirected_class <span class="classifier-delimiter">:</span> <span class="classifier">callable, (default: Graph or MultiGraph)</span></dt>
-<dd>Class to create a new graph structure in the <a class="reference internal" href="generated/networkx.Graph.to_undirected.html#networkx.Graph.to_undirected" title="networkx.Graph.to_undirected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_undirected</span></code></a> method.
-If <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, a NetworkX class (Graph or MultiGraph) is used.</dd>
+<dl class="simple">
+<dt>to_directed_class<span class="classifier">callable, (default: DiGraph or MultiDiGraph)</span></dt><dd><p>Class to create a new graph structure in the <a class="reference internal" href="generated/networkx.Graph.to_directed.html#networkx.Graph.to_directed" title="networkx.Graph.to_directed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_directed</span></code></a> method.
+If <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, a NetworkX class (DiGraph or MultiDiGraph) is used.</p>
+</dd>
+<dt>to_undirected_class<span class="classifier">callable, (default: Graph or MultiGraph)</span></dt><dd><p>Class to create a new graph structure in the <a class="reference internal" href="generated/networkx.Graph.to_undirected.html#networkx.Graph.to_undirected" title="networkx.Graph.to_undirected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_undirected</span></code></a> method.
+If <a class="reference external" href="https://docs.python.org/2/library/constants.html#None" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, a NetworkX class (Graph or MultiGraph) is used.</p>
+</dd>
 </dl>
 <p class="rubric">Examples</p>
 <p>Create a low memory graph class that effectively disallows edge
@@ -425,149 +421,149 @@ a dictionary-like object.</p>
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="adding-and-removing-nodes-and-edges">
 <h3>Adding and removing nodes and edges<a class="headerlink" href="#adding-and-removing-nodes-and-edges" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.__init__.html#networkx.Graph.__init__" title="networkx.Graph.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__init__</span></code></a>([incoming_graph_data])</td>
-<td>Initialize a graph with edges, name, or graph attributes.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.__init__.html#networkx.Graph.__init__" title="networkx.Graph.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__init__</span></code></a>([incoming_graph_data])</p></td>
+<td><p>Initialize a graph with edges, name, or graph attributes.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.add_node.html#networkx.Graph.add_node" title="networkx.Graph.add_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_node</span></code></a>(node_for_adding,&nbsp;**attr)</td>
-<td>Add a single node <code class="xref py py-obj docutils literal notranslate"><span class="pre">node_for_adding</span></code> and update node attributes.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.add_node.html#networkx.Graph.add_node" title="networkx.Graph.add_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_node</span></code></a>(node_for_adding, **attr)</p></td>
+<td><p>Add a single node <code class="xref py py-obj docutils literal notranslate"><span class="pre">node_for_adding</span></code> and update node attributes.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.add_nodes_from.html#networkx.Graph.add_nodes_from" title="networkx.Graph.add_nodes_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_nodes_from</span></code></a>(nodes_for_adding,&nbsp;**attr)</td>
-<td>Add multiple nodes.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.add_nodes_from.html#networkx.Graph.add_nodes_from" title="networkx.Graph.add_nodes_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_nodes_from</span></code></a>(nodes_for_adding, **attr)</p></td>
+<td><p>Add multiple nodes.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.remove_node.html#networkx.Graph.remove_node" title="networkx.Graph.remove_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.remove_node</span></code></a>(n)</td>
-<td>Remove node n.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.remove_node.html#networkx.Graph.remove_node" title="networkx.Graph.remove_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.remove_node</span></code></a>(n)</p></td>
+<td><p>Remove node n.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.remove_nodes_from.html#networkx.Graph.remove_nodes_from" title="networkx.Graph.remove_nodes_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.remove_nodes_from</span></code></a>(nodes)</td>
-<td>Remove multiple nodes.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.remove_nodes_from.html#networkx.Graph.remove_nodes_from" title="networkx.Graph.remove_nodes_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.remove_nodes_from</span></code></a>(nodes)</p></td>
+<td><p>Remove multiple nodes.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.add_edge.html#networkx.Graph.add_edge" title="networkx.Graph.add_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_edge</span></code></a>(u_of_edge,&nbsp;v_of_edge,&nbsp;**attr)</td>
-<td>Add an edge between u and v.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.add_edge.html#networkx.Graph.add_edge" title="networkx.Graph.add_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_edge</span></code></a>(u_of_edge, v_of_edge, **attr)</p></td>
+<td><p>Add an edge between u and v.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.add_edges_from.html#networkx.Graph.add_edges_from" title="networkx.Graph.add_edges_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_edges_from</span></code></a>(ebunch_to_add,&nbsp;**attr)</td>
-<td>Add all the edges in ebunch_to_add.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.add_edges_from.html#networkx.Graph.add_edges_from" title="networkx.Graph.add_edges_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_edges_from</span></code></a>(ebunch_to_add, **attr)</p></td>
+<td><p>Add all the edges in ebunch_to_add.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.add_weighted_edges_from.html#networkx.Graph.add_weighted_edges_from" title="networkx.Graph.add_weighted_edges_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_weighted_edges_from</span></code></a>(ebunch_to_add)</td>
-<td>Add weighted edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">ebunch_to_add</span></code> with specified weight attr</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.add_weighted_edges_from.html#networkx.Graph.add_weighted_edges_from" title="networkx.Graph.add_weighted_edges_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.add_weighted_edges_from</span></code></a>(ebunch_to_add)</p></td>
+<td><p>Add weighted edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">ebunch_to_add</span></code> with specified weight attr</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.remove_edge.html#networkx.Graph.remove_edge" title="networkx.Graph.remove_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.remove_edge</span></code></a>(u,&nbsp;v)</td>
-<td>Remove the edge between u and v.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.remove_edge.html#networkx.Graph.remove_edge" title="networkx.Graph.remove_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.remove_edge</span></code></a>(u, v)</p></td>
+<td><p>Remove the edge between u and v.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.remove_edges_from.html#networkx.Graph.remove_edges_from" title="networkx.Graph.remove_edges_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.remove_edges_from</span></code></a>(ebunch)</td>
-<td>Remove all edges specified in ebunch.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.remove_edges_from.html#networkx.Graph.remove_edges_from" title="networkx.Graph.remove_edges_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.remove_edges_from</span></code></a>(ebunch)</p></td>
+<td><p>Remove all edges specified in ebunch.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.update.html#networkx.Graph.update" title="networkx.Graph.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.update</span></code></a>([edges,&nbsp;nodes])</td>
-<td>Update the graph using nodes/edges/graphs as input.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.update.html#networkx.Graph.update" title="networkx.Graph.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.update</span></code></a>([edges, nodes])</p></td>
+<td><p>Update the graph using nodes/edges/graphs as input.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.clear.html#networkx.Graph.clear" title="networkx.Graph.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.clear</span></code></a>()</td>
-<td>Remove all nodes and edges from the graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.clear.html#networkx.Graph.clear" title="networkx.Graph.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.clear</span></code></a>()</p></td>
+<td><p>Remove all nodes and edges from the graph.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="reporting-nodes-edges-and-neighbors">
 <h3>Reporting nodes edges and neighbors<a class="headerlink" href="#reporting-nodes-edges-and-neighbors" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.nodes.html#networkx.Graph.nodes" title="networkx.Graph.nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.nodes</span></code></a></td>
-<td>A NodeView of the Graph as G.nodes or G.nodes().</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.nodes.html#networkx.Graph.nodes" title="networkx.Graph.nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.nodes</span></code></a></p></td>
+<td><p>A NodeView of the Graph as G.nodes or G.nodes().</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.__iter__.html#networkx.Graph.__iter__" title="networkx.Graph.__iter__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__iter__</span></code></a>()</td>
-<td>Iterate over the nodes.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.__iter__.html#networkx.Graph.__iter__" title="networkx.Graph.__iter__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__iter__</span></code></a>()</p></td>
+<td><p>Iterate over the nodes.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.has_node.html#networkx.Graph.has_node" title="networkx.Graph.has_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.has_node</span></code></a>(n)</td>
-<td>Returns True if the graph contains the node n.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.has_node.html#networkx.Graph.has_node" title="networkx.Graph.has_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.has_node</span></code></a>(n)</p></td>
+<td><p>Returns True if the graph contains the node n.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.__contains__.html#networkx.Graph.__contains__" title="networkx.Graph.__contains__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__contains__</span></code></a>(n)</td>
-<td>Returns True if n is a node, False otherwise.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.__contains__.html#networkx.Graph.__contains__" title="networkx.Graph.__contains__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__contains__</span></code></a>(n)</p></td>
+<td><p>Returns True if n is a node, False otherwise.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.edges.html#networkx.Graph.edges" title="networkx.Graph.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.edges</span></code></a></td>
-<td>An EdgeView of the Graph as G.edges or G.edges().</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.edges.html#networkx.Graph.edges" title="networkx.Graph.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.edges</span></code></a></p></td>
+<td><p>An EdgeView of the Graph as G.edges or G.edges().</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.has_edge.html#networkx.Graph.has_edge" title="networkx.Graph.has_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.has_edge</span></code></a>(u,&nbsp;v)</td>
-<td>Returns True if the edge (u, v) is in the graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.has_edge.html#networkx.Graph.has_edge" title="networkx.Graph.has_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.has_edge</span></code></a>(u, v)</p></td>
+<td><p>Returns True if the edge (u, v) is in the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.get_edge_data.html#networkx.Graph.get_edge_data" title="networkx.Graph.get_edge_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.get_edge_data</span></code></a>(u,&nbsp;v[,&nbsp;default])</td>
-<td>Returns the attribute dictionary associated with edge (u, v).</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.get_edge_data.html#networkx.Graph.get_edge_data" title="networkx.Graph.get_edge_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.get_edge_data</span></code></a>(u, v[, default])</p></td>
+<td><p>Returns the attribute dictionary associated with edge (u, v).</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.neighbors.html#networkx.Graph.neighbors" title="networkx.Graph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.neighbors</span></code></a>(n)</td>
-<td>Returns an iterator over all neighbors of node n.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.neighbors.html#networkx.Graph.neighbors" title="networkx.Graph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.neighbors</span></code></a>(n)</p></td>
+<td><p>Returns an iterator over all neighbors of node n.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.adj.html#networkx.Graph.adj" title="networkx.Graph.adj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.adj</span></code></a></td>
-<td>Graph adjacency object holding the neighbors of each node.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.adj.html#networkx.Graph.adj" title="networkx.Graph.adj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.adj</span></code></a></p></td>
+<td><p>Graph adjacency object holding the neighbors of each node.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.__getitem__.html#networkx.Graph.__getitem__" title="networkx.Graph.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__getitem__</span></code></a>(n)</td>
-<td>Returns a dict of neighbors of node n.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.__getitem__.html#networkx.Graph.__getitem__" title="networkx.Graph.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__getitem__</span></code></a>(n)</p></td>
+<td><p>Returns a dict of neighbors of node n.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.adjacency.html#networkx.Graph.adjacency" title="networkx.Graph.adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.adjacency</span></code></a>()</td>
-<td>Returns an iterator over (node, adjacency dict) tuples for all nodes.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.adjacency.html#networkx.Graph.adjacency" title="networkx.Graph.adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.adjacency</span></code></a>()</p></td>
+<td><p>Returns an iterator over (node, adjacency dict) tuples for all nodes.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.nbunch_iter.html#networkx.Graph.nbunch_iter" title="networkx.Graph.nbunch_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.nbunch_iter</span></code></a>([nbunch])</td>
-<td>Returns an iterator over nodes contained in nbunch that are also in the graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.nbunch_iter.html#networkx.Graph.nbunch_iter" title="networkx.Graph.nbunch_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.nbunch_iter</span></code></a>([nbunch])</p></td>
+<td><p>Returns an iterator over nodes contained in nbunch that are also in the graph.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="counting-nodes-edges-and-neighbors">
 <h3>Counting nodes edges and neighbors<a class="headerlink" href="#counting-nodes-edges-and-neighbors" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.order.html#networkx.Graph.order" title="networkx.Graph.order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.order</span></code></a>()</td>
-<td>Returns the number of nodes in the graph.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.order.html#networkx.Graph.order" title="networkx.Graph.order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.order</span></code></a>()</p></td>
+<td><p>Returns the number of nodes in the graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.number_of_nodes.html#networkx.Graph.number_of_nodes" title="networkx.Graph.number_of_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.number_of_nodes</span></code></a>()</td>
-<td>Returns the number of nodes in the graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.number_of_nodes.html#networkx.Graph.number_of_nodes" title="networkx.Graph.number_of_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.number_of_nodes</span></code></a>()</p></td>
+<td><p>Returns the number of nodes in the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.__len__.html#networkx.Graph.__len__" title="networkx.Graph.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__len__</span></code></a>()</td>
-<td>Returns the number of nodes in the graph.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.__len__.html#networkx.Graph.__len__" title="networkx.Graph.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.__len__</span></code></a>()</p></td>
+<td><p>Returns the number of nodes in the graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.degree.html#networkx.Graph.degree" title="networkx.Graph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.degree</span></code></a></td>
-<td>A DegreeView for the Graph as G.degree or G.degree().</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.degree.html#networkx.Graph.degree" title="networkx.Graph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.degree</span></code></a></p></td>
+<td><p>A DegreeView for the Graph as G.degree or G.degree().</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.size.html#networkx.Graph.size" title="networkx.Graph.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.size</span></code></a>([weight])</td>
-<td>Returns the number of edges or total of all edge weights.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.size.html#networkx.Graph.size" title="networkx.Graph.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.size</span></code></a>([weight])</p></td>
+<td><p>Returns the number of edges or total of all edge weights.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.number_of_edges.html#networkx.Graph.number_of_edges" title="networkx.Graph.number_of_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.number_of_edges</span></code></a>([u,&nbsp;v])</td>
-<td>Returns the number of edges between two nodes.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.number_of_edges.html#networkx.Graph.number_of_edges" title="networkx.Graph.number_of_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.number_of_edges</span></code></a>([u, v])</p></td>
+<td><p>Returns the number of edges between two nodes.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="making-copies-and-subgraphs">
 <h3>Making copies and subgraphs<a class="headerlink" href="#making-copies-and-subgraphs" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.copy.html#networkx.Graph.copy" title="networkx.Graph.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.copy</span></code></a>([as_view])</td>
-<td>Returns a copy of the graph.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.copy.html#networkx.Graph.copy" title="networkx.Graph.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.copy</span></code></a>([as_view])</p></td>
+<td><p>Returns a copy of the graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.to_undirected.html#networkx.Graph.to_undirected" title="networkx.Graph.to_undirected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.to_undirected</span></code></a>([as_view])</td>
-<td>Returns an undirected copy of the graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.to_undirected.html#networkx.Graph.to_undirected" title="networkx.Graph.to_undirected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.to_undirected</span></code></a>([as_view])</p></td>
+<td><p>Returns an undirected copy of the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.to_directed.html#networkx.Graph.to_directed" title="networkx.Graph.to_directed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.to_directed</span></code></a>([as_view])</td>
-<td>Returns a directed representation of the graph.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.to_directed.html#networkx.Graph.to_directed" title="networkx.Graph.to_directed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.to_directed</span></code></a>([as_view])</p></td>
+<td><p>Returns a directed representation of the graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.Graph.subgraph.html#networkx.Graph.subgraph" title="networkx.Graph.subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.subgraph</span></code></a>(nodes)</td>
-<td>Returns a SubGraph view of the subgraph induced on <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.Graph.subgraph.html#networkx.Graph.subgraph" title="networkx.Graph.subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.subgraph</span></code></a>(nodes)</p></td>
+<td><p>Returns a SubGraph view of the subgraph induced on <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.Graph.edge_subgraph.html#networkx.Graph.edge_subgraph" title="networkx.Graph.edge_subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.edge_subgraph</span></code></a>(edges)</td>
-<td>Returns the subgraph induced by the specified edges.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.Graph.edge_subgraph.html#networkx.Graph.edge_subgraph" title="networkx.Graph.edge_subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Graph.edge_subgraph</span></code></a>(edges)</p></td>
+<td><p>Returns the subgraph induced by the specified edges.</p></td>
 </tr>
 </tbody>
 </table>
@@ -597,7 +593,7 @@ a dictionary-like object.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

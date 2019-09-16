@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.spectral_graph_forge.spectral_graph_forge &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.spectral_graph_forge.spectral_graph_forge &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -217,7 +217,7 @@
 <h1>networkx.generators.spectral_graph_forge.spectral_graph_forge<a class="headerlink" href="#networkx-generators-spectral-graph-forge-spectral-graph-forge" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.spectral_graph_forge.spectral_graph_forge">
-<code class="descname">spectral_graph_forge</code><span class="sig-paren">(</span><em>G</em>, <em>alpha</em>, <em>transformation='identity'</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/spectral_graph_forge.html#spectral_graph_forge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.spectral_graph_forge.spectral_graph_forge" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">spectral_graph_forge</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">alpha</em>, <em class="sig-param">transformation='identity'</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/spectral_graph_forge.html#spectral_graph_forge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.spectral_graph_forge.spectral_graph_forge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a random simple graph with spectrum resembling that of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code></p>
 <p>This algorithm, called Spectral Graph Forge (SGF), computes the
 eigenvectors of a given graph adjacency matrix, filters them and
@@ -225,32 +225,28 @@ builds a random graph with a similar eigenstructure.
 SGF has been proved to be particularly useful for synthesizing
 realistic social networks and it can also be used to anonymize
 graph sensitive data.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>Graph</em>)</li>
-<li><strong>alpha</strong> (<em>float</em>) – Ratio representing the percentage of eigenvectors of G to consider,
-values in [0,1].</li>
-<li><strong>transformation</strong> (<em>string, optional</em>) – Represents the intended matrix linear transformation, possible values
-are ‘identity’ and ‘modularity’</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of numpy random number generation state.
-See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>Graph</em>)</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Ratio representing the percentage of eigenvectors of G to consider,
+values in [0,1].</p></li>
+<li><p><strong>transformation</strong> (<em>string, optional</em>) – Represents the intended matrix linear transformation, possible values
+are ‘identity’ and ‘modularity’</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of numpy random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>H</strong> – A graph with a similar eigenvector structure of the input one.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If transformation has a value different from ‘identity’ or ‘modularity’</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>H</strong> – A graph with a similar eigenvector structure of the input one.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If transformation has a value different from ‘identity’ or ‘modularity’</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Spectral Graph Forge (SGF) generates a random simple graph resembling the
 global properties of the given one.
@@ -271,21 +267,17 @@ pass filtering common in telecommunications.</p>
 <p>The filtered values (after truncation) are used as input to a Bernoulli
 sampling for constructing a random adjacency matrix.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>L. Baldesi, C. T. Butts, A. Markopoulou, “Spectral Graph Forge:
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>L. Baldesi, C. T. Butts, A. Markopoulou, “Spectral Graph Forge:
 Graph Generation Targeting Modularity”, IEEE Infocom, ‘18.
-<a class="reference external" href="https://arxiv.org/abs/1801.01715">https://arxiv.org/abs/1801.01715</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td>M. Newman, “Networks: an introduction”, Oxford university press,
-2010</td></tr>
-</tbody>
-</table>
+<a class="reference external" href="https://arxiv.org/abs/1801.01715">https://arxiv.org/abs/1801.01715</a></p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">2</span></dt>
+<dd><p>M. Newman, “Networks: an introduction”, Oxford university press,
+2010</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
@@ -319,7 +311,7 @@ Graph Generation Targeting Modularity”, IEEE Infocom, ‘18.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

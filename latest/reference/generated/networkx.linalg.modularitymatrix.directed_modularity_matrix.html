@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.linalg.modularitymatrix.directed_modularity_matrix &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.linalg.modularitymatrix.directed_modularity_matrix &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -200,7 +200,7 @@
 <h1>networkx.linalg.modularitymatrix.directed_modularity_matrix<a class="headerlink" href="#networkx-linalg-modularitymatrix-directed-modularity-matrix" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.linalg.modularitymatrix.directed_modularity_matrix">
-<code class="descname">directed_modularity_matrix</code><span class="sig-paren">(</span><em>G</em>, <em>nodelist=None</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/linalg/modularitymatrix.html#directed_modularity_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.linalg.modularitymatrix.directed_modularity_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">directed_modularity_matrix</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">nodelist=None</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/linalg/modularitymatrix.html#directed_modularity_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.linalg.modularitymatrix.directed_modularity_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the directed modularity matrix of G.</p>
 <p>The modularity matrix is the matrix B = A - &lt;A&gt;, where A is the adjacency
 matrix and &lt;A&gt; is the expected adjacency matrix, assuming that the graph
@@ -212,27 +212,23 @@ is described by the configuration model.</p>
 of node j, with m the number of edges in the graph. When weight is set
 to a name of an attribute edge, Aij, k_i, k_j and m are computed using
 its value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>DiGraph</em>) – A NetworkX DiGraph</li>
-<li><strong>nodelist</strong> (<em>list, optional</em>) – The rows and columns are ordered according to the nodes in nodelist.
-If nodelist is None, then the ordering is produced by G.nodes().</li>
-<li><strong>weight</strong> (<em>string or None, optional (default=None)</em>) – The edge attribute that holds the numerical value used for
-the edge weight.  If None then all edge weights are 1.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>DiGraph</em>) – A NetworkX DiGraph</p></li>
+<li><p><strong>nodelist</strong> (<em>list, optional</em>) – The rows and columns are ordered according to the nodes in nodelist.
+If nodelist is None, then the ordering is produced by G.nodes().</p></li>
+<li><p><strong>weight</strong> (<em>string or None, optional (default=None)</em>) – The edge attribute that holds the numerical value used for
+the edge weight.  If None then all edge weights are 1.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>B</strong> – The modularity matrix of G.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Numpy matrix</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>B</strong> – The modularity matrix of G.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Numpy matrix</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
@@ -246,18 +242,17 @@ the edge weight.  If None then all edge weights are 1.</li>
 is a link going from node i to node j. Leicht and Newman use the opposite
 definition. This explains the different expression for B_ij.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_numpy_matrix()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">modularity_spectrum()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code>, <a class="reference internal" href="networkx.linalg.modularitymatrix.modularity_matrix.html#networkx.linalg.modularitymatrix.modularity_matrix" title="networkx.linalg.modularitymatrix.modularity_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">modularity_matrix()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">to_numpy_matrix()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">modularity_spectrum()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code>, <a class="reference internal" href="networkx.linalg.modularitymatrix.modularity_matrix.html#networkx.linalg.modularitymatrix.modularity_matrix" title="networkx.linalg.modularitymatrix.modularity_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">modularity_matrix()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>E. A. Leicht, M. E. J. Newman,
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>E. A. Leicht, M. E. J. Newman,
 “Community structure in directed networks”,
-Phys. Rev Lett., vol. 100, no. 11, p. 118703, 2008.</td></tr>
-</tbody>
-</table>
+Phys. Rev Lett., vol. 100, no. 11, p. 118703, 2008.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -284,7 +279,7 @@ Phys. Rev Lett., vol. 100, no. 11, p. 118703, 2008.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

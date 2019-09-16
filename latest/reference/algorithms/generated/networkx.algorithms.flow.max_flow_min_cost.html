@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.max_flow_min_cost &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.flow.max_flow_min_cost &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -265,54 +266,50 @@
 <h1>networkx.algorithms.flow.max_flow_min_cost<a class="headerlink" href="#networkx-algorithms-flow-max-flow-min-cost" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.flow.max_flow_min_cost">
-<code class="descname">max_flow_min_cost</code><span class="sig-paren">(</span><em>G</em>, <em>s</em>, <em>t</em>, <em>capacity='capacity'</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/flow/mincost.html#max_flow_min_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.flow.max_flow_min_cost" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">max_flow_min_cost</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">s</em>, <em class="sig-param">t</em>, <em class="sig-param">capacity='capacity'</em>, <em class="sig-param">weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/flow/mincost.html#max_flow_min_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.flow.max_flow_min_cost" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a maximum (s, t)-flow of minimum cost.</p>
 <p>G is a digraph with edge costs and capacities. There is a source
 node s and a sink node t. This function finds a maximum flow from
 s to t whose total cost is minimized.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – DiGraph on which a minimum cost flow satisfying all demands is
-to be found.</li>
-<li><strong>s</strong> (<em>node label</em>) – Source of the flow.</li>
-<li><strong>t</strong> (<em>node label</em>) – Destination of the flow.</li>
-<li><strong>capacity</strong> (<em>string</em>) – Edges of the graph G are expected to have an attribute capacity
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – DiGraph on which a minimum cost flow satisfying all demands is
+to be found.</p></li>
+<li><p><strong>s</strong> (<em>node label</em>) – Source of the flow.</p></li>
+<li><p><strong>t</strong> (<em>node label</em>) – Destination of the flow.</p></li>
+<li><p><strong>capacity</strong> (<em>string</em>) – Edges of the graph G are expected to have an attribute capacity
 that indicates how much flow the edge can support. If this
 attribute is not present, the edge is considered to have
-infinite capacity. Default value: ‘capacity’.</li>
-<li><strong>weight</strong> (<em>string</em>) – Edges of the graph G are expected to have an attribute weight
+infinite capacity. Default value: ‘capacity’.</p></li>
+<li><p><strong>weight</strong> (<em>string</em>) – Edges of the graph G are expected to have an attribute weight
 that indicates the cost incurred by sending one unit of flow on
 that edge. If not present, the weight is considered to be 0.
-Default value: ‘weight’.</li>
+Default value: ‘weight’.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>flowDict</strong> – Dictionary of dictionaries keyed by nodes such that
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>flowDict</strong> – Dictionary of dictionaries keyed by nodes such that
 flowDict[u][v] is the flow edge (u, v).</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dictionary</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – This exception is raised if the input graph is not directed or
-not connected.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnbounded</span></code> – This exception is raised if there is an infinite capacity path
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – This exception is raised if the input graph is not directed or
+not connected.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXUnbounded" title="networkx.NetworkXUnbounded"><strong>NetworkXUnbounded</strong></a> – This exception is raised if there is an infinite capacity path
 from s to t in G. In this case there is no maximum flow. This
 exception is also raised if the digraph G has a cycle of
 negative cost and infinite capacity. Then, the cost of a flow
-is unbounded below.</li>
+is unbounded below.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.flow.cost_of_flow.html#networkx.algorithms.flow.cost_of_flow" title="networkx.algorithms.flow.cost_of_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">cost_of_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow.html#networkx.algorithms.flow.min_cost_flow" title="networkx.algorithms.flow.min_cost_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">min_cost_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow_cost.html#networkx.algorithms.flow.min_cost_flow_cost" title="networkx.algorithms.flow.min_cost_flow_cost"><code class="xref py py-func docutils literal notranslate"><span class="pre">min_cost_flow_cost()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.network_simplex.html#networkx.algorithms.flow.network_simplex" title="networkx.algorithms.flow.network_simplex"><code class="xref py py-func docutils literal notranslate"><span class="pre">network_simplex()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.flow.cost_of_flow.html#networkx.algorithms.flow.cost_of_flow" title="networkx.algorithms.flow.cost_of_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">cost_of_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow.html#networkx.algorithms.flow.min_cost_flow" title="networkx.algorithms.flow.min_cost_flow"><code class="xref py py-func docutils literal notranslate"><span class="pre">min_cost_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.min_cost_flow_cost.html#networkx.algorithms.flow.min_cost_flow_cost" title="networkx.algorithms.flow.min_cost_flow_cost"><code class="xref py py-func docutils literal notranslate"><span class="pre">min_cost_flow_cost()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.network_simplex.html#networkx.algorithms.flow.network_simplex" title="networkx.algorithms.flow.network_simplex"><code class="xref py py-func docutils literal notranslate"><span class="pre">network_simplex()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This algorithm is not guaranteed to work if edge weights or demands
@@ -374,7 +371,7 @@ constant factor (eg 100).</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

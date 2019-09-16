@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.estrada_index &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.estrada_index &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,48 +271,44 @@
 <h1>networkx.algorithms.centrality.estrada_index<a class="headerlink" href="#networkx-algorithms-centrality-estrada-index" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.estrada_index">
-<code class="descname">estrada_index</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/subgraph_alg.html#estrada_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.estrada_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">estrada_index</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/subgraph_alg.html#estrada_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.estrada_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Estrada index of a the graph G.</p>
-<p>The Estrada Index is a topological index of folding or 3D “compactness” (<a class="footnote-reference" href="#id4" id="id1">[1]</a>).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>graph</em>)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>estrada index</strong></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the graph is not undirected and simple.</td>
-</tr>
-</tbody>
-</table>
+<p>The Estrada Index is a topological index of folding or 3D “compactness” (<a class="footnote-reference brackets" href="#id4" id="id1">1</a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>graph</em>)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>estrada index</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If the graph is not undirected and simple.</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Let <code class="xref py py-obj docutils literal notranslate"><span class="pre">G=(V,E)</span></code> be a simple undirected graph with <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes  and let
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">lambda_{1}leqlambda_{2}leqcdotslambda_{n}</span></code>
 be a non-increasing ordering of the eigenvalues of its adjacency
-matrix <code class="xref py py-obj docutils literal notranslate"><span class="pre">A</span></code>. The Estrada index is (<a class="footnote-reference" href="#id4" id="id2">[1]</a>, <a class="footnote-reference" href="#id5" id="id3">[2]</a>)</p>
+matrix <code class="xref py py-obj docutils literal notranslate"><span class="pre">A</span></code>. The Estrada index is (<a class="footnote-reference brackets" href="#id4" id="id2">1</a>, <a class="footnote-reference brackets" href="#id5" id="id3">2</a>)</p>
 <div class="math notranslate nohighlight">
 \[EE(G)=\sum_{j=1}^n e^{\lambda _j}.\]</div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> E. Estrada, “Characterization of 3D molecular structure”,
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>E. Estrada, “Characterization of 3D molecular structure”,
 Chem. Phys. Lett. 319, 713 (2000).
-<a class="reference external" href="https://doi.org/10.1016/S0009-2614(00)00158-5">https://doi.org/10.1016/S0009-2614(00)00158-5</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>José Antonio de la Peñaa, Ivan Gutman, Juan Rada,
+<a class="reference external" href="https://doi.org/10.1016/S0009-2614(00)00158-5">https://doi.org/10.1016/S0009-2614(00)00158-5</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>José Antonio de la Peñaa, Ivan Gutman, Juan Rada,
 “Estimating the Estrada index”,
 Linear Algebra and its Applications. 427, 1 (2007).
-<a class="reference external" href="https://doi.org/10.1016/j.laa.2007.06.020">https://doi.org/10.1016/j.laa.2007.06.020</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="https://doi.org/10.1016/j.laa.2007.06.020">https://doi.org/10.1016/j.laa.2007.06.020</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ei</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">estrada_index</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -343,7 +340,7 @@ Linear Algebra and its Applications. 427, 1 (2007).
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

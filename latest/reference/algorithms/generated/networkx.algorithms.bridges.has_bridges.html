@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bridges.has_bridges &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bridges.has_bridges &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bridges.html">Bridges</a><ul class="current">
@@ -258,33 +259,29 @@
 <h1>networkx.algorithms.bridges.has_bridges<a class="headerlink" href="#networkx-algorithms-bridges-has-bridges" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bridges.has_bridges">
-<code class="descname">has_bridges</code><span class="sig-paren">(</span><em>G</em>, <em>root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bridges.html#has_bridges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bridges.has_bridges" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">has_bridges</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bridges.html#has_bridges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bridges.has_bridges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decide whether a graph has any bridges.</p>
 <p>A <em>bridge</em> in a graph is an edge whose removal causes the number of
 connected components of the graph to increase.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>undirected graph</em>)</li>
-<li><strong>root</strong> (<em>node (optional)</em>) – A node in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. If specified, only the bridges in the
-connected component containing this node will be considered.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>undirected graph</em>)</p></li>
+<li><p><strong>root</strong> (<em>node (optional)</em>) – A node in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. If specified, only the bridges in the
+connected component containing this node will be considered.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Whether the graph (or the connected component containing <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code>)
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether the graph (or the connected component containing <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code>)
 has any bridges.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NodeNotFound</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code> is not in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NodeNotFound" title="networkx.NodeNotFound"><strong>NodeNotFound</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code> is not in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>The barbell graph with parameter zero has a single bridge:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">barbell_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -329,7 +326,7 @@ graph and <span class="math notranslate nohighlight">\(m\)</span> is the number 
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

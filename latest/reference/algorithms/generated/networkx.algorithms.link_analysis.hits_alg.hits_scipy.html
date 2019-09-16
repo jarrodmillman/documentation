@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.link_analysis.hits_alg.hits_scipy &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.link_analysis.hits_alg.hits_scipy &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -257,33 +258,29 @@
 <h1>networkx.algorithms.link_analysis.hits_alg.hits_scipy<a class="headerlink" href="#networkx-algorithms-link-analysis-hits-alg-hits-scipy" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.link_analysis.hits_alg.hits_scipy">
-<code class="descname">hits_scipy</code><span class="sig-paren">(</span><em>G</em>, <em>max_iter=100</em>, <em>tol=1e-06</em>, <em>normalized=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/link_analysis/hits_alg.html#hits_scipy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.link_analysis.hits_alg.hits_scipy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">hits_scipy</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">max_iter=100</em>, <em class="sig-param">tol=1e-06</em>, <em class="sig-param">normalized=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/link_analysis/hits_alg.html#hits_scipy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.link_analysis.hits_alg.hits_scipy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns HITS hubs and authorities values for nodes.</p>
 <p>The HITS algorithm computes two numbers for a node.
 Authorities estimates the node value based on the incoming links.
 Hubs estimates the node value based on outgoing links.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph</li>
-<li><strong>max_iter</strong> (<em>integer, optional</em>) – Maximum number of iterations in power method.</li>
-<li><strong>tol</strong> (<em>float, optional</em>) – Error tolerance used to check convergence in power method iteration.</li>
-<li><strong>nstart</strong> (<em>dictionary, optional</em>) – Starting value of each node for power method iteration.</li>
-<li><strong>normalized</strong> (<em>bool (default=True)</em>) – Normalize results by the sum of all of the values.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph</p></li>
+<li><p><strong>max_iter</strong> (<em>integer, optional</em>) – Maximum number of iterations in power method.</p></li>
+<li><p><strong>tol</strong> (<em>float, optional</em>) – Error tolerance used to check convergence in power method iteration.</p></li>
+<li><p><strong>nstart</strong> (<em>dictionary, optional</em>) – Starting value of each node for power method iteration.</p></li>
+<li><p><strong>normalized</strong> (<em>bool (default=True)</em>) – Normalize results by the sum of all of the values.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>(hubs,authorities)</strong> – Two dictionaries keyed by node containing the hub and authority
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>(hubs,authorities)</strong> – Two dictionaries keyed by node containing the hub and authority
 values.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">two-tuple of dictionaries</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>two-tuple of dictionaries</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">hits</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -298,35 +295,28 @@ number_of_nodes(G)*tol has been reached.</p>
 <p>The HITS algorithm was designed for directed graphs but this
 algorithm does not check if the input graph is directed and will
 execute on undirected graphs.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PowerIterationFailedConvergence</span></code> – If the algorithm fails to converge to the specified tolerance
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../exceptions.html#networkx.PowerIterationFailedConvergence" title="networkx.PowerIterationFailedConvergence"><strong>PowerIterationFailedConvergence</strong></a> – If the algorithm fails to converge to the specified tolerance
 within the specified number of iterations of the power iteration
-method.</td>
-</tr>
-</tbody>
-</table>
+method.</p>
+</dd>
+</dl>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>A. Langville and C. Meyer,
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>A. Langville and C. Meyer,
 “A survey of eigenvector methods of web information retrieval.”
-<a class="reference external" href="http://citeseer.ist.psu.edu/713792.html">http://citeseer.ist.psu.edu/713792.html</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td>Jon Kleinberg,
+<a class="reference external" href="http://citeseer.ist.psu.edu/713792.html">http://citeseer.ist.psu.edu/713792.html</a></p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">2</span></dt>
+<dd><p>Jon Kleinberg,
 Authoritative sources in a hyperlinked environment
 Journal of the ACM 46 (5): 604-632, 1999.
 doi:10.1145/324133.324140.
-http://www.cs.cornell.edu/home/kleinber/auth.pdf.</td></tr>
-</tbody>
-</table>
+http://www.cs.cornell.edu/home/kleinber/auth.pdf.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -353,7 +343,7 @@ http://www.cs.cornell.edu/home/kleinber/auth.pdf.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

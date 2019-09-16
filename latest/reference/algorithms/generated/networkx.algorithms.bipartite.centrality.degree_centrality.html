@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.centrality.degree_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.centrality.degree_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bipartite.html">Bipartite</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.basic">Basic functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.matching">Matching</a></li>
@@ -265,31 +266,27 @@
 <h1>networkx.algorithms.bipartite.centrality.degree_centrality<a class="headerlink" href="#networkx-algorithms-bipartite-centrality-degree-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.centrality.degree_centrality">
-<code class="descname">degree_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>nodes</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/centrality.html#degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.centrality.degree_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">degree_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">nodes</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/centrality.html#degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.centrality.degree_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the degree centrality for nodes in a bipartite network.</p>
 <p>The degree centrality for a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> is the fraction of nodes
 connected to it.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A bipartite network</li>
-<li><strong>nodes</strong> (<em>list or container</em>) – Container with all nodes in one bipartite node set.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A bipartite network</p></li>
+<li><p><strong>nodes</strong> (<em>list or container</em>) – Container with all nodes in one bipartite node set.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>centrality</strong> – Dictionary keyed by node with bipartite degree centrality as the value.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>centrality</strong> – Dictionary keyed by node with bipartite degree centrality as the value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.bipartite.centrality.betweenness_centrality.html#networkx.algorithms.bipartite.centrality.betweenness_centrality" title="networkx.algorithms.bipartite.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.bipartite.centrality.closeness_centrality.html#networkx.algorithms.bipartite.centrality.closeness_centrality" title="networkx.algorithms.bipartite.centrality.closeness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">closeness_centrality()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">sets()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">is_bipartite()</span></code></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.bipartite.centrality.betweenness_centrality.html#networkx.algorithms.bipartite.centrality.betweenness_centrality" title="networkx.algorithms.bipartite.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.bipartite.centrality.closeness_centrality.html#networkx.algorithms.bipartite.centrality.closeness_centrality" title="networkx.algorithms.bipartite.centrality.closeness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">closeness_centrality()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">sets()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">is_bipartite()</span></code></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The nodes input parameter must contain all nodes in one bipartite node set,
@@ -301,21 +298,20 @@ normalized by dividing by the maximum possible degree (which is
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">n-1</span></code> where <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> is the number of nodes in G).</p>
 <p>In the bipartite case, the maximum possible degree of a node in a
 bipartite node set is the number of nodes in the opposite node set
-<a class="footnote-reference" href="#id2" id="id1">[1]</a>.  The degree centrality for a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> in the bipartite
+<a class="footnote-reference brackets" href="#id2" id="id1">1</a>.  The degree centrality for a node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> in the bipartite
 sets <code class="xref py py-obj docutils literal notranslate"><span class="pre">U</span></code> with <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes and <code class="xref py py-obj docutils literal notranslate"><span class="pre">V</span></code> with <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> nodes is</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}d_{v} = \frac{deg(v)}{m}, \mbox{for} v \in U ,\\d_{v} = \frac{deg(v)}{n}, \mbox{for} v \in V ,\end{aligned}\end{align} \]</div>
 <p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">deg(v)</span></code> is the degree of node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Borgatti, S.P. and Halgin, D. In press. “Analyzing Affiliation
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Borgatti, S.P. and Halgin, D. In press. “Analyzing Affiliation
 Networks”. In Carrington, P. and Scott, J. (eds) The Sage Handbook
 of Social Network Analysis. Sage Publications.
-<a class="reference external" href="http://www.steveborgatti.com/research/publications/bhaffiliations.pdf">http://www.steveborgatti.com/research/publications/bhaffiliations.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://www.steveborgatti.com/research/publications/bhaffiliations.pdf">http://www.steveborgatti.com/research/publications/bhaffiliations.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -342,7 +338,7 @@ of Social Network Analysis. Sage Publications.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

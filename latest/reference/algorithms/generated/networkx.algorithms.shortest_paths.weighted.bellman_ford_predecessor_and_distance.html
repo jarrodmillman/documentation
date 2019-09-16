@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -263,23 +264,19 @@
 <h1>networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance<a class="headerlink" href="#networkx-algorithms-shortest-paths-weighted-bellman-ford-predecessor-and-distance" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance">
-<code class="descname">bellman_ford_predecessor_and_distance</code><span class="sig-paren">(</span><em>G</em>, <em>source</em>, <em>target=None</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/shortest_paths/weighted.html#bellman_ford_predecessor_and_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">bellman_ford_predecessor_and_distance</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">source</em>, <em class="sig-param">target=None</em>, <em class="sig-param">weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/shortest_paths/weighted.html#bellman_ford_predecessor_and_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.shortest_paths.weighted.bellman_ford_predecessor_and_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute shortest path lengths and predecessors on shortest paths
 in weighted graphs.</p>
 <p>The algorithm has a running time of <span class="math notranslate nohighlight">\(O(mn)\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the number of
 nodes and <span class="math notranslate nohighlight">\(m\)</span> is the number of edges.  It is slower than Dijkstra but
 can handle negative edge weights.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first">
-<li><p class="first"><strong>G</strong> (<em>NetworkX graph</em>) – The algorithm works for all types of graphs, including directed
-graphs and multigraphs.</p>
-</li>
-<li><p class="first"><strong>source</strong> (<em>node label</em>) – Starting node for path</p>
-</li>
-<li><p class="first"><strong>weight</strong> (<em>string or function</em>) – If this is a string, then edge weights will be accessed via the
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul>
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – The algorithm works for all types of graphs, including directed
+graphs and multigraphs.</p></li>
+<li><p><strong>source</strong> (<em>node label</em>) – Starting node for path</p></li>
+<li><p><strong>weight</strong> (<em>string or function</em>) – If this is a string, then edge weights will be accessed via the
 edge attribute with this key (that is, the weight of the edge
 joining <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> will be <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
 such edge attribute exists, the weight of the edge is assumed to
@@ -291,26 +288,24 @@ dictionary of edge attributes for that edge. The function must
 return a number.</p>
 </li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pred, dist</strong> – Returns two dictionaries keyed by node to predecessor in the
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>pred, dist</strong> – Returns two dictionaries keyed by node to predecessor in the
 path and to the distance from the source respectively.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dictionaries</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NodeNotFound</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code> is not in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnbounded</span></code> – If the (di)graph contains a negative cost (di)cycle, the
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionaries</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NodeNotFound" title="networkx.NodeNotFound"><strong>NodeNotFound</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code> is not in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXUnbounded" title="networkx.NetworkXUnbounded"><strong>NetworkXUnbounded</strong></a> – If the (di)graph contains a negative cost (di)cycle, the
 algorithm raises an exception to indicate the presence of the
 negative cost (di)cycle.  Note: any negative weight edge in an
-undirected graph is a negative cost cycle.</li>
+undirected graph is a negative cost cycle.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
@@ -370,7 +365,7 @@ In NetworkX v2.2 this changed to the source node having predecessor <code class=
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

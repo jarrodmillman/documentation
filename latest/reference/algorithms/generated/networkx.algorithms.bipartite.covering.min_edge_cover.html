@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.covering.min_edge_cover &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.covering.min_edge_cover &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bipartite.html">Bipartite</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.basic">Basic functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.matching">Matching</a></li>
@@ -265,38 +266,34 @@
 <h1>networkx.algorithms.bipartite.covering.min_edge_cover<a class="headerlink" href="#networkx-algorithms-bipartite-covering-min-edge-cover" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.covering.min_edge_cover">
-<code class="descname">min_edge_cover</code><span class="sig-paren">(</span><em>G</em>, <em>matching_algorithm=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/covering.html#min_edge_cover"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.covering.min_edge_cover" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">min_edge_cover</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">matching_algorithm=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/covering.html#min_edge_cover"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.covering.min_edge_cover" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a set of edges which constitutes
 the minimum edge cover of the graph.</p>
 <p>The smallest edge cover can be found in polynomial time by finding
 a maximum matching and extending it greedily so that all nodes
 are covered.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – An undirected bipartite graph.</li>
-<li><strong>matching_algorithm</strong> (<em>function</em>) – A function that returns a maximum cardinality matching in a
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – An undirected bipartite graph.</p></li>
+<li><p><strong>matching_algorithm</strong> (<em>function</em>) – A function that returns a maximum cardinality matching in a
 given bipartite graph. The function must take one input, the
 graph <code class="docutils literal notranslate"><span class="pre">G</span></code>, and return a dictionary mapping each node to its
 mate. If not specified,
 <a class="reference internal" href="networkx.algorithms.bipartite.matching.hopcroft_karp_matching.html#networkx.algorithms.bipartite.matching.hopcroft_karp_matching" title="networkx.algorithms.bipartite.matching.hopcroft_karp_matching"><code class="xref py py-func docutils literal notranslate"><span class="pre">hopcroft_karp_matching()</span></code></a>
 will be used. Other possibilities include
-<a class="reference internal" href="networkx.algorithms.bipartite.matching.eppstein_matching.html#networkx.algorithms.bipartite.matching.eppstein_matching" title="networkx.algorithms.bipartite.matching.eppstein_matching"><code class="xref py py-func docutils literal notranslate"><span class="pre">eppstein_matching()</span></code></a>,</li>
+<a class="reference internal" href="networkx.algorithms.bipartite.matching.eppstein_matching.html#networkx.algorithms.bipartite.matching.eppstein_matching" title="networkx.algorithms.bipartite.matching.eppstein_matching"><code class="xref py py-func docutils literal notranslate"><span class="pre">eppstein_matching()</span></code></a>,</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A set of the edges in a minimum edge cover of the graph, given as
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A set of the edges in a minimum edge cover of the graph, given as
 pairs of nodes. It contains both the edges <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">(v,</span> <span class="pre">u)</span></code>
 for given nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> among the edges of minimum edge cover.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>An edge cover of a graph is a set of edges such that every node of
 the graph is incident to at least one edge of the set.
@@ -330,7 +327,7 @@ is bounded by the worst-case running time of the function
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

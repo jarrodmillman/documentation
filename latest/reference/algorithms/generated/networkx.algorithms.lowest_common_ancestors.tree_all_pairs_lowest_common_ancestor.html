@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.lowest_common_ancestors.tree_all_pairs_lowest_common_ancestor &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.lowest_common_ancestors.tree_all_pairs_lowest_common_ancestor &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -258,29 +259,25 @@
 <h1>networkx.algorithms.lowest_common_ancestors.tree_all_pairs_lowest_common_ancestor<a class="headerlink" href="#networkx-algorithms-lowest-common-ancestors-tree-all-pairs-lowest-common-ancestor" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.lowest_common_ancestors.tree_all_pairs_lowest_common_ancestor">
-<code class="descname">tree_all_pairs_lowest_common_ancestor</code><span class="sig-paren">(</span><em>G</em>, <em>root=None</em>, <em>pairs=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/lowest_common_ancestors.html#tree_all_pairs_lowest_common_ancestor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.lowest_common_ancestors.tree_all_pairs_lowest_common_ancestor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">tree_all_pairs_lowest_common_ancestor</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">root=None</em>, <em class="sig-param">pairs=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/lowest_common_ancestors.html#tree_all_pairs_lowest_common_ancestor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.lowest_common_ancestors.tree_all_pairs_lowest_common_ancestor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yield the lowest common ancestor for sets of pairs in a tree.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX directed graph (must be a tree)</em>)</li>
-<li><strong>root</strong> (<em>node, optional (default: None)</em>) – The root of the subtree to operate on.
-If None, assume the entire graph has exactly one source and use that.</li>
-<li><strong>pairs</strong> (<em>iterable or iterator of pairs of nodes, optional (default: None)</em>) – The pairs of interest. If None, Defaults to all pairs of nodes
-under <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code> that have a lowest common ancestor.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX directed graph (must be a tree)</em>)</p></li>
+<li><p><strong>root</strong> (<em>node, optional (default: None)</em>) – The root of the subtree to operate on.
+If None, assume the entire graph has exactly one source and use that.</p></li>
+<li><p><strong>pairs</strong> (<em>iterable or iterator of pairs of nodes, optional (default: None)</em>) – The pairs of interest. If None, Defaults to all pairs of nodes
+under <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code> that have a lowest common ancestor.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lcas</strong> – in <code class="xref py py-obj docutils literal notranslate"><span class="pre">pairs</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">lca</span></code> is their lowest common ancestor.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">generator of tuples <code class="xref py py-obj docutils literal notranslate"><span class="pre">((u,</span> <span class="pre">v),</span> <span class="pre">lca)</span></code> where <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> are nodes</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>lcas</strong> – in <code class="xref py py-obj docutils literal notranslate"><span class="pre">pairs</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">lca</span></code> is their lowest common ancestor.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>generator of tuples <code class="xref py py-obj docutils literal notranslate"><span class="pre">((u,</span> <span class="pre">v),</span> <span class="pre">lca)</span></code> where <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> are nodes</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Only defined on non-null trees represented with directed edges from
 parents to children. Uses Tarjan’s off-line lowest-common-ancestors
@@ -290,8 +287,8 @@ use, and <span class="math notranslate nohighlight">\(P\)</span> is the number o
 <p>Tarjan, R. E. (1979), “Applications of path compression on balanced trees”,
 Journal of the ACM 26 (4): 690-715, doi:10.1145/322154.322161.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor.html#networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor" title="networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor"><code class="xref py py-func docutils literal notranslate"><span class="pre">all_pairs_lowest_common_ancestor()</span></code></a>, <a class="reference internal" href="networkx.algorithms.lowest_common_ancestors.lowest_common_ancestor.html#networkx.algorithms.lowest_common_ancestors.lowest_common_ancestor" title="networkx.algorithms.lowest_common_ancestors.lowest_common_ancestor"><code class="xref py py-func docutils literal notranslate"><span class="pre">lowest_common_ancestor()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor.html#networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor" title="networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor"><code class="xref py py-func docutils literal notranslate"><span class="pre">all_pairs_lowest_common_ancestor()</span></code></a>, <a class="reference internal" href="networkx.algorithms.lowest_common_ancestors.lowest_common_ancestor.html#networkx.algorithms.lowest_common_ancestors.lowest_common_ancestor" title="networkx.algorithms.lowest_common_ancestors.lowest_common_ancestor"><code class="xref py py-func docutils literal notranslate"><span class="pre">lowest_common_ancestor()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -319,7 +316,7 @@ Journal of the ACM 26 (4): 690-715, doi:10.1145/322154.322161.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

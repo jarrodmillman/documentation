@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Migration guide from 1.X to 2.0 &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Migration guide from 1.X to 2.0 &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -193,8 +193,8 @@ that code is broken.</p>
 graph classes. These are too numerous to catalog here, but a couple obvious
 ones include:</p>
 <ul class="simple">
-<li>centering of nodes in <code class="docutils literal notranslate"><span class="pre">drawing/nx_pylab</span></code>,</li>
-<li>iterator vs dict output from a few <code class="docutils literal notranslate"><span class="pre">shortest_path</span></code> routines</li>
+<li><p>centering of nodes in <code class="docutils literal notranslate"><span class="pre">drawing/nx_pylab</span></code>,</p></li>
+<li><p>iterator vs dict output from a few <code class="docutils literal notranslate"><span class="pre">shortest_path</span></code> routines</p></li>
 </ul>
 <hr class="docutils" />
 <p>Some demonstrations:</p>
@@ -231,7 +231,7 @@ views.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span> <span class="o">&amp;</span> <span class="n">H</span><span class="o">.</span><span class="n">nodes</span>  <span class="c1"># finding common nodes in 2 graphs</span>
 <span class="go">{1}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># union of nodes in 2 graphs</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span> <span class="o">|</span> <span class="n">H</span><span class="o">.</span><span class="n">nodes</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span> <span class="o">|</span> <span class="n">H</span><span class="o">.</span><span class="n">nodes</span>  
 <span class="go">{0, 1, 2, 3, 4, &#39;networkx&#39;, &#39;2.0&#39;}</span>
 </pre></div>
 </div>
@@ -351,8 +351,8 @@ be omitted in favor of passing a dictionary of dictionaries to <code class="docu
 specify the keyword argument names. This method is backwards compatible and
 ensures the correct arguments are passed, regardless of the order. For example the old code</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">})</span>  <span class="c1"># doctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="p">{(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="s1">&#39;path1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span> <span class="s1">&#39;path2&#39;</span><span class="p">})</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">})</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="p">{(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="s1">&#39;path1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span> <span class="s1">&#39;path2&#39;</span><span class="p">})</span>  
 </pre></div>
 </div>
 <p>Will cause <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">unhashable</span> <span class="pre">type:</span> <span class="pre">'dict'</span></code> in the new version. The code
@@ -383,10 +383,12 @@ because it may be a different graph type (directed/undirected) than the view.</p
 If <code class="docutils literal notranslate"><span class="pre">nbunch</span></code> was a single node source, then the same effect can now be achieved
 using the <code class="docutils literal notranslate"><span class="pre">subgraph</span></code> operator:</p>
 <blockquote>
-<div>nx.topological_sort(G.subgraph(nx.descendants(G, nbunch)))</div></blockquote>
+<div><p>nx.topological_sort(G.subgraph(nx.descendants(G, nbunch)))</p>
+</div></blockquote>
 <p>To achieve a reverse topological sort, the output should be converted to a list:</p>
 <blockquote>
-<div>reversed(list(nx.topological_sort(G)))</div></blockquote>
+<div><p>reversed(list(nx.topological_sort(G)))</p>
+</div></blockquote>
 <hr class="docutils" />
 <div class="section" id="writing-code-that-works-for-both-versions">
 <h2>Writing code that works for both versions<a class="headerlink" href="#writing-code-that-works-for-both-versions" title="Permalink to this headline">¶</a></h2>
@@ -421,7 +423,7 @@ We envision removing <code class="docutils literal notranslate"><span class="pre
 <p>Copying node attribute dicts directly from one graph to another can corrupt
 the node data structure if not done correctly. Code such as the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># dangerous in v1.x, not allowed in v2.x</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>  
 </pre></div>
 </div>
 <p>used to work, even though it could cause errors if <code class="docutils literal notranslate"><span class="pre">n</span></code> was not a node in <code class="docutils literal notranslate"><span class="pre">G</span></code>.
@@ -451,12 +453,12 @@ to you, read it in with v1 installed and write a file with the node and edge
 information. You can read that into a config with v2 installed and then add those nodes
 and edges to a fresh graph. Try something similar to this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># in v1.x</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span> <span class="n">file</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span> <span class="n">file</span><span class="p">)</span>  
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># then in v2.x</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>  <span class="c1"># doctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
@@ -475,7 +477,7 @@ and edges to a fresh graph. Try something similar to this:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

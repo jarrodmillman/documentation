@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Isomorphism &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Isomorphism &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -258,23 +259,23 @@
 <span id="id1"></span><h1>Isomorphism<a class="headerlink" href="#isomorphism" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<span class="target" id="module-networkx.algorithms.isomorphism"></span><table border="1" class="longtable docutils">
+<span class="target" id="module-networkx.algorithms.isomorphism"></span><table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.is_isomorphic.html#networkx.algorithms.isomorphism.is_isomorphic" title="networkx.algorithms.isomorphism.is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_isomorphic</span></code></a>(G1,&nbsp;G2[,&nbsp;node_match,&nbsp;edge_match])</td>
-<td>Returns True if the graphs G1 and G2 are isomorphic and False otherwise.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.is_isomorphic.html#networkx.algorithms.isomorphism.is_isomorphic" title="networkx.algorithms.isomorphism.is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_isomorphic</span></code></a>(G1, G2[, node_match, edge_match])</p></td>
+<td><p>Returns True if the graphs G1 and G2 are isomorphic and False otherwise.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.could_be_isomorphic.html#networkx.algorithms.isomorphism.could_be_isomorphic" title="networkx.algorithms.isomorphism.could_be_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">could_be_isomorphic</span></code></a>(G1,&nbsp;G2)</td>
-<td>Returns False if graphs are definitely not isomorphic.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.could_be_isomorphic.html#networkx.algorithms.isomorphism.could_be_isomorphic" title="networkx.algorithms.isomorphism.could_be_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">could_be_isomorphic</span></code></a>(G1, G2)</p></td>
+<td><p>Returns False if graphs are definitely not isomorphic.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.fast_could_be_isomorphic.html#networkx.algorithms.isomorphism.fast_could_be_isomorphic" title="networkx.algorithms.isomorphism.fast_could_be_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fast_could_be_isomorphic</span></code></a>(G1,&nbsp;G2)</td>
-<td>Returns False if graphs are definitely not isomorphic.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.fast_could_be_isomorphic.html#networkx.algorithms.isomorphism.fast_could_be_isomorphic" title="networkx.algorithms.isomorphism.fast_could_be_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fast_could_be_isomorphic</span></code></a>(G1, G2)</p></td>
+<td><p>Returns False if graphs are definitely not isomorphic.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.faster_could_be_isomorphic.html#networkx.algorithms.isomorphism.faster_could_be_isomorphic" title="networkx.algorithms.isomorphism.faster_could_be_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">faster_could_be_isomorphic</span></code></a>(G1,&nbsp;G2)</td>
-<td>Returns False if graphs are definitely not isomorphic.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.faster_could_be_isomorphic.html#networkx.algorithms.isomorphism.faster_could_be_isomorphic" title="networkx.algorithms.isomorphism.faster_could_be_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">faster_could_be_isomorphic</span></code></a>(G1, G2)</p></td>
+<td><p>Returns False if graphs are definitely not isomorphic.</p></td>
 </tr>
 </tbody>
 </table>
@@ -321,7 +322,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix.from_numpy_matrix &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.convert_matrix.from_numpy_matrix &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -202,26 +202,22 @@
 <h1>networkx.convert_matrix.from_numpy_matrix<a class="headerlink" href="#networkx-convert-matrix-from-numpy-matrix" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.convert_matrix.from_numpy_matrix">
-<code class="descname">from_numpy_matrix</code><span class="sig-paren">(</span><em>A</em>, <em>parallel_edges=False</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/convert_matrix.html#from_numpy_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.convert_matrix.from_numpy_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_numpy_matrix</code><span class="sig-paren">(</span><em class="sig-param">A</em>, <em class="sig-param">parallel_edges=False</em>, <em class="sig-param">create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/convert_matrix.html#from_numpy_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.convert_matrix.from_numpy_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a graph from numpy matrix.</p>
 <p>The numpy matrix is interpreted as an adjacency matrix for the graph.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>A</strong> (<em>numpy matrix</em>) – An adjacency matrix representation of a graph</li>
-<li><strong>parallel_edges</strong> (<em>Boolean</em>) – If True, <code class="xref py py-obj docutils literal notranslate"><span class="pre">create_using</span></code> is a multigraph, and <code class="xref py py-obj docutils literal notranslate"><span class="pre">A</span></code> is an
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>numpy matrix</em>) – An adjacency matrix representation of a graph</p></li>
+<li><p><strong>parallel_edges</strong> (<em>Boolean</em>) – If True, <code class="xref py py-obj docutils literal notranslate"><span class="pre">create_using</span></code> is a multigraph, and <code class="xref py py-obj docutils literal notranslate"><span class="pre">A</span></code> is an
 integer matrix, then entry <em>(i, j)</em> in the matrix is interpreted as the
 number of parallel edges joining vertices <em>i</em> and <em>j</em> in the graph.
 If False, then the entries in the adjacency matrix are interpreted as
-the weight of a single edge joining the vertices.</li>
-<li><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.</li>
+the weight of a single edge joining the vertices.</p></li>
+<li><p><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>For directed graphs, explicitly mention create_using=nx.Digraph,
 and entry i,j of A corresponds to an edge from i to j.</p>
@@ -238,8 +234,8 @@ will be converted to an appropriate Python data type.</p>
 of the data fields will be used as attribute keys in the resulting
 NetworkX graph.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.convert_matrix.to_numpy_matrix.html#networkx.convert_matrix.to_numpy_matrix" title="networkx.convert_matrix.to_numpy_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_numpy_matrix()</span></code></a>, <a class="reference internal" href="networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray" title="networkx.convert_matrix.to_numpy_recarray"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_numpy_recarray()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.convert_matrix.to_numpy_matrix.html#networkx.convert_matrix.to_numpy_matrix" title="networkx.convert_matrix.to_numpy_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_numpy_matrix()</span></code></a>, <a class="reference internal" href="networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray" title="networkx.convert_matrix.to_numpy_recarray"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_numpy_recarray()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <p>Simple integer weights on edges:</p>
@@ -305,7 +301,7 @@ as the number of parallel edges joining those two vertices:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

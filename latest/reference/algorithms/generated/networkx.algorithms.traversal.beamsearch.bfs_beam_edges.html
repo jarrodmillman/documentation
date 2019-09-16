@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.traversal.beamsearch.bfs_beam_edges &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.traversal.beamsearch.bfs_beam_edges &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -158,7 +159,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.breadth_first_search">Breadth First Search</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.beamsearch">Beam search</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.edgedfs">Depth First Search on Edges</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../traversal.html#breadth-first-search-on-edges">Breadth First Search on Edges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.edgebfs">Breadth First Search on Edges</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tree.html">Tree</a></li>
@@ -260,38 +261,34 @@
 <h1>networkx.algorithms.traversal.beamsearch.bfs_beam_edges<a class="headerlink" href="#networkx-algorithms-traversal-beamsearch-bfs-beam-edges" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.traversal.beamsearch.bfs_beam_edges">
-<code class="descname">bfs_beam_edges</code><span class="sig-paren">(</span><em>G</em>, <em>source</em>, <em>value</em>, <em>width=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/traversal/beamsearch.html#bfs_beam_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.traversal.beamsearch.bfs_beam_edges" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">bfs_beam_edges</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">source</em>, <em class="sig-param">value</em>, <em class="sig-param">width=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/traversal/beamsearch.html#bfs_beam_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.traversal.beamsearch.bfs_beam_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterates over edges in a beam search.</p>
 <p>The beam search is a generalized breadth-first search in which only
 the “best” <em>w</em> neighbors of the current node are enqueued, where <em>w</em>
 is the beam width and “best” is an application-specific
 heuristic. In general, a beam search with a small beam width might
 not visit each node in the graph.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>source</strong> (<em>node</em>) – Starting node for the breadth-first search; this function
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>source</strong> (<em>node</em>) – Starting node for the breadth-first search; this function
 iterates over only those edges in the component reachable from
-this node.</li>
-<li><strong>value</strong> (<em>function</em>) – A function that takes a node of the graph as input and returns a
+this node.</p></li>
+<li><p><strong>value</strong> (<em>function</em>) – A function that takes a node of the graph as input and returns a
 real number indicating how “good” it is. A higher value means it
 is more likely to be visited sooner during the search. When
 visiting a new node, only the <code class="xref py py-obj docutils literal notranslate"><span class="pre">width</span></code> neighbors with the highest
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code> are enqueued (in decreasing order of <code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code>).</li>
-<li><strong>width</strong> (<em>int (default = None)</em>) – The beam width for the search. This is the number of neighbors
-(ordered by <code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code>) to enqueue when visiting each new node.</li>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code> are enqueued (in decreasing order of <code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code>).</p></li>
+<li><p><strong>width</strong> (<em>int (default = None)</em>) – The beam width for the search. This is the number of neighbors
+(ordered by <code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code>) to enqueue when visiting each new node.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last"><em>edge</em> – Edges in the beam search starting from <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code>, given as a pair
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><em>edge</em> – Edges in the beam search starting from <code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code>, given as a pair
 of nodes.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>To give nodes with, for example, a higher centrality precedence
 during the search, set the <code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code> function to return the centrality
@@ -330,7 +327,7 @@ value of the node:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

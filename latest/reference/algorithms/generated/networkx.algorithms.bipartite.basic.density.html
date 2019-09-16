@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.basic.density &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.basic.density &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bipartite.html">Bipartite</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.basic">Basic functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.matching">Matching</a></li>
@@ -265,26 +266,22 @@
 <h1>networkx.algorithms.bipartite.basic.density<a class="headerlink" href="#networkx-algorithms-bipartite-basic-density" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.basic.density">
-<code class="descname">density</code><span class="sig-paren">(</span><em>B</em>, <em>nodes</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/basic.html#density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.basic.density" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">density</code><span class="sig-paren">(</span><em class="sig-param">B</em>, <em class="sig-param">nodes</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/basic.html#density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.basic.density" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns density of bipartite graph B.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>nodes</strong> (<em>list or container</em>) – Nodes in one node set of the bipartite graph.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>nodes</strong> (<em>list or container</em>) – Nodes in one node set of the bipartite graph.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>d</strong> – The bipartite density</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>d</strong> – The bipartite density</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="k">import</span> <span class="n">bipartite</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_bipartite_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
@@ -303,8 +300,8 @@ case of disconnected graphs.
 See <a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite" title="networkx.algorithms.bipartite"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bipartite</span> <span class="pre">documentation</span></code></a>
 for further details on how bipartite graphs are handled in NetworkX.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.bipartite.basic.color.html#networkx.algorithms.bipartite.basic.color" title="networkx.algorithms.bipartite.basic.color"><code class="xref py py-func docutils literal notranslate"><span class="pre">color()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.bipartite.basic.color.html#networkx.algorithms.bipartite.basic.color" title="networkx.algorithms.bipartite.basic.color"><code class="xref py py-func docutils literal notranslate"><span class="pre">color()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -332,7 +329,7 @@ for further details on how bipartite graphs are handled in NetworkX.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

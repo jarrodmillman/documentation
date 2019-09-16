@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.approximation.steinertree.steiner_tree &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.approximation.steinertree.steiner_tree &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -112,6 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -266,28 +267,24 @@
 <h1>networkx.algorithms.approximation.steinertree.steiner_tree<a class="headerlink" href="#networkx-algorithms-approximation-steinertree-steiner-tree" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.approximation.steinertree.steiner_tree">
-<code class="descname">steiner_tree</code><span class="sig-paren">(</span><em>G</em>, <em>terminal_nodes</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/steinertree.html#steiner_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.steinertree.steiner_tree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">steiner_tree</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">terminal_nodes</em>, <em class="sig-param">weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/steinertree.html#steiner_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.steinertree.steiner_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an approximation to the minimum Steiner tree of a graph.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>terminal_nodes</strong> (<em>list</em>) – A list of terminal nodes for which minimum steiner tree is
-to be found.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>terminal_nodes</strong> (<em>list</em>) – A list of terminal nodes for which minimum steiner tree is
+to be found.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Approximation to the minimum steiner tree of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> induced by
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Approximation to the minimum steiner tree of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> induced by
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">terminal_nodes</span></code> .</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">NetworkX graph</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX graph</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Steiner tree can be approximated by computing the minimum spanning
 tree of the subgraph of the metric closure of the graph induced by the
@@ -323,7 +320,7 @@ terminal nodes.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

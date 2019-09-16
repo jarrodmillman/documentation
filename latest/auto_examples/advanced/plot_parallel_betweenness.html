@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Parallel Betweenness &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Parallel Betweenness &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -185,8 +185,8 @@
            <div itemprop="articleBody">
             
   <div class="sphx-glr-download-link-note admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Click <a class="reference internal" href="#sphx-glr-download-auto-examples-advanced-plot-parallel-betweenness-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-advanced-plot-parallel-betweenness-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="parallel-betweenness">
 <span id="sphx-glr-auto-examples-advanced-plot-parallel-betweenness-py"></span><h1>Parallel Betweenness<a class="headerlink" href="#parallel-betweenness" title="Permalink to this headline">¶</a></h1>
@@ -200,9 +200,9 @@ contribution to the betweenness centrality of the whole network.</p>
 <p>It may be related to this:
 <a class="reference external" href="https://stackoverflow.com/questions/1816958/cant-pickle-type-instancemethod-when-using-multiprocessing-pool-map">https://stackoverflow.com/questions/1816958/cant-pickle-type-instancemethod-when-using-multiprocessing-pool-map</a></p>
 <div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;/home/travis/venv/lib/python3.7/site-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">394</span>, in <span class="n">_memory_usage</span>
+  File <span class="nb">&quot;/home/travis/venv/lib/python3.7/site-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">480</span>, in <span class="n">_memory_usage</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
-  File <span class="nb">&quot;/home/travis/venv/lib/python3.7/site-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">382</span>, in <span class="n">__call__</span>
+  File <span class="nb">&quot;/home/travis/venv/lib/python3.7/site-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">465</span>, in <span class="n">__call__</span>
     <span class="k">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">globals</span><span class="p">)</span>
   File <span class="nb">&quot;/home/travis/build/networkx/networkx/examples/advanced/plot_parallel_betweenness.py&quot;</span>, line <span class="m">77</span>, in <span class="n">&lt;module&gt;</span>
     <span class="n">bt</span> <span class="o">=</span> <span class="n">betweenness_centrality_parallel</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -218,7 +218,7 @@ contribution to the betweenness centrality of the whole network.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">_send_bytes</span><span class="p">(</span><span class="n">_ForkingPickler</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
   File <span class="nb">&quot;/opt/python/3.7.1/lib/python3.7/multiprocessing/reduction.py&quot;</span>, line <span class="m">51</span>, in <span class="n">dumps</span>
     <span class="bp">cls</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">protocol</span><span class="p">)</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="gr">_pickle.PicklingError</span>: <span class="n">Can&#39;t pickle &lt;function _betmap at 0x7f74ee534598&gt;: attribute lookup _betmap on __main__ failed</span>
+<span class="gr">_pickle.PicklingError</span>: <span class="n">Can&#39;t pickle &lt;function _betmap at 0x7fbca3c71a60&gt;: attribute lookup _betmap on __main__ failed</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="k">import</span> <span class="n">Pool</span>
@@ -292,14 +292,16 @@ contribution to the betweenness centrality of the whole network.</p>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.181 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.203 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-advanced-plot-parallel-betweenness-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../../_downloads/2585f38a1e520cfc39a5573d75925591/plot_parallel_betweenness.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_parallel_betweenness.py</span></code></a></div>
-<div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../../_downloads/fe83fe8f0ccc95a7ab9bfe4069ec6663/plot_parallel_betweenness.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_parallel_betweenness.ipynb</span></code></a></div>
+<p><a class="reference download internal" download="" href="../../_downloads/241b70420ac07b76d632bcc9102648e6/plot_parallel_betweenness.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_parallel_betweenness.py</span></code></a></p>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/bdd00a1b31bed106f10ff08bb46dc5ca/plot_parallel_betweenness.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_parallel_betweenness.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -324,7 +326,7 @@ contribution to the betweenness centrality of the whole network.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

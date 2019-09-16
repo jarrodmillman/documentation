@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.planar_drawing.combinatorial_embedding_to_pos &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.planar_drawing.combinatorial_embedding_to_pos &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,41 +257,36 @@
 <h1>networkx.algorithms.planar_drawing.combinatorial_embedding_to_pos<a class="headerlink" href="#networkx-algorithms-planar-drawing-combinatorial-embedding-to-pos" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.planar_drawing.combinatorial_embedding_to_pos">
-<code class="descname">combinatorial_embedding_to_pos</code><span class="sig-paren">(</span><em>embedding</em>, <em>fully_triangulate=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/planar_drawing.html#combinatorial_embedding_to_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.planar_drawing.combinatorial_embedding_to_pos" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">combinatorial_embedding_to_pos</code><span class="sig-paren">(</span><em class="sig-param">embedding</em>, <em class="sig-param">fully_triangulate=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/planar_drawing.html#combinatorial_embedding_to_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.planar_drawing.combinatorial_embedding_to_pos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assigns every node a (x, y) position based on the given embedding</p>
 <p>The algorithm iteratively inserts nodes of the input graph in a certain
 order and rearranges previously inserted nodes so that the planar drawing
 stays valid. This is done efficiently by only maintaining relative
 positions during the node placements and calculating the absolute positions
-at the end. For more information see <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>embedding</strong> (<em>nx.PlanarEmbedding</em>) – This defines the order of the edges</li>
-<li><strong>fully_triangulate</strong> (<em>bool</em>) – If set to True the algorithm adds edges to a copy of the input
-embedding and makes it chordal.</li>
+at the end. For more information see <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>embedding</strong> (<em>nx.PlanarEmbedding</em>) – This defines the order of the edges</p></li>
+<li><p><strong>fully_triangulate</strong> (<em>bool</em>) – If set to True the algorithm adds edges to a copy of the input
+embedding and makes it chordal.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pos</strong> – Maps each node to a tuple that defines the (x, y) position</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>pos</strong> – Maps each node to a tuple that defines the (x, y) position</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
+</dd>
+</dl>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>M. Chrobak and T.H. Payne:
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>M. Chrobak and T.H. Payne:
 A Linear-time Algorithm for Drawing a Planar Graph on a Grid 1989
-<a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.51.6677">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.51.6677</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.51.6677">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.51.6677</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -317,7 +313,7 @@ A Linear-time Algorithm for Drawing a Planar Graph on a Grid 1989
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version 0.99 API changes &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Version 0.99 API changes &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -181,14 +181,14 @@ This change allows Graph and DiGraph to naturally represent
 weighted graphs and to hold arbitrary information on edges.</p>
 <blockquote>
 <div><ul class="simple">
-<li>Both Graph and DiGraph take an optional argument weighted=True|False.
+<li><p>Both Graph and DiGraph take an optional argument weighted=True|False.
 When weighted=True the graph is assumed to have numeric edge data
 (with default 1).  The Graph and DiGraph classes in earlier versions
-used the Python None as data (which is still allowed as edge data).</li>
-<li>The Graph and DiGraph classes now allow self loops.</li>
-<li>The XGraph and XDiGraph classes are removed and replaced with
+used the Python None as data (which is still allowed as edge data).</p></li>
+<li><p>The Graph and DiGraph classes now allow self loops.</p></li>
+<li><p>The XGraph and XDiGraph classes are removed and replaced with
 MultiGraph and MultiDiGraph. MultiGraph and MultiDiGraph
-optionally allow parallel (multiple) edges between two nodes.</li>
+optionally allow parallel (multiple) edges between two nodes.</p></li>
 </ul>
 </div></blockquote>
 <p>The mapping from old to new classes is as follows:</p>
@@ -205,30 +205,35 @@ optionally allow parallel (multiple) edges between two nodes.</li>
 <div class="section" id="edges">
 <h4>edges()<a class="headerlink" href="#edges" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>New keyword data=True|False keyword determines whether to return
-two-tuples (u,v) (False) or three-tuples (u,v,d) (True)</div></blockquote>
+<div><p>New keyword data=True|False keyword determines whether to return
+two-tuples (u,v) (False) or three-tuples (u,v,d) (True)</p>
+</div></blockquote>
 </div>
 <div class="section" id="delete-node">
 <h4>delete_node()<a class="headerlink" href="#delete-node" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>The preferred name is now remove_node().</div></blockquote>
+<div><p>The preferred name is now remove_node().</p>
+</div></blockquote>
 </div>
 <div class="section" id="delete-nodes-from">
 <h4>delete_nodes_from()<a class="headerlink" href="#delete-nodes-from" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>No longer raises an exception on an attempt to delete a node not in
-the graph.  The preferred name is now remove_nodes_from().</div></blockquote>
+<div><p>No longer raises an exception on an attempt to delete a node not in
+the graph.  The preferred name is now remove_nodes_from().</p>
+</div></blockquote>
 </div>
 <div class="section" id="delete-edge">
 <h4>delete_edge()<a class="headerlink" href="#delete-edge" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>Now raises an exception on an attempt to delete an edge not in the graph.
-The preferred name is now remove_edge().</div></blockquote>
+<div><p>Now raises an exception on an attempt to delete an edge not in the graph.
+The preferred name is now remove_edge().</p>
+</div></blockquote>
 </div>
 <div class="section" id="delete-edges-from">
 <h4>delete_edges_from()<a class="headerlink" href="#delete-edges-from" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>The preferred name is now remove_edges_from().</div></blockquote>
+<div><p>The preferred name is now remove_edges_from().</p>
+</div></blockquote>
 </div>
 <div class="section" id="add-edge">
 <h4>add_edge()<a class="headerlink" href="#add-edge" title="Permalink to this headline">¶</a></h4>
@@ -299,9 +304,10 @@ instead of G.get_edge(u,v)</p>
 <div class="section" id="degree-iter">
 <h4>degree_iter()<a class="headerlink" href="#degree-iter" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>The degree_iter method now returns an iterator over pairs of (node,
+<div><p>The degree_iter method now returns an iterator over pairs of (node,
 degree).  This was the previous behavior of degree_iter(with_labels=true)
-Also there is a new keyword weighted=False|True for weighted degree.</div></blockquote>
+Also there is a new keyword weighted=False|True for weighted degree.</p>
+</div></blockquote>
 </div>
 <div class="section" id="subgraph">
 <h4>subgraph()<a class="headerlink" href="#subgraph" title="Permalink to this headline">¶</a></h4>
@@ -329,7 +335,7 @@ a dictionary.</p>
 </div>
 <p>To get a list of neighbors you can either use the keys of that
 dictionary or use</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  
 <span class="go">[1]</span>
 </pre></div>
 </div>
@@ -348,7 +354,7 @@ wish to modify the dict.</p>
 <blockquote>
 <div><p>now a function</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test me&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  
 <span class="go">Name:                  test me</span>
 <span class="go">Type:                  Graph</span>
 <span class="go">Number of nodes:       0</span>
@@ -360,12 +366,14 @@ wish to modify the dict.</p>
 <div class="section" id="node-boundary">
 <h4>node_boundary()<a class="headerlink" href="#node-boundary" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>now a function</div></blockquote>
+<div><p>now a function</p>
+</div></blockquote>
 </div>
 <div class="section" id="edge-boundary">
 <h4>edge_boundary()<a class="headerlink" href="#edge-boundary" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>now a function</div></blockquote>
+<div><p>now a function</p>
+</div></blockquote>
 </div>
 <div class="section" id="is-directed">
 <h4>is_directed()<a class="headerlink" href="#is-directed" title="Permalink to this headline">¶</a></h4>
@@ -381,7 +389,8 @@ wish to modify the dict.</p>
 <div class="section" id="g-out-edges">
 <h4>G.out_edges()<a class="headerlink" href="#g-out-edges" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div>use G.edges()</div></blockquote>
+<div><p>use G.edges()</p>
+</div></blockquote>
 </div>
 <div class="section" id="g-in-edges">
 <h4>G.in_edges()<a class="headerlink" href="#g-in-edges" title="Permalink to this headline">¶</a></h4>
@@ -389,7 +398,7 @@ wish to modify the dict.</p>
 <div><p>use</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>  
 <span class="go">[]</span>
 </pre></div>
 </div>
@@ -443,9 +452,9 @@ which were intended to be ignored.</p>
 <p>Use the methods</p>
 <blockquote>
 <div><ul class="simple">
-<li>nodes_with_selfloops()</li>
-<li>selfloop_edges()</li>
-<li>number_of_selfloops()</li>
+<li><p>nodes_with_selfloops()</p></li>
+<li><p>selfloop_edges()</p></li>
+<li><p>number_of_selfloops()</p></li>
 </ul>
 </div></blockquote>
 <p>to discover any self loops.</p>
@@ -469,12 +478,12 @@ data in the original and copy graphs are pointers to the same data.</p>
 for features that changed.  Common places for changes are</p>
 <blockquote>
 <div><ul class="simple">
-<li>Converting XGraph() to either Graph or MultiGraph</li>
-<li>Converting XGraph.edges()  to  Graph.edges(data=True)</li>
-<li>Switching some rarely used methods to attributes (e.g. directed)
-or to functions (e.g. node_boundary)</li>
-<li>If you relied on the old default edge data being None, you will
-have to account for it now being 1.</li>
+<li><p>Converting XGraph() to either Graph or MultiGraph</p></li>
+<li><p>Converting XGraph.edges()  to  Graph.edges(data=True)</p></li>
+<li><p>Switching some rarely used methods to attributes (e.g. directed)
+or to functions (e.g. node_boundary)</p></li>
+<li><p>If you relied on the old default edge data being None, you will
+have to account for it now being 1.</p></li>
 </ul>
 </div></blockquote>
 <p>You may also want to look through your code for places which could
@@ -499,7 +508,7 @@ does not work well when you are changing the graph.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

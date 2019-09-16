@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bridges.local_bridges &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bridges.local_bridges &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bridges.html">Bridges</a><ul class="current">
@@ -258,31 +259,27 @@
 <h1>networkx.algorithms.bridges.local_bridges<a class="headerlink" href="#networkx-algorithms-bridges-local-bridges" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bridges.local_bridges">
-<code class="descname">local_bridges</code><span class="sig-paren">(</span><em>G</em>, <em>with_span=True</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bridges.html#local_bridges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bridges.local_bridges" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">local_bridges</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">with_span=True</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bridges.html#local_bridges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bridges.local_bridges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterate over local bridges of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> optionally computing the span</p>
 <p>A <em>local bridge</em> is an edge whose endpoints have no common neighbors.
 That is, the edge is not part of a triangle in the graph.</p>
 <p>The <em>span</em> of a <em>local bridge</em> is the shortest path length between
 the endpoints if the local bridge is removed.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>undirected graph</em>)</li>
-<li><strong>with_span</strong> (<em>bool</em>) – If True, yield a 3-tuple <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">span)</span></code></li>
-<li><strong>weight</strong> (<em>function, string or None (default: None)</em>) – If function, used to compute edge weights for the span.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>undirected graph</em>)</p></li>
+<li><p><strong>with_span</strong> (<em>bool</em>) – If True, yield a 3-tuple <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">span)</span></code></p></li>
+<li><p><strong>weight</strong> (<em>function, string or None (default: None)</em>) – If function, used to compute edge weights for the span.
 If string, the edge data attribute used in calculating span.
-If None, all edges have weight 1.</li>
+If None, all edges have weight 1.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last"><strong>e</strong> (<em>edge</em>) – The local bridges as an edge 2-tuple of nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> or
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><strong>e</strong> (<em>edge</em>) – The local bridges as an edge 2-tuple of nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> or
 as a 3-tuple <code class="xref py py-obj docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">span)</span></code> when <code class="xref py py-obj docutils literal notranslate"><span class="pre">with_span</span> <span class="pre">is</span> <span class="pre">True</span></code>.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>A cycle graph has every edge a local bridge with span N-1.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
@@ -316,7 +313,7 @@ as a 3-tuple <code class="xref py py-obj docutils literal notranslate"><span cla
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

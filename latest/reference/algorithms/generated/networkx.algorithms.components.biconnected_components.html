@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.components.biconnected_components &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.components.biconnected_components &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -261,7 +262,7 @@
 <h1>networkx.algorithms.components.biconnected_components<a class="headerlink" href="#networkx-algorithms-components-biconnected-components" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.components.biconnected_components">
-<code class="descname">biconnected_components</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/components/biconnected.html#biconnected_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.components.biconnected_components" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">biconnected_components</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/components/biconnected.html#biconnected_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.components.biconnected_components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a generator of sets of nodes, one set for each biconnected
 component of the graph</p>
 <p>Biconnected components are maximal subgraphs such that the removal of a
@@ -271,27 +272,27 @@ component.  Those nodes are articulation points, or cut vertices.  The
 removal of articulation points will increase the number of connected
 components of the graph.</p>
 <p>Notice that by convention a dyad is considered a biconnected component.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX Graph</em>) – An undirected graph.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>nodes</strong> – Generator of sets of nodes, one set for each biconnected component.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">generator</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><em>NetworkXNotImplemented :</em> – If the input graph is not undirected.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX Graph</em>) – An undirected graph.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nodes</strong> – Generator of sets of nodes, one set for each biconnected component.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>generator</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NetworkXNotImplemented :</strong> – If the input graph is not undirected.</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">k_components()</span></code></dt>
-<dd>this function is a special case where k=2</dd>
-<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">bridge_components()</span></code></dt>
-<dd>similar to this function, but is defined using 2-edge-connectivity instead of 2-node-connectivity.</dd>
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">k_components()</span></code></dt><dd><p>this function is a special case where k=2</p>
+</dd>
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">bridge_components()</span></code></dt><dd><p>similar to this function, but is defined using 2-edge-connectivity instead of 2-node-connectivity.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
@@ -322,8 +323,8 @@ efficient to use max instead of sort.</p>
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.components.is_biconnected.html#networkx.algorithms.components.is_biconnected" title="networkx.algorithms.components.is_biconnected"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_biconnected()</span></code></a>, <a class="reference internal" href="networkx.algorithms.components.articulation_points.html#networkx.algorithms.components.articulation_points" title="networkx.algorithms.components.articulation_points"><code class="xref py py-func docutils literal notranslate"><span class="pre">articulation_points()</span></code></a>, <a class="reference internal" href="networkx.algorithms.components.biconnected_component_edges.html#networkx.algorithms.components.biconnected_component_edges" title="networkx.algorithms.components.biconnected_component_edges"><code class="xref py py-func docutils literal notranslate"><span class="pre">biconnected_component_edges()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.components.is_biconnected.html#networkx.algorithms.components.is_biconnected" title="networkx.algorithms.components.is_biconnected"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_biconnected()</span></code></a>, <a class="reference internal" href="networkx.algorithms.components.articulation_points.html#networkx.algorithms.components.articulation_points" title="networkx.algorithms.components.articulation_points"><code class="xref py py-func docutils literal notranslate"><span class="pre">articulation_points()</span></code></a>, <a class="reference internal" href="networkx.algorithms.components.biconnected_component_edges.html#networkx.algorithms.components.biconnected_component_edges" title="networkx.algorithms.components.biconnected_component_edges"><code class="xref py py-func docutils literal notranslate"><span class="pre">biconnected_component_edges()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The algorithm to find articulation points and biconnected
@@ -337,14 +338,13 @@ by the DFS we can obtain the biconnected components because all
 edges of a bicomponent will be traversed consecutively between
 articulation points.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Hopcroft, J.; Tarjan, R. (1973).
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Hopcroft, J.; Tarjan, R. (1973).
 “Efficient algorithms for graph manipulation”.
-Communications of the ACM 16: 372–378. doi:10.1145/362248.362272</td></tr>
-</tbody>
-</table>
+Communications of the ACM 16: 372–378. doi:10.1145/362248.362272</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -371,7 +371,7 @@ Communications of the ACM 16: 372–378. doi:10.1145/362248.362272</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

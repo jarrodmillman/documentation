@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ISMAGS Algorithm &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>ISMAGS Algorithm &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -260,7 +261,7 @@
 <span id="ismags-algorithm"></span><span id="ismags"></span><h1>ISMAGS Algorithm<a class="headerlink" href="#module-networkx.algorithms.isomorphism.ismags" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>ISMAGS Algorithm<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Provides a Python implementation of the ISMAGS algorithm. <a class="footnote-reference" href="#id4" id="id2">[1]</a></p>
+<p>Provides a Python implementation of the ISMAGS algorithm. <a class="footnote-reference brackets" href="#id4" id="id2">1</a></p>
 <p>It is capable of finding (subgraph) isomorphisms between two graphs, taking the
 symmetry of the subgraph into account. In most cases the VF2 algorithm is
 faster (at least on small graphs) than this implementation, but in some cases
@@ -280,7 +281,7 @@ per symmetry group.</p>
 </pre></div>
 </div>
 <p>In addition, this implementation also provides an interface to find the
-largest common induced subgraph <a class="footnote-reference" href="#id5" id="id3">[2]</a> between any two graphs, again taking
+largest common induced subgraph <a class="footnote-reference brackets" href="#id5" id="id3">2</a> between any two graphs, again taking
 symmetry into account. Given <code class="xref py py-obj docutils literal notranslate"><span class="pre">graph</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">subgraph</span></code> the algorithm will remove
 nodes from the <code class="xref py py-obj docutils literal notranslate"><span class="pre">subgraph</span></code> until <code class="xref py py-obj docutils literal notranslate"><span class="pre">subgraph</span></code> is isomorphic to a subgraph of
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">graph</span></code>. Since only the symmetry of <code class="xref py py-obj docutils literal notranslate"><span class="pre">subgraph</span></code> is taken into account it is
@@ -350,59 +351,55 @@ worth thinking about how you provide your graphs:</p>
 </div>
 <p class="rubric">Notes</p>
 <ul class="simple">
-<li>The current implementation works for undirected graphs only. The algorithm
-in general should work for directed graphs as well though.</li>
-<li>Node keys for both provided graphs need to be fully orderable as well as
-hashable.</li>
-<li>Node and edge equality is assumed to be transitive: if A is equal to B, and
-B is equal to C, then A is equal to C.</li>
+<li><p>The current implementation works for undirected graphs only. The algorithm
+in general should work for directed graphs as well though.</p></li>
+<li><p>Node keys for both provided graphs need to be fully orderable as well as
+hashable.</p></li>
+<li><p>Node and edge equality is assumed to be transitive: if A is equal to B, and
+B is equal to C, then A is equal to C.</p></li>
 </ul>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>M. Houbraken, S. Demeyer, T. Michoel, P. Audenaert, D. Colle,
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>M. Houbraken, S. Demeyer, T. Michoel, P. Audenaert, D. Colle,
 M. Pickavet, “The Index-Based Subgraph Matching Algorithm with General
 Symmetries (ISMAGS): Exploiting Symmetry for Faster Subgraph
 Enumeration”, PLoS One 9(5): e97896, 2014.
-<a class="reference external" href="https://doi.org/10.1371/journal.pone.0097896">https://doi.org/10.1371/journal.pone.0097896</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Maximum_common_induced_subgraph">https://en.wikipedia.org/wiki/Maximum_common_induced_subgraph</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="https://doi.org/10.1371/journal.pone.0097896">https://doi.org/10.1371/journal.pone.0097896</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Maximum_common_induced_subgraph">https://en.wikipedia.org/wiki/Maximum_common_induced_subgraph</a></p>
+</dd>
+</dl>
 </div>
 <div class="section" id="ismags-object">
 <h2>ISMAGS object<a class="headerlink" href="#ismags-object" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.html#networkx.algorithms.isomorphism.ISMAGS" title="networkx.algorithms.isomorphism.ISMAGS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS</span></code></a>(graph,&nbsp;subgraph[,&nbsp;node_match,&nbsp;…])</td>
-<td>Implements the ISMAGS subgraph matching algorith.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.html#networkx.algorithms.isomorphism.ISMAGS" title="networkx.algorithms.isomorphism.ISMAGS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS</span></code></a>(graph, subgraph[, node_match, …])</p></td>
+<td><p>Implements the ISMAGS subgraph matching algorith.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.analyze_symmetry.html#networkx.algorithms.isomorphism.ISMAGS.analyze_symmetry" title="networkx.algorithms.isomorphism.ISMAGS.analyze_symmetry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.analyze_symmetry</span></code></a>(graph,&nbsp;…)</td>
-<td>Find a minimal set of permutations and corresponding co-sets that describe the symmetry of <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code>.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.analyze_symmetry.html#networkx.algorithms.isomorphism.ISMAGS.analyze_symmetry" title="networkx.algorithms.isomorphism.ISMAGS.analyze_symmetry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.analyze_symmetry</span></code></a>(graph, …)</p></td>
+<td><p>Find a minimal set of permutations and corresponding co-sets that describe the symmetry of <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.is_isomorphic.html#networkx.algorithms.isomorphism.ISMAGS.is_isomorphic" title="networkx.algorithms.isomorphism.ISMAGS.is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.is_isomorphic</span></code></a>([symmetry])</td>
-<td>Returns True if <code class="xref py py-attr docutils literal notranslate"><span class="pre">graph</span></code> is isomorphic to <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code> and False otherwise.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.is_isomorphic.html#networkx.algorithms.isomorphism.ISMAGS.is_isomorphic" title="networkx.algorithms.isomorphism.ISMAGS.is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.is_isomorphic</span></code></a>([symmetry])</p></td>
+<td><p>Returns True if <code class="xref py py-attr docutils literal notranslate"><span class="pre">graph</span></code> is isomorphic to <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code> and False otherwise.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.subgraph_is_isomorphic.html#networkx.algorithms.isomorphism.ISMAGS.subgraph_is_isomorphic" title="networkx.algorithms.isomorphism.ISMAGS.subgraph_is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.subgraph_is_isomorphic</span></code></a>([symmetry])</td>
-<td>Returns True if a subgraph of <code class="xref py py-attr docutils literal notranslate"><span class="pre">graph</span></code> is isomorphic to <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code> and False otherwise.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.subgraph_is_isomorphic.html#networkx.algorithms.isomorphism.ISMAGS.subgraph_is_isomorphic" title="networkx.algorithms.isomorphism.ISMAGS.subgraph_is_isomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.subgraph_is_isomorphic</span></code></a>([symmetry])</p></td>
+<td><p>Returns True if a subgraph of <code class="xref py py-attr docutils literal notranslate"><span class="pre">graph</span></code> is isomorphic to <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code> and False otherwise.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.isomorphisms_iter.html#networkx.algorithms.isomorphism.ISMAGS.isomorphisms_iter" title="networkx.algorithms.isomorphism.ISMAGS.isomorphisms_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.isomorphisms_iter</span></code></a>([symmetry])</td>
-<td>Does the same as <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_isomorphisms()</span></code> if <code class="xref py py-attr docutils literal notranslate"><span class="pre">graph</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code> have the same number of nodes.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.isomorphisms_iter.html#networkx.algorithms.isomorphism.ISMAGS.isomorphisms_iter" title="networkx.algorithms.isomorphism.ISMAGS.isomorphisms_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.isomorphisms_iter</span></code></a>([symmetry])</p></td>
+<td><p>Does the same as <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_isomorphisms()</span></code> if <code class="xref py py-attr docutils literal notranslate"><span class="pre">graph</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code> have the same number of nodes.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.subgraph_isomorphisms_iter.html#networkx.algorithms.isomorphism.ISMAGS.subgraph_isomorphisms_iter" title="networkx.algorithms.isomorphism.ISMAGS.subgraph_isomorphisms_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.subgraph_isomorphisms_iter</span></code></a>([symmetry])</td>
-<td>Alternative name for <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_isomorphisms()</span></code>.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.subgraph_isomorphisms_iter.html#networkx.algorithms.isomorphism.ISMAGS.subgraph_isomorphisms_iter" title="networkx.algorithms.isomorphism.ISMAGS.subgraph_isomorphisms_iter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.subgraph_isomorphisms_iter</span></code></a>([symmetry])</p></td>
+<td><p>Alternative name for <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_isomorphisms()</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.largest_common_subgraph.html#networkx.algorithms.isomorphism.ISMAGS.largest_common_subgraph" title="networkx.algorithms.isomorphism.ISMAGS.largest_common_subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.largest_common_subgraph</span></code></a>([symmetry])</td>
-<td>Find the largest common induced subgraphs between <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">graph</span></code>.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.isomorphism.ISMAGS.largest_common_subgraph.html#networkx.algorithms.isomorphism.ISMAGS.largest_common_subgraph" title="networkx.algorithms.isomorphism.ISMAGS.largest_common_subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISMAGS.largest_common_subgraph</span></code></a>([symmetry])</p></td>
+<td><p>Find the largest common induced subgraphs between <code class="xref py py-attr docutils literal notranslate"><span class="pre">subgraph</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">graph</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -431,7 +428,7 @@ Enumeration”, PLoS One 9(5): e97896, 2014.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

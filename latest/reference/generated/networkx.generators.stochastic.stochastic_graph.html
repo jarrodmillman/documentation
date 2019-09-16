@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.stochastic.stochastic_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.stochastic.stochastic_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -217,30 +217,26 @@
 <h1>networkx.generators.stochastic.stochastic_graph<a class="headerlink" href="#networkx-generators-stochastic-stochastic-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.stochastic.stochastic_graph">
-<code class="descname">stochastic_graph</code><span class="sig-paren">(</span><em>G</em>, <em>copy=True</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/stochastic.html#stochastic_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.stochastic.stochastic_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stochastic_graph</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">copy=True</em>, <em class="sig-param">weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/stochastic.html#stochastic_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.stochastic.stochastic_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a right-stochastic representation of directed graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>A right-stochastic graph is a weighted digraph in which for each
 node, the sum of the weights of all the out-edges of that node is
 1. If the graph is already weighted (for example, via a ‘weight’
 edge attribute), the reweighting takes that into account.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>G</strong> (<em>directed graph</em>) – A <a class="reference internal" href="../classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiGraph</span></code></a> or <a class="reference internal" href="../classes/multidigraph.html#networkx.MultiDiGraph" title="networkx.MultiDiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDiGraph</span></code></a>.</li>
-<li><strong>copy</strong> (<em>boolean, optional</em>) – If this is True, then this function returns a new graph with
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>directed graph</em>) – A <a class="reference internal" href="../classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiGraph</span></code></a> or <a class="reference internal" href="../classes/multidigraph.html#networkx.MultiDiGraph" title="networkx.MultiDiGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiDiGraph</span></code></a>.</p></li>
+<li><p><strong>copy</strong> (<em>boolean, optional</em>) – If this is True, then this function returns a new graph with
 the stochastic reweighting. Otherwise, the original graph is
-modified in-place (and also returned, for convenience).</li>
-<li><strong>weight</strong> (<em>edge attribute key (optional, default=’weight’)</em>) – Edge attribute key used for reading the existing weight and
+modified in-place (and also returned, for convenience).</p></li>
+<li><p><strong>weight</strong> (<em>edge attribute key (optional, default=’weight’)</em>) – Edge attribute key used for reading the existing weight and
 setting the new weight.  If no attribute with this key is found
 for an edge, then the edge weight is assumed to be 1. If an edge
-has a weight, it must be a a positive number.</li>
+has a weight, it must be a a positive number.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -267,7 +263,7 @@ has a weight, it must be a a positive number.</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

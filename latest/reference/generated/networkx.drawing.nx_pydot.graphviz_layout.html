@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pydot.graphviz_layout &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.drawing.nx_pydot.graphviz_layout &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -202,30 +202,26 @@
 <h1>networkx.drawing.nx_pydot.graphviz_layout<a class="headerlink" href="#networkx-drawing-nx-pydot-graphviz-layout" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pydot.graphviz_layout">
-<code class="descname">graphviz_layout</code><span class="sig-paren">(</span><em>G</em>, <em>prog='neato'</em>, <em>root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pydot.html#graphviz_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pydot.graphviz_layout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">graphviz_layout</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">prog='neato'</em>, <em class="sig-param">root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pydot.html#graphviz_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pydot.graphviz_layout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create node positions using Pydot and Graphviz.</p>
 <p>Returns a dictionary of positions keyed by node.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX Graph</em>) – The graph for which the layout is computed.</li>
-<li><strong>prog</strong> (<em>string (default: ‘neato’)</em>) – The name of the GraphViz program to use for layout.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX Graph</em>) – The graph for which the layout is computed.</p></li>
+<li><p><strong>prog</strong> (<em>string (default: ‘neato’)</em>) – The name of the GraphViz program to use for layout.
 Options depend on GraphViz version but may include:
-‘dot’, ‘twopi’, ‘fdp’, ‘sfdp’, ‘circo’</li>
-<li><strong>root</strong> (<em>Node from G or None (default: None)</em>) – The node of G from which to start some layout algorithms.</li>
+‘dot’, ‘twopi’, ‘fdp’, ‘sfdp’, ‘circo’</p></li>
+<li><p><strong>root</strong> (<em>Node from G or None (default: None)</em>) – The node of G from which to start some layout algorithms.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dictionary of (x, y) positions keyed by node.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dictionary of (x, y) positions keyed by node.</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">nx_pydot</span><span class="o">.</span><span class="n">graphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -260,7 +256,7 @@ Options depend on GraphViz version but may include:
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Approximations and Heuristics &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Approximations and Heuristics &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -112,6 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -266,8 +267,8 @@
 problems.</p>
 <blockquote>
 <div><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The approximation submodule is not imported in the top-level
+<p class="admonition-title">Warning</p>
+<p>The approximation submodule is not imported in the top-level
 <code class="docutils literal notranslate"><span class="pre">networkx</span></code>.</p>
 </div>
 <p>These functions can be imported with
@@ -276,20 +277,20 @@ problems.</p>
 <div class="section" id="module-networkx.algorithms.approximation.connectivity">
 <span id="connectivity"></span><h2>Connectivity<a class="headerlink" href="#module-networkx.algorithms.approximation.connectivity" title="Permalink to this headline">¶</a></h2>
 <p>Fast approximation for node connectivity</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.connectivity.all_pairs_node_connectivity.html#networkx.algorithms.approximation.connectivity.all_pairs_node_connectivity" title="networkx.algorithms.approximation.connectivity.all_pairs_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_pairs_node_connectivity</span></code></a>(G[,&nbsp;nbunch,&nbsp;cutoff])</td>
-<td>Compute node connectivity between all pairs of nodes.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.connectivity.all_pairs_node_connectivity.html#networkx.algorithms.approximation.connectivity.all_pairs_node_connectivity" title="networkx.algorithms.approximation.connectivity.all_pairs_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_pairs_node_connectivity</span></code></a>(G[, nbunch, cutoff])</p></td>
+<td><p>Compute node connectivity between all pairs of nodes.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.connectivity.local_node_connectivity.html#networkx.algorithms.approximation.connectivity.local_node_connectivity" title="networkx.algorithms.approximation.connectivity.local_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_node_connectivity</span></code></a>(G,&nbsp;source,&nbsp;target[,&nbsp;…])</td>
-<td>Compute node connectivity between source and target.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.connectivity.local_node_connectivity.html#networkx.algorithms.approximation.connectivity.local_node_connectivity" title="networkx.algorithms.approximation.connectivity.local_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_node_connectivity</span></code></a>(G, source, target[, …])</p></td>
+<td><p>Compute node connectivity between source and target.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.connectivity.node_connectivity.html#networkx.algorithms.approximation.connectivity.node_connectivity" title="networkx.algorithms.approximation.connectivity.node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_connectivity</span></code></a>(G[,&nbsp;s,&nbsp;t])</td>
-<td>Returns an approximation for node connectivity for a graph or digraph G.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.connectivity.node_connectivity.html#networkx.algorithms.approximation.connectivity.node_connectivity" title="networkx.algorithms.approximation.connectivity.node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_connectivity</span></code></a>(G[, s, t])</p></td>
+<td><p>Returns an approximation for node connectivity for a graph or digraph G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -297,14 +298,14 @@ problems.</p>
 <div class="section" id="module-networkx.algorithms.approximation.kcomponents">
 <span id="k-components"></span><h2>K-components<a class="headerlink" href="#module-networkx.algorithms.approximation.kcomponents" title="Permalink to this headline">¶</a></h2>
 <p>Fast approximation for k-component structure</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.kcomponents.k_components.html#networkx.algorithms.approximation.kcomponents.k_components" title="networkx.algorithms.approximation.kcomponents.k_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_components</span></code></a>(G[,&nbsp;min_density])</td>
-<td>Returns the approximate k-component structure of a graph G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.kcomponents.k_components.html#networkx.algorithms.approximation.kcomponents.k_components" title="networkx.algorithms.approximation.kcomponents.k_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_components</span></code></a>(G[, min_density])</p></td>
+<td><p>Returns the approximate k-component structure of a graph G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -312,34 +313,34 @@ problems.</p>
 <div class="section" id="module-networkx.algorithms.approximation.clique">
 <span id="clique"></span><h2>Clique<a class="headerlink" href="#module-networkx.algorithms.approximation.clique" title="Permalink to this headline">¶</a></h2>
 <p>Functions for computing large cliques.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.clique.max_clique.html#networkx.algorithms.approximation.clique.max_clique" title="networkx.algorithms.approximation.clique.max_clique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_clique</span></code></a>(G)</td>
-<td>Find the Maximum Clique</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.clique.max_clique.html#networkx.algorithms.approximation.clique.max_clique" title="networkx.algorithms.approximation.clique.max_clique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_clique</span></code></a>(G)</p></td>
+<td><p>Find the Maximum Clique</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.clique.clique_removal.html#networkx.algorithms.approximation.clique.clique_removal" title="networkx.algorithms.approximation.clique.clique_removal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clique_removal</span></code></a>(G)</td>
-<td>Repeatedly remove cliques from the graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.clique.clique_removal.html#networkx.algorithms.approximation.clique.clique_removal" title="networkx.algorithms.approximation.clique.clique_removal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clique_removal</span></code></a>(G)</p></td>
+<td><p>Repeatedly remove cliques from the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.clique.large_clique_size.html#networkx.algorithms.approximation.clique.large_clique_size" title="networkx.algorithms.approximation.clique.large_clique_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">large_clique_size</span></code></a>(G)</td>
-<td>Find the size of a large clique in a graph.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.clique.large_clique_size.html#networkx.algorithms.approximation.clique.large_clique_size" title="networkx.algorithms.approximation.clique.large_clique_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">large_clique_size</span></code></a>(G)</p></td>
+<td><p>Find the size of a large clique in a graph.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="module-networkx.algorithms.approximation.clustering_coefficient">
 <span id="clustering"></span><h2>Clustering<a class="headerlink" href="#module-networkx.algorithms.approximation.clustering_coefficient" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.clustering_coefficient.average_clustering.html#networkx.algorithms.approximation.clustering_coefficient.average_clustering" title="networkx.algorithms.approximation.clustering_coefficient.average_clustering"><code class="xref py py-obj docutils literal notranslate"><span class="pre">average_clustering</span></code></a>(G[,&nbsp;trials,&nbsp;seed])</td>
-<td>Estimates the average clustering coefficient of G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.clustering_coefficient.average_clustering.html#networkx.algorithms.approximation.clustering_coefficient.average_clustering" title="networkx.algorithms.approximation.clustering_coefficient.average_clustering"><code class="xref py py-obj docutils literal notranslate"><span class="pre">average_clustering</span></code></a>(G[, trials, seed])</p></td>
+<td><p>Estimates the average clustering coefficient of G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -352,17 +353,17 @@ and edge set <em>E</em> is a subset <em>D</em> of <em>V</em> such that every ver
 <em>D</em> is adjacent to at least one member of <em>D</em>. An <a class="reference external" href="https://en.wikipedia.org/wiki/Edge_dominating_set">edge dominating set</a>
 is a subset <em>F</em> of <em>E</em> such that every edge not in <em>F</em> is
 incident to an endpoint of at least one edge in <em>F</em>.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set.html#networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set" title="networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_weighted_dominating_set</span></code></a>(G[,&nbsp;weight])</td>
-<td>Returns a dominating set that approximates the minimum weight node dominating set.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set.html#networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set" title="networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_weighted_dominating_set</span></code></a>(G[, weight])</p></td>
+<td><p>Returns a dominating set that approximates the minimum weight node dominating set.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.dominating_set.min_edge_dominating_set.html#networkx.algorithms.approximation.dominating_set.min_edge_dominating_set" title="networkx.algorithms.approximation.dominating_set.min_edge_dominating_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_edge_dominating_set</span></code></a>(G)</td>
-<td>Returns minimum cardinality edge dominating set.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.dominating_set.min_edge_dominating_set.html#networkx.algorithms.approximation.dominating_set.min_edge_dominating_set" title="networkx.algorithms.approximation.dominating_set.min_edge_dominating_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_edge_dominating_set</span></code></a>(G)</p></td>
+<td><p>Returns minimum cardinality edge dominating set.</p></td>
 </tr>
 </tbody>
 </table>
@@ -376,7 +377,7 @@ two vertices in I, there is no edge connecting the two. Equivalently, each
 edge in the graph has at most one endpoint in I. The size of an independent
 set is the number of vertices it contains.</p>
 <p>A maximum independent set is a largest independent set for a given graph G
-and its size is denoted α(G). The problem of finding such a set is called
+and its size is denoted <span class="math notranslate nohighlight">\(\alpha(G)\)</span>. The problem of finding such a set is called
 the maximum independent set problem and is an NP-hard optimization problem.
 As such, it is unlikely that there exists an efficient algorithm for finding
 a maximum independent set of a graph.</p>
@@ -387,14 +388,14 @@ a maximum independent set of a graph.</p>
 Approximating maximum independent sets by excluding subgraphs.
 BIT Numerical Mathematics, 32(2), 180–196. Springer.
 doi:10.1007/BF01994876</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.independent_set.maximum_independent_set.html#networkx.algorithms.approximation.independent_set.maximum_independent_set" title="networkx.algorithms.approximation.independent_set.maximum_independent_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximum_independent_set</span></code></a>(G)</td>
-<td>Returns an approximate maximum independent set.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.independent_set.maximum_independent_set.html#networkx.algorithms.approximation.independent_set.maximum_independent_set" title="networkx.algorithms.approximation.independent_set.maximum_independent_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximum_independent_set</span></code></a>(G)</p></td>
+<td><p>Returns an approximate maximum independent set.</p></td>
 </tr>
 </tbody>
 </table>
@@ -407,14 +408,14 @@ doi:10.1007/BF01994876</p>
 edges; that is, no two edges share a common vertex.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Matching_(graph_theory)">Wikipedia: Matching</a></p>
 </div>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.matching.min_maximal_matching.html#networkx.algorithms.approximation.matching.min_maximal_matching" title="networkx.algorithms.approximation.matching.min_maximal_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_maximal_matching</span></code></a>(G)</td>
-<td>Returns the minimum maximal matching of G.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.matching.min_maximal_matching.html#networkx.algorithms.approximation.matching.min_maximal_matching" title="networkx.algorithms.approximation.matching.min_maximal_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_maximal_matching</span></code></a>(G)</p></td>
+<td><p>Returns the minimum maximal matching of G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -422,31 +423,31 @@ edges; that is, no two edges share a common vertex.</p>
 <div class="section" id="module-networkx.algorithms.approximation.ramsey">
 <span id="ramsey"></span><h2>Ramsey<a class="headerlink" href="#module-networkx.algorithms.approximation.ramsey" title="Permalink to this headline">¶</a></h2>
 <p>Ramsey numbers.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.ramsey.ramsey_R2.html#networkx.algorithms.approximation.ramsey.ramsey_R2" title="networkx.algorithms.approximation.ramsey.ramsey_R2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramsey_R2</span></code></a>(G)</td>
-<td>Approximately computes the Ramsey number <code class="xref py py-obj docutils literal notranslate"><span class="pre">R(2;s,t)</span></code> for graph.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.ramsey.ramsey_R2.html#networkx.algorithms.approximation.ramsey.ramsey_R2" title="networkx.algorithms.approximation.ramsey.ramsey_R2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramsey_R2</span></code></a>(G)</p></td>
+<td><p>Approximately computes the Ramsey number <code class="xref py py-obj docutils literal notranslate"><span class="pre">R(2;s,t)</span></code> for graph.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="module-networkx.algorithms.approximation.steinertree">
 <span id="steiner-tree"></span><h2>Steiner Tree<a class="headerlink" href="#module-networkx.algorithms.approximation.steinertree" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.steinertree.metric_closure.html#networkx.algorithms.approximation.steinertree.metric_closure" title="networkx.algorithms.approximation.steinertree.metric_closure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metric_closure</span></code></a>(G[,&nbsp;weight])</td>
-<td>Return the metric closure of a graph.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.steinertree.metric_closure.html#networkx.algorithms.approximation.steinertree.metric_closure" title="networkx.algorithms.approximation.steinertree.metric_closure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metric_closure</span></code></a>(G[, weight])</p></td>
+<td><p>Return the metric closure of a graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.steinertree.steiner_tree.html#networkx.algorithms.approximation.steinertree.steiner_tree" title="networkx.algorithms.approximation.steinertree.steiner_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">steiner_tree</span></code></a>(G,&nbsp;terminal_nodes[,&nbsp;weight])</td>
-<td>Return an approximation to the minimum Steiner tree of a graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.steinertree.steiner_tree.html#networkx.algorithms.approximation.steinertree.steiner_tree" title="networkx.algorithms.approximation.steinertree.steiner_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">steiner_tree</span></code></a>(G, terminal_nodes[, weight])</p></td>
+<td><p>Return an approximation to the minimum Steiner tree of a graph.</p></td>
 </tr>
 </tbody>
 </table>
@@ -462,44 +463,37 @@ decomposition of the graph minus one.</p>
 attractiveness partly because many graph and network problems that are
 intractable (e.g., NP-hard) on arbitrary graphs become efficiently
 solvable (e.g., with a linear time algorithm) when the treewidth of the
-input graphs is bounded by a constant <a class="footnote-reference" href="#id4" id="id2">[1]</a> <a class="footnote-reference" href="#id5" id="id3">[2]</a>.</p>
+input graphs is bounded by a constant <a class="footnote-reference brackets" href="#id4" id="id2">1</a> <a class="footnote-reference brackets" href="#id5" id="id3">2</a>.</p>
 <p>There are two different functions for computing a tree decomposition:
 <a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_degree.html#networkx.algorithms.approximation.treewidth.treewidth_min_degree" title="networkx.algorithms.approximation.treewidth.treewidth_min_degree"><code class="xref py py-func docutils literal notranslate"><span class="pre">treewidth_min_degree()</span></code></a> and <a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_fill_in.html#networkx.algorithms.approximation.treewidth.treewidth_min_fill_in" title="networkx.algorithms.approximation.treewidth.treewidth_min_fill_in"><code class="xref py py-func docutils literal notranslate"><span class="pre">treewidth_min_fill_in()</span></code></a>.</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Hans L. Bodlaender and Arie M. C. A. Koster. 2010. “Treewidth
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Hans L. Bodlaender and Arie M. C. A. Koster. 2010. “Treewidth
 computations I.Upper bounds”. Inf. Comput. 208, 3 (March 2010),259-275.
-<a class="reference external" href="http://dx.doi.org/10.1016/j.ic.2009.03.008">http://dx.doi.org/10.1016/j.ic.2009.03.008</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Hand L. Bodlaender. “Discovering Treewidth”. Institute of Information
+<a class="reference external" href="http://dx.doi.org/10.1016/j.ic.2009.03.008">http://dx.doi.org/10.1016/j.ic.2009.03.008</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Hand L. Bodlaender. “Discovering Treewidth”. Institute of Information
 and Computing Sciences, Utrecht University.
 Technical Report UU-CS-2005-018.
-<a class="reference external" href="http://www.cs.uu.nl">http://www.cs.uu.nl</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[3]</td><td>K. Wang, Z. Lu, and J. Hicks <em>Treewidth</em>.
-<a class="reference external" href="http://web.eecs.utk.edu/~cphillip/cs594_spring2015_projects/treewidth.pdf">http://web.eecs.utk.edu/~cphillip/cs594_spring2015_projects/treewidth.pdf</a></td></tr>
-</tbody>
-</table>
-<table border="1" class="longtable docutils">
+<a class="reference external" href="http://www.cs.uu.nl">http://www.cs.uu.nl</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">3</span></dt>
+<dd><p>K. Wang, Z. Lu, and J. Hicks <em>Treewidth</em>.
+<a class="reference external" href="http://web.eecs.utk.edu/~cphillip/cs594_spring2015_projects/treewidth.pdf">http://web.eecs.utk.edu/~cphillip/cs594_spring2015_projects/treewidth.pdf</a></p>
+</dd>
+</dl>
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_degree.html#networkx.algorithms.approximation.treewidth.treewidth_min_degree" title="networkx.algorithms.approximation.treewidth.treewidth_min_degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">treewidth_min_degree</span></code></a>(G)</td>
-<td>Returns a treewidth decomposition using the Minimum Degree heuristic.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_degree.html#networkx.algorithms.approximation.treewidth.treewidth_min_degree" title="networkx.algorithms.approximation.treewidth.treewidth_min_degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">treewidth_min_degree</span></code></a>(G)</p></td>
+<td><p>Returns a treewidth decomposition using the Minimum Degree heuristic.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_fill_in.html#networkx.algorithms.approximation.treewidth.treewidth_min_fill_in" title="networkx.algorithms.approximation.treewidth.treewidth_min_fill_in"><code class="xref py py-obj docutils literal notranslate"><span class="pre">treewidth_min_fill_in</span></code></a>(G)</td>
-<td>Returns a treewidth decomposition using the Minimum Fill-in heuristic.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.treewidth.treewidth_min_fill_in.html#networkx.algorithms.approximation.treewidth.treewidth_min_fill_in" title="networkx.algorithms.approximation.treewidth.treewidth_min_fill_in"><code class="xref py py-obj docutils literal notranslate"><span class="pre">treewidth_min_fill_in</span></code></a>(G)</p></td>
+<td><p>Returns a treewidth decomposition using the Minimum Fill-in heuristic.</p></td>
 </tr>
 </tbody>
 </table>
@@ -509,14 +503,14 @@ Technical Report UU-CS-2005-018.
 <p>Functions for computing an approximate minimum weight vertex cover.</p>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Vertex_cover"><em>vertex cover</em></a> is a subset of nodes such that each edge in the graph
 is incident to at least one node in the subset.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover.html#networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover" title="networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_weighted_vertex_cover</span></code></a>(G[,&nbsp;weight])</td>
-<td>Returns an approximate minimum weighted vertex cover.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover.html#networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover" title="networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_weighted_vertex_cover</span></code></a>(G[, weight])</p></td>
+<td><p>Returns an approximate minimum weighted vertex cover.</p></td>
 </tr>
 </tbody>
 </table>
@@ -545,7 +539,7 @@ is incident to at least one node in the subset.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

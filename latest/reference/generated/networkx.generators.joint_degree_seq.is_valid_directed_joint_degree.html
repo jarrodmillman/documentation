@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.joint_degree_seq.is_valid_directed_joint_degree &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.joint_degree_seq.is_valid_directed_joint_degree &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -220,48 +220,46 @@
 <h1>networkx.generators.joint_degree_seq.is_valid_directed_joint_degree<a class="headerlink" href="#networkx-generators-joint-degree-seq-is-valid-directed-joint-degree" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.joint_degree_seq.is_valid_directed_joint_degree">
-<code class="descname">is_valid_directed_joint_degree</code><span class="sig-paren">(</span><em>in_degrees</em>, <em>out_degrees</em>, <em>nkk</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/joint_degree_seq.html#is_valid_directed_joint_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.joint_degree_seq.is_valid_directed_joint_degree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_valid_directed_joint_degree</code><span class="sig-paren">(</span><em class="sig-param">in_degrees</em>, <em class="sig-param">out_degrees</em>, <em class="sig-param">nkk</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/joint_degree_seq.html#is_valid_directed_joint_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.joint_degree_seq.is_valid_directed_joint_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks whether the given directed joint degree input is realizable</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>in_degrees</strong> (<em>list of integers</em>) – in degree sequence contains the in degrees of nodes.</li>
-<li><strong>out_degrees</strong> (<em>list of integers</em>) – out degree sequence contains the out degrees of nodes.</li>
-<li><strong>nkk</strong> (<em>dictionary of dictionary of integers</em>) – directed joint degree dictionary. for nodes of out degree k (first
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_degrees</strong> (<em>list of integers</em>) – in degree sequence contains the in degrees of nodes.</p></li>
+<li><p><strong>out_degrees</strong> (<em>list of integers</em>) – out degree sequence contains the out degrees of nodes.</p></li>
+<li><p><strong>nkk</strong> (<em>dictionary of dictionary of integers</em>) – directed joint degree dictionary. for nodes of out degree k (first
 level of dict) and nodes of in degree l (seconnd level of dict)
-describes the number of edges.</li>
+describes the number of edges.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">returns true if given input is realizable, else returns false.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">boolean</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns true if given input is realizable, else returns false.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Here is the list of conditions that the inputs (in/out degree sequences,
-nkk) need to satisfy for simple directed graph realizability:
-- Condition 0: in_degrees and out_degrees have the same length
-- Condition 1: nkk[k][l]  is integer for all k,l
-- Condition 2: sum(nkk[k])/k = number of nodes with partition id k, is an</p>
-<blockquote>
-<div>integer and matching degree sequence</div></blockquote>
+nkk) need to satisfy for simple directed graph realizability:</p>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>Condition 3: number of edges and non-chords between k and l cannot exceed</dt>
-<dd>maximum possible number of edges</dd>
+<li><p>Condition 0: in_degrees and out_degrees have the same length</p></li>
+<li><p>Condition 1: nkk[k][l]  is integer for all k,l</p></li>
+<li><dl class="simple">
+<dt>Condition 2: sum(nkk[k])/k = number of nodes with partition id k, is an</dt><dd><p>integer and matching degree sequence</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Condition 3: number of edges and non-chords between k and l cannot exceed</dt><dd><p>maximum possible number of edges</p>
+</dd>
 </dl>
 </li>
 </ul>
 <p class="rubric">References</p>
-<dl class="docutils">
-<dt>[1] B. Tillman, A. Markopoulou, C. T. Butts &amp; M. Gjoka,</dt>
-<dd>“Construction of Directed 2K Graphs”. In Proc. of KDD 2017.</dd>
+<dl class="simple">
+<dt>[1] B. Tillman, A. Markopoulou, C. T. Butts &amp; M. Gjoka,</dt><dd><p>“Construction of Directed 2K Graphs”. In Proc. of KDD 2017.</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -289,7 +287,7 @@ nkk) need to satisfy for simple directed graph realizability:
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

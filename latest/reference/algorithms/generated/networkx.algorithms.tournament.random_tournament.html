@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tournament.random_tournament &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.tournament.random_tournament &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -261,27 +262,23 @@
 <h1>networkx.algorithms.tournament.random_tournament<a class="headerlink" href="#networkx-algorithms-tournament-random-tournament" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.tournament.random_tournament">
-<code class="descname">random_tournament</code><span class="sig-paren">(</span><em>n</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tournament.html#random_tournament"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tournament.random_tournament" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">random_tournament</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/tournament.html#random_tournament"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.tournament.random_tournament" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a random tournament graph on <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>n</strong> (<em>int</em>) – The number of nodes in the returned graph.</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The number of nodes in the returned graph.</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Whether the given graph is a tournament graph.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether the given graph is a tournament graph.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This algorithm adds, for each pair of distinct nodes, an edge with
 uniformly random orientation. In other words, <code class="xref py py-obj docutils literal notranslate"><span class="pre">binom{n}{2}</span></code> flips
@@ -313,7 +310,7 @@ graph.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

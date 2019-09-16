@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.global_reaching_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.global_reaching_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,37 +271,33 @@
 <h1>networkx.algorithms.centrality.global_reaching_centrality<a class="headerlink" href="#networkx-algorithms-centrality-global-reaching-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.global_reaching_centrality">
-<code class="descname">global_reaching_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em>, <em>normalized=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/reaching.html#global_reaching_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.global_reaching_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">global_reaching_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">weight=None</em>, <em class="sig-param">normalized=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/reaching.html#global_reaching_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.global_reaching_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the global reaching centrality of a directed graph.</p>
 <p>The <em>global reaching centrality</em> of a weighted directed graph is the
 average over all nodes of the difference between the local reaching
 centrality of the node and the greatest local reaching centrality of
-any node in the graph <a class="footnote-reference" href="#id2" id="id1">[1]</a>. For more information on the local
+any node in the graph <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. For more information on the local
 reaching centrality, see <a class="reference internal" href="networkx.algorithms.centrality.local_reaching_centrality.html#networkx.algorithms.centrality.local_reaching_centrality" title="networkx.algorithms.centrality.local_reaching_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">local_reaching_centrality()</span></code></a>.
 Informally, the local reaching centrality is the proportion of the
 graph that is reachable from the neighbors of the node.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>DiGraph</em>) – A networkx DiGraph.</li>
-<li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – Attribute to use for edge weights. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, each edge weight
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>DiGraph</em>) – A networkx DiGraph.</p></li>
+<li><p><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – Attribute to use for edge weights. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, each edge weight
 is assumed to be one. A higher weight implies a stronger
-connection between nodes and a <em>shorter</em> path length.</li>
-<li><strong>normalized</strong> (<em>bool, optional (default=True)</em>) – Whether to normalize the edge weights by the total sum of edge
-weights.</li>
+connection between nodes and a <em>shorter</em> path length.</p></li>
+<li><p><strong>normalized</strong> (<em>bool, optional (default=True)</em>) – Whether to normalize the edge weights by the total sum of edge
+weights.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>h</strong> – The global reaching centrality of the graph.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>h</strong> – The global reaching centrality of the graph.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
@@ -314,19 +311,18 @@ weights.</li>
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.local_reaching_centrality.html#networkx.algorithms.centrality.local_reaching_centrality" title="networkx.algorithms.centrality.local_reaching_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">local_reaching_centrality()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.local_reaching_centrality.html#networkx.algorithms.centrality.local_reaching_centrality" title="networkx.algorithms.centrality.local_reaching_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">local_reaching_centrality()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Mones, Enys, Lilla Vicsek, and Tamás Vicsek.
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Mones, Enys, Lilla Vicsek, and Tamás Vicsek.
 “Hierarchy Measure for Complex Networks.”
 <em>PLoS ONE</em> 7.3 (2012): e33799.
-<a class="reference external" href="https://doi.org/10.1371/journal.pone.0033799">https://doi.org/10.1371/journal.pone.0033799</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="https://doi.org/10.1371/journal.pone.0033799">https://doi.org/10.1371/journal.pone.0033799</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -353,7 +349,7 @@ weights.</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

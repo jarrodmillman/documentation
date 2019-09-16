@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.generators.random_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.generators.random_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bipartite.html">Bipartite</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.basic">Basic functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.matching">Matching</a></li>
@@ -265,25 +266,21 @@
 <h1>networkx.algorithms.bipartite.generators.random_graph<a class="headerlink" href="#networkx-algorithms-bipartite-generators-random-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.generators.random_graph">
-<code class="descname">random_graph</code><span class="sig-paren">(</span><em>n</em>, <em>m</em>, <em>p</em>, <em>seed=None</em>, <em>directed=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/generators.html#random_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.generators.random_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">random_graph</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">m</em>, <em class="sig-param">p</em>, <em class="sig-param">seed=None</em>, <em class="sig-param">directed=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/generators.html#random_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.generators.random_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a bipartite random graph.</p>
 <p>This is a bipartite version of the binomial (Erdős-Rényi) graph.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>n</strong> (<em>int</em>) – The number of nodes in the first bipartite set.</li>
-<li><strong>m</strong> (<em>int</em>) – The number of nodes in the second bipartite set.</li>
-<li><strong>p</strong> (<em>float</em>) – Probability for edge creation.</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
-<li><strong>directed</strong> (<em>bool, optional (default=False)</em>) – If True return a directed graph</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The number of nodes in the first bipartite set.</p></li>
+<li><p><strong>m</strong> (<em>int</em>) – The number of nodes in the second bipartite set.</p></li>
+<li><p><strong>p</strong> (<em>float</em>) – Probability for edge creation.</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
+<li><p><strong>directed</strong> (<em>bool, optional (default=False)</em>) – If True return a directed graph</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This function is not imported in the main namespace.
 To use it you have to explicitly import the bipartite package.</p>
@@ -293,18 +290,17 @@ or 2*nm (directed) possible edges with probability p.</p>
 <p>The nodes are assigned the attribute ‘bipartite’ with the value 0 or 1
 to indicate which bipartite set the node belongs to.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">gnp_random_graph()</span></code>, <a class="reference internal" href="networkx.algorithms.bipartite.generators.configuration_model.html#networkx.algorithms.bipartite.generators.configuration_model" title="networkx.algorithms.bipartite.generators.configuration_model"><code class="xref py py-func docutils literal notranslate"><span class="pre">configuration_model()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">gnp_random_graph()</span></code>, <a class="reference internal" href="networkx.algorithms.bipartite.generators.configuration_model.html#networkx.algorithms.bipartite.generators.configuration_model" title="networkx.algorithms.bipartite.generators.configuration_model"><code class="xref py py-func docutils literal notranslate"><span class="pre">configuration_model()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Vladimir Batagelj and Ulrik Brandes,
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Vladimir Batagelj and Ulrik Brandes,
 “Efficient generation of large random networks”,
-Phys. Rev. E, 71, 036113, 2005.</td></tr>
-</tbody>
-</table>
+Phys. Rev. E, 71, 036113, 2005.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -331,7 +327,7 @@ Phys. Rev. E, 71, 036113, 2005.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

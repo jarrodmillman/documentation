@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.chains.chain_decomposition &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.chains.chain_decomposition &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,7 +257,7 @@
 <h1>networkx.algorithms.chains.chain_decomposition<a class="headerlink" href="#networkx-algorithms-chains-chain-decomposition" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.chains.chain_decomposition">
-<code class="descname">chain_decomposition</code><span class="sig-paren">(</span><em>G</em>, <em>root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/chains.html#chain_decomposition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.chains.chain_decomposition" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">chain_decomposition</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/chains.html#chain_decomposition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.chains.chain_decomposition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the chain decomposition of a graph.</p>
 <p>The <em>chain decomposition</em> of a graph with respect a depth-first
 search tree is a set of cycles or paths derived from the set of
@@ -266,43 +267,38 @@ as a list of edges beginning with the nontree edge oriented away
 from the root of the tree. For each fundamental cycle, if it
 overlaps with any previous fundamental cycle, just take the initial
 non-overlapping segment, which is a path instead of a cycle. Each
-cycle or path is called a <em>chain</em>. For more information, see <a class="footnote-reference" href="#id3" id="id1">[1]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>undirected graph</em>)</li>
-<li><strong>root</strong> (<em>node (optional)</em>) – A node in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. If specified, only the chain
+cycle or path is called a <em>chain</em>. For more information, see <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>undirected graph</em>)</p></li>
+<li><p><strong>root</strong> (<em>node (optional)</em>) – A node in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. If specified, only the chain
 decomposition for the connected component containing this node
 will be returned. This node indicates the root of the depth-first
-search tree.</li>
+search tree.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body"><p class="first"><strong>chain</strong> (<em>list</em>) – A list of edges representing a chain. There is no guarantee on
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><strong>chain</strong> (<em>list</em>) – A list of edges representing a chain. There is no guarantee on
 the orientation of the edges in each chain (for example, if a
 chain includes the edge joining nodes 1 and 2, the chain may
 include either (1, 2) or (2, 1)).</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NodeNotFound</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code> is not in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../exceptions.html#networkx.NodeNotFound" title="networkx.NodeNotFound"><strong>NodeNotFound</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code> is not in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>The worst-case running time of this implementation is linear in the
-number of nodes and number of edges <a class="footnote-reference" href="#id3" id="id2">[1]</a>.</p>
+number of nodes and number of edges <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Jens M. Schmidt (2013). “A simple test on 2-vertex-
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Jens M. Schmidt (2013). “A simple test on 2-vertex-
 and 2-edge-connectivity.” <em>Information Processing Letters</em>,
-113, 241–244. Elsevier. &lt;<a class="reference external" href="https://doi.org/10.1016/j.ipl.2013.01.016">https://doi.org/10.1016/j.ipl.2013.01.016</a>&gt;</td></tr>
-</tbody>
-</table>
+113, 241–244. Elsevier. &lt;<a class="reference external" href="https://doi.org/10.1016/j.ipl.2013.01.016">https://doi.org/10.1016/j.ipl.2013.01.016</a>&gt;</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -329,7 +325,7 @@ and 2-edge-connectivity.” <em>Information Processing Letters</em>,
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

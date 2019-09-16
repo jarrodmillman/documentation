@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.chordal.find_induced_nodes &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.chordal.find_induced_nodes &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -259,36 +260,32 @@
 <h1>networkx.algorithms.chordal.find_induced_nodes<a class="headerlink" href="#networkx-algorithms-chordal-find-induced-nodes" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.chordal.find_induced_nodes">
-<code class="descname">find_induced_nodes</code><span class="sig-paren">(</span><em>G</em>, <em>s</em>, <em>t</em>, <em>treewidth_bound=9223372036854775807</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/chordal.html#find_induced_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.chordal.find_induced_nodes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_induced_nodes</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">s</em>, <em class="sig-param">t</em>, <em class="sig-param">treewidth_bound=9223372036854775807</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/chordal.html#find_induced_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.chordal.find_induced_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the set of induced nodes in the path from s to t.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A chordal NetworkX graph</li>
-<li><strong>s</strong> (<em>node</em>) – Source node to look for induced nodes</li>
-<li><strong>t</strong> (<em>node</em>) – Destination node to look for induced nodes</li>
-<li><strong>treewith_bound</strong> (<em>float</em>) – Maximum treewidth acceptable for the graph H. The search
-for induced nodes will end as soon as the treewidth_bound is exceeded.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A chordal NetworkX graph</p></li>
+<li><p><strong>s</strong> (<em>node</em>) – Source node to look for induced nodes</p></li>
+<li><p><strong>t</strong> (<em>node</em>) – Destination node to look for induced nodes</p></li>
+<li><p><strong>treewith_bound</strong> (<em>float</em>) – Maximum treewidth acceptable for the graph H. The search
+for induced nodes will end as soon as the treewidth_bound is exceeded.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Induced_nodes</strong> – The set of induced nodes in the path from s to t in G</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Set of nodes</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – The algorithm does not support DiGraph, MultiGraph and MultiDiGraph.
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Induced_nodes</strong> – The set of induced nodes in the path from s to t in G</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Set of nodes</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – The algorithm does not support DiGraph, MultiGraph and MultiDiGraph.
 If the input graph is an instance of one of these classes, a
 <code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> is raised.
 The algorithm can only be applied to chordal graphs. If the input
 graph is found to be non-chordal, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> is raised.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
@@ -302,17 +299,16 @@ graph is found to be non-chordal, a <code class="xref py py-exc docutils literal
 <p>G must be a chordal graph and (s,t) an edge that is not in G.</p>
 <p>If a treewidth_bound is provided, the search for induced nodes will end
 as soon as the treewidth_bound is exceeded.</p>
-<p>The algorithm is inspired by Algorithm 4 in <a class="footnote-reference" href="#id2" id="id1">[1]</a>.
+<p>The algorithm is inspired by Algorithm 4 in <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.
 A formal definition of induced node can also be found on that reference.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Learning Bounded Treewidth Bayesian Networks.
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Learning Bounded Treewidth Bayesian Networks.
 Gal Elidan, Stephen Gould; JMLR, 9(Dec):2699–2731, 2008.
-<a class="reference external" href="http://jmlr.csail.mit.edu/papers/volume9/elidan08a/elidan08a.pdf">http://jmlr.csail.mit.edu/papers/volume9/elidan08a/elidan08a.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://jmlr.csail.mit.edu/papers/volume9/elidan08a/elidan08a.pdf">http://jmlr.csail.mit.edu/papers/volume9/elidan08a/elidan08a.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -339,7 +335,7 @@ Gal Elidan, Stephen Gould; JMLR, 9(Dec):2699–2731, 2008.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

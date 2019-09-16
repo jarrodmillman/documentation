@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.voronoi.voronoi_cells &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.voronoi.voronoi_cells &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,45 +257,41 @@
 <h1>networkx.algorithms.voronoi.voronoi_cells<a class="headerlink" href="#networkx-algorithms-voronoi-voronoi-cells" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.voronoi.voronoi_cells">
-<code class="descname">voronoi_cells</code><span class="sig-paren">(</span><em>G</em>, <em>center_nodes</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/voronoi.html#voronoi_cells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.voronoi.voronoi_cells" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">voronoi_cells</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">center_nodes</em>, <em class="sig-param">weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/voronoi.html#voronoi_cells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.voronoi.voronoi_cells" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Voronoi cells centered at <code class="xref py py-obj docutils literal notranslate"><span class="pre">center_nodes</span></code> with respect
 to the shortest-path distance metric.</p>
 <p>If <em>C</em> is a set of nodes in the graph and <em>c</em> is an element of <em>C</em>,
 the <em>Voronoi cell</em> centered at a node <em>c</em> is the set of all nodes
 <em>v</em> that are closer to <em>c</em> than to any other center node in <em>C</em> with
-respect to the shortest-path distance metric. <a class="footnote-reference" href="#id3" id="id1">[1]</a></p>
+respect to the shortest-path distance metric. <a class="footnote-reference brackets" href="#id3" id="id1">1</a></p>
 <p>For directed graphs, this will compute the “outward” Voronoi cells,
-as defined in <a class="footnote-reference" href="#id3" id="id2">[1]</a>, in which distance is measured from the center
+as defined in <a class="footnote-reference brackets" href="#id3" id="id2">1</a>, in which distance is measured from the center
 nodes to the target node. For the “inward” Voronoi cells, use the
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">DiGraph.reverse()</span></code> method to reverse the orientation of the
 edges before invoking this function on the directed graph.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>center_nodes</strong> (<em>set</em>) – A nonempty set of nodes in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> that represent the
-center of the Voronoi cells.</li>
-<li><strong>weight</strong> (<em>string or function</em>) – The edge attribute (or an arbitrary function) representing the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>center_nodes</strong> (<em>set</em>) – A nonempty set of nodes in the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> that represent the
+center of the Voronoi cells.</p></li>
+<li><p><strong>weight</strong> (<em>string or function</em>) – The edge attribute (or an arbitrary function) representing the
 weight of an edge. This keyword argument is as described in the
 documentation for <code class="xref py py-func docutils literal notranslate"><span class="pre">multi_source_dijkstra_path()</span></code>,
-for example.</li>
+for example.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A mapping from center node to set of all nodes in the graph
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A mapping from center node to set of all nodes in the graph
 closer to that center node than to any other center node. The
 keys of the dictionary are the element of <code class="xref py py-obj docutils literal notranslate"><span class="pre">center_nodes</span></code>, and
 the values of the dictionary form a partition of the nodes of
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>To get only the partition of the graph induced by the Voronoi cells,
 take the collection of all values in the returned dictionary:</p>
@@ -306,24 +303,20 @@ take the collection of all values in the returned dictionary:</p>
 <span class="go">[[0, 1], [2, 3, 4, 5]]</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">center_nodes</span></code> is empty.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">center_nodes</span></code> is empty.</p>
+</dd>
+</dl>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Erwig, Martin. (2000),
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Erwig, Martin. (2000),
 “The graph Voronoi diagram with applications.”
 <em>Networks</em>, 36: 156–163.
-&lt;dx.doi.org/10.1002/1097-0037(200010)36:3&lt;156::AID-NET2&gt;3.0.CO;2-L&gt;</td></tr>
-</tbody>
-</table>
+&lt;dx.doi.org/10.1002/1097-0037(200010)36:3&lt;156::AID-NET2&gt;3.0.CO;2-L&gt;</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -350,7 +343,7 @@ take the collection of all values in the returned dictionary:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

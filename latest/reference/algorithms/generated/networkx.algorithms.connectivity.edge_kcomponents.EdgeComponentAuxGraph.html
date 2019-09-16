@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -264,12 +265,12 @@
 <h1>networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph<a class="headerlink" href="#networkx-algorithms-connectivity-edge-kcomponents-edgecomponentauxgraph" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph">
-<em class="property">class </em><code class="descname">EdgeComponentAuxGraph</code><a class="reference internal" href="../../../_modules/networkx/algorithms/connectivity/edge_kcomponents.html#EdgeComponentAuxGraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">EdgeComponentAuxGraph</code><a class="reference internal" href="../../../_modules/networkx/algorithms/connectivity/edge_kcomponents.html#EdgeComponentAuxGraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>A simple algorithm to find all k-edge-connected components in a graph.</p>
 <p>Constructing the AuxillaryGraph (which may take some time) allows for the
 k-edge-ccs to be found in linear time for arbitrary k.</p>
 <p class="rubric">Notes</p>
-<p>This implementation is based on <a class="footnote-reference" href="#id2" id="id1">[1]</a>. The idea is to construct an auxiliary
+<p>This implementation is based on <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. The idea is to construct an auxiliary
 graph from which the k-edge-ccs can be extracted in linear time. The
 auxiliary graph is constructed in <span class="math notranslate nohighlight">\(O(|V|\cdot F)\)</span> operations, where F is the
 complexity of max flow. Querying the components takes an additional <span class="math notranslate nohighlight">\(O(|V|)\)</span>
@@ -279,14 +280,13 @@ arbitrary k and works for both directed and undirected inputs.</p>
 The undirected case for k=2 is exactly bridge connected components.
 The directed case for k=1 is exactly strongly connected components.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Wang, Tianhao, et al. (2015) A simple algorithm for finding all
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Wang, Tianhao, et al. (2015) A simple algorithm for finding all
 k-edge-connected components.
-<a class="reference external" href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0136264">http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0136264</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0136264">http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0136264</a></p>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">itertools</span> <span class="k">as</span> <span class="nn">it</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">pairwise</span>
@@ -336,25 +336,28 @@ k-edge-connected components.
 </div>
 <dl class="method">
 <dt id="networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct</span></code>(G)</td>
-<td>Builds an auxiliary graph encoding edge-connectivity between nodes.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph.__init__" title="networkx.algorithms.connectivity.edge_kcomponents.EdgeComponentAuxGraph.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a></p></td>
+<td><p>Initialize self.</p></td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_components</span></code>(k)</td>
-<td>Queries the auxiliary graph for k-edge-connected components.</td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct</span></code>(G)</p></td>
+<td><p>Builds an auxiliary graph encoding edge-connectivity between nodes.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_subgraphs</span></code>(k)</td>
-<td>Queries the auxiliary graph for k-edge-connected subgraphs.</td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_components</span></code>(k)</p></td>
+<td><p>Queries the auxiliary graph for k-edge-connected components.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_edge_subgraphs</span></code>(k)</p></td>
+<td><p>Queries the auxiliary graph for k-edge-connected subgraphs.</p></td>
 </tr>
 </tbody>
 </table>
@@ -384,7 +387,7 @@ k-edge-connected components.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cluster.generalized_degree &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.cluster.generalized_degree &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -261,7 +262,7 @@
 <h1>networkx.algorithms.cluster.generalized_degree<a class="headerlink" href="#networkx-algorithms-cluster-generalized-degree" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.cluster.generalized_degree">
-<code class="descname">generalized_degree</code><span class="sig-paren">(</span><em>G</em>, <em>nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/cluster.html#generalized_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.cluster.generalized_degree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">generalized_degree</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/cluster.html#generalized_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.cluster.generalized_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the generalized degree for nodes.</p>
 <p>For each node, the generalized degree shows how many edges of given
 triangle multiplicity the node is connected to. The triangle multiplicity
@@ -270,25 +271,21 @@ generalized degree of node <span class="math notranslate nohighlight">\(i\)</spa
 <span class="math notranslate nohighlight">\(\mathbf{k}_i=(k_i^{(0)}, \dotsc, k_i^{(N-2)})\)</span> where
 <span class="math notranslate nohighlight">\(k_i^{(j)}\)</span> is the number of edges attached to node <span class="math notranslate nohighlight">\(i\)</span> that
 participate in <span class="math notranslate nohighlight">\(j\)</span> triangles.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>)</li>
-<li><strong>nodes</strong> (<em>container of nodes, optional (default=all nodes in G)</em>) – Compute the generalized degree for nodes in this container.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>)</p></li>
+<li><p><strong>nodes</strong> (<em>container of nodes, optional (default=all nodes in G)</em>) – Compute the generalized degree for nodes in this container.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> – Generalized degree of specified nodes. The Counter is keyed by edge
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>out</strong> – Generalized degree of specified nodes. The Counter is keyed by edge
 triangle multiplicity.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Counter, or dictionary of Counters</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Counter, or dictionary of Counters</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">generalized_degree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -312,15 +309,14 @@ particular triangle multiplicity are present.</p>
 the generalized degree <span class="math notranslate nohighlight">\(\mathbf{k}_i=(k_i^{(0)}, \dotsc,
 k_i^{(N-2)})\)</span> by <span class="math notranslate nohighlight">\((k_i^{(1)}+2k_i^{(2)}+\dotsc +(N-2)k_i^{(N-2)})/2\)</span>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Networks with arbitrary edge multiplicities by V. Zlatić,
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Networks with arbitrary edge multiplicities by V. Zlatić,
 D. Garlaschelli and G. Caldarelli, EPL (Europhysics Letters),
 Volume 97, Number 2 (2012).
-<a class="reference external" href="https://iopscience.iop.org/article/10.1209/0295-5075/97/28005">https://iopscience.iop.org/article/10.1209/0295-5075/97/28005</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="https://iopscience.iop.org/article/10.1209/0295-5075/97/28005">https://iopscience.iop.org/article/10.1209/0295-5075/97/28005</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -347,7 +343,7 @@ Volume 97, Number 2 (2012).
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

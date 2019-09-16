@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix.from_pandas_adjacency &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.convert_matrix.from_pandas_adjacency &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -201,21 +201,17 @@
 <h1>networkx.convert_matrix.from_pandas_adjacency<a class="headerlink" href="#networkx-convert-matrix-from-pandas-adjacency" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.convert_matrix.from_pandas_adjacency">
-<code class="descname">from_pandas_adjacency</code><span class="sig-paren">(</span><em>df</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/convert_matrix.html#from_pandas_adjacency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.convert_matrix.from_pandas_adjacency" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_pandas_adjacency</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/convert_matrix.html#from_pandas_adjacency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.convert_matrix.from_pandas_adjacency" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a graph from Pandas DataFrame.</p>
 <p>The Pandas DataFrame is interpreted as an adjacency matrix for the graph.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>df</strong> (<em>Pandas DataFrame</em>) – An adjacency matrix representation of a graph</li>
-<li><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>Pandas DataFrame</em>) – An adjacency matrix representation of a graph</p></li>
+<li><p><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>For directed graphs, explicitly mention create_using=nx.Digraph,
 and entry i,j of df corresponds to an edge from i to j.</p>
@@ -225,8 +221,8 @@ will be converted to an appropriate Python data type.</p>
 of the data fields will be used as attribute keys in the resulting
 NetworkX graph.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.convert_matrix.to_pandas_adjacency.html#networkx.convert_matrix.to_pandas_adjacency" title="networkx.convert_matrix.to_pandas_adjacency"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_pandas_adjacency()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.convert_matrix.to_pandas_adjacency.html#networkx.convert_matrix.to_pandas_adjacency" title="networkx.convert_matrix.to_pandas_adjacency"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_pandas_adjacency()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <p>Simple integer weights on edges:</p>
@@ -273,7 +269,7 @@ NetworkX graph.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

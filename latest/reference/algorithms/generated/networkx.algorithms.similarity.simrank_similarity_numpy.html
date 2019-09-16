@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.similarity.simrank_similarity_numpy &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.similarity.simrank_similarity_numpy &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -261,33 +262,31 @@
 <h1>networkx.algorithms.similarity.simrank_similarity_numpy<a class="headerlink" href="#networkx-algorithms-similarity-simrank-similarity-numpy" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.similarity.simrank_similarity_numpy">
-<code class="descname">simrank_similarity_numpy</code><span class="sig-paren">(</span><em>G</em>, <em>source=None</em>, <em>target=None</em>, <em>importance_factor=0.9</em>, <em>max_iterations=100</em>, <em>tolerance=0.0001</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/similarity.html#simrank_similarity_numpy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.similarity.simrank_similarity_numpy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">simrank_similarity_numpy</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">source=None</em>, <em class="sig-param">target=None</em>, <em class="sig-param">importance_factor=0.9</em>, <em class="sig-param">max_iterations=100</em>, <em class="sig-param">tolerance=0.0001</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/similarity.html#simrank_similarity_numpy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.similarity.simrank_similarity_numpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate SimRank of nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> using matrices with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
 <p>The SimRank algorithm for determining node similarity is defined in
-<a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – A NetworkX graph</li>
-<li><strong>source</strong> (<em>node</em>) – If this is specified, the returned dictionary maps each node
+<a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – A NetworkX graph</p></li>
+<li><p><strong>source</strong> (<em>node</em>) – If this is specified, the returned dictionary maps each node
 <code class="docutils literal notranslate"><span class="pre">v</span></code> in the graph to the similarity between <code class="docutils literal notranslate"><span class="pre">source</span></code> and
-<code class="docutils literal notranslate"><span class="pre">v</span></code>.</li>
-<li><strong>target</strong> (<em>node</em>) – If both <code class="docutils literal notranslate"><span class="pre">source</span></code> and <code class="docutils literal notranslate"><span class="pre">target</span></code> are specified, the similarity
+<code class="docutils literal notranslate"><span class="pre">v</span></code>.</p></li>
+<li><p><strong>target</strong> (<em>node</em>) – If both <code class="docutils literal notranslate"><span class="pre">source</span></code> and <code class="docutils literal notranslate"><span class="pre">target</span></code> are specified, the similarity
 value between <code class="docutils literal notranslate"><span class="pre">source</span></code> and <code class="docutils literal notranslate"><span class="pre">target</span></code> is returned. If
 <code class="docutils literal notranslate"><span class="pre">target</span></code> is specified but <code class="docutils literal notranslate"><span class="pre">source</span></code> is not, this argument is
-ignored.</li>
-<li><strong>importance_factor</strong> (<em>float</em>) – The relative importance of indirect neighbors with respect to
-direct neighbors.</li>
-<li><strong>max_iterations</strong> (<em>integer</em>) – Maximum number of iterations.</li>
-<li><strong>tolerance</strong> (<em>float</em>) – Error tolerance used to check convergence. When an iteration of
+ignored.</p></li>
+<li><p><strong>importance_factor</strong> (<em>float</em>) – The relative importance of indirect neighbors with respect to
+direct neighbors.</p></li>
+<li><p><strong>max_iterations</strong> (<em>integer</em>) – Maximum number of iterations.</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em>) – Error tolerance used to check convergence. When an iteration of
 the algorithm finds that no similarity value changes more than
-this amount, the algorithm halts.</li>
+this amount, the algorithm halts.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p><strong>similarity</strong> – If <code class="docutils literal notranslate"><span class="pre">source</span></code> and <code class="docutils literal notranslate"><span class="pre">target</span></code> are both <code class="docutils literal notranslate"><span class="pre">None</span></code>, this returns a
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>similarity</strong> – If <code class="docutils literal notranslate"><span class="pre">source</span></code> and <code class="docutils literal notranslate"><span class="pre">target</span></code> are both <code class="docutils literal notranslate"><span class="pre">None</span></code>, this returns a
 dictionary of dictionaries, where keys are node pairs and value
 are similarity of the pair of nodes.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">source</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> but <code class="docutils literal notranslate"><span class="pre">target</span></code> is, this returns a
@@ -296,13 +295,11 @@ node.</p>
 <p>If neither <code class="docutils literal notranslate"><span class="pre">source</span></code> nor <code class="docutils literal notranslate"><span class="pre">target</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, this returns
 the similarity value for the given pair of nodes.</p>
 </p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary or <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary or <a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">array</span>
@@ -311,16 +308,15 @@ the similarity value for the given pair of nodes.</p>
 </pre></div>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>G. Jeh and J. Widom.
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>G. Jeh and J. Widom.
 “SimRank: a measure of structural-context similarity”,
 In KDD’02: Proceedings of the Eighth ACM SIGKDD
 International Conference on Knowledge Discovery and Data Mining,
-pp. 538–543. ACM Press, 2002.</td></tr>
-</tbody>
-</table>
+pp. 538–543. ACM Press, 2002.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -347,7 +343,7 @@ pp. 538–543. ACM Press, 2002.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

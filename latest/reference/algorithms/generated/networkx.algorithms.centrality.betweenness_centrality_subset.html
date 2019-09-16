@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.betweenness_centrality_subset &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.betweenness_centrality_subset &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,7 +271,7 @@
 <h1>networkx.algorithms.centrality.betweenness_centrality_subset<a class="headerlink" href="#networkx-algorithms-centrality-betweenness-centrality-subset" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.betweenness_centrality_subset">
-<code class="descname">betweenness_centrality_subset</code><span class="sig-paren">(</span><em>G</em>, <em>sources</em>, <em>targets</em>, <em>normalized=False</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/betweenness_subset.html#betweenness_centrality_subset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.betweenness_centrality_subset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">betweenness_centrality_subset</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">sources</em>, <em class="sig-param">targets</em>, <em class="sig-param">normalized=False</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/betweenness_subset.html#betweenness_centrality_subset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.betweenness_centrality_subset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute betweenness centrality for a subset of nodes.</p>
 <div class="math notranslate nohighlight">
 \[c_B(v) =\sum_{s\in S, t \in T} \frac{\sigma(s, t|v)}{\sigma(s, t)}\]</div>
@@ -279,37 +280,33 @@
 and <span class="math notranslate nohighlight">\(\sigma(s, t|v)\)</span> is the number of those paths
 passing through some  node <span class="math notranslate nohighlight">\(v\)</span> other than <span class="math notranslate nohighlight">\(s, t\)</span>.
 If <span class="math notranslate nohighlight">\(s = t\)</span>, <span class="math notranslate nohighlight">\(\sigma(s, t) = 1\)</span>,
-and if <span class="math notranslate nohighlight">\(v \in {s, t}\)</span>, <span class="math notranslate nohighlight">\(\sigma(s, t|v) = 0\)</span> <a class="footnote-reference" href="#id4" id="id1">[2]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</li>
-<li><strong>sources</strong> (<em>list of nodes</em>) – Nodes to use as sources for shortest paths in betweenness</li>
-<li><strong>targets</strong> (<em>list of nodes</em>) – Nodes to use as targets for shortest paths in betweenness</li>
-<li><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate nohighlight">\(2/((n-1)(n-2))\)</span>
+and if <span class="math notranslate nohighlight">\(v \in {s, t}\)</span>, <span class="math notranslate nohighlight">\(\sigma(s, t|v) = 0\)</span> <a class="footnote-reference brackets" href="#id4" id="id1">2</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</p></li>
+<li><p><strong>sources</strong> (<em>list of nodes</em>) – Nodes to use as sources for shortest paths in betweenness</p></li>
+<li><p><strong>targets</strong> (<em>list of nodes</em>) – Nodes to use as targets for shortest paths in betweenness</p></li>
+<li><p><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate nohighlight">\(2/((n-1)(n-2))\)</span>
 for graphs, and <span class="math notranslate nohighlight">\(1/((n-1)(n-2))\)</span> for directed graphs where <span class="math notranslate nohighlight">\(n\)</span>
-is the number of nodes in G.</li>
-<li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
-Otherwise holds the name of the edge attribute used as weight.</li>
+is the number of nodes in G.</p></li>
+<li><p><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
+Otherwise holds the name of the edge attribute used as weight.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>nodes</strong> – Dictionary of nodes with betweenness centrality as the value.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nodes</strong> – Dictionary of nodes with betweenness centrality as the value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.edge_betweenness_centrality.html#networkx.algorithms.centrality.edge_betweenness_centrality" title="networkx.algorithms.centrality.edge_betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">edge_betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.load_centrality.html#networkx.algorithms.centrality.load_centrality" title="networkx.algorithms.centrality.load_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_centrality()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.edge_betweenness_centrality.html#networkx.algorithms.centrality.edge_betweenness_centrality" title="networkx.algorithms.centrality.edge_betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">edge_betweenness_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.load_centrality.html#networkx.algorithms.centrality.load_centrality" title="networkx.algorithms.centrality.load_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The basic algorithm is from <a class="footnote-reference" href="#id3" id="id2">[1]</a>.</p>
+<p>The basic algorithm is from <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
 <p>For weighted graphs the edge weights must be greater than zero.
 Zero edge weights can produce an infinite number of equal length
 paths between pairs of nodes.</p>
@@ -318,23 +315,19 @@ as in betweenness_centrality() and is designed to make
 betweenness_centrality(G) be the same as
 betweenness_centrality_subset(G,sources=G.nodes(),targets=G.nodes()).</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Ulrik Brandes, A Faster Algorithm for Betweenness Centrality.
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Ulrik Brandes, A Faster Algorithm for Betweenness Centrality.
 Journal of Mathematical Sociology 25(2):163-177, 2001.
-<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[2]</a></td><td>Ulrik Brandes: On Variants of Shortest-Path Betweenness
+<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf</a></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>Ulrik Brandes: On Variants of Shortest-Path Betweenness
 Centrality and their Generic Computation.
 Social Networks 30(2):136-145, 2008.
-<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -361,7 +354,7 @@ Social Networks 30(2):136-145, 2008.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

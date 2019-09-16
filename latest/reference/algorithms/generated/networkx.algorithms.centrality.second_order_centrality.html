@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.second_order_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.second_order_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,22 +271,21 @@
 <h1>networkx.algorithms.centrality.second_order_centrality<a class="headerlink" href="#networkx-algorithms-centrality-second-order-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.second_order_centrality">
-<code class="descname">second_order_centrality</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/second_order.html#second_order_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.second_order_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">second_order_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/second_order.html#second_order_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.second_order_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the second order centrality for nodes of G.</p>
 <p>The second order centrality of a given node is the standard deviation of
 the return times to that node of a perpetual random walk on G:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>graph</em>) – A NetworkX connected and undirected graph.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>nodes</strong> – Dictionary keyed by node with second order centrality as the value.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dictionary</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>graph</em>) – A NetworkX connected and undirected graph.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nodes</strong> – Dictionary keyed by node with second order centrality as the value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">star_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">soc</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">second_order_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -293,24 +293,21 @@ the return times to that node of a perpetual random walk on G:</p>
 <span class="go">0</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXException</span></code> – If the graph G is empty, non connected or has negative weights.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXException" title="networkx.NetworkXException"><strong>NetworkXException</strong></a> – If the graph G is empty, non connected or has negative weights.</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>Lower values of second order centrality indicate higher centrality.</p>
-<p>The algorithm is from Kermarrec, Le Merrer, Sericola and Trédan <a class="footnote-reference" href="#id3" id="id1">[1]</a>.</p>
+<p>The algorithm is from Kermarrec, Le Merrer, Sericola and Trédan <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
 <p>This code implements the analytical version of the algorithm, i.e.,
 there is no simulation of a random walk process involved. The random walk
-is here unbiased (corresponding to eq 6 of the paper <a class="footnote-reference" href="#id3" id="id2">[1]</a>), thus the
+is here unbiased (corresponding to eq 6 of the paper <a class="footnote-reference brackets" href="#id3" id="id2">1</a>), thus the
 centrality values are the standard deviations for random walk return times
 on the transformed input graph G (equal in-degree at each nodes by adding
 self-loops).</p>
@@ -318,14 +315,13 @@ self-loops).</p>
 is O(n^3), with n the size of G, which makes it viable only for small
 graphs.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Anne-Marie Kermarrec, Erwan Le Merrer, Bruno Sericola, Gilles Trédan
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Anne-Marie Kermarrec, Erwan Le Merrer, Bruno Sericola, Gilles Trédan
 “Second order centrality: Distributed assessment of nodes criticity in
-complex networks”, Elsevier Computer Communications 34(5):619-628, 2011.</td></tr>
-</tbody>
-</table>
+complex networks”, Elsevier Computer Communications 34(5):619-628, 2011.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -352,7 +348,7 @@ complex networks”, Elsevier Computer Communications 34(5):619-628, 2011.</td><
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

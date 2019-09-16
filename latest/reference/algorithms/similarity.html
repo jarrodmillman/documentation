@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Similarity Measures &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Similarity Measures &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -267,29 +268,29 @@ takes too long for your graph, try <a class="reference internal" href="generated
 and/or <a class="reference internal" href="generated/networkx.algorithms.similarity.optimize_edit_paths.html#networkx.algorithms.similarity.optimize_edit_paths" title="networkx.algorithms.similarity.optimize_edit_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimize_edit_paths</span></code></a>.</p>
 <p>At the same time, I encourage capable people to investigate
 alternative GED algorithms, in order to improve the choices available.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.similarity.graph_edit_distance.html#networkx.algorithms.similarity.graph_edit_distance" title="networkx.algorithms.similarity.graph_edit_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph_edit_distance</span></code></a>(G1,&nbsp;G2[,&nbsp;node_match,&nbsp;…])</td>
-<td>Returns GED (graph edit distance) between graphs G1 and G2.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.similarity.graph_edit_distance.html#networkx.algorithms.similarity.graph_edit_distance" title="networkx.algorithms.similarity.graph_edit_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph_edit_distance</span></code></a>(G1, G2[, node_match, …])</p></td>
+<td><p>Returns GED (graph edit distance) between graphs G1 and G2.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.similarity.optimal_edit_paths.html#networkx.algorithms.similarity.optimal_edit_paths" title="networkx.algorithms.similarity.optimal_edit_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimal_edit_paths</span></code></a>(G1,&nbsp;G2[,&nbsp;node_match,&nbsp;…])</td>
-<td>Returns all minimum-cost edit paths transforming G1 to G2.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.similarity.optimal_edit_paths.html#networkx.algorithms.similarity.optimal_edit_paths" title="networkx.algorithms.similarity.optimal_edit_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimal_edit_paths</span></code></a>(G1, G2[, node_match, …])</p></td>
+<td><p>Returns all minimum-cost edit paths transforming G1 to G2.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.similarity.optimize_graph_edit_distance.html#networkx.algorithms.similarity.optimize_graph_edit_distance" title="networkx.algorithms.similarity.optimize_graph_edit_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimize_graph_edit_distance</span></code></a>(G1,&nbsp;G2[,&nbsp;…])</td>
-<td>Returns consecutive approximations of GED (graph edit distance) between graphs G1 and G2.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.similarity.optimize_graph_edit_distance.html#networkx.algorithms.similarity.optimize_graph_edit_distance" title="networkx.algorithms.similarity.optimize_graph_edit_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimize_graph_edit_distance</span></code></a>(G1, G2[, …])</p></td>
+<td><p>Returns consecutive approximations of GED (graph edit distance) between graphs G1 and G2.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.similarity.optimize_edit_paths.html#networkx.algorithms.similarity.optimize_edit_paths" title="networkx.algorithms.similarity.optimize_edit_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimize_edit_paths</span></code></a>(G1,&nbsp;G2[,&nbsp;node_match,&nbsp;…])</td>
-<td>GED (graph edit distance) calculation: advanced interface.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.similarity.optimize_edit_paths.html#networkx.algorithms.similarity.optimize_edit_paths" title="networkx.algorithms.similarity.optimize_edit_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimize_edit_paths</span></code></a>(G1, G2[, node_match, …])</p></td>
+<td><p>GED (graph edit distance) calculation: advanced interface.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.similarity.simrank_similarity.html#networkx.algorithms.similarity.simrank_similarity" title="networkx.algorithms.similarity.simrank_similarity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simrank_similarity</span></code></a>(G[,&nbsp;source,&nbsp;target,&nbsp;…])</td>
-<td>Returns the SimRank similarity of nodes in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.similarity.simrank_similarity.html#networkx.algorithms.similarity.simrank_similarity" title="networkx.algorithms.similarity.simrank_similarity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simrank_similarity</span></code></a>(G[, source, target, …])</p></td>
+<td><p>Returns the SimRank similarity of nodes in the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.similarity.simrank_similarity_numpy.html#networkx.algorithms.similarity.simrank_similarity_numpy" title="networkx.algorithms.similarity.simrank_similarity_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simrank_similarity_numpy</span></code></a>(G[,&nbsp;source,&nbsp;…])</td>
-<td>Calculate SimRank of nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> using matrices with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.similarity.simrank_similarity_numpy.html#networkx.algorithms.similarity.simrank_similarity_numpy" title="networkx.algorithms.similarity.simrank_similarity_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simrank_similarity_numpy</span></code></a>(G[, source, …])</p></td>
+<td><p>Calculate SimRank of nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> using matrices with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -317,7 +318,7 @@ alternative GED algorithms, in order to improve the choices available.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

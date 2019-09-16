@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.joint_degree_seq &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.joint_degree_seq &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -194,7 +194,7 @@
 <span class="sd">    - the total number of nodes of degree *k*, computed by</span>
 <span class="sd">      ``sum(joint_degrees[k].values()) / k``, must be an integer,</span>
 <span class="sd">    - the total number of edges joining nodes of degree *k* with</span>
-<span class="sd">       nodes of degree *l* cannot exceed the total number of possible edges,</span>
+<span class="sd">      nodes of degree *l* cannot exceed the total number of possible edges,</span>
 <span class="sd">    - each diagonal entry ``joint_degrees[k][k]`` must be even (this is</span>
 <span class="sd">      a convention assumed by the :func:`joint_degree_graph` function).</span>
 
@@ -239,7 +239,7 @@
                 <span class="k">return</span> <span class="kc">False</span>
             <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="n">l</span><span class="p">:</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">joint_degrees</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">degree_count</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span>
-                   <span class="p">(</span><span class="n">degree_count</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+                        <span class="p">(</span><span class="n">degree_count</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
                     <span class="k">return</span> <span class="kc">False</span>
                 <span class="k">if</span> <span class="n">joint_degrees</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="k">return</span> <span class="kc">False</span>
@@ -479,11 +479,11 @@
 <span class="sd">    boolean</span>
 <span class="sd">        returns true if given input is realizable, else returns false.</span>
 
-
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    Here is the list of conditions that the inputs (in/out degree sequences,</span>
 <span class="sd">    nkk) need to satisfy for simple directed graph realizability:</span>
+
 <span class="sd">    - Condition 0: in_degrees and out_degrees have the same length</span>
 <span class="sd">    - Condition 1: nkk[k][l]  is integer for all k,l</span>
 <span class="sd">    - Condition 2: sum(nkk[k])/k = number of nodes with partition id k, is an</span>
@@ -844,7 +844,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

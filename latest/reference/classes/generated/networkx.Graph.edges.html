@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.Graph.edges &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.Graph.edges &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -199,9 +199,9 @@
             
   <div class="section" id="networkx-graph-edges">
 <h1>networkx.Graph.edges<a class="headerlink" href="#networkx-graph-edges" title="Permalink to this headline">¶</a></h1>
-<dl class="attribute">
+<dl class="method">
 <dt id="networkx.Graph.edges">
-<code class="descclassname">Graph.</code><code class="descname">edges</code><a class="headerlink" href="#networkx.Graph.edges" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-prename descclassname">Graph.</code><code class="sig-name descname">edges</code><a class="headerlink" href="#networkx.Graph.edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>An EdgeView of the Graph as G.edges or G.edges().</p>
 <p>edges(self, nbunch=None, data=False, default=None)</p>
 <p>The EdgeView provides set-like operations on the edge-tuples
@@ -213,30 +213,26 @@ attribute for edge <code class="xref py py-obj docutils literal notranslate"><sp
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">for</span> <span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">c)</span> <span class="pre">in</span> <span class="pre">G.edges.data('color',</span> <span class="pre">default='red'):</span></code>
 iterates through all the edges yielding the color attribute
 with default <code class="xref py py-obj docutils literal notranslate"><span class="pre">'red'</span></code> if no color attribute exists.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>nbunch</strong> (<em>single node, container, or all nodes (default= all nodes)</em>) – The view will only report edges incident to these nodes.</li>
-<li><strong>data</strong> (<em>string or bool, optional (default=False)</em>) – The edge attribute returned in 3-tuple (u, v, ddict[data]).
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nbunch</strong> (<em>single node, container, or all nodes (default= all nodes)</em>) – The view will only report edges incident to these nodes.</p></li>
+<li><p><strong>data</strong> (<em>string or bool, optional (default=False)</em>) – The edge attribute returned in 3-tuple (u, v, ddict[data]).
 If True, return edge attribute dict in 3-tuple (u, v, ddict).
-If False, return 2-tuple (u, v).</li>
-<li><strong>default</strong> (<em>value, optional (default=None)</em>) – Value used for edges that don’t have the requested attribute.
-Only relevant if data is not True or False.</li>
+If False, return 2-tuple (u, v).</p></li>
+<li><p><strong>default</strong> (<em>value, optional (default=None)</em>) – Value used for edges that don’t have the requested attribute.
+Only relevant if data is not True or False.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>edges</strong> – A view of edge attributes, usually it iterates over (u, v)
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>edges</strong> – A view of edge attributes, usually it iterates over (u, v)
 or (u, v, d) tuples of edges, but can also be used for
 attribute lookup as <code class="xref py py-obj docutils literal notranslate"><span class="pre">edges[u,</span> <span class="pre">v]['foo']</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">EdgeView</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>EdgeView</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Nodes in nbunch that are not in the graph will be (quietly) ignored.
 For directed graphs this returns the out-edges.</p>
@@ -281,7 +277,7 @@ For directed graphs this returns the out-edges.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

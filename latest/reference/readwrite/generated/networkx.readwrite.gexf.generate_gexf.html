@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.gexf.generate_gexf &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.readwrite.gexf.generate_gexf &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -211,32 +211,28 @@
 <h1>networkx.readwrite.gexf.generate_gexf<a class="headerlink" href="#networkx-readwrite-gexf-generate-gexf" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.readwrite.gexf.generate_gexf">
-<code class="descname">generate_gexf</code><span class="sig-paren">(</span><em>G</em>, <em>encoding='utf-8'</em>, <em>prettyprint=True</em>, <em>version='1.2draft'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/gexf.html#generate_gexf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.gexf.generate_gexf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">generate_gexf</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">encoding='utf-8'</em>, <em class="sig-param">prettyprint=True</em>, <em class="sig-param">version='1.2draft'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/gexf.html#generate_gexf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.gexf.generate_gexf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate lines of GEXF format representation of G.</p>
 <p>“GEXF (Graph Exchange XML Format) is a language for describing
-complex networks structures, their associated data and dynamics” <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph</li>
-<li><strong>encoding</strong> (<em>string (optional, default: ‘utf-8’)</em>) – Encoding for text data.</li>
-<li><strong>prettyprint</strong> (<em>bool (optional, default: True)</em>) – If True use line breaks and indenting in output XML.</li>
-<li><strong>version</strong> (<em>string (default: 1.2draft)</em>) – Version of GEFX File Format (see <a class="reference external" href="https://gephi.org/gexf/format/schema.html">https://gephi.org/gexf/format/schema.html</a>).
-Supported values: “1.1draft”, “1.2draft”</li>
+complex networks structures, their associated data and dynamics” <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph</p></li>
+<li><p><strong>encoding</strong> (<em>string (optional, default: ‘utf-8’)</em>) – Encoding for text data.</p></li>
+<li><p><strong>prettyprint</strong> (<em>bool (optional, default: True)</em>) – If True use line breaks and indenting in output XML.</p></li>
+<li><p><strong>version</strong> (<em>string (default: 1.2draft)</em>) – Version of GEFX File Format (see <a class="reference external" href="https://gephi.org/gexf/format/schema.html">https://gephi.org/gexf/format/schema.html</a>).
+Supported values: “1.1draft”, “1.2draft”</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">linefeed</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># linefeed=</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">linefeed</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">generate_gexf</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>  <span class="c1"># doctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">generate_gexf</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>  <span class="c1"># doctest: +SKIP</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">linefeed</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">generate_gexf</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">generate_gexf</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>  
 <span class="gp">... </span>   <span class="nb">print</span> <span class="n">line</span>
 </pre></div>
 </div>
@@ -247,12 +243,11 @@ edges together).</p>
 If you want to specify an id use set it as node data, e.g.
 node[‘a’][‘id’]=1 to set the id of node ‘a’ to 1.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>GEXF File Format, <a class="reference external" href="https://gephi.org/gexf/format/">https://gephi.org/gexf/format/</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>GEXF File Format, <a class="reference external" href="https://gephi.org/gexf/format/">https://gephi.org/gexf/format/</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -279,7 +274,7 @@ node[‘a’][‘id’]=1 to set the id of node ‘a’ to 1.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

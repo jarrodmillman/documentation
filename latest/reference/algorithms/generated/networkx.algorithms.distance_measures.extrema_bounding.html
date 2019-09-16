@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.distance_measures.extrema_bounding &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.distance_measures.extrema_bounding &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -263,36 +264,32 @@
 <h1>networkx.algorithms.distance_measures.extrema_bounding<a class="headerlink" href="#networkx-algorithms-distance-measures-extrema-bounding" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.distance_measures.extrema_bounding">
-<code class="descname">extrema_bounding</code><span class="sig-paren">(</span><em>G</em>, <em>compute='diameter'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/distance_measures.html#extrema_bounding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.distance_measures.extrema_bounding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">extrema_bounding</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">compute='diameter'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/distance_measures.html#extrema_bounding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.distance_measures.extrema_bounding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute requested extreme distance metric of undirected graph G</p>
 <p>Computation is based on smart lower and upper bounds, and in practice
 linear in the number of nodes, rather than quadratic (except for some
 border cases such as complete graphs or circle shaped graphs).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – An undirected graph</li>
-<li><strong>compute</strong> (<em>string denoting the requesting metric</em>) – “diameter” for the maximal eccentricity value,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – An undirected graph</p></li>
+<li><p><strong>compute</strong> (<em>string denoting the requesting metric</em>) – “diameter” for the maximal eccentricity value,
 “radius” for the minimal eccentricity value,
 “periphery” for the set of nodes with eccentricity equal to the diameter
-“center” for the set of nodes with eccentricity equal to the radius</li>
+“center” for the set of nodes with eccentricity equal to the radius</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>value</strong> – int for “diameter” and “radius” or
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>value</strong> – int for “diameter” and “radius” or
 list of nodes for “center” and “periphery”</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">value of the requested metric</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the graph consists of multiple components</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>value of the requested metric</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If the graph consists of multiple components</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This algorithm was proposed in the following papers:</p>
 <p>F.W. Takes and W.A. Kosters, Determining the Diameter of Small World
@@ -332,7 +329,7 @@ doi: <a class="reference external" href="https://doi.org/10.1016/j.tcs.2015.02.0
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

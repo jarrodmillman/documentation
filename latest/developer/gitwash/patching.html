@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Making a patch &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Making a patch &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -224,21 +224,21 @@ mailing list</a> — where we will thank you warmly.</p>
 <div class="section" id="in-detail">
 <h3>In detail<a class="headerlink" href="#in-detail" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Tell git who you are so it can label the commits you’ve
+<li><p>Tell git who you are so it can label the commits you’ve
 made:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global user.email you@yourdomain.example.com
 git config --global user.name <span class="s2">&quot;Your Name Comes Here&quot;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">If you don’t already have one, clone a copy of the
+<li><p>If you don’t already have one, clone a copy of the
 <a class="reference external" href="http://networkx.github.io">networkx</a> repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git://github.com/networkx/networkx.git
 <span class="nb">cd</span> networkx
 </pre></div>
 </div>
 </li>
-<li><p class="first">Make a ‘feature branch’.  This will be where you work on
+<li><p>Make a ‘feature branch’.  This will be where you work on
 your bug fix.  It’s nice and safe and leaves you with
 access to an unmodified copy of the code in the main
 branch:</p>
@@ -247,7 +247,7 @@ git checkout the-fix-im-thinking-of
 </pre></div>
 </div>
 </li>
-<li><p class="first">Do some edits, and commit them as you go:</p>
+<li><p>Do some edits, and commit them as you go:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># hack, hack, hack</span>
 <span class="c1"># Tell git about any new files you&#39;ve made</span>
 git add somewhere/tests/test_my_bug.py
@@ -262,13 +262,13 @@ signals that you’re going to type a message on the command
 line.  The <code class="docutils literal notranslate"><span class="pre">a</span></code> flag — you can just take on faith —
 or see <a class="reference external" href="http://gitready.com/beginner/2009/01/18/the-staging-area.html">why the -a flag?</a>.</p>
 </li>
-<li><p class="first">When you have finished, check you have committed all your
+<li><p>When you have finished, check you have committed all your
 changes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
 </pre></div>
 </div>
 </li>
-<li><p class="first">Finally, make your commits into patches.  You want all the
+<li><p>Finally, make your commits into patches.  You want all the
 commits since you branched from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git format-patch -M -C master
 </pre></div>
@@ -334,7 +334,7 @@ git push origin the-fix-im-thinking-of
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

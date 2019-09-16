@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.operators.product.power &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.operators.product.power &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -274,36 +275,32 @@
 <h1>networkx.algorithms.operators.product.power<a class="headerlink" href="#networkx-algorithms-operators-product-power" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.operators.product.power">
-<code class="descname">power</code><span class="sig-paren">(</span><em>G</em>, <em>k</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/operators/product.html#power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.operators.product.power" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">power</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">k</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/operators/product.html#power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.operators.product.power" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the specified power of a graph.</p>
 <p>The <span class="math notranslate nohighlight">\(k\)</span>, denoted <span class="math notranslate nohighlight">\(G^k\)</span>, is a
 graph on the same set of nodes in which two distinct nodes <span class="math notranslate nohighlight">\(u\)</span> and
 <span class="math notranslate nohighlight">\(v\)</span> are adjacent in <span class="math notranslate nohighlight">\(G^k\)</span> if and only if the shortest path
 distance between <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(G\)</span> is at most <span class="math notranslate nohighlight">\(k\)</span>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX simple graph object.</li>
-<li><strong>k</strong> (<em>positive integer</em>) – The power to which to raise the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX simple graph object.</p></li>
+<li><p><strong>k</strong> (<em>positive integer</em>) – The power to which to raise the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> to the power <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">NetworkX simple graph</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If the exponent <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code> is not positive.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not a simple graph.</li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> to the power <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX simple graph</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If the exponent <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code> is not positive.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXNotImplemented" title="networkx.NetworkXNotImplemented"><strong>NetworkXNotImplemented</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not a simple graph.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>The number of edges will never decrease when taking successive
 powers:</p>
@@ -327,21 +324,19 @@ powers:</p>
 </pre></div>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><ol class="first last upperalpha simple" start="10">
-<li><ol class="first upperalpha">
-<li>Bondy, U. S. R. Murty, <em>Graph Theory</em>. Springer, 2008.</li>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><ol class="upperalpha simple" start="10">
+<li><ol class="upperalpha simple">
+<li><p>Bondy, U. S. R. Murty, <em>Graph Theory</em>. Springer, 2008.</p></li>
 </ol>
 </li>
 </ol>
-</td></tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This definition of “power graph” comes from Exercise 3.1.6 of
-<em>Graph Theory</em> by Bondy and Murty <a class="footnote-reference" href="#id1" id="id2">[1]</a>.</p>
+<em>Graph Theory</em> by Bondy and Murty <a class="footnote-reference brackets" href="#id1" id="id2">1</a>.</p>
 </dd></dl>
 
 </div>
@@ -368,7 +363,7 @@ powers:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

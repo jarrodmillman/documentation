@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Matching &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Matching &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -257,26 +258,26 @@
   <div class="section" id="module-networkx.algorithms.matching">
 <span id="matching"></span><h1>Matching<a class="headerlink" href="#module-networkx.algorithms.matching" title="Permalink to this headline">¶</a></h1>
 <p>Functions for computing and verifying matchings in a graph.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.matching.is_matching.html#networkx.algorithms.matching.is_matching" title="networkx.algorithms.matching.is_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_matching</span></code></a>(G,&nbsp;matching)</td>
-<td>Decides whether the given set or dictionary represents a valid matching in <code class="docutils literal notranslate"><span class="pre">G</span></code>.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.matching.is_matching.html#networkx.algorithms.matching.is_matching" title="networkx.algorithms.matching.is_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_matching</span></code></a>(G, matching)</p></td>
+<td><p>Decides whether the given set or dictionary represents a valid matching in <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.matching.is_maximal_matching.html#networkx.algorithms.matching.is_maximal_matching" title="networkx.algorithms.matching.is_maximal_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_maximal_matching</span></code></a>(G,&nbsp;matching)</td>
-<td>Decides whether the given set or dictionary represents a valid maximal matching in <code class="docutils literal notranslate"><span class="pre">G</span></code>.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.matching.is_maximal_matching.html#networkx.algorithms.matching.is_maximal_matching" title="networkx.algorithms.matching.is_maximal_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_maximal_matching</span></code></a>(G, matching)</p></td>
+<td><p>Decides whether the given set or dictionary represents a valid maximal matching in <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.matching.is_perfect_matching.html#networkx.algorithms.matching.is_perfect_matching" title="networkx.algorithms.matching.is_perfect_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_perfect_matching</span></code></a>(G,&nbsp;matching)</td>
-<td>Decides whether the given set represents a valid perfect matching in <code class="docutils literal notranslate"><span class="pre">G</span></code>.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.matching.is_perfect_matching.html#networkx.algorithms.matching.is_perfect_matching" title="networkx.algorithms.matching.is_perfect_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_perfect_matching</span></code></a>(G, matching)</p></td>
+<td><p>Decides whether the given set represents a valid perfect matching in <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.matching.maximal_matching.html#networkx.algorithms.matching.maximal_matching" title="networkx.algorithms.matching.maximal_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximal_matching</span></code></a>(G)</td>
-<td>Find a maximal matching in the graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.matching.maximal_matching.html#networkx.algorithms.matching.maximal_matching" title="networkx.algorithms.matching.maximal_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximal_matching</span></code></a>(G)</p></td>
+<td><p>Find a maximal matching in the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.matching.max_weight_matching.html#networkx.algorithms.matching.max_weight_matching" title="networkx.algorithms.matching.max_weight_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_weight_matching</span></code></a>(G[,&nbsp;maxcardinality,&nbsp;weight])</td>
-<td>Compute a maximum-weighted matching of G.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.matching.max_weight_matching.html#networkx.algorithms.matching.max_weight_matching" title="networkx.algorithms.matching.max_weight_matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_weight_matching</span></code></a>(G[, maxcardinality, weight])</p></td>
+<td><p>Compute a maximum-weighted matching of G.</p></td>
 </tr>
 </tbody>
 </table>
@@ -304,7 +305,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

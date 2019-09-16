@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.core.k_truss &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.core.k_truss &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -262,51 +263,43 @@
 <h1>networkx.algorithms.core.k_truss<a class="headerlink" href="#networkx-algorithms-core-k-truss" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.core.k_truss">
-<code class="descname">k_truss</code><span class="sig-paren">(</span><em>G</em>, <em>k</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/core.html#k_truss"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.core.k_truss" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">k_truss</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">k</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/core.html#k_truss"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.core.k_truss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the k-truss of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>The k-truss is the maximal subgraph of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> which contains at least three
 vertices where every edge is incident to at least <code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code> triangles.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – An undirected graph</li>
-<li><strong>k</strong> (<em>int</em>) – The order of the truss</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – An undirected graph</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – The order of the truss</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>H</strong> – The k-truss subgraph</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">NetworkX graph</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – The k-truss is not defined for graphs with self loops or parallel edges
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>H</strong> – The k-truss subgraph</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX graph</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – The k-truss is not defined for graphs with self loops or parallel edges
 or directed graphs.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>A k-clique is a (k-2)-truss and a k-truss is a (k+1)-core.</p>
 <p>Not implemented for digraphs or graphs with parallel edges or self loops.</p>
 <p>Graph, node, and edge attributes are copied to the subgraph.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Bounds and Algorithms for k-truss. Paul Burkhardt, Vance Faber,
-David G. Harris, 2018. <a class="reference external" href="https://arxiv.org/abs/1806.05523v2">https://arxiv.org/abs/1806.05523v2</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td>Trusses: Cohesive Subgraphs for Social Network Analysis. Jonathan
-Cohen, 2005.</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Bounds and Algorithms for k-truss. Paul Burkhardt, Vance Faber,
+David G. Harris, 2018. <a class="reference external" href="https://arxiv.org/abs/1806.05523v2">https://arxiv.org/abs/1806.05523v2</a></p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">2</span></dt>
+<dd><p>Trusses: Cohesive Subgraphs for Social Network Analysis. Jonathan
+Cohen, 2005.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -333,7 +326,7 @@ Cohen, 2005.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

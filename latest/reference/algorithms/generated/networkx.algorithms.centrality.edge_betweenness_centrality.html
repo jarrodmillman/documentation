@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.edge_betweenness_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.edge_betweenness_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,7 +271,7 @@
 <h1>networkx.algorithms.centrality.edge_betweenness_centrality<a class="headerlink" href="#networkx-algorithms-centrality-edge-betweenness-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.edge_betweenness_centrality">
-<code class="descname">edge_betweenness_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>k=None</em>, <em>normalized=True</em>, <em>weight=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/betweenness.html#edge_betweenness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.edge_betweenness_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">edge_betweenness_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">k=None</em>, <em class="sig-param">normalized=True</em>, <em class="sig-param">weight=None</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/betweenness.html#edge_betweenness_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.edge_betweenness_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute betweenness centrality for edges.</p>
 <p>Betweenness centrality of an edge <span class="math notranslate nohighlight">\(e\)</span> is the sum of the
 fraction of all-pairs shortest paths that pass through <span class="math notranslate nohighlight">\(e\)</span></p>
@@ -278,62 +279,54 @@ fraction of all-pairs shortest paths that pass through <span class="math notrans
 \[c_B(e) =\sum_{s,t \in V} \frac{\sigma(s, t|e)}{\sigma(s, t)}\]</div>
 <p>where <span class="math notranslate nohighlight">\(V\)</span> is the set of nodes, <span class="math notranslate nohighlight">\(\sigma(s, t)\)</span> is the number of
 shortest <span class="math notranslate nohighlight">\((s, t)\)</span>-paths, and <span class="math notranslate nohighlight">\(\sigma(s, t|e)\)</span> is the number of
-those paths passing through edge <span class="math notranslate nohighlight">\(e\)</span> <a class="footnote-reference" href="#id4" id="id1">[2]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</li>
-<li><strong>k</strong> (<em>int, optional (default=None)</em>) – If k is not None use k node samples to estimate betweenness.
+those paths passing through edge <span class="math notranslate nohighlight">\(e\)</span> <a class="footnote-reference brackets" href="#id4" id="id1">2</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</p></li>
+<li><p><strong>k</strong> (<em>int, optional (default=None)</em>) – If k is not None use k node samples to estimate betweenness.
 The value of k &lt;= n where n is the number of nodes in the graph.
-Higher values give better approximation.</li>
-<li><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate nohighlight">\(2/(n(n-1))\)</span>
+Higher values give better approximation.</p></li>
+<li><p><strong>normalized</strong> (<em>bool, optional</em>) – If True the betweenness values are normalized by <span class="math notranslate nohighlight">\(2/(n(n-1))\)</span>
 for graphs, and <span class="math notranslate nohighlight">\(1/(n(n-1))\)</span> for directed graphs where <span class="math notranslate nohighlight">\(n\)</span>
-is the number of nodes in G.</li>
-<li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
-Otherwise holds the name of the edge attribute used as weight.</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+is the number of nodes in G.</p></li>
+<li><p><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
+Otherwise holds the name of the edge attribute used as weight.</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
 See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.
-Note that this is only used if k is not None.</li>
+Note that this is only used if k is not None.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>edges</strong> – Dictionary of edges with betweenness centrality as the value.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>edges</strong> – Dictionary of edges with betweenness centrality as the value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">edge_load()</span></code></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality" title="networkx.algorithms.centrality.betweenness_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">betweenness_centrality()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">edge_load()</span></code></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The algorithm is from Ulrik Brandes <a class="footnote-reference" href="#id3" id="id2">[1]</a>.</p>
+<p>The algorithm is from Ulrik Brandes <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
 <p>For weighted graphs the edge weights must be greater than zero.
 Zero edge weights can produce an infinite number of equal length
 paths between pairs of nodes.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>A Faster Algorithm for Betweenness Centrality. Ulrik Brandes,
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>A Faster Algorithm for Betweenness Centrality. Ulrik Brandes,
 Journal of Mathematical Sociology 25(2):163-177, 2001.
-<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[2]</a></td><td>Ulrik Brandes: On Variants of Shortest-Path Betweenness
+<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-fabc-01.pdf</a></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>Ulrik Brandes: On Variants of Shortest-Path Betweenness
 Centrality and their Generic Computation.
 Social Networks 30(2):136-145, 2008.
-<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf">http://www.inf.uni-konstanz.de/algo/publications/b-vspbc-08.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -360,7 +353,7 @@ Social Networks 30(2):136-145, 2008.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.community.stochastic_block_model &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.community.stochastic_block_model &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -226,47 +226,43 @@
 <h1>networkx.generators.community.stochastic_block_model<a class="headerlink" href="#networkx-generators-community-stochastic-block-model" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.community.stochastic_block_model">
-<code class="descname">stochastic_block_model</code><span class="sig-paren">(</span><em>sizes</em>, <em>p</em>, <em>nodelist=None</em>, <em>seed=None</em>, <em>directed=False</em>, <em>selfloops=False</em>, <em>sparse=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/community.html#stochastic_block_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.community.stochastic_block_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stochastic_block_model</code><span class="sig-paren">(</span><em class="sig-param">sizes</em>, <em class="sig-param">p</em>, <em class="sig-param">nodelist=None</em>, <em class="sig-param">seed=None</em>, <em class="sig-param">directed=False</em>, <em class="sig-param">selfloops=False</em>, <em class="sig-param">sparse=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/community.html#stochastic_block_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.community.stochastic_block_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a stochastic block model graph.</p>
 <p>This model partitions the nodes in blocks of arbitrary sizes, and places
 edges between pairs of nodes independently, with a probability that depends
 on the blocks.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>sizes</strong> (<em>list of ints</em>) – Sizes of blocks</li>
-<li><strong>p</strong> (<em>list of list of floats</em>) – Element (r,s) gives the density of edges going from the nodes
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sizes</strong> (<em>list of ints</em>) – Sizes of blocks</p></li>
+<li><p><strong>p</strong> (<em>list of list of floats</em>) – Element (r,s) gives the density of edges going from the nodes
 of group r to nodes of group s.
 p must match the number of groups (len(sizes) == len(p)),
-and it must be symmetric if the graph is undirected.</li>
-<li><strong>nodelist</strong> (<em>list, optional</em>) – The block tags are assigned according to the node identifiers
+and it must be symmetric if the graph is undirected.</p></li>
+<li><p><strong>nodelist</strong> (<em>list, optional</em>) – The block tags are assigned according to the node identifiers
 in nodelist. If nodelist is None, then the ordering is the
-range [0,sum(sizes)-1].</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
-<li><strong>directed</strong> (<em>boolean optional, default=False</em>) – Whether to create a directed graph or not.</li>
-<li><strong>selfloops</strong> (<em>boolean optional, default=False</em>) – Whether to include self-loops or not.</li>
-<li><strong>sparse</strong> (<em>boolean optional, default=True</em>) – Use the sparse heuristic to speed up the generator.</li>
+range [0,sum(sizes)-1].</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
+<li><p><strong>directed</strong> (<em>boolean optional, default=False</em>) – Whether to create a directed graph or not.</p></li>
+<li><p><strong>selfloops</strong> (<em>boolean optional, default=False</em>) – Whether to include self-loops or not.</p></li>
+<li><p><strong>sparse</strong> (<em>boolean optional, default=True</em>) – Use the sparse heuristic to speed up the generator.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>g</strong> – Stochastic block model graph of size sum(sizes)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">NetworkX Graph or <a class="reference internal" href="../classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph">DiGraph</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If probabilities are not in [0,1].
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>g</strong> – Stochastic block model graph of size sum(sizes)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX Graph or <a class="reference internal" href="../classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph">DiGraph</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If probabilities are not in [0,1].
 If the probability matrix is not square (directed case).
 If the probability matrix is not symmetric (undirected case).
 If the sizes list does not match nodelist or the probability matrix.
 If nodelist contains duplicate.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">probs</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span>
@@ -291,18 +287,17 @@ If nodelist contains duplicate.</p>
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.generators.community.random_partition_graph.html#networkx.generators.community.random_partition_graph" title="networkx.generators.community.random_partition_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">random_partition_graph()</span></code></a>, <a class="reference internal" href="networkx.generators.community.planted_partition_graph.html#networkx.generators.community.planted_partition_graph" title="networkx.generators.community.planted_partition_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">planted_partition_graph()</span></code></a>, <a class="reference internal" href="networkx.generators.community.gaussian_random_partition_graph.html#networkx.generators.community.gaussian_random_partition_graph" title="networkx.generators.community.gaussian_random_partition_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">gaussian_random_partition_graph()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">gnp_random_graph()</span></code></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.generators.community.random_partition_graph.html#networkx.generators.community.random_partition_graph" title="networkx.generators.community.random_partition_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">random_partition_graph()</span></code></a>, <a class="reference internal" href="networkx.generators.community.planted_partition_graph.html#networkx.generators.community.planted_partition_graph" title="networkx.generators.community.planted_partition_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">planted_partition_graph()</span></code></a>, <a class="reference internal" href="networkx.generators.community.gaussian_random_partition_graph.html#networkx.generators.community.gaussian_random_partition_graph" title="networkx.generators.community.gaussian_random_partition_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">gaussian_random_partition_graph()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">gnp_random_graph()</span></code></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Holland, P. W., Laskey, K. B., &amp; Leinhardt, S.,
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Holland, P. W., Laskey, K. B., &amp; Leinhardt, S.,
 “Stochastic blockmodels: First steps”,
-Social networks, 5(2), 109-137, 1983.</td></tr>
-</tbody>
-</table>
+Social networks, 5(2), 109-137, 1983.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -329,7 +324,7 @@ Social networks, 5(2), 109-137, 1983.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

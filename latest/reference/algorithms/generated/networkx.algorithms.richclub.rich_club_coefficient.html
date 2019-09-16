@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.richclub.rich_club_coefficient &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.richclub.rich_club_coefficient &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,7 +257,7 @@
 <h1>networkx.algorithms.richclub.rich_club_coefficient<a class="headerlink" href="#networkx-algorithms-richclub-rich-club-coefficient" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.richclub.rich_club_coefficient">
-<code class="descname">rich_club_coefficient</code><span class="sig-paren">(</span><em>G</em>, <em>normalized=True</em>, <em>Q=100</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/richclub.html#rich_club_coefficient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.richclub.rich_club_coefficient" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rich_club_coefficient</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">normalized=True</em>, <em class="sig-param">Q=100</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/richclub.html#rich_club_coefficient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.richclub.rich_club_coefficient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the rich-club coefficient of the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>For each degree <em>k</em>, the <em>rich-club coefficient</em> is the ratio of the
 number of actual to the number of potential edges for nodes with
@@ -265,60 +266,52 @@ degree greater than <em>k</em>:</p>
 \[\phi(k) = \frac{2 E_k}{N_k (N_k - 1)}\]</div>
 <p>where <code class="xref py py-obj docutils literal notranslate"><span class="pre">N_k</span></code> is the number of nodes with degree larger than <em>k</em>, and
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">E_k</span></code> is the number of edges among those nodes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – Undirected graph with neither parallel edges nor self-loops.</li>
-<li><strong>normalized</strong> (<em>bool (optional)</em>) – Normalize using randomized network as in <a class="footnote-reference" href="#id4" id="id1">[1]</a></li>
-<li><strong>Q</strong> (<em>float (optional, default=100)</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">normalized</span></code> is True, perform <code class="xref py py-obj docutils literal notranslate"><span class="pre">Q</span> <span class="pre">*</span> <span class="pre">m</span></code> double-edge
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – Undirected graph with neither parallel edges nor self-loops.</p></li>
+<li><p><strong>normalized</strong> (<em>bool (optional)</em>) – Normalize using randomized network as in <a class="footnote-reference brackets" href="#id4" id="id1">1</a></p></li>
+<li><p><strong>Q</strong> (<em>float (optional, default=100)</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">normalized</span></code> is True, perform <code class="xref py py-obj docutils literal notranslate"><span class="pre">Q</span> <span class="pre">*</span> <span class="pre">m</span></code> double-edge
 swaps, where <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> is the number of edges in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, to use as a
-null-model for normalization.</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
+null-model for normalization.</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>rc</strong> – A dictionary, keyed by degree, with rich-club coefficient values.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rc</strong> – A dictionary, keyed by degree, with rich-club coefficient values.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">rich_club_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
 <span class="go">0.4</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>The rich club definition and algorithm are found in <a class="footnote-reference" href="#id4" id="id2">[1]</a>.  This
+<p>The rich club definition and algorithm are found in <a class="footnote-reference brackets" href="#id4" id="id2">1</a>.  This
 algorithm ignores any edge weights and is not defined for directed
 graphs or graphs with parallel edges or self loops.</p>
-<p>Estimates for appropriate values of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Q</span></code> are found in <a class="footnote-reference" href="#id5" id="id3">[2]</a>.</p>
+<p>Estimates for appropriate values of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Q</span></code> are found in <a class="footnote-reference brackets" href="#id5" id="id3">2</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Julian J. McAuley, Luciano da Fontoura Costa,
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Julian J. McAuley, Luciano da Fontoura Costa,
 and Tibério S. Caetano,
 “The rich-club phenomenon across complex network hierarchies”,
 Applied Physics Letters Vol 91 Issue 8, August 2007.
-<a class="reference external" href="https://arxiv.org/abs/physics/0701290">https://arxiv.org/abs/physics/0701290</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>R. Milo, N. Kashtan, S. Itzkovitz, M. E. J. Newman, U. Alon,
+<a class="reference external" href="https://arxiv.org/abs/physics/0701290">https://arxiv.org/abs/physics/0701290</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>R. Milo, N. Kashtan, S. Itzkovitz, M. E. J. Newman, U. Alon,
 “Uniform generation of random graphs with arbitrary degree
-sequences”, 2006. <a class="reference external" href="https://arxiv.org/abs/cond-mat/0312028">https://arxiv.org/abs/cond-mat/0312028</a></td></tr>
-</tbody>
-</table>
+sequences”, 2006. <a class="reference external" href="https://arxiv.org/abs/cond-mat/0312028">https://arxiv.org/abs/cond-mat/0312028</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -345,7 +338,7 @@ sequences”, 2006. <a class="reference external" href="https://arxiv.org/abs/co
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

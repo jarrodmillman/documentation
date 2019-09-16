@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.wiener.wiener_index &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.wiener.wiener_index &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,34 +257,30 @@
 <h1>networkx.algorithms.wiener.wiener_index<a class="headerlink" href="#networkx-algorithms-wiener-wiener-index" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.wiener.wiener_index">
-<code class="descname">wiener_index</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/wiener.html#wiener_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.wiener.wiener_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">wiener_index</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/wiener.html#wiener_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.wiener.wiener_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Wiener index of the given graph.</p>
 <p>The <em>Wiener index</em> of a graph is the sum of the shortest-path
 distances between each pair of reachable nodes. For pairs of nodes
 in undirected graphs, only one orientation of the pair is counted.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>weight</strong> (<em>object</em>) – The edge attribute to use as distance when computing
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>weight</strong> (<em>object</em>) – The edge attribute to use as distance when computing
 shortest-path distances. This is passed directly to the
-<code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.shortest_path_length()</span></code> function.</li>
+<code class="xref py py-func docutils literal notranslate"><span class="pre">networkx.shortest_path_length()</span></code> function.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The Wiener index of the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not connected.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The Wiener index of the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not connected.</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>If a pair of nodes is not reachable, the distance is assumed to be
 infinity. This means that for graphs that are not
@@ -334,7 +331,7 @@ nodes is at distance one:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

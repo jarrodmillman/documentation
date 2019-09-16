@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.smallworld.sigma &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.smallworld.sigma &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -259,7 +260,7 @@
 <h1>networkx.algorithms.smallworld.sigma<a class="headerlink" href="#networkx-algorithms-smallworld-sigma" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.smallworld.sigma">
-<code class="descname">sigma</code><span class="sig-paren">(</span><em>G</em>, <em>niter=100</em>, <em>nrand=10</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/smallworld.html#sigma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.smallworld.sigma" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sigma</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">niter=100</em>, <em class="sig-param">nrand=10</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/smallworld.html#sigma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.smallworld.sigma" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the small-world coefficient (sigma) of the given graph.</p>
 <p>The small-world coefficient is defined as:
 sigma = C/Cr / L/Lr
@@ -268,49 +269,41 @@ average shortest path length of G. Cr and Lr are respectively the average
 clustering coefficient and average shortest path length of an equivalent
 random graph.</p>
 <p>A graph is commonly classified as small-world if sigma&gt;1.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – An undirected graph.</li>
-<li><strong>niter</strong> (<em>integer (optional, default=100)</em>) – Approximate number of rewiring per edge to compute the equivalent
-random graph.</li>
-<li><strong>nrand</strong> (<em>integer (optional, default=10)</em>) – Number of random graphs generated to compute the average clustering
-coefficient (Cr) and average shortest path length (Lr).</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – An undirected graph.</p></li>
+<li><p><strong>niter</strong> (<em>integer (optional, default=100)</em>) – Approximate number of rewiring per edge to compute the equivalent
+random graph.</p></li>
+<li><p><strong>nrand</strong> (<em>integer (optional, default=10)</em>) – Number of random graphs generated to compute the average clustering
+coefficient (Cr) and average shortest path length (Lr).</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sigma</strong> – The small-world coefficient of G.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sigma</strong> – The small-world coefficient of G.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
-<p>The implementation is adapted from Humphries et al. <a class="footnote-reference" href="#id3" id="id1">[1]</a> <a class="footnote-reference" href="#id4" id="id2">[2]</a>.</p>
+<p>The implementation is adapted from Humphries et al. <a class="footnote-reference brackets" href="#id3" id="id1">1</a> <a class="footnote-reference brackets" href="#id4" id="id2">2</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The brainstem reticular formation is a small-world, not scale-free,
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The brainstem reticular formation is a small-world, not scale-free,
 network M. D. Humphries, K. Gurney and T. J. Prescott,
-Proc. Roy. Soc. B 2006 273, 503-511, doi:10.1098/rspb.2005.3354.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Humphries and Gurney (2008).
+Proc. Roy. Soc. B 2006 273, 503-511, doi:10.1098/rspb.2005.3354.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Humphries and Gurney (2008).
 “Network ‘Small-World-Ness’: A Quantitative Method for Determining
 Canonical Network Equivalence”.
-PLoS One. 3 (4). PMID 18446219. doi:10.1371/journal.pone.0002051.</td></tr>
-</tbody>
-</table>
+PLoS One. 3 (4). PMID 18446219. doi:10.1371/journal.pone.0002051.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -337,7 +330,7 @@ PLoS One. 3 (4). PMID 18446219. doi:10.1371/journal.pone.0002051.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

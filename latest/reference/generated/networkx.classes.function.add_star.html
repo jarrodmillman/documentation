@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.function.add_star &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.classes.function.add_star &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -214,26 +214,22 @@
 <h1>networkx.classes.function.add_star<a class="headerlink" href="#networkx-classes-function-add-star" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.classes.function.add_star">
-<code class="descname">add_star</code><span class="sig-paren">(</span><em>G_to_add_to</em>, <em>nodes_for_star</em>, <em>**attr</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/classes/function.html#add_star"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.classes.function.add_star" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_star</code><span class="sig-paren">(</span><em class="sig-param">G_to_add_to</em>, <em class="sig-param">nodes_for_star</em>, <em class="sig-param">**attr</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/classes/function.html#add_star"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.classes.function.add_star" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a star to Graph G_to_add_to.</p>
 <p>The first node in <code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes_for_star</span></code> is the middle of the star.
 It is connected to all other nodes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>G_to_add_to</strong> (<em>graph</em>) – A NetworkX graph</li>
-<li><strong>nodes_for_star</strong> (<em>iterable container</em>) – A container of nodes.</li>
-<li><strong>attr</strong> (<em>keyword arguments, optional (default= no attributes)</em>) – Attributes to add to every edge in star.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G_to_add_to</strong> (<em>graph</em>) – A NetworkX graph</p></li>
+<li><p><strong>nodes_for_star</strong> (<em>iterable container</em>) – A container of nodes.</p></li>
+<li><p><strong>attr</strong> (<em>keyword arguments, optional (default= no attributes)</em>) – Attributes to add to every edge in star.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.classes.function.add_path.html#networkx.classes.function.add_path" title="networkx.classes.function.add_path"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_path()</span></code></a>, <a class="reference internal" href="networkx.classes.function.add_cycle.html#networkx.classes.function.add_cycle" title="networkx.classes.function.add_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_cycle()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.classes.function.add_path.html#networkx.classes.function.add_path" title="networkx.classes.function.add_path"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_path()</span></code></a>, <a class="reference internal" href="networkx.classes.function.add_cycle.html#networkx.classes.function.add_cycle" title="networkx.classes.function.add_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_cycle()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
@@ -267,7 +263,7 @@ It is connected to all other nodes.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

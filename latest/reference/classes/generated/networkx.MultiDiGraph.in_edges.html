@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.MultiDiGraph.in_edges &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.MultiDiGraph.in_edges &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -199,39 +199,35 @@
             
   <div class="section" id="networkx-multidigraph-in-edges">
 <h1>networkx.MultiDiGraph.in_edges<a class="headerlink" href="#networkx-multidigraph-in-edges" title="Permalink to this headline">¶</a></h1>
-<dl class="attribute">
+<dl class="method">
 <dt id="networkx.MultiDiGraph.in_edges">
-<code class="descclassname">MultiDiGraph.</code><code class="descname">in_edges</code><a class="headerlink" href="#networkx.MultiDiGraph.in_edges" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-prename descclassname">MultiDiGraph.</code><code class="sig-name descname">in_edges</code><a class="headerlink" href="#networkx.MultiDiGraph.in_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>An InMultiEdgeView of the Graph as G.in_edges or G.in_edges().</p>
 <p>in_edges(self, nbunch=None, data=False, keys=False, default=None)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>nbunch</strong> (<em>single node, container, or all nodes (default= all nodes)</em>) – The view will only report edges incident to these nodes.</li>
-<li><strong>data</strong> (<em>string or bool, optional (default=False)</em>) – The edge attribute returned in 3-tuple (u, v, ddict[data]).
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nbunch</strong> (<em>single node, container, or all nodes (default= all nodes)</em>) – The view will only report edges incident to these nodes.</p></li>
+<li><p><strong>data</strong> (<em>string or bool, optional (default=False)</em>) – The edge attribute returned in 3-tuple (u, v, ddict[data]).
 If True, return edge attribute dict in 3-tuple (u, v, ddict).
-If False, return 2-tuple (u, v).</li>
-<li><strong>keys</strong> (<em>bool, optional (default=False)</em>) – If True, return edge keys with each edge.</li>
-<li><strong>default</strong> (<em>value, optional (default=None)</em>) – Value used for edges that don’t have the requested attribute.
-Only relevant if data is not True or False.</li>
+If False, return 2-tuple (u, v).</p></li>
+<li><p><strong>keys</strong> (<em>bool, optional (default=False)</em>) – If True, return edge keys with each edge.</p></li>
+<li><p><strong>default</strong> (<em>value, optional (default=None)</em>) – Value used for edges that don’t have the requested attribute.
+Only relevant if data is not True or False.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>in_edges</strong> – A view of edge attributes, usually it iterates over (u, v)
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>in_edges</strong> – A view of edge attributes, usually it iterates over (u, v)
 or (u, v, k) or (u, v, k, d) tuples of edges, but can also be
 used for attribute lookup as <code class="xref py py-obj docutils literal notranslate"><span class="pre">edges[u,</span> <span class="pre">v,</span> <span class="pre">k]['foo']</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">InMultiEdgeView</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>InMultiEdgeView</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.MultiDiGraph.edges.html#networkx.MultiDiGraph.edges" title="networkx.MultiDiGraph.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edges</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.MultiDiGraph.edges.html#networkx.MultiDiGraph.edges" title="networkx.MultiDiGraph.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edges</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -259,7 +255,7 @@ used for attribute lookup as <code class="xref py py-obj docutils literal notran
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

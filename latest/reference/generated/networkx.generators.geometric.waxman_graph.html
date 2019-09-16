@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.geometric.waxman_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.geometric.waxman_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -222,7 +222,7 @@
 <h1>networkx.generators.geometric.waxman_graph<a class="headerlink" href="#networkx-generators-geometric-waxman-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.geometric.waxman_graph">
-<code class="descname">waxman_graph</code><span class="sig-paren">(</span><em>n</em>, <em>beta=0.4</em>, <em>alpha=0.1</em>, <em>L=None</em>, <em>domain=(0</em>, <em>0</em>, <em>1</em>, <em>1)</em>, <em>metric=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#waxman_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.waxman_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">waxman_graph</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">beta=0.4</em>, <em class="sig-param">alpha=0.1</em>, <em class="sig-param">L=None</em>, <em class="sig-param">domain=(0</em>, <em class="sig-param">0</em>, <em class="sig-param">1</em>, <em class="sig-param">1)</em>, <em class="sig-param">metric=None</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/geometric.html#waxman_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.geometric.waxman_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Waxman random graph.</p>
 <p>The Waxman random graph model places <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes uniformly at random
 in a rectangular domain. Each pair of nodes at distance <code class="xref py py-obj docutils literal notranslate"><span class="pre">d</span></code> is
@@ -232,59 +232,49 @@ joined by an edge with probability</p>
 <p>This function implements both Waxman models, using the <code class="xref py py-obj docutils literal notranslate"><span class="pre">L</span></code> keyword
 argument.</p>
 <ul class="simple">
-<li>Waxman-1: if <code class="xref py py-obj docutils literal notranslate"><span class="pre">L</span></code> is not specified, it is set to be the maximum distance
-between any pair of nodes.</li>
-<li>Waxman-2: if <code class="xref py py-obj docutils literal notranslate"><span class="pre">L</span></code> is specified, the distance between a pair of nodes is
-chosen uniformly at random from the interval <code class="xref py py-obj docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">L]</span></code>.</li>
+<li><p>Waxman-1: if <code class="xref py py-obj docutils literal notranslate"><span class="pre">L</span></code> is not specified, it is set to be the maximum distance
+between any pair of nodes.</p></li>
+<li><p>Waxman-2: if <code class="xref py py-obj docutils literal notranslate"><span class="pre">L</span></code> is specified, the distance between a pair of nodes is
+chosen uniformly at random from the interval <code class="xref py py-obj docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">L]</span></code>.</p></li>
 </ul>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first">
-<li><p class="first"><strong>n</strong> (<em>int or iterable</em>) – Number of nodes or iterable of nodes</p>
-</li>
-<li><p class="first"><strong>beta</strong> (<em>float</em>) – Model parameter</p>
-</li>
-<li><p class="first"><strong>alpha</strong> (<em>float</em>) – Model parameter</p>
-</li>
-<li><p class="first"><strong>L</strong> (<em>float, optional</em>) – Maximum distance between nodes.  If not specified, the actual distance
-is calculated.</p>
-</li>
-<li><p class="first"><strong>domain</strong> (<em>four-tuple of numbers, optional</em>) – Domain size, given as a tuple of the form <code class="xref py py-obj docutils literal notranslate"><span class="pre">(x_min,</span> <span class="pre">y_min,</span> <span class="pre">x_max,</span>
-<span class="pre">y_max)</span></code>.</p>
-</li>
-<li><p class="first"><strong>metric</strong> (<em>function</em>) – A metric on vectors of numbers (represented as lists or
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul>
+<li><p><strong>n</strong> (<em>int or iterable</em>) – Number of nodes or iterable of nodes</p></li>
+<li><p><strong>beta</strong> (<em>float</em>) – Model parameter</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Model parameter</p></li>
+<li><p><strong>L</strong> (<em>float, optional</em>) – Maximum distance between nodes.  If not specified, the actual distance
+is calculated.</p></li>
+<li><p><strong>domain</strong> (<em>four-tuple of numbers, optional</em>) – Domain size, given as a tuple of the form <code class="xref py py-obj docutils literal notranslate"><span class="pre">(x_min,</span> <span class="pre">y_min,</span> <span class="pre">x_max,</span>
+<span class="pre">y_max)</span></code>.</p></li>
+<li><p><strong>metric</strong> (<em>function</em>) – A metric on vectors of numbers (represented as lists or
 tuples). This must be a function that accepts two lists (or
 tuples) as input and yields a number as output. The function
 must also satisfy the four requirements of a <a class="reference external" href="https://en.wikipedia.org/wiki/Metric_%28mathematics%29">metric</a>.
 Specifically, if <span class="math notranslate nohighlight">\(d\)</span> is the function and <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>,
 and <span class="math notranslate nohighlight">\(z\)</span> are vectors in the graph, then <span class="math notranslate nohighlight">\(d\)</span> must satisfy</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(d(x, y) \ge 0\)</span>,</li>
-<li><span class="math notranslate nohighlight">\(d(x, y) = 0\)</span> if and only if <span class="math notranslate nohighlight">\(x = y\)</span>,</li>
-<li><span class="math notranslate nohighlight">\(d(x, y) = d(y, x)\)</span>,</li>
-<li><span class="math notranslate nohighlight">\(d(x, z) \le d(x, y) + d(y, z)\)</span>.</li>
+<li><p><span class="math notranslate nohighlight">\(d(x, y) \ge 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(d(x, y) = 0\)</span> if and only if <span class="math notranslate nohighlight">\(x = y\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(d(x, y) = d(y, x)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(d(x, z) \le d(x, y) + d(y, z)\)</span>.</p></li>
 </ol>
 <p>If this argument is not specified, the Euclidean distance metric is
 used.</p>
 </li>
-<li><p class="first"><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p>
-</li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A random Waxman graph, undirected and without self-loops. Each
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A random Waxman graph, undirected and without self-loops. Each
 node has a node attribute <code class="docutils literal notranslate"><span class="pre">'pos'</span></code> that stores the position of
 that node in Euclidean space as generated by this function.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>Specify an alternate distance metric using the <code class="docutils literal notranslate"><span class="pre">metric</span></code> keyword
 argument. For example, to use the “<a class="reference external" href="https://en.wikipedia.org/wiki/Taxicab_geometry">taxicab metric</a>” instead of the
@@ -299,13 +289,12 @@ usual roles in the probability distribution. In earlier versions their
 positions in the expression were reversed. Their position in the calling
 sequence reversed as well to minimize backward incompatibility.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>B. M. Waxman, <em>Routing of multipoint connections</em>.
-IEEE J. Select. Areas Commun. 6(9),(1988) 1617–1622.</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>B. M. Waxman, <em>Routing of multipoint connections</em>.
+IEEE J. Select. Areas Commun. 6(9),(1988) 1617–1622.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -332,7 +321,7 @@ IEEE J. Select. Areas Commun. 6(9),(1988) 1617–1622.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

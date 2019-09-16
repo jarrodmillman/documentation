@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.directed.scale_free_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.directed.scale_free_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -221,34 +221,30 @@
 <h1>networkx.generators.directed.scale_free_graph<a class="headerlink" href="#networkx-generators-directed-scale-free-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.directed.scale_free_graph">
-<code class="descname">scale_free_graph</code><span class="sig-paren">(</span><em>n</em>, <em>alpha=0.41</em>, <em>beta=0.54</em>, <em>gamma=0.05</em>, <em>delta_in=0.2</em>, <em>delta_out=0</em>, <em>create_using=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/directed.html#scale_free_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.directed.scale_free_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">scale_free_graph</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">alpha=0.41</em>, <em class="sig-param">beta=0.54</em>, <em class="sig-param">gamma=0.05</em>, <em class="sig-param">delta_in=0.2</em>, <em class="sig-param">delta_out=0</em>, <em class="sig-param">create_using=None</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/directed.html#scale_free_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.directed.scale_free_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a scale-free directed graph.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>n</strong> (<em>integer</em>) – Number of nodes in graph</li>
-<li><strong>alpha</strong> (<em>float</em>) – Probability for adding a new node connected to an existing node
-chosen randomly according to the in-degree distribution.</li>
-<li><strong>beta</strong> (<em>float</em>) – Probability for adding an edge between two existing nodes.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>integer</em>) – Number of nodes in graph</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Probability for adding a new node connected to an existing node
+chosen randomly according to the in-degree distribution.</p></li>
+<li><p><strong>beta</strong> (<em>float</em>) – Probability for adding an edge between two existing nodes.
 One existing node is chosen randomly according the in-degree
 distribution and the other chosen randomly according to the out-degree
-distribution.</li>
-<li><strong>gamma</strong> (<em>float</em>) – Probability for adding a new node connected to an existing node
-chosen randomly according to the out-degree distribution.</li>
-<li><strong>delta_in</strong> (<em>float</em>) – Bias for choosing nodes from in-degree distribution.</li>
-<li><strong>delta_out</strong> (<em>float</em>) – Bias for choosing nodes from out-degree distribution.</li>
-<li><strong>create_using</strong> (<em>NetworkX graph constructor, optional</em>) – The default is a MultiDiGraph 3-cycle.
+distribution.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – Probability for adding a new node connected to an existing node
+chosen randomly according to the out-degree distribution.</p></li>
+<li><p><strong>delta_in</strong> (<em>float</em>) – Bias for choosing nodes from in-degree distribution.</p></li>
+<li><p><strong>delta_out</strong> (<em>float</em>) – Bias for choosing nodes from out-degree distribution.</p></li>
+<li><p><strong>create_using</strong> (<em>NetworkX graph constructor, optional</em>) – The default is a MultiDiGraph 3-cycle.
 If a graph instance, use it without clearing first.
-If a graph constructor, call it to construct an empty graph.</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
+If a graph constructor, call it to construct an empty graph.</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>Create a scale-free graph on one hundred nodes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">scale_free_graph</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -257,15 +253,14 @@ See <a class="reference internal" href="../randomness.html#randomness"><span cla
 <p class="rubric">Notes</p>
 <p>The sum of <code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">beta</span></code>, and <code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma</span></code> must be 1.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>B. Bollobás, C. Borgs, J. Chayes, and O. Riordan,
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>B. Bollobás, C. Borgs, J. Chayes, and O. Riordan,
 Directed scale-free graphs,
 Proceedings of the fourteenth annual ACM-SIAM Symposium on
-Discrete Algorithms, 132–139, 2003.</td></tr>
-</tbody>
-</table>
+Discrete Algorithms, 132–139, 2003.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -292,7 +287,7 @@ Discrete Algorithms, 132–139, 2003.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

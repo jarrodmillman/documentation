@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -264,7 +265,7 @@
 <h1>networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity<a class="headerlink" href="#networkx-algorithms-connectivity-utils-build-auxiliary-node-connectivity" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity">
-<code class="descname">build_auxiliary_node_connectivity</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/connectivity/utils.html#build_auxiliary_node_connectivity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">build_auxiliary_node_connectivity</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/connectivity/utils.html#build_auxiliary_node_connectivity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.connectivity.utils.build_auxiliary_node_connectivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a directed graph D from an undirected graph G to compute flow
 based node connectivity.</p>
 <p>For an undirected graph G having <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes and <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> edges we derive a
@@ -272,7 +273,7 @@ directed graph D with <code class="xref py py-obj docutils literal notranslate">
 original node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> with two nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">vA</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">vB</span></code> linked by an (internal)
 arc in D. Then for each edge (<code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code>) in G we add two arcs (<code class="xref py py-obj docutils literal notranslate"><span class="pre">uB</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">vA</span></code>)
 and (<code class="xref py py-obj docutils literal notranslate"><span class="pre">vB</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">uA</span></code>) in D. Finally we set the attribute capacity = 1 for each
-arc in D <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
+arc in D <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <p>For a directed graph having <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes and <code class="xref py py-obj docutils literal notranslate"><span class="pre">m</span></code> arcs we derive a
 directed graph D with <code class="xref py py-obj docutils literal notranslate"><span class="pre">2n</span></code> nodes and <code class="xref py py-obj docutils literal notranslate"><span class="pre">m+n</span></code> arcs by replacing each
 original node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> with two nodes <code class="xref py py-obj docutils literal notranslate"><span class="pre">vA</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">vB</span></code> linked by an (internal)
@@ -282,15 +283,14 @@ each arc in D.</p>
 <p>A dictionary with a mapping between nodes in the original graph and the
 auxiliary digraph is stored as a graph attribute: H.graph[‘mapping’].</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Kammer, Frank and Hanjo Taubig. Graph Connectivity. in Brandes and
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Kammer, Frank and Hanjo Taubig. Graph Connectivity. in Brandes and
 Erlebach, ‘Network Analysis: Methodological Foundations’, Lecture
 Notes in Computer Science, Volume 3418, Springer-Verlag, 2005.
-<a class="reference external" href="http://www.informatik.uni-augsburg.de/thi/personen/kammer/Graph_Connectivity.pdf">http://www.informatik.uni-augsburg.de/thi/personen/kammer/Graph_Connectivity.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://www.informatik.uni-augsburg.de/thi/personen/kammer/Graph_Connectivity.pdf">http://www.informatik.uni-augsburg.de/thi/personen/kammer/Graph_Connectivity.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -317,7 +317,7 @@ Notes in Computer Science, Volume 3418, Springer-Verlag, 2005.
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

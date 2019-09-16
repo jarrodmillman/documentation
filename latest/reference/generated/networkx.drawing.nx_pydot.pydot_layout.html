@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pydot.pydot_layout &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.drawing.nx_pydot.pydot_layout &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -202,29 +202,25 @@
 <h1>networkx.drawing.nx_pydot.pydot_layout<a class="headerlink" href="#networkx-drawing-nx-pydot-pydot-layout" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pydot.pydot_layout">
-<code class="descname">pydot_layout</code><span class="sig-paren">(</span><em>G</em>, <em>prog='neato'</em>, <em>root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pydot.html#pydot_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pydot.pydot_layout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pydot_layout</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">prog='neato'</em>, <em class="sig-param">root=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pydot.html#pydot_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pydot.pydot_layout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create node positions using <code class="xref py py-mod docutils literal notranslate"><span class="pre">pydot</span></code> and Graphviz.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>Graph</em>) – NetworkX graph to be laid out.</li>
-<li><strong>prog</strong> (<em>string  (default: ‘neato’)</em>) – Name of the GraphViz command to use for layout.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>Graph</em>) – NetworkX graph to be laid out.</p></li>
+<li><p><strong>prog</strong> (<em>string  (default: ‘neato’)</em>) – Name of the GraphViz command to use for layout.
 Options depend on GraphViz version but may include:
-‘dot’, ‘twopi’, ‘fdp’, ‘sfdp’, ‘circo’</li>
-<li><strong>root</strong> (<em>Node from G or None (default: None)</em>) – The node of G from which to start some layout algorithms.</li>
+‘dot’, ‘twopi’, ‘fdp’, ‘sfdp’, ‘circo’</p></li>
+<li><p><strong>root</strong> (<em>Node from G or None (default: None)</em>) – The node of G from which to start some layout algorithms.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary of positions keyed by node.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of positions keyed by node.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">nx_pydot</span><span class="o">.</span><span class="n">pydot_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -238,9 +234,10 @@ The layout may assign both nodes a single location. See Issue #1568
 If this occurs in your case, consider relabeling the nodes just
 for the layout computation using something similar to:</p>
 <blockquote>
-<div>H = nx.convert_node_labels_to_integers(G, label_attribute=’node_label’)
+<div><p>H = nx.convert_node_labels_to_integers(G, label_attribute=’node_label’)
 H_layout = nx.nx_pydot.pydot_layout(G, prog=’dot’)
-G_layout = {H.nodes[n][‘node_label’]: p for n, p in H_layout.items()}</div></blockquote>
+G_layout = {H.nodes[n][‘node_label’]: p for n, p in H_layout.items()}</p>
+</div></blockquote>
 </dd></dl>
 
 </div>
@@ -267,7 +264,7 @@ G_layout = {H.nodes[n][‘node_label’]: p for n, p in H_layout.items()}</div><
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.clique.find_cliques &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.clique.find_cliques &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -264,7 +265,7 @@
 <h1>networkx.algorithms.clique.find_cliques<a class="headerlink" href="#networkx-algorithms-clique-find-cliques" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.clique.find_cliques">
-<code class="descname">find_cliques</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/clique.html#find_cliques"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.clique.find_cliques" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_cliques</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/clique.html#find_cliques"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.clique.find_cliques" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all maximal cliques in an undirected graph.</p>
 <p>For each node <em>v</em>, a <em>maximal clique for v</em> is a largest complete
 subgraph containing <em>v</em>. The largest maximal clique is sometimes
@@ -272,24 +273,23 @@ called the <em>maximum clique</em>.</p>
 <p>This function returns an iterator over cliques, each of which is a
 list of nodes. It is an iterative implementation, so should not
 suffer from recursion depth issues.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX graph</em>) – An undirected graph.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An iterator over maximal cliques, each of which is a list of
-nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. The order of cliques is arbitrary.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">iterator</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX graph</em>) – An undirected graph.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An iterator over maximal cliques, each of which is a list of
+nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. The order of cliques is arbitrary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>iterator</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">find_cliques_recursive()</span></code></dt>
-<dd>A recursive version of the same algorithm.</dd>
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">find_cliques_recursive()</span></code></dt><dd><p>A recursive version of the same algorithm.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -300,46 +300,39 @@ the graph (for example, when the graph is the complete graph). This
 function avoids storing all cliques in memory by only keeping
 current candidate node lists in memory during its search.</p>
 <p>This implementation is based on the algorithm published by Bron and
-Kerbosch (1973) <a class="footnote-reference" href="#id4" id="id1">[1]</a>, as adapted by Tomita, Tanaka and Takahashi
-(2006) <a class="footnote-reference" href="#id5" id="id2">[2]</a> and discussed in Cazals and Karande (2008) <a class="footnote-reference" href="#id6" id="id3">[3]</a>. It
+Kerbosch (1973) <a class="footnote-reference brackets" href="#id4" id="id1">1</a>, as adapted by Tomita, Tanaka and Takahashi
+(2006) <a class="footnote-reference brackets" href="#id5" id="id2">2</a> and discussed in Cazals and Karande (2008) <a class="footnote-reference brackets" href="#id6" id="id3">3</a>. It
 essentially unrolls the recursion used in the references to avoid
 issues of recursion stack depth (for a recursive implementation, see
 <code class="xref py py-func docutils literal notranslate"><span class="pre">find_cliques_recursive()</span></code>).</p>
 <p>This algorithm ignores self-loops and parallel edges, since cliques
 are not conventionally defined with such edges.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Bron, C. and Kerbosch, J.
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Bron, C. and Kerbosch, J.
 “Algorithm 457: finding all cliques of an undirected graph”.
 <em>Communications of the ACM</em> 16, 9 (Sep. 1973), 575–577.
-&lt;<a class="reference external" href="http://portal.acm.org/citation.cfm?doid=362342.362367">http://portal.acm.org/citation.cfm?doid=362342.362367</a>&gt;</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Etsuji Tomita, Akira Tanaka, Haruhisa Takahashi,
+&lt;<a class="reference external" href="http://portal.acm.org/citation.cfm?doid=362342.362367">http://portal.acm.org/citation.cfm?doid=362342.362367</a>&gt;</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Etsuji Tomita, Akira Tanaka, Haruhisa Takahashi,
 “The worst-case time complexity for generating all maximal
 cliques and computational experiments”,
 <em>Theoretical Computer Science</em>, Volume 363, Issue 1,
 Computing and Combinatorics,
 10th Annual International Conference on
 Computing and Combinatorics (COCOON 2004), 25 October 2006, Pages 28–42
-&lt;<a class="reference external" href="https://doi.org/10.1016/j.tcs.2006.06.015">https://doi.org/10.1016/j.tcs.2006.06.015</a>&gt;</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>F. Cazals, C. Karande,
+&lt;<a class="reference external" href="https://doi.org/10.1016/j.tcs.2006.06.015">https://doi.org/10.1016/j.tcs.2006.06.015</a>&gt;</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>F. Cazals, C. Karande,
 “A note on the problem of reporting maximal cliques”,
 <em>Theoretical Computer Science</em>,
 Volume 407, Issues 1–3, 6 November 2008, Pages 564–568,
-&lt;<a class="reference external" href="https://doi.org/10.1016/j.tcs.2008.05.010">https://doi.org/10.1016/j.tcs.2008.05.010</a>&gt;</td></tr>
-</tbody>
-</table>
+&lt;<a class="reference external" href="https://doi.org/10.1016/j.tcs.2008.05.010">https://doi.org/10.1016/j.tcs.2008.05.010</a>&gt;</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -366,7 +359,7 @@ Volume 407, Issues 1–3, 6 November 2008, Pages 564–568,
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

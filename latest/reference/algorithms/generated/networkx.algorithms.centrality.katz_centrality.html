@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.katz_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.katz_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,7 +271,7 @@
 <h1>networkx.algorithms.centrality.katz_centrality<a class="headerlink" href="#networkx-algorithms-centrality-katz-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.katz_centrality">
-<code class="descname">katz_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>alpha=0.1</em>, <em>beta=1.0</em>, <em>max_iter=1000</em>, <em>tol=1e-06</em>, <em>nstart=None</em>, <em>normalized=True</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/katz.html#katz_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.katz_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">katz_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">alpha=0.1</em>, <em class="sig-param">beta=1.0</em>, <em class="sig-param">max_iter=1000</em>, <em class="sig-param">tol=1e-06</em>, <em class="sig-param">nstart=None</em>, <em class="sig-param">normalized=True</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/katz.html#katz_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.katz_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the Katz centrality for the nodes of the graph G.</p>
 <p>Katz centrality computes the centrality for a node based on the centrality
 of its neighbors. It is a generalization of the eigenvector centrality. The
@@ -290,42 +291,38 @@ parameter <span class="math notranslate nohighlight">\(\beta\)</span>.  Connecti
 are, however, penalized by an attenuation factor <span class="math notranslate nohighlight">\(\alpha\)</span> which
 should be strictly less than the inverse largest eigenvalue of the
 adjacency matrix in order for the Katz centrality to be computed
-correctly. More information is provided in <a class="footnote-reference" href="#id3" id="id1">[1]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</li>
-<li><strong>alpha</strong> (<em>float</em>) – Attenuation factor</li>
-<li><strong>beta</strong> (<em>scalar or dictionary, optional (default=1.0)</em>) – Weight attributed to the immediate neighborhood. If not a scalar, the
-dictionary must have an value for every node.</li>
-<li><strong>max_iter</strong> (<em>integer, optional (default=1000)</em>) – Maximum number of iterations in power method.</li>
-<li><strong>tol</strong> (<em>float, optional (default=1.0e-6)</em>) – Error tolerance used to check convergence in power method iteration.</li>
-<li><strong>nstart</strong> (<em>dictionary, optional</em>) – Starting value of Katz iteration for each node.</li>
-<li><strong>normalized</strong> (<em>bool, optional (default=True)</em>) – If True normalize the resulting values.</li>
-<li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
-Otherwise holds the name of the edge attribute used as weight.</li>
+correctly. More information is provided in <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Attenuation factor</p></li>
+<li><p><strong>beta</strong> (<em>scalar or dictionary, optional (default=1.0)</em>) – Weight attributed to the immediate neighborhood. If not a scalar, the
+dictionary must have an value for every node.</p></li>
+<li><p><strong>max_iter</strong> (<em>integer, optional (default=1000)</em>) – Maximum number of iterations in power method.</p></li>
+<li><p><strong>tol</strong> (<em>float, optional (default=1.0e-6)</em>) – Error tolerance used to check convergence in power method iteration.</p></li>
+<li><p><strong>nstart</strong> (<em>dictionary, optional</em>) – Starting value of Katz iteration for each node.</p></li>
+<li><p><strong>normalized</strong> (<em>bool, optional (default=True)</em>) – If True normalize the resulting values.</p></li>
+<li><p><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
+Otherwise holds the name of the edge attribute used as weight.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>nodes</strong> – Dictionary of nodes with Katz centrality as the value.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dictionary</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the parameter <code class="xref py py-obj docutils literal notranslate"><span class="pre">beta</span></code> is not a scalar but lacks a value for at least
-one node</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">PowerIterationFailedConvergence</span></code> – If the algorithm fails to converge to the specified tolerance
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nodes</strong> – Dictionary of nodes with Katz centrality as the value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If the parameter <code class="xref py py-obj docutils literal notranslate"><span class="pre">beta</span></code> is not a scalar but lacks a value for at least
+one node</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.PowerIterationFailedConvergence" title="networkx.PowerIterationFailedConvergence"><strong>PowerIterationFailedConvergence</strong></a> – If the algorithm fails to converge to the specified tolerance
 within the specified number of iterations of the power iteration
-method.</li>
+method.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -340,11 +337,11 @@ method.</li>
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.katz_centrality_numpy.html#networkx.algorithms.centrality.katz_centrality_numpy" title="networkx.algorithms.centrality.katz_centrality_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">katz_centrality_numpy()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality" title="networkx.algorithms.centrality.eigenvector_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality_numpy.html#networkx.algorithms.centrality.eigenvector_centrality_numpy" title="networkx.algorithms.centrality.eigenvector_centrality_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality_numpy()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">pagerank()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">hits()</span></code></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.katz_centrality_numpy.html#networkx.algorithms.centrality.katz_centrality_numpy" title="networkx.algorithms.centrality.katz_centrality_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">katz_centrality_numpy()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality" title="networkx.algorithms.centrality.eigenvector_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality_numpy.html#networkx.algorithms.centrality.eigenvector_centrality_numpy" title="networkx.algorithms.centrality.eigenvector_centrality_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality_numpy()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">pagerank()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">hits()</span></code></p>
 </div>
 <p class="rubric">Notes</p>
-<p>Katz centrality was introduced by <a class="footnote-reference" href="#id4" id="id2">[2]</a>.</p>
+<p>Katz centrality was introduced by <a class="footnote-reference brackets" href="#id4" id="id2">2</a>.</p>
 <p>This algorithm it uses the power method to find the eigenvector
 corresponding to the largest eigenvalue of the adjacency matrix of <code class="docutils literal notranslate"><span class="pre">G</span></code>.
 The parameter <code class="docutils literal notranslate"><span class="pre">alpha</span></code> should be strictly less than the inverse of largest
@@ -359,23 +356,19 @@ as eigenvector centrality.</p>
 to the in-edges in the graph. For out-edges Katz centrality
 first reverse the graph with <code class="docutils literal notranslate"><span class="pre">G.reverse()</span></code>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Mark E. J. Newman:
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Mark E. J. Newman:
 Networks: An Introduction.
-Oxford University Press, USA, 2010, p. 720.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Leo Katz:
+Oxford University Press, USA, 2010, p. 720.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Leo Katz:
 A New Status Index Derived from Sociometric Index.
 Psychometrika 18(1):39–43, 1953
-<a class="reference external" href="http://phya.snu.ac.kr/~dkim/PRL87278701.pdf">http://phya.snu.ac.kr/~dkim/PRL87278701.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://phya.snu.ac.kr/~dkim/PRL87278701.pdf">http://phya.snu.ac.kr/~dkim/PRL87278701.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -402,7 +395,7 @@ Psychometrika 18(1):39–43, 1953
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

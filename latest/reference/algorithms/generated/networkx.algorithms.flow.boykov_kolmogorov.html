@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.boykov_kolmogorov &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.flow.boykov_kolmogorov &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -265,60 +266,56 @@
 <h1>networkx.algorithms.flow.boykov_kolmogorov<a class="headerlink" href="#networkx-algorithms-flow-boykov-kolmogorov" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.flow.boykov_kolmogorov">
-<code class="descname">boykov_kolmogorov</code><span class="sig-paren">(</span><em>G</em>, <em>s</em>, <em>t</em>, <em>capacity='capacity'</em>, <em>residual=None</em>, <em>value_only=False</em>, <em>cutoff=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/flow/boykovkolmogorov.html#boykov_kolmogorov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.flow.boykov_kolmogorov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">boykov_kolmogorov</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">s</em>, <em class="sig-param">t</em>, <em class="sig-param">capacity='capacity'</em>, <em class="sig-param">residual=None</em>, <em class="sig-param">value_only=False</em>, <em class="sig-param">cutoff=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/flow/boykovkolmogorov.html#boykov_kolmogorov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.flow.boykov_kolmogorov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find a maximum single-commodity flow using Boykov-Kolmogorov algorithm.</p>
 <p>This function returns the residual network resulting after computing
 the maximum flow. See below for details about the conventions
 NetworkX uses for defining residual networks.</p>
 <p>This algorithm has worse case complexity <span class="math notranslate nohighlight">\(O(n^2 m |C|)\)</span> for <span class="math notranslate nohighlight">\(n\)</span> nodes, <span class="math notranslate nohighlight">\(m\)</span>
-edges, and <span class="math notranslate nohighlight">\(|C|\)</span> the cost of the minimum cut <a class="footnote-reference" href="#id3" id="id1">[1]</a>. This implementation
-uses the marking heuristic defined in <a class="footnote-reference" href="#id4" id="id2">[2]</a> which improves its running
+edges, and <span class="math notranslate nohighlight">\(|C|\)</span> the cost of the minimum cut <a class="footnote-reference brackets" href="#id3" id="id1">1</a>. This implementation
+uses the marking heuristic defined in <a class="footnote-reference brackets" href="#id4" id="id2">2</a> which improves its running
 time in many practical problems.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – Edges of the graph are expected to have an attribute called
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – Edges of the graph are expected to have an attribute called
 ‘capacity’. If this attribute is not present, the edge is
-considered to have infinite capacity.</li>
-<li><strong>s</strong> (<em>node</em>) – Source node for the flow.</li>
-<li><strong>t</strong> (<em>node</em>) – Sink node for the flow.</li>
-<li><strong>capacity</strong> (<em>string</em>) – Edges of the graph G are expected to have an attribute capacity
+considered to have infinite capacity.</p></li>
+<li><p><strong>s</strong> (<em>node</em>) – Source node for the flow.</p></li>
+<li><p><strong>t</strong> (<em>node</em>) – Sink node for the flow.</p></li>
+<li><p><strong>capacity</strong> (<em>string</em>) – Edges of the graph G are expected to have an attribute capacity
 that indicates how much flow the edge can support. If this
 attribute is not present, the edge is considered to have
-infinite capacity. Default value: ‘capacity’.</li>
-<li><strong>residual</strong> (<em>NetworkX graph</em>) – Residual network on which the algorithm is to be executed. If None, a
-new residual network is created. Default value: None.</li>
-<li><strong>value_only</strong> (<em>bool</em>) – If True compute only the value of the maximum flow. This parameter
-will be ignored by this algorithm because it is not applicable.</li>
-<li><strong>cutoff</strong> (<em>integer, float</em>) – If specified, the algorithm will terminate when the flow value reaches
+infinite capacity. Default value: ‘capacity’.</p></li>
+<li><p><strong>residual</strong> (<em>NetworkX graph</em>) – Residual network on which the algorithm is to be executed. If None, a
+new residual network is created. Default value: None.</p></li>
+<li><p><strong>value_only</strong> (<em>bool</em>) – If True compute only the value of the maximum flow. This parameter
+will be ignored by this algorithm because it is not applicable.</p></li>
+<li><p><strong>cutoff</strong> (<em>integer, float</em>) – If specified, the algorithm will terminate when the flow value reaches
 or exceeds the cutoff. In this case, it may be unable to immediately
-determine a minimum cut. Default value: None.</li>
+determine a minimum cut. Default value: None.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>R</strong> – Residual network after computing the maximum flow.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">NetworkX DiGraph</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – The algorithm does not support MultiGraph and MultiDiGraph. If
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>R</strong> – Residual network after computing the maximum flow.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX DiGraph</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – The algorithm does not support MultiGraph and MultiDiGraph. If
 the input graph is an instance of one of these two classes, a
-NetworkXError is raised.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnbounded</span></code> – If the graph has a path of infinite capacity, the value of a
+NetworkXError is raised.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXUnbounded" title="networkx.NetworkXUnbounded"><strong>NetworkXUnbounded</strong></a> – If the graph has a path of infinite capacity, the value of a
 feasible flow on the graph is unbounded above and the function
-raises a NetworkXUnbounded.</li>
+raises a NetworkXUnbounded.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.flow.maximum_flow.html#networkx.algorithms.flow.maximum_flow" title="networkx.algorithms.flow.maximum_flow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">maximum_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.minimum_cut.html#networkx.algorithms.flow.minimum_cut" title="networkx.algorithms.flow.minimum_cut"><code class="xref py py-meth docutils literal notranslate"><span class="pre">minimum_cut()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.preflow_push.html#networkx.algorithms.flow.preflow_push" title="networkx.algorithms.flow.preflow_push"><code class="xref py py-meth docutils literal notranslate"><span class="pre">preflow_push()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.shortest_augmenting_path.html#networkx.algorithms.flow.shortest_augmenting_path" title="networkx.algorithms.flow.shortest_augmenting_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shortest_augmenting_path()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.flow.maximum_flow.html#networkx.algorithms.flow.maximum_flow" title="networkx.algorithms.flow.maximum_flow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">maximum_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.minimum_cut.html#networkx.algorithms.flow.minimum_cut" title="networkx.algorithms.flow.minimum_cut"><code class="xref py py-meth docutils literal notranslate"><span class="pre">minimum_cut()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.preflow_push.html#networkx.algorithms.flow.preflow_push" title="networkx.algorithms.flow.preflow_push"><code class="xref py py-meth docutils literal notranslate"><span class="pre">preflow_push()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.shortest_augmenting_path.html#networkx.algorithms.flow.shortest_augmenting_path" title="networkx.algorithms.flow.shortest_augmenting_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shortest_augmenting_path()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The residual network <code class="samp docutils literal notranslate"><span class="pre">R</span></code> from an input graph <code class="samp docutils literal notranslate"><span class="pre">G</span></code> has the
@@ -377,25 +374,21 @@ in the graph attribute <code class="xref py py-obj docutils literal notranslate"
 </pre></div>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Boykov, Y., &amp; Kolmogorov, V. (2004). An experimental comparison
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Boykov, Y., &amp; Kolmogorov, V. (2004). An experimental comparison
 of min-cut/max-flow algorithms for energy minimization in vision.
 Pattern Analysis and Machine Intelligence, IEEE Transactions on,
 26(9), 1124-1137.
-<a class="reference external" href="http://www.csd.uwo.ca/~yuri/Papers/pami04.pdf">http://www.csd.uwo.ca/~yuri/Papers/pami04.pdf</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Vladimir Kolmogorov. Graph-based Algorithms for Multi-camera
+<a class="reference external" href="http://www.csd.uwo.ca/~yuri/Papers/pami04.pdf">http://www.csd.uwo.ca/~yuri/Papers/pami04.pdf</a></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Vladimir Kolmogorov. Graph-based Algorithms for Multi-camera
 Reconstruction Problem. PhD thesis, Cornell University, CS Department,
 2003. pp. 109-114.
-<a class="reference external" href="https://pub.ist.ac.at/~vnk/papers/thesis.pdf">https://pub.ist.ac.at/~vnk/papers/thesis.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="https://pub.ist.ac.at/~vnk/papers/thesis.pdf">https://pub.ist.ac.at/~vnk/papers/thesis.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -422,7 +415,7 @@ Reconstruction Problem. PhD thesis, Cornell University, CS Department,
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

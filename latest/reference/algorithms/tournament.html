@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tournament &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Tournament &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -273,29 +274,29 @@ graph.</p>
 <span class="go">True</span>
 </pre></div>
 </div>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.tournament.hamiltonian_path.html#networkx.algorithms.tournament.hamiltonian_path" title="networkx.algorithms.tournament.hamiltonian_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hamiltonian_path</span></code></a>(G)</td>
-<td>Returns a Hamiltonian path in the given tournament graph.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.tournament.hamiltonian_path.html#networkx.algorithms.tournament.hamiltonian_path" title="networkx.algorithms.tournament.hamiltonian_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hamiltonian_path</span></code></a>(G)</p></td>
+<td><p>Returns a Hamiltonian path in the given tournament graph.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.tournament.is_reachable.html#networkx.algorithms.tournament.is_reachable" title="networkx.algorithms.tournament.is_reachable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_reachable</span></code></a>(G,&nbsp;s,&nbsp;t)</td>
-<td>Decides whether there is a path from <code class="xref py py-obj docutils literal notranslate"><span class="pre">s</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">t</span></code> in the tournament.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.tournament.is_reachable.html#networkx.algorithms.tournament.is_reachable" title="networkx.algorithms.tournament.is_reachable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_reachable</span></code></a>(G, s, t)</p></td>
+<td><p>Decides whether there is a path from <code class="xref py py-obj docutils literal notranslate"><span class="pre">s</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">t</span></code> in the tournament.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.tournament.is_strongly_connected.html#networkx.algorithms.tournament.is_strongly_connected" title="networkx.algorithms.tournament.is_strongly_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_strongly_connected</span></code></a>(G)</td>
-<td>Decides whether the given tournament is strongly connected.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.tournament.is_strongly_connected.html#networkx.algorithms.tournament.is_strongly_connected" title="networkx.algorithms.tournament.is_strongly_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_strongly_connected</span></code></a>(G)</p></td>
+<td><p>Decides whether the given tournament is strongly connected.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.tournament.is_tournament.html#networkx.algorithms.tournament.is_tournament" title="networkx.algorithms.tournament.is_tournament"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_tournament</span></code></a>(G)</td>
-<td>Returns True if and only if <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is a tournament.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.tournament.is_tournament.html#networkx.algorithms.tournament.is_tournament" title="networkx.algorithms.tournament.is_tournament"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_tournament</span></code></a>(G)</p></td>
+<td><p>Returns True if and only if <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is a tournament.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.tournament.random_tournament.html#networkx.algorithms.tournament.random_tournament" title="networkx.algorithms.tournament.random_tournament"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_tournament</span></code></a>(n[,&nbsp;seed])</td>
-<td>Returns a random tournament graph on <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.tournament.random_tournament.html#networkx.algorithms.tournament.random_tournament" title="networkx.algorithms.tournament.random_tournament"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_tournament</span></code></a>(n[, seed])</p></td>
+<td><p>Returns a random tournament graph on <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> nodes.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.tournament.score_sequence.html#networkx.algorithms.tournament.score_sequence" title="networkx.algorithms.tournament.score_sequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score_sequence</span></code></a>(G)</td>
-<td>Returns the score sequence for the given tournament graph.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.tournament.score_sequence.html#networkx.algorithms.tournament.score_sequence" title="networkx.algorithms.tournament.score_sequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score_sequence</span></code></a>(G)</p></td>
+<td><p>Returns the score sequence for the given tournament graph.</p></td>
 </tr>
 </tbody>
 </table>
@@ -323,7 +324,7 @@ graph.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

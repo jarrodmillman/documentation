@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -112,6 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -266,32 +267,28 @@
 <h1>networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set<a class="headerlink" href="#networkx-algorithms-approximation-dominating-set-min-weighted-dominating-set" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set">
-<code class="descname">min_weighted_dominating_set</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/dominating_set.html#min_weighted_dominating_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">min_weighted_dominating_set</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/dominating_set.html#min_weighted_dominating_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.dominating_set.min_weighted_dominating_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dominating set that approximates the minimum weight node
 dominating set.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – Undirected graph.</li>
-<li><strong>weight</strong> (<em>string</em>) – The node attribute storing the weight of an node. If provided,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – Undirected graph.</p></li>
+<li><p><strong>weight</strong> (<em>string</em>) – The node attribute storing the weight of an node. If provided,
 the node attribute with this key must be a number for each
-node. If not provided, each node is assumed to have weight one.</li>
+node. If not provided, each node is assumed to have weight one.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>min_weight_dominating_set</strong> – A set of nodes, the sum of whose weights is no more than <code class="xref py py-obj docutils literal notranslate"><span class="pre">(log</span>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>min_weight_dominating_set</strong> – A set of nodes, the sum of whose weights is no more than <code class="xref py py-obj docutils literal notranslate"><span class="pre">(log</span>
 <span class="pre">w(V))</span> <span class="pre">w(V^*)</span></code>, where <code class="xref py py-obj docutils literal notranslate"><span class="pre">w(V)</span></code> denotes the sum of the weights of
 each node in the graph and <code class="xref py py-obj docutils literal notranslate"><span class="pre">w(V^*)</span></code> denotes the sum of the
 weights of each node in the minimum weight dominating set.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This algorithm computes an approximate minimum weighted dominating
 set for the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. The returned solution has weight <code class="xref py py-obj docutils literal notranslate"><span class="pre">(log</span>
@@ -301,14 +298,13 @@ each node in the minimum weight dominating set for the graph.</p>
 <p>This implementation of the algorithm runs in <span class="math notranslate nohighlight">\(O(m)\)</span> time, where <span class="math notranslate nohighlight">\(m\)</span>
 is the number of edges in the graph.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Vazirani, Vijay V.
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Vazirani, Vijay V.
 <em>Approximation Algorithms</em>.
-Springer Science &amp; Business Media, 2001.</td></tr>
-</tbody>
-</table>
+Springer Science &amp; Business Media, 2001.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -335,7 +331,7 @@ Springer Science &amp; Business Media, 2001.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

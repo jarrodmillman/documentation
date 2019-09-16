@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cores &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Cores &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -277,32 +278,32 @@ Christos Giatsidis, Dimitrios M. Thilikos, Michalis Vazirgiannis, ICDM 2011.
 L. Hébert-Dufresne, J. A. Grochow, and A. Allard
 Scientific Reports 6, 31708 (2016)
 <a class="reference external" href="http://doi.org/10.1038/srep31708">http://doi.org/10.1038/srep31708</a></p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.core.core_number.html#networkx.algorithms.core.core_number" title="networkx.algorithms.core.core_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core_number</span></code></a>(G)</td>
-<td>Returns the core number for each vertex.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.core.core_number.html#networkx.algorithms.core.core_number" title="networkx.algorithms.core.core_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core_number</span></code></a>(G)</p></td>
+<td><p>Returns the core number for each vertex.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.core.k_core.html#networkx.algorithms.core.k_core" title="networkx.algorithms.core.k_core"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_core</span></code></a>(G[,&nbsp;k,&nbsp;core_number])</td>
-<td>Returns the k-core of G.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.core.k_core.html#networkx.algorithms.core.k_core" title="networkx.algorithms.core.k_core"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_core</span></code></a>(G[, k, core_number])</p></td>
+<td><p>Returns the k-core of G.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.core.k_shell.html#networkx.algorithms.core.k_shell" title="networkx.algorithms.core.k_shell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_shell</span></code></a>(G[,&nbsp;k,&nbsp;core_number])</td>
-<td>Returns the k-shell of G.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.core.k_shell.html#networkx.algorithms.core.k_shell" title="networkx.algorithms.core.k_shell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_shell</span></code></a>(G[, k, core_number])</p></td>
+<td><p>Returns the k-shell of G.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.core.k_crust.html#networkx.algorithms.core.k_crust" title="networkx.algorithms.core.k_crust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_crust</span></code></a>(G[,&nbsp;k,&nbsp;core_number])</td>
-<td>Returns the k-crust of G.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.core.k_crust.html#networkx.algorithms.core.k_crust" title="networkx.algorithms.core.k_crust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_crust</span></code></a>(G[, k, core_number])</p></td>
+<td><p>Returns the k-crust of G.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.core.k_corona.html#networkx.algorithms.core.k_corona" title="networkx.algorithms.core.k_corona"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_corona</span></code></a>(G,&nbsp;k[,&nbsp;core_number])</td>
-<td>Returns the k-corona of G.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.core.k_corona.html#networkx.algorithms.core.k_corona" title="networkx.algorithms.core.k_corona"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_corona</span></code></a>(G, k[, core_number])</p></td>
+<td><p>Returns the k-corona of G.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.core.k_truss.html#networkx.algorithms.core.k_truss" title="networkx.algorithms.core.k_truss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_truss</span></code></a>(G,&nbsp;k)</td>
-<td>Returns the k-truss of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.core.k_truss.html#networkx.algorithms.core.k_truss" title="networkx.algorithms.core.k_truss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">k_truss</span></code></a>(G, k)</p></td>
+<td><p>Returns the k-truss of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.core.onion_layers.html#networkx.algorithms.core.onion_layers" title="networkx.algorithms.core.onion_layers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">onion_layers</span></code></a>(G)</td>
-<td>Returns the layer of each vertex in the onion decomposition of the graph.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.core.onion_layers.html#networkx.algorithms.core.onion_layers" title="networkx.algorithms.core.onion_layers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">onion_layers</span></code></a>(G)</p></td>
+<td><p>Returns the layer of each vertex in the onion decomposition of the graph.</p></td>
 </tr>
 </tbody>
 </table>
@@ -330,7 +331,7 @@ Scientific Reports 6, 31708 (2016)
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

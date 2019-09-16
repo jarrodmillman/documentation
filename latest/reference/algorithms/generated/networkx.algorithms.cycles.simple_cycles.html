@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cycles.simple_cycles &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.cycles.simple_cycles &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -260,26 +261,25 @@
 <h1>networkx.algorithms.cycles.simple_cycles<a class="headerlink" href="#networkx-algorithms-cycles-simple-cycles" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.cycles.simple_cycles">
-<code class="descname">simple_cycles</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/cycles.html#simple_cycles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.cycles.simple_cycles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">simple_cycles</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/cycles.html#simple_cycles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.cycles.simple_cycles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find simple cycles (elementary circuits) of a directed graph.</p>
 <p>A <code class="xref py py-obj docutils literal notranslate"><span class="pre">simple</span> <span class="pre">cycle</span></code>, or <code class="xref py py-obj docutils literal notranslate"><span class="pre">elementary</span> <span class="pre">circuit</span></code>, is a closed path where
 no node appears twice. Two elementary circuits are distinct if they
 are not cyclic permutations of each other.</p>
 <p>This is a nonrecursive, iterator/generator version of Johnson’s
-algorithm <a class="footnote-reference" href="#id5" id="id1">[1]</a>.  There may be better algorithms for some cases <a class="footnote-reference" href="#id6" id="id2">[2]</a> <a class="footnote-reference" href="#id7" id="id3">[3]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX DiGraph</em>) – A directed graph</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>cycle_generator</strong> – A generator that produces elementary cycles of the graph.
-Each cycle is represented by a list of nodes along the cycle.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">generator</td>
-</tr>
-</tbody>
-</table>
+algorithm <a class="footnote-reference brackets" href="#id5" id="id1">1</a>.  There may be better algorithms for some cases <a class="footnote-reference brackets" href="#id6" id="id2">2</a> <a class="footnote-reference brackets" href="#id7" id="id3">3</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX DiGraph</em>) – A directed graph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cycle_generator</strong> – A generator that produces elementary cycles of the graph.
+Each cycle is represented by a list of nodes along the cycle.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>generator</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
@@ -297,36 +297,29 @@ copy your graph and eliminate those nodes or edges before calling</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>The implementation follows pp. 79-80 in <a class="footnote-reference" href="#id5" id="id4">[1]</a>.</p>
+<p>The implementation follows pp. 79-80 in <a class="footnote-reference brackets" href="#id5" id="id4">1</a>.</p>
 <p>The time complexity is <span class="math notranslate nohighlight">\(O((n+e)(c+1))\)</span> for <span class="math notranslate nohighlight">\(n\)</span> nodes, <span class="math notranslate nohighlight">\(e\)</span> edges and <span class="math notranslate nohighlight">\(c\)</span>
 elementary circuits.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> Finding all the elementary circuits of a directed graph.
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id4">2</a>)</span></dt>
+<dd><p>Finding all the elementary circuits of a directed graph.
 D. B. Johnson, SIAM Journal on Computing 4, no. 1, 77-84, 1975.
-<a class="reference external" href="https://doi.org/10.1137/0204007">https://doi.org/10.1137/0204007</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Enumerating the cycles of a digraph: a new preprocessing strategy.
-G. Loizou and P. Thanish, Information Sciences, v. 27, 163-182, 1982.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>A search strategy for the elementary cycles of a directed graph.
+<a class="reference external" href="https://doi.org/10.1137/0204007">https://doi.org/10.1137/0204007</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Enumerating the cycles of a digraph: a new preprocessing strategy.
+G. Loizou and P. Thanish, Information Sciences, v. 27, 163-182, 1982.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>A search strategy for the elementary cycles of a directed graph.
 J.L. Szwarcfiter and P.E. Lauer, BIT NUMERICAL MATHEMATICS,
-v. 16, no. 2, 192-204, 1976.</td></tr>
-</tbody>
-</table>
+v. 16, no. 2, 192-204, 1976.</p>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.cycles.cycle_basis.html#networkx.algorithms.cycles.cycle_basis" title="networkx.algorithms.cycles.cycle_basis"><code class="xref py py-func docutils literal notranslate"><span class="pre">cycle_basis()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.cycles.cycle_basis.html#networkx.algorithms.cycles.cycle_basis" title="networkx.algorithms.cycles.cycle_basis"><code class="xref py py-func docutils literal notranslate"><span class="pre">cycle_basis()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -354,7 +347,7 @@ v. 16, no. 2, 192-204, 1976.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

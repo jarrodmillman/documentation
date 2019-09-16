@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.MultiGraph.get_edge_data &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.MultiGraph.get_edge_data &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -201,29 +201,25 @@
 <h1>networkx.MultiGraph.get_edge_data<a class="headerlink" href="#networkx-multigraph-get-edge-data" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="networkx.MultiGraph.get_edge_data">
-<code class="descclassname">MultiGraph.</code><code class="descname">get_edge_data</code><span class="sig-paren">(</span><em>u</em>, <em>v</em>, <em>key=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/classes/multigraph.html#MultiGraph.get_edge_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.MultiGraph.get_edge_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">MultiGraph.</code><code class="sig-name descname">get_edge_data</code><span class="sig-paren">(</span><em class="sig-param">u</em>, <em class="sig-param">v</em>, <em class="sig-param">key=None</em>, <em class="sig-param">default=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/classes/multigraph.html#MultiGraph.get_edge_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.MultiGraph.get_edge_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the attribute dictionary associated with edge (u, v).</p>
 <p>This is identical to <code class="xref py py-obj docutils literal notranslate"><span class="pre">G[u][v][key]</span></code> except the default is returned
 instead of an exception is the edge doesn’t exist.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>u, v</strong> (<em>nodes</em>)</li>
-<li><strong>default</strong> (<em>any Python object (default=None)</em>) – Value to return if the edge (u, v) is not found.</li>
-<li><strong>key</strong> (<em>hashable identifier, optional (default=None)</em>) – Return data only for the edge with specified key.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u, v</strong> (<em>nodes</em>)</p></li>
+<li><p><strong>default</strong> (<em>any Python object (default=None)</em>) – Value to return if the edge (u, v) is not found.</p></li>
+<li><p><strong>key</strong> (<em>hashable identifier, optional (default=None)</em>) – Return data only for the edge with specified key.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>edge_dict</strong> – The edge attribute dictionary.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>edge_dict</strong> – The edge attribute dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span> <span class="c1"># or MultiDiGraph</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">key</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
@@ -284,7 +280,7 @@ to assign to the edge data associated with an edge.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

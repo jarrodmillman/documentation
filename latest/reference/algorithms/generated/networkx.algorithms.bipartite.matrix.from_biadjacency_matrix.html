@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.matrix.from_biadjacency_matrix &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.matrix.from_biadjacency_matrix &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bipartite.html">Bipartite</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.basic">Basic functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.matching">Matching</a></li>
@@ -265,23 +266,19 @@
 <h1>networkx.algorithms.bipartite.matrix.from_biadjacency_matrix<a class="headerlink" href="#networkx-algorithms-bipartite-matrix-from-biadjacency-matrix" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.matrix.from_biadjacency_matrix">
-<code class="descname">from_biadjacency_matrix</code><span class="sig-paren">(</span><em>A</em>, <em>create_using=None</em>, <em>edge_attribute='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/matrix.html#from_biadjacency_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.matrix.from_biadjacency_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_biadjacency_matrix</code><span class="sig-paren">(</span><em class="sig-param">A</em>, <em class="sig-param">create_using=None</em>, <em class="sig-param">edge_attribute='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/matrix.html#from_biadjacency_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.matrix.from_biadjacency_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new bipartite graph from a biadjacency matrix given as a
 SciPy sparse matrix.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>A</strong> (<em>scipy sparse matrix</em>) – A biadjacency matrix representation of a graph</li>
-<li><strong>create_using</strong> (<em>NetworkX graph</em>) – Use specified graph for result.  The default is Graph()</li>
-<li><strong>edge_attribute</strong> (<em>string</em>) – Name of edge attribute to store matrix numeric value. The data will
-have the same type as the matrix entry (int, float, (real,imag)).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>scipy sparse matrix</em>) – A biadjacency matrix representation of a graph</p></li>
+<li><p><strong>create_using</strong> (<em>NetworkX graph</em>) – Use specified graph for result.  The default is Graph()</p></li>
+<li><p><strong>edge_attribute</strong> (<em>string</em>) – Name of edge attribute to store matrix numeric value. The data will
+have the same type as the matrix entry (int, float, (real,imag)).</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>The nodes are labeled with the attribute <code class="xref py py-obj docutils literal notranslate"><span class="pre">bipartite</span></code> set to an integer
 0 or 1 representing membership in part 0 or part 1 of the bipartite graph.</p>
@@ -291,8 +288,8 @@ type <a class="reference external" href="https://docs.python.org/2/library/funct
 type as <code class="xref py py-obj docutils literal notranslate"><span class="pre">create_using</span></code>) with parallel edges. In this case, <code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_attribute</span></code>
 will be ignored.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.bipartite.matrix.biadjacency_matrix.html#networkx.algorithms.bipartite.matrix.biadjacency_matrix" title="networkx.algorithms.bipartite.matrix.biadjacency_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">biadjacency_matrix()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">from_numpy_matrix()</span></code></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.bipartite.matrix.biadjacency_matrix.html#networkx.algorithms.bipartite.matrix.biadjacency_matrix" title="networkx.algorithms.bipartite.matrix.biadjacency_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">biadjacency_matrix()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">from_numpy_matrix()</span></code></p>
 </div>
 <p class="rubric">References</p>
 <p>[1] <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_matrix#Adjacency_matrix_of_a_bipartite_graph">https://en.wikipedia.org/wiki/Adjacency_matrix#Adjacency_matrix_of_a_bipartite_graph</a></p>
@@ -322,7 +319,7 @@ will be ignored.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

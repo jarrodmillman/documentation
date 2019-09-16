@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix.from_pandas_edgelist &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.convert_matrix.from_pandas_edgelist &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -201,7 +201,7 @@
 <h1>networkx.convert_matrix.from_pandas_edgelist<a class="headerlink" href="#networkx-convert-matrix-from-pandas-edgelist" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.convert_matrix.from_pandas_edgelist">
-<code class="descname">from_pandas_edgelist</code><span class="sig-paren">(</span><em>df</em>, <em>source='source'</em>, <em>target='target'</em>, <em>edge_attr=None</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/convert_matrix.html#from_pandas_edgelist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.convert_matrix.from_pandas_edgelist" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_pandas_edgelist</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">source='source'</em>, <em class="sig-param">target='target'</em>, <em class="sig-param">edge_attr=None</em>, <em class="sig-param">create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/convert_matrix.html#from_pandas_edgelist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.convert_matrix.from_pandas_edgelist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a graph from Pandas DataFrame containing an edge list.</p>
 <p>The Pandas DataFrame should contain at least two columns of node names and
 zero or more columns of edge attributes. Each row will be processed as one
@@ -211,28 +211,24 @@ guaranteed to retain the data type across columns in the row. This is only
 a problem if your row is entirely numeric and a mix of ints and floats. In
 that case, all values will be returned as floats. See the
 DataFrame.iterrows documentation for an example.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>df</strong> (<em>Pandas DataFrame</em>) – An edge list representation of a graph</li>
-<li><strong>source</strong> (<em>str or int</em>) – A valid column name (string or integer) for the source nodes (for the
-directed case).</li>
-<li><strong>target</strong> (<em>str or int</em>) – A valid column name (string or integer) for the target nodes (for the
-directed case).</li>
-<li><strong>edge_attr</strong> (<em>str or int, iterable, True</em>) – A valid column name (str or integer) or list of column names that will
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>Pandas DataFrame</em>) – An edge list representation of a graph</p></li>
+<li><p><strong>source</strong> (<em>str or int</em>) – A valid column name (string or integer) for the source nodes (for the
+directed case).</p></li>
+<li><p><strong>target</strong> (<em>str or int</em>) – A valid column name (string or integer) for the target nodes (for the
+directed case).</p></li>
+<li><p><strong>edge_attr</strong> (<em>str or int, iterable, True</em>) – A valid column name (str or integer) or list of column names that will
 be used to retrieve items from the row and add them to the graph as
-edge attributes. If <a class="reference external" href="https://docs.python.org/2/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, all of the remaining columns will be added.</li>
-<li><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.</li>
+edge attributes. If <a class="reference external" href="https://docs.python.org/2/library/constants.html#True" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, all of the remaining columns will be added.</p></li>
+<li><p><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.convert_matrix.to_pandas_edgelist.html#networkx.convert_matrix.to_pandas_edgelist" title="networkx.convert_matrix.to_pandas_edgelist"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_pandas_edgelist()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.convert_matrix.to_pandas_edgelist.html#networkx.convert_matrix.to_pandas_edgelist" title="networkx.convert_matrix.to_pandas_edgelist"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_pandas_edgelist()</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <p>Simple integer weights on edges:</p>
@@ -291,7 +287,7 @@ edge attributes. If <a class="reference external" href="https://docs.python.org/
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

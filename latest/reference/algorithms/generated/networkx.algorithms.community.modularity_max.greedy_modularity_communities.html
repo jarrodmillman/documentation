@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.community.modularity_max.greedy_modularity_communities &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.community.modularity_max.greedy_modularity_communities &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -263,25 +264,24 @@
 <h1>networkx.algorithms.community.modularity_max.greedy_modularity_communities<a class="headerlink" href="#networkx-algorithms-community-modularity-max-greedy-modularity-communities" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.community.modularity_max.greedy_modularity_communities">
-<code class="descname">greedy_modularity_communities</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/community/modularity_max.html#greedy_modularity_communities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.community.modularity_max.greedy_modularity_communities" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">greedy_modularity_communities</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/community/modularity_max.html#greedy_modularity_communities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.community.modularity_max.greedy_modularity_communities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find communities in graph using Clauset-Newman-Moore greedy modularity
 maximization. This method currently supports the Graph class and does not
 consider edge weights.</p>
 <p>Greedy modularity maximization begins with each node in its own community
 and joins the pair of communities that most increases modularity until no
 such pair exists.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX graph</em>)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Yields sets of nodes, one for each community.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX graph</em>)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Yields sets of nodes, one for each community.</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms.community</span> <span class="k">import</span> <span class="n">greedy_modularity_communities</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
@@ -291,21 +291,17 @@ such pair exists.</p>
 </pre></div>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>M. E. J Newman ‘Networks: An Introduction’, page 224
-Oxford University Press 2011.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td>Clauset, A., Newman, M. E., &amp; Moore, C.
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>M. E. J Newman ‘Networks: An Introduction’, page 224
+Oxford University Press 2011.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">2</span></dt>
+<dd><p>Clauset, A., Newman, M. E., &amp; Moore, C.
 “Finding community structure in very large networks.”
-Physical Review E 70(6), 2004.</td></tr>
-</tbody>
-</table>
+Physical Review E 70(6), 2004.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -332,7 +328,7 @@ Physical Review E 70(6), 2004.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

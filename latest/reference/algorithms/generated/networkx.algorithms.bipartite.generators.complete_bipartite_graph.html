@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.generators.complete_bipartite_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.generators.complete_bipartite_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bipartite.html">Bipartite</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.basic">Basic functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.matching">Matching</a></li>
@@ -265,24 +266,20 @@
 <h1>networkx.algorithms.bipartite.generators.complete_bipartite_graph<a class="headerlink" href="#networkx-algorithms-bipartite-generators-complete-bipartite-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.generators.complete_bipartite_graph">
-<code class="descname">complete_bipartite_graph</code><span class="sig-paren">(</span><em>n1</em>, <em>n2</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/generators.html#complete_bipartite_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.generators.complete_bipartite_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">complete_bipartite_graph</code><span class="sig-paren">(</span><em class="sig-param">n1</em>, <em class="sig-param">n2</em>, <em class="sig-param">create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/generators.html#complete_bipartite_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.generators.complete_bipartite_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the complete bipartite graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">K_{n_1,n_2}</span></code>.</p>
 <p>Composed of two partitions with <code class="xref py py-obj docutils literal notranslate"><span class="pre">n_1</span></code> nodes in the first
 and <code class="xref py py-obj docutils literal notranslate"><span class="pre">n_2</span></code> nodes in the second. Each node in the first is
 connected to each node in the second.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>n1</strong> (<em>integer</em>) – Number of nodes for node set A.</li>
-<li><strong>n2</strong> (<em>integer</em>) – Number of nodes for node set B.</li>
-<li><strong>create_using</strong> (<em>NetworkX graph instance, optional</em>) – Return graph of this type.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n1</strong> (<em>integer</em>) – Number of nodes for node set A.</p></li>
+<li><p><strong>n2</strong> (<em>integer</em>) – Number of nodes for node set B.</p></li>
+<li><p><strong>create_using</strong> (<em>NetworkX graph instance, optional</em>) – Return graph of this type.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Node labels are the integers 0 to <code class="xref py py-obj docutils literal notranslate"><span class="pre">n_1</span> <span class="pre">+</span> <span class="pre">n_2</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
 <p>The nodes are assigned the attribute ‘bipartite’ with the value 0 or 1
@@ -313,7 +310,7 @@ to indicate which bipartite set the node belongs to.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.sparsifiers.spanner &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.sparsifiers.spanner &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,36 +257,32 @@
 <h1>networkx.algorithms.sparsifiers.spanner<a class="headerlink" href="#networkx-algorithms-sparsifiers-spanner" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.sparsifiers.spanner">
-<code class="descname">spanner</code><span class="sig-paren">(</span><em>G</em>, <em>stretch</em>, <em>weight=None</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/sparsifiers.html#spanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.sparsifiers.spanner" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">spanner</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">stretch</em>, <em class="sig-param">weight=None</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/sparsifiers.html#spanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.sparsifiers.spanner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a spanner of the given graph with the given stretch.</p>
 <p>A spanner of a graph G = (V, E) with stretch t is a subgraph
 H = (V, E_S) such that E_S is a subset of E and the distance between
 any pair of nodes in H is at most t times the distance between the
 nodes in G.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – An undirected simple graph.</li>
-<li><strong>stretch</strong> (<em>float</em>) – The stretch of the spanner.</li>
-<li><strong>weight</strong> (<em>object</em>) – The edge attribute to use as distance.</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – An undirected simple graph.</p></li>
+<li><p><strong>stretch</strong> (<em>float</em>) – The stretch of the spanner.</p></li>
+<li><p><strong>weight</strong> (<em>object</em>) – The edge attribute to use as distance.</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A spanner of the given graph with the given stretch.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">NetworkX graph</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If a stretch less than 1 is given.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A spanner of the given graph with the given stretch.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX graph</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If a stretch less than 1 is given.</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This function implements the spanner algorithm by Baswana and Sen,
 see [1].</p>
@@ -326,7 +323,7 @@ Random Struct. Algorithms 30(4): 532-563 (2007).</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

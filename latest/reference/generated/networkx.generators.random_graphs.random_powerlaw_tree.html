@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.random_graphs.random_powerlaw_tree &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.random_graphs.random_powerlaw_tree &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -236,27 +236,23 @@
 <h1>networkx.generators.random_graphs.random_powerlaw_tree<a class="headerlink" href="#networkx-generators-random-graphs-random-powerlaw-tree" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.random_graphs.random_powerlaw_tree">
-<code class="descname">random_powerlaw_tree</code><span class="sig-paren">(</span><em>n</em>, <em>gamma=3</em>, <em>seed=None</em>, <em>tries=100</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/random_graphs.html#random_powerlaw_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.random_graphs.random_powerlaw_tree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">random_powerlaw_tree</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">gamma=3</em>, <em class="sig-param">seed=None</em>, <em class="sig-param">tries=100</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/random_graphs.html#random_powerlaw_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.random_graphs.random_powerlaw_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tree with a power law degree distribution.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>n</strong> (<em>int</em>) – The number of nodes.</li>
-<li><strong>gamma</strong> (<em>float</em>) – Exponent of the power law.</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
-<li><strong>tries</strong> (<em>int</em>) – Number of attempts to adjust the sequence to make it a tree.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The number of nodes.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – Exponent of the power law.</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
+<li><p><strong>tries</strong> (<em>int</em>) – Number of attempts to adjust the sequence to make it a tree.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If no valid sequence is found within the maximum number of
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If no valid sequence is found within the maximum number of
 attempts.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>A trial power law degree sequence is chosen and then elements are
 swapped with new elements from a powerlaw distribution until the
@@ -288,7 +284,7 @@ edges is one smaller than the number of nodes).</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

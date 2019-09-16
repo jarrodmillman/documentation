@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.traversal.breadth_first_search.bfs_successors &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.traversal.breadth_first_search.bfs_successors &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -158,7 +159,7 @@
 <li class="toctree-l4 current"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.breadth_first_search">Breadth First Search</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.beamsearch">Beam search</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.edgedfs">Depth First Search on Edges</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../traversal.html#breadth-first-search-on-edges">Breadth First Search on Edges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../traversal.html#module-networkx.algorithms.traversal.edgebfs">Breadth First Search on Edges</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tree.html">Tree</a></li>
@@ -260,28 +261,24 @@
 <h1>networkx.algorithms.traversal.breadth_first_search.bfs_successors<a class="headerlink" href="#networkx-algorithms-traversal-breadth-first-search-bfs-successors" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.traversal.breadth_first_search.bfs_successors">
-<code class="descname">bfs_successors</code><span class="sig-paren">(</span><em>G</em>, <em>source</em>, <em>depth_limit=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/traversal/breadth_first_search.html#bfs_successors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.traversal.breadth_first_search.bfs_successors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">bfs_successors</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">source</em>, <em class="sig-param">depth_limit=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/traversal/breadth_first_search.html#bfs_successors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.traversal.breadth_first_search.bfs_successors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator of successors in breadth-first-search from source.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>source</strong> (<em>node</em>) – Specify starting node for breadth-first search</li>
-<li><strong>depth_limit</strong> (<em>int, optional(default=len(G))</em>) – Specify the maximum search depth</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>source</strong> (<em>node</em>) – Specify starting node for breadth-first search</p></li>
+<li><p><strong>depth_limit</strong> (<em>int, optional(default=len(G))</em>) – Specify the maximum search depth</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>succ</strong> – (node, successors) iterator where successors is the list of
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>succ</strong> – (node, successors) iterator where successors is the list of
 successors of the node.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">iterator</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>iterator</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">bfs_successors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">0</span><span class="p">)))</span>
@@ -328,7 +325,7 @@ to allow depth limits based on the Wikipedia article
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

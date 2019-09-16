@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.community.random_partition_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.community.random_partition_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -226,37 +226,33 @@
 <h1>networkx.generators.community.random_partition_graph<a class="headerlink" href="#networkx-generators-community-random-partition-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.community.random_partition_graph">
-<code class="descname">random_partition_graph</code><span class="sig-paren">(</span><em>sizes</em>, <em>p_in</em>, <em>p_out</em>, <em>seed=None</em>, <em>directed=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/community.html#random_partition_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.community.random_partition_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">random_partition_graph</code><span class="sig-paren">(</span><em class="sig-param">sizes</em>, <em class="sig-param">p_in</em>, <em class="sig-param">p_out</em>, <em class="sig-param">seed=None</em>, <em class="sig-param">directed=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/community.html#random_partition_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.community.random_partition_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the random partition graph with a partition of sizes.</p>
 <p>A partition graph is a graph of communities with sizes defined by
 s in sizes. Nodes in the same group are connected with probability
 p_in and nodes of different groups are connected with probability
 p_out.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>sizes</strong> (<em>list of ints</em>) – Sizes of groups</li>
-<li><strong>p_in</strong> (<em>float</em>) – probability of edges with in groups</li>
-<li><strong>p_out</strong> (<em>float</em>) – probability of edges between groups</li>
-<li><strong>directed</strong> (<em>boolean optional, default=False</em>) – Whether to create a directed graph</li>
-<li><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
-See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sizes</strong> (<em>list of ints</em>) – Sizes of groups</p></li>
+<li><p><strong>p_in</strong> (<em>float</em>) – probability of edges with in groups</p></li>
+<li><p><strong>p_out</strong> (<em>float</em>) – probability of edges between groups</p></li>
+<li><p><strong>directed</strong> (<em>boolean optional, default=False</em>) – Whether to create a directed graph</p></li>
+<li><p><strong>seed</strong> (<em>integer, random_state, or None (default)</em>) – Indicator of random number generation state.
+See <a class="reference internal" href="../randomness.html#randomness"><span class="std std-ref">Randomness</span></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>G</strong> – random partition graph of size sum(gs)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">NetworkX Graph or <a class="reference internal" href="../classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph">DiGraph</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If p_in or p_out is not in [0,1]</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>G</strong> – random partition graph of size sum(gs)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX Graph or <a class="reference internal" href="../classes/digraph.html#networkx.DiGraph" title="networkx.DiGraph">DiGraph</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If p_in or p_out is not in [0,1]</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_partition_graph</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span><span class="o">.</span><span class="mi">01</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -268,16 +264,15 @@ See <a class="reference internal" href="../randomness.html#randomness"><span cla
 </div>
 <p class="rubric">Notes</p>
 <p>This is a generalization of the planted-l-partition described in
-<a class="footnote-reference" href="#id2" id="id1">[1]</a>.  It allows for the creation of groups of any size.</p>
+<a class="footnote-reference brackets" href="#id2" id="id1">1</a>.  It allows for the creation of groups of any size.</p>
 <p>The partition is store as a graph attribute ‘partition’.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Santo Fortunato ‘Community Detection in Graphs’ Physical Reports
-Volume 486, Issue 3-5 p. 75-174. <a class="reference external" href="https://arxiv.org/abs/0906.0612">https://arxiv.org/abs/0906.0612</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Santo Fortunato ‘Community Detection in Graphs’ Physical Reports
+Volume 486, Issue 3-5 p. 75-174. <a class="reference external" href="https://arxiv.org/abs/0906.0612">https://arxiv.org/abs/0906.0612</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -304,7 +299,7 @@ Volume 486, Issue 3-5 p. 75-174. <a class="reference external" href="https://arx
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

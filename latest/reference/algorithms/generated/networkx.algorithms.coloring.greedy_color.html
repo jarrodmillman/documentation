@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.coloring.greedy_color &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.coloring.greedy_color &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -265,21 +266,18 @@
 <h1>networkx.algorithms.coloring.greedy_color<a class="headerlink" href="#networkx-algorithms-coloring-greedy-color" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.coloring.greedy_color">
-<code class="descname">greedy_color</code><span class="sig-paren">(</span><em>G</em>, <em>strategy='largest_first'</em>, <em>interchange=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/coloring/greedy_coloring.html#greedy_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.coloring.greedy_color" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">greedy_color</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">strategy='largest_first'</em>, <em class="sig-param">interchange=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/coloring/greedy_coloring.html#greedy_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.coloring.greedy_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Color a graph using various strategies of greedy graph coloring.</p>
 <p>Attempts to color a graph using as few colors as possible, where no
 neighbours of a node can have same color as the node itself. The
 given strategy determines the order in which nodes are colored.</p>
-<p>The strategies are described in <a class="footnote-reference" href="#id4" id="id1">[1]</a>, and smallest-last is based on
-<a class="footnote-reference" href="#id5" id="id2">[2]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first">
-<li><p class="first"><strong>G</strong> (<em>NetworkX graph</em>)</p>
-</li>
-<li><p class="first"><strong>strategy</strong> (<em>string or function(G, colors)</em>) – A function (or a string representing a function) that provides
+<p>The strategies are described in <a class="footnote-reference brackets" href="#id4" id="id1">1</a>, and smallest-last is based on
+<a class="footnote-reference brackets" href="#id5" id="id2">2</a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul>
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>strategy</strong> (<em>string or function(G, colors)</em>) – A function (or a string representing a function) that provides
 the coloring strategy, by returning nodes in the ordering they
 should be colored. <code class="docutils literal notranslate"><span class="pre">G</span></code> is the graph, and <code class="docutils literal notranslate"><span class="pre">colors</span></code> is a
 dictionary of the currently assigned colors, keyed by nodes. The
@@ -291,18 +289,18 @@ this function chooses colors greedily.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">strategy</span></code> is a string, it must be one of the following,
 each of which represents one of the built-in strategy functions.</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">'largest_first'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'random_sequential'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'smallest_last'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'independent_set'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'connected_sequential_bfs'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'connected_sequential_dfs'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'connected_sequential'</span></code> (alias for the previous strategy)</li>
-<li><code class="docutils literal notranslate"><span class="pre">'strategy_saturation_largest_first'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'DSATUR'</span></code> (alias for the previous strategy)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'largest_first'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'random_sequential'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'smallest_last'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'independent_set'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'connected_sequential_bfs'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'connected_sequential_dfs'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'connected_sequential'</span></code> (alias for the previous strategy)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'strategy_saturation_largest_first'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'DSATUR'</span></code> (alias for the previous strategy)</p></li>
 </ul>
 </li>
-<li><p class="first"><strong>interchange</strong> (<em>bool</em>) – Will use the color interchange algorithm described by <a class="footnote-reference" href="#id6" id="id3">[3]</a> if set
+<li><p><strong>interchange</strong> (<em>bool</em>) – Will use the color interchange algorithm described by <a class="footnote-reference brackets" href="#id6" id="id3">3</a> if set
 to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code> and
 <code class="docutils literal notranslate"><span class="pre">strategy_independent_set</span></code> do not work with
@@ -311,17 +309,15 @@ strategy function, you cannot rely on the values in the
 <code class="docutils literal notranslate"><span class="pre">colors</span></code> argument.</p>
 </li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
-<li><em>A dictionary with keys representing nodes and values representing</em></li>
-<li><em>corresponding coloring.</em></li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>A dictionary with keys representing nodes and values representing</em></p></li>
+<li><p><em>corresponding coloring.</em></p></li>
 </ul>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">coloring</span><span class="o">.</span><span class="n">greedy_color</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;largest_first&#39;</span><span class="p">)</span>
@@ -329,40 +325,30 @@ strategy function, you cannot rely on the values in the
 <span class="go">True</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXPointlessConcept</span></code> – If <code class="docutils literal notranslate"><span class="pre">strategy</span></code> is <code class="docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code> or
-<code class="docutils literal notranslate"><span class="pre">strategy_independent_set</span></code> and <code class="docutils literal notranslate"><span class="pre">interchange</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXPointlessConcept" title="networkx.NetworkXPointlessConcept"><strong>NetworkXPointlessConcept</strong></a> – If <code class="docutils literal notranslate"><span class="pre">strategy</span></code> is <code class="docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code> or
+<code class="docutils literal notranslate"><span class="pre">strategy_independent_set</span></code> and <code class="docutils literal notranslate"><span class="pre">interchange</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+</dl>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Adrian Kosowski, and Krzysztof Manuszewski,
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Adrian Kosowski, and Krzysztof Manuszewski,
 Classical Coloring of Graphs, Graph Colorings, 2-19, 2004.
-ISBN 0-8218-3458-4.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>David W. Matula, and Leland L. Beck, “Smallest-last
+ISBN 0-8218-3458-4.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>David W. Matula, and Leland L. Beck, “Smallest-last
 ordering and clustering and graph coloring algorithms.” <em>J. ACM</em> 30,
-3 (July 1983), 417–427. &lt;<a class="reference external" href="https://doi.org/10.1145/2402.322385">https://doi.org/10.1145/2402.322385</a>&gt;</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>Maciej M. Sysło, Marsingh Deo, Janusz S. Kowalik,
+3 (July 1983), 417–427. &lt;<a class="reference external" href="https://doi.org/10.1145/2402.322385">https://doi.org/10.1145/2402.322385</a>&gt;</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Maciej M. Sysło, Marsingh Deo, Janusz S. Kowalik,
 Discrete Optimization Algorithms with Pascal Programs, 415-424, 1983.
-ISBN 0-486-45353-7.</td></tr>
-</tbody>
-</table>
+ISBN 0-486-45353-7.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -389,7 +375,7 @@ ISBN 0-486-45353-7.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

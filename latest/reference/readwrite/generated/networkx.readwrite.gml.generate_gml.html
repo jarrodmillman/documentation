@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.gml.generate_gml &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.readwrite.gml.generate_gml &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -212,35 +212,31 @@
 <h1>networkx.readwrite.gml.generate_gml<a class="headerlink" href="#networkx-readwrite-gml-generate-gml" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.readwrite.gml.generate_gml">
-<code class="descname">generate_gml</code><span class="sig-paren">(</span><em>G</em>, <em>stringizer=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/gml.html#generate_gml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.gml.generate_gml" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">generate_gml</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">stringizer=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/gml.html#generate_gml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.gml.generate_gml" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a single entry of the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> in GML format.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – The graph to be converted to GML.</li>
-<li><strong>stringizer</strong> (<em>callable, optional</em>) – A <code class="xref py py-obj docutils literal notranslate"><span class="pre">stringizer</span></code> which converts non-int/non-float/non-dict values into
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – The graph to be converted to GML.</p></li>
+<li><p><strong>stringizer</strong> (<em>callable, optional</em>) – A <code class="xref py py-obj docutils literal notranslate"><span class="pre">stringizer</span></code> which converts non-int/non-float/non-dict values into
 strings. If it cannot convert a value into a string, it should raise a
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code> to indicate that. Default value: None.</li>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code> to indicate that. Default value: None.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lines</strong> – Lines of GML data. Newlines are not appended.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">generator of strings</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">stringizer</span></code> cannot convert a value into a string, or the value to
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>lines</strong> – Lines of GML data. Newlines are not appended.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>generator of strings</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">stringizer</span></code> cannot convert a value into a string, or the value to
 convert is not a string while <code class="xref py py-obj docutils literal notranslate"><span class="pre">stringizer</span></code> is None.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.readwrite.gml.literal_stringizer.html#networkx.readwrite.gml.literal_stringizer" title="networkx.readwrite.gml.literal_stringizer"><code class="xref py py-func docutils literal notranslate"><span class="pre">literal_stringizer()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.readwrite.gml.literal_stringizer.html#networkx.readwrite.gml.literal_stringizer" title="networkx.readwrite.gml.literal_stringizer"><code class="xref py py-func docutils literal notranslate"><span class="pre">literal_stringizer()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>Graph attributes named ‘directed’, ‘multigraph’, ‘node’ or
@@ -318,7 +314,7 @@ specification.  For other data types, you need to explicitly supply a
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

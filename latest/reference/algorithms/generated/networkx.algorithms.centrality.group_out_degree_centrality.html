@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.group_out_degree_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.group_out_degree_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,38 +271,34 @@
 <h1>networkx.algorithms.centrality.group_out_degree_centrality<a class="headerlink" href="#networkx-algorithms-centrality-group-out-degree-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.group_out_degree_centrality">
-<code class="descname">group_out_degree_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>S</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/group.html#group_out_degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.group_out_degree_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">group_out_degree_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">S</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/group.html#group_out_degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.group_out_degree_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the group out-degree centrality for a group of nodes.</p>
 <p>Group out-degree centrality of a group of nodes <span class="math notranslate nohighlight">\(S\)</span> is the fraction
 of non-group members connected to group members by outgoing edges.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</li>
-<li><strong>S</strong> (<em>list or set</em>) – S is a group of nodes which belong to G, for which group in-degree
-centrality is to be calculated.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph.</p></li>
+<li><p><strong>S</strong> (<em>list or set</em>) – S is a group of nodes which belong to G, for which group in-degree
+centrality is to be calculated.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>centrality</strong> – Group out-degree centrality of the group S.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If G is undirected.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NodeNotFound</span></code> – If node(s) in S are not in G.</li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>centrality</strong> – Group out-degree centrality of the group S.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXNotImplemented" title="networkx.NetworkXNotImplemented"><strong>NetworkXNotImplemented</strong></a> – If G is undirected.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NodeNotFound" title="networkx.NodeNotFound"><strong>NodeNotFound</strong></a> – If node(s) in S are not in G.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality" title="networkx.algorithms.centrality.degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">degree_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.group_degree_centrality.html#networkx.algorithms.centrality.group_degree_centrality" title="networkx.algorithms.centrality.group_degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">group_degree_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.group_in_degree_centrality.html#networkx.algorithms.centrality.group_in_degree_centrality" title="networkx.algorithms.centrality.group_in_degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">group_in_degree_centrality()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality" title="networkx.algorithms.centrality.degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">degree_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.group_degree_centrality.html#networkx.algorithms.centrality.group_degree_centrality" title="networkx.algorithms.centrality.group_degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">group_degree_centrality()</span></code></a>, <a class="reference internal" href="networkx.algorithms.centrality.group_in_degree_centrality.html#networkx.algorithms.centrality.group_in_degree_centrality" title="networkx.algorithms.centrality.group_in_degree_centrality"><code class="xref py py-func docutils literal notranslate"><span class="pre">group_in_degree_centrality()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The number of nodes in the group must be a maximum of n - 1 where <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code>
@@ -334,7 +331,7 @@ so for group out-degree centrality, the graph itself is used.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

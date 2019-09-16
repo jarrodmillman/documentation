@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -112,6 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -266,7 +267,7 @@
 <h1>networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover<a class="headerlink" href="#networkx-algorithms-approximation-vertex-cover-min-weighted-vertex-cover" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover">
-<code class="descname">min_weighted_vertex_cover</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/vertex_cover.html#min_weighted_vertex_cover"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">min_weighted_vertex_cover</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/vertex_cover.html#min_weighted_vertex_cover"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an approximate minimum weighted vertex cover.</p>
 <p>The set of nodes returned by this function is guaranteed to be a
 vertex cover, and the total weight of the set is guaranteed to be at
@@ -278,27 +279,23 @@ other words,</p>
 <span class="math notranslate nohighlight">\(S^*\)</span> is the vertex cover of minimum weight out of all vertex
 covers of the graph, and <span class="math notranslate nohighlight">\(w\)</span> is the function that computes the
 sum of the weights of each node in that given set.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>weight</strong> (<em>string, optional (default = None)</em>) – If None, every node has weight 1. If a string, use this node
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>weight</strong> (<em>string, optional (default = None)</em>) – If None, every node has weight 1. If a string, use this node
 attribute as the node weight. A node without this attribute is
-assumed to have weight 1.</li>
+assumed to have weight 1.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>min_weighted_cover</strong> – Returns a set of nodes whose weight sum is no more than twice
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>min_weighted_cover</strong> – Returns a set of nodes whose weight sum is no more than twice
 the weight sum of the minimum weight vertex cover.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>For a directed graph, a vertex cover has the same definition: a set
 of nodes such that each edge in the graph is incident to at least
@@ -310,15 +307,14 @@ iteratively building a cover. The worst-case runtime of this
 implementation is <span class="math notranslate nohighlight">\(O(m \log n)\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number
 of nodes and <span class="math notranslate nohighlight">\(m\)</span> the number of edges in the graph.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Bar-Yehuda, R., and Even, S. (1985). “A local-ratio theorem for
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Bar-Yehuda, R., and Even, S. (1985). “A local-ratio theorem for
 approximating the weighted vertex cover problem.”
 <em>Annals of Discrete Mathematics</em>, 25, 27–46
-&lt;<a class="reference external" href="http://www.cs.technion.ac.il/~reuven/PDF/vc_lr.pdf">http://www.cs.technion.ac.il/~reuven/PDF/vc_lr.pdf</a>&gt;</td></tr>
-</tbody>
-</table>
+&lt;<a class="reference external" href="http://www.cs.technion.ac.il/~reuven/PDF/vc_lr.pdf">http://www.cs.technion.ac.il/~reuven/PDF/vc_lr.pdf</a>&gt;</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -345,7 +341,7 @@ approximating the weighted vertex cover problem.”
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

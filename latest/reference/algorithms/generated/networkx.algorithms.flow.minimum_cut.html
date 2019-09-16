@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.minimum_cut &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.flow.minimum_cut &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -265,25 +266,23 @@
 <h1>networkx.algorithms.flow.minimum_cut<a class="headerlink" href="#networkx-algorithms-flow-minimum-cut" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.flow.minimum_cut">
-<code class="descname">minimum_cut</code><span class="sig-paren">(</span><em>flowG</em>, <em>_s</em>, <em>_t</em>, <em>capacity='capacity'</em>, <em>flow_func=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/flow/maxflow.html#minimum_cut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.flow.minimum_cut" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">minimum_cut</code><span class="sig-paren">(</span><em class="sig-param">flowG</em>, <em class="sig-param">_s</em>, <em class="sig-param">_t</em>, <em class="sig-param">capacity='capacity'</em>, <em class="sig-param">flow_func=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/flow/maxflow.html#minimum_cut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.flow.minimum_cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the value and the node partition of a minimum (s, t)-cut.</p>
 <p>Use the max-flow min-cut theorem, i.e., the capacity of a minimum
 capacity cut is equal to the flow value of a maximum flow.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>flowG</strong> (<em>NetworkX graph</em>) – Edges of the graph are expected to have an attribute called
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flowG</strong> (<em>NetworkX graph</em>) – Edges of the graph are expected to have an attribute called
 ‘capacity’. If this attribute is not present, the edge is
-considered to have infinite capacity.</li>
-<li><strong>_s</strong> (<em>node</em>) – Source node for the flow.</li>
-<li><strong>_t</strong> (<em>node</em>) – Sink node for the flow.</li>
-<li><strong>capacity</strong> (<em>string</em>) – Edges of the graph G are expected to have an attribute capacity
+considered to have infinite capacity.</p></li>
+<li><p><strong>_s</strong> (<em>node</em>) – Source node for the flow.</p></li>
+<li><p><strong>_t</strong> (<em>node</em>) – Sink node for the flow.</p></li>
+<li><p><strong>capacity</strong> (<em>string</em>) – Edges of the graph G are expected to have an attribute capacity
 that indicates how much flow the edge can support. If this
 attribute is not present, the edge is considered to have
-infinite capacity. Default value: ‘capacity’.</li>
-<li><strong>flow_func</strong> (<em>function</em>) – A function for computing the maximum flow among a pair of nodes
+infinite capacity. Default value: ‘capacity’.</p></li>
+<li><p><strong>flow_func</strong> (<em>function</em>) – A function for computing the maximum flow among a pair of nodes
 in a capacitated graph. The function has to accept at least three
 parameters: a Graph or Digraph, a source node, and a target node.
 And return a residual network that follows NetworkX conventions
@@ -291,27 +290,25 @@ And return a residual network that follows NetworkX conventions
 flow function (<a class="reference internal" href="networkx.algorithms.flow.preflow_push.html#networkx.algorithms.flow.preflow_push" title="networkx.algorithms.flow.preflow_push"><code class="xref py py-meth docutils literal notranslate"><span class="pre">preflow_push()</span></code></a>) is used. See below for
 alternative algorithms. The choice of the default function may change
 from version to version and should not be relied on. Default value:
-None.</li>
-<li><strong>kwargs</strong> (<em>Any other keyword parameter is passed to the function that</em>) – computes the maximum flow.</li>
+None.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any other keyword parameter is passed to the function that</em>) – computes the maximum flow.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
-<li><strong>cut_value</strong> (<em>integer, float</em>) – Value of the minimum cut.</li>
-<li><strong>partition</strong> (<em>pair of node sets</em>) – A partitioning of the nodes that defines a minimum cut.</li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>cut_value</strong> (<em>integer, float</em>) – Value of the minimum cut.</p></li>
+<li><p><strong>partition</strong> (<em>pair of node sets</em>) – A partitioning of the nodes that defines a minimum cut.</p></li>
 </ul>
 </p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnbounded</span></code> – If the graph has a path of infinite capacity, all cuts have
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXUnbounded" title="networkx.NetworkXUnbounded"><strong>NetworkXUnbounded</strong></a> – If the graph has a path of infinite capacity, all cuts have
 infinite capacity and the function raises a NetworkXError.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.flow.maximum_flow.html#networkx.algorithms.flow.maximum_flow" title="networkx.algorithms.flow.maximum_flow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">maximum_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.maximum_flow_value.html#networkx.algorithms.flow.maximum_flow_value" title="networkx.algorithms.flow.maximum_flow_value"><code class="xref py py-meth docutils literal notranslate"><span class="pre">maximum_flow_value()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.minimum_cut_value.html#networkx.algorithms.flow.minimum_cut_value" title="networkx.algorithms.flow.minimum_cut_value"><code class="xref py py-meth docutils literal notranslate"><span class="pre">minimum_cut_value()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.edmonds_karp.html#networkx.algorithms.flow.edmonds_karp" title="networkx.algorithms.flow.edmonds_karp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edmonds_karp()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.preflow_push.html#networkx.algorithms.flow.preflow_push" title="networkx.algorithms.flow.preflow_push"><code class="xref py py-meth docutils literal notranslate"><span class="pre">preflow_push()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.shortest_augmenting_path.html#networkx.algorithms.flow.shortest_augmenting_path" title="networkx.algorithms.flow.shortest_augmenting_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shortest_augmenting_path()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.flow.maximum_flow.html#networkx.algorithms.flow.maximum_flow" title="networkx.algorithms.flow.maximum_flow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">maximum_flow()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.maximum_flow_value.html#networkx.algorithms.flow.maximum_flow_value" title="networkx.algorithms.flow.maximum_flow_value"><code class="xref py py-meth docutils literal notranslate"><span class="pre">maximum_flow_value()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.minimum_cut_value.html#networkx.algorithms.flow.minimum_cut_value" title="networkx.algorithms.flow.minimum_cut_value"><code class="xref py py-meth docutils literal notranslate"><span class="pre">minimum_cut_value()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.edmonds_karp.html#networkx.algorithms.flow.edmonds_karp" title="networkx.algorithms.flow.edmonds_karp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edmonds_karp()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.preflow_push.html#networkx.algorithms.flow.preflow_push" title="networkx.algorithms.flow.preflow_push"><code class="xref py py-meth docutils literal notranslate"><span class="pre">preflow_push()</span></code></a>, <a class="reference internal" href="networkx.algorithms.flow.shortest_augmenting_path.html#networkx.algorithms.flow.shortest_augmenting_path" title="networkx.algorithms.flow.shortest_augmenting_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shortest_augmenting_path()</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The function used in the flow_func parameter has to return a residual
@@ -403,7 +400,7 @@ minimum cut by using the flow_func parameter.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

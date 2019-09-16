@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.graph6.from_graph6_bytes &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.readwrite.graph6.from_graph6_bytes &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -208,30 +208,26 @@
 <h1>networkx.readwrite.graph6.from_graph6_bytes<a class="headerlink" href="#networkx-readwrite-graph6-from-graph6-bytes" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.readwrite.graph6.from_graph6_bytes">
-<code class="descname">from_graph6_bytes</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/graph6.html#from_graph6_bytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.graph6.from_graph6_bytes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_graph6_bytes</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/graph6.html#from_graph6_bytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.graph6.from_graph6_bytes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a simple undirected graph in graph6 format from string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>string</strong> (<em>string</em>) – Data in graph6 format, without a trailing newline.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>G</strong></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="../../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If the string is unable to be parsed in graph6 format</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – If any character <code class="docutils literal notranslate"><span class="pre">c</span></code> in the input string does not satisfy
-<code class="docutils literal notranslate"><span class="pre">63</span> <span class="pre">&lt;=</span> <span class="pre">ord(c)</span> <span class="pre">&lt;</span> <span class="pre">127</span></code>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>string</em>) – Data in graph6 format, without a trailing newline.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>G</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../classes/graph.html#networkx.Graph" title="networkx.Graph">Graph</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If the string is unable to be parsed in graph6 format</p></li>
+<li><p><strong>ValueError</strong> – If any character <code class="docutils literal notranslate"><span class="pre">c</span></code> in the input string does not satisfy
+<code class="docutils literal notranslate"><span class="pre">63</span> <span class="pre">&lt;=</span> <span class="pre">ord(c)</span> <span class="pre">&lt;</span> <span class="pre">127</span></code>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_graph6_bytes</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;A_&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
@@ -239,17 +235,16 @@
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.readwrite.graph6.read_graph6.html#networkx.readwrite.graph6.read_graph6" title="networkx.readwrite.graph6.read_graph6"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_graph6()</span></code></a>, <a class="reference internal" href="networkx.readwrite.graph6.write_graph6.html#networkx.readwrite.graph6.write_graph6" title="networkx.readwrite.graph6.write_graph6"><code class="xref py py-func docutils literal notranslate"><span class="pre">write_graph6()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.readwrite.graph6.read_graph6.html#networkx.readwrite.graph6.read_graph6" title="networkx.readwrite.graph6.read_graph6"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_graph6()</span></code></a>, <a class="reference internal" href="networkx.readwrite.graph6.write_graph6.html#networkx.readwrite.graph6.write_graph6" title="networkx.readwrite.graph6.write_graph6"><code class="xref py py-func docutils literal notranslate"><span class="pre">write_graph6()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Graph6 specification
-&lt;<a class="reference external" href="http://users.cecs.anu.edu.au/~bdm/data/formats.html">http://users.cecs.anu.edu.au/~bdm/data/formats.html</a>&gt;</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Graph6 specification
+&lt;<a class="reference external" href="http://users.cecs.anu.edu.au/~bdm/data/formats.html">http://users.cecs.anu.edu.au/~bdm/data/formats.html</a>&gt;</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -276,7 +271,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

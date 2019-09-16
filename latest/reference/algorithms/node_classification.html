@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Node Classification &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Node Classification &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -267,7 +268,7 @@ For example:</p>
 <span class="go">EdgeView([(0, 1), (1, 2), (2, 3)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">node_classification</span><span class="o">.</span><span class="n">harmonic_function</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">node_classification</span><span class="o">.</span><span class="n">harmonic_function</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  
 <span class="go">[&#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;]</span>
 </pre></div>
 </div>
@@ -278,14 +279,14 @@ For example:</p>
 <p>Zhu, X., Ghahramani, Z., &amp; Lafferty, J. (2003, August).
 Semi-supervised learning using gaussian fields and harmonic functions.
 In ICML (Vol. 3, pp. 912-919).</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.node_classification.hmn.harmonic_function.html#networkx.algorithms.node_classification.hmn.harmonic_function" title="networkx.algorithms.node_classification.hmn.harmonic_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonic_function</span></code></a>(G[,&nbsp;max_iter,&nbsp;label_name])</td>
-<td>Node classification by Harmonic function</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.node_classification.hmn.harmonic_function.html#networkx.algorithms.node_classification.hmn.harmonic_function" title="networkx.algorithms.node_classification.hmn.harmonic_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonic_function</span></code></a>(G[, max_iter, label_name])</p></td>
+<td><p>Node classification by Harmonic function</p></td>
 </tr>
 </tbody>
 </table>
@@ -297,14 +298,14 @@ In ICML (Vol. 3, pp. 912-919).</p>
 <p>Zhou, D., Bousquet, O., Lal, T. N., Weston, J., &amp; Schölkopf, B. (2004).
 Learning with local and global consistency.
 Advances in neural information processing systems, 16(16), 321-328.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.node_classification.lgc.local_and_global_consistency.html#networkx.algorithms.node_classification.lgc.local_and_global_consistency" title="networkx.algorithms.node_classification.lgc.local_and_global_consistency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_and_global_consistency</span></code></a>(G[,&nbsp;alpha,&nbsp;…])</td>
-<td>Node classification by Local and Global Consistency</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.node_classification.lgc.local_and_global_consistency.html#networkx.algorithms.node_classification.lgc.local_and_global_consistency" title="networkx.algorithms.node_classification.lgc.local_and_global_consistency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_and_global_consistency</span></code></a>(G[, alpha, …])</p></td>
+<td><p>Node classification by Local and Global Consistency</p></td>
 </tr>
 </tbody>
 </table>
@@ -333,7 +334,7 @@ Advances in neural information processing systems, 16(16), 321-328.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

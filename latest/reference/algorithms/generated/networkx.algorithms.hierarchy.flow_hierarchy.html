@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.hierarchy.flow_hierarchy &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.hierarchy.flow_hierarchy &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -256,45 +257,40 @@
 <h1>networkx.algorithms.hierarchy.flow_hierarchy<a class="headerlink" href="#networkx-algorithms-hierarchy-flow-hierarchy" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.hierarchy.flow_hierarchy">
-<code class="descname">flow_hierarchy</code><span class="sig-paren">(</span><em>G</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/hierarchy.html#flow_hierarchy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.hierarchy.flow_hierarchy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">flow_hierarchy</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/hierarchy.html#flow_hierarchy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.hierarchy.flow_hierarchy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the flow hierarchy of a directed network.</p>
 <p>Flow hierarchy is defined as the fraction of edges not participating
-in cycles in a directed graph <a class="footnote-reference" href="#id3" id="id1">[1]</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>DiGraph or MultiDiGraph</em>) – A directed graph</li>
-<li><strong>weight</strong> (<em>key,optional (default=None)</em>) – Attribute to use for node weights. If None the weight defaults to 1.</li>
+in cycles in a directed graph <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>DiGraph or MultiDiGraph</em>) – A directed graph</p></li>
+<li><p><strong>weight</strong> (<em>key,optional (default=None)</em>) – Attribute to use for node weights. If None the weight defaults to 1.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>h</strong> – Flow hierarchy value</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>h</strong> – Flow hierarchy value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#float" title="(in Python v2.7)">float</a></p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
-<p>The algorithm described in <a class="footnote-reference" href="#id3" id="id2">[1]</a> computes the flow hierarchy through
+<p>The algorithm described in <a class="footnote-reference brackets" href="#id3" id="id2">1</a> computes the flow hierarchy through
 exponentiation of the adjacency matrix.  This function implements an
 alternative approach that finds strongly connected components.
 An edge is in a cycle if and only if it is in a strongly connected
 component, which can be found in <span class="math notranslate nohighlight">\(O(m)\)</span> time using Tarjan’s algorithm.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Luo, J.; Magee, C.L. (2011),
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Luo, J.; Magee, C.L. (2011),
 Detecting evolving patterns of self-organizing networks by flow
 hierarchy measurement, Complexity, Volume 16 Issue 6 53-61.
 DOI: 10.1002/cplx.20368
-<a class="reference external" href="http://web.mit.edu/~cmagee/www/documents/28-DetectingEvolvingPatterns_FlowHierarchy.pdf">http://web.mit.edu/~cmagee/www/documents/28-DetectingEvolvingPatterns_FlowHierarchy.pdf</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://web.mit.edu/~cmagee/www/documents/28-DetectingEvolvingPatterns_FlowHierarchy.pdf">http://web.mit.edu/~cmagee/www/documents/28-DetectingEvolvingPatterns_FlowHierarchy.pdf</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -321,7 +317,7 @@ DOI: 10.1002/cplx.20368
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

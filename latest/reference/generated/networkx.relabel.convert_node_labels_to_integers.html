@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.relabel.convert_node_labels_to_integers &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.relabel.convert_node_labels_to_integers &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -194,36 +194,32 @@
 <h1>networkx.relabel.convert_node_labels_to_integers<a class="headerlink" href="#networkx-relabel-convert-node-labels-to-integers" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.relabel.convert_node_labels_to_integers">
-<code class="descname">convert_node_labels_to_integers</code><span class="sig-paren">(</span><em>G</em>, <em>first_label=0</em>, <em>ordering='default'</em>, <em>label_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/relabel.html#convert_node_labels_to_integers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.relabel.convert_node_labels_to_integers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">convert_node_labels_to_integers</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">first_label=0</em>, <em class="sig-param">ordering='default'</em>, <em class="sig-param">label_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/relabel.html#convert_node_labels_to_integers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.relabel.convert_node_labels_to_integers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a copy of the graph G with the nodes relabeled using
 consecutive integers.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph</li>
-<li><strong>first_label</strong> (<em>int, optional (default=0)</em>) – An integer specifying the starting offset in numbering nodes.
-The new integer labels are numbered first_label, …, n-1+first_label.</li>
-<li><strong>ordering</strong> (<em>string</em>) – “default” : inherit node ordering from G.nodes()
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph</p></li>
+<li><p><strong>first_label</strong> (<em>int, optional (default=0)</em>) – An integer specifying the starting offset in numbering nodes.
+The new integer labels are numbered first_label, …, n-1+first_label.</p></li>
+<li><p><strong>ordering</strong> (<em>string</em>) – “default” : inherit node ordering from G.nodes()
 “sorted”  : inherit node ordering from sorted(G.nodes())
 “increasing degree” : nodes are sorted by increasing degree
-“decreasing degree” : nodes are sorted by decreasing degree</li>
-<li><strong>label_attribute</strong> (<em>string, optional (default=None)</em>) – Name of node attribute to store old label.  If None no attribute
-is created.</li>
+“decreasing degree” : nodes are sorted by decreasing degree</p></li>
+<li><p><strong>label_attribute</strong> (<em>string, optional (default=None)</em>) – Name of node attribute to store old label.  If None no attribute
+is created.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Node and edge attribute data are copied to the new (relabeled) graph.</p>
 <p>There is no guarantee that the relabeling of nodes to integers will
 give the same two integers for two (even identical graphs).
 Use the <code class="xref py py-obj docutils literal notranslate"><span class="pre">ordering</span></code> argument to try to preserve the order.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.relabel.relabel_nodes.html#networkx.relabel.relabel_nodes" title="networkx.relabel.relabel_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">relabel_nodes()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.relabel.relabel_nodes.html#networkx.relabel.relabel_nodes" title="networkx.relabel.relabel_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">relabel_nodes()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -251,7 +247,7 @@ Use the <code class="xref py py-obj docutils literal notranslate"><span class="p
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

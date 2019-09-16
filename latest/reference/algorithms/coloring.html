@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Coloring &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Coloring &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bridges.html">Bridges</a></li>
@@ -261,50 +262,50 @@
             
   <div class="section" id="module-networkx.algorithms.coloring">
 <span id="coloring"></span><h1>Coloring<a class="headerlink" href="#module-networkx.algorithms.coloring" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.greedy_color.html#networkx.algorithms.coloring.greedy_color" title="networkx.algorithms.coloring.greedy_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">greedy_color</span></code></a>(G[,&nbsp;strategy,&nbsp;interchange])</td>
-<td>Color a graph using various strategies of greedy graph coloring.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.greedy_color.html#networkx.algorithms.coloring.greedy_color" title="networkx.algorithms.coloring.greedy_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">greedy_color</span></code></a>(G[, strategy, interchange])</p></td>
+<td><p>Color a graph using various strategies of greedy graph coloring.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.equitable_color.html#networkx.algorithms.coloring.equitable_color" title="networkx.algorithms.coloring.equitable_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equitable_color</span></code></a>(G,&nbsp;num_colors)</td>
-<td>Provides equitable (r + 1)-coloring for nodes of G in O(r * n^2) time if deg(G) &lt;= r.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.equitable_color.html#networkx.algorithms.coloring.equitable_color" title="networkx.algorithms.coloring.equitable_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equitable_color</span></code></a>(G, num_colors)</p></td>
+<td><p>Provides equitable (r + 1)-coloring for nodes of G in O(r * n^2) time if deg(G) &lt;= r.</p></td>
 </tr>
 </tbody>
 </table>
 <p>Some node ordering strategies are provided for use with <a class="reference internal" href="generated/networkx.algorithms.coloring.greedy_color.html#networkx.algorithms.coloring.greedy_color" title="networkx.algorithms.coloring.greedy_color"><code class="xref py py-func docutils literal notranslate"><span class="pre">greedy_color()</span></code></a>.</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_connected_sequential.html#networkx.algorithms.coloring.strategy_connected_sequential" title="networkx.algorithms.coloring.strategy_connected_sequential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_connected_sequential</span></code></a>(G,&nbsp;colors[,&nbsp;…])</td>
-<td>Returns an iterable over nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> in the order given by a breadth-first or depth-first traversal.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_connected_sequential.html#networkx.algorithms.coloring.strategy_connected_sequential" title="networkx.algorithms.coloring.strategy_connected_sequential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_connected_sequential</span></code></a>(G, colors[, …])</p></td>
+<td><p>Returns an iterable over nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> in the order given by a breadth-first or depth-first traversal.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_connected_sequential_dfs.html#networkx.algorithms.coloring.strategy_connected_sequential_dfs" title="networkx.algorithms.coloring.strategy_connected_sequential_dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_connected_sequential_dfs</span></code></a>(G,&nbsp;colors)</td>
-<td>Returns an iterable over nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> in the order given by a depth-first traversal.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_connected_sequential_dfs.html#networkx.algorithms.coloring.strategy_connected_sequential_dfs" title="networkx.algorithms.coloring.strategy_connected_sequential_dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_connected_sequential_dfs</span></code></a>(G, colors)</p></td>
+<td><p>Returns an iterable over nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> in the order given by a depth-first traversal.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_connected_sequential_bfs.html#networkx.algorithms.coloring.strategy_connected_sequential_bfs" title="networkx.algorithms.coloring.strategy_connected_sequential_bfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_connected_sequential_bfs</span></code></a>(G,&nbsp;colors)</td>
-<td>Returns an iterable over nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> in the order given by a breadth-first traversal.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_connected_sequential_bfs.html#networkx.algorithms.coloring.strategy_connected_sequential_bfs" title="networkx.algorithms.coloring.strategy_connected_sequential_bfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_connected_sequential_bfs</span></code></a>(G, colors)</p></td>
+<td><p>Returns an iterable over nodes in <code class="docutils literal notranslate"><span class="pre">G</span></code> in the order given by a breadth-first traversal.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_independent_set.html#networkx.algorithms.coloring.strategy_independent_set" title="networkx.algorithms.coloring.strategy_independent_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_independent_set</span></code></a>(G,&nbsp;colors)</td>
-<td>Uses a greedy independent set removal strategy to determine the colors.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_independent_set.html#networkx.algorithms.coloring.strategy_independent_set" title="networkx.algorithms.coloring.strategy_independent_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_independent_set</span></code></a>(G, colors)</p></td>
+<td><p>Uses a greedy independent set removal strategy to determine the colors.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_largest_first.html#networkx.algorithms.coloring.strategy_largest_first" title="networkx.algorithms.coloring.strategy_largest_first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_largest_first</span></code></a>(G,&nbsp;colors)</td>
-<td>Returns a list of the nodes of <code class="docutils literal notranslate"><span class="pre">G</span></code> in decreasing order by degree.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_largest_first.html#networkx.algorithms.coloring.strategy_largest_first" title="networkx.algorithms.coloring.strategy_largest_first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_largest_first</span></code></a>(G, colors)</p></td>
+<td><p>Returns a list of the nodes of <code class="docutils literal notranslate"><span class="pre">G</span></code> in decreasing order by degree.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_random_sequential.html#networkx.algorithms.coloring.strategy_random_sequential" title="networkx.algorithms.coloring.strategy_random_sequential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_random_sequential</span></code></a>(G,&nbsp;colors[,&nbsp;seed])</td>
-<td>Returns a random permutation of the nodes of <code class="docutils literal notranslate"><span class="pre">G</span></code> as a list.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_random_sequential.html#networkx.algorithms.coloring.strategy_random_sequential" title="networkx.algorithms.coloring.strategy_random_sequential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_random_sequential</span></code></a>(G, colors[, seed])</p></td>
+<td><p>Returns a random permutation of the nodes of <code class="docutils literal notranslate"><span class="pre">G</span></code> as a list.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_saturation_largest_first.html#networkx.algorithms.coloring.strategy_saturation_largest_first" title="networkx.algorithms.coloring.strategy_saturation_largest_first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code></a>(G,&nbsp;colors)</td>
-<td>Iterates over all the nodes of <code class="docutils literal notranslate"><span class="pre">G</span></code> in “saturation order” (also known as “DSATUR”).</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_saturation_largest_first.html#networkx.algorithms.coloring.strategy_saturation_largest_first" title="networkx.algorithms.coloring.strategy_saturation_largest_first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code></a>(G, colors)</p></td>
+<td><p>Iterates over all the nodes of <code class="docutils literal notranslate"><span class="pre">G</span></code> in “saturation order” (also known as “DSATUR”).</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_smallest_last.html#networkx.algorithms.coloring.strategy_smallest_last" title="networkx.algorithms.coloring.strategy_smallest_last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_smallest_last</span></code></a>(G,&nbsp;colors)</td>
-<td>Returns a deque of the nodes of <code class="docutils literal notranslate"><span class="pre">G</span></code>, “smallest” last.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.coloring.strategy_smallest_last.html#networkx.algorithms.coloring.strategy_smallest_last" title="networkx.algorithms.coloring.strategy_smallest_last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strategy_smallest_last</span></code></a>(G, colors)</p></td>
+<td><p>Returns a deque of the nodes of <code class="docutils literal notranslate"><span class="pre">G</span></code>, “smallest” last.</p></td>
 </tr>
 </tbody>
 </table>
@@ -332,7 +333,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted.negative_edge_cycle &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted.negative_edge_cycle &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -263,16 +264,13 @@
 <h1>networkx.algorithms.shortest_paths.weighted.negative_edge_cycle<a class="headerlink" href="#networkx-algorithms-shortest-paths-weighted-negative-edge-cycle" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.shortest_paths.weighted.negative_edge_cycle">
-<code class="descname">negative_edge_cycle</code><span class="sig-paren">(</span><em>G</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/shortest_paths/weighted.html#negative_edge_cycle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.shortest_paths.weighted.negative_edge_cycle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">negative_edge_cycle</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/shortest_paths/weighted.html#negative_edge_cycle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.shortest_paths.weighted.negative_edge_cycle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if there exists a negative edge cycle anywhere in G.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first">
-<li><p class="first"><strong>G</strong> (<em>NetworkX graph</em>)</p>
-</li>
-<li><p class="first"><strong>weight</strong> (<em>string or function</em>) – If this is a string, then edge weights will be accessed via the
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul>
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>weight</strong> (<em>string or function</em>) – If this is a string, then edge weights will be accessed via the
 edge attribute with this key (that is, the weight of the edge
 joining <code class="xref py py-obj docutils literal notranslate"><span class="pre">u</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> will be <code class="docutils literal notranslate"><span class="pre">G.edges[u,</span> <span class="pre">v][weight]</span></code>). If no
 such edge attribute exists, the weight of the edge is assumed to
@@ -284,16 +282,14 @@ dictionary of edge attributes for that edge. The function must
 return a number.</p>
 </li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>negative_cycle</strong> – True if a negative edge cycle exists, otherwise False.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>negative_cycle</strong> – True if a negative edge cycle exists, otherwise False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)">bool</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">create_using</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
@@ -337,7 +333,7 @@ node.  It then removes that extra node.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

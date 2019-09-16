@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.edge_load_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.edge_load_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,33 +271,29 @@
 <h1>networkx.algorithms.centrality.edge_load_centrality<a class="headerlink" href="#networkx-algorithms-centrality-edge-load-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.edge_load_centrality">
-<code class="descname">edge_load_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>cutoff=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/load.html#edge_load_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.edge_load_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">edge_load_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">cutoff=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/load.html#edge_load_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.edge_load_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute edge load.</p>
 <p>WARNING: This concept of edge load has not been analysed
 or discussed outside of NetworkX that we know of.
 It is based loosely on load_centrality in the sense that
 it counts the number of shortest paths which cross each edge.
 This function is for demonstration and testing purposes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A networkx graph</li>
-<li><strong>cutoff</strong> (<em>bool, optional (default=False)</em>) – If specified, only consider paths of length &lt;= cutoff.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A networkx graph</p></li>
+<li><p><strong>cutoff</strong> (<em>bool, optional (default=False)</em>) – If specified, only consider paths of length &lt;= cutoff.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
-<li><em>A dict keyed by edge 2-tuple to the number of shortest paths</em></li>
-<li><em>which use that edge. Where more than one path is shortest</em></li>
-<li><em>the count is divided equally among paths.</em></li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>A dict keyed by edge 2-tuple to the number of shortest paths</em></p></li>
+<li><p><em>which use that edge. Where more than one path is shortest</em></p></li>
+<li><p><em>the count is divided equally among paths.</em></p></li>
 </ul>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -323,7 +320,7 @@ This function is for demonstration and testing purposes.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.core.onion_layers &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.core.onion_layers &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -262,54 +263,50 @@
 <h1>networkx.algorithms.core.onion_layers<a class="headerlink" href="#networkx-algorithms-core-onion-layers" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.core.onion_layers">
-<code class="descname">onion_layers</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/core.html#onion_layers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.core.onion_layers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">onion_layers</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/core.html#onion_layers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.core.onion_layers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the layer of each vertex in the onion decomposition of the graph.</p>
 <p>The onion decomposition refines the k-core decomposition by providing
 information on the internal organization of each k-shell. It is usually
 used alongside the <code class="xref py py-obj docutils literal notranslate"><span class="pre">core</span> <span class="pre">numbers</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX graph</em>) – A simple graph without self loops or parallel edges</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>od_layers</strong> – A dictionary keyed by vertex to the onion layer. The layers are
-contiguous integers starting at 1.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dictionary</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – The onion decomposition is not implemented for graphs with self loops
-or parallel edges or for directed graphs.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX graph</em>) – A simple graph without self loops or parallel edges</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>od_layers</strong> – A dictionary keyed by vertex to the onion layer. The layers are
+contiguous integers starting at 1.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – The onion decomposition is not implemented for graphs with self loops
+or parallel edges or for directed graphs.</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>Not implemented for graphs with parallel edges or self loops.</p>
 <p>Not implemented for directed graphs.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.core.core_number.html#networkx.algorithms.core.core_number" title="networkx.algorithms.core.core_number"><code class="xref py py-func docutils literal notranslate"><span class="pre">core_number()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.core.core_number.html#networkx.algorithms.core.core_number" title="networkx.algorithms.core.core_number"><code class="xref py py-func docutils literal notranslate"><span class="pre">core_number()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Multi-scale structure and topological anomaly detection via a new
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Multi-scale structure and topological anomaly detection via a new
 network statistic: The onion decomposition
 L. Hébert-Dufresne, J. A. Grochow, and A. Allard
 Scientific Reports 6, 31708 (2016)
-<a class="reference external" href="http://doi.org/10.1038/srep31708">http://doi.org/10.1038/srep31708</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td>Percolation and the effective structure of complex networks
+<a class="reference external" href="http://doi.org/10.1038/srep31708">http://doi.org/10.1038/srep31708</a></p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">2</span></dt>
+<dd><p>Percolation and the effective structure of complex networks
 A. Allard and L. Hébert-Dufresne
 Physical Review X 9, 011023 (2019)
-<a class="reference external" href="http://doi.org/10.1103/PhysRevX.9.011023">http://doi.org/10.1103/PhysRevX.9.011023</a></td></tr>
-</tbody>
-</table>
+<a class="reference external" href="http://doi.org/10.1103/PhysRevX.9.011023">http://doi.org/10.1103/PhysRevX.9.011023</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -336,7 +333,7 @@ Physical Review X 9, 011023 (2019)
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

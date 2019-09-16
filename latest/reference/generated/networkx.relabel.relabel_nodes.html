@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.relabel.relabel_nodes &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.relabel.relabel_nodes &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -194,22 +194,18 @@
 <h1>networkx.relabel.relabel_nodes<a class="headerlink" href="#networkx-relabel-relabel-nodes" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.relabel.relabel_nodes">
-<code class="descname">relabel_nodes</code><span class="sig-paren">(</span><em>G</em>, <em>mapping</em>, <em>copy=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/relabel.html#relabel_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.relabel.relabel_nodes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">relabel_nodes</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">mapping</em>, <em class="sig-param">copy=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/relabel.html#relabel_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.relabel.relabel_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Relabel the nodes of the graph G.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph</li>
-<li><strong>mapping</strong> (<em>dictionary</em>) – A dictionary with the old labels as keys and new labels as values.
-A partial mapping is allowed.</li>
-<li><strong>copy</strong> (<em>bool (optional, default=True)</em>) – If True return a copy, or if False relabel the nodes in place.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph</p></li>
+<li><p><strong>mapping</strong> (<em>dictionary</em>) – A dictionary with the old labels as keys and new labels as values.
+A partial mapping is allowed.</p></li>
+<li><p><strong>copy</strong> (<em>bool (optional, default=True)</em>) – If True return a copy, or if False relabel the nodes in place.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>To create a new graph with nodes relabeled according to a given
 dictionary:</p>
@@ -266,8 +262,8 @@ In cases of circular mappings (e.g. a-&gt;b, b-&gt;a), modifying the
 graph is not possible in-place and an exception is raised.
 In that case, use copy=True.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.relabel.convert_node_labels_to_integers.html#networkx.relabel.convert_node_labels_to_integers" title="networkx.relabel.convert_node_labels_to_integers"><code class="xref py py-func docutils literal notranslate"><span class="pre">convert_node_labels_to_integers()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.relabel.convert_node_labels_to_integers.html#networkx.relabel.convert_node_labels_to_integers" title="networkx.relabel.convert_node_labels_to_integers"><code class="xref py py-func docutils literal notranslate"><span class="pre">convert_node_labels_to_integers()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -295,7 +291,7 @@ In that case, use copy=True.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.gexf.write_gexf &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.readwrite.gexf.write_gexf &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -211,28 +211,24 @@
 <h1>networkx.readwrite.gexf.write_gexf<a class="headerlink" href="#networkx-readwrite-gexf-write-gexf" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.readwrite.gexf.write_gexf">
-<code class="descname">write_gexf</code><span class="sig-paren">(</span><em>G</em>, <em>path</em>, <em>encoding='utf-8'</em>, <em>prettyprint=True</em>, <em>version='1.2draft'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/gexf.html#write_gexf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.gexf.write_gexf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">write_gexf</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">path</em>, <em class="sig-param">encoding='utf-8'</em>, <em class="sig-param">prettyprint=True</em>, <em class="sig-param">version='1.2draft'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/gexf.html#write_gexf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.readwrite.gexf.write_gexf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write G in GEXF format to path.</p>
 <p>“GEXF (Graph Exchange XML Format) is a language for describing
-complex networks structures, their associated data and dynamics” <a class="footnote-reference" href="#id3" id="id1">[1]</a>.</p>
+complex networks structures, their associated data and dynamics” <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
 <p>Node attributes are checked according to the version of the GEXF
 schemas used for parameters which are not user defined,
-e.g. visualization ‘viz’ <a class="footnote-reference" href="#id4" id="id2">[2]</a>. See example for usage.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>G</strong> (<em>graph</em>) – A NetworkX graph</li>
-<li><strong>path</strong> (<em>file or string</em>) – File or file name to write.
-File names ending in .gz or .bz2 will be compressed.</li>
-<li><strong>encoding</strong> (<em>string (optional, default: ‘utf-8’)</em>) – Encoding for text data.</li>
-<li><strong>prettyprint</strong> (<em>bool (optional, default: True)</em>) – If True use line breaks and indenting in output XML.</li>
+e.g. visualization ‘viz’ <a class="footnote-reference brackets" href="#id4" id="id2">2</a>. See example for usage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A NetworkX graph</p></li>
+<li><p><strong>path</strong> (<em>file or string</em>) – File or file name to write.
+File names ending in .gz or .bz2 will be compressed.</p></li>
+<li><p><strong>encoding</strong> (<em>string (optional, default: ‘utf-8’)</em>) – Encoding for text data.</p></li>
+<li><p><strong>prettyprint</strong> (<em>bool (optional, default: True)</em>) – If True use line breaks and indenting in output XML.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">write_gexf</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s2">&quot;test.gexf&quot;</span><span class="p">)</span>
@@ -249,18 +245,14 @@ edges together).</p>
 If you want to specify an id use set it as node data, e.g.
 node[‘a’][‘id’]=1 to set the id of node ‘a’ to 1.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>GEXF File Format, <a class="reference external" href="https://gephi.org/gexf/format/">https://gephi.org/gexf/format/</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>GEXF viz schema 1.1, <a class="reference external" href="https://gephi.org/gexf/1.1draft/viz">https://gephi.org/gexf/1.1draft/viz</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>GEXF File Format, <a class="reference external" href="https://gephi.org/gexf/format/">https://gephi.org/gexf/format/</a></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>GEXF viz schema 1.1, <a class="reference external" href="https://gephi.org/gexf/1.1draft/viz">https://gephi.org/gexf/1.1draft/viz</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -287,7 +279,7 @@ node[‘a’][‘id’]=1 to set the id of node ‘a’ to 1.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

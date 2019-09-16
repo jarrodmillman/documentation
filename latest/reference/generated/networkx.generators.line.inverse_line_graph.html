@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.line.inverse_line_graph &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.generators.line.inverse_line_graph &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -218,33 +218,29 @@
 <h1>networkx.generators.line.inverse_line_graph<a class="headerlink" href="#networkx-generators-line-inverse-line-graph" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.generators.line.inverse_line_graph">
-<code class="descname">inverse_line_graph</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/line.html#inverse_line_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.line.inverse_line_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_line_graph</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/generators/line.html#inverse_line_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.generators.line.inverse_line_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the inverse line graph of graph G.</p>
 <p>If H is a graph, and G is the line graph of H, such that H = L(G).
 Then H is the inverse line graph of G.</p>
 <p>Not all graphs are line graphs and these do not have an inverse line graph.
 In these cases this generator returns a NetworkXError.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>G</strong> (<em>graph</em>) – A NetworkX Graph</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>H</strong> – The inverse line graph of G.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">graph</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If G is directed or a multigraph</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If G is not a line graph</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>graph</em>) – A NetworkX Graph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>H</strong> – The inverse line graph of G.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>graph</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../exceptions.html#networkx.NetworkXNotImplemented" title="networkx.NetworkXNotImplemented"><strong>NetworkXNotImplemented</strong></a> – If G is directed or a multigraph</p></li>
+<li><p><a class="reference internal" href="../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If G is not a line graph</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This is an implementation of the Roussopoulos algorithm.</p>
 <p>If G consists of multiple components, then the algorithm doesn’t work.
@@ -261,8 +257,8 @@ You should invert every component seperately:</p>
 </div>
 <p class="rubric">References</p>
 <ul class="simple">
-<li>Roussopolous, N, “A max {m, n} algorithm for determining the graph H from
-its line graph G”, Information Processing Letters 2, (1973), 108–112.</li>
+<li><p>Roussopolous, N, “A max {m, n} algorithm for determining the graph H from
+its line graph G”, Information Processing Letters 2, (1973), 108–112.</p></li>
 </ul>
 </dd></dl>
 
@@ -290,7 +286,7 @@ its line graph G”, Information Processing Letters 2, (1973), 108–112.</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

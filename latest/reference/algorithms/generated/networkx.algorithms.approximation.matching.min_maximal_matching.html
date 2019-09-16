@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.approximation.matching.min_maximal_matching &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.approximation.matching.min_maximal_matching &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -112,6 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -266,34 +267,32 @@
 <h1>networkx.algorithms.approximation.matching.min_maximal_matching<a class="headerlink" href="#networkx-algorithms-approximation-matching-min-maximal-matching" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.approximation.matching.min_maximal_matching">
-<code class="descname">min_maximal_matching</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/matching.html#min_maximal_matching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.matching.min_maximal_matching" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">min_maximal_matching</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/approximation/matching.html#min_maximal_matching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.approximation.matching.min_maximal_matching" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the minimum maximal matching of G. That is, out of all maximal
 matchings of the graph G, the smallest is returned.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX graph</em>) – Undirected graph</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>min_maximal_matching</strong> – Returns a set of edges such that no two edges share a common endpoint
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX graph</em>) – Undirected graph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>min_maximal_matching</strong> – Returns a set of edges such that no two edges share a common endpoint
 and every edge not in the set shares some common endpoint in the set.
-Cardinality will be 2*OPT in the worst case.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></td>
-</tr>
-</tbody>
-</table>
+Cardinality will be 2*OPT in the worst case.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#set" title="(in Python v2.7)">set</a></p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>The algorithm computes an approximate solution fo the minimum maximal
 cardinality matching problem. The solution is no more than 2 * OPT in size.
 Runtime is <span class="math notranslate nohighlight">\(O(|E|)\)</span>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>Vazirani, Vijay Approximation Algorithms (2001)</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Vazirani, Vijay Approximation Algorithms (2001)</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -320,7 +319,7 @@ Runtime is <span class="math notranslate nohighlight">\(O(|E|)\)</span>.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.DiGraph.nodes &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.DiGraph.nodes &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -199,9 +199,9 @@
             
   <div class="section" id="networkx-digraph-nodes">
 <h1>networkx.DiGraph.nodes<a class="headerlink" href="#networkx-digraph-nodes" title="Permalink to this headline">¶</a></h1>
-<dl class="attribute">
+<dl class="method">
 <dt id="networkx.DiGraph.nodes">
-<code class="descclassname">DiGraph.</code><code class="descname">nodes</code><a class="headerlink" href="#networkx.DiGraph.nodes" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-prename descclassname">DiGraph.</code><code class="sig-name descname">nodes</code><a class="headerlink" href="#networkx.DiGraph.nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>A NodeView of the Graph as G.nodes or G.nodes().</p>
 <p>Can be used as <code class="xref py py-obj docutils literal notranslate"><span class="pre">G.nodes</span></code> for data lookup and for set-like operations.
 Can also be used as <code class="xref py py-obj docutils literal notranslate"><span class="pre">G.nodes(data='color',</span> <span class="pre">default=None)</span></code> to return a
@@ -212,20 +212,18 @@ providing the value of the <code class="xref py py-obj docutils literal notransl
 a view <code class="xref py py-obj docutils literal notranslate"><span class="pre">G.nodes.data('foo')</span></code> provides a dict-like interface to the
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">foo</span></code> attribute of each node. <code class="xref py py-obj docutils literal notranslate"><span class="pre">G.nodes.data('foo',</span> <span class="pre">default=1)</span></code>
 provides a default for nodes that do not have attribute <code class="xref py py-obj docutils literal notranslate"><span class="pre">foo</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>string or bool, optional (default=False)</em>) – The node attribute returned in 2-tuple (n, ddict[data]).
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>string or bool, optional (default=False)</em>) – The node attribute returned in 2-tuple (n, ddict[data]).
 If True, return entire node attribute dict as (n, ddict).
-If False, return just the nodes n.</li>
-<li><strong>default</strong> (<em>value, optional (default=None)</em>) – Value used for nodes that don’t have the requested attribute.
-Only relevant if data is not True or False.</li>
+If False, return just the nodes n.</p></li>
+<li><p><strong>default</strong> (<em>value, optional (default=None)</em>) – Value used for nodes that don’t have the requested attribute.
+Only relevant if data is not True or False.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>Allows set-like operations over the nodes as well as node
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Allows set-like operations over the nodes as well as node
 attribute dict lookup and calling to get a NodeDataView.
 A NodeDataView iterates over <code class="xref py py-obj docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">data)</span></code> and has no set operations.
 A NodeView iterates over <code class="xref py py-obj docutils literal notranslate"><span class="pre">n</span></code> and includes set operations.</p>
@@ -235,13 +233,11 @@ where the attribute is specified in <code class="xref py py-obj docutils literal
 If data is True then the attribute becomes the
 entire data dictionary.</p>
 </p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">NodeView</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NodeView</p>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>If your node data is not needed, it is simpler and equivalent
 to use the expression <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">G</span></code>, or <code class="docutils literal notranslate"><span class="pre">list(G)</span></code>.</p>
@@ -319,7 +315,7 @@ to guarantee the value is never None:</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

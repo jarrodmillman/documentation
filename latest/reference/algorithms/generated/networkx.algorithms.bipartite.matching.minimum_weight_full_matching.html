@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.matching.minimum_weight_full_matching &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.bipartite.matching.minimum_weight_full_matching &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../bipartite.html">Bipartite</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.basic">Basic functions</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../bipartite.html#module-networkx.algorithms.bipartite.matching">Matching</a></li>
@@ -265,7 +266,7 @@
 <h1>networkx.algorithms.bipartite.matching.minimum_weight_full_matching<a class="headerlink" href="#networkx-algorithms-bipartite-matching-minimum-weight-full-matching" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.bipartite.matching.minimum_weight_full_matching">
-<code class="descname">minimum_weight_full_matching</code><span class="sig-paren">(</span><em>G</em>, <em>top_nodes=None</em>, <em>weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/matching.html#minimum_weight_full_matching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.matching.minimum_weight_full_matching" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">minimum_weight_full_matching</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">top_nodes=None</em>, <em class="sig-param">weight='weight'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/matching.html#minimum_weight_full_matching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.matching.minimum_weight_full_matching" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the minimum weight full matching of the bipartite graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>Let <span class="math notranslate nohighlight">\(G = ((U, V), E)\)</span> be a complete weighted bipartite graph with
 real weights <span class="math notranslate nohighlight">\(w : E \to \mathbb{R}\)</span>. This function then produces
@@ -278,49 +279,40 @@ matching, <span class="math notranslate nohighlight">\(\sum_{e \in M} w(e)\)</sp
 <p>When <span class="math notranslate nohighlight">\(\lvert U \rvert = \lvert V \rvert\)</span>, this is commonly
 referred to as a perfect matching; here, since we allow
 <span class="math notranslate nohighlight">\(\lvert U \rvert\)</span> and <span class="math notranslate nohighlight">\(\lvert V \rvert\)</span> to differ, we
-follow Karp <a class="footnote-reference" href="#id2" id="id1">[1]</a> and refer to the matching as <em>full</em>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>) – Undirected bipartite graph</li>
-<li><strong>top_nodes</strong> (<em>container</em>) – Container with all nodes in one bipartite node set. If not supplied
-it will be computed.</li>
-<li><strong>weight</strong> (<em>string, optional (default=’weight’)</em>) – The edge data key used to provide each value in the matrix.</li>
+follow Karp <a class="footnote-reference brackets" href="#id2" id="id1">1</a> and refer to the matching as <em>full</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – Undirected bipartite graph</p></li>
+<li><p><strong>top_nodes</strong> (<em>container</em>) – Container with all nodes in one bipartite node set. If not supplied
+it will be computed.</p></li>
+<li><p><strong>weight</strong> (<em>string, optional (default=’weight’)</em>) – The edge data key used to provide each value in the matrix.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>matches</strong> – The matching is returned as a dictionary, <code class="xref py py-obj docutils literal notranslate"><span class="pre">matches</span></code>, such that
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>matches</strong> – The matching is returned as a dictionary, <code class="xref py py-obj docutils literal notranslate"><span class="pre">matches</span></code>, such that
 <code class="docutils literal notranslate"><span class="pre">matches[v]</span> <span class="pre">==</span> <span class="pre">w</span></code> if node <code class="xref py py-obj docutils literal notranslate"><span class="pre">v</span></code> is matched to node <code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code>. Unmatched
 nodes do not occur as a key in matches.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dictionary</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><em>ValueError : Exception</em> – Raised if the input bipartite graph is not complete.</li>
-<li><em>ImportError : Exception</em> – Raised if SciPy is not available.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+<p>:raises ValueError : Exception: Raised if the input bipartite graph is not complete.
+:raises ImportError : Exception: Raised if SciPy is not available.</p>
 <p class="rubric">Notes</p>
 <p>The problem of determining a minimum weight full matching is also known as
 the rectangular linear assignment problem. This implementation defers the
 calculation of the assignment to SciPy.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Richard Manning Karp:
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Richard Manning Karp:
 An algorithm to Solve the m x n Assignment Problem in Expected Time
 O(mn log n).
-Networks, 10(2):143–152, 1980.</td></tr>
-</tbody>
-</table>
+Networks, 10(2):143–152, 1980.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -347,7 +339,7 @@ Networks, 10(2):143–152, 1980.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

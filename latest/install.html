@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Install &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -180,8 +180,8 @@
 have a Python environment configured on your computer, please see the
 instructions for installing the full <a class="reference external" href="https://scipy.org/install.html">scientific Python stack</a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you are on Windows and want to install optional packages (e.g., <code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy</span></code>),
+<p class="admonition-title">Note</p>
+<p>If you are on Windows and want to install optional packages (e.g., <code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy</span></code>),
 then you will need to install a Python distribution such as
 <a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a>,
 <a class="reference external" href="https://www.enthought.com/product/canopy">Enthought Canopy</a>,
@@ -248,29 +248,29 @@ line scripts to the appropriate locations.</p>
 <div class="section" id="optional-packages">
 <h2>Optional packages<a class="headerlink" href="#optional-packages" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Some optional packages (e.g., <code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">gdal</span></code>) may require compiling
+<p class="admonition-title">Note</p>
+<p>Some optional packages (e.g., <code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">gdal</span></code>) may require compiling
 C or C++ code.  If you have difficulty installing these packages
 with <code class="xref py py-obj docutils literal notranslate"><span class="pre">pip</span></code>, please review the instructions for installing
 the full <a class="reference external" href="https://scipy.org/install.html">scientific Python stack</a>.</p>
 </div>
 <p>The following optional packages provide additional functionality.</p>
 <ul class="simple">
-<li><a class="reference external" href="http://www.numpy.org/">NumPy</a> (&gt;= 1.15.4) provides matrix representation of
+<li><p><a class="reference external" href="http://www.numpy.org/">NumPy</a> (&gt;= 1.15.4) provides matrix representation of
 graphs and is used in some graph algorithms for high-performance matrix
-computations.</li>
-<li><a class="reference external" href="http://scipy.org/">SciPy</a> (&gt;= 1.1.0) provides sparse matrix representation
-of graphs and many numerical scientific tools.</li>
-<li><a class="reference external" href="http://pandas.pydata.org/">pandas</a> (&gt;= 0.23.3) provides a DataFrame, which
-is a tabular data structure with labeled axes.</li>
-<li><a class="reference external" href="http://matplotlib.org/">Matplotlib</a> (&gt;= 3.0.2) provides flexible drawing of
-graphs.</li>
-<li><a class="reference external" href="http://pygraphviz.github.io/">PyGraphviz</a> (&gt;= 1.5) and
+computations.</p></li>
+<li><p><a class="reference external" href="http://scipy.org/">SciPy</a> (&gt;= 1.1.0) provides sparse matrix representation
+of graphs and many numerical scientific tools.</p></li>
+<li><p><a class="reference external" href="http://pandas.pydata.org/">pandas</a> (&gt;= 0.23.3) provides a DataFrame, which
+is a tabular data structure with labeled axes.</p></li>
+<li><p><a class="reference external" href="http://matplotlib.org/">Matplotlib</a> (&gt;= 3.0.2) provides flexible drawing of
+graphs.</p></li>
+<li><p><a class="reference external" href="http://pygraphviz.github.io/">PyGraphviz</a> (&gt;= 1.5) and
 <a class="reference external" href="https://github.com/erocarrera/pydot">pydot</a> (&gt;= 1.2.4) provide graph drawing
-and graph layout algorithms via <a class="reference external" href="http://graphviz.org/">GraphViz</a>.</li>
-<li><a class="reference external" href="http://pyyaml.org/">PyYAML</a> provides YAML format reading and writing.</li>
-<li><a class="reference external" href="http://www.gdal.org/">gdal</a> provides shapefile format reading and writing.</li>
-<li><a class="reference external" href="http://lxml.de/">lxml</a> used for GraphML XML format.</li>
+and graph layout algorithms via <a class="reference external" href="http://graphviz.org/">GraphViz</a>.</p></li>
+<li><p><a class="reference external" href="http://pyyaml.org/">PyYAML</a> provides YAML format reading and writing.</p></li>
+<li><p><a class="reference external" href="http://www.gdal.org/">gdal</a> provides shapefile format reading and writing.</p></li>
+<li><p><a class="reference external" href="http://lxml.de/">lxml</a> used for GraphML XML format.</p></li>
 </ul>
 <p>To install <code class="docutils literal notranslate"><span class="pre">networkx</span></code> and all optional packages, do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install networkx[all]
@@ -310,21 +310,17 @@ installed package with:</p>
 </div>
 <dl class="function">
 <dt id="networkx.test">
-<code class="descname">test</code><span class="sig-paren">(</span><em>verbosity=1</em>, <em>doctest=False</em>, <em>numpy=True</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.test" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test</code><span class="sig-paren">(</span><em class="sig-param">verbosity=1</em>, <em class="sig-param">doctest=False</em>, <em class="sig-param">numpy=True</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.test" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run NetworkX tests.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>verbosity</strong> (<em>integer, optional</em>) – Level of detail in test reports.  Higher numbers provide more detail.</li>
-<li><strong>doctest</strong> (<em>bool, optional</em>) – True to run doctests in code modules</li>
-<li><strong>numpy</strong> (<em>bool, optional</em>) – True to test modules dependent on numpy</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>verbosity</strong> (<em>integer, optional</em>) – Level of detail in test reports.  Higher numbers provide more detail.</p></li>
+<li><p><strong>doctest</strong> (<em>bool, optional</em>) – True to run doctests in code modules</p></li>
+<li><p><strong>numpy</strong> (<em>bool, optional</em>) – True to test modules dependent on numpy</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -381,7 +377,7 @@ there.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

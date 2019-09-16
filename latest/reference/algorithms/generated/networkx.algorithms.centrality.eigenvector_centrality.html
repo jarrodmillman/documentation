@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.eigenvector_centrality &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.centrality.eigenvector_centrality &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -270,7 +271,7 @@
 <h1>networkx.algorithms.centrality.eigenvector_centrality<a class="headerlink" href="#networkx-algorithms-centrality-eigenvector-centrality" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.centrality.eigenvector_centrality">
-<code class="descname">eigenvector_centrality</code><span class="sig-paren">(</span><em>G</em>, <em>max_iter=100</em>, <em>tol=1e-06</em>, <em>nstart=None</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/eigenvector.html#eigenvector_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.eigenvector_centrality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">eigenvector_centrality</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">max_iter=100</em>, <em class="sig-param">tol=1e-06</em>, <em class="sig-param">nstart=None</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/eigenvector.html#eigenvector_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.eigenvector_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the eigenvector centrality for the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>Eigenvector centrality computes the centrality for a node based on the
 centrality of its neighbors. The eigenvector centrality for node <span class="math notranslate nohighlight">\(i\)</span> is
@@ -280,29 +281,25 @@ the <span class="math notranslate nohighlight">\(i\)</span>-th element of the ve
 <p>where <span class="math notranslate nohighlight">\(A\)</span> is the adjacency matrix of the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> with eigenvalue
 <span class="math notranslate nohighlight">\(\lambda\)</span>. By virtue of the Perron–Frobenius theorem, there is a unique
 solution <span class="math notranslate nohighlight">\(x\)</span>, all of whose entries are positive, if <span class="math notranslate nohighlight">\(\lambda\)</span> is the
-largest eigenvalue of the adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> (<a class="footnote-reference" href="#id5" id="id1">[2]</a>).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A networkx graph</li>
-<li><strong>max_iter</strong> (<em>integer, optional (default=100)</em>) – Maximum number of iterations in power method.</li>
-<li><strong>tol</strong> (<em>float, optional (default=1.0e-6)</em>) – Error tolerance used to check convergence in power method iteration.</li>
-<li><strong>nstart</strong> (<em>dictionary, optional (default=None)</em>) – Starting value of eigenvector iteration for each node.</li>
-<li><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
-Otherwise holds the name of the edge attribute used as weight.</li>
+largest eigenvalue of the adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> (<a class="footnote-reference brackets" href="#id5" id="id1">2</a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A networkx graph</p></li>
+<li><p><strong>max_iter</strong> (<em>integer, optional (default=100)</em>) – Maximum number of iterations in power method.</p></li>
+<li><p><strong>tol</strong> (<em>float, optional (default=1.0e-6)</em>) – Error tolerance used to check convergence in power method iteration.</p></li>
+<li><p><strong>nstart</strong> (<em>dictionary, optional (default=None)</em>) – Starting value of eigenvector iteration for each node.</p></li>
+<li><p><strong>weight</strong> (<em>None or string, optional (default=None)</em>) – If None, all edge weights are considered equal.
+Otherwise holds the name of the edge attribute used as weight.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>nodes</strong> – Dictionary of nodes with eigenvector centrality as the value.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nodes</strong> – Dictionary of nodes with eigenvector centrality as the value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">path_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -310,27 +307,23 @@ Otherwise holds the name of the edge attribute used as weight.</li>
 <span class="go">[(0, &#39;0.37&#39;), (1, &#39;0.60&#39;), (2, &#39;0.60&#39;), (3, &#39;0.37&#39;)]</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXPointlessConcept</span></code> – If the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is the null graph.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If each value in <code class="xref py py-obj docutils literal notranslate"><span class="pre">nstart</span></code> is zero.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">PowerIterationFailedConvergence</span></code> – If the algorithm fails to converge to the specified tolerance
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXPointlessConcept" title="networkx.NetworkXPointlessConcept"><strong>NetworkXPointlessConcept</strong></a> – If the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is the null graph.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If each value in <code class="xref py py-obj docutils literal notranslate"><span class="pre">nstart</span></code> is zero.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.PowerIterationFailedConvergence" title="networkx.PowerIterationFailedConvergence"><strong>PowerIterationFailedConvergence</strong></a> – If the algorithm fails to converge to the specified tolerance
 within the specified number of iterations of the power iteration
-method.</li>
+method.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality_numpy.html#networkx.algorithms.centrality.eigenvector_centrality_numpy" title="networkx.algorithms.centrality.eigenvector_centrality_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality_numpy()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">pagerank()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">hits()</span></code></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.centrality.eigenvector_centrality_numpy.html#networkx.algorithms.centrality.eigenvector_centrality_numpy" title="networkx.algorithms.centrality.eigenvector_centrality_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">eigenvector_centrality_numpy()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">pagerank()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">hits()</span></code></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The measure was introduced by <a class="footnote-reference" href="#id4" id="id2">[1]</a> and is discussed in <a class="footnote-reference" href="#id5" id="id3">[2]</a>.</p>
+<p>The measure was introduced by <a class="footnote-reference brackets" href="#id4" id="id2">1</a> and is discussed in <a class="footnote-reference brackets" href="#id5" id="id3">2</a>.</p>
 <p>The power iteration method is used to compute the eigenvector and
 convergence is <strong>not</strong> guaranteed. Our method stops after <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>
 iterations or when the change in the computed vector between two
@@ -343,23 +336,19 @@ multiple dominant eigenvalues.</p>
 to the in-edges in the graph. For out-edges eigenvector centrality
 first reverse the graph with <code class="docutils literal notranslate"><span class="pre">G.reverse()</span></code>.</p>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Phillip Bonacich.
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Phillip Bonacich.
 “Power and Centrality: A Family of Measures.”
 <em>American Journal of Sociology</em> 92(5):1170–1182, 1986
-&lt;<a class="reference external" href="http://www.leonidzhukov.net/hse/2014/socialnetworks/papers/Bonacich-Centrality.pdf">http://www.leonidzhukov.net/hse/2014/socialnetworks/papers/Bonacich-Centrality.pdf</a>&gt;</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Mark E. J. Newman.
+&lt;<a class="reference external" href="http://www.leonidzhukov.net/hse/2014/socialnetworks/papers/Bonacich-Centrality.pdf">http://www.leonidzhukov.net/hse/2014/socialnetworks/papers/Bonacich-Centrality.pdf</a>&gt;</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">2</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Mark E. J. Newman.
 <em>Networks: An Introduction.</em>
-Oxford University Press, USA, 2010, pp. 169.</td></tr>
-</tbody>
-</table>
+Oxford University Press, USA, 2010, pp. 169.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -386,7 +375,7 @@ Oxford University Press, USA, 2010, pp. 169.</td></tr>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

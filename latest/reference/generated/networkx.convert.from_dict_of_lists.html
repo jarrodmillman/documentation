@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert.from_dict_of_lists &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.convert.from_dict_of_lists &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -201,20 +201,16 @@
 <h1>networkx.convert.from_dict_of_lists<a class="headerlink" href="#networkx-convert-from-dict-of-lists" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.convert.from_dict_of_lists">
-<code class="descname">from_dict_of_lists</code><span class="sig-paren">(</span><em>d</em>, <em>create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/convert.html#from_dict_of_lists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.convert.from_dict_of_lists" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_dict_of_lists</code><span class="sig-paren">(</span><em class="sig-param">d</em>, <em class="sig-param">create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/convert.html#from_dict_of_lists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.convert.from_dict_of_lists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a graph from a dictionary of lists.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>d</strong> (<em>dictionary of lists</em>) – A dictionary of lists adjacency representation.</li>
-<li><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d</strong> (<em>dictionary of lists</em>) – A dictionary of lists adjacency representation.</p></li>
+<li><p><strong>create_using</strong> (<em>NetworkX graph constructor, optional (default=nx.Graph)</em>) – Graph type to create. If graph instance, then cleared before populated.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dol</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">]}</span> <span class="c1"># single edge (0,1)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_dict_of_lists</span><span class="p">(</span><span class="n">dol</span><span class="p">)</span>
@@ -250,7 +246,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

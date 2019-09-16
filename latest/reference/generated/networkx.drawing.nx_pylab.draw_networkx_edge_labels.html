@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab.draw_networkx_edge_labels &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.drawing.nx_pylab.draw_networkx_edge_labels &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -209,39 +209,35 @@
 <h1>networkx.drawing.nx_pylab.draw_networkx_edge_labels<a class="headerlink" href="#networkx-drawing-nx-pylab-draw-networkx-edge-labels" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pylab.draw_networkx_edge_labels">
-<code class="descname">draw_networkx_edge_labels</code><span class="sig-paren">(</span><em>G</em>, <em>pos</em>, <em>edge_labels=None</em>, <em>label_pos=0.5</em>, <em>font_size=10</em>, <em>font_color='k'</em>, <em>font_family='sans-serif'</em>, <em>font_weight='normal'</em>, <em>alpha=None</em>, <em>bbox=None</em>, <em>ax=None</em>, <em>rotate=True</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edge_labels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edge_labels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw_networkx_edge_labels</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">pos</em>, <em class="sig-param">edge_labels=None</em>, <em class="sig-param">label_pos=0.5</em>, <em class="sig-param">font_size=10</em>, <em class="sig-param">font_color='k'</em>, <em class="sig-param">font_family='sans-serif'</em>, <em class="sig-param">font_weight='normal'</em>, <em class="sig-param">alpha=None</em>, <em class="sig-param">bbox=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">rotate=True</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edge_labels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edge_labels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw edge labels.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>graph</em>) – A networkx graph</li>
-<li><strong>pos</strong> (<em>dictionary</em>) – A dictionary with nodes as keys and positions as values.
-Positions should be sequences of length 2.</li>
-<li><strong>ax</strong> (<em>Matplotlib Axes object, optional</em>) – Draw the graph in the specified Matplotlib axes.</li>
-<li><strong>alpha</strong> (<em>float or None</em>) – The text transparency (default=None)</li>
-<li><strong>edge_labels</strong> (<em>dictionary</em>) – Edge labels in a dictionary keyed by edge two-tuple of text
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>graph</em>) – A networkx graph</p></li>
+<li><p><strong>pos</strong> (<em>dictionary</em>) – A dictionary with nodes as keys and positions as values.
+Positions should be sequences of length 2.</p></li>
+<li><p><strong>ax</strong> (<em>Matplotlib Axes object, optional</em>) – Draw the graph in the specified Matplotlib axes.</p></li>
+<li><p><strong>alpha</strong> (<em>float or None</em>) – The text transparency (default=None)</p></li>
+<li><p><strong>edge_labels</strong> (<em>dictionary</em>) – Edge labels in a dictionary keyed by edge two-tuple of text
 labels (default=None). Only labels for the keys in the dictionary
-are drawn.</li>
-<li><strong>label_pos</strong> (<em>float</em>) – Position of edge label along edge (0=head, 0.5=center, 1=tail)</li>
-<li><strong>font_size</strong> (<em>int</em>) – Font size for text labels (default=12)</li>
-<li><strong>font_color</strong> (<em>string</em>) – Font color string (default=’k’ black)</li>
-<li><strong>font_weight</strong> (<em>string</em>) – Font weight (default=’normal’)</li>
-<li><strong>font_family</strong> (<em>string</em>) – Font family (default=’sans-serif’)</li>
-<li><strong>bbox</strong> (<em>Matplotlib bbox</em>) – Specify text box shape and colors.</li>
-<li><strong>clip_on</strong> (<em>bool</em>) – Turn on clipping at axis boundaries (default=True)</li>
+are drawn.</p></li>
+<li><p><strong>label_pos</strong> (<em>float</em>) – Position of edge label along edge (0=head, 0.5=center, 1=tail)</p></li>
+<li><p><strong>font_size</strong> (<em>int</em>) – Font size for text labels (default=12)</p></li>
+<li><p><strong>font_color</strong> (<em>string</em>) – Font color string (default=’k’ black)</p></li>
+<li><p><strong>font_weight</strong> (<em>string</em>) – Font weight (default=’normal’)</p></li>
+<li><p><strong>font_family</strong> (<em>string</em>) – Font family (default=’sans-serif’)</p></li>
+<li><p><strong>bbox</strong> (<em>Matplotlib bbox</em>) – Specify text box shape and colors.</p></li>
+<li><p><strong>clip_on</strong> (<em>bool</em>) – Turn on clipping at axis boundaries (default=True)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> of labels keyed on the edges</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> of labels keyed on the edges</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dodecahedral_graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">edge_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
@@ -250,8 +246,8 @@ are drawn.</li>
 <p>Also see the NetworkX drawing examples at
 <a class="reference external" href="https://networkx.github.io/documentation/latest/auto_examples/index.html">https://networkx.github.io/documentation/latest/auto_examples/index.html</a></p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.drawing.nx_pylab.draw.html#networkx.drawing.nx_pylab.draw" title="networkx.drawing.nx_pylab.draw"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx" title="networkx.drawing.nx_pylab.draw_networkx"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_nodes.html#networkx.drawing.nx_pylab.draw_networkx_nodes" title="networkx.drawing.nx_pylab.draw_networkx_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_nodes()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edges.html#networkx.drawing.nx_pylab.draw_networkx_edges" title="networkx.drawing.nx_pylab.draw_networkx_edges"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_edges()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_labels.html#networkx.drawing.nx_pylab.draw_networkx_labels" title="networkx.drawing.nx_pylab.draw_networkx_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_labels()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.drawing.nx_pylab.draw.html#networkx.drawing.nx_pylab.draw" title="networkx.drawing.nx_pylab.draw"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx" title="networkx.drawing.nx_pylab.draw_networkx"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_nodes.html#networkx.drawing.nx_pylab.draw_networkx_nodes" title="networkx.drawing.nx_pylab.draw_networkx_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_nodes()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_edges.html#networkx.drawing.nx_pylab.draw_networkx_edges" title="networkx.drawing.nx_pylab.draw_networkx_edges"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_edges()</span></code></a>, <a class="reference internal" href="networkx.drawing.nx_pylab.draw_networkx_labels.html#networkx.drawing.nx_pylab.draw_networkx_labels" title="networkx.drawing.nx_pylab.draw_networkx_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw_networkx_labels()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -279,7 +275,7 @@ are drawn.</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.dag.lexicographical_topological_sort &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.dag.lexicographical_topological_sort &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -268,56 +269,51 @@
 <h1>networkx.algorithms.dag.lexicographical_topological_sort<a class="headerlink" href="#networkx-algorithms-dag-lexicographical-topological-sort" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.dag.lexicographical_topological_sort">
-<code class="descname">lexicographical_topological_sort</code><span class="sig-paren">(</span><em>G</em>, <em>key=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/dag.html#lexicographical_topological_sort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.dag.lexicographical_topological_sort" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">lexicographical_topological_sort</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">key=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/dag.html#lexicographical_topological_sort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.dag.lexicographical_topological_sort" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a generator of nodes in lexicographically topologically sorted
 order.</p>
 <p>A topological sort is a nonunique permutation of the nodes such that an
 edge from u to v implies that u appears before v in the topological sort
 order.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX digraph</em>) – A directed acyclic graph (DAG)</li>
-<li><strong>key</strong> (<em>function, optional</em>) – This function maps nodes to keys with which to resolve ambiguities in
-the sort order.  Defaults to the identity function.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX digraph</em>) – A directed acyclic graph (DAG)</p></li>
+<li><p><strong>key</strong> (<em>function, optional</em>) – This function maps nodes to keys with which to resolve ambiguities in
+the sort order.  Defaults to the identity function.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An iterable of node names in lexicographical topological sort order.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">iterable</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – Topological sort is defined for directed graphs only. If the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>
-is undirected, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> is raised.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnfeasible</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not a directed acyclic graph (DAG) no topological sort exists
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An iterable of node names in lexicographical topological sort order.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>iterable</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – Topological sort is defined for directed graphs only. If the graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>
+is undirected, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> is raised.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXUnfeasible" title="networkx.NetworkXUnfeasible"><strong>NetworkXUnfeasible</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not a directed acyclic graph (DAG) no topological sort exists
 and a <code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXUnfeasible</span></code> exception is raised.  This can also be
-raised if <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is changed while the returned iterator is being processed</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is changed while the returned iterator is being processed.</li>
+raised if <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is changed while the returned iterator is being processed</p></li>
+<li><p><strong>RuntimeError</strong> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is changed while the returned iterator is being processed.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>This algorithm is based on a description and proof in
-“Introduction to Algorithms: A Creative Approach” <a class="footnote-reference" href="#id2" id="id1">[1]</a> .</p>
+“Introduction to Algorithms: A Creative Approach” <a class="footnote-reference brackets" href="#id2" id="id1">1</a> .</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="networkx.algorithms.dag.topological_sort.html#networkx.algorithms.dag.topological_sort" title="networkx.algorithms.dag.topological_sort"><code class="xref py py-func docutils literal notranslate"><span class="pre">topological_sort()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="networkx.algorithms.dag.topological_sort.html#networkx.algorithms.dag.topological_sort" title="networkx.algorithms.dag.topological_sort"><code class="xref py py-func docutils literal notranslate"><span class="pre">topological_sort()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Manber, U. (1989).
-<em>Introduction to Algorithms - A Creative Approach.</em> Addison-Wesley.</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Manber, U. (1989).
+<em>Introduction to Algorithms - A Creative Approach.</em> Addison-Wesley.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -344,7 +340,7 @@ raised if <code class="xref py py-obj docutils literal notranslate"><span class=
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

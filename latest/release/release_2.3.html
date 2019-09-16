@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.3 &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>Announcement: NetworkX 2.3 &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -174,90 +174,90 @@ Please send comments and questions to the <a class="reference external" href="ht
 <p>This release is the result of 6 months of work with over 92 pull requests by
 30 contributors. Highlights include:</p>
 <ul class="simple">
-<li>Dropped support for Python 2. We are no longer supporting Python 2.7 and we will
-start changing code to take advantage of Python 3 features we couldn’t before.</li>
-<li>Added some Moral Graph analysis functions.</li>
-<li>Enable matplotlib drawing using curved arrows via connectionstyle parameter.</li>
-<li>Remove ticks and axes labels from matplotlib plots.</li>
-<li>Two new generators of Harary Graphs.</li>
-<li>Added Dual Barabasi-Albert model</li>
-<li>Added VoteRank algorithm</li>
-<li>Added Equitable coloring algorithms</li>
-<li>Added planar layout algorithms</li>
-<li>Les Miserables network example</li>
-<li>Javascript example update</li>
+<li><p>Dropped support for Python 2. We are no longer supporting Python 2.7 and we will
+start changing code to take advantage of Python 3 features we couldn’t before.</p></li>
+<li><p>Added some Moral Graph analysis functions.</p></li>
+<li><p>Enable matplotlib drawing using curved arrows via connectionstyle parameter.</p></li>
+<li><p>Remove ticks and axes labels from matplotlib plots.</p></li>
+<li><p>Two new generators of Harary Graphs.</p></li>
+<li><p>Added Dual Barabasi-Albert model</p></li>
+<li><p>Added VoteRank algorithm</p></li>
+<li><p>Added Equitable coloring algorithms</p></li>
+<li><p>Added planar layout algorithms</p></li>
+<li><p>Les Miserables network example</p></li>
+<li><p>Javascript example update</p></li>
 </ul>
 </div>
 <div class="section" id="improvements">
 <h2>Improvements<a class="headerlink" href="#improvements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Change default colors to be color-blind friendly</li>
-<li>Many bug fixes and documentation improvements</li>
-<li>Speed up of simple_cycles</li>
-<li>Improvements for reading various formats like GML, GEXF, Graphml</li>
-<li>Allow subclassing to access node_attr_dict_factory</li>
+<li><p>Change default colors to be color-blind friendly</p></li>
+<li><p>Many bug fixes and documentation improvements</p></li>
+<li><p>Speed up of simple_cycles</p></li>
+<li><p>Improvements for reading various formats like GML, GEXF, Graphml</p></li>
+<li><p>Allow subclassing to access node_attr_dict_factory</p></li>
 </ul>
 </div>
 <div class="section" id="api-changes">
 <h2>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The G.fresh_copy() mechanism for creating an empty_graph of the same
+<li><p>The G.fresh_copy() mechanism for creating an empty_graph of the same
 type (introduced in v2.0) does not playing nicely with pickle and others.
 So, we have removed the code that caused a need for that. Instead you
 should use the more natural G.__class__() syntax to get an empty_graph
-of the same type as G.</li>
+of the same type as G.</p></li>
 </ul>
 </div>
 <div class="section" id="deprecations">
 <h2>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The Graph.fresh_copy() method should now use Graph.__class__()</li>
-<li>ReverseView class removed in favor of reverse_view() function.</li>
+<li><p>The Graph.fresh_copy() method should now use Graph.__class__()</p></li>
+<li><p>ReverseView class removed in favor of reverse_view() function.</p></li>
 </ul>
 </div>
 <div class="section" id="contributors-to-this-release">
 <h2>Contributors to this release<a class="headerlink" href="#contributors-to-this-release" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Mike Babst</li>
-<li>Jonathan Barnoud</li>
-<li>Scott Chow</li>
-<li>Jon Crall</li>
-<li>Clayton A Davis</li>
-<li>Michaël Defferrard</li>
-<li>Fredrik Erlandsson</li>
-<li>Eyal</li>
-<li>Tanay Gahlot</li>
-<li>Matthew Gilbert</li>
-<li>Øyvind Heddeland Instefjord</li>
-<li>Hongwei Jin</li>
-<li>Kieran</li>
-<li>Dongkwan Kim</li>
-<li>Julien Klaus</li>
-<li>Warren W. Kretzschmar</li>
-<li>Elias Kuthe</li>
-<li>Eric Ma</li>
-<li>Christoph Martin</li>
-<li>Jarrod Millman</li>
-<li>Issa Moradnejad</li>
-<li>Moradnejad</li>
-<li>Niema Moshiri</li>
-<li>Ramil Nugmanov</li>
-<li>Jens P</li>
-<li>Benjamin Peterson</li>
-<li>Edward L Platt</li>
-<li>Matteo Pozza</li>
-<li>Antoine Prouvost</li>
-<li>Mickaël Schoentgen</li>
-<li>Dan Schult</li>
-<li>Johannes Schulte</li>
-<li>Mridul Seth</li>
-<li>Weisheng Si</li>
-<li>Utkarsh Upadhyay</li>
-<li>damianos</li>
-<li>guidoeco</li>
-<li>jeanfrancois8512</li>
-<li>komo-fr</li>
-<li>last2sword</li>
+<li><p>Mike Babst</p></li>
+<li><p>Jonathan Barnoud</p></li>
+<li><p>Scott Chow</p></li>
+<li><p>Jon Crall</p></li>
+<li><p>Clayton A Davis</p></li>
+<li><p>Michaël Defferrard</p></li>
+<li><p>Fredrik Erlandsson</p></li>
+<li><p>Eyal</p></li>
+<li><p>Tanay Gahlot</p></li>
+<li><p>Matthew Gilbert</p></li>
+<li><p>Øyvind Heddeland Instefjord</p></li>
+<li><p>Hongwei Jin</p></li>
+<li><p>Kieran</p></li>
+<li><p>Dongkwan Kim</p></li>
+<li><p>Julien Klaus</p></li>
+<li><p>Warren W. Kretzschmar</p></li>
+<li><p>Elias Kuthe</p></li>
+<li><p>Eric Ma</p></li>
+<li><p>Christoph Martin</p></li>
+<li><p>Jarrod Millman</p></li>
+<li><p>Issa Moradnejad</p></li>
+<li><p>Moradnejad</p></li>
+<li><p>Niema Moshiri</p></li>
+<li><p>Ramil Nugmanov</p></li>
+<li><p>Jens P</p></li>
+<li><p>Benjamin Peterson</p></li>
+<li><p>Edward L Platt</p></li>
+<li><p>Matteo Pozza</p></li>
+<li><p>Antoine Prouvost</p></li>
+<li><p>Mickaël Schoentgen</p></li>
+<li><p>Dan Schult</p></li>
+<li><p>Johannes Schulte</p></li>
+<li><p>Mridul Seth</p></li>
+<li><p>Weisheng Si</p></li>
+<li><p>Utkarsh Upadhyay</p></li>
+<li><p>damianos</p></li>
+<li><p>guidoeco</p></li>
+<li><p>jeanfrancois8512</p></li>
+<li><p>komo-fr</p></li>
+<li><p>last2sword</p></li>
 </ul>
 </div>
 </div>
@@ -275,7 +275,7 @@ of the same type as G.</li>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

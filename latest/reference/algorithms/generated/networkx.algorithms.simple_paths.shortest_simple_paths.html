@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.simple_paths.shortest_simple_paths &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.simple_paths.shortest_simple_paths &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -258,43 +259,39 @@
 <h1>networkx.algorithms.simple_paths.shortest_simple_paths<a class="headerlink" href="#networkx-algorithms-simple-paths-shortest-simple-paths" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.simple_paths.shortest_simple_paths">
-<code class="descname">shortest_simple_paths</code><span class="sig-paren">(</span><em>G</em>, <em>source</em>, <em>target</em>, <em>weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/simple_paths.html#shortest_simple_paths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.simple_paths.shortest_simple_paths" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Generate all simple paths in the graph G from source to target,</dt>
-<dd>starting from shortest ones.</dd>
+<code class="sig-name descname">shortest_simple_paths</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">source</em>, <em class="sig-param">target</em>, <em class="sig-param">weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/simple_paths.html#shortest_simple_paths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.simple_paths.shortest_simple_paths" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Generate all simple paths in the graph G from source to target,</dt><dd><p>starting from shortest ones.</p>
+</dd>
 </dl>
 <p>A simple path is a path with no repeated nodes.</p>
 <p>If a weighted shortest path search is to be used, no negative weights
 are allowed.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>G</strong> (<em>NetworkX graph</em>)</li>
-<li><strong>source</strong> (<em>node</em>) – Starting node for path</li>
-<li><strong>target</strong> (<em>node</em>) – Ending node for path</li>
-<li><strong>weight</strong> (<em>string</em>) – Name of the edge attribute to be used as a weight. If None all
-edges are considered to have unit weight. Default value None.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
+<li><p><strong>source</strong> (<em>node</em>) – Starting node for path</p></li>
+<li><p><strong>target</strong> (<em>node</em>) – Ending node for path</p></li>
+<li><p><strong>weight</strong> (<em>string</em>) – Name of the edge attribute to be used as a weight. If None all
+edges are considered to have unit weight. Default value None.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>path_generator</strong> – A generator that produces lists of simple paths, in order from
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>path_generator</strong> – A generator that produces lists of simple paths, in order from
 shortest to longest.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">generator</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNoPath</span></code> – If no path exists between source and target.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If source or target nodes are not in the input graph.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXNotImplemented</span></code> – If the input graph is a Multi[Di]Graph.</li>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>generator</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXNoPath" title="networkx.NetworkXNoPath"><strong>NetworkXNoPath</strong></a> – If no path exists between source and target.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If source or target nodes are not in the input graph.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXNotImplemented" title="networkx.NetworkXNotImplemented"><strong>NetworkXNotImplemented</strong></a> – If the input graph is a Multi[Di]Graph.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">shortest_simple_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -314,21 +311,20 @@ paths between two nodes.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>This procedure is based on algorithm by Jin Y. Yen <a class="footnote-reference" href="#id2" id="id1">[1]</a>.  Finding
+<p>This procedure is based on algorithm by Jin Y. Yen <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.  Finding
 the first <span class="math notranslate nohighlight">\(K\)</span> paths requires <span class="math notranslate nohighlight">\(O(KN^3)\)</span> operations.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">all_shortest_paths()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">shortest_path()</span></code>, <a class="reference internal" href="networkx.algorithms.simple_paths.all_simple_paths.html#networkx.algorithms.simple_paths.all_simple_paths" title="networkx.algorithms.simple_paths.all_simple_paths"><code class="xref py py-func docutils literal notranslate"><span class="pre">all_simple_paths()</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">all_shortest_paths()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">shortest_path()</span></code>, <a class="reference internal" href="networkx.algorithms.simple_paths.all_simple_paths.html#networkx.algorithms.simple_paths.all_simple_paths" title="networkx.algorithms.simple_paths.all_simple_paths"><code class="xref py py-func docutils literal notranslate"><span class="pre">all_simple_paths()</span></code></a></p>
 </div>
 <p class="rubric">References</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Jin Y. Yen, “Finding the K Shortest Loopless Paths in a
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Jin Y. Yen, “Finding the K Shortest Loopless Paths in a
 Network”, Management Science, Vol. 17, No. 11, Theory Series
-(Jul., 1971), pp. 712-716.</td></tr>
-</tbody>
-</table>
+(Jul., 1971), pp. 712-716.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -355,7 +351,7 @@ Network”, Management Science, Vol. 17, No. 11, Theory Series
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>

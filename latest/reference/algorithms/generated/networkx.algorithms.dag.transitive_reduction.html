@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.dag.transitive_reduction &mdash; NetworkX 2.4rc1.dev20190915045518 documentation</title>
+  <title>networkx.algorithms.dag.transitive_reduction &mdash; NetworkX 2.4rc1.dev20190916213037 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190915045518 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190916213037 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190915045518
+                2.4rc1.dev_20190916213037
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../approximation.html">Approximations and Heuristics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assortativity.html">Assortativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asteroidal.html">Asteroidal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bipartite.html">Bipartite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../boundary.html">Boundary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bridges.html">Bridges</a></li>
@@ -268,26 +269,26 @@
 <h1>networkx.algorithms.dag.transitive_reduction<a class="headerlink" href="#networkx-algorithms-dag-transitive-reduction" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.dag.transitive_reduction">
-<code class="descname">transitive_reduction</code><span class="sig-paren">(</span><em>G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/dag.html#transitive_reduction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.dag.transitive_reduction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transitive_reduction</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/dag.html#transitive_reduction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.dag.transitive_reduction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns transitive reduction of a directed graph</p>
 <p>The transitive reduction of G = (V,E) is a graph G- = (V,E-) such that
 for all v,w in V there is an edge (v,w) in E- if and only if (v,w) is
 in E and there is no path from v to w in G with length greater than 1.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>G</strong> (<em>NetworkX DiGraph</em>) – A directed acyclic graph (DAG)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The transitive reduction of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">NetworkX DiGraph</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not a directed acyclic graph (DAG) transitive reduction is
-not uniquely defined and a <code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> exception is raised.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>G</strong> (<em>NetworkX DiGraph</em>) – A directed acyclic graph (DAG)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The transitive reduction of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NetworkX DiGraph</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not a directed acyclic graph (DAG) transitive reduction is
+not uniquely defined and a <code class="xref py py-exc docutils literal notranslate"><span class="pre">NetworkXError</span></code> exception is raised.</p>
+</dd>
+</dl>
 <p class="rubric">References</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Transitive_reduction">https://en.wikipedia.org/wiki/Transitive_reduction</a></p>
 </dd></dl>
@@ -316,7 +317,7 @@ not uniquely defined and a <code class="xref py py-exc docutils literal notransl
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 15, 2019.
+        Last updated on Sep 16, 2019.
       </span>
 
     </p>
