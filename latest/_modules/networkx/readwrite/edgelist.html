@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.edgelist &mdash; NetworkX 2.4rc1.dev20190917033414 documentation</title>
+  <title>networkx.readwrite.edgelist &mdash; NetworkX 2.4rc1.dev20190917204253 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190917033414 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190917204253 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190917033414
+                2.4rc1.dev_20190917204253
               </div>
             
           
@@ -527,7 +527,7 @@
 <span class="sd">    Since nodes must be hashable, the function nodetype must return hashable</span>
 <span class="sd">    types (e.g. int, float, str, frozenset - or tuples of those, etc.)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">path</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parse_edgelist</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="n">comments</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span>
                           <span class="n">create_using</span><span class="o">=</span><span class="n">create_using</span><span class="p">,</span> <span class="n">nodetype</span><span class="o">=</span><span class="n">nodetype</span><span class="p">,</span>
                           <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
