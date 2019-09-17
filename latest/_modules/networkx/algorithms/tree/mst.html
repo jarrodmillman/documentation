@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.tree.mst &mdash; NetworkX 2.4rc1.dev20190916221928 documentation</title>
+  <title>networkx.algorithms.tree.mst &mdash; NetworkX 2.4rc1.dev20190917033414 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190916221928 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190917033414 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190916221928
+                2.4rc1.dev_20190917033414
               </div>
             
           
@@ -399,15 +399,15 @@
     <span class="n">push</span> <span class="o">=</span> <span class="n">heappush</span>
     <span class="n">pop</span> <span class="o">=</span> <span class="n">heappop</span>
 
-    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">count</span><span class="p">()</span>
 
     <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">minimum</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
 
     <span class="k">while</span> <span class="n">nodes</span><span class="p">:</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
         <span class="n">frontier</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">]</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">u</span><span class="p">}</span>
         <span class="k">if</span> <span class="n">is_multigraph</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">keydict</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">keydict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -432,7 +432,7 @@
                 <span class="n">W</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">frontier</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">W</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">frontier</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">visited</span> <span class="ow">or</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
                 <span class="k">continue</span>
             <span class="c1"># Multigraphs need to handle edge keys in addition to edge data.</span>
             <span class="k">if</span> <span class="n">is_multigraph</span> <span class="ow">and</span> <span class="n">keys</span><span class="p">:</span>
@@ -446,8 +446,8 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">yield</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
             <span class="c1"># update frontier</span>
-            <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-            <span class="n">nodes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">is_multigraph</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">w</span><span class="p">,</span> <span class="n">keydict</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                     <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
@@ -529,8 +529,8 @@
 <span class="sd">    &gt;&gt;&gt; G.add_edge(0, 3, weight=2)</span>
 <span class="sd">    &gt;&gt;&gt; mst = tree.minimum_spanning_edges(G, algorithm=&#39;kruskal&#39;, data=False)</span>
 <span class="sd">    &gt;&gt;&gt; edgelist = list(mst)</span>
-<span class="sd">    &gt;&gt;&gt; sorted(edgelist)</span>
-<span class="sd">    [(0, 1), (1, 2), (2, 3)]</span>
+<span class="sd">    &gt;&gt;&gt; sorted(sorted(e) for e in edgelist)</span>
+<span class="sd">    [[0, 1], [1, 2], [2, 3]]</span>
 
 <span class="sd">    Find minimum spanning edges by Prim&#39;s algorithm</span>
 
@@ -538,8 +538,8 @@
 <span class="sd">    &gt;&gt;&gt; G.add_edge(0, 3, weight=2)</span>
 <span class="sd">    &gt;&gt;&gt; mst = tree.minimum_spanning_edges(G, algorithm=&#39;prim&#39;, data=False)</span>
 <span class="sd">    &gt;&gt;&gt; edgelist = list(mst)</span>
-<span class="sd">    &gt;&gt;&gt; sorted(edgelist)</span>
-<span class="sd">    [(0, 1), (1, 2), (2, 3)]</span>
+<span class="sd">    &gt;&gt;&gt; sorted(sorted(e) for e in edgelist)</span>
+<span class="sd">    [[0, 1], [1, 2], [2, 3]]</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -621,8 +621,8 @@
 <span class="sd">    &gt;&gt;&gt; G.add_edge(0, 3, weight=2)</span>
 <span class="sd">    &gt;&gt;&gt; mst = tree.maximum_spanning_edges(G, algorithm=&#39;kruskal&#39;, data=False)</span>
 <span class="sd">    &gt;&gt;&gt; edgelist = list(mst)</span>
-<span class="sd">    &gt;&gt;&gt; sorted(edgelist)</span>
-<span class="sd">    [(0, 1), (0, 3), (1, 2)]</span>
+<span class="sd">    &gt;&gt;&gt; sorted(sorted(e) for e in edgelist)</span>
+<span class="sd">    [[0, 1], [0, 3], [1, 2]]</span>
 
 <span class="sd">    Find maximum spanning edges by Prim&#39;s algorithm</span>
 
@@ -630,8 +630,8 @@
 <span class="sd">    &gt;&gt;&gt; G.add_edge(0, 3, weight=2) # assign weight 2 to edge 0-3</span>
 <span class="sd">    &gt;&gt;&gt; mst = tree.maximum_spanning_edges(G, algorithm=&#39;prim&#39;, data=False)</span>
 <span class="sd">    &gt;&gt;&gt; edgelist = list(mst)</span>
-<span class="sd">    &gt;&gt;&gt; sorted(edgelist)</span>
-<span class="sd">    [(0, 1), (0, 3), (3, 2)]</span>
+<span class="sd">    &gt;&gt;&gt; sorted(sorted(e) for e in edgelist)</span>
+<span class="sd">    [[0, 1], [0, 3], [2, 3]]</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -787,7 +787,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 16, 2019.
+        Last updated on Sep 17, 2019.
       </span>
 
     </p>
