@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab &mdash; NetworkX 2.4rc1.dev20190921144706 documentation</title>
+  <title>networkx.drawing.nx_pylab &mdash; NetworkX 2.4rc1.dev20190923233353 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190921144706 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190923233353 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190921144706
+                2.4rc1.dev_20190923233353
               </div>
             
           
@@ -288,12 +288,9 @@
     <span class="k">if</span> <span class="s1">&#39;with_labels&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwds</span><span class="p">:</span>
         <span class="n">kwds</span><span class="p">[</span><span class="s1">&#39;with_labels&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;labels&#39;</span> <span class="ow">in</span> <span class="n">kwds</span>
 
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">draw_if_interactive</span><span class="p">()</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">raise</span>
+    <span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">draw_if_interactive</span><span class="p">()</span>
     <span class="k">return</span></div>
 
 
@@ -516,6 +513,12 @@
 <span class="sd">    label : [None| string]</span>
 <span class="sd">       Label for legend</span>
 
+<span class="sd">    min_source_margin : int, optional (default=0)</span>
+<span class="sd">       The minimum margin (gap) at the begining of the edge at the source.</span>
+
+<span class="sd">    min_target_margin : int, optional (default=0)</span>
+<span class="sd">       The minimum margin (gap) at the end of the edge at the target.</span>
+
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    matplotlib.collections.PathCollection</span>
@@ -608,6 +611,8 @@
                         <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                         <span class="n">node_shape</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
                         <span class="n">connectionstyle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">min_source_margin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                        <span class="n">min_target_margin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                         <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Draw the edges of the graph G.</span>
 
@@ -671,6 +676,12 @@
 
 <span class="sd">    label : [None| string]</span>
 <span class="sd">       Label for legend</span>
+
+<span class="sd">    min_source_margin : int, optional (default=0)</span>
+<span class="sd">       The minimum margin (gap) at the begining of the edge at the source.</span>
+
+<span class="sd">    min_target_margin : int, optional (default=0)</span>
+<span class="sd">       The minimum margin (gap) at the end of the edge at the target.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -746,17 +757,17 @@
     <span class="c1"># Check if edge_color is an array of floats and map to edge_cmap.</span>
     <span class="c1"># This is the only case handled differently from matplotlib</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iterable</span><span class="p">(</span><span class="n">edge_color</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edge_color</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge_pos</span><span class="p">))</span> \
-        <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">alltrue</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">Number</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">edge_color</span><span class="p">]):</span>
-            <span class="k">if</span> <span class="n">edge_cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">edge_cmap</span><span class="p">,</span> <span class="n">Colormap</span><span class="p">))</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">edge_cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">edge_vmin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">edge_vmin</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">edge_color</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">edge_vmax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">edge_vmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">edge_color</span><span class="p">)</span>
-            <span class="n">color_normal</span> <span class="o">=</span> <span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">edge_vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">edge_vmax</span><span class="p">)</span>
-            <span class="n">edge_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">edge_cmap</span><span class="p">(</span><span class="n">color_normal</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edge_color</span><span class="p">]</span>
+            <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">alltrue</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">Number</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">edge_color</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">edge_cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">edge_cmap</span><span class="p">,</span> <span class="n">Colormap</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">edge_cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">edge_vmin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">edge_vmin</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">edge_color</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">edge_vmax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">edge_vmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">edge_color</span><span class="p">)</span>
+        <span class="n">color_normal</span> <span class="o">=</span> <span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">edge_vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">edge_vmax</span><span class="p">)</span>
+        <span class="n">edge_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">edge_cmap</span><span class="p">(</span><span class="n">color_normal</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edge_color</span><span class="p">]</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">arrows</span><span class="p">):</span>
         <span class="n">edge_collection</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">edge_pos</span><span class="p">,</span>
@@ -792,7 +803,7 @@
         <span class="n">mutation_scale</span> <span class="o">=</span> <span class="n">arrowsize</span>  <span class="c1"># scale factor of arrow head</span>
 
         <span class="c1"># FancyArrowPatch doesn&#39;t handle color strings</span>
-        <span class="n">arrow_colors</span> <span class="o">=</span> <span class="n">colorConverter</span><span class="o">.</span><span class="n">to_rgba_array</span><span class="p">(</span><span class="n">edge_color</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
+        <span class="n">arrow_colors</span> <span class="o">=</span> <span class="n">colorConverter</span><span class="o">.</span><span class="n">to_rgba_array</span><span class="p">(</span><span class="n">edge_color</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">edge_pos</span><span class="p">):</span>
             <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">src</span>
             <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">dst</span>
@@ -806,21 +817,24 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">shrink_target</span> <span class="o">=</span> <span class="n">to_marker_edge</span><span class="p">(</span><span class="n">node_size</span><span class="p">,</span> <span class="n">node_shape</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iterable</span><span class="p">(</span><span class="n">arrow_colors</span><span class="p">):</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrow_colors</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge_pos</span><span class="p">):</span>
-                    <span class="n">arrow_color</span> <span class="o">=</span> <span class="n">arrow_colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-                <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrow_colors</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-                    <span class="n">arrow_color</span> <span class="o">=</span> <span class="n">arrow_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">else</span><span class="p">:</span> <span class="c1"># Cycle through colors</span>
-                    <span class="n">arrow_color</span> <span class="o">=</span>  <span class="n">arrow_colors</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="n">arrow_colors</span><span class="p">)]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">arrow_color</span> <span class="o">=</span> <span class="n">edge_color</span>
+            <span class="k">if</span> <span class="n">shrink_source</span> <span class="o">&lt;</span> <span class="n">min_source_margin</span><span class="p">:</span>
+                <span class="n">shrink_source</span> <span class="o">=</span> <span class="n">min_source_margin</span>
+
+            <span class="k">if</span> <span class="n">shrink_target</span> <span class="o">&lt;</span> <span class="n">min_target_margin</span><span class="p">:</span>
+                <span class="n">shrink_target</span> <span class="o">=</span> <span class="n">min_target_margin</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrow_colors</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge_pos</span><span class="p">):</span>
+                <span class="n">arrow_color</span> <span class="o">=</span> <span class="n">arrow_colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrow_colors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">arrow_color</span> <span class="o">=</span> <span class="n">arrow_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># Cycle through colors</span>
+                <span class="n">arrow_color</span> <span class="o">=</span> <span class="n">arrow_colors</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrow_colors</span><span class="p">)]</span>
 
             <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iterable</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">width</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge_pos</span><span class="p">):</span>
                     <span class="n">line_width</span> <span class="o">=</span> <span class="n">width</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">line_width</span> <span class="o">=</span> <span class="n">width</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="n">width</span><span class="p">)]</span>
+                    <span class="n">line_width</span> <span class="o">=</span> <span class="n">width</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">width</span><span class="p">)]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">line_width</span> <span class="o">=</span> <span class="n">width</span>
 
@@ -1338,7 +1352,7 @@
         <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
         <span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;PS&#39;</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">SkipTest</span><span class="p">(</span><span class="s2">&quot;matplotlib not available&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -1354,7 +1368,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 21, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>

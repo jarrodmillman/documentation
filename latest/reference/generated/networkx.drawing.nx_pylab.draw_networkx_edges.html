@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.nx_pylab.draw_networkx_edges &mdash; NetworkX 2.4rc1.dev20190921144706 documentation</title>
+  <title>networkx.drawing.nx_pylab.draw_networkx_edges &mdash; NetworkX 2.4rc1.dev20190923233353 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190921144706 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190923233353 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190921144706
+                2.4rc1.dev_20190923233353
               </div>
             
           
@@ -209,7 +209,7 @@
 <h1>networkx.drawing.nx_pylab.draw_networkx_edges<a class="headerlink" href="#networkx-drawing-nx-pylab-draw-networkx-edges" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.drawing.nx_pylab.draw_networkx_edges">
-<code class="sig-name descname">draw_networkx_edges</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">pos</em>, <em class="sig-param">edgelist=None</em>, <em class="sig-param">width=1.0</em>, <em class="sig-param">edge_color='k'</em>, <em class="sig-param">style='solid'</em>, <em class="sig-param">alpha=None</em>, <em class="sig-param">arrowstyle='-|&gt;'</em>, <em class="sig-param">arrowsize=10</em>, <em class="sig-param">edge_cmap=None</em>, <em class="sig-param">edge_vmin=None</em>, <em class="sig-param">edge_vmax=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">arrows=True</em>, <em class="sig-param">label=None</em>, <em class="sig-param">node_size=300</em>, <em class="sig-param">nodelist=None</em>, <em class="sig-param">node_shape='o'</em>, <em class="sig-param">connectionstyle=None</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edges" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw_networkx_edges</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">pos</em>, <em class="sig-param">edgelist=None</em>, <em class="sig-param">width=1.0</em>, <em class="sig-param">edge_color='k'</em>, <em class="sig-param">style='solid'</em>, <em class="sig-param">alpha=None</em>, <em class="sig-param">arrowstyle='-|&gt;'</em>, <em class="sig-param">arrowsize=10</em>, <em class="sig-param">edge_cmap=None</em>, <em class="sig-param">edge_vmin=None</em>, <em class="sig-param">edge_vmax=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">arrows=True</em>, <em class="sig-param">label=None</em>, <em class="sig-param">node_size=300</em>, <em class="sig-param">nodelist=None</em>, <em class="sig-param">node_shape='o'</em>, <em class="sig-param">connectionstyle=None</em>, <em class="sig-param">min_source_margin=0</em>, <em class="sig-param">min_target_margin=0</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/drawing/nx_pylab.html#draw_networkx_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.drawing.nx_pylab.draw_networkx_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the edges of the graph G.</p>
 <p>This draws only the edges of the graph G.</p>
 <dl class="field-list simple">
@@ -242,6 +242,8 @@ radius rad. For example, connectionstyle=’arc3,rad=0.2’.
 See :py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.ConnectionStyle</span></code> and
 :py:class: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.patches.FancyArrowPatch</span></code> for more info.</p></li>
 <li><p><strong>label</strong> (<em>[None| string]</em>) – Label for legend</p></li>
+<li><p><strong>min_source_margin</strong> (<em>int, optional (default=0)</em>) – The minimum margin (gap) at the begining of the edge at the source.</p></li>
+<li><p><strong>min_target_margin</strong> (<em>int, optional (default=0)</em>) – The minimum margin (gap) at the end of the edge at the target.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -302,7 +304,7 @@ keyword argument; arrows are drawn considering the size of nodes.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 21, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>
