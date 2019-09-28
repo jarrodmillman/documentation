@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.generic &mdash; NetworkX 2.4rc1.dev20190928184319 documentation</title>
+  <title>networkx.algorithms.shortest_paths.generic &mdash; NetworkX 2.4rc1.dev20190928222834 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928184319 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190928222834 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928184319
+                2.4rc1.dev_20190928222834
               </div>
             
           
@@ -481,7 +481,7 @@
     <span class="k">return</span> <span class="n">paths</span></div>
 
 
-<div class="viewcode-block" id="average_shortest_path_length"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.generic.average_shortest_path_length.html#networkx.algorithms.shortest_paths.generic.average_shortest_path_length">[docs]</a><span class="k">def</span> <span class="nf">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;dijkstra&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="average_shortest_path_length"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.shortest_paths.generic.average_shortest_path_length.html#networkx.algorithms.shortest_paths.generic.average_shortest_path_length">[docs]</a><span class="k">def</span> <span class="nf">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Returns the average shortest path length.</span>
 
 <span class="sd">    The average shortest path length is</span>
@@ -503,12 +503,13 @@
 <span class="sd">       If a string, use this edge attribute as the edge weight.</span>
 <span class="sd">       Any edge attribute not present defaults to 1.</span>
 
-<span class="sd">    method : string, optional (default = &#39;dijkstra&#39;)</span>
+<span class="sd">    method : string, optional (default = &#39;unweighted&#39; or &#39;djikstra&#39;)</span>
 <span class="sd">        The algorithm to use to compute the path lengths.</span>
-<span class="sd">        Supported options: &#39;dijkstra&#39;, &#39;bellman-ford&#39;.</span>
-<span class="sd">        Other inputs produce a ValueError.</span>
-<span class="sd">        If `weight` is None, unweighted graph methods are used, and this</span>
-<span class="sd">        suggestion is ignored.</span>
+<span class="sd">        Supported options are &#39;unweighted&#39;, &#39;dijkstra&#39;, &#39;bellman-ford&#39;,</span>
+<span class="sd">        &#39;floyd-warshall&#39; and &#39;floyd-warshall-numpy&#39;.</span>
+<span class="sd">        Other method values produce a ValueError.</span>
+<span class="sd">        The default method is &#39;unweighted&#39; if `weight` is None,</span>
+<span class="sd">        otherwise the default method is &#39;dijkstra&#39;.</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
@@ -538,7 +539,18 @@
 <span class="sd">    1.0</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;unweighted&#39;</span> <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">method</span>
+    <span class="n">single_source_methods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;unweighted&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;dijkstra&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;bellman-ford&#39;</span><span class="p">]</span>
+    <span class="n">all_pairs_methods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;floyd-warshall&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;floyd-warshall-numpy&#39;</span><span class="p">]</span>
+    <span class="n">supported_methods</span> <span class="o">=</span> <span class="n">single_source_methods</span> <span class="o">+</span> <span class="n">all_pairs_methods</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;unweighted&#39;</span> <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;dijkstra&#39;</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">supported_methods</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;method not supported: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">))</span>
+
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="c1"># For the special case of the null graph, raise an exception, since</span>
     <span class="c1"># there are no paths in the null graph.</span>
@@ -554,8 +566,8 @@
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Graph is not weakly connected.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Graph is not connected.&quot;</span><span class="p">)</span>
-    <span class="c1"># Compute all-pairs shortest paths.</span>
 
+    <span class="c1"># Compute all-pairs shortest paths.</span>
     <span class="k">def</span> <span class="nf">path_length</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;unweighted&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
@@ -564,10 +576,16 @@
         <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;bellman-ford&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">single_source_bellman_ford_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span>
                                                              <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;method not supported: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">method</span><span class="p">))</span>
-    <span class="c1"># Sum the distances for each (ordered) pair of source and target node.</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">G</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">path_length</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">single_source_methods</span><span class="p">:</span>
+        <span class="c1"># Sum the distances for each (ordered) pair of source and target node.</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">G</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">path_length</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;floyd-warshall&#39;</span><span class="p">:</span>
+            <span class="n">all_pairs</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">floyd_warshall</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">sum</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">all_pairs</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;floyd-warshall-numpy&#39;</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">floyd_warshall_numpy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span></div>
 
 
