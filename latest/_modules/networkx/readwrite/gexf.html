@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.gexf &mdash; NetworkX 2.4rc1.dev20190924150855 documentation</title>
+  <title>networkx.readwrite.gexf &mdash; NetworkX 2.4rc1.dev20190928002134 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190924150855 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190928002134 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190924150855
+                2.4rc1.dev_20190928002134
               </div>
             
           
@@ -189,10 +189,12 @@
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">open_file</span><span class="p">,</span> <span class="n">make_str</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">xml.etree.cElementTree</span> <span class="k">import</span> <span class="n">Element</span><span class="p">,</span> <span class="n">ElementTree</span><span class="p">,</span> <span class="n">SubElement</span><span class="p">,</span> <span class="n">tostring</span>
+    <span class="kn">from</span> <span class="nn">xml.etree.cElementTree</span> <span class="k">import</span> <span class="p">(</span><span class="n">Element</span><span class="p">,</span> <span class="n">ElementTree</span><span class="p">,</span> <span class="n">SubElement</span><span class="p">,</span>
+                                        <span class="n">tostring</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">import</span> <span class="n">Element</span><span class="p">,</span> <span class="n">ElementTree</span><span class="p">,</span> <span class="n">SubElement</span><span class="p">,</span> <span class="n">tostring</span>
+        <span class="kn">from</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">import</span> <span class="p">(</span><span class="n">Element</span><span class="p">,</span> <span class="n">ElementTree</span><span class="p">,</span> <span class="n">SubElement</span><span class="p">,</span>
+                                           <span class="n">tostring</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">pass</span>
 
@@ -200,7 +202,8 @@
 
 
 <div class="viewcode-block" id="write_gexf"><a class="viewcode-back" href="../../../reference/readwrite/generated/networkx.readwrite.gexf.write_gexf.html#networkx.readwrite.gexf.write_gexf">[docs]</a><span class="nd">@open_file</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">write_gexf</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">prettyprint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.2draft&#39;</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">write_gexf</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">prettyprint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.2draft&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Write G in GEXF format to path.</span>
 
 <span class="sd">    &quot;GEXF (Graph Exchange XML Format) is a language for describing</span>
@@ -262,14 +265,14 @@
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    G : graph</span>
-<span class="sd">       A NetworkX graph</span>
+<span class="sd">    A NetworkX graph</span>
 <span class="sd">    encoding : string (optional, default: &#39;utf-8&#39;)</span>
-<span class="sd">       Encoding for text data.</span>
+<span class="sd">    Encoding for text data.</span>
 <span class="sd">    prettyprint : bool (optional, default: True)</span>
-<span class="sd">       If True use line breaks and indenting in output XML.</span>
+<span class="sd">    If True use line breaks and indenting in output XML.</span>
 <span class="sd">    version : string (default: 1.2draft)</span>
-<span class="sd">       Version of GEFX File Format (see https://gephi.org/gexf/format/schema.html).</span>
-<span class="sd">       Supported values: &quot;1.1draft&quot;, &quot;1.2draft&quot;</span>
+<span class="sd">    Version of GEFX File Format (see https://gephi.org/gexf/format/schema.html)</span>
+<span class="sd">    Supported values: &quot;1.1draft&quot;, &quot;1.2draft&quot;</span>
 
 
 <span class="sd">    Examples</span>
@@ -318,7 +321,7 @@
 <span class="sd">       If True relabel the nodes to use the GEXF node &quot;label&quot; attribute</span>
 <span class="sd">       instead of the node &quot;id&quot; attribute as the NetworkX node label.</span>
 <span class="sd">    version : string (default: 1.2draft)</span>
-<span class="sd">       Version of GEFX File Format (see https://gephi.org/gexf/format/schema.html).</span>
+<span class="sd">    Version of GEFX File Format (see https://gephi.org/gexf/format/schema.html)</span>
 <span class="sd">       Supported values: &quot;1.1draft&quot;, &quot;1.2draft&quot;</span>
 
 <span class="sd">    Returns</span>
@@ -387,7 +390,7 @@
                  <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
                  <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
                  <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intc</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">),</span>
-                <span class="p">]</span> <span class="o">+</span> <span class="n">types</span>
+                 <span class="p">]</span> <span class="o">+</span> <span class="n">types</span>
 
     <span class="n">xml_type</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">types</span><span class="p">)</span>
     <span class="n">python_type</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">types</span><span class="p">)</span>
@@ -407,7 +410,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">NS_GEXF</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;NS_GEXF&#39;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">NS_VIZ</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;NS_VIZ&#39;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">NS_XSI</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;NS_XSI&#39;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">SCHEMALOCATION</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;NS_XSI&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">SCHEMALOCATION</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;SCHEMALOCATION&#39;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">VERSION</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;VERSION&#39;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
 
@@ -430,6 +433,14 @@
                             <span class="s1">&#39;xmlns:xsi&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">NS_XSI</span><span class="p">,</span>
                             <span class="s1">&#39;xsi:schemaLocation&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">SCHEMALOCATION</span><span class="p">,</span>
                             <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">VERSION</span><span class="p">})</span>
+
+        <span class="c1"># Make meta element a non-graph element</span>
+        <span class="c1"># Also add lastmodifieddate as attribute, not tag</span>
+        <span class="n">meta_element</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">)</span>
+        <span class="n">subelement_text</span> <span class="o">=</span> <span class="s1">&#39;NetworkX </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+        <span class="n">SubElement</span><span class="p">(</span><span class="n">meta_element</span><span class="p">,</span> <span class="s1">&#39;creator&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">subelement_text</span>
+        <span class="n">meta_element</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;lastmodifieddate&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">meta_element</span><span class="p">)</span>
 
         <span class="n">ET</span><span class="o">.</span><span class="n">register_namespace</span><span class="p">(</span><span class="s1">&#39;viz&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">NS_VIZ</span><span class="p">)</span>
 
@@ -475,17 +486,9 @@
         <span class="n">graph_element</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;graph&#39;</span><span class="p">,</span> <span class="n">defaultedgetype</span><span class="o">=</span><span class="n">default</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
                                 <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">graph_element</span> <span class="o">=</span> <span class="n">graph_element</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_meta</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">graph_element</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">graph_element</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">graph_element</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">graph_element</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">add_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">graph_element</span><span class="p">):</span>
-        <span class="c1"># add meta element with creator and date</span>
-        <span class="n">meta_element</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">)</span>
-        <span class="n">SubElement</span><span class="p">(</span><span class="n">meta_element</span><span class="p">,</span> <span class="s1">&#39;creator&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;NetworkX </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-        <span class="n">SubElement</span><span class="p">(</span><span class="n">meta_element</span><span class="p">,</span> <span class="s1">&#39;lastmodified&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">)</span>
-        <span class="n">graph_element</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">meta_element</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">graph_element</span><span class="p">):</span>
         <span class="n">nodes_element</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;nodes&#39;</span><span class="p">)</span>
@@ -603,7 +606,8 @@
                 <span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;networkx_key&#39;</span>
             <span class="n">val_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">val_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">xml_type</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;attribute value type is not allowed: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">val_type</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;attribute value type is not allowed: </span><span class="si">%s</span><span class="s1">&#39;</span>
+                                <span class="o">%</span> <span class="n">val_type</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
                 <span class="c1"># dynamic data</span>
                 <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
@@ -613,12 +617,20 @@
                         <span class="bp">self</span><span class="o">.</span><span class="n">alter_graph_mode_timeformat</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">alter_graph_mode_timeformat</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
                         <span class="k">break</span>
-                <span class="n">attr_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attr_id</span><span class="p">(</span><span class="n">make_str</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">xml_type</span><span class="p">[</span><span class="n">val_type</span><span class="p">],</span>
+                <span class="n">attr_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attr_id</span><span class="p">(</span><span class="n">make_str</span><span class="p">(</span><span class="n">k</span><span class="p">),</span>
+                                           <span class="bp">self</span><span class="o">.</span><span class="n">xml_type</span><span class="p">[</span><span class="n">val_type</span><span class="p">],</span>
                                            <span class="n">node_or_edge</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
                     <span class="n">e</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;attvalue&#39;</span><span class="p">)</span>
                     <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;for&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attr_id</span>
                     <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+                    <span class="c1"># Handle nan, inf, -inf differently</span>
+                    <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;inf&#39;</span><span class="p">:</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;INF&#39;</span>
+                    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;nan&#39;</span><span class="p">:</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
+                    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-inf&#39;</span><span class="p">:</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-INF&#39;</span>
                     <span class="k">if</span> <span class="n">start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -627,7 +639,8 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># static data</span>
                 <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;static&#39;</span>
-                <span class="n">attr_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attr_id</span><span class="p">(</span><span class="n">make_str</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">xml_type</span><span class="p">[</span><span class="n">val_type</span><span class="p">],</span>
+                <span class="n">attr_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attr_id</span><span class="p">(</span><span class="n">make_str</span><span class="p">(</span><span class="n">k</span><span class="p">),</span>
+                                           <span class="bp">self</span><span class="o">.</span><span class="n">xml_type</span><span class="p">[</span><span class="n">val_type</span><span class="p">],</span>
                                            <span class="n">node_or_edge</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
                 <span class="n">e</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;attvalue&#39;</span><span class="p">)</span>
                 <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;for&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attr_id</span>
@@ -635,6 +648,13 @@
                     <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                    <span class="c1"># Handle nan, inf, -inf differently</span>
+                    <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;inf&#39;</span><span class="p">:</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;INF&#39;</span>
+                    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;nan&#39;</span><span class="p">:</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
+                    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-inf&#39;</span><span class="p">:</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-INF&#39;</span>
                 <span class="n">attvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
         <span class="n">xml_obj</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attvalues</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span>
@@ -696,7 +716,8 @@
 
             <span class="n">thickness</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;thickness&#39;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">thickness</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">e</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;{</span><span class="si">%s</span><span class="s1">}thickness&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">NS_VIZ</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">thickness</span><span class="p">))</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s1">&#39;{</span><span class="si">%s</span><span class="s1">}thickness&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">NS_VIZ</span><span class="p">,</span>
+                            <span class="n">value</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">thickness</span><span class="p">))</span>
                 <span class="n">element</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
             <span class="n">shape</span> <span class="o">=</span> <span class="n">viz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">)</span>
@@ -755,7 +776,8 @@
         <span class="k">return</span> <span class="n">node_or_edge_data</span>
 
     <span class="k">def</span> <span class="nf">alter_graph_mode_timeformat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_or_end</span><span class="p">):</span>
-        <span class="c1"># if &#39;start&#39; or &#39;end&#39; appears, alter Graph mode to dynamic and set timeformat</span>
+        <span class="c1"># If &#39;start&#39; or &#39;end&#39; appears, alter Graph mode to dynamic and</span>
+        <span class="c1"># set timeformat</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_element</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mode&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;static&#39;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">start_or_end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start_or_end</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -851,7 +873,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">timeformat</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
 
         <span class="c1"># node and edge attributes</span>
-        <span class="n">attributes_elements</span> <span class="o">=</span> <span class="n">graph_xml</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;{</span><span class="si">%s</span><span class="s1">}attributes&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">NS_GEXF</span><span class="p">)</span>
+        <span class="n">attributes_elements</span> <span class="o">=</span> <span class="n">graph_xml</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;{</span><span class="si">%s</span><span class="s1">}attributes&#39;</span> <span class="o">%</span>
+                                                <span class="bp">self</span><span class="o">.</span><span class="n">NS_GEXF</span><span class="p">)</span>
         <span class="c1"># dictionaries to hold attributes and attribute defaults</span>
         <span class="n">node_attr</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">node_default</span> <span class="o">=</span> <span class="p">{}</span>
@@ -874,7 +897,8 @@
 
         <span class="c1"># Hack to handle Gephi0.7beta bug</span>
         <span class="c1"># add weight attribute</span>
-        <span class="n">ea</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;double&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;static&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;weight&#39;</span><span class="p">}}</span>
+        <span class="n">ea</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;double&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;static&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;weight&#39;</span><span class="p">}}</span>
         <span class="n">ed</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">edge_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ea</span><span class="p">)</span>
         <span class="n">edge_default</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ed</span><span class="p">)</span>
@@ -933,6 +957,14 @@
             <span class="k">for</span> <span class="n">node_xml</span> <span class="ow">in</span> <span class="n">subnodes</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;{</span><span class="si">%s</span><span class="s1">}node&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">NS_GEXF</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_xml</span><span class="p">,</span> <span class="n">node_attr</span><span class="p">,</span> <span class="n">node_pid</span><span class="o">=</span><span class="n">node_id</span><span class="p">)</span>
 
+        <span class="c1"># Handle nan, inf, -inf differently</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;inf&#39;</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;INF&#39;</span>
+            <span class="k">elif</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;nan&#39;</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
+            <span class="k">elif</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;-inf&#39;</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-INF&#39;</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_start_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">xml</span><span class="p">):</span>
@@ -1081,7 +1113,8 @@
                 <span class="k">try</span><span class="p">:</span>  <span class="c1"># should be in our gexf_keys dictionary</span>
                     <span class="n">title</span> <span class="o">=</span> <span class="n">gexf_keys</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
                 <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;No attribute defined for=</span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s1">&#39;No attribute defined for=</span><span class="si">%s</span><span class="s1">.&#39;</span>
+                                           <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
                 <span class="n">atype</span> <span class="o">=</span> <span class="n">gexf_keys</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
                 <span class="n">value</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">atype</span> <span class="o">==</span> <span class="s1">&#39;boolean&#39;</span><span class="p">:</span>
@@ -1179,7 +1212,7 @@
     <span class="kn">from</span> <span class="nn">nose</span> <span class="k">import</span> <span class="n">SkipTest</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">xml.etree.cElementTree</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">SkipTest</span><span class="p">(</span><span class="s1">&#39;xml.etree.cElementTree not available.&#39;</span><span class="p">)</span>
 
 
@@ -1188,7 +1221,7 @@
     <span class="kn">import</span> <span class="nn">os</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="s1">&#39;test.gexf&#39;</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="k">pass</span>
 </pre></div>
 
@@ -1204,7 +1237,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 24, 2019.
+        Last updated on Sep 28, 2019.
       </span>
 
     </p>
