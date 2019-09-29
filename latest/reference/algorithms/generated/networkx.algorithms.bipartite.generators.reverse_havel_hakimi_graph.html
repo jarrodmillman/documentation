@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.generators.reverse_havel_hakimi_graph &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.bipartite.generators.reverse_havel_hakimi_graph &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -268,7 +268,9 @@
 <code class="sig-name descname">reverse_havel_hakimi_graph</code><span class="sig-paren">(</span><em class="sig-param">aseq</em>, <em class="sig-param">bseq</em>, <em class="sig-param">create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/generators.html#reverse_havel_hakimi_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.generators.reverse_havel_hakimi_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a bipartite graph from two given degree sequences using a
 Havel-Hakimi style construction.</p>
-<p>Nodes from set A are connected to nodes in the set B by connecting
+<p>The graph is composed of two partitions. Set A has nodes 0 to
+(len(aseq) - 1) and set B has nodes len(aseq) to (len(bseq) - 1).
+Nodes from set A are connected to nodes in the set B by connecting
 the highest degree nodes in set A to the lowest degree nodes in
 set B until all stubs are connected.</p>
 <dl class="field-list simple">
@@ -281,14 +283,14 @@ set B until all stubs are connected.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>This function is not imported in the main namespace.
-To use it you have to explicitly import the bipartite package.</p>
 <p>The sum of the two sequences must be equal: sum(aseq)=sum(bseq)
 If no graph type is specified use MultiGraph with parallel edges.
 If you want a graph with no parallel edges use create_using=Graph()
 but then the resulting degree sequences might not be exact.</p>
 <p>The nodes are assigned the attribute ‘bipartite’ with the value 0 or 1
 to indicate which bipartite set the node belongs to.</p>
+<p>This function is not imported in the main namespace.
+To use it use nx.bipartite.reverse_havel_hakimi_graph</p>
 </dd></dl>
 
 </div>
@@ -315,7 +317,7 @@ to indicate which bipartite set the node belongs to.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.community.community_utils &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.community.community_utils &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -180,25 +180,27 @@
 
 
 <div class="viewcode-block" id="is_partition"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.community.community_utils.is_partition.html#networkx.algorithms.community.community_utils.is_partition">[docs]</a><span class="k">def</span> <span class="nf">is_partition</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">communities</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns True if and only if `communities` is a partition of</span>
-<span class="sd">    the nodes of `G`.</span>
+    <span class="sd">&quot;&quot;&quot;Returns *True* if `communities` is a partition of the nodes of `G`.</span>
 
 <span class="sd">    A partition of a universe set is a family of pairwise disjoint sets</span>
 <span class="sd">    whose union is the entire universe set.</span>
 
-<span class="sd">    `G` is a NetworkX graph.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX graph.</span>
 
-<span class="sd">    `communities` is an iterable of sets of nodes of `G`. This</span>
-<span class="sd">    iterable will be consumed multiple times during the execution of</span>
-<span class="sd">    this function.</span>
+<span class="sd">    communities : list or iterable of sets of nodes</span>
+<span class="sd">        If not a list, the iterable is converted internally to a list.</span>
+<span class="sd">        If it is an iterator it is exhausted.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Alternate implementation:</span>
-    <span class="c1">#</span>
-    <span class="c1">#     return (len(G) == sum(len(c) for c in community) and</span>
-    <span class="c1">#             set(G) == set.union(*community))</span>
-    <span class="c1">#</span>
-    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">c</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">communities</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">)</span></div>
+    <span class="c1"># return all(sum(1 if v in c else 0 for c in communities) == 1 for v in G)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">communities</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">communities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">communities</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">c</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">communities</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
@@ -213,7 +215,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.generators.preferential_attachment_graph &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.bipartite.generators.preferential_attachment_graph &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -268,6 +268,9 @@
 <code class="sig-name descname">preferential_attachment_graph</code><span class="sig-paren">(</span><em class="sig-param">aseq</em>, <em class="sig-param">p</em>, <em class="sig-param">create_using=None</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/generators.html#preferential_attachment_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.generators.preferential_attachment_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a bipartite graph with a preferential attachment model from
 a given single degree sequence.</p>
+<p>The graph is composed of two partitions. Set A has nodes 0 to
+(len(aseq) - 1) and set B has nodes starting with node len(aseq).
+The number of nodes in set B is random.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -295,8 +298,10 @@ Inf. Process. Lett. 90, 2004, pg. 215-221
 </dd>
 </dl>
 <p class="rubric">Notes</p>
+<p>The nodes are assigned the attribute ‘bipartite’ with the value 0 or 1
+to indicate which bipartite set the node belongs to.</p>
 <p>This function is not imported in the main namespace.
-To use it you have to explicitly import the bipartite package.</p>
+To use it use nx.bipartite.preferential_attachment_graph</p>
 </dd></dl>
 
 </div>
@@ -323,7 +328,7 @@ To use it you have to explicitly import the bipartite package.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>

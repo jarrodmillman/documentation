@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.community.community_utils.is_partition &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.community.community_utils.is_partition &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -264,14 +264,18 @@
 <dl class="function">
 <dt id="networkx.algorithms.community.community_utils.is_partition">
 <code class="sig-name descname">is_partition</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">communities</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/community/community_utils.html#is_partition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.community.community_utils.is_partition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if and only if <code class="xref py py-obj docutils literal notranslate"><span class="pre">communities</span></code> is a partition of
-the nodes of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
+<dd><p>Returns <em>True</em> if <code class="xref py py-obj docutils literal notranslate"><span class="pre">communities</span></code> is a partition of the nodes of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <p>A partition of a universe set is a family of pairwise disjoint sets
 whose union is the entire universe set.</p>
-<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is a NetworkX graph.</p>
-<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">communities</span></code> is an iterable of sets of nodes of <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. This
-iterable will be consumed multiple times during the execution of
-this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph.</em>)</p></li>
+<li><p><strong>communities</strong> (<em>list or iterable of sets of nodes</em>) – If not a list, the iterable is converted internally to a list.
+If it is an iterator it is exhausted.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -298,7 +302,7 @@ this function.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>

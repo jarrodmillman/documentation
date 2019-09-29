@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.betweenness_subset &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.centrality.betweenness_subset &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -236,11 +236,25 @@
 <span class="sd">    Zero edge weights can produce an infinite number of equal length</span>
 <span class="sd">    paths between pairs of nodes.</span>
 
-<span class="sd">    The normalization might seem a little strange but it is the same</span>
-<span class="sd">    as in betweenness_centrality() and is designed to make</span>
-<span class="sd">    betweenness_centrality(G) be the same as</span>
+<span class="sd">    The normalization might seem a little strange but it is</span>
+<span class="sd">    designed to make betweenness_centrality(G) be the same as</span>
 <span class="sd">    betweenness_centrality_subset(G,sources=G.nodes(),targets=G.nodes()).</span>
 
+<span class="sd">    The total number of paths between source and target is counted</span>
+<span class="sd">    differently for directed and undirected graphs. Directed paths</span>
+<span class="sd">    are easy to count. Undirected paths are tricky: should a path</span>
+<span class="sd">    from &quot;u&quot; to &quot;v&quot; count as 1 undirected path or as 2 directed paths?</span>
+
+<span class="sd">    For betweenness_centrality we report the number of undirected</span>
+<span class="sd">    paths when G is undirected.</span>
+
+<span class="sd">    For betweenness_centrality_subset the reporting is different.</span>
+<span class="sd">    If the source and target subsets are the same, then we want</span>
+<span class="sd">    to count undirected paths. But if the source and target subsets</span>
+<span class="sd">    differ -- for example, if sources is {0} and targets is {1},</span>
+<span class="sd">    then we are only counting the paths in one direction. They are</span>
+<span class="sd">    undirected paths but we are counting them in a directed way.</span>
+<span class="sd">    To count them as undirected paths, each should count as half a path.</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
@@ -361,7 +375,7 @@
     <span class="k">while</span> <span class="n">S</span><span class="p">:</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">target_set</span><span class="p">:</span>
-            <span class="n">coeff</span> <span class="o">=</span> <span class="p">(</span><span class="n">delta</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">/</span> <span class="n">sigma</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
+            <span class="n">coeff</span> <span class="o">=</span> <span class="p">(</span><span class="n">delta</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="n">sigma</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">coeff</span> <span class="o">=</span> <span class="n">delta</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">/</span> <span class="n">sigma</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">P</span><span class="p">[</span><span class="n">w</span><span class="p">]:</span>
@@ -440,7 +454,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.community.quality &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.community.quality &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -190,7 +190,6 @@
     <span class="sd">&quot;&quot;&quot;Raised if a given collection is not a partition.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">collection</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> is not a valid partition of the graph </span><span class="si">{}</span><span class="s1">&#39;</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">collection</span><span class="p">)</span>
@@ -198,8 +197,7 @@
 
 
 <span class="k">def</span> <span class="nf">require_partition</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Decorator that raises an exception if a partition is not a valid</span>
-<span class="sd">    partition of the nodes of a graph.</span>
+    <span class="sd">&quot;&quot;&quot;Decorator to check that a valid partition is input to a function</span>
 
 <span class="sd">    Raises :exc:`networkx.NetworkXError` if the partition is not valid.</span>
 
@@ -227,7 +225,6 @@
 <span class="sd">        NetworkXError: `partition` is not a valid partition of the nodes of G</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
         <span class="c1"># Here we assume that the first two arguments are (G, partition).</span>
@@ -239,12 +236,14 @@
 
 
 <span class="k">def</span> <span class="nf">intra_community_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the number of intra-community edges according to the given</span>
-<span class="sd">    partition of the nodes of `G`.</span>
+    <span class="sd">&quot;&quot;&quot;Returns the number of intra-community edges for a partition of `G`.</span>
 
-<span class="sd">    `G` must be a NetworkX graph.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX graph.</span>
 
-<span class="sd">    `partition` must be a partition of the nodes of `G`.</span>
+<span class="sd">    partition : iterable of sets of nodes</span>
+<span class="sd">        This must be a partition of the nodes of `G`.</span>
 
 <span class="sd">    The &quot;intra-community edges&quot; are those edges joining a pair of nodes</span>
 <span class="sd">    in the same block of the partition.</span>
@@ -254,19 +253,22 @@
 
 
 <span class="k">def</span> <span class="nf">inter_community_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the number of inter-community edges according to the given</span>
+    <span class="sd">&quot;&quot;&quot;Returns the number of inter-community edges for a prtition of `G`.</span>
+<span class="sd">    according to the given</span>
 <span class="sd">    partition of the nodes of `G`.</span>
 
-<span class="sd">    `G` must be a NetworkX graph.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : NetworkX graph.</span>
 
-<span class="sd">    `partition` must be a partition of the nodes of `G`.</span>
+<span class="sd">    partition : iterable of sets of nodes</span>
+<span class="sd">        This must be a partition of the nodes of `G`.</span>
 
 <span class="sd">    The *inter-community edges* are those edges joining a pair of nodes</span>
 <span class="sd">    in different blocks of the partition.</span>
 
 <span class="sd">    Implementation note: this function creates an intermediate graph</span>
-<span class="sd">    that may require the same amount of memory as required to store</span>
-<span class="sd">    `G`.</span>
+<span class="sd">    that may require the same amount of memory as that of `G`.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Alternate implementation that does not require constructing a new</span>
@@ -277,10 +279,8 @@
     <span class="c1">#                                    for block in partition))</span>
     <span class="c1">#     return sum(1 for u, v in G.edges() if aff[u] != aff[v])</span>
     <span class="c1">#</span>
-    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">quotient_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span><span class="p">())</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">quotient_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">())</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">MG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiDiGraph</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="k">else</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">quotient_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">MG</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">inter_community_non_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">):</span>
@@ -327,7 +327,6 @@
 <span class="sd">        A simple graph (directed or undirected).</span>
 
 <span class="sd">    partition : sequence</span>
-
 <span class="sd">        Partition of the nodes of `G`, represented as a sequence of</span>
 <span class="sd">        sets of nodes. Each block of the partition represents a</span>
 <span class="sd">        community.</span>
@@ -428,9 +427,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    G : NetworkX Graph</span>
 
-<span class="sd">    communities : list</span>
-<span class="sd">        List of sets of nodes of `G` representing a partition of the</span>
-<span class="sd">        nodes.</span>
+<span class="sd">    communities : list or iterable of set of nodes</span>
+<span class="sd">        These node sets must represent a partition of G&#39;s nodes.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -444,8 +442,11 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import networkx.algorithms.community as nx_comm</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.barbell_graph(3, 0)</span>
-<span class="sd">    &gt;&gt;&gt; nx.algorithms.community.modularity(G, [{0, 1, 2}, {3, 4, 5}])</span>
+<span class="sd">    &gt;&gt;&gt; nx_comm.modularity(G, [{0, 1, 2}, {3, 4, 5}])</span>
+<span class="sd">    0.35714285714285704</span>
+<span class="sd">    &gt;&gt;&gt; nx_comm.modularity(G, nx_comm.label_propagation_communities(G))</span>
 <span class="sd">    0.35714285714285704</span>
 
 <span class="sd">    References</span>
@@ -454,6 +455,8 @@
 <span class="sd">       Oxford University Press, 2011.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">communities</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">communities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_partition</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">communities</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">NotAPartition</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">communities</span><span class="p">)</span>
 
@@ -498,7 +501,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>

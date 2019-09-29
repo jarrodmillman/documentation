@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.generators.complete_bipartite_graph &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.bipartite.generators.complete_bipartite_graph &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -267,9 +267,9 @@
 <dt id="networkx.algorithms.bipartite.generators.complete_bipartite_graph">
 <code class="sig-name descname">complete_bipartite_graph</code><span class="sig-paren">(</span><em class="sig-param">n1</em>, <em class="sig-param">n2</em>, <em class="sig-param">create_using=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/generators.html#complete_bipartite_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.generators.complete_bipartite_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the complete bipartite graph <code class="xref py py-obj docutils literal notranslate"><span class="pre">K_{n_1,n_2}</span></code>.</p>
-<p>Composed of two partitions with <code class="xref py py-obj docutils literal notranslate"><span class="pre">n_1</span></code> nodes in the first
-and <code class="xref py py-obj docutils literal notranslate"><span class="pre">n_2</span></code> nodes in the second. Each node in the first is
-connected to each node in the second.</p>
+<p>The graph is composed of two partitions with nodes 0 to (n1 - 1)
+in the first and nodes n1 to (n1 + n2 - 1) in the second.
+Each node in the first is connected to each node in the second.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -283,6 +283,8 @@ connected to each node in the second.</p>
 <p>Node labels are the integers 0 to <code class="xref py py-obj docutils literal notranslate"><span class="pre">n_1</span> <span class="pre">+</span> <span class="pre">n_2</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
 <p>The nodes are assigned the attribute ‘bipartite’ with the value 0 or 1
 to indicate which bipartite set the node belongs to.</p>
+<p>This function is not imported in the main namespace.
+To use it use nx.bipartite.complete_bipartite_graph</p>
 </dd></dl>
 
 </div>
@@ -309,7 +311,7 @@ to indicate which bipartite set the node belongs to.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>

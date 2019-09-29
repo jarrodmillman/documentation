@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.generators.random_graph &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.bipartite.generators.random_graph &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -267,7 +267,9 @@
 <dt id="networkx.algorithms.bipartite.generators.random_graph">
 <code class="sig-name descname">random_graph</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">m</em>, <em class="sig-param">p</em>, <em class="sig-param">seed=None</em>, <em class="sig-param">directed=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/bipartite/generators.html#random_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.bipartite.generators.random_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a bipartite random graph.</p>
-<p>This is a bipartite version of the binomial (Erdős-Rényi) graph.</p>
+<p>This is a bipartite version of the binomial (Erdős-Rényi) graph.
+The graph is composed of two partitions. Set A has nodes 0 to
+(n - 1) and set B has nodes n to (n + m - 1).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -281,13 +283,13 @@ See <a class="reference internal" href="../../randomness.html#randomness"><span 
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>This function is not imported in the main namespace.
-To use it you have to explicitly import the bipartite package.</p>
 <p>The bipartite random graph algorithm chooses each of the n*m (undirected)
 or 2*nm (directed) possible edges with probability p.</p>
 <p>This algorithm is <span class="math notranslate nohighlight">\(O(n+m)\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is the expected number of edges.</p>
 <p>The nodes are assigned the attribute ‘bipartite’ with the value 0 or 1
 to indicate which bipartite set the node belongs to.</p>
+<p>This function is not imported in the main namespace.
+To use it use nx.bipartite.random_graph</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">gnp_random_graph()</span></code>, <a class="reference internal" href="networkx.algorithms.bipartite.generators.configuration_model.html#networkx.algorithms.bipartite.generators.configuration_model" title="networkx.algorithms.bipartite.generators.configuration_model"><code class="xref py py-func docutils literal notranslate"><span class="pre">configuration_model()</span></code></a></p>
@@ -326,7 +328,7 @@ Phys. Rev. E, 71, 036113, 2005.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.assortativity.correlation &mdash; NetworkX 2.4rc1.dev20190928224403 documentation</title>
+  <title>networkx.algorithms.assortativity.correlation &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190928224403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190928224403
+                2.4rc1.dev_20190929122833
               </div>
             
           
@@ -162,7 +162,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for networkx.algorithms.assortativity.correlation</h1><div class="highlight"><pre>
-<span></span><span class="c1">#-*- coding: utf-8 -*-</span>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;Node assortativity coefficients and correlation measures.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -196,12 +196,12 @@
 <span class="sd">       The degree type for target node (directed graphs only).</span>
 
 <span class="sd">    weight: string or None, optional (default=None)</span>
-<span class="sd">       The edge attribute that holds the numerical value used </span>
+<span class="sd">       The edge attribute that holds the numerical value used</span>
 <span class="sd">       as a weight.  If None, then each edge has weight 1.</span>
 <span class="sd">       The degree is the sum of the edge weights adjacent to the node.</span>
 
 <span class="sd">    nodes: list or iterable (optional)</span>
-<span class="sd">        Compute degree assortativity only for nodes in container. </span>
+<span class="sd">        Compute degree assortativity only for nodes in container.</span>
 <span class="sd">        The default is all nodes.</span>
 
 <span class="sd">    Returns</span>
@@ -228,14 +228,14 @@
 <span class="sd">    -----</span>
 <span class="sd">    This computes Eq. (21) in Ref. [1]_ , where e is the joint</span>
 <span class="sd">    probability distribution (mixing matrix) of the degrees.  If G is</span>
-<span class="sd">    directed than the matrix e is the joint probability of the </span>
+<span class="sd">    directed than the matrix e is the joint probability of the</span>
 <span class="sd">    user-specified degree type for the source and target.</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
 <span class="sd">    .. [1] M. E. J. Newman, Mixing patterns in networks,</span>
 <span class="sd">       Physical Review E, 67 026126, 2003</span>
-<span class="sd">    .. [2] Foster, J.G., Foster, D.V., Grassberger, P. &amp; Paczuski, M. </span>
+<span class="sd">    .. [2] Foster, J.G., Foster, D.V., Grassberger, P. &amp; Paczuski, M.</span>
 <span class="sd">       Edge direction and the structure of networks, PNAS 107, 10815-20 (2010).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">M</span> <span class="o">=</span> <span class="n">degree_mixing_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
@@ -244,12 +244,12 @@
 
 <div class="viewcode-block" id="degree_pearson_correlation_coefficient"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.assortativity.degree_pearson_correlation_coefficient.html#networkx.algorithms.assortativity.degree_pearson_correlation_coefficient">[docs]</a><span class="k">def</span> <span class="nf">degree_pearson_correlation_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span>
                                            <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute degree assortativity of graph. </span>
+    <span class="sd">&quot;&quot;&quot;Compute degree assortativity of graph.</span>
 
 <span class="sd">    Assortativity measures the similarity of connections</span>
 <span class="sd">    in the graph with respect to the node degree.</span>
 
-<span class="sd">    This is the same as degree_assortativity_coefficient but uses the </span>
+<span class="sd">    This is the same as degree_assortativity_coefficient but uses the</span>
 <span class="sd">    potentially faster scipy.stats.pearsonr function.</span>
 
 <span class="sd">    Parameters</span>
@@ -263,7 +263,7 @@
 <span class="sd">       The degree type for target node (directed graphs only).</span>
 
 <span class="sd">    weight: string or None, optional (default=None)</span>
-<span class="sd">       The edge attribute that holds the numerical value used </span>
+<span class="sd">       The edge attribute that holds the numerical value used</span>
 <span class="sd">       as a weight.  If None, then each edge has weight 1.</span>
 <span class="sd">       The degree is the sum of the edge weights adjacent to the node.</span>
 
@@ -279,7 +279,7 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; G=nx.path_graph(4)</span>
-<span class="sd">    &gt;&gt;&gt; r=nx.degree_pearson_correlation_coefficient(G) </span>
+<span class="sd">    &gt;&gt;&gt; r=nx.degree_pearson_correlation_coefficient(G)</span>
 <span class="sd">    &gt;&gt;&gt; print(&quot;%3.1f&quot;%r)</span>
 <span class="sd">    -0.5</span>
 
@@ -291,7 +291,7 @@
 <span class="sd">    ----------</span>
 <span class="sd">    .. [1] M. E. J. Newman, Mixing patterns in networks</span>
 <span class="sd">           Physical Review E, 67 026126, 2003</span>
-<span class="sd">    .. [2] Foster, J.G., Foster, D.V., Grassberger, P. &amp; Paczuski, M. </span>
+<span class="sd">    .. [2] Foster, J.G., Foster, D.V., Grassberger, P. &amp; Paczuski, M.</span>
 <span class="sd">       Edge direction and the structure of networks, PNAS 107, 10815-20 (2010).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
@@ -314,12 +314,12 @@
 <span class="sd">    ----------</span>
 <span class="sd">    G : NetworkX graph</span>
 
-<span class="sd">    attribute : string </span>
+<span class="sd">    attribute : string</span>
 <span class="sd">        Node attribute key</span>
 
 <span class="sd">    nodes: list or iterable (optional)</span>
-<span class="sd">        Compute attribute assortativity for nodes in container. </span>
-<span class="sd">        The default is all nodes. </span>
+<span class="sd">        Compute attribute assortativity for nodes in container.</span>
+<span class="sd">        The default is all nodes.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -337,7 +337,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    This computes Eq. (2) in Ref. [1]_ , trace(M)-sum(M))/(1-sum(M),</span>
+<span class="sd">    This computes Eq. (2) in Ref. [1]_ , (trace(M)-sum(M^2))/(1-sum(M^2)),</span>
 <span class="sd">    where M is the joint probability distribution (mixing matrix)</span>
 <span class="sd">    of the specified attribute.</span>
 
@@ -361,12 +361,12 @@
 <span class="sd">    ----------</span>
 <span class="sd">    G : NetworkX graph</span>
 
-<span class="sd">    attribute : string </span>
+<span class="sd">    attribute : string</span>
 <span class="sd">        Node attribute key.  The corresponding attribute value must be an</span>
 <span class="sd">        integer.</span>
 
 <span class="sd">    nodes: list or iterable (optional)</span>
-<span class="sd">        Compute numeric assortativity only for attributes of nodes in </span>
+<span class="sd">        Compute numeric assortativity only for attributes of nodes in</span>
 <span class="sd">        container. The default is all nodes.</span>
 
 <span class="sd">    Returns</span>
@@ -385,7 +385,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    This computes Eq. (21) in Ref. [1]_ , for the mixing matrix of </span>
+<span class="sd">    This computes Eq. (21) in Ref. [1]_ , for the mixing matrix of</span>
 <span class="sd">    of the specified attribute.</span>
 
 <span class="sd">    References</span>
@@ -407,7 +407,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    This computes Eq. (2) in Ref. [1]_ , (trace(e)-sum(e))/(1-sum(e)),</span>
+<span class="sd">    This computes Eq. (2) in Ref. [1]_ , (trace(e)-sum(e^2))/(1-sum(e^2)),</span>
 <span class="sd">    where e is the joint probability distribution (mixing matrix)</span>
 <span class="sd">    of the specified attribute.</span>
 
@@ -457,11 +457,11 @@
     <span class="kn">from</span> <span class="nn">nose</span> <span class="k">import</span> <span class="n">SkipTest</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">numpy</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">SkipTest</span><span class="p">(</span><span class="s2">&quot;NumPy not available&quot;</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">scipy</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">SkipTest</span><span class="p">(</span><span class="s2">&quot;SciPy not available&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -477,7 +477,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 28, 2019.
+        Last updated on Sep 29, 2019.
       </span>
 
     </p>
