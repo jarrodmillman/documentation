@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.drawing.layout &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
+  <title>networkx.drawing.layout &mdash; NetworkX 2.4rc1.dev20190930120230 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190930120230 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190929122833
+                2.4rc1.dev_20190930120230
               </div>
             
           
@@ -526,6 +526,21 @@
                                 <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Position nodes using Fruchterman-Reingold force-directed algorithm.</span>
 
+<span class="sd">    The algorithm simulates a force-directed representation of the network</span>
+<span class="sd">    treating edges as springs holding nodes close, while treating nodes</span>
+<span class="sd">    as repelling objects, sometimes called an anti-gravity force.</span>
+<span class="sd">    Simulation continues until the positions are close to an equilibrium.</span>
+
+<span class="sd">    There are some hard-coded values: minimal distance between</span>
+<span class="sd">    nodes (0.01) and &quot;temperature&quot; of 0.1 to ensure nodes don&#39;t fly away.</span>
+<span class="sd">    During the simulation, `k` helps determine the distance between nodes,</span>
+<span class="sd">    though `scale` and `center` determine the size and place after</span>
+<span class="sd">    rescaling occurs at the end of the simulation.</span>
+
+<span class="sd">    Fixing some nodes doesn&#39;t allow them to move in the simulation.</span>
+<span class="sd">    It also turns off the rescaling feature at the simulation&#39;s end.</span>
+<span class="sd">    In addition, setting `scale` to `None` turns off rescaling.</span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    G : NetworkX graph or list of nodes</span>
@@ -556,8 +571,9 @@
 <span class="sd">        The edge attribute that holds the numerical value used for</span>
 <span class="sd">        the edge weight.  If None, then all edge weights are 1.</span>
 
-<span class="sd">    scale : number (default: 1)</span>
+<span class="sd">    scale : number or None (default: 1)</span>
 <span class="sd">        Scale factor for positions. Not used unless `fixed is None`.</span>
+<span class="sd">        If scale is None, no rescaling is performed.</span>
 
 <span class="sd">    center : array-like or None</span>
 <span class="sd">        Coordinate pair around which to center the layout.</span>
@@ -639,7 +655,7 @@
             <span class="n">k</span> <span class="o">=</span> <span class="n">dom_size</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">nnodes</span><span class="p">)</span>
         <span class="n">pos</span> <span class="o">=</span> <span class="n">_fruchterman_reingold</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">pos_arr</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span>
                                     <span class="n">threshold</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">fixed</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">fixed</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">scale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">pos</span> <span class="o">=</span> <span class="n">rescale_layout</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="n">center</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">pos</span>
@@ -997,9 +1013,8 @@
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;spectral() takes an adjacency matrix as input&quot;</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-    <span class="c1"># form Laplacian matrix</span>
-    <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">nnodes</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-    <span class="n">D</span> <span class="o">=</span> <span class="n">I</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># diagonal of degrees</span>
+    <span class="c1"># form Laplacian matrix where D is diagonal of degrees</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">nnodes</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">L</span> <span class="o">=</span> <span class="n">D</span> <span class="o">-</span> <span class="n">A</span>
 
     <span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
@@ -1222,11 +1237,11 @@
     <span class="kn">from</span> <span class="nn">nose</span> <span class="k">import</span> <span class="n">SkipTest</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">numpy</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">SkipTest</span><span class="p">(</span><span class="s2">&quot;NumPy not available&quot;</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">scipy</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">SkipTest</span><span class="p">(</span><span class="s2">&quot;SciPy not available&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -1242,7 +1257,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 29, 2019.
+        Last updated on Sep 30, 2019.
       </span>
 
     </p>

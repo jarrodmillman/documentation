@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.closeness &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
+  <title>networkx.algorithms.centrality.closeness &mdash; NetworkX 2.4rc1.dev20190930120230 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190930120230 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190929122833
+                2.4rc1.dev_20190930120230
               </div>
             
           
@@ -252,6 +252,9 @@
 <span class="sd">    If the &#39;distance&#39; keyword is set to an edge attribute key then the</span>
 <span class="sd">    shortest-path length will be computed using Dijkstra&#39;s algorithm with</span>
 <span class="sd">    that edge attribute as the edge weight.</span>
+
+<span class="sd">    The closeness centrality uses *inward* distance to a node, not outward.</span>
+<span class="sd">    If you want to use outword distances apply the function to `G.reverse()`</span>
 
 <span class="sd">    In NetworkX 2.2 and earlier a bug caused Dijkstra&#39;s algorithm to use the</span>
 <span class="sd">    outward distance rather than the inward distance. If you use a &#39;distance&#39;</span>
@@ -457,7 +460,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 29, 2019.
+        Last updated on Sep 30, 2019.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.traversal.depth_first_search &mdash; NetworkX 2.4rc1.dev20190929122833 documentation</title>
+  <title>networkx.algorithms.traversal.depth_first_search &mdash; NetworkX 2.4rc1.dev20190930120230 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20190929122833 documentation"
+          title="Search within NetworkX 2.4rc1.dev20190930120230 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20190929122833
+                2.4rc1.dev_20190930120230
               </div>
             
           
@@ -232,6 +232,7 @@
 <span class="sd">    dfs_postorder_nodes</span>
 <span class="sd">    dfs_labeled_edges</span>
 <span class="sd">    edge_dfs</span>
+<span class="sd">    bfs_edges</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># edges for all components</span>
@@ -288,6 +289,13 @@
 <span class="sd">    &gt;&gt;&gt; list(T.edges())</span>
 <span class="sd">    [(0, 1), (1, 2), (2, 3), (3, 4)]</span>
 
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    dfs_preorder_nodes</span>
+<span class="sd">    dfs_postorder_nodes</span>
+<span class="sd">    dfs_labeled_edges</span>
+<span class="sd">    edge_dfs</span>
+<span class="sd">    bfs_tree</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">T</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -336,6 +344,14 @@
 
 <span class="sd">    .. _PADS: http://www.ics.uci.edu/~eppstein/PADS</span>
 <span class="sd">    .. _Depth-limited search: https://en.wikipedia.org/wiki/Depth-limited_search</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    dfs_preorder_nodes</span>
+<span class="sd">    dfs_postorder_nodes</span>
+<span class="sd">    dfs_labeled_edges</span>
+<span class="sd">    edge_dfs</span>
+<span class="sd">    bfs_tree</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">dfs_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">depth_limit</span><span class="p">)}</span></div>
 
@@ -378,6 +394,14 @@
 
 <span class="sd">    .. _PADS: http://www.ics.uci.edu/~eppstein/PADS</span>
 <span class="sd">    .. _Depth-limited search: https://en.wikipedia.org/wiki/Depth-limited_search</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    dfs_preorder_nodes</span>
+<span class="sd">    dfs_postorder_nodes</span>
+<span class="sd">    dfs_labeled_edges</span>
+<span class="sd">    edge_dfs</span>
+<span class="sd">    bfs_tree</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">dfs_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">depth_limit</span><span class="o">=</span><span class="n">depth_limit</span><span class="p">):</span>
@@ -429,6 +453,8 @@
 <span class="sd">    dfs_edges</span>
 <span class="sd">    dfs_preorder_nodes</span>
 <span class="sd">    dfs_labeled_edges</span>
+<span class="sd">    edge_dfs</span>
+<span class="sd">    bfs_tree</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">edges</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dfs_labeled_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">depth_limit</span><span class="o">=</span><span class="n">depth_limit</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">v</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">&#39;reverse&#39;</span><span class="p">)</span></div>
@@ -479,6 +505,7 @@
 <span class="sd">    dfs_edges</span>
 <span class="sd">    dfs_postorder_nodes</span>
 <span class="sd">    dfs_labeled_edges</span>
+<span class="sd">    bfs_edges</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">edges</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dfs_labeled_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">depth_limit</span><span class="o">=</span><span class="n">depth_limit</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">v</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">&#39;forward&#39;</span><span class="p">)</span></div>
@@ -594,7 +621,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Sep 29, 2019.
+        Last updated on Sep 30, 2019.
       </span>
 
     </p>
