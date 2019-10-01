@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.flow.gomory_hu &mdash; NetworkX 2.4rc1.dev20191001051659 documentation</title>
+  <title>networkx.algorithms.flow.gomory_hu &mdash; NetworkX 2.4rc1.dev20191001115549 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191001051659 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191001115549 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191001051659
+                2.4rc1.dev_20191001115549
               </div>
             
           
@@ -328,7 +328,8 @@
         <span class="n">target</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">source</span><span class="p">]</span>
         <span class="c1"># compute minimum cut</span>
         <span class="n">cut_value</span><span class="p">,</span> <span class="n">partition</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">minimum_cut</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
-                                              <span class="n">capacity</span><span class="o">=</span><span class="n">capacity</span><span class="p">,</span> <span class="n">flow_func</span><span class="o">=</span><span class="n">flow_func</span><span class="p">,</span>
+                                              <span class="n">capacity</span><span class="o">=</span><span class="n">capacity</span><span class="p">,</span>
+                                              <span class="n">flow_func</span><span class="o">=</span><span class="n">flow_func</span><span class="p">,</span>
                                               <span class="n">residual</span><span class="o">=</span><span class="n">R</span><span class="p">)</span>
         <span class="n">labels</span><span class="p">[(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)]</span> <span class="o">=</span> <span class="n">cut_value</span>
         <span class="c1"># Update the tree</span>
@@ -336,11 +337,18 @@
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">partition</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">node</span> <span class="o">!=</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">tree</span> <span class="ow">and</span> <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
                 <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">source</span>
-                <span class="n">labels</span><span class="p">[(</span><span class="n">node</span><span class="p">,</span> <span class="n">source</span><span class="p">)]</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">node</span><span class="p">,</span> <span class="n">target</span><span class="p">),</span> <span class="n">cut_value</span><span class="p">)</span>
+                <span class="n">labels</span><span class="p">[</span><span class="n">node</span><span class="p">,</span> <span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">node</span><span class="p">,</span> <span class="n">target</span><span class="p">),</span> <span class="n">cut_value</span><span class="p">)</span>
+        <span class="c1">#</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="o">!=</span> <span class="n">root</span> <span class="ow">and</span> <span class="n">tree</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="ow">in</span> <span class="n">partition</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">labels</span><span class="p">[</span><span class="n">source</span><span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="n">target</span><span class="p">]]</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">target</span><span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="n">target</span><span class="p">]]</span>
+            <span class="n">labels</span><span class="p">[</span><span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="n">cut_value</span>
+            <span class="n">tree</span><span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+            <span class="n">tree</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">=</span> <span class="n">source</span>
+
     <span class="c1"># Build the tree</span>
     <span class="n">T</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
     <span class="n">T</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="n">T</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">(((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">labels</span><span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)])</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+    <span class="n">T</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">(((</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">])</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
     <span class="k">return</span> <span class="n">T</span></div>
 </pre></div>
 
