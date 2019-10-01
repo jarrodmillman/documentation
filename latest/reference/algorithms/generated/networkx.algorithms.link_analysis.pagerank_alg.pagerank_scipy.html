@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy &mdash; NetworkX 2.4rc1.dev20191001040806 documentation</title>
+  <title>networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy &mdash; NetworkX 2.4rc1.dev20191001051659 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191001040806 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191001051659 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191001040806
+                2.4rc1.dev_20191001051659
               </div>
             
           
@@ -257,7 +257,7 @@
 <h1>networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy<a class="headerlink" href="#networkx-algorithms-link-analysis-pagerank-alg-pagerank-scipy" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy">
-<code class="sig-name descname">pagerank_scipy</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">alpha=0.85</em>, <em class="sig-param">personalization=None</em>, <em class="sig-param">max_iter=100</em>, <em class="sig-param">tol=1e-06</em>, <em class="sig-param">weight='weight'</em>, <em class="sig-param">dangling=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/link_analysis/pagerank_alg.html#pagerank_scipy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pagerank_scipy</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">alpha=0.85</em>, <em class="sig-param">personalization=None</em>, <em class="sig-param">max_iter=100</em>, <em class="sig-param">tol=1e-06</em>, <em class="sig-param">nstart=None</em>, <em class="sig-param">weight='weight'</em>, <em class="sig-param">dangling=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/link_analysis/pagerank_alg.html#pagerank_scipy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the PageRank of the nodes in the graph.</p>
 <p>PageRank computes a ranking of the nodes in the graph G based on
 the structure of the incoming links. It was originally designed as
@@ -275,6 +275,7 @@ If not specfiied, a nodes personalization value will be zero.
 By default, a uniform distribution is used.</p></li>
 <li><p><strong>max_iter</strong> (<em>integer, optional</em>) – Maximum number of iterations in power method eigenvalue solver.</p></li>
 <li><p><strong>tol</strong> (<em>float, optional</em>) – Error tolerance used to check convergence in power method solver.</p></li>
+<li><p><strong>nstart</strong> (<em>dictionary, optional</em>) – Starting value of PageRank iteration for each node.</p></li>
 <li><p><strong>weight</strong> (<em>key, optional</em>) – Edge data key to use as weight.  If None weights are set to 1.</p></li>
 <li><p><strong>dangling</strong> (<em>dict, optional</em>) – The outedges to be assigned to any “dangling” nodes, i.e., nodes without
 any outedges. The dict key is the node the outedge points to and the dict

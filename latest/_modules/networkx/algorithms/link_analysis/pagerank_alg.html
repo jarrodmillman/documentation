@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.link_analysis.pagerank_alg &mdash; NetworkX 2.4rc1.dev20191001040806 documentation</title>
+  <title>networkx.algorithms.link_analysis.pagerank_alg &mdash; NetworkX 2.4rc1.dev20191001051659 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191001040806 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191001051659 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191001040806
+                2.4rc1.dev_20191001051659
               </div>
             
           
@@ -500,7 +500,7 @@
 
 
 <div class="viewcode-block" id="pagerank_scipy"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy.html#networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy">[docs]</a><span class="k">def</span> <span class="nf">pagerank_scipy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">personalization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                   <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.0e-6</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span>
+                   <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.0e-6</span><span class="p">,</span> <span class="n">nstart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span>
                    <span class="n">dangling</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns the PageRank of the nodes in the graph.</span>
 
@@ -529,6 +529,9 @@
 
 <span class="sd">    tol : float, optional</span>
 <span class="sd">      Error tolerance used to check convergence in power method solver.</span>
+
+<span class="sd">    nstart : dictionary, optional</span>
+<span class="sd">      Starting value of PageRank iteration for each node.</span>
 
 <span class="sd">    weight : key, optional</span>
 <span class="sd">      Edge data key to use as weight.  If None weights are set to 1.</span>
@@ -596,7 +599,11 @@
     <span class="n">M</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">M</span>
 
     <span class="c1"># initial vector</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">nstart</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">nstart</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nodelist</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
     <span class="c1"># Personalization vector</span>
     <span class="k">if</span> <span class="n">personalization</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
