@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.json_graph.jit &mdash; NetworkX 2.4rc1.dev20191003113011 documentation</title>
+  <title>networkx.readwrite.json_graph.jit &mdash; NetworkX 2.4rc1.dev20191003114549 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191003113011 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191003114549 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191003113011
+                2.4rc1.dev_20191003114549
               </div>
             
           
@@ -224,6 +224,9 @@
         <span class="n">G</span> <span class="o">=</span> <span class="n">create_using</span>
         <span class="n">G</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
+    <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">is_string_like</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
     <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;adjacencies&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -241,10 +244,10 @@
 <span class="sd">    G : NetworkX Graph</span>
 
 <span class="sd">    indent: optional, default=None</span>
-<span class="sd">        If indent is a non-negative integer, then JSON array elements and object</span>
-<span class="sd">        members will be pretty-printed with that indent level. An indent level</span>
-<span class="sd">        of 0, or negative, will only insert newlines. None (the default) selects</span>
-<span class="sd">        the most compact representation.</span>
+<span class="sd">        If indent is a non-negative integer, then JSON array elements and</span>
+<span class="sd">        object members will be pretty-printed with that indent level.</span>
+<span class="sd">        An indent level of 0, or negative, will only insert newlines.</span>
+<span class="sd">        None (the default) selects the most compact representation.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
