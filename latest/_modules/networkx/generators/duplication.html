@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.duplication &mdash; NetworkX 2.4rc1.dev20191002164659 documentation</title>
+  <title>networkx.generators.duplication &mdash; NetworkX 2.4rc1.dev20191003052644 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191002164659 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191003052644 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191002164659
+                2.4rc1.dev_20191003052644
               </div>
             
           
@@ -244,21 +244,21 @@
 
     <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">new_node</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="c1"># Pick a random vertex, u, already in the graph.</span>
+        <span class="n">src_node</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">new_node</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
         <span class="c1"># Add a new vertex, v, to the graph.</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">new_node</span><span class="p">)</span>
-
-        <span class="c1"># Pick a random vertex, u, already in the graph.</span>
-        <span class="n">src_node</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">new_node</span><span class="p">)</span>
-
-        <span class="c1"># Join v and u with probability q.</span>
-        <span class="k">if</span> <span class="n">seed</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">:</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">new_node</span><span class="p">,</span> <span class="n">src_node</span><span class="p">)</span>
 
         <span class="c1"># For each neighbor of u...</span>
         <span class="k">for</span> <span class="n">neighbor_node</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">all_neighbors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">src_node</span><span class="p">)):</span>
             <span class="c1"># Add the neighbor to v with probability p.</span>
             <span class="k">if</span> <span class="n">seed</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
                 <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">new_node</span><span class="p">,</span> <span class="n">neighbor_node</span><span class="p">)</span>
+
+        <span class="c1"># Join v and u with probability q.</span>
+        <span class="k">if</span> <span class="n">seed</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">new_node</span><span class="p">,</span> <span class="n">src_node</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">G</span></div>
 
 
@@ -349,7 +349,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Oct 02, 2019.
+        Last updated on Oct 03, 2019.
       </span>
 
     </p>
