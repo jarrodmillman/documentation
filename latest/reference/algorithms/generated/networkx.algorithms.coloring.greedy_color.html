@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.coloring.greedy_color &mdash; NetworkX 2.4rc1.dev20191003164112 documentation</title>
+  <title>networkx.algorithms.coloring.greedy_color &mdash; NetworkX 2.4rc1.dev20191003234349 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191003164112 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191003234349 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191003164112
+                2.4rc1.dev_20191003234349
               </div>
             
           
@@ -302,11 +302,10 @@ each of which represents one of the built-in strategy functions.</p>
 </li>
 <li><p><strong>interchange</strong> (<em>bool</em>) – Will use the color interchange algorithm described by <a class="footnote-reference brackets" href="#id6" id="id3">3</a> if set
 to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code> and
-<code class="docutils literal notranslate"><span class="pre">strategy_independent_set</span></code> do not work with
-interchange. Furthermore, if you use interchange with your own
-strategy function, you cannot rely on the values in the
-<code class="docutils literal notranslate"><span class="pre">colors</span></code> argument.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">saturation_largest_first</span></code> and <code class="docutils literal notranslate"><span class="pre">independent_set</span></code>
+do not work with interchange. Furthermore, if you use
+interchange with your own strategy function, you cannot rely
+on the values in the <code class="docutils literal notranslate"><span class="pre">colors</span></code> argument.</p>
 </li>
 </ul>
 </dd>
@@ -327,8 +326,8 @@ strategy function, you cannot rely on the values in the
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXPointlessConcept" title="networkx.NetworkXPointlessConcept"><strong>NetworkXPointlessConcept</strong></a> – If <code class="docutils literal notranslate"><span class="pre">strategy</span></code> is <code class="docutils literal notranslate"><span class="pre">strategy_saturation_largest_first</span></code> or
-<code class="docutils literal notranslate"><span class="pre">strategy_independent_set</span></code> and <code class="docutils literal notranslate"><span class="pre">interchange</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<dd class="field-odd"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXPointlessConcept" title="networkx.NetworkXPointlessConcept"><strong>NetworkXPointlessConcept</strong></a> – If <code class="docutils literal notranslate"><span class="pre">strategy</span></code> is <code class="docutils literal notranslate"><span class="pre">saturation_largest_first</span></code> or
+<code class="docutils literal notranslate"><span class="pre">independent_set</span></code> and <code class="docutils literal notranslate"><span class="pre">interchange</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </dd>
 </dl>
 <p class="rubric">References</p>

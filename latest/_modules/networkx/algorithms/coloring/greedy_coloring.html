@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.coloring.greedy_coloring &mdash; NetworkX 2.4rc1.dev20191003164112 documentation</title>
+  <title>networkx.algorithms.coloring.greedy_coloring &mdash; NetworkX 2.4rc1.dev20191003234349 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191003164112 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191003234349 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191003164112
+                2.4rc1.dev_20191003234349
               </div>
             
           
@@ -457,11 +457,10 @@
 <span class="sd">       Will use the color interchange algorithm described by [3]_ if set</span>
 <span class="sd">       to ``True``.</span>
 
-<span class="sd">       Note that ``strategy_saturation_largest_first`` and</span>
-<span class="sd">       ``strategy_independent_set`` do not work with</span>
-<span class="sd">       interchange. Furthermore, if you use interchange with your own</span>
-<span class="sd">       strategy function, you cannot rely on the values in the</span>
-<span class="sd">       ``colors`` argument.</span>
+<span class="sd">       Note that ``saturation_largest_first`` and ``independent_set``</span>
+<span class="sd">       do not work with interchange. Furthermore, if you use</span>
+<span class="sd">       interchange with your own strategy function, you cannot rely</span>
+<span class="sd">       on the values in the ``colors`` argument.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -478,8 +477,8 @@
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
 <span class="sd">    NetworkXPointlessConcept</span>
-<span class="sd">        If ``strategy`` is ``strategy_saturation_largest_first`` or</span>
-<span class="sd">        ``strategy_independent_set`` and ``interchange`` is ``True``.</span>
+<span class="sd">        If ``strategy`` is ``saturation_largest_first`` or</span>
+<span class="sd">        ``independent_set`` and ``interchange`` is ``True``.</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
@@ -505,11 +504,11 @@
     <span class="c1"># strategy functions.</span>
     <span class="k">if</span> <span class="n">interchange</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">strategy</span> <span class="ow">is</span> <span class="n">strategy_independent_set</span><span class="p">:</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;interchange cannot be used with strategy_independent_set&#39;</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;interchange cannot be used with independent_set&#39;</span>
             <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXPointlessConcept</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">strategy</span> <span class="ow">is</span> <span class="n">strategy_saturation_largest_first</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;interchange cannot be used with&#39;</span>
-                   <span class="s1">&#39; strategy_saturation_largest_first&#39;</span><span class="p">)</span>
+                   <span class="s1">&#39; saturation_largest_first&#39;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXPointlessConcept</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
     <span class="n">colors</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">nodes</span> <span class="o">=</span> <span class="n">strategy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
