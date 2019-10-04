@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Utilities &mdash; NetworkX 2.4rc1.dev20191004112403 documentation</title>
+  <title>Utilities &mdash; NetworkX 2.4rc1.dev20191004201211 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191004112403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191004201211 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191004112403
+                2.4rc1.dev_20191004201211
               </div>
             
           
@@ -112,6 +112,7 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.utils.misc.flatten.html">networkx.utils.misc.flatten</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.utils.misc.iterable.html">networkx.utils.misc.iterable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.utils.misc.is_list_of_ints.html">networkx.utils.misc.is_list_of_ints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/networkx.utils.misc.make_list_of_ints.html">networkx.utils.misc.make_list_of_ints</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.utils.misc.make_str.html">networkx.utils.misc.make_str</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.utils.misc.generate_unique_node.html">networkx.utils.misc.generate_unique_node</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/networkx.utils.misc.default_opener.html">networkx.utils.misc.default_opener</a></li>
@@ -256,22 +257,25 @@ can be accessed, for example, as</p>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.is_list_of_ints.html#networkx.utils.misc.is_list_of_ints" title="networkx.utils.misc.is_list_of_ints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_list_of_ints</span></code></a>(intlist)</p></td>
 <td><p>Return True if list is a list of ints.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.make_str.html#networkx.utils.misc.make_str" title="networkx.utils.misc.make_str"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_str</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.make_list_of_ints.html#networkx.utils.misc.make_list_of_ints" title="networkx.utils.misc.make_list_of_ints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_list_of_ints</span></code></a>(sequence)</p></td>
+<td><p>Return list of ints from sequence of integral numbers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.make_str.html#networkx.utils.misc.make_str" title="networkx.utils.misc.make_str"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_str</span></code></a>(x)</p></td>
 <td><p>Returns the string representation of t.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.generate_unique_node.html#networkx.utils.misc.generate_unique_node" title="networkx.utils.misc.generate_unique_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_unique_node</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.generate_unique_node.html#networkx.utils.misc.generate_unique_node" title="networkx.utils.misc.generate_unique_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_unique_node</span></code></a>()</p></td>
 <td><p>Generate a unique node label.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.default_opener.html#networkx.utils.misc.default_opener" title="networkx.utils.misc.default_opener"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_opener</span></code></a>(filename)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.default_opener.html#networkx.utils.misc.default_opener" title="networkx.utils.misc.default_opener"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_opener</span></code></a>(filename)</p></td>
 <td><p>Opens <code class="xref py py-obj docutils literal notranslate"><span class="pre">filename</span></code> using system’s default program.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.pairwise.html#networkx.utils.misc.pairwise" title="networkx.utils.misc.pairwise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pairwise</span></code></a>(iterable[, cyclic])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.pairwise.html#networkx.utils.misc.pairwise" title="networkx.utils.misc.pairwise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pairwise</span></code></a>(iterable[, cyclic])</p></td>
 <td><p>s -&gt; (s0, s1), (s1, s2), (s2, s3), …</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.groups.html#networkx.utils.misc.groups" title="networkx.utils.misc.groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groups</span></code></a>(many_to_one)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.groups.html#networkx.utils.misc.groups" title="networkx.utils.misc.groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groups</span></code></a>(many_to_one)</p></td>
 <td><p>Converts a many-to-one mapping into a one-to-many mapping.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.create_random_state.html#networkx.utils.misc.create_random_state" title="networkx.utils.misc.create_random_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_random_state</span></code></a>([random_state])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.create_random_state.html#networkx.utils.misc.create_random_state" title="networkx.utils.misc.create_random_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_random_state</span></code></a>([random_state])</p></td>
 <td><p>Returns a numpy.random.RandomState instance depending on input.</p></td>
 </tr>
 </tbody>

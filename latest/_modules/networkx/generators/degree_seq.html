@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.generators.degree_seq &mdash; NetworkX 2.4rc1.dev20191004112403 documentation</title>
+  <title>networkx.generators.degree_seq &mdash; NetworkX 2.4rc1.dev20191004201211 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191004112403 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191004201211 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191004112403
+                2.4rc1.dev_20191004201211
               </div>
             
           
@@ -744,8 +744,8 @@
 <span class="sd">       Algorithms for Constructing Graphs and Digraphs with Given Valences</span>
 <span class="sd">       and Factors Discrete Mathematics, 6(1), pp. 79-88 (1973)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">assert</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">is_list_of_ints</span><span class="p">(</span><span class="n">in_deg_sequence</span><span class="p">))</span>
-    <span class="k">assert</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">is_list_of_ints</span><span class="p">(</span><span class="n">out_deg_sequence</span><span class="p">))</span>
+    <span class="n">in_deg_sequence</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">make_list_of_ints</span><span class="p">(</span><span class="n">in_deg_sequence</span><span class="p">)</span>
+    <span class="n">out_deg_sequence</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">make_list_of_ints</span><span class="p">(</span><span class="n">out_deg_sequence</span><span class="p">)</span>
 
     <span class="c1"># Process the sequences and form two heaps to store degree pairs with</span>
     <span class="c1"># either zero or nonzero out degrees</span>
