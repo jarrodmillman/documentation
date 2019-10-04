@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.convert_matrix &mdash; NetworkX 2.4rc1.dev20191004201211 documentation</title>
+  <title>networkx.convert_matrix &mdash; NetworkX 2.4rc1.dev20191004203025 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191004201211 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191004203025 documentation"
           href="../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191004201211
+                2.4rc1.dev_20191004203025
               </div>
             
           
@@ -438,10 +438,11 @@
 <span class="sd">        A valid column name (string or integer) for the target nodes (for the</span>
 <span class="sd">        directed case).</span>
 
-<span class="sd">    edge_attr : str or int, iterable, True</span>
-<span class="sd">        A valid column name (str or integer) or list of column names that will</span>
-<span class="sd">        be used to retrieve items from the row and add them to the graph as</span>
-<span class="sd">        edge attributes. If `True`, all of the remaining columns will be added.</span>
+<span class="sd">    edge_attr : str or int, iterable, True, or None</span>
+<span class="sd">        A valid column name (str or int) or iterable of column names that are</span>
+<span class="sd">        used to retrieve items and add them to the graph as edge attributes.</span>
+<span class="sd">        If `True`, all of the remaining columns will be added.</span>
+<span class="sd">        If `None`, no edge attributes are added to the graph.</span>
 
 <span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
 <span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
@@ -496,6 +497,9 @@
         <span class="n">cols</span> <span class="o">=</span> <span class="n">edge_attr</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">edge_attr</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Invalid edge_attr argument. No columns found with name: </span><span class="si">%s</span><span class="s2">&quot;</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="n">cols</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">eattrs</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">])</span>
@@ -503,14 +507,12 @@
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Invalid edge_attr argument: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">edge_attr</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">attrs</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">source</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">],</span> <span class="n">eattrs</span><span class="p">):</span>
-
-        <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-
         <span class="k">if</span> <span class="n">g</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
-            <span class="n">key</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">t</span><span class="p">])</span>  <span class="c1"># default keys just count so max is most recent</span>
-            <span class="n">g</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">t</span><span class="p">][</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">attr</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">attrs</span><span class="p">))</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+            <span class="n">g</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">t</span><span class="p">][</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">attrs</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">g</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">attr</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">attrs</span><span class="p">))</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+            <span class="n">g</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">attrs</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">g</span></div>
 
