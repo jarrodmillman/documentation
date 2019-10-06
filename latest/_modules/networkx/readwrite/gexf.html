@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.readwrite.gexf &mdash; NetworkX 2.4rc1.dev20191006162505 documentation</title>
+  <title>networkx.readwrite.gexf &mdash; NetworkX 2.4rc1.dev20191006195952 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191006162505 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191006195952 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191006162505
+                2.4rc1.dev_20191006195952
               </div>
             
           
@@ -625,12 +625,13 @@
                     <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;for&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attr_id</span>
                     <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
                     <span class="c1"># Handle nan, inf, -inf differently</span>
-                    <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;inf&#39;</span><span class="p">:</span>
-                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;INF&#39;</span>
-                    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;nan&#39;</span><span class="p">:</span>
-                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
-                    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-inf&#39;</span><span class="p">:</span>
-                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-INF&#39;</span>
+                    <span class="k">if</span> <span class="n">val_type</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;inf&#39;</span><span class="p">:</span>
+                            <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;INF&#39;</span>
+                        <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;nan&#39;</span><span class="p">:</span>
+                            <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
+                        <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-inf&#39;</span><span class="p">:</span>
+                            <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-INF&#39;</span>
                     <span class="k">if</span> <span class="n">start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -648,13 +649,14 @@
                     <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-                    <span class="c1"># Handle nan, inf, -inf differently</span>
-                    <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;inf&#39;</span><span class="p">:</span>
-                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;INF&#39;</span>
-                    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;nan&#39;</span><span class="p">:</span>
-                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
-                    <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-inf&#39;</span><span class="p">:</span>
-                        <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-INF&#39;</span>
+                    <span class="c1"># Handle float nan, inf, -inf differently</span>
+                    <span class="k">if</span> <span class="n">val_type</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;inf&#39;</span><span class="p">:</span>
+                            <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;INF&#39;</span>
+                        <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;nan&#39;</span><span class="p">:</span>
+                            <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
+                        <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-inf&#39;</span><span class="p">:</span>
+                            <span class="n">e</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-INF&#39;</span>
                 <span class="n">attvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
         <span class="n">xml_obj</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attvalues</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span>
@@ -957,14 +959,6 @@
             <span class="k">for</span> <span class="n">node_xml</span> <span class="ow">in</span> <span class="n">subnodes</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;{</span><span class="si">%s</span><span class="s1">}node&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">NS_GEXF</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_xml</span><span class="p">,</span> <span class="n">node_attr</span><span class="p">,</span> <span class="n">node_pid</span><span class="o">=</span><span class="n">node_id</span><span class="p">)</span>
 
-        <span class="c1"># Handle nan, inf, -inf differently</span>
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;inf&#39;</span><span class="p">:</span>
-                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;INF&#39;</span>
-            <span class="k">elif</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;nan&#39;</span><span class="p">:</span>
-                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
-            <span class="k">elif</span> <span class="n">make_str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;-inf&#39;</span><span class="p">:</span>
-                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-INF&#39;</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_start_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">xml</span><span class="p">):</span>
