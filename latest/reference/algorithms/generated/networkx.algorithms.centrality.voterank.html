@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.centrality.voterank &mdash; NetworkX 2.4rc1.dev20191006195952 documentation</title>
+  <title>networkx.algorithms.centrality.voterank &mdash; NetworkX 2.4rc1.dev20191008035520 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191006195952 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191008035520 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191006195952
+                2.4rc1.dev_20191008035520
               </div>
             
           
@@ -115,6 +115,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../centrality.html#load">Load</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../centrality.html#subgraph">Subgraph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../centrality.html#harmonic-centrality">Harmonic Centrality</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../centrality.html#dispersion">Dispersion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../centrality.html#reaching">Reaching</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../centrality.html#percolation">Percolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../centrality.html#second-order-centrality">Second Order Centrality</a></li>
@@ -135,7 +136,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../cycles.html">Cycles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cuts.html">Cuts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dag.html">Directed Acyclic Graphs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../dispersion.html">Dispersion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../distance_measures.html">Distance Measures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../distance_regular.html">Distance-Regular Graphs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dominance.html">Dominance</a></li>
@@ -272,8 +272,8 @@
 <dl class="function">
 <dt id="networkx.algorithms.centrality.voterank">
 <code class="sig-name descname">voterank</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">number_of_nodes=None</em>, <em class="sig-param">max_iter=10000</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/centrality/voterank_alg.html#voterank"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#networkx.algorithms.centrality.voterank" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute a list of seeds for the nodes in the graph using VoteRank <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
-<p>VoteRank computes a ranking of the nodes in the graph G based on a voting
+<dd><p>Compute a list of seeds for the nodes in the graph using VoteRank</p>
+<p>VoteRank <a class="footnote-reference brackets" href="#id2" id="id1">1</a> computes a ranking of the nodes in the graph G based on a voting
 scheme. With VoteRank, all nodes vote for each neighbours and the node with
 the highest score is elected iteratively. The voting ability of neighbors of
 elected nodes will be decreased in subsequent turn.</p>
@@ -329,7 +329,7 @@ Sci. Rep. 6, 27823; doi: 10.1038/srep27823.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Oct 06, 2019.
+        Last updated on Oct 08, 2019.
       </span>
 
     </p>
