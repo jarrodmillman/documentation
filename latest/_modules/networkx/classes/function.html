@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.function &mdash; NetworkX 2.4rc1.dev20191008035520 documentation</title>
+  <title>networkx.classes.function &mdash; NetworkX 2.4rc1.dev20191008170751 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191008035520 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191008170751 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191008035520
+                2.4rc1.dev_20191008170751
               </div>
             
           
@@ -185,11 +185,14 @@
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">pairwise</span><span class="p">,</span> <span class="n">not_implemented_for</span>
 
+<span class="kn">from</span> <span class="nn">networkx.classes.graphviews</span> <span class="k">import</span> <span class="n">subgraph_view</span><span class="p">,</span> <span class="n">reverse_view</span>
+
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">,</span> <span class="s1">&#39;edges&#39;</span><span class="p">,</span> <span class="s1">&#39;degree&#39;</span><span class="p">,</span> <span class="s1">&#39;degree_histogram&#39;</span><span class="p">,</span> <span class="s1">&#39;neighbors&#39;</span><span class="p">,</span>
            <span class="s1">&#39;number_of_nodes&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_edges&#39;</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;is_directed&#39;</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="p">,</span> <span class="s1">&#39;freeze&#39;</span><span class="p">,</span> <span class="s1">&#39;is_frozen&#39;</span><span class="p">,</span> <span class="s1">&#39;subgraph&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;induced_subgraph&#39;</span><span class="p">,</span> <span class="s1">&#39;edge_subgraph&#39;</span><span class="p">,</span> <span class="s1">&#39;restricted_view&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;reverse_view&#39;</span><span class="p">,</span> <span class="s1">&#39;to_directed&#39;</span><span class="p">,</span> <span class="s1">&#39;to_undirected&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;is_directed&#39;</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="p">,</span> <span class="s1">&#39;freeze&#39;</span><span class="p">,</span> <span class="s1">&#39;is_frozen&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;subgraph&#39;</span><span class="p">,</span> <span class="s1">&#39;subgraph_view&#39;</span><span class="p">,</span> <span class="s1">&#39;induced_subgraph&#39;</span><span class="p">,</span> <span class="s1">&#39;reverse_view&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;edge_subgraph&#39;</span><span class="p">,</span> <span class="s1">&#39;restricted_view&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;to_directed&#39;</span><span class="p">,</span> <span class="s1">&#39;to_undirected&#39;</span><span class="p">,</span>
            <span class="s1">&#39;add_star&#39;</span><span class="p">,</span> <span class="s1">&#39;add_path&#39;</span><span class="p">,</span> <span class="s1">&#39;add_cycle&#39;</span><span class="p">,</span>
            <span class="s1">&#39;create_empty_copy&#39;</span><span class="p">,</span> <span class="s1">&#39;set_node_attributes&#39;</span><span class="p">,</span>
            <span class="s1">&#39;get_node_attributes&#39;</span><span class="p">,</span> <span class="s1">&#39;set_edge_attributes&#39;</span><span class="p">,</span>
@@ -654,15 +657,6 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">hide_edges</span> <span class="o">=</span> <span class="n">nxf</span><span class="o">.</span><span class="n">hide_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">hide_nodes</span><span class="p">,</span> <span class="n">hide_edges</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="reverse_view"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.reverse_view.html#networkx.classes.function.reverse_view">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">reverse_view</span><span class="p">(</span><span class="n">digraph</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Provide a reverse view of the digraph with edges reversed.</span>
-
-<span class="sd">    Identical to digraph.reverse(copy=False)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">reverse_view</span><span class="p">(</span><span class="n">digraph</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="to_directed"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.to_directed.html#networkx.classes.function.to_directed">[docs]</a><span class="k">def</span> <span class="nf">to_directed</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>

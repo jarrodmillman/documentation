@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.graphviews &mdash; NetworkX 2.4rc1.dev20191008035520 documentation</title>
+  <title>networkx.classes.graphviews &mdash; NetworkX 2.4rc1.dev20191008170751 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191008035520 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191008170751 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191008035520
+                2.4rc1.dev_20191008170751
               </div>
             
           
@@ -200,7 +200,8 @@
 <span class="kn">from</span> <span class="nn">networkx.classes.coreviews</span> <span class="k">import</span> <span class="n">UnionAdjacency</span><span class="p">,</span> <span class="n">UnionMultiAdjacency</span><span class="p">,</span> \
     <span class="n">FilterAtlas</span><span class="p">,</span> <span class="n">FilterAdjacency</span><span class="p">,</span> <span class="n">FilterMultiAdjacency</span>
 <span class="kn">from</span> <span class="nn">networkx.classes.filters</span> <span class="k">import</span> <span class="n">no_filter</span>
-<span class="kn">from</span> <span class="nn">networkx.exception</span> <span class="k">import</span> <span class="n">NetworkXError</span><span class="p">,</span> <span class="n">NetworkXNotImplemented</span>
+<span class="kn">from</span> <span class="nn">networkx.exception</span> <span class="k">import</span> <span class="n">NetworkXError</span>
+<span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="k">import</span> <span class="n">not_implemented_for</span>
 <span class="c1"># remove the graph class import when deprecated GraphView removed</span>
 <span class="kn">from</span> <span class="nn">networkx.classes</span> <span class="k">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">DiGraph</span><span class="p">,</span> <span class="n">MultiGraph</span><span class="p">,</span> <span class="n">MultiDiGraph</span>
 
@@ -247,7 +248,84 @@
     <span class="k">return</span> <span class="n">newG</span></div>
 
 
-<div class="viewcode-block" id="subgraph_view"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.classes.graphviews.subgraph_view.html#networkx.classes.graphviews.subgraph_view">[docs]</a><span class="k">def</span> <span class="nf">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">filter_node</span><span class="o">=</span><span class="n">no_filter</span><span class="p">,</span> <span class="n">filter_edge</span><span class="o">=</span><span class="n">no_filter</span><span class="p">):</span>
+<div class="viewcode-block" id="subgraph_view"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.subgraph_view.html#networkx.classes.graphviews.subgraph_view">[docs]</a><span class="k">def</span> <span class="nf">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">filter_node</span><span class="o">=</span><span class="n">no_filter</span><span class="p">,</span> <span class="n">filter_edge</span><span class="o">=</span><span class="n">no_filter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; View of `G` applying a filter on nodes and edges.</span>
+
+<span class="sd">    `subgraph_view` provides a read-only view of the input graph that excludes</span>
+<span class="sd">    nodes and edges based on the outcome of two filter functions `filter_node`</span>
+<span class="sd">    and `filter_edge`.</span>
+
+<span class="sd">    The `filter_node` function takes one argument --- the node --- and returns</span>
+<span class="sd">    `True` if the node should be included in the subgraph, and `False` if it</span>
+<span class="sd">    should not be included.</span>
+
+<span class="sd">    The `filter_edge` function takes two arguments --- the nodes describing an</span>
+<span class="sd">    edge --- and returns `True` if the edge should be included in the subgraph,</span>
+<span class="sd">    and `False` if it should not be included.</span>
+
+<span class="sd">    Both node and edge filter functions are called on graph elements as they</span>
+<span class="sd">    are queried, meaning there is no up-front cost to creating the view.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : networkx.Graph</span>
+<span class="sd">        A directed/undirected graph/multigraph</span>
+
+<span class="sd">    filter_node : callable, optional</span>
+<span class="sd">        A function taking a node as input, which returns `True` if the node</span>
+<span class="sd">        should appear in the view.</span>
+
+<span class="sd">    filter_edge : callable, optional</span>
+<span class="sd">        A function taking as input the two nodes describing an edge, which</span>
+<span class="sd">        returns `True` if the edge should appear in the view.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    graph : networkx.Graph</span>
+<span class="sd">        A read-only graph view of the input graph.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.path_graph(6)</span>
+
+<span class="sd">    Filter functions operate on the node, and return `True` if the node should</span>
+<span class="sd">    appear in the view:</span>
+
+<span class="sd">    &gt;&gt;&gt; def filter_node(n1):</span>
+<span class="sd">    ...     return n1 != 5</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; view = nx.subgraph_view(</span>
+<span class="sd">    ...     G,</span>
+<span class="sd">    ...     filter_node=filter_node</span>
+<span class="sd">    ... )</span>
+<span class="sd">    &gt;&gt;&gt; view.nodes()</span>
+<span class="sd">    NodeView((0, 1, 2, 3, 4))</span>
+
+<span class="sd">    We can use a closure pattern to filter graph elements based on additional</span>
+<span class="sd">    data --- for example, filtering on edge data attached to the graph:</span>
+
+<span class="sd">    &gt;&gt;&gt; G[3][4][&#39;cross_me&#39;] = False</span>
+<span class="sd">    &gt;&gt;&gt; def filter_edge(n1, n2):</span>
+<span class="sd">    ...     return G[n1][n2].get(&#39;cross_me&#39;, True)</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; view = nx.subgraph_view(</span>
+<span class="sd">    ...     G,</span>
+<span class="sd">    ...     filter_edge=filter_edge</span>
+<span class="sd">    ... )</span>
+<span class="sd">    &gt;&gt;&gt; view.edges()</span>
+<span class="sd">    EdgeView([(0, 1), (1, 2), (2, 3), (4, 5)])</span>
+
+<span class="sd">    &gt;&gt;&gt; view = nx.subgraph_view(</span>
+<span class="sd">    ...     G,</span>
+<span class="sd">    ...     filter_node=filter_node,</span>
+<span class="sd">    ...     filter_edge=filter_edge,</span>
+<span class="sd">    ... )</span>
+<span class="sd">    &gt;&gt;&gt; view.nodes()</span>
+<span class="sd">    NodeView((0, 1, 2, 3, 4))</span>
+<span class="sd">    &gt;&gt;&gt; view.edges()</span>
+<span class="sd">    EdgeView([(0, 1), (1, 2), (2, 3)])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">newG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">freeze</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="vm">__class__</span><span class="p">())</span>
     <span class="n">newG</span><span class="o">.</span><span class="n">_NODE_OK</span> <span class="o">=</span> <span class="n">filter_node</span>
     <span class="n">newG</span><span class="o">.</span><span class="n">_EDGE_OK</span> <span class="o">=</span> <span class="n">filter_edge</span>
@@ -274,10 +352,36 @@
     <span class="k">return</span> <span class="n">newG</span></div>
 
 
-<div class="viewcode-block" id="reverse_view"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.classes.graphviews.reverse_view.html#networkx.classes.graphviews.reverse_view">[docs]</a><span class="k">def</span> <span class="nf">reverse_view</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;not implemented for undirected type&quot;</span>
-        <span class="k">raise</span> <span class="n">NetworkXNotImplemented</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<div class="viewcode-block" id="reverse_view"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.reverse_view.html#networkx.classes.graphviews.reverse_view">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s1">&#39;undirected&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">reverse_view</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; View of `G` with edge directions reversed</span>
+
+<span class="sd">    `reverse_view` returns a read-only view of the input graph where</span>
+<span class="sd">    edge directions are reversed.</span>
+
+<span class="sd">    Identical to digraph.reverse(copy=False)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : networkx.DiGraph</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    graph : networkx.DiGraph</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.DiGraph()</span>
+<span class="sd">    &gt;&gt;&gt; G.add_edge(1, 2)</span>
+<span class="sd">    &gt;&gt;&gt; G.add_edge(2, 3)</span>
+<span class="sd">    &gt;&gt;&gt; G.edges()</span>
+<span class="sd">    OutEdgeView([(1, 2), (2, 3)])</span>
+
+<span class="sd">    &gt;&gt;&gt; view = nx.reverse_view(G)</span>
+<span class="sd">    &gt;&gt;&gt; view.edges()</span>
+<span class="sd">    OutEdgeView([(2, 1), (3, 2)])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">newG</span> <span class="o">=</span> <span class="n">generic_graph_view</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">newG</span><span class="o">.</span><span class="n">_succ</span><span class="p">,</span> <span class="n">newG</span><span class="o">.</span><span class="n">_pred</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">_pred</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">_succ</span>
     <span class="n">newG</span><span class="o">.</span><span class="n">_adj</span> <span class="o">=</span> <span class="n">newG</span><span class="o">.</span><span class="n">_succ</span>
