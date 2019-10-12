@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.cycles &mdash; NetworkX 2.4rc1.dev20191008170751 documentation</title>
+  <title>networkx.algorithms.cycles &mdash; NetworkX 2.4rc1.dev20191012204146 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191008170751 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191012204146 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191008170751
+                2.4rc1.dev_20191012204146
               </div>
             
           
@@ -688,8 +688,8 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; G=nx.Graph()</span>
-<span class="sd">    &gt;&gt;&gt; G.add_cycle([0,1,2,3])</span>
-<span class="sd">    &gt;&gt;&gt; G.add_cycle([0,3,4,5])</span>
+<span class="sd">    &gt;&gt;&gt; nx.add_cycle(G, [0,1,2,3])</span>
+<span class="sd">    &gt;&gt;&gt; nx.add_cycle(G, [0,3,4,5])</span>
 <span class="sd">    &gt;&gt;&gt; print([sorted(c) for c in nx.minimum_cycle_basis(G)])</span>
 <span class="sd">    [[0, 1, 2, 3], [0, 3, 4, 5]]</span>
 
@@ -705,8 +705,8 @@
 <span class="sd">    simple_cycles, cycle_basis</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># We first split the graph in commected subgraphs</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">((</span><span class="n">_min_cycle_basis</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span>
-                <span class="n">nx</span><span class="o">.</span><span class="n">connected_component_subgraphs</span><span class="p">(</span><span class="n">G</span><span class="p">)),</span> <span class="p">[])</span></div>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">((</span><span class="n">_min_cycle_basis</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="n">weight</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span>
+                <span class="n">nx</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">G</span><span class="p">)),</span> <span class="p">[])</span></div>
 
 
 <span class="k">def</span> <span class="nf">_min_cycle_basis</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
@@ -800,7 +800,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Oct 08, 2019.
+        Last updated on Oct 12, 2019.
       </span>
 
     </p>

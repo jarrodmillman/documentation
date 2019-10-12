@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install &mdash; NetworkX 2.4rc1.dev20191008170751 documentation</title>
+  <title>Install &mdash; NetworkX 2.4rc1.dev20191012204146 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191008170751 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191012204146 documentation"
           href="_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191008170751
+                2.4rc1.dev_20191012204146
               </div>
             
           
@@ -98,7 +98,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#test-a-source-distribution">Test a source distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-an-installed-package">Test an installed package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#testing-for-developers">Testing for developers</a></li>
 </ul>
 </li>
 </ul>
@@ -287,17 +286,21 @@ and graph layout algorithms via <a class="reference external" href="http://graph
 </div>
 <div class="section" id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
-<p>NetworkX uses the Python <code class="docutils literal notranslate"><span class="pre">nose</span></code> testing package.  If you don’t already have
-that package installed, follow the directions on the <a class="reference external" href="https://nose.readthedocs.org/">nose homepage</a>.</p>
+<p>NetworkX uses the Python <code class="docutils literal notranslate"><span class="pre">pytest</span></code> testing package.  You can learn more
+about pytest on their <a class="reference external" href="https://pytest.org">homepage</a>.</p>
 <div class="section" id="test-a-source-distribution">
 <h3>Test a source distribution<a class="headerlink" href="#test-a-source-distribution" title="Permalink to this headline">¶</a></h3>
 <p>You can test the complete package from the unpacked source directory with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="n">networkx</span> <span class="o">-</span><span class="n">v</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="n">networkx</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="test-an-installed-package">
 <h3>Test an installed package<a class="headerlink" href="#test-an-installed-package" title="Permalink to this headline">¶</a></h3>
+<p>From a shell command prompt you can test the installed package with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">--</span><span class="n">pyargs</span> <span class="n">networkx</span>
+</pre></div>
+</div>
 <p>If you have a file-based (not a Python egg) installation you can test the
 installed package with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -310,47 +313,18 @@ installed package with:</p>
 </div>
 <dl class="function">
 <dt id="networkx.test">
-<code class="sig-name descname">test</code><span class="sig-paren">(</span><em class="sig-param">verbosity=1</em>, <em class="sig-param">doctest=False</em>, <em class="sig-param">numpy=True</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.test" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test</code><span class="sig-paren">(</span><em class="sig-param">verbosity=1</em>, <em class="sig-param">doctest=False</em><span class="sig-paren">)</span><a class="headerlink" href="#networkx.test" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run NetworkX tests.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>verbosity</strong> (<em>integer, optional</em>) – Level of detail in test reports.  Higher numbers provide more detail.</p></li>
 <li><p><strong>doctest</strong> (<em>bool, optional</em>) – True to run doctests in code modules</p></li>
-<li><p><strong>numpy</strong> (<em>bool, optional</em>) – True to test modules dependent on numpy</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="testing-for-developers">
-<h3>Testing for developers<a class="headerlink" href="#testing-for-developers" title="Permalink to this headline">¶</a></h3>
-<p>You can test any or all of NetworkX by using the <code class="docutils literal notranslate"><span class="pre">nosetests</span></code> test runner.</p>
-<p>First make sure the NetworkX version you want to test is in your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>
-(either installed or pointing to your unpacked source directory).</p>
-<p>Then you can run individual test files with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span>
-</pre></div>
-</div>
-<p>or all tests found in dir and an directories contained in dir:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="nb">dir</span>
-</pre></div>
-</div>
-<p>By default nosetests does not test docutils style tests in
-Python modules but you can turn that on with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">doctest</span>
-</pre></div>
-</div>
-<p>For doctests in stand-alone files NetworkX uses the extension <code class="docutils literal notranslate"><span class="pre">txt</span></code> so
-you can add:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">doctest</span> <span class="o">--</span><span class="n">doctest</span><span class="o">-</span><span class="n">extension</span><span class="o">=</span><span class="n">txt</span>
-</pre></div>
-</div>
-<p>to also execute those tests.</p>
-<p>These options are on by default if you run nosetests from the root of the
-NetworkX distribution since they are specified in the <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file found
-there.</p>
 </div>
 </div>
 </div>
@@ -377,7 +351,7 @@ there.</p>
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Oct 08, 2019.
+        Last updated on Oct 12, 2019.
       </span>
 
     </p>

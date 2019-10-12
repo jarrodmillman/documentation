@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.shortest_paths.weighted &mdash; NetworkX 2.4rc1.dev20191008170751 documentation</title>
+  <title>networkx.algorithms.shortest_paths.weighted &mdash; NetworkX 2.4rc1.dev20191012204146 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191008170751 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191012204146 documentation"
           href="../../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191008170751
+                2.4rc1.dev_20191012204146
               </div>
             
           
@@ -1336,11 +1336,12 @@
 <span class="sd">    &gt;&gt;&gt; sorted(dist.items())</span>
 <span class="sd">    [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]</span>
 
-<span class="sd">    &gt;&gt;&gt; from nose.tools import assert_raises</span>
+<span class="sd">    &gt;&gt;&gt; import pytest</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.cycle_graph(5, create_using = nx.DiGraph())</span>
 <span class="sd">    &gt;&gt;&gt; G[1][2][&#39;weight&#39;] = -7</span>
-<span class="sd">    &gt;&gt;&gt; assert_raises(nx.NetworkXUnbounded, \</span>
+<span class="sd">    &gt;&gt;&gt; pytest.raises(nx.NetworkXUnbounded, \</span>
 <span class="sd">                      nx.bellman_ford_predecessor_and_distance, G, 0)</span>
+<span class="sd">    &lt;ExceptionInfo NetworkXUnbounded tblen=3&gt;</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -1912,10 +1913,11 @@
 <span class="sd">    &gt;&gt;&gt; sorted(dist.items())</span>
 <span class="sd">    [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]</span>
 
-<span class="sd">    &gt;&gt;&gt; from nose.tools import assert_raises</span>
+<span class="sd">    &gt;&gt;&gt; import pytest</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.cycle_graph(5, create_using = nx.DiGraph())</span>
 <span class="sd">    &gt;&gt;&gt; G[1][2][&#39;weight&#39;] = -7</span>
-<span class="sd">    &gt;&gt;&gt; assert_raises(nx.NetworkXUnbounded, nx.goldberg_radzik, G, 0)</span>
+<span class="sd">    &gt;&gt;&gt; pytest.raises(nx.NetworkXUnbounded, nx.goldberg_radzik, G, 0)</span>
+<span class="sd">    &lt;ExceptionInfo NetworkXUnbounded tblen=3&gt;</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -2347,7 +2349,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Oct 08, 2019.
+        Last updated on Oct 12, 2019.
       </span>
 
     </p>

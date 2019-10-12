@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.testing.test &mdash; NetworkX 2.4rc1.dev20191008170751 documentation</title>
+  <title>networkx.testing.test &mdash; NetworkX 2.4rc1.dev20191012204146 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191008170751 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191012204146 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191008170751
+                2.4rc1.dev_20191012204146
               </div>
             
           
@@ -163,11 +163,9 @@
             
   <h1>Source code for networkx.testing.test</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">getcwd</span>
 
 
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">doctest</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">doctest</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Run NetworkX tests.</span>
 
 <span class="sd">    Parameters</span>
@@ -177,32 +175,26 @@
 
 <span class="sd">    doctest: bool, optional</span>
 <span class="sd">      True to run doctests in code modules</span>
-
-<span class="sd">    numpy: bool, optional</span>
-<span class="sd">      True to test modules dependent on numpy</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="kn">import</span> <span class="nn">nose</span>
-    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-            <span class="s2">&quot;The nose package is needed to run the NetworkX tests.&quot;</span><span class="p">)</span>
 
-    <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Running NetworkX tests:&quot;</span><span class="p">)</span>
-    <span class="n">nx_install_dir</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">)</span>
-    <span class="c1"># stop if running from source directory</span>
-    <span class="k">if</span> <span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nx_install_dir</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">)):</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t run tests from source directory.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                           <span class="s2">&quot;Run &#39;nosetests&#39; from the command line.&quot;</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">pytest</span>
 
-    <span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;--verbosity=</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">verbosity</span><span class="p">,</span>
-            <span class="s1">&#39;-w&#39;</span><span class="p">,</span> <span class="n">nx_install_dir</span><span class="p">,</span>
-            <span class="s1">&#39;-exe&#39;</span><span class="p">]</span>
+    <span class="n">pytest_args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;-l&#39;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">verbosity</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">pytest_args</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="s2">&quot;v&quot;</span><span class="o">*</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+
     <span class="k">if</span> <span class="n">doctest</span><span class="p">:</span>
-        <span class="n">argv</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;--with-doctest&#39;</span><span class="p">,</span> <span class="s1">&#39;--doctest-extension=txt&#39;</span><span class="p">])</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">numpy</span><span class="p">:</span>
-        <span class="n">argv</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;-A not numpy&#39;</span><span class="p">])</span>
+        <span class="n">pytest_args</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;--doctest-modules&quot;</span><span class="p">]</span>
 
-    <span class="n">nose</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">pytest_args</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;--pyargs&quot;</span><span class="p">,</span> <span class="s2">&quot;networkx&quot;</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">pytest_args</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">SystemExit</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="n">exc</span><span class="o">.</span><span class="n">code</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">code</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -221,7 +213,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Oct 08, 2019.
+        Last updated on Oct 12, 2019.
       </span>
 
     </p>

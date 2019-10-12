@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.classes.graphviews &mdash; NetworkX 2.4rc1.dev20191008170751 documentation</title>
+  <title>networkx.classes.graphviews &mdash; NetworkX 2.4rc1.dev20191012204146 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191008170751 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191012204146 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191008170751
+                2.4rc1.dev_20191012204146
               </div>
             
           
@@ -207,12 +207,7 @@
 
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;generic_graph_view&#39;</span><span class="p">,</span> <span class="s1">&#39;subgraph_view&#39;</span><span class="p">,</span> <span class="s1">&#39;reverse_view&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;SubGraph&#39;</span><span class="p">,</span> <span class="s1">&#39;SubDiGraph&#39;</span><span class="p">,</span> <span class="s1">&#39;SubMultiGraph&#39;</span><span class="p">,</span> <span class="s1">&#39;SubMultiDiGraph&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;ReverseView&#39;</span><span class="p">,</span> <span class="s1">&#39;MultiReverseView&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;DiGraphView&#39;</span><span class="p">,</span> <span class="s1">&#39;MultiDiGraphView&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;GraphView&#39;</span><span class="p">,</span> <span class="s1">&#39;MultiGraphView&#39;</span><span class="p">,</span>
-           <span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;generic_graph_view&#39;</span><span class="p">,</span> <span class="s1">&#39;subgraph_view&#39;</span><span class="p">,</span> <span class="s1">&#39;reverse_view&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="generic_graph_view"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.classes.graphviews.generic_graph_view.html#networkx.classes.graphviews.generic_graph_view">[docs]</a><span class="k">def</span> <span class="nf">generic_graph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -386,59 +381,6 @@
     <span class="n">newG</span><span class="o">.</span><span class="n">_succ</span><span class="p">,</span> <span class="n">newG</span><span class="o">.</span><span class="n">_pred</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">_pred</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">_succ</span>
     <span class="n">newG</span><span class="o">.</span><span class="n">_adj</span> <span class="o">=</span> <span class="n">newG</span><span class="o">.</span><span class="n">_succ</span>
     <span class="k">return</span> <span class="n">newG</span></div>
-
-
-<span class="c1"># The remaining definitions are for backward compatibility with v2.0 and 2.1</span>
-<span class="k">def</span> <span class="nf">ReverseView</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="c1"># remove by v3 if not before</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;ReverseView is deprecated. Use reverse_view instead&#39;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">reverse_view</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">SubGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">filter_node</span><span class="o">=</span><span class="n">no_filter</span><span class="p">,</span> <span class="n">filter_edge</span><span class="o">=</span><span class="n">no_filter</span><span class="p">):</span>
-    <span class="c1"># remove by v3 if not before</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;SubGraph is deprecated. Use subgraph_view instead&#39;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">subgraph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">filter_node</span><span class="p">,</span> <span class="n">filter_edge</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">GraphView</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="c1"># remove by v3 if not before</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;GraphView is deprecated. Use generic_graph_view instead&#39;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">generic_graph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">Graph</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">DiGraphView</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="c1"># remove by v3 if not before</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;GraphView is deprecated. Use generic_graph_view instead&#39;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">generic_graph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">DiGraph</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">MultiGraphView</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="c1"># remove by v3 if not before</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;GraphView is deprecated. Use generic_graph_view instead&#39;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">generic_graph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">MultiGraph</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">MultiDiGraphView</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
-    <span class="c1"># remove by v3 if not before</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;GraphView is deprecated. Use generic_graph_view instead&#39;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">generic_graph_view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">MultiDiGraph</span><span class="p">)</span>
-
-
-<span class="n">MultiReverseView</span> <span class="o">=</span> <span class="n">ReverseView</span>
-<span class="n">SubMultiGraph</span> <span class="o">=</span> <span class="n">SubMultiDiGraph</span> <span class="o">=</span> <span class="n">SubDiGraph</span> <span class="o">=</span> <span class="n">SubGraph</span>
 </pre></div>
 
            </div>
@@ -453,7 +395,7 @@
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Oct 08, 2019.
+        Last updated on Oct 12, 2019.
       </span>
 
     </p>

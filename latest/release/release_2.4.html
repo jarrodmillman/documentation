@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.4 &mdash; NetworkX 2.4rc1.dev20191008170751 documentation</title>
+  <title>Announcement: NetworkX 2.4 &mdash; NetworkX 2.4rc1.dev20191012204146 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc1.dev20191008170751 documentation"
+          title="Search within NetworkX 2.4rc1.dev20191012204146 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc1.dev_20191008170751
+                2.4rc1.dev_20191012204146
               </div>
             
           
@@ -175,6 +175,8 @@ Please send comments and questions to the <a class="reference external" href="ht
 67 contributors. Highlights include:</p>
 <ul class="simple">
 <li><p>Support for Python 3.8</p></li>
+<li><p>Switched to pytest for testing</p></li>
+<li><p>Last release to support Python 3.5</p></li>
 </ul>
 <p>New Functions:
 - barycenter functions
@@ -228,7 +230,35 @@ integer values to lists of integers</p>
 </div>
 <div class="section" id="deprecations">
 <h2>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h2>
-<p>None</p>
+<p>Removed functions (marked as deprecated in NetworkX 2.1):
+attracting_component_subgraphs
+connected_component_subgraphs
+weakly_connected_component_subgraphs
+strongly_connected_component_subgraphs
+biconnected_component_subgraphs
+See docs for component functions for how to get subgraphs.</p>
+<p>Graph Object methods removed (marked as deprecated 2.1)
+G.add_path
+G.add_cycle
+G.add_star
+G.nodes_with_selfloops
+G.number_of_selfloops
+G.selfloop_edges
+These are now NetworkX functions, e.g. nx.add_star(G, 5)
+G.node   –&gt; use G.nodes
+G.fresh_copy   –&gt; use G.__class__</p>
+<p>Remove old names for graphview functions.
+ReverseView
+SubGraph
+SubMultiGraph
+SubMultiDiGraph
+SubDiGraph
+GraphView
+DiGraphView
+MultiGraphView
+MultiDiGraphView
+MultiReverseView
+Use reverse_view, subgraph_view and generic_graph_view.</p>
 </div>
 <div class="section" id="pull-requests-merged-in-this-release">
 <h2>Pull requests merged in this release<a class="headerlink" href="#pull-requests-merged-in-this-release" title="Permalink to this headline">¶</a></h2>
@@ -429,7 +459,7 @@ Handle edgeattr in from_pandas_edgelist when no columns match request (#3634)</p
     <p>
         &copy; Copyright 2004-2019, NetworkX Developers
       <span class="lastupdated">
-        Last updated on Oct 08, 2019.
+        Last updated on Oct 12, 2019.
       </span>
 
     </p>
