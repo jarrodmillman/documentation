@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Announcement: NetworkX 2.4 &mdash; NetworkX 2.4rc2.dev20191016014103 documentation</title>
+  <title>Announcement: NetworkX 2.4 &mdash; NetworkX 2.4rc2.dev20191016075442 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc2.dev20191016014103 documentation"
+          title="Search within NetworkX 2.4rc2.dev20191016075442 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.4rc2.dev_20191016014103
+                2.4rc2.dev_20191016075442
               </div>
             
           
@@ -171,9 +171,10 @@ and our <a class="reference external" href="https://networkx.github.io/documenta
 Please send comments and questions to the <a class="reference external" href="http://groups.google.com/group/networkx-discuss">networkx-discuss mailing list</a>.</p>
 <div class="section" id="highlights">
 <h2>Highlights<a class="headerlink" href="#highlights" title="Permalink to this headline">¶</a></h2>
-<p>This release is the result of 6 months of work with 190 commits by
-66 contributors. Highlights include:</p>
+<p>This release is the result of 6 months of work with over 200 commits by
+67 contributors. Highlights include:</p>
 <ul class="simple">
+<li><p>Remove deprecated code from 1.x</p></li>
 <li><p>Support for Python 3.8</p></li>
 <li><p>Switched to pytest for testing</p></li>
 <li><p>Last release to support Python 3.5</p></li>
@@ -274,7 +275,7 @@ integer values to lists of integers</p>
 </div>
 <div class="section" id="pull-requests-and-commits-merged-in-this-release">
 <h2>Pull requests and commits merged in this release<a class="headerlink" href="#pull-requests-and-commits-merged-in-this-release" title="Permalink to this headline">¶</a></h2>
-<p>A total of 190 changes have been committed.</p>
+<p>A total of 205 changes have been committed.</p>
 <ul class="simple">
 <li><p>Bump release version</p></li>
 <li><p>algorithms/traversal/edgebfs name fix (#3397)</p></li>
@@ -457,23 +458,38 @@ integer values to lists of integers</p>
 <li><p>Remove nose from classes</p></li>
 <li><p>Replace nose.assert_raises with pytest.raises</p></li>
 <li><p>Replace nose.raises with pytest.raises context manager</p></li>
-<li><p>Replace <a href="#id3"><span class="problematic" id="id4">eq_</span></a>, <a href="#id5"><span class="problematic" id="id6">ok_</span></a> with assert</p></li>
+<li><p>Replace <code class="xref py py-obj docutils literal notranslate"><span class="pre">eq_</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">ok_</span></code> with assert</p></li>
 <li><p>Use pytest for doctest</p></li>
 <li><p>Highlight switch to pytest in release notes</p></li>
-<li><p>Remove ‘from nose.tools import <a href="#id1"><span class="problematic" id="id2">*</span></a>’</p></li>
+<li><p>Remove <code class="xref py py-obj docutils literal notranslate"><span class="pre">from</span> <span class="pre">nose.tools</span> <span class="pre">import</span> <span class="pre">*</span></code></p></li>
 <li><p>Remove nose.tools.SkipTest</p></li>
 <li><p>Finalize transition to pytest</p></li>
 <li><p>Merge pull request #3639 from stefanv/pytest-port</p></li>
 <li><p>Test Python 3.8 with AppVeyor</p></li>
 <li><p>Merge pull request #3648 from jarrodmillman/windows-py3.8</p></li>
 <li><p>Remove deprecated weakly_connected_component_subgraphs</p></li>
+<li><p>Update release notes</p></li>
+<li><p>Update README</p></li>
+<li><p>Announce Python 3.8 support</p></li>
+<li><p>Designate 2.4rc1 release</p></li>
+<li><p>Bump release version</p></li>
+<li><p>Remove remaining SkipTests</p></li>
+<li><p>fix documentation notes (#3644) (#3645)</p></li>
+<li><p>Test Py 3.8.0 on AppVeyor</p></li>
+<li><p>Speed up AppVeyor</p></li>
+<li><p>Cleanup travis config</p></li>
+<li><p>Improve CI caching</p></li>
+<li><p>Update Py 3.8 on travis</p></li>
+<li><p>Merge pull request #3652 from jarrodmillman/speedup-appveyor</p></li>
+<li><p>Finalize release notes</p></li>
 </ul>
-<p>It contained the following 4 merges:</p>
+<p>It contained the following 5 merges:</p>
 <ul class="simple">
 <li><p>Fixed typo in betweenness centrality subset test (#3436)</p></li>
 <li><p>explicitly stated i.j convention in to_numpy_array (#3542)</p></li>
 <li><p>pytest port (#3639)</p></li>
 <li><p>Test Python 3.8 with AppVeyor (#3648)</p></li>
+<li><p>Cleanup and speedup CI (#3652)</p></li>
 </ul>
 </div>
 <div class="section" id="contributors-to-this-release">
@@ -527,6 +543,7 @@ integer values to lists of integers</p>
 <li><p>Alexios Polyzos</p></li>
 <li><p>Michael Recachinas</p></li>
 <li><p>Efraim Rodrigues</p></li>
+<li><p>Adam Rosenthal</p></li>
 <li><p>Dan Schult</p></li>
 <li><p>William Schwartz</p></li>
 <li><p>Weisheng Si</p></li>
@@ -534,8 +551,8 @@ integer values to lists of integers</p>
 <li><p>Ivan Tham</p></li>
 <li><p>George Valkanas</p></li>
 <li><p>Stefan van der Walt</p></li>
-<li><p>Haochen Wu</p></li>
 <li><p>Hsi-Hsuan Wu</p></li>
+<li><p>Haochen Wu</p></li>
 <li><p>Xiangyu Xu</p></li>
 <li><p>Jean-Gabriel Young</p></li>
 <li><p>bkief</p></li>

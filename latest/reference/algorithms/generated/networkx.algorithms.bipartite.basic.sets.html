@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>networkx.algorithms.bipartite.basic.sets &mdash; NetworkX 2.4rc2.dev20191016014103 documentation</title>
+  <title>networkx.algorithms.bipartite.basic.sets &mdash; NetworkX 2.4rc2.dev20191016075442 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc2.dev20191016014103 documentation"
+          title="Search within NetworkX 2.4rc2.dev20191016075442 documentation"
           href="../../../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc2.dev_20191016014103
+                2.4rc2.dev_20191016075442
               </div>
             
           
@@ -275,27 +275,26 @@ for further details on how bipartite graphs are handled in NetworkX.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>G</strong> (<em>NetworkX graph</em>)</p></li>
-<li><p><strong>top_nodes</strong> (<em>container</em>) – Container with all nodes in one bipartite node set. If not supplied
+<li><p><strong>top_nodes</strong> (<em>container, optional</em>) – Container with all nodes in one bipartite node set. If not supplied
 it will be computed. But if more than one solution exists an exception
 will be raised.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>(X, Y)</strong> – One set of nodes for each part of the bipartite graph.</p>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>X</strong> (<em>set</em>) – Nodes from one side of the bipartite graph.</p></li>
+<li><p><strong>Y</strong> (<em>set</em>) – Nodes from the other side.</p></li>
+</ul>
+</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>two-tuple of sets</p>
-</dd>
-</dl>
-<dl class="simple">
-<dt>:raises AmbiguousSolution<span class="classifier">Exception: Raised if the input bipartite graph is disconnected and no container</span></dt><dd><p>with all nodes in one bipartite set is provided. When determining
-the nodes in each bipartite set more than one valid solution is
-possible if the input graph is disconnected.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – Exception: Raised if the input graph is not bipartite.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.AmbiguousSolution" title="networkx.AmbiguousSolution"><strong>AmbiguousSolution</strong></a> – Raised if the input bipartite graph is disconnected and no container
+with all nodes in one bipartite set is provided. When determining
+the nodes in each bipartite set more than one valid solution is
+possible if the input graph is disconnected.</p></li>
+<li><p><a class="reference internal" href="../../exceptions.html#networkx.NetworkXError" title="networkx.NetworkXError"><strong>NetworkXError</strong></a> – Raised if the input graph is not bipartite.</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Examples</p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Developer overview &mdash; NetworkX 2.4rc2.dev20191016014103 documentation</title>
+  <title>Developer overview &mdash; NetworkX 2.4rc2.dev20191016075442 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.4rc2.dev20191016014103 documentation"
+          title="Search within NetworkX 2.4rc2.dev20191016075442 documentation"
           href="../_static/opensearch.xml"/>
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2.4rc2.dev_20191016014103
+                2.4rc2.dev_20191016075442
               </div>
             
           
@@ -97,11 +97,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Developer overview</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#divergence-between-upstream-master-and-your-feature-branch">Divergence between <code class="docutils literal notranslate"><span class="pre">upstream</span> <span class="pre">master</span></code> and your feature branch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-environment-setup">Build environment setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-environment-setup">Build environment setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#venv">venv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conda">conda</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#venv">venv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conda">conda</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#guidelines">Guidelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#stylistic-guidelines">Stylistic Guidelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a></li>
@@ -310,10 +310,8 @@ you should set up a Python development environment tailored for networkx.
 You may choose the environment manager of your choice.
 Here we provide instructions for two popular environment managers:
 <code class="docutils literal notranslate"><span class="pre">venv</span></code> (pip based) and <code class="docutils literal notranslate"><span class="pre">conda</span></code> (Anaconda or Miniconda).</p>
-</div>
-</div>
 <div class="section" id="venv">
-<h1>venv<a class="headerlink" href="#venv" title="Permalink to this headline">¶</a></h1>
+<h3>venv<a class="headerlink" href="#venv" title="Permalink to this headline">¶</a></h3>
 <p>When using <code class="docutils literal notranslate"><span class="pre">venv</span></code>, you may find the following bash commands useful:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a virtualenv named ``networkx-dev`` that lives in the directory of</span>
 <span class="c1"># the same name</span>
@@ -330,7 +328,7 @@ Here we provide instructions for two popular environment managers:
 </div>
 </div>
 <div class="section" id="conda">
-<h1>conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h1>
+<h3>conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h3>
 <p>When using conda, you may find the following bash commands useful:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Create a conda environment named ``networkx-dev``
 conda create --name networkx-dev
@@ -346,6 +344,8 @@ pip install -e . --no-deps
 # Test your installation
 PYTHONPATH=. pytest networkx
 </pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="guidelines">
 <h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
